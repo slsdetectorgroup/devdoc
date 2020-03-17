@@ -1,0 +1,319 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>ContainerUtils &mdash; slsDetectorPackage  documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="TypeTraits" href="type_traits.html" />
+    <link rel="prev" title="Command line interface" href="commandline.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> slsDetectorPackage
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                5.0.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Installation:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dependencies.html">Dependencies</a></li>
+<li class="toctree-l1"><a class="reference internal" href="consuming.html">Consuming slsDetectorPackage</a></li>
+</ul>
+<p class="caption"><span class="caption-text">C++ API</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="detector.html">Detector</a></li>
+<li class="toctree-l1"><a class="reference internal" href="result.html">Result</a></li>
+<li class="toctree-l1"><a class="reference internal" href="receiver.html">Receiver</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Python API</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="pydetector.html">Detector</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pyenums.html">Enums</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pyexamples.html">Examples</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Command line</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="commandline.html">Command line interface</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Developer</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">ContainerUtils</a></li>
+<li class="toctree-l1"><a class="reference internal" href="type_traits.html">TypeTraits</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ToString.html">ToString</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">slsDetectorPackage</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>ContainerUtils</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/container_utils.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="containerutils">
+<h1>ContainerUtils<a class="headerlink" href="#containerutils" title="Permalink to this headline">¶</a></h1>
+<p>Helper functions to handle standard container compliant
+containers. Supports array, vector, sls::Result etc.</p>
+<p>While not a part of the public API we aim not to change this
+interface too much. However, we don’t give the same strong
+guarantees as for Detector etc.</p>
+<p>Any reoccurring container operation should probably be added to
+this file.</p>
+<dl class="type">
+<dt id="_CPPv43sls">
+<span id="_CPPv33sls"></span><span id="_CPPv23sls"></span><span id="sls"></span><span class="target" id="namespacesls"></span><em class="property">namespace </em><code class="sig-name descname">sls</code><br /></dt>
+<dd><div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Functions</p>
+<dl class="function">
+<dt id="_CPPv4I0DpEN3sls11make_uniqueENSt9enable_ifIXntNSt8is_arrayI1TE5valueEENSt10unique_ptrI1TEEE4typeEDpRR4Args">
+<span id="_CPPv3I0DpEN3sls11make_uniqueEDpRR4Args"></span><span id="_CPPv2I0DpEN3sls11make_uniqueEDpRR4Args"></span><span class="target" id="namespacesls_1a8437fdda3c3acd7b2a32163b65ed1544"></span>template&lt;typename <code class="sig-name descname">T</code>, typename ...<code class="sig-name descname">Args</code>&gt;<br />std::enable_if&lt;!std::is_array&lt;<a class="reference internal" href="#_CPPv4I0DpEN3sls11make_uniqueENSt9enable_ifIXntNSt8is_arrayI1TE5valueEENSt10unique_ptrI1TEEE4typeEDpRR4Args" title="sls::make_unique::T">T</a>&gt;::value, std::unique_ptr&lt;<a class="reference internal" href="#_CPPv4I0DpEN3sls11make_uniqueENSt9enable_ifIXntNSt8is_arrayI1TE5valueEENSt10unique_ptrI1TEEE4typeEDpRR4Args" title="sls::make_unique::T">T</a>&gt;&gt;::type <code class="sig-name descname">make_unique</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4I0DpEN3sls11make_uniqueENSt9enable_ifIXntNSt8is_arrayI1TE5valueEENSt10unique_ptrI1TEEE4typeEDpRR4Args" title="sls::make_unique::Args">Args</a>&amp;&amp;... <em>args</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4I0DpEN3sls11make_uniqueENSt9enable_ifIXntNSt8is_arrayI1TE5valueEENSt10unique_ptrI1TEEE4typeEDpRR4Args" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv4I0EN3sls11make_uniqueENSt9enable_ifINSt8is_arrayI1TE5valueENSt10unique_ptrI1TEEE4typeENSt6size_tE">
+<span id="_CPPv3I0EN3sls11make_uniqueENSt6size_tE"></span><span id="_CPPv2I0EN3sls11make_uniqueENSt6size_tE"></span><span class="target" id="namespacesls_1a1de26b51b64ccfdc0b4fe43edf9b2ca0"></span>template&lt;typename <code class="sig-name descname">T</code>&gt;<br />std::enable_if&lt;std::is_array&lt;<a class="reference internal" href="#_CPPv4I0EN3sls11make_uniqueENSt9enable_ifINSt8is_arrayI1TE5valueENSt10unique_ptrI1TEEE4typeENSt6size_tE" title="sls::make_unique::T">T</a>&gt;::value, std::unique_ptr&lt;<a class="reference internal" href="#_CPPv4I0EN3sls11make_uniqueENSt9enable_ifINSt8is_arrayI1TE5valueENSt10unique_ptrI1TEEE4typeENSt6size_tE" title="sls::make_unique::T">T</a>&gt;&gt;::type <code class="sig-name descname">make_unique</code><span class="sig-paren">(</span>std::size_t <em>n</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4I0EN3sls11make_uniqueENSt9enable_ifINSt8is_arrayI1TE5valueENSt10unique_ptrI1TEEE4typeENSt6size_tE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv4I0EN3sls8allEqualEbRK9Container">
+<span id="_CPPv3I0EN3sls8allEqualERK9Container"></span><span id="_CPPv2I0EN3sls8allEqualERK9Container"></span><span class="target" id="namespacesls_1a2389ce56ad5220b225c132806de784ed"></span>template&lt;typename <code class="sig-name descname">Container</code>&gt;<br />bool <code class="sig-name descname">allEqual</code><span class="sig-paren">(</span><em class="property">const</em> <a class="reference internal" href="#_CPPv4I0EN3sls8allEqualEbRK9Container" title="sls::allEqual::Container">Container</a> &amp;<em>c</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4I0EN3sls8allEqualEbRK9Container" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Compare elements in a Container to see if they are all equal </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv4I0EN3sls15allEqualWithTolENSt9enable_ifINSt13is_arithmeticI1TE5valueEbE4typeERKNSt6vectorI1TEEK1T">
+<span id="_CPPv3I0EN3sls15allEqualWithTolERKNSt6vectorI1TEEK1T"></span><span id="_CPPv2I0EN3sls15allEqualWithTolERKNSt6vectorI1TEEK1T"></span><span class="target" id="namespacesls_1a3d3fb95f1bc7bb3b57daaec9aa8dd747"></span>template&lt;typename <code class="sig-name descname">T</code>&gt;<br />std::enable_if&lt;std::is_arithmetic&lt;<a class="reference internal" href="#_CPPv4I0EN3sls15allEqualWithTolENSt9enable_ifINSt13is_arithmeticI1TE5valueEbE4typeERKNSt6vectorI1TEEK1T" title="sls::allEqualWithTol::T">T</a>&gt;::value, bool&gt;::type <code class="sig-name descname">allEqualWithTol</code><span class="sig-paren">(</span><em class="property">const</em> std::vector&lt;<a class="reference internal" href="#_CPPv4I0EN3sls15allEqualWithTolENSt9enable_ifINSt13is_arithmeticI1TE5valueEbE4typeERKNSt6vectorI1TEEK1T" title="sls::allEqualWithTol::T">T</a>&gt; &amp;<em>container</em>, <em class="property">const</em> <a class="reference internal" href="#_CPPv4I0EN3sls15allEqualWithTolENSt9enable_ifINSt13is_arithmeticI1TE5valueEbE4typeERKNSt6vectorI1TEEK1T" title="sls::allEqualWithTol::T">T</a> <em>tol</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4I0EN3sls15allEqualWithTolENSt9enable_ifINSt13is_arithmeticI1TE5valueEbE4typeERKNSt6vectorI1TEEK1T" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Compare elements but with specified tolerance, useful for floating point values. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv4I0EN3sls10allEqualToEbRKNSt6vectorI1TEEK1T">
+<span id="_CPPv3I0EN3sls10allEqualToERKNSt6vectorI1TEEK1T"></span><span id="_CPPv2I0EN3sls10allEqualToERKNSt6vectorI1TEEK1T"></span><span class="target" id="namespacesls_1a71ecf200c0d008d90489320cbe6b69f7"></span>template&lt;typename <code class="sig-name descname">T</code>&gt;<br />bool <code class="sig-name descname">allEqualTo</code><span class="sig-paren">(</span><em class="property">const</em> std::vector&lt;<a class="reference internal" href="#_CPPv4I0EN3sls10allEqualToEbRKNSt6vectorI1TEEK1T" title="sls::allEqualTo::T">T</a>&gt; &amp;<em>container</em>, <em class="property">const</em> <a class="reference internal" href="#_CPPv4I0EN3sls10allEqualToEbRKNSt6vectorI1TEEK1T" title="sls::allEqualTo::T">T</a> <em>value</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4I0EN3sls10allEqualToEbRKNSt6vectorI1TEEK1T" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv4I0EN3sls17allEqualToWithTolEbRKNSt6vectorI1TEEK1TK1T">
+<span id="_CPPv3I0EN3sls17allEqualToWithTolERKNSt6vectorI1TEEK1TK1T"></span><span id="_CPPv2I0EN3sls17allEqualToWithTolERKNSt6vectorI1TEEK1TK1T"></span><span class="target" id="namespacesls_1a91900b221ab990a7c88ad240d586933d"></span>template&lt;typename <code class="sig-name descname">T</code>&gt;<br />bool <code class="sig-name descname">allEqualToWithTol</code><span class="sig-paren">(</span><em class="property">const</em> std::vector&lt;<a class="reference internal" href="#_CPPv4I0EN3sls17allEqualToWithTolEbRKNSt6vectorI1TEEK1TK1T" title="sls::allEqualToWithTol::T">T</a>&gt; &amp;<em>container</em>, <em class="property">const</em> <a class="reference internal" href="#_CPPv4I0EN3sls17allEqualToWithTolEbRKNSt6vectorI1TEEK1TK1T" title="sls::allEqualToWithTol::T">T</a> <em>value</em>, <em class="property">const</em> <a class="reference internal" href="#_CPPv4I0EN3sls17allEqualToWithTolEbRKNSt6vectorI1TEEK1TK1T" title="sls::allEqualToWithTol::T">T</a> <em>tol</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4I0EN3sls17allEqualToWithTolEbRKNSt6vectorI1TEEK1TK1T" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv4I0EN3sls10anyEqualToEbRKNSt6vectorI1TEEK1T">
+<span id="_CPPv3I0EN3sls10anyEqualToERKNSt6vectorI1TEEK1T"></span><span id="_CPPv2I0EN3sls10anyEqualToERKNSt6vectorI1TEEK1T"></span><span class="target" id="namespacesls_1a3690dc9dfe60e4169d0d3b49ffd6be7f"></span>template&lt;typename <code class="sig-name descname">T</code>&gt;<br />bool <code class="sig-name descname">anyEqualTo</code><span class="sig-paren">(</span><em class="property">const</em> std::vector&lt;<a class="reference internal" href="#_CPPv4I0EN3sls10anyEqualToEbRKNSt6vectorI1TEEK1T" title="sls::anyEqualTo::T">T</a>&gt; &amp;<em>container</em>, <em class="property">const</em> <a class="reference internal" href="#_CPPv4I0EN3sls10anyEqualToEbRKNSt6vectorI1TEEK1T" title="sls::anyEqualTo::T">T</a> <em>value</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4I0EN3sls10anyEqualToEbRKNSt6vectorI1TEEK1T" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv4I0EN3sls17anyEqualToWithTolEbRKNSt6vectorI1TEEK1TK1T">
+<span id="_CPPv3I0EN3sls17anyEqualToWithTolERKNSt6vectorI1TEEK1TK1T"></span><span id="_CPPv2I0EN3sls17anyEqualToWithTolERKNSt6vectorI1TEEK1TK1T"></span><span class="target" id="namespacesls_1a17e311d48536675a250d7a2b2ec32afc"></span>template&lt;typename <code class="sig-name descname">T</code>&gt;<br />bool <code class="sig-name descname">anyEqualToWithTol</code><span class="sig-paren">(</span><em class="property">const</em> std::vector&lt;<a class="reference internal" href="#_CPPv4I0EN3sls17anyEqualToWithTolEbRKNSt6vectorI1TEEK1TK1T" title="sls::anyEqualToWithTol::T">T</a>&gt; &amp;<em>container</em>, <em class="property">const</em> <a class="reference internal" href="#_CPPv4I0EN3sls17anyEqualToWithTolEbRKNSt6vectorI1TEEK1TK1T" title="sls::anyEqualToWithTol::T">T</a> <em>value</em>, <em class="property">const</em> <a class="reference internal" href="#_CPPv4I0EN3sls17anyEqualToWithTolEbRKNSt6vectorI1TEEK1TK1T" title="sls::anyEqualToWithTol::T">T</a> <em>tol</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4I0EN3sls17anyEqualToWithTolEbRKNSt6vectorI1TEEK1TK1T" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv4I0EN3sls3sumENSt9enable_ifINSt13is_arithmeticI1TE5valueE1TE4typeERKNSt6vectorI1TEE">
+<span id="_CPPv3I0EN3sls3sumERKNSt6vectorI1TEE"></span><span id="_CPPv2I0EN3sls3sumERKNSt6vectorI1TEE"></span><span class="target" id="namespacesls_1a5aaaca4007c082501e97da74c6e6945a"></span>template&lt;typename <code class="sig-name descname">T</code>&gt;<br />std::enable_if&lt;std::is_arithmetic&lt;<a class="reference internal" href="#_CPPv4I0EN3sls3sumENSt9enable_ifINSt13is_arithmeticI1TE5valueE1TE4typeERKNSt6vectorI1TEE" title="sls::sum::T">T</a>&gt;::value, <a class="reference internal" href="#_CPPv4I0EN3sls3sumENSt9enable_ifINSt13is_arithmeticI1TE5valueE1TE4typeERKNSt6vectorI1TEE" title="sls::sum::T">T</a>&gt;::type <code class="sig-name descname">sum</code><span class="sig-paren">(</span><em class="property">const</em> std::vector&lt;<a class="reference internal" href="#_CPPv4I0EN3sls3sumENSt9enable_ifINSt13is_arithmeticI1TE5valueE1TE4typeERKNSt6vectorI1TEE" title="sls::sum::T">T</a>&gt; &amp;<em>container</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4I0EN3sls3sumENSt9enable_ifINSt13is_arithmeticI1TE5valueE1TE4typeERKNSt6vectorI1TEE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv4I0EN3sls19minusOneIfDifferentE1TRKNSt6vectorI1TEE">
+<span id="_CPPv3I0EN3sls19minusOneIfDifferentERKNSt6vectorI1TEE"></span><span id="_CPPv2I0EN3sls19minusOneIfDifferentERKNSt6vectorI1TEE"></span><span class="target" id="namespacesls_1a68437717dda12f37262f2a5528727e86"></span>template&lt;typename <code class="sig-name descname">T</code>&gt;<br /><a class="reference internal" href="#_CPPv4I0EN3sls19minusOneIfDifferentE1TRKNSt6vectorI1TEE" title="sls::minusOneIfDifferent::T">T</a> <code class="sig-name descname">minusOneIfDifferent</code><span class="sig-paren">(</span><em class="property">const</em> std::vector&lt;<a class="reference internal" href="#_CPPv4I0EN3sls19minusOneIfDifferentE1TRKNSt6vectorI1TEE" title="sls::minusOneIfDifferent::T">T</a>&gt; &amp;<em>container</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4I0EN3sls19minusOneIfDifferentE1TRKNSt6vectorI1TEE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv4N3sls19minusOneIfDifferentERKNSt6vectorIbEE">
+<span id="_CPPv3N3sls19minusOneIfDifferentERKNSt6vectorIbEE"></span><span id="_CPPv2N3sls19minusOneIfDifferentERKNSt6vectorIbEE"></span><span id="sls::minusOneIfDifferent__std::vector:b:CR"></span><span class="target" id="namespacesls_1a0279cef1b4efe914aac0b5ecb2068400"></span>int <code class="sig-name descname">minusOneIfDifferent</code><span class="sig-paren">(</span><em class="property">const</em> std::vector&lt;bool&gt; &amp;<em>container</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3sls19minusOneIfDifferentERKNSt6vectorIbEE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv4I0EN3sls19minusOneIfDifferentENSt6vectorI1TEERKNSt6vectorINSt6vectorI1TEEEE">
+<span id="_CPPv3I0EN3sls19minusOneIfDifferentERKNSt6vectorINSt6vectorI1TEEEE"></span><span id="_CPPv2I0EN3sls19minusOneIfDifferentERKNSt6vectorINSt6vectorI1TEEEE"></span><span class="target" id="namespacesls_1aeabf664a32f9ea5c68979c00dc99fd17"></span>template&lt;typename <code class="sig-name descname">T</code>&gt;<br />std::vector&lt;<a class="reference internal" href="#_CPPv4I0EN3sls19minusOneIfDifferentE1TRKNSt6vectorI1TEE" title="sls::minusOneIfDifferent::T">T</a>&gt; <code class="sig-name descname">minusOneIfDifferent</code><span class="sig-paren">(</span><em class="property">const</em> std::vector&lt;std::vector&lt;<a class="reference internal" href="#_CPPv4I0EN3sls19minusOneIfDifferentE1TRKNSt6vectorI1TEE" title="sls::minusOneIfDifferent::T">T</a>&gt;&gt; &amp;<em>container</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4I0EN3sls19minusOneIfDifferentENSt6vectorI1TEERKNSt6vectorINSt6vectorI1TEEEE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv4I0_6size_tEN3sls19minusOneIfDifferentENSt5arrayI1T4sizeEERKNSt6vectorINSt5arrayI1T4sizeEEEE">
+<span id="_CPPv3I0_6size_tEN3sls19minusOneIfDifferentERKNSt6vectorINSt5arrayI1T4sizeEEEE"></span><span id="_CPPv2I0_6size_tEN3sls19minusOneIfDifferentERKNSt6vectorINSt5arrayI1T4sizeEEEE"></span><span class="target" id="namespacesls_1a20d4fc6b1038de0d3de1cfa5a15d6655"></span>template&lt;typename <code class="sig-name descname">T</code>, size_t <code class="sig-name descname">size</code>&gt;<br />std::array&lt;<a class="reference internal" href="#_CPPv4I0_6size_tEN3sls19minusOneIfDifferentENSt5arrayI1T4sizeEERKNSt6vectorINSt5arrayI1T4sizeEEEE" title="sls::minusOneIfDifferent::T">T</a>, <a class="reference internal" href="#_CPPv4I0_6size_tEN3sls19minusOneIfDifferentENSt5arrayI1T4sizeEERKNSt6vectorINSt5arrayI1T4sizeEEEE" title="sls::minusOneIfDifferent::size">size</a>&gt; <code class="sig-name descname">minusOneIfDifferent</code><span class="sig-paren">(</span><em class="property">const</em> std::vector&lt;std::array&lt;<a class="reference internal" href="#_CPPv4I0_6size_tEN3sls19minusOneIfDifferentENSt5arrayI1T4sizeEERKNSt6vectorINSt5arrayI1T4sizeEEEE" title="sls::minusOneIfDifferent::T">T</a>, <a class="reference internal" href="#_CPPv4I0_6size_tEN3sls19minusOneIfDifferentENSt5arrayI1T4sizeEERKNSt6vectorINSt5arrayI1T4sizeEEEE" title="sls::minusOneIfDifferent::size">size</a>&gt;&gt; &amp;<em>container</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4I0_6size_tEN3sls19minusOneIfDifferentENSt5arrayI1T4sizeEERKNSt6vectorINSt5arrayI1T4sizeEEEE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv4I0EN3sls6SquashEN9Container10value_typeERK9ContainerN9Container10value_typeE">
+<span id="_CPPv3I0EN3sls6SquashERK9ContainerN9Container10value_typeE"></span><span id="_CPPv2I0EN3sls6SquashERK9ContainerN9Container10value_typeE"></span><span class="target" id="namespacesls_1a21d4f279b357894fee7e0f3958a1cb89"></span>template&lt;typename <code class="sig-name descname">Container</code>&gt;<br /><a class="reference internal" href="#_CPPv4I0EN3sls6SquashEN9Container10value_typeERK9ContainerN9Container10value_typeE" title="sls::Squash::Container">Container</a>::value_type <code class="sig-name descname">Squash</code><span class="sig-paren">(</span><em class="property">const</em> <a class="reference internal" href="#_CPPv4I0EN3sls6SquashEN9Container10value_typeERK9ContainerN9Container10value_typeE" title="sls::Squash::Container">Container</a> &amp;<em>c</em>, <em class="property">typename</em> <a class="reference internal" href="#_CPPv4I0EN3sls6SquashEN9Container10value_typeERK9ContainerN9Container10value_typeE" title="sls::Squash::Container">Container</a>::value_type <em>default_value</em> = {}<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4I0EN3sls6SquashEN9Container10value_typeERK9ContainerN9Container10value_typeE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Return the first value if all values are equal otherwise return default_value. If no default value is supplied it will be default constructed </p>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="type_traits.html" class="btn btn-neutral float-right" title="TypeTraits" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="commandline.html" class="btn btn-neutral float-left" title="Command line interface" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, PSD Detector Group
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

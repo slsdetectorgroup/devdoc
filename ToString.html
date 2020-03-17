@@ -1,0 +1,443 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>ToString &mdash; slsDetectorPackage  documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="TypeTraits" href="type_traits.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> slsDetectorPackage
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                5.0.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Installation:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dependencies.html">Dependencies</a></li>
+<li class="toctree-l1"><a class="reference internal" href="consuming.html">Consuming slsDetectorPackage</a></li>
+</ul>
+<p class="caption"><span class="caption-text">C++ API</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="detector.html">Detector</a></li>
+<li class="toctree-l1"><a class="reference internal" href="result.html">Result</a></li>
+<li class="toctree-l1"><a class="reference internal" href="receiver.html">Receiver</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Python API</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="pydetector.html">Detector</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pyenums.html">Enums</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pyexamples.html">Examples</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Command line</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="commandline.html">Command line interface</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Developer</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="container_utils.html">ContainerUtils</a></li>
+<li class="toctree-l1"><a class="reference internal" href="type_traits.html">TypeTraits</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">ToString</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">slsDetectorPackage</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>ToString</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/ToString.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="tostring">
+<h1>ToString<a class="headerlink" href="#tostring" title="Permalink to this headline">¶</a></h1>
+<p>String conversion</p>
+<p>Conversion from various types to std::string </p>
+<dl class="type">
+<dt id="_CPPv43sls">
+<span id="_CPPv33sls"></span><span id="_CPPv23sls"></span><span id="sls"></span><span class="target" id="namespacesls"></span><em class="property">namespace </em><code class="sig-name descname">sls</code><a class="headerlink" href="#_CPPv43sls" title="Permalink to this definition">¶</a><br /></dt>
+<dd><div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Functions</p>
+<dl class="function">
+<dt id="_CPPv4N3sls8ToStringEKN4defs9runStatusE">
+<span id="_CPPv3N3sls8ToStringEKN4defs9runStatusE"></span><span id="_CPPv2N3sls8ToStringEKN4defs9runStatusE"></span><span id="sls::ToString__defs::runStatusC"></span><span class="target" id="namespacesls_1a137c900fccfe078a05fe2fb0dfd05cf8"></span>std::string <code class="sig-name descname">ToString</code><span class="sig-paren">(</span><em class="property">const</em> defs::runStatus <em>s</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3sls8ToStringEKN4defs9runStatusE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv4N3sls8ToStringEKN4defs12detectorTypeE">
+<span id="_CPPv3N3sls8ToStringEKN4defs12detectorTypeE"></span><span id="_CPPv2N3sls8ToStringEKN4defs12detectorTypeE"></span><span id="sls::ToString__defs::detectorTypeC"></span><span class="target" id="namespacesls_1a1fa5646ba4999b3aac217380e5f76220"></span>std::string <code class="sig-name descname">ToString</code><span class="sig-paren">(</span><em class="property">const</em> defs::detectorType <em>s</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3sls8ToStringEKN4defs12detectorTypeE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv4N3sls8ToStringEKN4defs16detectorSettingsE">
+<span id="_CPPv3N3sls8ToStringEKN4defs16detectorSettingsE"></span><span id="_CPPv2N3sls8ToStringEKN4defs16detectorSettingsE"></span><span id="sls::ToString__defs::detectorSettingsC"></span><span class="target" id="namespacesls_1a0f6c7abfbad8fb782f68a32344d6164c"></span>std::string <code class="sig-name descname">ToString</code><span class="sig-paren">(</span><em class="property">const</em> defs::detectorSettings <em>s</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3sls8ToStringEKN4defs16detectorSettingsE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv4N3sls8ToStringEKN4defs10speedLevelE">
+<span id="_CPPv3N3sls8ToStringEKN4defs10speedLevelE"></span><span id="_CPPv2N3sls8ToStringEKN4defs10speedLevelE"></span><span id="sls::ToString__defs::speedLevelC"></span><span class="target" id="namespacesls_1a099f3e3f4dffe5576d5fbd9cec1a36d6"></span>std::string <code class="sig-name descname">ToString</code><span class="sig-paren">(</span><em class="property">const</em> defs::speedLevel <em>s</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3sls8ToStringEKN4defs10speedLevelE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv4N3sls8ToStringEKN4defs10timingModeE">
+<span id="_CPPv3N3sls8ToStringEKN4defs10timingModeE"></span><span id="_CPPv2N3sls8ToStringEKN4defs10timingModeE"></span><span id="sls::ToString__defs::timingModeC"></span><span class="target" id="namespacesls_1a9271c1911bc78abbaa91ec8787a3261b"></span>std::string <code class="sig-name descname">ToString</code><span class="sig-paren">(</span><em class="property">const</em> defs::timingMode <em>s</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3sls8ToStringEKN4defs10timingModeE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv4N3sls8ToStringEKN4defs18frameDiscardPolicyE">
+<span id="_CPPv3N3sls8ToStringEKN4defs18frameDiscardPolicyE"></span><span id="_CPPv2N3sls8ToStringEKN4defs18frameDiscardPolicyE"></span><span id="sls::ToString__defs::frameDiscardPolicyC"></span><span class="target" id="namespacesls_1a7f45f852cfb9125e38644530b9b5fc98"></span>std::string <code class="sig-name descname">ToString</code><span class="sig-paren">(</span><em class="property">const</em> defs::frameDiscardPolicy <em>s</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3sls8ToStringEKN4defs18frameDiscardPolicyE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv4N3sls8ToStringEKN4defs10fileFormatE">
+<span id="_CPPv3N3sls8ToStringEKN4defs10fileFormatE"></span><span id="_CPPv2N3sls8ToStringEKN4defs10fileFormatE"></span><span id="sls::ToString__defs::fileFormatC"></span><span class="target" id="namespacesls_1a97b145831fc0d006bfa9da296c6c2efd"></span>std::string <code class="sig-name descname">ToString</code><span class="sig-paren">(</span><em class="property">const</em> defs::fileFormat <em>s</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3sls8ToStringEKN4defs10fileFormatE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv4N3sls8ToStringEKN4defs18externalSignalFlagE">
+<span id="_CPPv3N3sls8ToStringEKN4defs18externalSignalFlagE"></span><span id="_CPPv2N3sls8ToStringEKN4defs18externalSignalFlagE"></span><span id="sls::ToString__defs::externalSignalFlagC"></span><span class="target" id="namespacesls_1a12c381cc540c1937cc8f8b9159552b0d"></span>std::string <code class="sig-name descname">ToString</code><span class="sig-paren">(</span><em class="property">const</em> defs::externalSignalFlag <em>s</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3sls8ToStringEKN4defs18externalSignalFlagE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv4N3sls8ToStringEKN4defs11readoutModeE">
+<span id="_CPPv3N3sls8ToStringEKN4defs11readoutModeE"></span><span id="_CPPv2N3sls8ToStringEKN4defs11readoutModeE"></span><span id="sls::ToString__defs::readoutModeC"></span><span class="target" id="namespacesls_1a60423ccb240931683f011fc45f30622d"></span>std::string <code class="sig-name descname">ToString</code><span class="sig-paren">(</span><em class="property">const</em> defs::readoutMode <em>s</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3sls8ToStringEKN4defs11readoutModeE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv4N3sls8ToStringEKN4defs13frameModeTypeE">
+<span id="_CPPv3N3sls8ToStringEKN4defs13frameModeTypeE"></span><span id="_CPPv2N3sls8ToStringEKN4defs13frameModeTypeE"></span><span id="sls::ToString__defs::frameModeTypeC"></span><span class="target" id="namespacesls_1acd7dce94eb561b12367f768e2b6da64a"></span>std::string <code class="sig-name descname">ToString</code><span class="sig-paren">(</span><em class="property">const</em> defs::frameModeType <em>s</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3sls8ToStringEKN4defs13frameModeTypeE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv4N3sls8ToStringEKN4defs16detectorModeTypeE">
+<span id="_CPPv3N3sls8ToStringEKN4defs16detectorModeTypeE"></span><span id="_CPPv2N3sls8ToStringEKN4defs16detectorModeTypeE"></span><span id="sls::ToString__defs::detectorModeTypeC"></span><span class="target" id="namespacesls_1ab4fc30944c83d8133872ab13b9c2584c"></span>std::string <code class="sig-name descname">ToString</code><span class="sig-paren">(</span><em class="property">const</em> defs::detectorModeType <em>s</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3sls8ToStringEKN4defs16detectorModeTypeE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv4N3sls8ToStringEKN4defs9burstModeE">
+<span id="_CPPv3N3sls8ToStringEKN4defs9burstModeE"></span><span id="_CPPv2N3sls8ToStringEKN4defs9burstModeE"></span><span id="sls::ToString__defs::burstModeC"></span><span class="target" id="namespacesls_1aebb3273e2a5e4130b6459e57475a826d"></span>std::string <code class="sig-name descname">ToString</code><span class="sig-paren">(</span><em class="property">const</em> defs::burstMode <em>s</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3sls8ToStringEKN4defs9burstModeE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv4N3sls8ToStringEKN4defs16timingSourceTypeE">
+<span id="_CPPv3N3sls8ToStringEKN4defs16timingSourceTypeE"></span><span id="_CPPv2N3sls8ToStringEKN4defs16timingSourceTypeE"></span><span id="sls::ToString__defs::timingSourceTypeC"></span><span class="target" id="namespacesls_1aadd046d43b6f65548d0657249dc9e156"></span>std::string <code class="sig-name descname">ToString</code><span class="sig-paren">(</span><em class="property">const</em> defs::timingSourceType <em>s</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3sls8ToStringEKN4defs16timingSourceTypeE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv4N3sls8ToStringERKNSt6stringE">
+<span id="_CPPv3N3sls8ToStringERKNSt6stringE"></span><span id="_CPPv2N3sls8ToStringERKNSt6stringE"></span><span id="sls::ToString__ssCR"></span><span class="target" id="namespacesls_1ae70257612bf263c71d16e719b2e443da"></span>std::string <code class="sig-name descname">ToString</code><span class="sig-paren">(</span><em class="property">const</em> std::string &amp;<em>s</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3sls8ToStringERKNSt6stringE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv4I00EN3sls8ToStringENSt9enable_ifIN11is_durationI1TE5valueENSt6stringEE4typeE1TRKNSt6stringE">
+<span id="_CPPv3I00EN3sls8ToStringE1TRKNSt6stringE"></span><span id="_CPPv2I00EN3sls8ToStringE1TRKNSt6stringE"></span><span class="target" id="namespacesls_1a9c74b5f66359c370939acaf546e9a37a"></span>template&lt;typename <code class="sig-name descname">T</code>, typename <code class="sig-name descname">Rep</code> = double&gt;<br />std::enable_if&lt;<a class="reference internal" href="type_traits.html#_CPPv4I00EN3sls11is_durationE" title="sls::is_duration">is_duration</a>&lt;<a class="reference internal" href="#_CPPv4I00EN3sls8ToStringENSt9enable_ifIN11is_durationI1TE5valueENSt6stringEE4typeE1TRKNSt6stringE" title="sls::ToString::T">T</a>&gt;::value, std::string&gt;::type <code class="sig-name descname">ToString</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4I00EN3sls8ToStringENSt9enable_ifIN11is_durationI1TE5valueENSt6stringEE4typeE1TRKNSt6stringE" title="sls::ToString::T">T</a> <em>t</em>, <em class="property">const</em> std::string &amp;<em>unit</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4I00EN3sls8ToStringENSt9enable_ifIN11is_durationI1TE5valueENSt6stringEE4typeE1TRKNSt6stringE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Convert std::chrono::duration with specified output unit </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv4I0EN3sls8ToStringENSt9enable_ifIN11is_durationI4FromE5valueENSt6stringEE4typeE4From">
+<span id="_CPPv3I0EN3sls8ToStringE4From"></span><span id="_CPPv2I0EN3sls8ToStringE4From"></span><span class="target" id="namespacesls_1a76528ca3b3f4fe94cf0f75539cf942f7"></span>template&lt;typename <code class="sig-name descname">From</code>&gt;<br />std::enable_if&lt;<a class="reference internal" href="type_traits.html#_CPPv4I00EN3sls11is_durationE" title="sls::is_duration">is_duration</a>&lt;<a class="reference internal" href="#_CPPv4I0EN3sls8ToStringENSt9enable_ifIN11is_durationI4FromE5valueENSt6stringEE4typeE4From" title="sls::ToString::From">From</a>&gt;::value, std::string&gt;::type <code class="sig-name descname">ToString</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4I0EN3sls8ToStringENSt9enable_ifIN11is_durationI4FromE5valueENSt6stringEE4typeE4From" title="sls::ToString::From">From</a> <em>t</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4I0EN3sls8ToStringENSt9enable_ifIN11is_durationI4FromE5valueENSt6stringEE4typeE4From" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Convert std::chrono::duration automatically selecting the unit </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv4I0EN3sls8ToStringENSt9enable_ifINSt17is_floating_pointI1TE5valueENSt6stringEE4typeERK1T">
+<span id="_CPPv3I0EN3sls8ToStringERK1T"></span><span id="_CPPv2I0EN3sls8ToStringERK1T"></span><span class="target" id="namespacesls_1a72a9ca4f9ad9abecbcb8a6c48d2b86b3"></span>template&lt;typename <code class="sig-name descname">T</code>&gt;<br />std::enable_if&lt;std::is_floating_point&lt;<a class="reference internal" href="#_CPPv4I0EN3sls8ToStringENSt9enable_ifINSt17is_floating_pointI1TE5valueENSt6stringEE4typeERK1T" title="sls::ToString::T">T</a>&gt;::value, std::string&gt;::type <code class="sig-name descname">ToString</code><span class="sig-paren">(</span><em class="property">const</em> <a class="reference internal" href="#_CPPv4I0EN3sls8ToStringENSt9enable_ifINSt17is_floating_pointI1TE5valueENSt6stringEE4typeERK1T" title="sls::ToString::T">T</a> &amp;<em>value</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4I0EN3sls8ToStringENSt9enable_ifINSt17is_floating_pointI1TE5valueENSt6stringEE4typeERK1T" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Conversion of floating point values, removes trailing zeros </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv4I0EN3sls8ToStringENSt9enable_ifINSt11is_integralI1TE5valueENSt6stringEE4typeERK1T">
+<span id="_CPPv3I0EN3sls8ToStringERK1T"></span><span class="target" id="namespacesls_1a82bdb4351995ee5ccc469181b78b756e"></span>template&lt;typename <code class="sig-name descname">T</code>&gt;<br />std::enable_if&lt;std::is_integral&lt;<a class="reference internal" href="#_CPPv4I0EN3sls8ToStringENSt9enable_ifINSt17is_floating_pointI1TE5valueENSt6stringEE4typeERK1T" title="sls::ToString::T">T</a>&gt;::value, std::string&gt;::type <code class="sig-name descname">ToString</code><span class="sig-paren">(</span><em class="property">const</em> <a class="reference internal" href="#_CPPv4I0EN3sls8ToStringENSt9enable_ifINSt17is_floating_pointI1TE5valueENSt6stringEE4typeERK1T" title="sls::ToString::T">T</a> &amp;<em>value</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4I0EN3sls8ToStringENSt9enable_ifINSt11is_integralI1TE5valueENSt6stringEE4typeERK1T" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Conversion of integer types, do not remove trailing zeros </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv4I0EN3sls11ToStringHexENSt9enable_ifINSt11is_integralI1TE5valueENSt6stringEE4typeERK1T">
+<span id="_CPPv3I0EN3sls11ToStringHexERK1T"></span><span id="_CPPv2I0EN3sls11ToStringHexERK1T"></span><span class="target" id="namespacesls_1a5792c03d2c9dd0a136574d393732d704"></span>template&lt;typename <code class="sig-name descname">T</code>&gt;<br />std::enable_if&lt;std::is_integral&lt;<a class="reference internal" href="#_CPPv4I0EN3sls11ToStringHexENSt9enable_ifINSt11is_integralI1TE5valueENSt6stringEE4typeERK1T" title="sls::ToStringHex::T">T</a>&gt;::value, std::string&gt;::type <code class="sig-name descname">ToStringHex</code><span class="sig-paren">(</span><em class="property">const</em> <a class="reference internal" href="#_CPPv4I0EN3sls11ToStringHexENSt9enable_ifINSt11is_integralI1TE5valueENSt6stringEE4typeERK1T" title="sls::ToStringHex::T">T</a> &amp;<em>value</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4I0EN3sls11ToStringHexENSt9enable_ifINSt11is_integralI1TE5valueENSt6stringEE4typeERK1T" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Conversion of integer types, do not remove trailing zeros </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv4I0EN3sls11ToStringHexENSt9enable_ifIXaaN12is_containerI1TE5valueEntNSt7is_sameIN1T10value_typeENSt6stringEE5valueEENSt6stringEE4typeERK1T">
+<span id="_CPPv3I0EN3sls11ToStringHexERK1T"></span><span class="target" id="namespacesls_1a6f2bff51ae8b7e1c1238e383404ca9da"></span>template&lt;typename <code class="sig-name descname">T</code>&gt;<br />std::enable_if&lt;<a class="reference internal" href="type_traits.html#_CPPv4I00EN3sls12is_containerE" title="sls::is_container">is_container</a>&lt;<a class="reference internal" href="#_CPPv4I0EN3sls11ToStringHexENSt9enable_ifINSt11is_integralI1TE5valueENSt6stringEE4typeERK1T" title="sls::ToStringHex::T">T</a>&gt;::value &amp;&amp; !std::is_same&lt;<em class="property">typename</em> <a class="reference internal" href="#_CPPv4I0EN3sls11ToStringHexENSt9enable_ifINSt11is_integralI1TE5valueENSt6stringEE4typeERK1T" title="sls::ToStringHex::T">T</a>::value_type, std::string&gt;::value, std::string&gt;::type <code class="sig-name descname">ToStringHex</code><span class="sig-paren">(</span><em class="property">const</em> <a class="reference internal" href="#_CPPv4I0EN3sls11ToStringHexENSt9enable_ifINSt11is_integralI1TE5valueENSt6stringEE4typeERK1T" title="sls::ToStringHex::T">T</a> &amp;<em>container</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4I0EN3sls11ToStringHexENSt9enable_ifIXaaN12is_containerI1TE5valueEntNSt7is_sameIN1T10value_typeENSt6stringEE5valueEENSt6stringEE4typeERK1T" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>hex For a container loop over all elements and call ToString on the element Container&lt;std::string&gt; is excluded </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv4I0EN3sls8ToStringENSt9enable_ifIXaaN12is_containerI1TE5valueEntNSt7is_sameIN1T10value_typeENSt6stringEE5valueEENSt6stringEE4typeERK1T">
+<span class="target" id="namespacesls_1a03ea09f5906422fb2a66036604b2e955"></span>template&lt;typename <code class="sig-name descname">T</code>&gt;<br />std::enable_if&lt;<a class="reference internal" href="type_traits.html#_CPPv4I00EN3sls12is_containerE" title="sls::is_container">is_container</a>&lt;<a class="reference internal" href="#_CPPv4I0EN3sls8ToStringENSt9enable_ifINSt17is_floating_pointI1TE5valueENSt6stringEE4typeERK1T" title="sls::ToString::T">T</a>&gt;::value &amp;&amp; !std::is_same&lt;<em class="property">typename</em> <a class="reference internal" href="#_CPPv4I0EN3sls8ToStringENSt9enable_ifINSt17is_floating_pointI1TE5valueENSt6stringEE4typeERK1T" title="sls::ToString::T">T</a>::value_type, std::string&gt;::value, std::string&gt;::type <code class="sig-name descname">ToString</code><span class="sig-paren">(</span><em class="property">const</em> <a class="reference internal" href="#_CPPv4I0EN3sls8ToStringENSt9enable_ifINSt17is_floating_pointI1TE5valueENSt6stringEE4typeERK1T" title="sls::ToString::T">T</a> &amp;<em>container</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4I0EN3sls8ToStringENSt9enable_ifIXaaN12is_containerI1TE5valueEntNSt7is_sameIN1T10value_typeENSt6stringEE5valueEENSt6stringEE4typeERK1T" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>For a container loop over all elements and call ToString on the element Container&lt;std::string&gt; is excluded </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv4I0EN3sls8ToStringENSt9enable_ifIXaaN12is_containerI1TE5valueENSt7is_sameIN1T10value_typeENSt6stringEE5valueEENSt6stringEE4typeERK1T">
+<span class="target" id="namespacesls_1aedee7db31606efe63e24d3242a9fbebc"></span>template&lt;typename <code class="sig-name descname">T</code>&gt;<br />std::enable_if&lt;<a class="reference internal" href="type_traits.html#_CPPv4I00EN3sls12is_containerE" title="sls::is_container">is_container</a>&lt;<a class="reference internal" href="#_CPPv4I0EN3sls8ToStringENSt9enable_ifINSt17is_floating_pointI1TE5valueENSt6stringEE4typeERK1T" title="sls::ToString::T">T</a>&gt;::value &amp;&amp; std::is_same&lt;<em class="property">typename</em> <a class="reference internal" href="#_CPPv4I0EN3sls8ToStringENSt9enable_ifINSt17is_floating_pointI1TE5valueENSt6stringEE4typeERK1T" title="sls::ToString::T">T</a>::value_type, std::string&gt;::value, std::string&gt;::type <code class="sig-name descname">ToString</code><span class="sig-paren">(</span><em class="property">const</em> <a class="reference internal" href="#_CPPv4I0EN3sls8ToStringENSt9enable_ifINSt17is_floating_pointI1TE5valueENSt6stringEE4typeERK1T" title="sls::ToString::T">T</a> &amp;<em>vec</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4I0EN3sls8ToStringENSt9enable_ifIXaaN12is_containerI1TE5valueENSt7is_sameIN1T10value_typeENSt6stringEE5valueEENSt6stringEE4typeERK1T" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Special case when container holds a string, don’t call ToString again but print directly to stream </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv4I0EN3sls8ToStringENSt9enable_ifIN12is_containerI1TE5valueENSt6stringEE4typeERK1TRKNSt6stringE">
+<span id="_CPPv3I0EN3sls8ToStringERK1TRKNSt6stringE"></span><span id="_CPPv2I0EN3sls8ToStringERK1TRKNSt6stringE"></span><span class="target" id="namespacesls_1af936863a66d0ccc9f16d7cd9ac50a400"></span>template&lt;typename <code class="sig-name descname">T</code>&gt;<br />std::enable_if&lt;<a class="reference internal" href="type_traits.html#_CPPv4I00EN3sls12is_containerE" title="sls::is_container">is_container</a>&lt;<a class="reference internal" href="#_CPPv4I0EN3sls8ToStringENSt9enable_ifINSt17is_floating_pointI1TE5valueENSt6stringEE4typeERK1T" title="sls::ToString::T">T</a>&gt;::value, std::string&gt;::type <code class="sig-name descname">ToString</code><span class="sig-paren">(</span><em class="property">const</em> <a class="reference internal" href="#_CPPv4I0EN3sls8ToStringENSt9enable_ifINSt17is_floating_pointI1TE5valueENSt6stringEE4typeERK1T" title="sls::ToString::T">T</a> &amp;<em>container</em>, <em class="property">const</em> std::string &amp;<em>unit</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4I0EN3sls8ToStringENSt9enable_ifIN12is_containerI1TE5valueENSt6stringEE4typeERK1TRKNSt6stringE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Container and specified unit, call ToString(value, unit) </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv4I0EN3sls8StringToE1TRKNSt6stringERKNSt6stringE">
+<span id="_CPPv3I0EN3sls8StringToERKNSt6stringERKNSt6stringE"></span><span id="_CPPv2I0EN3sls8StringToERKNSt6stringERKNSt6stringE"></span><span class="target" id="namespacesls_1acc97f8e4cf64fe1215e75def4f3cd023"></span>template&lt;typename <code class="sig-name descname">T</code>&gt;<br /><a class="reference internal" href="#_CPPv4I0EN3sls8StringToE1TRKNSt6stringERKNSt6stringE" title="sls::StringTo::T">T</a> <code class="sig-name descname">StringTo</code><span class="sig-paren">(</span><em class="property">const</em> std::string &amp;<em>t</em>, <em class="property">const</em> std::string &amp;<em>unit</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4I0EN3sls8StringToE1TRKNSt6stringERKNSt6stringE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv4I0EN3sls8StringToE1TRKNSt6stringE">
+<span id="_CPPv3I0EN3sls8StringToERKNSt6stringE"></span><span id="_CPPv2I0EN3sls8StringToERKNSt6stringE"></span><span class="target" id="namespacesls_1a08644dc7faa3a61e2356669f8430a7e7"></span>template&lt;typename <code class="sig-name descname">T</code>&gt;<br /><a class="reference internal" href="#_CPPv4I0EN3sls8StringToE1TRKNSt6stringERKNSt6stringE" title="sls::StringTo::T">T</a> <code class="sig-name descname">StringTo</code><span class="sig-paren">(</span><em class="property">const</em> std::string &amp;<em>t</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4I0EN3sls8StringToE1TRKNSt6stringE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv4IEN3sls8StringToEN4defs12detectorTypeERKNSt6stringE">
+<span id="_CPPv3IEN3sls8StringToERKNSt6stringE"></span><span id="_CPPv2IEN3sls8StringToERKNSt6stringE"></span><span class="target" id="namespacesls_1a3ace079f13155bac185870a162331de5"></span>template&lt;&gt;<br />defs::detectorType <code class="sig-name descname">StringTo</code><span class="sig-paren">(</span><em class="property">const</em> std::string &amp;<em>s</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4IEN3sls8StringToEN4defs12detectorTypeERKNSt6stringE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv4IEN3sls8StringToEN4defs16detectorSettingsERKNSt6stringE">
+<span id="_CPPv3IEN3sls8StringToERKNSt6stringE"></span><span class="target" id="namespacesls_1adfe21a102490d4cf31a3751b6781d751"></span>template&lt;&gt;<br />defs::detectorSettings <code class="sig-name descname">StringTo</code><span class="sig-paren">(</span><em class="property">const</em> std::string &amp;<em>s</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4IEN3sls8StringToEN4defs16detectorSettingsERKNSt6stringE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv4IEN3sls8StringToEN4defs10speedLevelERKNSt6stringE">
+<span class="target" id="namespacesls_1a26d53fcb553c09709280145d3ed75e83"></span>template&lt;&gt;<br />defs::speedLevel <code class="sig-name descname">StringTo</code><span class="sig-paren">(</span><em class="property">const</em> std::string &amp;<em>s</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4IEN3sls8StringToEN4defs10speedLevelERKNSt6stringE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv4IEN3sls8StringToEN4defs10timingModeERKNSt6stringE">
+<span class="target" id="namespacesls_1ab1bb0268da60b67601853a4da21793fb"></span>template&lt;&gt;<br />defs::timingMode <code class="sig-name descname">StringTo</code><span class="sig-paren">(</span><em class="property">const</em> std::string &amp;<em>s</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4IEN3sls8StringToEN4defs10timingModeERKNSt6stringE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv4IEN3sls8StringToEN4defs18frameDiscardPolicyERKNSt6stringE">
+<span class="target" id="namespacesls_1a84082ef9423d5108b2828849ace90381"></span>template&lt;&gt;<br />defs::frameDiscardPolicy <code class="sig-name descname">StringTo</code><span class="sig-paren">(</span><em class="property">const</em> std::string &amp;<em>s</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4IEN3sls8StringToEN4defs18frameDiscardPolicyERKNSt6stringE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv4IEN3sls8StringToEN4defs10fileFormatERKNSt6stringE">
+<span class="target" id="namespacesls_1aaf7e10c24bba5ea7c2f1de6fd7399dc9"></span>template&lt;&gt;<br />defs::fileFormat <code class="sig-name descname">StringTo</code><span class="sig-paren">(</span><em class="property">const</em> std::string &amp;<em>s</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4IEN3sls8StringToEN4defs10fileFormatERKNSt6stringE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv4IEN3sls8StringToEN4defs18externalSignalFlagERKNSt6stringE">
+<span class="target" id="namespacesls_1ac3b888e97c06e7f39ae345a8690b658c"></span>template&lt;&gt;<br />defs::externalSignalFlag <code class="sig-name descname">StringTo</code><span class="sig-paren">(</span><em class="property">const</em> std::string &amp;<em>s</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4IEN3sls8StringToEN4defs18externalSignalFlagERKNSt6stringE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv4IEN3sls8StringToEN4defs11readoutModeERKNSt6stringE">
+<span class="target" id="namespacesls_1a3407acdde0c8291eb524b824b13d1618"></span>template&lt;&gt;<br />defs::readoutMode <code class="sig-name descname">StringTo</code><span class="sig-paren">(</span><em class="property">const</em> std::string &amp;<em>s</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4IEN3sls8StringToEN4defs11readoutModeERKNSt6stringE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv4IEN3sls8StringToEN4defs13frameModeTypeERKNSt6stringE">
+<span class="target" id="namespacesls_1ab95347f56614372bbacbcc1a65a3fd44"></span>template&lt;&gt;<br />defs::frameModeType <code class="sig-name descname">StringTo</code><span class="sig-paren">(</span><em class="property">const</em> std::string &amp;<em>s</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4IEN3sls8StringToEN4defs13frameModeTypeERKNSt6stringE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv4IEN3sls8StringToEN4defs16detectorModeTypeERKNSt6stringE">
+<span class="target" id="namespacesls_1a7a0995cdb210d1ac6562e3ab55da1d29"></span>template&lt;&gt;<br />defs::detectorModeType <code class="sig-name descname">StringTo</code><span class="sig-paren">(</span><em class="property">const</em> std::string &amp;<em>s</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4IEN3sls8StringToEN4defs16detectorModeTypeERKNSt6stringE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv4IEN3sls8StringToEN4defs8dacIndexERKNSt6stringE">
+<span class="target" id="namespacesls_1a6b03b8dfa3c6a325c33e655cfe35cdfb"></span>template&lt;&gt;<br />defs::dacIndex <code class="sig-name descname">StringTo</code><span class="sig-paren">(</span><em class="property">const</em> std::string &amp;<em>s</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4IEN3sls8StringToEN4defs8dacIndexERKNSt6stringE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv4IEN3sls8StringToEN4defs9burstModeERKNSt6stringE">
+<span class="target" id="namespacesls_1adfbf1220e2bd8554041908f14e8b5b0b"></span>template&lt;&gt;<br />defs::burstMode <code class="sig-name descname">StringTo</code><span class="sig-paren">(</span><em class="property">const</em> std::string &amp;<em>s</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4IEN3sls8StringToEN4defs9burstModeERKNSt6stringE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv4IEN3sls8StringToEN4defs16timingSourceTypeERKNSt6stringE">
+<span class="target" id="namespacesls_1abeed969a9aa051d4eab0c22eb2c60691"></span>template&lt;&gt;<br />defs::timingSourceType <code class="sig-name descname">StringTo</code><span class="sig-paren">(</span><em class="property">const</em> std::string &amp;<em>s</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4IEN3sls8StringToEN4defs16timingSourceTypeERKNSt6stringE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv4I0EN3sls8ToStringENSt9enable_ifIN7has_strI1TE5valueENSt6stringEE4typeERK1T">
+<span class="target" id="namespacesls_1aa6cabcfa253a94822d105418688c4e99"></span>template&lt;typename <code class="sig-name descname">T</code>&gt;<br />std::enable_if&lt;<a class="reference internal" href="type_traits.html#_CPPv4I00EN3sls7has_strE" title="sls::has_str">has_str</a>&lt;<a class="reference internal" href="#_CPPv4I0EN3sls8ToStringENSt9enable_ifINSt17is_floating_pointI1TE5valueENSt6stringEE4typeERK1T" title="sls::ToString::T">T</a>&gt;::value, std::string&gt;::type <code class="sig-name descname">ToString</code><span class="sig-paren">(</span><em class="property">const</em> <a class="reference internal" href="#_CPPv4I0EN3sls8ToStringENSt9enable_ifINSt17is_floating_pointI1TE5valueENSt6stringEE4typeERK1T" title="sls::ToString::T">T</a> &amp;<em>obj</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4I0EN3sls8ToStringENSt9enable_ifIN7has_strI1TE5valueENSt6stringEE4typeERK1T" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>For types with a .str() method use this for conversion </p>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href="type_traits.html" class="btn btn-neutral float-left" title="TypeTraits" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, PSD Detector Group
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

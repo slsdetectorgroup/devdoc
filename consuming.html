@@ -1,0 +1,284 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Consuming slsDetectorPackage &mdash; slsDetectorPackage  documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Detector" href="detector.html" />
+    <link rel="prev" title="Dependencies" href="dependencies.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> slsDetectorPackage
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                5.0.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Installation:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dependencies.html">Dependencies</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Consuming slsDetectorPackage</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#cmake-with-submodule-in-your-project">CMake with submodule in your project</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#no-tools-minimal-approach">No tools minimal approach</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">C++ API</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="detector.html">Detector</a></li>
+<li class="toctree-l1"><a class="reference internal" href="result.html">Result</a></li>
+<li class="toctree-l1"><a class="reference internal" href="receiver.html">Receiver</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Python API</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="pydetector.html">Detector</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pyenums.html">Enums</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pyexamples.html">Examples</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Command line</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="commandline.html">Command line interface</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Developer</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="container_utils.html">ContainerUtils</a></li>
+<li class="toctree-l1"><a class="reference internal" href="type_traits.html">TypeTraits</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ToString.html">ToString</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">slsDetectorPackage</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>Consuming slsDetectorPackage</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/consuming.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="consuming-slsdetectorpackage">
+<h1>Consuming slsDetectorPackage<a class="headerlink" href="#consuming-slsdetectorpackage" title="Permalink to this headline">¶</a></h1>
+<p>Depending on how you want to build your integration with
+slsDetectorPackage there are a few different ways to
+consume the package.</p>
+<div class="section" id="cmake-with-submodule-in-your-project">
+<h2>CMake with submodule in your project<a class="headerlink" href="#cmake-with-submodule-in-your-project" title="Permalink to this headline">¶</a></h2>
+<p>If you are using CMake to build your integration and want to build everything
+in one go we support adding slsDetectorPackage as a subfolder in your cmake project.
+a minimal example would be.</p>
+<div class="highlight-cmake notranslate"><div class="highlight"><pre><span></span><span class="nb">project</span><span class="p">(</span><span class="s">myDetectorIntegration</span><span class="p">)</span>
+<span class="nb">cmake_minimum_required</span><span class="p">(</span><span class="s">VERSION</span> <span class="s">3.12</span><span class="p">)</span>
+<span class="nb">add_subdirectory</span><span class="p">(</span><span class="s">slsDetectorPackage</span><span class="p">)</span>
+
+<span class="c">#Add your executable</span>
+<span class="nb">add_executable</span><span class="p">(</span><span class="s">example</span> <span class="s">main.cpp</span><span class="p">)</span>
+<span class="nb">target_compile_features</span><span class="p">(</span><span class="s">example</span> <span class="s">PRIVATE</span> <span class="s">cxx_std_11</span><span class="p">)</span>
+
+<span class="c">#Link towards slsDetectorShared</span>
+<span class="nb">target_link_libraries</span><span class="p">(</span><span class="s">example</span> <span class="s">slsDetectorShared</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>An example that also uses git submodules is available in our github repo</p>
+<p><a class="reference external" href="https://github.com/slsdetectorgroup/cmake-subfolder-example">https://github.com/slsdetectorgroup/cmake-subfolder-example</a></p>
+</div>
+<div class="section" id="no-tools-minimal-approach">
+<h2>No tools minimal approach<a class="headerlink" href="#no-tools-minimal-approach" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span>#include &quot;Detector.h&quot;
+#include &lt;iostream&gt;
+int main(){
+
+    sls::Detector det;
+
+    //Get all values and print them
+    std::cout &lt;&lt; &quot;Hostname: &quot; &lt;&lt; det.getHostname() &lt;&lt; &quot;\n&quot;;
+    std::cout &lt;&lt; &quot;Type: &quot; &lt;&lt; det.getDetectorType() &lt;&lt; &quot;\n&quot;;
+    std::cout &lt;&lt; &quot;Udp ip: &quot; &lt;&lt; det.getSourceUDPIP() &lt;&lt; &quot;\n&quot;;
+
+
+    //Get mac addr
+    const int module = 0;
+    auto mac = det.getSourceUDPMAC()[module];
+    std::cout &lt;&lt; &quot;Mac addr of module &quot;&lt;&lt; module &lt;&lt;  &quot; is &quot; &lt;&lt;  mac.str() &lt;&lt; &#39;\n&#39;;
+
+}⏎
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>g++ -I/install/path/include/  -L/install/path/lib64/ myapp.cpp -lSlsDetector -lSlsSupport -Wl,-rpath<span class="o">=</span>../install/path/lib64
+</pre></div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="detector.html" class="btn btn-neutral float-right" title="Detector" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="dependencies.html" class="btn btn-neutral float-left" title="Dependencies" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, PSD Detector Group
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

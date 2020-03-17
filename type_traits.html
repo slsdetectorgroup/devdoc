@@ -1,0 +1,268 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>TypeTraits &mdash; slsDetectorPackage  documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="ToString" href="ToString.html" />
+    <link rel="prev" title="ContainerUtils" href="container_utils.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> slsDetectorPackage
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                5.0.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Installation:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dependencies.html">Dependencies</a></li>
+<li class="toctree-l1"><a class="reference internal" href="consuming.html">Consuming slsDetectorPackage</a></li>
+</ul>
+<p class="caption"><span class="caption-text">C++ API</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="detector.html">Detector</a></li>
+<li class="toctree-l1"><a class="reference internal" href="result.html">Result</a></li>
+<li class="toctree-l1"><a class="reference internal" href="receiver.html">Receiver</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Python API</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="pydetector.html">Detector</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pyenums.html">Enums</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pyexamples.html">Examples</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Command line</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="commandline.html">Command line interface</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Developer</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="container_utils.html">ContainerUtils</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">TypeTraits</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ToString.html">ToString</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">slsDetectorPackage</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>TypeTraits</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/type_traits.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="typetraits">
+<h1>TypeTraits<a class="headerlink" href="#typetraits" title="Permalink to this headline">¶</a></h1>
+<p>Template meta functions in the same spirit as type_traits
+from the standard library.</p>
+<dl class="type">
+<dt id="_CPPv43sls">
+<span id="_CPPv33sls"></span><span id="_CPPv23sls"></span><span id="sls"></span><span class="target" id="namespacesls"></span><em class="property">namespace </em><code class="sig-name descname">sls</code><br /></dt>
+<dd><dl class="class">
+<dt id="_CPPv4I00EN3sls16has_emplace_backE">
+<span id="_CPPv3I00EN3sls16has_emplace_backE"></span><span id="_CPPv2I00EN3sls16has_emplace_backE"></span><span class="target" id="structsls_1_1has__emplace__back"></span>template&lt;typename <code class="sig-name descname">T</code>, typename <code class="sig-name descname">_</code> = void&gt;<br /><em class="property">struct </em><code class="sig-name descname">has_emplace_back</code> : <em class="property">public</em> false_type<a class="headerlink" href="#_CPPv4I00EN3sls16has_emplace_backE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><em>#include &lt;TypeTraits.h&gt;</em><p>Has emplace_back method </p>
+</dd></dl>
+
+<dl class="class">
+<dt id="_CPPv4I00EN3sls7has_strE">
+<span id="_CPPv3I00EN3sls7has_strE"></span><span id="_CPPv2I00EN3sls7has_strE"></span><span class="target" id="structsls_1_1has__str"></span>template&lt;typename <code class="sig-name descname">T</code>, typename <code class="sig-name descname">_</code> = void&gt;<br /><em class="property">struct </em><code class="sig-name descname">has_str</code> : <em class="property">public</em> false_type<a class="headerlink" href="#_CPPv4I00EN3sls7has_strE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><em>#include &lt;TypeTraits.h&gt;</em><p>Has str method </p>
+</dd></dl>
+
+<dl class="class">
+<dt id="_CPPv4I00EN3sls12is_containerE">
+<span id="_CPPv3I00EN3sls12is_containerE"></span><span id="_CPPv2I00EN3sls12is_containerE"></span><span class="target" id="structsls_1_1is__container"></span>template&lt;typename <code class="sig-name descname">T</code>, typename <code class="sig-name descname">_</code> = void&gt;<br /><em class="property">struct </em><code class="sig-name descname">is_container</code> : <em class="property">public</em> false_type<a class="headerlink" href="#_CPPv4I00EN3sls12is_containerE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><em>#include &lt;TypeTraits.h&gt;</em><p>Type trait to evaluate if template parameter is complying with a standard container </p>
+</dd></dl>
+
+<dl class="class">
+<dt id="_CPPv4I00EN3sls11is_durationE">
+<span id="_CPPv3I00EN3sls11is_durationE"></span><span id="_CPPv2I00EN3sls11is_durationE"></span><span class="target" id="structsls_1_1is__duration"></span>template&lt;typename <code class="sig-name descname">T</code>, typename <code class="sig-name descname">_</code> = void&gt;<br /><em class="property">struct </em><code class="sig-name descname">is_duration</code> : <em class="property">public</em> false_type<a class="headerlink" href="#_CPPv4I00EN3sls11is_durationE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><em>#include &lt;TypeTraits.h&gt;</em><p>Type trait to check if a template parameter is a std::chrono::duration </p>
+</dd></dl>
+
+<dl class="class">
+<dt id="_CPPv4I00EN3sls18is_light_containerE">
+<span id="_CPPv3I00EN3sls18is_light_containerE"></span><span id="_CPPv2I00EN3sls18is_light_containerE"></span><span class="target" id="structsls_1_1is__light__container"></span>template&lt;typename <code class="sig-name descname">T</code>, typename <code class="sig-name descname">_</code> = void&gt;<br /><em class="property">struct </em><code class="sig-name descname">is_light_container</code> : <em class="property">public</em> false_type<a class="headerlink" href="#_CPPv4I00EN3sls18is_light_containerE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><em>#include &lt;TypeTraits.h&gt;</em><p>Type trait to evaluate if template parameter is complying with a standard container </p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="ToString.html" class="btn btn-neutral float-right" title="ToString" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="container_utils.html" class="btn btn-neutral float-left" title="ContainerUtils" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, PSD Detector Group
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

@@ -1,0 +1,908 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Command line interface &mdash; slsDetectorPackage  documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="ContainerUtils" href="container_utils.html" />
+    <link rel="prev" title="Examples" href="pyexamples.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> slsDetectorPackage
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                5.0.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Installation:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dependencies.html">Dependencies</a></li>
+<li class="toctree-l1"><a class="reference internal" href="consuming.html">Consuming slsDetectorPackage</a></li>
+</ul>
+<p class="caption"><span class="caption-text">C++ API</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="detector.html">Detector</a></li>
+<li class="toctree-l1"><a class="reference internal" href="result.html">Result</a></li>
+<li class="toctree-l1"><a class="reference internal" href="receiver.html">Receiver</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Python API</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="pydetector.html">Detector</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pyenums.html">Enums</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pyexamples.html">Examples</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Command line</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Command line interface</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#usage">Usage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#commands">Commands</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Developer</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="container_utils.html">ContainerUtils</a></li>
+<li class="toctree-l1"><a class="reference internal" href="type_traits.html">TypeTraits</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ToString.html">ToString</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">slsDetectorPackage</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>Command line interface</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/commandline.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="command-line-interface">
+<h1>Command line interface<a class="headerlink" href="#command-line-interface" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="usage">
+<h2>Usage<a class="headerlink" href="#usage" title="Permalink to this headline">¶</a></h2>
+<p>Commands can be uses either with sls_detector_get or sls_detector_put</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sls_detector_get</span> <span class="n">vrf</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="commands">
+<h2>Commands<a class="headerlink" href="#commands" title="Permalink to this headline">¶</a></h2>
+<dl class="glossary simple">
+<dt id="term-acquire-acquire-the-number-of-frames-set-up">acquire - Acquire the number of frames set up.</dt><dt id="term-activate-0-1-optional-padding-nopadding">activate [0, 1] [(optional) padding|nopadding]</dt><dd><p>[Eiger] 1 is default. 0 deactivates readout and does not send data.
+Padding will pad data files for deactivates readouts.</p>
+</dd>
+<dt id="term-adc-n-channel-0-7-for-channel-8-for-temperature">adc [n_channel (0-7 for channel|8 for temperature)]</dt><dd><p>[Ctb] Slow ADC channel in mV or °C.</p>
+</dd>
+<dt id="term-adcclk-n-clk-in-mhz">adcclk [n_clk in MHz]</dt><dd><p>[Ctb][Moench] ADC clock frequency in MHz.</p>
+</dd>
+<dt id="term-adcenable-bitmask">adcenable [bitmask]</dt><dd><p>[Ctb][Moench] ADC Enable Mask for 1Gb Mode for each 32 ADC channel.</p>
+</dd>
+<dt id="term-adcenable10g-bitmask">adcenable10g [bitmask]</dt><dd><p>[Ctb][Moench] ADC Enable Mask for 10Gb mode for each 32 ADC channel. However, if any of consecutive 4 bits are enabled, the complete 4 bits are enabled.</p>
+</dd>
+<dt id="term-adcinvert-bitmask">adcinvert [bitmask]</dt><dd><p>[Ctb][Moench][Jungfrau][Moench] ADC Inversion Mask.
+[Jungfrau][Moench] Inversions on top of the default mask.</p>
+</dd>
+<dt id="term-adcphase-n-value-optional-deg">adcphase [n_value] [(optional)deg]</dt><dd><p>[Jungfrau][Ctb][Moench][Moench][Gotthard] Phase shift of ADC clock.
+[Jungfrau] Absolute phase shift. If deg used, then shift in degrees. Changing Speed also resets adcphase to recommended defaults.
+[Ctb][Moench] Absolute phase shift. If deg used, then shift in degrees. Changing adcclk also resets adcphase and sets it to previous values.
+[Gotthard] Relative phase shift</p>
+</dd>
+<dt id="term-adcpipeline-n-value">adcpipeline [n_value]</dt><dd><p>[Ctb][Moench] Pipeline for ADC clock.</p>
+</dd>
+<dt id="term-adcreg-address-value">adcreg [address] [value]</dt><dd><p>[Jungfrau][Ctb][Moench][Gotthard] Writes to an adc register in hex.</p>
+</dd>
+<dt id="term-adcvpp-dac-or-mv-value-optional-unit-mv">adcvpp [dac or mv value][(optional unit) mv]</dt><dd><dl class="simple">
+<dt>[Ctb][Moench] Vpp of ADC.</dt><dd><p>0 -&gt; 1V ; 1 -&gt; 1.14V ; 2 -&gt; 1.33V ; 3 -&gt; 1.6V ; 4 -&gt; 2V.</p>
+</dd>
+</dl>
+</dd>
+<dt id="term-asamples-0-1">asamples [0, 1]</dt><dd><p>[CTB][Moench] Number of analog samples expected.</p>
+</dd>
+<dt id="term-auto-comp-disable-0-1">auto_comp_disable [0, 1]</dt><dd><p>[Jungfrau] Auto comparator disable mode. Default 0 or this mode disabled(comparator enabled throughout). 1 enables mode. 0 disables mode. This mode disables the on-chip gain switching comparator automatically after 93.75% of exposure time (only for longer than 100us).</p>
+</dd>
+<dt id="term-burstmode-off-or-0-internal-or-1-external-or-2">burstmode [off or 0, internal or 1, external or 2]</dt><dd><p>[Gotthard2] Default is burst internal type</p>
+</dd>
+<dt id="term-burstperiod-duration-optional-unit-ns-us-ms-s">burstperiod [duration] [(optional unit) ns|us|ms|s]</dt><dd><p>[Gotthard2] Burst period. Only in burst mode and auto timing mode.</p>
+</dd>
+<dt id="term-bursts-n-bursts">bursts [n_bursts]</dt><dd><p>[Gotthard2] Number of bursts per aquire. Only in auto timing mode and burst mode. Use timing command to set timing mode and burstmode command to set burst mode.</p>
+</dd>
+<dt id="term-bustest">bustest</dt><dd><p>[Jungfrau][Gotthard][Mythen3][Gotthard2][Ctb][Moench] Bus test, ie. keeps writing and reading back different values in R/W register.</p>
+</dd>
+<dt id="term-clearbit-n-value">clearbit [n_value]</dt><dd><p>[Moench] Maximum energy threshold (soft setting) for processor.</p>
+</dd>
+<dt id="term-clearbusy">clearbusy</dt><dd><p>Clears Acquiring Flag for unexpected acquire command terminations.</p>
+</dd>
+<dt id="term-clearroi">clearroi</dt><dd><p>[Gotthard] Resets Region of interest in detector. All channels enabled. Default is all channels.</p>
+</dd>
+<dt id="term-clientversion">clientversion</dt><dd><p>Client software version in format [0xYYMMDD].</p>
+</dd>
+<dt id="term-clkdiv-n-clock-0-8-n-divider">clkdiv [n_clock (0-8)] [n_divider]</dt><dd><p>[Gotthard2][Mythen3] Clock Divider of clock n_clock. Must be greater than 1.</p>
+</dd>
+<dt id="term-clkfreq-n-clock-0-8-freq-in-hz">clkfreq [n_clock (0-8)] [freq_in_Hz]</dt><dd><p>[Gotthard2][Mythen3] Frequency of clock n_clock in Hz. Use clkdiv to set frequency.</p>
+</dd>
+<dt id="term-clkphase-n-clock-0-8-phase-deg-optional">clkphase [n_clock (0-8)] [phase] [deg (optional)]</dt><dd><p>[Gotthard2][Mythen3] Phase of clock n_clock. If deg, then phase shift in degrees, else absolute phase shift values.</p>
+</dd>
+<dt id="term-config-fname">config [fname]</dt><dd><p>Configures detector to configuration contained in fname. Set up once.</p>
+</dd>
+<dt id="term-copydetectorserver-server-name-pc-host-name">copydetectorserver [server_name] [pc_host_name]</dt><dd><p>[Jungfrau][Ctb][Moench] Copies detector server via tftp from pc and changes respawn server name in /etc/inittab of detector.</p>
+</dd>
+<dt id="term-counters-i0-i1-i2">counters [i0] [i1] [i2]…</dt><dd><p>[Mythen3] List of counters enabled. Each element in list can be 0 - 2 and must be non repetitive.</p>
+</dd>
+<dt id="term-currentsource-0-1">currentsource [0, 1]</dt><dd><p>[Gotthard2] Enable or disable current source. Default is disabled.</p>
+</dd>
+<dt id="term-dac-dac-index-dac-or-mv-value-optional-unit-mv">dac [dac index] [dac or mv value] [(optional unit) mv]</dt><dd><p>[Ctb] Dac.</p>
+</dd>
+<dt id="term-daclist">daclist</dt><dd><p>Gets the list of commands for every dac for this detector.</p>
+</dd>
+<dt id="term-dacvalues">dacvalues</dt><dd><p>Gets the list of commands for every dac for this detector.</p>
+</dd>
+<dt id="term-dbitclk-n-clk-in-mhz">dbitclk [n_clk in MHz]</dt><dd><p>[Ctb] Clock for latching the digital bits in MHz.</p>
+</dd>
+<dt id="term-dbitphase-n-value-optional-deg">dbitphase [n_value] [(optional)deg]</dt><dd><p>[Ctb][Jungfrau] Phase shift of clock to latch digital bits. Absolute phase shift. If deg used, then shift in degrees.
+[Ctb]Changing dbitclk also resets dbitphase and sets to previous values.</p>
+</dd>
+<dt id="term-dbitpipeline-n-value">dbitpipeline [n_value]</dt><dd><p>[Ctb] Pipeline of the clock for latching digital bits.</p>
+</dd>
+<dt id="term-delay-duration-optional-unit-ns-us-ms-s">delay [duration] [(optional unit) ns|us|ms|s]</dt><dd><p>[Jungfrau][Gotthard][Mythen3][Gotthard2][Ctb][Moench] Delay after trigger</p>
+</dd>
+<dt id="term-delayl">delayl</dt><dd><p>[Gotthard][Jungfrau][Mythen3][Gotthard2][CTB][Moench] DelayLeft Delay Left in Acquisition.
+[Gotthard2] only in continuous mode.</p>
+</dd>
+<dt id="term-detectormode-counting-interpolating-analog">detectormode [counting|interpolating|analog]</dt><dd><p>[Moench] Detector mode (soft setting) in processor.</p>
+</dd>
+<dt id="term-detectornumber">detectornumber</dt><dd><p>Receiver version in format [0xYYMMDD].</p>
+</dd>
+<dt id="term-detectorserverversion">detectorserverversion</dt><dd><p>On-board detector server software version in format [0xYYMMDD].</p>
+</dd>
+<dt id="term-detsize-nx-ny">detsize [nx] [ny]</dt><dd><p>Detector size, ie. Number of channels in x and y dim. If 0, then hostname adds all modules in y dim. This is used to calculate module coordinates included in UDP data packet header.</p>
+</dd>
+<dt id="term-diodelay-64-bit-bitmask-0-775">diodelay [64 bit bitmask] [0-775]</dt><dd><p>[Ctb] Delay for digital IO pins selected by the bitmask. Delay is in ps and max of 775 ps. Resolution is 25 ps.</p>
+</dd>
+<dt id="term-dr-4-8-16-32">dr [4|8|16|32]</dt><dd><p>[Eiger] Dynamic Range or number of bits per pixel in detector.</p>
+</dd>
+<dt id="term-dsamples-0-1">dsamples [0, 1]</dt><dd><p>[CTB] Number of digital samples expected.</p>
+</dd>
+<dt id="term-emax-n-value">emax [n_value]</dt><dd><p>[Moench] Maximum energy threshold (soft setting) for processor.</p>
+</dd>
+<dt id="term-emin-n-value">emin [n_value]</dt><dd><p>[Moench] Minimum energy threshold (soft setting) for processor.</p>
+</dd>
+<dt id="term-execcommand-command">execcommand [command]</dt><dd><p>Executes command on detector server.</p>
+</dd>
+<dt id="term-exptime-duration-optional-unit-ns-us-ms-s">exptime [duration] [(optional unit) ns|us|ms|s]</dt><dd><p>Exposure time
+[Gotthard2] Uploaded to detector just before acquisition starts</p>
+</dd>
+<dt id="term-exptimel-optional-unit-ns-us-ms-s">exptimel [(optional unit) ns|us|ms|s]</dt><dd><p>[Gotthard] Exposure time left for current frame.</p>
+</dd>
+<dt id="term-extsampling-0-1">extsampling [0, 1]</dt><dd><p>[Ctb] Enable for external sampling signal to extsamplingsrc signal for digital data. For advanced users only.</p>
+</dd>
+<dt id="term-extsamplingsrc-0-63">extsamplingsrc [0-63]</dt><dd><p>[Ctb] Sampling source signal for digital data. For advanced users only.</p>
+</dd>
+<dt id="term-extsig-trigger-in-rising-edge-trigger-in-falling-edge">extsig [trigger_in_rising_edge|trigger_in_falling_edge]</dt><dd><p>[Gotthard] External signal mode for trigger timing mode.</p>
+</dd>
+<dt id="term-fformat-binary-hdf5">fformat [binary|hdf5]</dt><dd><p>File format of data file. For HDF5, package must be compiled with HDF5 flags. Default is binary.</p>
+</dd>
+<dt id="term-findex-0-1">findex [0, 1]</dt><dd><p>File or Acquisition index.</p>
+</dd>
+<dt id="term-firmwaretest">firmwaretest</dt><dd><p>[Jungfrau][Gotthard][Mythen3][Gotthard2][Ctb][Moench] Firmware test, ie. reads a read fixed pattern from a register.</p>
+</dd>
+<dt id="term-firmwareversion">firmwareversion</dt><dd><p>Fimware version of detector in format [0xYYMMDD] or integer for Eiger.</p>
+</dd>
+<dt id="term-flippeddatax-0-1">flippeddatax [0, 1]</dt><dd><p>[Eiger] Top or Bottom Half of Eiger module. 1 is bottom, 0 is top. Used to let Receiver and Gui know to flip the bottom image over the x axis.</p>
+</dd>
+<dt id="term-flowcontrol10g-0-1">flowcontrol10g [0, 1]</dt><dd><p>[Eiger][Jungfrau] 10GbE Flow Control.</p>
+</dd>
+<dt id="term-fmaster-0-1">fmaster [0, 1]</dt><dd><p>Enable or disable receiver master file. Default is 1.</p>
+</dd>
+<dt id="term-fname-path">fname [path]</dt><dd><p>File name prefix for output data file. Default is run. File name: [file name prefix]_d[detector index]_f[sub file index]_[acquisition/file index].raw.</p>
+</dd>
+<dt id="term-foverwrite-0-1">foverwrite [0, 1]</dt><dd><p>Enable or disable file overwriting. Default is 1.</p>
+</dd>
+<dt id="term-fpath-path">fpath [path]</dt><dd><p>Directory where output data files are written in receiver.</p>
+</dd>
+<dt id="term-framemode-pedestal-newpedestal-flatfield-newflatfield">framemode [pedestal|newpedestal|flatfield|newflatfield]</dt><dd><p>[Moench] Frame mode (soft setting) in processor.</p>
+</dd>
+<dt id="term-frames-n-frames">frames [n_frames]</dt><dd><p>Number of frames per aquire. In trigger mode, number of frames per trigger.
+[Gotthard2] Burst mode has a maximum of 2720 frames.</p>
+</dd>
+<dt id="term-framesl">framesl</dt><dd><p>[Gotthard][Jungfrau][Mythen3][Gotthard2][CTB][Moench] Number of frames left in acquisition.
+[Gotthard2] only in continuous mode.</p>
+</dd>
+<dt id="term-freeee-detector-shared-memory">freeee detector shared memory</dt><dt id="term-fwrite-0-1">fwrite [0, 1]</dt><dd><p>Enable or disable receiver file write. Default is 1.</p>
+</dd>
+<dt id="term-gappixels-0-1">gappixels [0, 1]</dt><dd><p>[Eiger] Include Gap pixels in data file or data call back. 4 bit mode gap pixels only ind ata call back.</p>
+</dd>
+<dt id="term-getbit-n-value">getbit [n_value]</dt><dd><p>[Moench] Maximum energy threshold (soft setting) for processor.</p>
+</dd>
+<dt id="term-hostname">hostname</dt><dd><p>Frees shared memory and sets hostname (or IP address) of all modules concatenated by +.</p>
+</dd>
+<dt id="term-ib-test-c-dac-or-mv-value-optional-unit-mv">ib_test_c [dac or mv value][(optional unit) mv]</dt><dd><p>[Gotthard] Dac for ??</p>
+</dd>
+<dt id="term-ibias-sfp-dac-or-mv-value-optional-unit-mv">ibias_sfp [dac or mv value][(optional unit) mv]</dt><dd><p>[Moench] Dac for 7</p>
+</dd>
+<dt id="term-im-a">im_a</dt><dd><p>[Ctb] Measured current of power supply a in mA.</p>
+</dd>
+<dt id="term-im-b">im_b</dt><dd><p>[Ctb] Measured current of power supply b in mA.</p>
+</dd>
+<dt id="term-im-c">im_c</dt><dd><p>[Ctb] Measured current of power supply c in mA.</p>
+</dd>
+<dt id="term-im-d">im_d</dt><dd><p>[Ctb] Measured current of power supply d in mA.</p>
+</dd>
+<dt id="term-im-io">im_io</dt><dd><p>[Ctb] Measured current of power supply io in mA.</p>
+</dd>
+<dt id="term-imagetest-0-1">imagetest [0, 1]</dt><dd><p>[Gotthard] 1 adds channel intensity with precalculated values when taking an acquisition. Default is 0.</p>
+</dd>
+<dt id="term-initialchecks-0-1">initialchecks [0, 1]</dt><dd><p>Enable or disable intial compatibility and other checks at detector start up. It is enabled by default. Must come before ‘hostname’ command to take effect. Can be used to reprogram fpga when current firmware is incompatible.</p>
+</dd>
+<dt id="term-inj-ch-offset-increment">inj_ch [offset] [increment]</dt><dd><p>[Gotthard2] Inject channels with current source for calibration. Offset is starting channel that is injected, increment determines succeeding channels to be injected.</p>
+</dd>
+<dt id="term-interruptsubframe-0-1">interruptsubframe [0, 1]</dt><dd><p>[Eiger] 1 interrupts last subframe at required exposure time. 0 will wait for last sub frame to finish exposing. 0 is default.</p>
+</dd>
+<dt id="term-iodelay-dac-or-mv-value-optional-unit-mv">iodelay [dac or mv value][(optional unit) mv]</dt><dd><p>[Eiger] Dac for ??</p>
+</dd>
+<dt id="term-lastclient">lastclient</dt><dd><p>Client IP Address that last communicated with the detector.</p>
+</dd>
+<dt id="term-led-0-1">led [0, 1]</dt><dd><p>[Ctb] Switches on/off all LEDs.</p>
+</dd>
+<dt id="term-list">list</dt><dd><p>lists all available commands, list deprecated - list deprecated commands</p>
+</dd>
+<dt id="term-lock-0-1">lock [0, 1]</dt><dd><p>Lock detector to one IP, 1: locks</p>
+</dd>
+<dt id="term-maxadcphaseshift">maxadcphaseshift</dt><dd><p>[Jungfrau][CTB][Moench] Absolute maximum Phase shift of ADC clock.</p>
+</dd>
+<dt id="term-maxclkphaseshift-n-clock-0-8">maxclkphaseshift [n_clock (0-8)]</dt><dd><p>[Gotthard2][Mythen3] Absolute Maximum Phase shift of clock n_clock.</p>
+</dd>
+<dt id="term-maxdbitphaseshift">maxdbitphaseshift</dt><dd><p>[CTB][Jungfrau] Absolute maximum Phase shift of of the clock to latch digital bits.</p>
+</dd>
+<dt id="term-measuredperiod-optional-unit-ns-us-ms-s">measuredperiod [(optional unit) ns|us|ms|s]</dt><dd><p>[Eiger] Measured frame period between last frame and previous one. Useful data only for acquisitions with more than 1 frame.</p>
+</dd>
+<dt id="term-measuredsubperiod-optional-unit-ns-us-ms-s">measuredsubperiod [(optional unit) ns|us|ms|s]</dt><dd><p>[Eiger] Measured sub frame period between last sub frame and previous one.</p>
+</dd>
+<dt id="term-nframes">nframes</dt><dd><p>[Jungfrau][Mythen3][Gotthard2][Moench][CTB][Moench] Number of frames from start run control.
+[Gotthard2] only in continuous mode.</p>
+</dd>
+<dt id="term-now-optional-unit-ns-us-ms-s">now [(optional unit) ns|us|ms|s]</dt><dd><p>[Jungfrau][Mythen3][Gotthard2][Moench][CTB] Time from detector start up.
+[Gotthard2] only in continuous mode.</p>
+</dd>
+<dt id="term-numinterfaces-1-2">numinterfaces [1, 2]</dt><dd><p>[Jungfrau] Number of udp interfaces to stream data from detector. Default: 1.</p>
+</dd>
+<dt id="term-overflow-0-1">overflow [0, 1]</dt><dd><p>[Eiger] Enable or disable show overflow flag in 32 bit mode.</p>
+</dd>
+<dt id="term-packageversion">packageversion</dt><dd><p>Package version (git branch).</p>
+</dd>
+<dt id="term-parallel-0-1">parallel [0, 1]</dt><dd><p>[Eiger] Enable or disable parallel mode.</p>
+</dd>
+<dt id="term-parameters-fname">parameters [fname]</dt><dd><p>Sets detector measurement parameters to those contained in fname. Set up per measurement.</p>
+</dd>
+<dt id="term-partialreset-0-1">partialreset [0, 1]</dt><dd><p>[Eiger] Sets up detector to do partial or complete reset at start of acquisition. 0 complete reset, 1 partial reset.</p>
+</dd>
+<dt id="term-patclkctrl-64-bit-mask">patclkctrl [64 bit mask]</dt><dd><p>[Ctb][Moench][Mythen3] 64 bit mask defining output clock enable.</p>
+</dd>
+<dt id="term-patioctrl-64-bit-mask">patioctrl [64 bit mask]</dt><dd><p>[Ctb][Moench][Mythen3] 64 bit mask defining input (0) and output (1) signals.</p>
+</dd>
+<dt id="term-patlimits-start-addr-stop-addr">patlimits [start addr] [stop addr]</dt><dd><p>[Ctb][Moench][Mythen3] Limits of complete pattern.</p>
+</dd>
+<dt id="term-patloop0-start-addr-stop-addr">patloop0 [start addr] [stop addr]</dt><dd><p>[Ctb][Moench][Mythen3] Limits of loop 0.</p>
+</dd>
+<dt id="term-patloop1-start-addr-stop-addr">patloop1 [start addr] [stop addr]</dt><dd><p>[Ctb][Moench][Mythen3] Limits of loop 1.</p>
+</dd>
+<dt id="term-patloop2-start-addr-stop-addr">patloop2 [start addr] [stop addr]</dt><dd><p>[Ctb][Moench][Mythen3] Limits of loop 2.</p>
+</dd>
+<dt id="term-patmask-64-bit-mask">patmask [64 bit mask]</dt><dd><p>[Ctb][Moench][Mythen3] 64 bit mask applied to every pattern. Only these bits for each pattern will be masked against.</p>
+</dd>
+<dt id="term-patnloop0-n-cycles">patnloop0 [n_cycles]</dt><dd><p>[Ctb][Moench][Mythen3] Number of cycles of loop 0.</p>
+</dd>
+<dt id="term-patnloop1-n-cycles">patnloop1 [n_cycles]</dt><dd><p>[Ctb][Moench][Mythen3] Number of cycles of loop 1.</p>
+</dd>
+<dt id="term-patnloop2-n-cycles">patnloop2 [n_cycles]</dt><dd><p>[Ctb][Moench][Mythen3] Number of cycles of loop 2.</p>
+</dd>
+<dt id="term-patsetbit-64-bit-mask">patsetbit [64 bit mask]</dt><dd><p>[Ctb][Moench][Mythen3] 64 bit values applied to the selected patmask for every pattern.</p>
+</dd>
+<dt id="term-pattern-fname">pattern [fname]</dt><dd><p>[Mythen3][Moench][Ctb][Moench] Loads binary pattern file with only pattern words</p>
+</dd>
+<dt id="term-patwait0-addr">patwait0 [addr]</dt><dd><p>[Ctb][Moench][Mythen3] Wait 0 address.</p>
+</dd>
+<dt id="term-patwait1-addr">patwait1 [addr]</dt><dd><p>[Ctb][Moench][Mythen3] Wait 1 address.</p>
+</dd>
+<dt id="term-patwait2-addr">patwait2 [addr]</dt><dd><p>[Ctb][Moench][Mythen3] Wait 2 address.</p>
+</dd>
+<dt id="term-patwaittime0-n-clk">patwaittime0 [n_clk]</dt><dd><p>[Ctb][Moench][Mythen3] Wait 0 time in clock cycles.</p>
+</dd>
+<dt id="term-patwaittime1-n-clk">patwaittime1 [n_clk]</dt><dd><p>[Ctb][Moench][Mythen3] Wait 1 time in clock cycles.</p>
+</dd>
+<dt id="term-patwaittime2-n-clk">patwaittime2 [n_clk]</dt><dd><p>[Ctb][Moench][Mythen3] Wait 2 time in clock cycles.</p>
+</dd>
+<dt id="term-patword-step-or-address-64-bit-mask">patword [step or address] [64 bit mask]</dt><dd><p>[Ctb][Moench][Mythen3] 64 bit pattern at address of pattern memory.</p>
+</dd>
+<dt id="term-period-duration-optional-unit-ns-us-ms-s">period [duration] [(optional unit) ns|us|ms|s]</dt><dd><p>Period between frames
+[Gotthard2] Uploaded to detector just before acquisition starts</p>
+</dd>
+<dt id="term-periodl">periodl</dt><dd><p>[Gotthard][Jungfrau][Mythen3][Gotthard2][CTB][Moench] Period left for current frame.
+[Gotthard2] only in continuous mode.</p>
+</dd>
+<dt id="term-port-n">port [n]</dt><dd><p>Port number of the control server on detector for detector-client tcp interface. Default is 1952. Normally unchanged.</p>
+</dd>
+<dt id="term-powerchip-0-1">powerchip [0, 1]</dt><dd><p>[Jungfrau][Mythen3][Gotthard2][Moench] Power the chip. Default 0.
+[Jungfrau] Get will return power status.Can be off if temperature event occured (temperature over temp_threshold with temp_control enabled.
+[Mythen3] If module not connected or wrong module, 1 will fail. By default, not powered on
+[Gotthard2] If module not connected or wrong module, 1 will fail. By default, powered on at server start up.</p>
+</dd>
+<dt id="term-programfpga-fname-pof-fname-rbf">programfpga [fname.pof | fname.rbf]</dt><dd><p>[Jungfrau][Ctb][Moench] Programs FPGA from pof file.
+[Mythen3][Gotthard2] Programs FPGA from rbf file.</p>
+</dd>
+<dt id="term-pulse-n-times-x-y">pulse [n_times] [x] [y]</dt><dd><p>[Eiger] Pulse pixel n number of times at coordinates (x, y).</p>
+</dd>
+<dt id="term-pulsechip-n-times">pulsechip [n_times]</dt><dd><p>[Eiger] Pulse chip n times. If n is -1, resets to normal mode (reset chip completely at start of acquisition, where partialreset = 0).</p>
+</dd>
+<dt id="term-pulsenmove-n-times-x-y">pulsenmove [n_times] [x] [y]</dt><dd><p>[Eiger] Pulse pixel n number of times and moves relatively by (x, y).</p>
+</dd>
+<dt id="term-quad-0-1">quad [0, 1]</dt><dd><p>[Eiger] 0 is default. 1 sets detector size to a quad (Specific hardware required).</p>
+</dd>
+<dt id="term-ratecorr-n-rate-in-ns">ratecorr [n_rate (in ns)]</dt><dd><p>[Eiger] Dead time correction constant in ns. -1 will set to default tau of settings. 0 will unset rate correction.</p>
+</dd>
+<dt id="term-readnlines-1-256">readnlines [1 - 256]</dt><dd><p>[Eiger] Number of rows to readout per half module starting from the centre. 256 is default. The permissible values depend on dynamic range and 10Gbe enabled.</p>
+</dd>
+<dt id="term-rebootcontroller">rebootcontroller</dt><dd><p>[Jungfrau][Ctb][Moench][Gotthard][Mythen3][Gotthard2] Reboot controler (blackfin) of detector.</p>
+</dd>
+<dt id="term-reg-address-32-bit-value">reg [address] [32 bit value]</dt><dd><p>Reads/writes to a 32 bit register in hex.
+[Eiger] +0x100 for only left, +0x200 for only right</p>
+</dd>
+<dt id="term-resetfpga">resetfpga</dt><dd><p>[Jungfrau][Ctb][Moench] Reset FPGA.</p>
+</dd>
+<dt id="term-roi-xmin-xmax">roi [xmin] [xmax]</dt><dd><p>[Gotthard] Region of interest in detector. Either all channels or a single adc or 2 chips (256 channels). Default is all channels enabled (-1 -1).</p>
+</dd>
+<dt id="term-romode-analog-digital-analog-digital">romode [analog|digital|analog_digital]</dt><dd><p>[CTB] Readout mode. Default is analog.</p>
+</dd>
+<dt id="term-runclk-n-clk-in-mhz">runclk [n_clk in MHz]</dt><dd><p>[Ctb][Moench] Run clock in MHz.</p>
+</dd>
+<dt id="term-rx-datastream-0-1">rx_datastream [0, 1]</dt><dd><p>Data streaming from receiver enable (eg. to GUI ot another process for further processing). 1 enables zmq data stream (creates zmq streamer threads), 0 disables (destroys streamer threads). Switching to Gui automatically enables data streaming in receiver. Switching back to command line acquire will require disabling data streaming in receiver for fast applications.</p>
+</dd>
+<dt id="term-rx-dbitlist-all-or-i0-i1-i2">rx_dbitlist [all] or [i0] [i1] [i2]…</dt><dd><p>[Ctb] List of digital signal bits read out. If all is used instead of a list, all digital bits (64) enabled. Each element in list can be 0 - 63 and must be non repetitive.</p>
+</dd>
+<dt id="term-rx-dbitoffset-n-bytes">rx_dbitoffset [n_bytes]</dt><dd><p>[Ctb] Offset in bytes in digital data in receiver.</p>
+</dd>
+<dt id="term-rx-discardpolicy-nodiscard-default-discardempty-discardpartial-fastest">rx_discardpolicy [nodiscard (default)|discardempty|discardpartial(fastest)]</dt><dd><p>Frame discard policy of receiver. nodiscard does not discard frames, discardempty discards empty frames, discardpartial discards partial frames.</p>
+</dd>
+<dt id="term-rx-fifodepth-n-frames">rx_fifodepth [n_frames]</dt><dd><p>Set the number of frames in the receiver fifo (buffer between listener and writer threads).</p>
+</dd>
+<dt id="term-rx-frameindex">rx_frameindex</dt><dd><p>Current frame index received in receiver.</p>
+</dd>
+<dt id="term-rx-framescaught">rx_framescaught</dt><dd><p>Number of frames caught by receiver.</p>
+</dd>
+<dt id="term-rx-framesperfile-n-frames">rx_framesperfile [n_frames]</dt><dd><p>Number of frames per file in receiver. 0 is infinite or all frames in single file.</p>
+</dd>
+<dt id="term-rx-hostname-hostname-or-ip-address">rx_hostname [hostname or ip address]</dt><dd><p>Receiver hostname or IP. Used for TCP control communication between client and receiver to configure receiver.</p>
+</dd>
+<dt id="term-rx-jsonaddheader-label1-value1-label2-value2">rx_jsonaddheader [“label1”:”value1”], [“label2”:”value2”]</dt><dd><p>Additional json header to be streamd out from receiver via zmq. Default is empty. Use only if to be processed by an intermediate user process listening to receiver zmq packets.</p>
+</dd>
+<dt id="term-rx-jsonpara-key1-value1">rx_jsonpara [key1] [value1]</dt><dd><p>Additional json header parameter streamed out from receiver. If empty in a get, then no parameter found. This is same as calling rx_jsonaddheader “key”:”value1”.</p>
+</dd>
+<dt id="term-rx-lastclient">rx_lastclient</dt><dd><p>Client IP Address that last communicated with the receiver.</p>
+</dd>
+<dt id="term-rx-lock-0-1">rx_lock [0, 1]</dt><dd><p>Lock receiver to one IP, 1: locks</p>
+</dd>
+<dt id="term-rx-missingpackets">rx_missingpackets</dt><dd><p>Number of missing packets for each port in receiver.</p>
+</dd>
+<dt id="term-rx-padding-0-1">rx_padding [0, 1]</dt><dd><p>Partial frames padding enable in the receiver. 0 does not pad partial frames(fastest), 1 (default) pads partial frames</p>
+</dd>
+<dt id="term-rx-printconfig">rx_printconfig</dt><dd><p>Prints the receiver configuration.</p>
+</dd>
+<dt id="term-rx-readfreq-nth-frame">rx_readfreq [nth frame]</dt><dd><p>Stream out every nth frame. Default is 1. 0 means streaming every 200 ms and discarding frames in this interval.</p>
+</dd>
+<dt id="term-rx-realudpsocksize">rx_realudpsocksize</dt><dd><p>Actual udp socket buffer size. Double the size of rx_udpsocksize due to kernel bookkeeping.</p>
+</dd>
+<dt id="term-rx-silent-0-1">rx_silent [0, 1]</dt><dd><p>Switch on or off receiver text output during acquisition.</p>
+</dd>
+<dt id="term-rx-start">rx_start</dt><dd><p>Starts receiver listener for detector data packets and create a data file (if file write enabled).</p>
+</dd>
+<dt id="term-rx-status-running-idle">rx_status running, idle]</dt><dd><p>Receiver listener status.</p>
+</dd>
+<dt id="term-rx-stop">rx_stop</dt><dd><p>Stops receiver listener for detector data packets and closes current data file (if file write enabled).</p>
+</dd>
+<dt id="term-rx-tcpport-port">rx_tcpport [port]</dt><dd><p>TCP port for client-receiver communication. Default is 1954. Must be different if multiple receivers on same pc. Must be first command to set a receiver parameter. Multi command will automatically increment for individual modules.</p>
+</dd>
+<dt id="term-rx-udpsocksize-n-size">rx_udpsocksize [n_size]</dt><dd><p>UDP socket buffer size in receiver. Tune rmem_default and rmem_max accordingly. rx_hostname sets it to defaults.</p>
+</dd>
+<dt id="term-rx-version">rx_version</dt><dd><p>Receiver version in format [0xYYMMDD].</p>
+</dd>
+<dt id="term-rx-zmqip-x-x-x-x">rx_zmqip [x.x.x.x]</dt><dd><p>Zmq Ip Address from which data is to be streamed out of the receiver. Also restarts receiver zmq streaming if enabled. Default is from rx_hostname. Modified only when using an intermediate process between receiver and client(gui).</p>
+</dd>
+<dt id="term-rx-zmqport-port">rx_zmqport [port]</dt><dd><p>Zmq port for data to be streamed out of the receiver. Also restarts receiver zmq streaming if enabled. Default is 30001. Modified only when using an intermediate process between receiver and client(gui). Must be different for every detector (and udp port). Multi command will automatically increment for individual modules.</p>
+</dd>
+<dt id="term-rxb-lb-dac-or-mv-value-optional-unit-mv">rxb_lb [dac or mv value][(optional unit) mv]</dt><dd><p>[Eiger] Dac for ??</p>
+</dd>
+<dt id="term-rxb-rb-dac-or-mv-value-optional-unit-mv">rxb_rb [dac or mv value][(optional unit) mv]</dt><dd><p>[Eiger] Dac for ??</p>
+</dd>
+<dt id="term-samples-n-samples">samples [n_samples]</dt><dd><p>[CTB] Number of samples (both analog and digitial) expected.
+[Moench] Number of samples (analog only)</p>
+</dd>
+<dt id="term-savepattern-fname">savepattern [fname]</dt><dd><p>[Ctb][Moench][Mythen3] Saves pattern to file (ascii). Also executes pattern.</p>
+</dd>
+<dt id="term-selinterface-0-1">selinterface [0, 1]</dt><dd><p>[Jungfrau] The udp interface to stream data from detector. Effective only when number of interfaces is 1. Default: 0 (outer)</p>
+</dd>
+<dt id="term-setbit-address-value">setbit [address] [value</dt><dd><p>[Moench] Minimum energy threshold (soft setting) for processor.</p>
+</dd>
+<dt id="term-settings-standard-fast-highgain-dynamicgain-lowgain-mediumgain-veryhighgain-dynamichg0-fixgain1-fixgain2-forceswitchg1-forceswitchg2-verylowgain-g1-hg-g1-lg-g2-hc-hg-g2-hc-lg-g2-lc-hg-g2-lc-lg-g4-hg-g4-lg">settings [standard, fast, highgain, dynamicgain, lowgain, mediumgain, veryhighgain, dynamichg0, fixgain1, fixgain2, forceswitchg1, forceswitchg2, verylowgain, g1_hg, g1_lg, g2_hc_hg, g2_hc_lg, g2_lc_hg, g2_lc_lg, g4_hg, g4_lg]</dt><dd><p>Detector Settings
+Jungfrau] - [dynamicgain | dynamichg0 | fixgain1 | fixgain2 | forceswitchg1 | forceswitchg2]
+Gotthard] - [dynamicgain | highgain | lowgain | mediumgain | veryhighgain]
+Gotthard2] - [dynamicgain | fixgain1 | fixgain2]
+Moench] - [g1_hg | g1_lg | g2_hc_hg | g2_hc_lg | g2_lc_hg | g2_lc_lg | g4_hg | g4_lg]
+Eiger] Use threshold or thresholdnotb.</p>
+</dd>
+<dt id="term-settingspath-path">settingspath [path]</dt><dd><p>[Eiger] Directory where settings files are loaded from/to.</p>
+</dd>
+<dt id="term-speed-0-or-full-speed-1-or-half-speed-2-or-quarter-speed">speed [0 or full_speed|1 or half_speed|2 or quarter_speed]</dt><dd><p>[Eiger][Jungfrau] Readout speed of chip.
+Jungfrau also overwrites adcphase to recommended default.</p>
+</dd>
+<dt id="term-start">start</dt><dd><p>Starts detector state machine.</p>
+</dd>
+<dt id="term-startingfnum-n-value">startingfnum [n_value]</dt><dd><p>[Eiger[Jungfrau] Starting frame number for next acquisition.</p>
+</dd>
+<dt id="term-status-running-error-transmitting-finished-waiting-idle">status [running, error, transmitting, finished, waiting, idle]</dt><dd><p>Detector status.</p>
+</dd>
+<dt id="term-stop">stop</dt><dd><p>Stops detector state machine.</p>
+</dd>
+<dt id="term-stopport-n">stopport [n]</dt><dd><p>Port number of the stop server on detector for detector-client tcp interface. Default is 1953. Normally unchanged.</p>
+</dd>
+<dt id="term-storagecell-delay-duration-0-1638375-ns-optional-unit-ns-us-ms-s">storagecell_delay [duration (0-1638375 ns)] [(optional unit) ns|us|ms|s]</dt><dd><p>[Jungfrau] Additional time delay between 2 consecutive exposures in burst mode (total time gap = (ET + 1 + 86) * 25ns). For advanced users only.</p>
+</dd>
+<dt id="term-storagecell-start-0-15">storagecell_start [0-15]</dt><dd><p>[Jungfrau] Storage cell that stores the first acquisition of the series. Default is 15. For advanced users only.</p>
+</dd>
+<dt id="term-storagecells-0-15">storagecells [0-15]</dt><dd><p>[Jungfrau] Number of additional storage cells. Default is 0. For advanced users only.
+The #images = #frames x #triggers x (#storagecells + 1).</p>
+</dd>
+<dt id="term-storeinram-0-1">storeinram [0, 1]</dt><dd><p>[Eiger] Enable or disable store in ram mode.</p>
+</dd>
+<dt id="term-subdeadtime-duration-optional-unit-ns-us-ms-s">subdeadtime [duration] [(optional unit) ns|us|ms|s]</dt><dd><p>[Eiger] Dead time of EIGER subframes. Subperiod = subexptime + subdeadtime.</p>
+</dd>
+<dt id="term-subexptime-duration-optional-unit-ns-us-ms-s">subexptime [duration] [(optional unit) ns|us|ms|s]</dt><dd><p>[Eiger] Exposure time of EIGER subframes</p>
+</dd>
+<dt id="term-syncclk-n-clk-in-mhz">syncclk [n_clk in MHz]</dt><dd><p>[Ctb][Moench] Sync clock in MHz.</p>
+</dd>
+<dt id="term-temp-10ge-n-value">temp_10ge [n_value]</dt><dd><p>[Eiger]Temperature close to the 10GbE</p>
+</dd>
+<dt id="term-temp-adc-n-value">temp_adc [n_value]</dt><dd><p>[Jungfrau][Gotthard] ADC Temperature</p>
+</dd>
+<dt id="term-temp-control-0-1">temp_control [0, 1]</dt><dd><p>[Jungfrau] Temperature control enable. Default is 0 (disabled). If temperature crosses threshold temperature and temperature control is enabled, power to chip will be switched off and temperature event occurs. To power on chip again, temperature has to be less than threshold temperature and temperature event has to be cleared.</p>
+</dd>
+<dt id="term-temp-dcdc-n-value">temp_dcdc [n_value]</dt><dd><p>[Eiger]Temperature close to the dc dc converter</p>
+</dd>
+<dt id="term-temp-event-0">temp_event [0]</dt><dd><p>[Jungfrau] 1, if a temperature event occured. To clear this event, set it to 0.
+If temperature crosses threshold temperature and temperature control is enabled, power to chip will be switched off and temperature event occurs. To power on chip again, temperature has to be less than threshold temperature and temperature event has to be cleared.</p>
+</dd>
+<dt id="term-temp-fpga-n-value">temp_fpga [n_value]</dt><dd><p>[Eiger][Jungfrau][Gotthard] FPGA Temperature</p>
+</dd>
+<dt id="term-temp-fpgaext-n-value">temp_fpgaext [n_value]</dt><dd><p>[Eiger]Temperature close to the FPGA</p>
+</dd>
+<dt id="term-temp-fpgafl-n-value">temp_fpgafl [n_value]</dt><dd><p>[Eiger]Temperature of the left front end board fpga</p>
+</dd>
+<dt id="term-temp-fpgafr-n-value">temp_fpgafr [n_value]</dt><dd><p>[Eiger]Temperature of the left front end board fpga</p>
+</dd>
+<dt id="term-temp-sodl-n-value">temp_sodl [n_value]</dt><dd><p>[Eiger]Temperature close to the left so-dimm memory</p>
+</dd>
+<dt id="term-temp-sodr-n-value">temp_sodr [n_value]</dt><dd><p>[Eiger]Temperature close to the right so-dimm memory</p>
+</dd>
+<dt id="term-temp-threshold-n-temp-in-degrees">temp_threshold [n_temp (in degrees)]</dt><dd><p>[Jungfrau] Threshold temperature in degrees. If temperature crosses threshold temperature and temperature control is enabled, power to chip will be switched off and temperature event occurs. To power on chip again, temperature has to be less than threshold temperature and temperature event has to be cleared.</p>
+</dd>
+<dt id="term-tengiga-0-1">tengiga [0, 1]</dt><dd><p>[Eiger][Ctb][Moench] 10GbE Enable.</p>
+</dd>
+<dt id="term-threshold-ev-optinal-settings-standard-lowgain-veryhighgain-verylowgain">threshold [eV] [(optinal settings) standard, lowgain, veryhighgain, verylowgain]</dt><dd><p>[Eiger] Threshold in eV</p>
+</dd>
+<dt id="term-thresholdnotb-ev-optional-settings-standard-lowgain-veryhighgain-verylowgain">thresholdnotb [eV] [(optional settings) standard, lowgain, veryhighgain, verylowgain]</dt><dd><p>[Eiger] Threshold in eV set without setting trimbits</p>
+</dd>
+<dt id="term-timestamp-optional-unit-ns-us-ms-s">timestamp [(optional unit) ns|us|ms|s]</dt><dd><p>[Jungfrau][Mythen3][Gotthard2][Moench][CTB] Timestamp at a frame start.
+[Gotthard2] only in continuous mode.</p>
+</dd>
+<dt id="term-timing-auto-trigger-gating-burst-trigger">timing [auto|trigger|gating|burst_trigger]</dt><dd><p>Timing Mode of detector.
+[Jungfrau][Gotthard][Mythen3][Gotthard2][Ctb][Moench] [auto|trigger]
+[Eiger] [auto|trigger|gating|burst_trigger]</p>
+</dd>
+<dt id="term-timingsource-internal-external">timingsource [internal|external]</dt><dd><p>[Gotthard2] Timing source. Internal is crystal and external is system timing. Default is internal.</p>
+</dd>
+<dt id="term-trigger">trigger</dt><dd><p>[Eiger] Sends software trigger signal to detector.</p>
+</dd>
+<dt id="term-triggers-n-triggers">triggers [n_triggers]</dt><dd><p>Number of triggers per aquire. Use timing command to set timing mode.</p>
+</dd>
+<dt id="term-triggersl">triggersl</dt><dd><p>[Gotthard][Jungfrau][Mythen3][Gotthard2][CTB][Moench] Number of triggers left in acquisition.
+[Gotthard2] only in continuous mode.</p>
+</dd>
+<dt id="term-trimbits-fname">trimbits [fname]</dt><dd><p>[Eiger] Loads the trimbit file to detector. If no extension specified, serial number of each module is attached.</p>
+</dd>
+<dt id="term-trimen-trim-ev1-trim-ev2-optional-trim-ev3-optional">trimen [trim_ev1] [trim_Ev2 (optional)] [trim_ev3 (optional)] …</dt><dd><p>[Eiger] Number of trim energies and list of trim energies, where corresponding default trim files exist in corresponding trim folders.</p>
+</dd>
+<dt id="term-trimval-n-trimval">trimval [n_trimval]</dt><dd><p>[Eiger] All trimbits set to this value. A get returns -1 if all trimbits are different values.</p>
+</dd>
+<dt id="term-txndelay-frame-n-delay">txndelay_frame [n_delay]</dt><dd><p>[Eiger][Jungfrau] Transmission delay of each image being streamed out of the module.
+[Jungfrau] [0-31] Each value represents 1 ms
+[Eiger] Additional delay to txndelay_left and txndelay_right. Each value represents 10ns. Typical value is 50000.</p>
+</dd>
+<dt id="term-txndelay-left-n-delay">txndelay_left [n_delay]</dt><dd><p>[Eiger] Transmission delay of first packet in an image being streamed out of the module’s left UDP port. Each value represents 10ns. Typical value is 50000.</p>
+</dd>
+<dt id="term-txndelay-right-n-delay">txndelay_right [n_delay]</dt><dd><p>[Eiger] Transmission delay of first packet in an image being streamed out of the module’s right UDP port. Each value represents 10ns. Typical value is 50000.</p>
+</dd>
+<dt id="term-type">type</dt><dd><p>Serial number or MAC of detector (hex).</p>
+</dd>
+<dt id="term-udp-dstip-x-x-x-x">udp_dstip [x.x.x.x]</dt><dd><p>Ip address of the receiver (destination) udp interface.</p>
+</dd>
+<dt id="term-udp-dstip2-x-x-x-x">udp_dstip2 [x.x.x.x]</dt><dd><p>[Jungfrau] Ip address of the receiver (destination) udp interface where the second half of detector data is sent to.</p>
+</dd>
+<dt id="term-udp-dstmac-x-x-x-x-x-x">udp_dstmac [x:x:x:x:x:x]</dt><dd><p>Mac address of the receiver (destination) udp interface. Can be unused as rx_hostname/udp_dstip retrieves it.</p>
+</dd>
+<dt id="term-udp-dstmac2-x-x-x-x-x-x">udp_dstmac2 [x:x:x:x:x:x]</dt><dd><p>[Jungfrau] Mac address of the receiver (destination) udp interface where the second half of detector data is sent to. Can be unused as rx_hostname/udp_dstip2 retrieves it.</p>
+</dd>
+<dt id="term-udp-dstport-n">udp_dstport [n]</dt><dd><p>Port number of the receiver (destination) udp interface. Default is 50001.</p>
+</dd>
+<dt id="term-udp-dstport2-n">udp_dstport2 [n]</dt><dd><p>Default is 50002.
+[Jungfrau] Port number of the receiver (destination) udp interface where the second half of detector data is sent to.</p>
+</dd>
+</dl>
+<p>[Eiger] Port number of the reciever (desintation) udp interface where the right half of the detector data is sent to.</p>
+<blockquote>
+<div><dl class="simple">
+<dt>udp_srcip [x.x.x.x]</dt><dd><p>Ip address of the detector (source) udp interface. Must be same subnet as destination udp ip.</p>
+</dd>
+<dt>udp_srcip2 [x.x.x.x]</dt><dd><p>[Jungfrau] Ip address of the bottom half of detector (source) udp interface. Must be same subnet as destination udp ip2.</p>
+</dd>
+<dt>udp_srcmac [x:x:x:x:x:x]</dt><dd><p>Mac address of the detector (source) udp interface.</p>
+</dd>
+<dt>udp_srcmac2 [x:x:x:x:x:x]</dt><dd><p>[Jungfrau] Mac address of the bottom half of detector (source) udp interface.</p>
+</dd>
+<dt>update [server_name] [pc_host_name] [fname.pof]</dt><dd><p>[Jungfrau][Ctb][Moench] Updates detector server via tftp from pc, updates firmware to pof file and then reboots controller (blackfin).</p>
+</dd>
+<dt>user</dt><dd><p>User details from shared memory.</p>
+</dd>
+<dt>v_a [n_value]</dt><dd><p>[Ctb] Voltage supply a in mV.</p>
+</dd>
+<dt>v_b [n_value]</dt><dd><p>[Ctb] Voltage supply b in mV.</p>
+</dd>
+<dt>v_c [n_value]</dt><dd><p>[Ctb] Voltage supply c in mV.</p>
+</dd>
+<dt>v_chip [n_value]</dt><dd><p>[Ctb] Voltage supply chip in mV. Do not use it unless you are completely sure you will not fry the board.</p>
+</dd>
+<dt>v_d [n_value]</dt><dd><p>[Ctb] Voltage supply d in mV.</p>
+</dd>
+<dt>v_io [n_value]</dt><dd><p>[Ctb] Voltage supply io in mV. Minimum 1200 mV. Must be the first power regulator to be set after fpga reset (on-board detector server start up).</p>
+</dd>
+<dt>v_limit [n_value]</dt><dd><p>[Ctb][Moench] Soft limit for power supplies(ctb only) and DACS in mV.</p>
+</dd>
+<dt>vb_comp [dac or mv value][(optional unit) mv]</dt><dd><p>[Jungfrau] Dac for ??</p>
+</dd>
+<dt>vb_comp_adc [dac or mv value][(optional unit) mv]</dt><dd><p>[Gotthard2] Dac for comparator current of ADC.</p>
+</dd>
+<dt>vb_comp_fe [dac or mv value][(optional unit) mv]</dt><dd><p>[Gotthard2] Dac for comparator current of analogue front end.</p>
+</dd>
+<dt>vb_cs [dac or mv value][(optional unit) mv]</dt><dd><p>[Gotthard2] Dac for current injection into preamplifier.</p>
+</dd>
+<dt>vb_ds [dac or mv value][(optional unit) mv]</dt><dd><p>[Jungfrau] Dac for ??</p>
+</dd>
+<dt>vb_opa_1st [dac or mv value][(optional unit) mv]</dt><dd><p>[Gotthard2] dac dac for opa current for driving the other DACs in chip.</p>
+</dd>
+<dt>vb_opa_fd [dac or mv value][(optional unit) mv]</dt><dd><p>[Gotthard2] Dac for current for CDS opa stage.</p>
+</dd>
+<dt>vb_pixbuf [dac or mv value][(optional unit) mv]</dt><dd><p>[Jungfrau] Dac for ??</p>
+</dd>
+<dt>vb_sda [dac or mv value][(optional unit) mv]</dt><dd><p>[Moench] Dac for 3</p>
+</dd>
+<dt>vbp_colbuf [dac or mv value][(optional unit) mv]</dt><dd><p>[Moench] Dac for 0</p>
+</dd>
+<dt>vcal [dac or mv value][(optional unit) mv]</dt><dd><p>[Eiger] Dac for ??</p>
+</dd>
+<dt>vcas [dac or mv value][(optional unit) mv]</dt><dd><p>[Mythen3] Dac for the preamplifier’s cascode voltage.</p>
+</dd>
+<dt>vcasc_out [dac or mv value][(optional unit) mv]</dt><dd><p>[Gotthard] Dac for ??</p>
+</dd>
+<dt>vcasc_sfp [dac or mv value][(optional unit) mv]</dt><dd><p>[Moench] Dac for 4</p>
+</dd>
+<dt>vcascn_pb [dac or mv value][(optional unit) mv]</dt><dd><p>[Gotthard] Dac for ??</p>
+</dd>
+<dt>vcascp_pb [dac or mv value][(optional unit) mv]</dt><dd><p>[Gotthard] Dac for ??</p>
+</dd>
+<dt>vcassh [dac or mv value][(optional unit) mv]</dt><dd><p>[Mythen3] Dac for the shaper’s cascode voltage.</p>
+</dd>
+<dt>vchip_comp_adc [chip index 0-10, -1 for all][10 bit hex value]</dt><dd><p>[Gotthard2] On chip Dac for comparator current of ADC.</p>
+</dd>
+<dt>vchip_comp_fe [chip index 0-10, -1 for all][10 bit hex value]</dt><dd><p>[Gotthard2] On chip Dac for comparator current of analogue front end.</p>
+</dd>
+<dt>vchip_cs [chip index 0-10, -1 for all][10 bit hex value]</dt><dd><p>[Gotthard2] On chip Dac for current injection into preamplifier.</p>
+</dd>
+<dt>vchip_opa_1st [chip index 0-10, -1 for all][10 bit hex value]</dt><dd><p>[Gotthard2] On chip Dac for opa current for driving the other DACs in chip.</p>
+</dd>
+<dt>vchip_opa_fd [chip index 0-10, -1 for all][10 bit hex value]</dt><dd><p>[Gotthard2] On chip Dac current for CDS opa stage.</p>
+</dd>
+<dt>vchip_ref_comp_fe [chip index 0-10, -1 for all][10 bit hex value]</dt><dd><p>[Gotthard2] On chip Dac for reference voltage of the comparator of analogue front end.</p>
+</dd>
+<dt>vcmp_ll [dac or mv value][(optional unit) mv]</dt><dd><p>[Eiger] Dac for ??</p>
+</dd>
+<dt>vcmp_lr [dac or mv value][(optional unit) mv]</dt><dd><p>[Eiger] Dac for ??</p>
+</dd>
+<dt>vcmp_rl [dac or mv value][(optional unit) mv]</dt><dd><p>[Eiger] Dac for ??</p>
+</dd>
+<dt>vcmp_rr [dac or mv value][(optional unit) mv]</dt><dd><p>[Eiger] Dac for ??</p>
+</dd>
+<dt>vcn [dac or mv value][(optional unit) mv]</dt><dd><p>[Eiger] Dac for ??</p>
+</dd>
+<dt>vcom_adc1 [dac or mv value][(optional unit) mv]</dt><dd><p>[Gotthard2] Dac for common mode voltage of ADC DAC bank 1.</p>
+</dd>
+<dt>vcom_adc2 [dac or mv value][(optional unit) mv]</dt><dd><p>[Gotthard2] Dac for common mode voltage of ADC DAC bank 2.</p>
+</dd>
+<dt>vcom_cds [dac or mv value][(optional unit) mv]</dt><dd><p>[Gotthard2] Dac for common mode voltage of CDS stage.</p>
+</dd>
+<dt>vcp [dac or mv value][(optional unit) mv]</dt><dd><p>[Eiger] Dac for ??</p>
+</dd>
+<dt>vdcsh [dac or mv value][(optional unit) mv]</dt><dd><p>[Mythen3] Dac for the reference (DC) voltage for the shaper.</p>
+</dd>
+<dt>vdd_prot [dac or mv value][(optional unit) mv]</dt><dd><p>[Jungfrau] Dac for ??</p>
+</dd>
+<dt>versions</dt><dd><p>Print all versions and detector type</p>
+</dd>
+<dt>vetophoton [n_chip] [#photons] [energy in keV] [reference file]</dt><dd><p>[Gotthard2] Set veto reference for 128 channels for chip n_chip according to referenc file and #photons and energy in keV.</p>
+</dd>
+<dt>vetoref [gain index] [12 bit value in hex]</dt><dd><p>[Gotthard2] Set veto reference for all 128 channels for all chips.</p>
+</dd>
+<dt>vhighvoltage [n_value]</dt><dd><p>High voltage to the sensor in Voltage.
+[Gotthard] [0|90|110|120|150|180|200]
+[Eiger][Mythen3][Gotthard2] 0-200
+[Jungfrau][Ctb][Moench] [0|60-200]</p>
+</dd>
+<dt>vicin [dac or mv value][(optional unit) mv]</dt><dd><p>[Mythen3] Dac for the bias current for the comparator.</p>
+</dd>
+<dt>viinsh [dac or mv value][(optional unit) mv]</dt><dd><p>[Mythen3] Dac for the bias current for the shaper.</p>
+</dd>
+<dt>vin_cm [dac or mv value][(optional unit) mv]</dt><dd><p>[Gotthard] Dac for ??
+[Moench] Dac for 2</p>
+</dd>
+<dt>vin_com [dac or mv value][(optional unit) mv]</dt><dd><p>[Jungfrau] Dac for ??</p>
+</dd>
+<dt>vipre [dac or mv value][(optional unit) mv]</dt><dd><p>[Mythen3] Dac for the preamplifier’s input transistor current.
+[Moench] Dac for 1</p>
+</dd>
+<dt>vipre_cds [dac or mv value][(optional unit) mv]</dt><dd><p>[Moench] Dac for 6</p>
+</dd>
+<dt>vipre_out [dac or mv value][(optional unit) mv]</dt><dd><p>[Mythen3] Dac for preamplifier’s output transistor current.</p>
+</dd>
+<dt>virtual [n_servers] [starting_port_number]</dt><dd><p>Connecs to n virtual server at local host starting at specific control port.</p>
+</dd>
+<dt>vis [dac or mv value][(optional unit) mv]</dt><dd><p>[Eiger] Dac for ??</p>
+</dd>
+<dt>vm_a</dt><dd><p>[Ctb] Measured voltage of power supply a in mV.</p>
+</dd>
+<dt>vm_b</dt><dd><p>[Ctb] Measured voltage of power supply b in mV.</p>
+</dd>
+<dt>vm_c</dt><dd><p>[Ctb] Measured voltage of power supply c in mV.</p>
+</dd>
+<dt>vm_d</dt><dd><p>[Ctb] Measured voltage of power supply d in mV.</p>
+</dd>
+<dt>vm_io</dt><dd><p>[Ctb] Measured voltage of power supply io in mV.</p>
+</dd>
+<dt>vout_cm [dac or mv value][(optional unit) mv]</dt><dd><p>[Gotthard] Dac for ??
+[Moench] Dac for 5</p>
+</dd>
+<dt>vph [dac or mv value][(optional unit) mv]</dt><dd><p>[Mythen3] Dac for the high voltage for analog pulsing.</p>
+</dd>
+<dt>vpl [dac or mv value][(optional unit) mv]</dt><dd><p>[Mythen3] Dac for the low voltage for analog pulsing.</p>
+</dd>
+<dt>vpreamp [dac or mv value][(optional unit) mv]</dt><dd><p>[Mythen3] voltage to define the preamplifier feedback resistance.</p>
+</dd>
+<dt>vref_cds [dac or mv value][(optional unit) mv]</dt><dd><p>[Gotthard2] Dac for reference voltage of CDS applied to the temporary storage cell in medium and low gain.</p>
+</dd>
+<dt>vref_comp [dac or mv value][(optional unit) mv]</dt><dd><p>[Gotthard][Jungfrau] Dac for ??</p>
+</dd>
+<dt>vref_comp_fe [dac or mv value][(optional unit) mv]</dt><dd><p>[Gotthard2] Dac for reference voltage of the comparator of analogue front end.</p>
+</dd>
+<dt>vref_ds [dac or mv value][(optional unit) mv]</dt><dd><p>[Gotthard][Jungfrau] Dac for ??</p>
+</dd>
+<dt>vref_h_adc [dac or mv value][(optional unit) mv]</dt><dd><p>[Gotthard2] Dac for reference voltage high of ADC.</p>
+</dd>
+<dt>vref_l_adc [dac or mv value][(optional unit) mv]</dt><dd><p>[Gotthard2] Dac for reference voltage low for ADC.</p>
+</dd>
+<dt>vref_prech [dac or mv value][(optional unit) mv]</dt><dd><p>[Gotthard2][Jungfrau] Dac for reference votlage for precharing the preamplifier.</p>
+</dd>
+<dt>vref_rstore [dac or mv value][(optional unit) mv]</dt><dd><p>[Gotthard2] Dac for reference charging voltage of temparory storage cell in high gain.</p>
+</dd>
+<dt>vrf [dac or mv value][(optional unit) mv]</dt><dd><p>[Eiger] Dac for ??</p>
+</dd>
+<dt>vrs [dac or mv value][(optional unit) mv]</dt><dd><p>[Eiger] Dac for ??</p>
+</dd>
+<dt>vshaper [dac or mv value][(optional unit) mv]</dt><dd><p>[Mythen3] voltage to define feedback resistance of the first shaper</p>
+</dd>
+<dt>vshaperneg [dac or mv value][(optional unit) mv]</dt><dd><p>[Mythen3] voltage to define feedback resistance of the second shaper.</p>
+</dd>
+<dt>vsvn [dac or mv value][(optional unit) mv]</dt><dd><p>[Eiger] Dac for ??</p>
+</dd>
+<dt>vsvp [dac or mv value][(optional unit) mv]</dt><dd><p>[Eiger] Dac for ??</p>
+</dd>
+<dt>vtgstv [dac or mv value][(optional unit) mv]</dt><dd><p>[Eiger] Dac for ??</p>
+</dd>
+<dt>vth1 [dac or mv value][(optional unit) mv]</dt><dd><p>[Mythen3] Dac for first detector threshold voltage.</p>
+</dd>
+<dt>vth2 [dac or mv value][(optional unit) mv]</dt><dd><p>[Mythen3] Dac for second detector threshold voltage.</p>
+</dd>
+<dt>vth3 [dac or mv value][(optional unit) mv]</dt><dd><p>[Mythen3] Dac for third detector threshold voltage.</p>
+</dd>
+<dt>vthreshold [dac or mv value][(optional unit) mv]</dt><dd><p>[Eiger][Mythen3] Detector threshold voltage for single photon counters.</p>
+</dd>
+<dt>vtr [dac or mv value][(optional unit) mv]</dt><dd><p>[Eiger] Dac for ??</p>
+</dd>
+<dt>vtrim [dac or mv value][(optional unit) mv]</dt><dd><p>[Mythen3] Dac for the voltage defining the trim bit size.</p>
+</dd>
+<dt>zmqip [x.x.x.x]</dt><dd><p>Zmq IP Address in client(gui) or intermediate process for data to be streamed to from receiver.  Default connects to receiver zmq Ip Address (from rx_hostname). Modified only when using an intermediate process between receiver and client(gui). Also restarts client zmq streaming if enabled.</p>
+</dd>
+<dt>zmqport [port]</dt><dd><p>Zmq port in client(gui) or intermediate process for data to be streamed to from receiver. efault connects to receiver zmq streaming out port (30001). Modified only when using an intermediate process between receiver and client(gui). Also restarts client zmq streaming if enabled. Must be different for every detector (and udp port). Multi command will automatically increment for individual modules.</p>
+</dd>
+</dl>
+</div></blockquote>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="container_utils.html" class="btn btn-neutral float-right" title="ContainerUtils" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="pyexamples.html" class="btn btn-neutral float-left" title="Examples" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, PSD Detector Group
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

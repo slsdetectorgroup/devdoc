@@ -1,0 +1,451 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Result &mdash; slsDetectorPackage  documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Receiver" href="receiver.html" />
+    <link rel="prev" title="Detector" href="detector.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> slsDetectorPackage
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                5.0.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Installation:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dependencies.html">Dependencies</a></li>
+<li class="toctree-l1"><a class="reference internal" href="consuming.html">Consuming slsDetectorPackage</a></li>
+</ul>
+<p class="caption"><span class="caption-text">C++ API</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="detector.html">Detector</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Result</a></li>
+<li class="toctree-l1"><a class="reference internal" href="receiver.html">Receiver</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Python API</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="pydetector.html">Detector</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pyenums.html">Enums</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pyexamples.html">Examples</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Command line</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="commandline.html">Command line interface</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Developer</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="container_utils.html">ContainerUtils</a></li>
+<li class="toctree-l1"><a class="reference internal" href="type_traits.html">TypeTraits</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ToString.html">ToString</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">slsDetectorPackage</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>Result</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/result.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="result">
+<h1>Result<a class="headerlink" href="#result" title="Permalink to this headline">¶</a></h1>
+<p>Result is a thin wrapper around std::vector and used for returning values from the detector. Since every module could have a different value, we need to return a vector instead of just a single value.</p>
+<p>Easy conversions to single values are provided using the squash method. </p>
+<dl class="type">
+<dt id="_CPPv43sls">
+<span id="_CPPv33sls"></span><span id="_CPPv23sls"></span><span id="sls"></span><span class="target" id="namespacesls"></span><em class="property">namespace </em><code class="sig-name descname">sls</code><br /></dt>
+<dd><div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Functions</p>
+<dl class="function">
+<dt id="_CPPv4I0EN3slslsERNSt7ostreamERNSt7ostreamERK6ResultI1TE">
+<span id="_CPPv3I0EN3slslsERNSt7ostreamERK6ResultI1TE"></span><span id="_CPPv2I0EN3slslsERNSt7ostreamERK6ResultI1TE"></span><span class="target" id="namespacesls_1aaa3e8507e77ffe12ec5cdcbc8f3fea37"></span>template&lt;typename <code class="sig-name descname">T</code>&gt;<br />std::ostream &amp;<code class="sig-name descname">operator&lt;&lt;</code><span class="sig-paren">(</span>std::ostream &amp;<em>os</em>, <em class="property">const</em> Result&lt;<a class="reference internal" href="#_CPPv4I0EN3slslsERNSt7ostreamERNSt7ostreamERK6ResultI1TE" title="sls::operator&lt;&lt;::T">T</a>&gt; &amp;<em>res</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4I0EN3slslsERNSt7ostreamERNSt7ostreamERK6ResultI1TE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>operator &lt;&lt; overload to print <a class="reference internal" href="#classsls_1_1Result"><span class="std std-ref">Result</span></a>, uses ToString for the conversion <dl class="simple">
+<dt><strong>Template Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">T</span></code>: type stored in the <a class="reference internal" href="#classsls_1_1Result"><span class="std std-ref">Result</span></a> </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<dl class="class">
+<dt id="_CPPv4I00EN3sls6ResultE">
+<span id="_CPPv3I00EN3sls6ResultE"></span><span id="_CPPv2I00EN3sls6ResultE"></span><span class="target" id="classsls_1_1Result"></span>template&lt;class <code class="sig-name descname">T</code>, class <code class="sig-name descname">Allocator</code> = std::allocator&lt;<a class="reference internal" href="#_CPPv4I00EN3sls6ResultE" title="sls::Result::T">T</a>&gt;&gt;<br /><em class="property">class </em><code class="sig-name descname">Result</code><a class="headerlink" href="#_CPPv4I00EN3sls6ResultE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><em>#include &lt;Result.h&gt;</em><p><dl class="simple">
+<dt><strong>Template Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">T</span></code>: type to store in the result </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Allocator</span></code>: for the underlying vector, default </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Public Types</p>
+<dl class="type">
+<dt id="_CPPv4IEN3sls6ResultI1T9AllocatorE10value_typeE">
+<span id="_CPPv3IEN3sls6ResultI1T9AllocatorE10value_typeE"></span><span id="_CPPv2IEN3sls6ResultI1T9AllocatorE10value_typeE"></span>template&lt;&gt;<br /><span class="target" id="classsls_1_1Result_1a1a36881370d2a3af9301a257e96f5a06"></span><em class="property">using </em><code class="sig-name descname">value_type</code> = <em class="property">typename</em> std::vector::value_type<a class="headerlink" href="#_CPPv4IEN3sls6ResultI1T9AllocatorE10value_typeE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="type">
+<dt id="_CPPv4IEN3sls6ResultI1T9AllocatorE8iteratorE">
+<span id="_CPPv3IEN3sls6ResultI1T9AllocatorE8iteratorE"></span><span id="_CPPv2IEN3sls6ResultI1T9AllocatorE8iteratorE"></span>template&lt;&gt;<br /><span class="target" id="classsls_1_1Result_1a1286675c067366e76c7f0b8692bba9b9"></span><em class="property">using </em><code class="sig-name descname">iterator</code> = <em class="property">typename</em> std::vector::iterator<a class="headerlink" href="#_CPPv4IEN3sls6ResultI1T9AllocatorE8iteratorE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="type">
+<dt id="_CPPv4IEN3sls6ResultI1T9AllocatorE14const_iteratorE">
+<span id="_CPPv3IEN3sls6ResultI1T9AllocatorE14const_iteratorE"></span><span id="_CPPv2IEN3sls6ResultI1T9AllocatorE14const_iteratorE"></span>template&lt;&gt;<br /><span class="target" id="classsls_1_1Result_1af303b128daef78c3e7934755253665a6"></span><em class="property">using </em><code class="sig-name descname">const_iterator</code> = <em class="property">typename</em> std::vector::const_iterator<a class="headerlink" href="#_CPPv4IEN3sls6ResultI1T9AllocatorE14const_iteratorE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="type">
+<dt id="_CPPv4IEN3sls6ResultI1T9AllocatorE9size_typeE">
+<span id="_CPPv3IEN3sls6ResultI1T9AllocatorE9size_typeE"></span><span id="_CPPv2IEN3sls6ResultI1T9AllocatorE9size_typeE"></span>template&lt;&gt;<br /><span class="target" id="classsls_1_1Result_1a1600d06f5cc9310454da68997d448ff2"></span><em class="property">using </em><code class="sig-name descname">size_type</code> = <em class="property">typename</em> std::vector::size_type<a class="headerlink" href="#_CPPv4IEN3sls6ResultI1T9AllocatorE9size_typeE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="type">
+<dt id="_CPPv4IEN3sls6ResultI1T9AllocatorE9referenceE">
+<span id="_CPPv3IEN3sls6ResultI1T9AllocatorE9referenceE"></span><span id="_CPPv2IEN3sls6ResultI1T9AllocatorE9referenceE"></span>template&lt;&gt;<br /><span class="target" id="classsls_1_1Result_1a31a88be6428d3264e874c260b46d5725"></span><em class="property">using </em><code class="sig-name descname">reference</code> = <em class="property">typename</em> std::vector::reference<a class="headerlink" href="#_CPPv4IEN3sls6ResultI1T9AllocatorE9referenceE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="type">
+<dt id="_CPPv4IEN3sls6ResultI1T9AllocatorE15const_referenceE">
+<span id="_CPPv3IEN3sls6ResultI1T9AllocatorE15const_referenceE"></span><span id="_CPPv2IEN3sls6ResultI1T9AllocatorE15const_referenceE"></span>template&lt;&gt;<br /><span class="target" id="classsls_1_1Result_1a5dbc266ffc8456ad9d1c83e9713985f1"></span><em class="property">using </em><code class="sig-name descname">const_reference</code> = <em class="property">typename</em> std::vector::const_reference<a class="headerlink" href="#_CPPv4IEN3sls6ResultI1T9AllocatorE15const_referenceE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Public Functions</p>
+<dl class="function">
+<dt id="_CPPv4N3sls6Result6ResultEv">
+<span id="_CPPv3N3sls6Result6ResultEv"></span><span id="_CPPv2N3sls6Result6ResultEv"></span><span id="sls::Result::Result"></span><span class="target" id="classsls_1_1Result_1afb58004f091150ec6edc363695a40a24"></span><code class="sig-name descname">Result</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3sls6Result6ResultEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv4N3sls6Result6ResultENSt16initializer_listI1TEE">
+<span id="_CPPv3N3sls6Result6ResultENSt16initializer_listI1TEE"></span><span id="_CPPv2N3sls6Result6ResultENSt16initializer_listI1TEE"></span><span id="sls::Result::Result__std::initializer_list:T:"></span><span class="target" id="classsls_1_1Result_1a366cfb57157587bb2443962c62b96bc5"></span><code class="sig-name descname">Result</code><span class="sig-paren">(</span>std::initializer_list&lt;T&gt; <em>list</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3sls6Result6ResultENSt16initializer_listI1TEE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv4I00EN3sls6Result6ResultERK6ResultI1VE">
+<span id="_CPPv3I00EN3sls6Result6ResultERK6ResultI1VE"></span><span id="_CPPv2I00EN3sls6Result6ResultERK6ResultI1VE"></span><span class="target" id="classsls_1_1Result_1a044b5689663e1773d950b8ce37913061"></span>template&lt;typename <code class="sig-name descname">V</code>, typename = <em class="property">typename</em> std::enable_if&lt;std::is_integral&lt;<a class="reference internal" href="#_CPPv4I00EN3sls6Result6ResultERK6ResultI1VE" title="sls::Result::Result::V">V</a>&gt;::value &amp;&amp; (std::is_same&lt;T, time::ns&gt;::value || std::is_same&lt;T, bool&gt;::value)&gt;::type&gt;<br /><code class="sig-name descname">Result</code><span class="sig-paren">(</span><em class="property">const</em> <a class="reference internal" href="#_CPPv4I00EN3sls6Result6ResultERK6ResultI1VE" title="sls::Result::Result">Result</a>&lt;<a class="reference internal" href="#_CPPv4I00EN3sls6Result6ResultERK6ResultI1VE" title="sls::Result::Result::V">V</a>&gt; &amp;<em>from</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4I00EN3sls6Result6ResultERK6ResultI1VE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Custom constructor from integer type to Result&lt;ns&gt; or Result&lt;bool&gt; </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv4I00EN3sls6Result6ResultER6ResultI1VE">
+<span id="_CPPv3I00EN3sls6Result6ResultER6ResultI1VE"></span><span id="_CPPv2I00EN3sls6Result6ResultER6ResultI1VE"></span><span class="target" id="classsls_1_1Result_1a69d9dd7713264cd6a08d9151ddf34933"></span>template&lt;typename <code class="sig-name descname">V</code>, typename = <em class="property">typename</em> std::enable_if&lt;std::is_integral&lt;<a class="reference internal" href="#_CPPv4I00EN3sls6Result6ResultERK6ResultI1VE" title="sls::Result::Result::V">V</a>&gt;::value &amp;&amp; (std::is_same&lt;T, time::ns&gt;::value || std::is_same&lt;T, bool&gt;::value)&gt;::type&gt;<br /><code class="sig-name descname">Result</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4I00EN3sls6Result6ResultERK6ResultI1VE" title="sls::Result::Result">Result</a>&lt;<a class="reference internal" href="#_CPPv4I00EN3sls6Result6ResultERK6ResultI1VE" title="sls::Result::Result::V">V</a>&gt; &amp;<em>from</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4I00EN3sls6Result6ResultER6ResultI1VE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Custom constructor from integer type to Result&lt;ns&gt; or Result&lt;bool&gt; </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv4I00EN3sls6Result6ResultERR6ResultI1VE">
+<span id="_CPPv3I00EN3sls6Result6ResultERR6ResultI1VE"></span><span id="_CPPv2I00EN3sls6Result6ResultERR6ResultI1VE"></span><span class="target" id="classsls_1_1Result_1a07a68a42bfcc843bd9e934086f5e3ff3"></span>template&lt;typename <code class="sig-name descname">V</code>, typename = <em class="property">typename</em> std::enable_if&lt;std::is_integral&lt;<a class="reference internal" href="#_CPPv4I00EN3sls6Result6ResultERK6ResultI1VE" title="sls::Result::Result::V">V</a>&gt;::value &amp;&amp; (std::is_same&lt;T, time::ns&gt;::value || std::is_same&lt;T, bool&gt;::value)&gt;::type&gt;<br /><code class="sig-name descname">Result</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4I00EN3sls6Result6ResultERK6ResultI1VE" title="sls::Result::Result">Result</a>&lt;<a class="reference internal" href="#_CPPv4I00EN3sls6Result6ResultERK6ResultI1VE" title="sls::Result::Result::V">V</a>&gt; &amp;&amp;<em>from</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4I00EN3sls6Result6ResultERR6ResultI1VE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Custom constructor from integer type to Result&lt;ns&gt; or Result&lt;bool&gt; </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv4IDpEN3sls6Result6ResultEDpRR4Args">
+<span id="_CPPv3IDpEN3sls6Result6ResultEDpRR4Args"></span><span id="_CPPv2IDpEN3sls6Result6ResultEDpRR4Args"></span><span class="target" id="classsls_1_1Result_1a9cf83e439b7356067c598d71ae2d71a1"></span>template&lt;typename ...<code class="sig-name descname">Args</code>&gt;<br /><code class="sig-name descname">Result</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4IDpEN3sls6Result6ResultEDpRR4Args" title="sls::Result::Result::Args">Args</a>&amp;&amp;... <em>args</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4IDpEN3sls6Result6ResultEDpRR4Args" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Forward arguments to the constructor of std::vector <dl class="simple">
+<dt><strong>Template Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Args</span></code>: template paramter pack to forward </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv4N3sls6Result5beginEv">
+<span id="_CPPv3N3sls6Result5beginEv"></span><span id="_CPPv2N3sls6Result5beginEv"></span><span id="sls::Result::begin"></span><span class="target" id="classsls_1_1Result_1a94a9a6e3f1ca35da10513dc6ebef72a7"></span>auto <code class="sig-name descname">begin</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3sls6Result5beginEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv4NK3sls6Result5beginEv">
+<span id="_CPPv3NK3sls6Result5beginEv"></span><span id="_CPPv2NK3sls6Result5beginEv"></span><span id="sls::Result::beginC"></span><span class="target" id="classsls_1_1Result_1af5c3507362478c42260a565c9296da18"></span>auto <code class="sig-name descname">begin</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv4NK3sls6Result5beginEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv4NK3sls6Result6cbeginEv">
+<span id="_CPPv3NK3sls6Result6cbeginEv"></span><span id="_CPPv2NK3sls6Result6cbeginEv"></span><span id="sls::Result::cbeginC"></span><span class="target" id="classsls_1_1Result_1af0b7203f2ee12acc28246da494204e79"></span>auto <code class="sig-name descname">cbegin</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv4NK3sls6Result6cbeginEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv4N3sls6Result3endEv">
+<span id="_CPPv3N3sls6Result3endEv"></span><span id="_CPPv2N3sls6Result3endEv"></span><span id="sls::Result::end"></span><span class="target" id="classsls_1_1Result_1a184c67f81953c2eac8d4b045ace70a2d"></span>auto <code class="sig-name descname">end</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3sls6Result3endEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv4NK3sls6Result3endEv">
+<span id="_CPPv3NK3sls6Result3endEv"></span><span id="_CPPv2NK3sls6Result3endEv"></span><span id="sls::Result::endC"></span><span class="target" id="classsls_1_1Result_1a3fcd48e647e116a6687c9577b79a6914"></span>auto <code class="sig-name descname">end</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv4NK3sls6Result3endEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv4NK3sls6Result4cendEv">
+<span id="_CPPv3NK3sls6Result4cendEv"></span><span id="_CPPv2NK3sls6Result4cendEv"></span><span id="sls::Result::cendC"></span><span class="target" id="classsls_1_1Result_1a8ef65dcb19b1a83918bb10f4ece52c25"></span>auto <code class="sig-name descname">cend</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv4NK3sls6Result4cendEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv4NK3sls6Result4sizeEv">
+<span id="_CPPv3NK3sls6Result4sizeEv"></span><span id="_CPPv2NK3sls6Result4sizeEv"></span><span id="sls::Result::sizeC"></span><span class="target" id="classsls_1_1Result_1abd7ad2ad125b5f29571433f35ae2e267"></span>auto <code class="sig-name descname">size</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv4NK3sls6Result4sizeEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv4NK3sls6Result5emptyEv">
+<span id="_CPPv3NK3sls6Result5emptyEv"></span><span id="_CPPv2NK3sls6Result5emptyEv"></span><span id="sls::Result::emptyC"></span><span class="target" id="classsls_1_1Result_1a1d05e98eeace732fb6d94270d201a80f"></span>auto <code class="sig-name descname">empty</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv4NK3sls6Result5emptyEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv4N3sls6Result5frontEv">
+<span id="_CPPv3N3sls6Result5frontEv"></span><span id="_CPPv2N3sls6Result5frontEv"></span><span id="sls::Result::front"></span><span class="target" id="classsls_1_1Result_1a68ff45c7b6b1d7840ced37bfcdfba2ae"></span>auto <code class="sig-name descname">front</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3sls6Result5frontEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv4NK3sls6Result5frontEv">
+<span id="_CPPv3NK3sls6Result5frontEv"></span><span id="_CPPv2NK3sls6Result5frontEv"></span><span id="sls::Result::frontC"></span><span class="target" id="classsls_1_1Result_1a1151af8f771b0678f90ed338f12e8797"></span>auto <code class="sig-name descname">front</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv4NK3sls6Result5frontEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv4N3sls6Result7reserveE9size_type">
+<span id="_CPPv3N3sls6Result7reserveE9size_type"></span><span id="_CPPv2N3sls6Result7reserveE9size_type"></span><span id="sls::Result::reserve__size_type"></span><span class="target" id="classsls_1_1Result_1a22f6c868d634b08d90bafa8184a37758"></span>void <code class="sig-name descname">reserve</code><span class="sig-paren">(</span>size_type <em>new_cap</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3sls6Result7reserveE9size_type" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv4I0EN3sls6Result9push_backEDa1V">
+<span id="_CPPv3I0EN3sls6Result9push_backE1V"></span><span id="_CPPv2I0EN3sls6Result9push_backE1V"></span><span class="target" id="classsls_1_1Result_1a0c7e8a095bef349462311d7fba878822"></span>template&lt;typename <code class="sig-name descname">V</code>&gt;<br />auto <code class="sig-name descname">push_back</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4I0EN3sls6Result9push_backEDa1V" title="sls::Result::push_back::V">V</a> <em>value</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4I0EN3sls6Result9push_backEDa1V" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv4N3sls6ResultixE9size_type">
+<span id="_CPPv3N3sls6ResultixE9size_type"></span><span id="_CPPv2N3sls6ResultixE9size_type"></span><span id="sls::Result::subscript-operator__size_type"></span><span class="target" id="classsls_1_1Result_1aa431accb37d594614b52cbc9b8ae4d1c"></span>auto <code class="sig-name descname">operator[]</code><span class="sig-paren">(</span>size_type <em>pos</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3sls6ResultixE9size_type" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv4NK3sls6ResultixE9size_type">
+<span id="_CPPv3NK3sls6ResultixE9size_type"></span><span id="_CPPv2NK3sls6ResultixE9size_type"></span><span id="sls::Result::subscript-operator__size_typeC"></span><span class="target" id="classsls_1_1Result_1a73bcbc696ac7bfe229d3d787033ad305"></span>const_reference <code class="sig-name descname">operator[]</code><span class="sig-paren">(</span>size_type <em>pos</em><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv4NK3sls6ResultixE9size_type" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv4NK3sls6Result6squashEv">
+<span id="_CPPv3NK3sls6Result6squashEv"></span><span id="_CPPv2NK3sls6Result6squashEv"></span><span id="sls::Result::squashC"></span><span class="target" id="classsls_1_1Result_1ab2f986279ea4c1520c721eea0733eaec"></span>T <code class="sig-name descname">squash</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv4NK3sls6Result6squashEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>If all elements are equal it returns the front value otherwise a default constructed T </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv4N3sls6Result7tsquashERKNSt6stringE">
+<span id="_CPPv3N3sls6Result7tsquashERKNSt6stringE"></span><span id="_CPPv2N3sls6Result7tsquashERKNSt6stringE"></span><span id="sls::Result::tsquash__ssCR"></span><span class="target" id="classsls_1_1Result_1a70ba801a97e85248c5ad6a8a0c55eed2"></span>T <code class="sig-name descname">tsquash</code><span class="sig-paren">(</span><em class="property">const</em> std::string &amp;<em>error_msg</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3sls6Result7tsquashERKNSt6stringE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>If all elements are equal it returns the front value otherwise throws an exception with custom message provided </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv4NK3sls6Result6squashERK1T">
+<span id="_CPPv3NK3sls6Result6squashERK1T"></span><span id="_CPPv2NK3sls6Result6squashERK1T"></span><span id="sls::Result::squash__TCRC"></span><span class="target" id="classsls_1_1Result_1ae39c0c65d7e9c577142a9489057f85f0"></span>T <code class="sig-name descname">squash</code><span class="sig-paren">(</span><em class="property">const</em> T &amp;<em>default_value</em><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv4NK3sls6Result6squashERK1T" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>If all elements are equal return the front value, otherwise return the supplied default value </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv4NK3sls6Result5equalEv">
+<span id="_CPPv3NK3sls6Result5equalEv"></span><span id="_CPPv2NK3sls6Result5equalEv"></span><span id="sls::Result::equalC"></span><span class="target" id="classsls_1_1Result_1a49c78acc91a94a5cf8356011458a12c3"></span>bool <code class="sig-name descname">equal</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv4NK3sls6Result5equalEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Test whether all elements of the result are equal </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv4N3sls6ResultcvNSt6vectorI1TEEEv">
+<span id="_CPPv3N3sls6ResultcvNSt6vectorI1TEEEv"></span><span id="_CPPv2N3sls6ResultcvNSt6vectorI1TEEEv"></span><span id="sls::Result::castto-std::vector:T:-operator"></span><span class="target" id="classsls_1_1Result_1a91f37d2815718cb838369716525966ee"></span><code class="sig-name descname">operator std::vector&lt;T&gt;</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3sls6ResultcvNSt6vectorI1TEEEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Convert Result&lt;T&gt; to std::vector&lt;T&gt; </p>
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Private Members</p>
+<dl class="member">
+<dt id="_CPPv4N3sls6Result3vecE">
+<span id="_CPPv3N3sls6Result3vecE"></span><span id="_CPPv2N3sls6Result3vecE"></span><span id="sls::Result::vec__std::vector:T.Allocator:"></span><span class="target" id="classsls_1_1Result_1aae2fc049edee5d7de657a5024480c054"></span>std::vector&lt;T, Allocator&gt; <code class="sig-name descname">vec</code><a class="headerlink" href="#_CPPv4N3sls6Result3vecE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>wrapped vector </p>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="receiver.html" class="btn btn-neutral float-right" title="Receiver" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="detector.html" class="btn btn-neutral float-left" title="Detector" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, PSD Detector Group
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
