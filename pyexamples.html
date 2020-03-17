@@ -267,7 +267,7 @@ But lets start looking at the at the manual way:</p>
 <span class="n">d</span><span class="o">.</span><span class="n">stop_receiver</span><span class="p">()</span>
 
 <span class="n">lost</span> <span class="o">=</span> <span class="n">d</span><span class="o">.</span><span class="n">frames_caught</span> <span class="o">-</span> <span class="n">n</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{n}</span><span class="s1"> frames of </span><span class="si">{t}</span><span class="s1">s took {time.time()-t0:{.3}}s with </span><span class="si">{lost}</span><span class="s1"> frames lost &#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">n</span><span class="si">}</span><span class="s1"> frames of </span><span class="si">{</span><span class="n">t</span><span class="si">}</span><span class="s1">s took </span><span class="si">{</span><span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span><span class="o">-</span><span class="n">t0</span><span class="si">:{</span><span class="o">.</span><span class="mi">3</span><span class="si">}}</span><span class="s1">s with </span><span class="si">{</span><span class="n">lost</span><span class="si">}</span><span class="s1"> frames lost &#39;</span><span class="p">)</span>
 
 <span class="c1">#Reset to not interfere with a potential next measurement</span>
 <span class="n">d</span><span class="o">.</span><span class="n">reset_frames_caught</span><span class="p">()</span>

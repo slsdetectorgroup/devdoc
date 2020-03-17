@@ -99,6 +99,8 @@
 <li class="toctree-l2"><a class="reference internal" href="#setup">Setup</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#compile-examples">Compile examples</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#running-a-config-file-e1">Running a config file [e1]</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#using-the-return-type-sls-result-e2">Using the return type sls::Result [e2]</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#setting-exposure-time-e3">Setting exposure time [e3]</a></li>
 </ul>
 </li>
 </ul>
@@ -200,6 +202,7 @@ cmake ../api-examples -DCMAKE_PREFIX_PATH<span class="o">=</span>~/sls/detector/
 make
 </pre></div>
 </div>
+<p>Below follows a short description of what is included in the examples.</p>
 </div>
 <div class="section" id="running-a-config-file-e1">
 <h2>Running a config file [e1]<a class="headerlink" href="#running-a-config-file-e1" title="Permalink to this headline">¶</a></h2>
@@ -232,6 +235,34 @@ hostname <span class="o">[</span>localhost<span class="o">]</span>
 
 
 Jungfrau detector with <span class="m">1</span> modules configured
+</pre></div>
+</div>
+</div>
+<div class="section" id="using-the-return-type-sls-result-e2">
+<h2>Using the return type sls::Result [e2]<a class="headerlink" href="#using-the-return-type-sls-result-e2" title="Permalink to this headline">¶</a></h2>
+<p>Since many our detectors have multiple modules we cannot return
+a single value when reading from the Detector. Hostname, Ip and also
+for example exposure time can differ between modules.</p>
+<p>Therefore we return Result&lt;T&gt; which is a thin wrapper around
+std::vector.</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">sls</span><span class="o">::</span><span class="n">Result</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">res1</span><span class="p">{</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">};</span>
+<span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;res1: &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">res1</span> <span class="o">&lt;&lt;</span> <span class="sc">&#39;\n&#39;</span><span class="p">;</span>
+<span class="n">res1</span><span class="p">.</span><span class="n">squash</span><span class="p">();</span>
+<span class="n">res1</span><span class="p">.</span><span class="n">squash</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="setting-exposure-time-e3">
+<h2>Setting exposure time [e3]<a class="headerlink" href="#setting-exposure-time-e3" title="Permalink to this headline">¶</a></h2>
+<p>For setting times, like exposure time, period, delay etc.
+we use std::chrono::duration.</p>
+<p>Example 3 shows how to set and read exposure time as well
+as converting to floating point.</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="cpf">&quot;Detector.h&quot;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;chrono&gt;</span><span class="cp"></span>
+<span class="p">...</span>
+<span class="n">std</span><span class="o">::</span><span class="n">chrono</span><span class="o">::</span><span class="n">microseconds</span> <span class="n">t0</span><span class="p">{</span><span class="mi">500</span><span class="p">};</span>
+<span class="n">det</span><span class="p">.</span><span class="n">setExptime</span><span class="p">(</span><span class="n">t0</span><span class="p">);</span>
 </pre></div>
 </div>
 </div>

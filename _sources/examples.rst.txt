@@ -27,6 +27,8 @@ https://github.com/slsdetectorgroup/api-examples
     cmake ../api-examples -DCMAKE_PREFIX_PATH=~/sls/detector/install
     make
 
+Below follows a short description of what is included in the examples.
+
 
 Running a config file [e1]
 -----------------------------
@@ -71,3 +73,43 @@ for communication over TCP. Most commands go on 1952 and only stop and status on
 
 
     Jungfrau detector with 1 modules configured
+
+
+Using the return type sls::Result [e2]
+-----------------------------------------
+
+Since many our detectors have multiple modules we cannot return
+a single value when reading from the Detector. Hostname, Ip and also
+for example exposure time can differ between modules. 
+
+Therefore we return Result<T> which is a thin wrapper around
+std::vector. 
+
+.. code-block:: cpp
+
+    sls::Result<int> res1{1, 1, 1};
+    std::cout << "res1: " << res1 << '\n';
+    res1.squash();
+    res1.squash(-1);
+
+
+
+Setting exposure time [e3]
+-----------------------------------------
+
+For setting times, like exposure time, period, delay etc. 
+we use std::chrono::duration. 
+
+Example 3 shows how to set and read exposure time as well
+as converting to floating point. 
+
+.. code-block:: cpp
+
+    #include "Detector.h"
+    #include <chrono>
+    ...
+    std::chrono::microseconds t0{500};
+    det.setExptime(t0);
+
+
+
