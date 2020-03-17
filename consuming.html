@@ -89,7 +89,8 @@
 <li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="dependencies.html">Dependencies</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Consuming slsDetectorPackage</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#cmake-with-submodule-in-your-project">CMake with submodule in your project</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#cmake-slsdetectorpackage-as-submodule-in-your-project">CMake: slsDetectorPackage as submodule in your project</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#cmake-find-package-slsdetectorpackage">CMake: find_package(slsDetectorPackage)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#no-tools-minimal-approach">No tools minimal approach</a></li>
 </ul>
 </li>
@@ -183,12 +184,13 @@
 <h1>Consuming slsDetectorPackage<a class="headerlink" href="#consuming-slsdetectorpackage" title="Permalink to this headline">¶</a></h1>
 <p>Depending on how you want to build your integration with
 slsDetectorPackage there are a few different ways to
-consume the package.</p>
-<div class="section" id="cmake-with-submodule-in-your-project">
-<h2>CMake with submodule in your project<a class="headerlink" href="#cmake-with-submodule-in-your-project" title="Permalink to this headline">¶</a></h2>
+consume our package. The recommended way is to use one of the
+CMake approaches.</p>
+<div class="section" id="cmake-slsdetectorpackage-as-submodule-in-your-project">
+<h2>CMake: slsDetectorPackage as submodule in your project<a class="headerlink" href="#cmake-slsdetectorpackage-as-submodule-in-your-project" title="Permalink to this headline">¶</a></h2>
 <p>If you are using CMake to build your integration and want to build everything
-in one go we support adding slsDetectorPackage as a subfolder in your cmake project.
-a minimal example would be.</p>
+in one go, we support adding slsDetectorPackage as a subfolder in your cmake project.</p>
+<p>A minimal CMakeLists.txt could look like this:</p>
 <div class="highlight-cmake notranslate"><div class="highlight"><pre><span></span><span class="nb">project</span><span class="p">(</span><span class="s">myDetectorIntegration</span><span class="p">)</span>
 <span class="nb">cmake_minimum_required</span><span class="p">(</span><span class="s">VERSION</span> <span class="s">3.12</span><span class="p">)</span>
 <span class="nb">add_subdirectory</span><span class="p">(</span><span class="s">slsDetectorPackage</span><span class="p">)</span>
@@ -201,29 +203,52 @@ a minimal example would be.</p>
 <span class="nb">target_link_libraries</span><span class="p">(</span><span class="s">example</span> <span class="s">slsDetectorShared</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>An example that also uses git submodules is available in our github repo</p>
+<p>A fully working example can be found at:</p>
 <p><a class="reference external" href="https://github.com/slsdetectorgroup/cmake-subfolder-example">https://github.com/slsdetectorgroup/cmake-subfolder-example</a></p>
+</div>
+<div class="section" id="cmake-find-package-slsdetectorpackage">
+<h2>CMake: find_package(slsDetectorPackage)<a class="headerlink" href="#cmake-find-package-slsdetectorpackage" title="Permalink to this headline">¶</a></h2>
+<p>If you have compiled and installed slsDetectorPackage we also support
+find_package in CMake. If installed in a system wide location no path
+should be needed, otherwise specify cmake prefix path.</p>
+<div class="highlight-cmake notranslate"><div class="highlight"><pre><span></span><span class="nb">cmake_minimum_required</span><span class="p">(</span><span class="s">VERSION</span> <span class="s">3.12</span><span class="p">)</span>
+<span class="nb">project</span><span class="p">(</span><span class="s">myintegration</span><span class="p">)</span>
+
+<span class="nb">find_package</span><span class="p">(</span><span class="s">slsDetectorPackage</span> <span class="s">5.0</span> <span class="s">REQUIRED</span><span class="p">)</span>
+<span class="nb">add_executable</span><span class="p">(</span><span class="s">example</span> <span class="s">main.cpp</span><span class="p">)</span>
+<span class="nb">target_link_libraries</span><span class="p">(</span><span class="s">example</span> <span class="s">slsDetectorShared</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Then assuming the slsDetectorPackage is installed in /path/to/sls/install
+you should be able to configure and build your project in this way.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>cmake ../path/to/your/source -DCMAKE_PREFIX_PATH<span class="o">=</span>/path/to/sls/install
+make
+</pre></div>
+</div>
+<p>A minimal example is available at: <a class="reference external" href="https://github.com/slsdetectorgroup/minimal-cmake">https://github.com/slsdetectorgroup/minimal-cmake</a></p>
 </div>
 <div class="section" id="no-tools-minimal-approach">
 <h2>No tools minimal approach<a class="headerlink" href="#no-tools-minimal-approach" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span>#include &quot;Detector.h&quot;
-#include &lt;iostream&gt;
-int main(){
+<p>While not recommended it is still possible to specify the include and library paths
+manually when invoking g++. This can sometimes be handy for a quick try.</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="cpf">&quot;Detector.h&quot;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
+<span class="kt">int</span> <span class="nf">main</span><span class="p">(){</span>
 
-    sls::Detector det;
+    <span class="n">sls</span><span class="o">::</span><span class="n">Detector</span> <span class="n">det</span><span class="p">;</span>
 
-    //Get all values and print them
-    std::cout &lt;&lt; &quot;Hostname: &quot; &lt;&lt; det.getHostname() &lt;&lt; &quot;\n&quot;;
-    std::cout &lt;&lt; &quot;Type: &quot; &lt;&lt; det.getDetectorType() &lt;&lt; &quot;\n&quot;;
-    std::cout &lt;&lt; &quot;Udp ip: &quot; &lt;&lt; det.getSourceUDPIP() &lt;&lt; &quot;\n&quot;;
+    <span class="c1">//Get all values and print them</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;Hostname: &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">det</span><span class="p">.</span><span class="n">getHostname</span><span class="p">()</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">;</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;Type: &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">det</span><span class="p">.</span><span class="n">getDetectorType</span><span class="p">()</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">;</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;Udp ip: &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">det</span><span class="p">.</span><span class="n">getSourceUDPIP</span><span class="p">()</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">;</span>
 
 
-    //Get mac addr
-    const int module = 0;
-    auto mac = det.getSourceUDPMAC()[module];
-    std::cout &lt;&lt; &quot;Mac addr of module &quot;&lt;&lt; module &lt;&lt;  &quot; is &quot; &lt;&lt;  mac.str() &lt;&lt; &#39;\n&#39;;
+    <span class="c1">//Get mac addr</span>
+    <span class="k">const</span> <span class="kt">int</span> <span class="n">module</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="k">auto</span> <span class="n">mac</span> <span class="o">=</span> <span class="n">det</span><span class="p">.</span><span class="n">getSourceUDPMAC</span><span class="p">()[</span><span class="n">module</span><span class="p">];</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;Mac addr of module &quot;</span><span class="o">&lt;&lt;</span> <span class="n">module</span> <span class="o">&lt;&lt;</span>  <span class="s">&quot; is &quot;</span> <span class="o">&lt;&lt;</span>  <span class="n">mac</span><span class="p">.</span><span class="n">str</span><span class="p">()</span> <span class="o">&lt;&lt;</span> <span class="sc">&#39;\n&#39;</span><span class="p">;</span>
 
-}⏎
+<span class="p">}</span>
 </pre></div>
 </div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>g++ -I/install/path/include/  -L/install/path/lib64/ myapp.cpp -lSlsDetector -lSlsSupport -Wl,-rpath<span class="o">=</span>../install/path/lib64

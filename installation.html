@@ -86,7 +86,10 @@
             
               <p class="caption"><span class="caption-text">Installation:</span></p>
 <ul class="current">
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Installation</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Installation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#build-from-source-using-cmake">Build from source using CMake</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="dependencies.html">Dependencies</a></li>
 <li class="toctree-l1"><a class="reference internal" href="consuming.html">Consuming slsDetectorPackage</a></li>
 </ul>
@@ -177,7 +180,24 @@
             
   <div class="section" id="installation">
 <h1>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h1>
-<p>get the source etc.</p>
+<div class="section" id="build-from-source-using-cmake">
+<h2>Build from source using CMake<a class="headerlink" href="#build-from-source-using-cmake" title="Permalink to this headline">¶</a></h2>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The default branch of our git repository is developer. It contains the
+latest development version. It is expected to compile and work but
+features might be added or tweaked. In some cases the API might also change
+without being communicated. If absolute stability of the API is needed please
+use one of the release versions.</p>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git clone https://github.com/slsdetectorgroup/slsDetectorPackage.git
+mkdir build <span class="o">&amp;&amp;</span> <span class="nb">cd</span> build
+cmake ../slsDetectorPackage -DCMAKE_INSTALL_PREFIX<span class="o">=</span>/your/install/path
+make -j12
+make install
+</pre></div>
+</div>
+</div>
 </div>
 
 
