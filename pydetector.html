@@ -177,6 +177,682 @@
             
   <div class="section" id="detector">
 <h1>Detector<a class="headerlink" href="#detector" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="slsdet.Detector">
+<em class="property">class </em><code class="sig-prename descclassname">slsdet.</code><code class="sig-name descname">Detector</code><span class="sig-paren">(</span><em class="sig-param">multi_id=0</em><span class="sig-paren">)</span><a class="headerlink" href="#slsdet.Detector" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">_slsdet.CppDetectorApi</span></code></p>
+<p>This class is the base for detector specific
+interfaces. Most functions exists in two versions
+like the getExptime() function that uses the
+C++ API directly and the simplified exptime property.</p>
+<dl class="method">
+<dt id="slsdet.Detector.adcclk">
+<em class="property">property </em><code class="sig-name descname">adcclk</code><a class="headerlink" href="#slsdet.Detector.adcclk" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="slsdet.Detector.adcphase">
+<em class="property">property </em><code class="sig-name descname">adcphase</code><a class="headerlink" href="#slsdet.Detector.adcphase" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="slsdet.Detector.adcpipeline">
+<em class="property">property </em><code class="sig-name descname">adcpipeline</code><a class="headerlink" href="#slsdet.Detector.adcpipeline" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="slsdet.Detector.adcreg">
+<em class="property">property </em><code class="sig-name descname">adcreg</code><a class="headerlink" href="#slsdet.Detector.adcreg" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="slsdet.Detector.asamples">
+<em class="property">property </em><code class="sig-name descname">asamples</code><a class="headerlink" href="#slsdet.Detector.asamples" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="slsdet.Detector.client_version">
+<em class="property">property </em><code class="sig-name descname">client_version</code><a class="headerlink" href="#slsdet.Detector.client_version" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="slsdet.Detector.clkdivider">
+<em class="property">property </em><code class="sig-name descname">clkdivider</code><a class="headerlink" href="#slsdet.Detector.clkdivider" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="slsdet.Detector.config">
+<em class="property">property </em><code class="sig-name descname">config</code><a class="headerlink" href="#slsdet.Detector.config" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="slsdet.Detector.counters">
+<em class="property">property </em><code class="sig-name descname">counters</code><a class="headerlink" href="#slsdet.Detector.counters" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="slsdet.Detector.dbitclk">
+<em class="property">property </em><code class="sig-name descname">dbitclk</code><a class="headerlink" href="#slsdet.Detector.dbitclk" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="slsdet.Detector.dbitphase">
+<em class="property">property </em><code class="sig-name descname">dbitphase</code><a class="headerlink" href="#slsdet.Detector.dbitphase" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="slsdet.Detector.dbitpipeline">
+<em class="property">property </em><code class="sig-name descname">dbitpipeline</code><a class="headerlink" href="#slsdet.Detector.dbitpipeline" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="slsdet.Detector.detector_size">
+<em class="property">property </em><code class="sig-name descname">detector_size</code><a class="headerlink" href="#slsdet.Detector.detector_size" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="slsdet.Detector.detector_type">
+<em class="property">property </em><code class="sig-name descname">detector_type</code><a class="headerlink" href="#slsdet.Detector.detector_type" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="slsdet.Detector.dr">
+<em class="property">property </em><code class="sig-name descname">dr</code><a class="headerlink" href="#slsdet.Detector.dr" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="slsdet.Detector.dsamples">
+<em class="property">property </em><code class="sig-name descname">dsamples</code><a class="headerlink" href="#slsdet.Detector.dsamples" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="slsdet.Detector.exptime">
+<em class="property">property </em><code class="sig-name descname">exptime</code><a class="headerlink" href="#slsdet.Detector.exptime" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="slsdet.Detector.fformat">
+<em class="property">property </em><code class="sig-name descname">fformat</code><a class="headerlink" href="#slsdet.Detector.fformat" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="slsdet.Detector.findex">
+<em class="property">property </em><code class="sig-name descname">findex</code><a class="headerlink" href="#slsdet.Detector.findex" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="slsdet.Detector.flowcontrol10g">
+<em class="property">property </em><code class="sig-name descname">flowcontrol10g</code><a class="headerlink" href="#slsdet.Detector.flowcontrol10g" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="slsdet.Detector.fmaster">
+<em class="property">property </em><code class="sig-name descname">fmaster</code><a class="headerlink" href="#slsdet.Detector.fmaster" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="slsdet.Detector.fname">
+<em class="property">property </em><code class="sig-name descname">fname</code><a class="headerlink" href="#slsdet.Detector.fname" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="slsdet.Detector.foverwrite">
+<em class="property">property </em><code class="sig-name descname">foverwrite</code><a class="headerlink" href="#slsdet.Detector.foverwrite" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="slsdet.Detector.fpath">
+<em class="property">property </em><code class="sig-name descname">fpath</code><a class="headerlink" href="#slsdet.Detector.fpath" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="slsdet.Detector.frameindex">
+<em class="property">property </em><code class="sig-name descname">frameindex</code><a class="headerlink" href="#slsdet.Detector.frameindex" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="slsdet.Detector.frames">
+<em class="property">property </em><code class="sig-name descname">frames</code><a class="headerlink" href="#slsdet.Detector.frames" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="slsdet.Detector.free">
+<code class="sig-name descname">free</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#slsdet.Detector.free" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="slsdet.Detector.fw_version">
+<em class="property">property </em><code class="sig-name descname">fw_version</code><a class="headerlink" href="#slsdet.Detector.fw_version" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="slsdet.Detector.fwrite">
+<em class="property">property </em><code class="sig-name descname">fwrite</code><a class="headerlink" href="#slsdet.Detector.fwrite" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="slsdet.Detector.gappixels">
+<em class="property">property </em><code class="sig-name descname">gappixels</code><a class="headerlink" href="#slsdet.Detector.gappixels" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="slsdet.Detector.hostname">
+<em class="property">property </em><code class="sig-name descname">hostname</code><a class="headerlink" href="#slsdet.Detector.hostname" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="slsdet.Detector.im_a">
+<em class="property">property </em><code class="sig-name descname">im_a</code><a class="headerlink" href="#slsdet.Detector.im_a" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="slsdet.Detector.im_b">
+<em class="property">property </em><code class="sig-name descname">im_b</code><a class="headerlink" href="#slsdet.Detector.im_b" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="slsdet.Detector.im_c">
+<em class="property">property </em><code class="sig-name descname">im_c</code><a class="headerlink" href="#slsdet.Detector.im_c" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="slsdet.Detector.im_d">
+<em class="property">property </em><code class="sig-name descname">im_d</code><a class="headerlink" href="#slsdet.Detector.im_d" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="slsdet.Detector.im_io">
+<em class="property">property </em><code class="sig-name descname">im_io</code><a class="headerlink" href="#slsdet.Detector.im_io" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="slsdet.Detector.interruptsubframe">
+<em class="property">property </em><code class="sig-name descname">interruptsubframe</code><a class="headerlink" href="#slsdet.Detector.interruptsubframe" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="slsdet.Detector.lastclient">
+<em class="property">property </em><code class="sig-name descname">lastclient</code><a class="headerlink" href="#slsdet.Detector.lastclient" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="slsdet.Detector.led">
+<em class="property">property </em><code class="sig-name descname">led</code><a class="headerlink" href="#slsdet.Detector.led" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="slsdet.Detector.lock">
+<em class="property">property </em><code class="sig-name descname">lock</code><a class="headerlink" href="#slsdet.Detector.lock" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="slsdet.Detector.maxadcphaseshift">
+<em class="property">property </em><code class="sig-name descname">maxadcphaseshift</code><a class="headerlink" href="#slsdet.Detector.maxadcphaseshift" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="slsdet.Detector.maxdbitphaseshift">
+<em class="property">property </em><code class="sig-name descname">maxdbitphaseshift</code><a class="headerlink" href="#slsdet.Detector.maxdbitphaseshift" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="slsdet.Detector.measuredperiod">
+<em class="property">property </em><code class="sig-name descname">measuredperiod</code><a class="headerlink" href="#slsdet.Detector.measuredperiod" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="slsdet.Detector.measuredsubperiod">
+<em class="property">property </em><code class="sig-name descname">measuredsubperiod</code><a class="headerlink" href="#slsdet.Detector.measuredsubperiod" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="slsdet.Detector.module_geometry">
+<em class="property">property </em><code class="sig-name descname">module_geometry</code><a class="headerlink" href="#slsdet.Detector.module_geometry" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="slsdet.Detector.module_size">
+<em class="property">property </em><code class="sig-name descname">module_size</code><a class="headerlink" href="#slsdet.Detector.module_size" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="slsdet.Detector.overflow">
+<em class="property">property </em><code class="sig-name descname">overflow</code><a class="headerlink" href="#slsdet.Detector.overflow" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="slsdet.Detector.parameters">
+<em class="property">property </em><code class="sig-name descname">parameters</code><a class="headerlink" href="#slsdet.Detector.parameters" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="slsdet.Detector.partialreset">
+<em class="property">property </em><code class="sig-name descname">partialreset</code><a class="headerlink" href="#slsdet.Detector.partialreset" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="slsdet.Detector.patclkctrl">
+<em class="property">property </em><code class="sig-name descname">patclkctrl</code><a class="headerlink" href="#slsdet.Detector.patclkctrl" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="slsdet.Detector.patioctrl">
+<em class="property">property </em><code class="sig-name descname">patioctrl</code><a class="headerlink" href="#slsdet.Detector.patioctrl" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="slsdet.Detector.patlimits">
+<em class="property">property </em><code class="sig-name descname">patlimits</code><a class="headerlink" href="#slsdet.Detector.patlimits" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="slsdet.Detector.patloop0">
+<em class="property">property </em><code class="sig-name descname">patloop0</code><a class="headerlink" href="#slsdet.Detector.patloop0" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="slsdet.Detector.patloop1">
+<em class="property">property </em><code class="sig-name descname">patloop1</code><a class="headerlink" href="#slsdet.Detector.patloop1" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="slsdet.Detector.patloop2">
+<em class="property">property </em><code class="sig-name descname">patloop2</code><a class="headerlink" href="#slsdet.Detector.patloop2" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="slsdet.Detector.patmask">
+<em class="property">property </em><code class="sig-name descname">patmask</code><a class="headerlink" href="#slsdet.Detector.patmask" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="slsdet.Detector.patnloop0">
+<em class="property">property </em><code class="sig-name descname">patnloop0</code><a class="headerlink" href="#slsdet.Detector.patnloop0" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="slsdet.Detector.patnloop1">
+<em class="property">property </em><code class="sig-name descname">patnloop1</code><a class="headerlink" href="#slsdet.Detector.patnloop1" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="slsdet.Detector.patnloop2">
+<em class="property">property </em><code class="sig-name descname">patnloop2</code><a class="headerlink" href="#slsdet.Detector.patnloop2" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="slsdet.Detector.pattern">
+<em class="property">property </em><code class="sig-name descname">pattern</code><a class="headerlink" href="#slsdet.Detector.pattern" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="slsdet.Detector.patwait0">
+<em class="property">property </em><code class="sig-name descname">patwait0</code><a class="headerlink" href="#slsdet.Detector.patwait0" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="slsdet.Detector.patwait1">
+<em class="property">property </em><code class="sig-name descname">patwait1</code><a class="headerlink" href="#slsdet.Detector.patwait1" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="slsdet.Detector.patwait2">
+<em class="property">property </em><code class="sig-name descname">patwait2</code><a class="headerlink" href="#slsdet.Detector.patwait2" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="slsdet.Detector.patwaittime0">
+<em class="property">property </em><code class="sig-name descname">patwaittime0</code><a class="headerlink" href="#slsdet.Detector.patwaittime0" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="slsdet.Detector.patwaittime1">
+<em class="property">property </em><code class="sig-name descname">patwaittime1</code><a class="headerlink" href="#slsdet.Detector.patwaittime1" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="slsdet.Detector.patwaittime2">
+<em class="property">property </em><code class="sig-name descname">patwaittime2</code><a class="headerlink" href="#slsdet.Detector.patwaittime2" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="slsdet.Detector.period">
+<em class="property">property </em><code class="sig-name descname">period</code><a class="headerlink" href="#slsdet.Detector.period" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="slsdet.Detector.ratecorr">
+<em class="property">property </em><code class="sig-name descname">ratecorr</code><a class="headerlink" href="#slsdet.Detector.ratecorr" title="Permalink to this definition">¶</a></dt>
+<dd><p>tau in ns</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="slsdet.Detector.reg">
+<em class="property">property </em><code class="sig-name descname">reg</code><a class="headerlink" href="#slsdet.Detector.reg" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="slsdet.Detector.romode">
+<em class="property">property </em><code class="sig-name descname">romode</code><a class="headerlink" href="#slsdet.Detector.romode" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="slsdet.Detector.runclk">
+<em class="property">property </em><code class="sig-name descname">runclk</code><a class="headerlink" href="#slsdet.Detector.runclk" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="slsdet.Detector.rx_datastream">
+<em class="property">property </em><code class="sig-name descname">rx_datastream</code><a class="headerlink" href="#slsdet.Detector.rx_datastream" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="slsdet.Detector.rx_dbitlist">
+<em class="property">property </em><code class="sig-name descname">rx_dbitlist</code><a class="headerlink" href="#slsdet.Detector.rx_dbitlist" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="slsdet.Detector.rx_dbitoffset">
+<em class="property">property </em><code class="sig-name descname">rx_dbitoffset</code><a class="headerlink" href="#slsdet.Detector.rx_dbitoffset" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="slsdet.Detector.rx_discardpolicy">
+<em class="property">property </em><code class="sig-name descname">rx_discardpolicy</code><a class="headerlink" href="#slsdet.Detector.rx_discardpolicy" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="slsdet.Detector.rx_fifodepth">
+<em class="property">property </em><code class="sig-name descname">rx_fifodepth</code><a class="headerlink" href="#slsdet.Detector.rx_fifodepth" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="slsdet.Detector.rx_frameindex">
+<em class="property">property </em><code class="sig-name descname">rx_frameindex</code><a class="headerlink" href="#slsdet.Detector.rx_frameindex" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="slsdet.Detector.rx_framescaught">
+<em class="property">property </em><code class="sig-name descname">rx_framescaught</code><a class="headerlink" href="#slsdet.Detector.rx_framescaught" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="slsdet.Detector.rx_framesperfile">
+<em class="property">property </em><code class="sig-name descname">rx_framesperfile</code><a class="headerlink" href="#slsdet.Detector.rx_framesperfile" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="slsdet.Detector.rx_hostname">
+<em class="property">property </em><code class="sig-name descname">rx_hostname</code><a class="headerlink" href="#slsdet.Detector.rx_hostname" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="slsdet.Detector.rx_lastclient">
+<em class="property">property </em><code class="sig-name descname">rx_lastclient</code><a class="headerlink" href="#slsdet.Detector.rx_lastclient" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="slsdet.Detector.rx_lock">
+<em class="property">property </em><code class="sig-name descname">rx_lock</code><a class="headerlink" href="#slsdet.Detector.rx_lock" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="slsdet.Detector.rx_missingpackets">
+<em class="property">property </em><code class="sig-name descname">rx_missingpackets</code><a class="headerlink" href="#slsdet.Detector.rx_missingpackets" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="slsdet.Detector.rx_padding">
+<em class="property">property </em><code class="sig-name descname">rx_padding</code><a class="headerlink" href="#slsdet.Detector.rx_padding" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="slsdet.Detector.rx_readfreq">
+<em class="property">property </em><code class="sig-name descname">rx_readfreq</code><a class="headerlink" href="#slsdet.Detector.rx_readfreq" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="slsdet.Detector.rx_realudpsocksize">
+<em class="property">property </em><code class="sig-name descname">rx_realudpsocksize</code><a class="headerlink" href="#slsdet.Detector.rx_realudpsocksize" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="slsdet.Detector.rx_silent">
+<em class="property">property </em><code class="sig-name descname">rx_silent</code><a class="headerlink" href="#slsdet.Detector.rx_silent" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="slsdet.Detector.rx_status">
+<em class="property">property </em><code class="sig-name descname">rx_status</code><a class="headerlink" href="#slsdet.Detector.rx_status" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="slsdet.Detector.rx_tcpport">
+<em class="property">property </em><code class="sig-name descname">rx_tcpport</code><a class="headerlink" href="#slsdet.Detector.rx_tcpport" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="slsdet.Detector.rx_udpsocksize">
+<em class="property">property </em><code class="sig-name descname">rx_udpsocksize</code><a class="headerlink" href="#slsdet.Detector.rx_udpsocksize" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="slsdet.Detector.rx_version">
+<em class="property">property </em><code class="sig-name descname">rx_version</code><a class="headerlink" href="#slsdet.Detector.rx_version" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="slsdet.Detector.rx_zmqdatastream">
+<em class="property">property </em><code class="sig-name descname">rx_zmqdatastream</code><a class="headerlink" href="#slsdet.Detector.rx_zmqdatastream" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="slsdet.Detector.rx_zmqip">
+<em class="property">property </em><code class="sig-name descname">rx_zmqip</code><a class="headerlink" href="#slsdet.Detector.rx_zmqip" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="slsdet.Detector.rx_zmqport">
+<em class="property">property </em><code class="sig-name descname">rx_zmqport</code><a class="headerlink" href="#slsdet.Detector.rx_zmqport" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="slsdet.Detector.server_version">
+<em class="property">property </em><code class="sig-name descname">server_version</code><a class="headerlink" href="#slsdet.Detector.server_version" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="slsdet.Detector.settings">
+<em class="property">property </em><code class="sig-name descname">settings</code><a class="headerlink" href="#slsdet.Detector.settings" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="slsdet.Detector.settingspath">
+<em class="property">property </em><code class="sig-name descname">settingspath</code><a class="headerlink" href="#slsdet.Detector.settingspath" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="slsdet.Detector.src_udpip">
+<em class="property">property </em><code class="sig-name descname">src_udpip</code><a class="headerlink" href="#slsdet.Detector.src_udpip" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="slsdet.Detector.src_udpip2">
+<em class="property">property </em><code class="sig-name descname">src_udpip2</code><a class="headerlink" href="#slsdet.Detector.src_udpip2" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="slsdet.Detector.src_udpmac">
+<em class="property">property </em><code class="sig-name descname">src_udpmac</code><a class="headerlink" href="#slsdet.Detector.src_udpmac" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="slsdet.Detector.src_udpmac2">
+<em class="property">property </em><code class="sig-name descname">src_udpmac2</code><a class="headerlink" href="#slsdet.Detector.src_udpmac2" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="slsdet.Detector.startingfnum">
+<em class="property">property </em><code class="sig-name descname">startingfnum</code><a class="headerlink" href="#slsdet.Detector.startingfnum" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="slsdet.Detector.status">
+<em class="property">property </em><code class="sig-name descname">status</code><a class="headerlink" href="#slsdet.Detector.status" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="slsdet.Detector.storeinram">
+<em class="property">property </em><code class="sig-name descname">storeinram</code><a class="headerlink" href="#slsdet.Detector.storeinram" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="slsdet.Detector.subdeadtime">
+<em class="property">property </em><code class="sig-name descname">subdeadtime</code><a class="headerlink" href="#slsdet.Detector.subdeadtime" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="slsdet.Detector.subexptime">
+<em class="property">property </em><code class="sig-name descname">subexptime</code><a class="headerlink" href="#slsdet.Detector.subexptime" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="slsdet.Detector.syncclk">
+<em class="property">property </em><code class="sig-name descname">syncclk</code><a class="headerlink" href="#slsdet.Detector.syncclk" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="slsdet.Detector.tengiga">
+<em class="property">property </em><code class="sig-name descname">tengiga</code><a class="headerlink" href="#slsdet.Detector.tengiga" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="slsdet.Detector.threshold">
+<em class="property">property </em><code class="sig-name descname">threshold</code><a class="headerlink" href="#slsdet.Detector.threshold" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="slsdet.Detector.timing">
+<em class="property">property </em><code class="sig-name descname">timing</code><a class="headerlink" href="#slsdet.Detector.timing" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="slsdet.Detector.trimbits">
+<em class="property">property </em><code class="sig-name descname">trimbits</code><a class="headerlink" href="#slsdet.Detector.trimbits" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="slsdet.Detector.trimen">
+<em class="property">property </em><code class="sig-name descname">trimen</code><a class="headerlink" href="#slsdet.Detector.trimen" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="slsdet.Detector.type">
+<em class="property">property </em><code class="sig-name descname">type</code><a class="headerlink" href="#slsdet.Detector.type" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="slsdet.Detector.udp_dstip">
+<em class="property">property </em><code class="sig-name descname">udp_dstip</code><a class="headerlink" href="#slsdet.Detector.udp_dstip" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="slsdet.Detector.udp_dstip2">
+<em class="property">property </em><code class="sig-name descname">udp_dstip2</code><a class="headerlink" href="#slsdet.Detector.udp_dstip2" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="slsdet.Detector.udp_dstmac">
+<em class="property">property </em><code class="sig-name descname">udp_dstmac</code><a class="headerlink" href="#slsdet.Detector.udp_dstmac" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="slsdet.Detector.udp_dstmac2">
+<em class="property">property </em><code class="sig-name descname">udp_dstmac2</code><a class="headerlink" href="#slsdet.Detector.udp_dstmac2" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="slsdet.Detector.udp_dstport">
+<em class="property">property </em><code class="sig-name descname">udp_dstport</code><a class="headerlink" href="#slsdet.Detector.udp_dstport" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="slsdet.Detector.udp_dstport2">
+<em class="property">property </em><code class="sig-name descname">udp_dstport2</code><a class="headerlink" href="#slsdet.Detector.udp_dstport2" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="slsdet.Detector.udp_srcip">
+<em class="property">property </em><code class="sig-name descname">udp_srcip</code><a class="headerlink" href="#slsdet.Detector.udp_srcip" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="slsdet.Detector.udp_srcip2">
+<em class="property">property </em><code class="sig-name descname">udp_srcip2</code><a class="headerlink" href="#slsdet.Detector.udp_srcip2" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="slsdet.Detector.use_receiver">
+<em class="property">property </em><code class="sig-name descname">use_receiver</code><a class="headerlink" href="#slsdet.Detector.use_receiver" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="slsdet.Detector.user">
+<em class="property">property </em><code class="sig-name descname">user</code><a class="headerlink" href="#slsdet.Detector.user" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="slsdet.Detector.v_a">
+<em class="property">property </em><code class="sig-name descname">v_a</code><a class="headerlink" href="#slsdet.Detector.v_a" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="slsdet.Detector.v_b">
+<em class="property">property </em><code class="sig-name descname">v_b</code><a class="headerlink" href="#slsdet.Detector.v_b" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="slsdet.Detector.v_c">
+<em class="property">property </em><code class="sig-name descname">v_c</code><a class="headerlink" href="#slsdet.Detector.v_c" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="slsdet.Detector.v_d">
+<em class="property">property </em><code class="sig-name descname">v_d</code><a class="headerlink" href="#slsdet.Detector.v_d" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="slsdet.Detector.v_io">
+<em class="property">property </em><code class="sig-name descname">v_io</code><a class="headerlink" href="#slsdet.Detector.v_io" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="slsdet.Detector.v_limit">
+<em class="property">property </em><code class="sig-name descname">v_limit</code><a class="headerlink" href="#slsdet.Detector.v_limit" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="slsdet.Detector.vhighvoltage">
+<em class="property">property </em><code class="sig-name descname">vhighvoltage</code><a class="headerlink" href="#slsdet.Detector.vhighvoltage" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="slsdet.Detector.vthreshold">
+<em class="property">property </em><code class="sig-name descname">vthreshold</code><a class="headerlink" href="#slsdet.Detector.vthreshold" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="slsdet.Detector.zmqip">
+<em class="property">property </em><code class="sig-name descname">zmqip</code><a class="headerlink" href="#slsdet.Detector.zmqip" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="slsdet.Detector.zmqport">
+<em class="property">property </em><code class="sig-name descname">zmqport</code><a class="headerlink" href="#slsdet.Detector.zmqport" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
 </div>
 
 
