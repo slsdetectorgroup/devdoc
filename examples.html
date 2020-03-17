@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Dependencies &mdash; slsDetectorPackage  documentation</title>
+  <title>Examples &mdash; slsDetectorPackage  documentation</title>
   
 
   
@@ -35,8 +35,8 @@
   <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Consuming slsDetectorPackage" href="consuming.html" />
-    <link rel="prev" title="Installation" href="installation.html" /> 
+    <link rel="next" title="Detector" href="pydetector.html" />
+    <link rel="prev" title="Receiver" href="receiver.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -85,24 +85,22 @@
             
             
               <p class="caption"><span class="caption-text">Installation:</span></p>
-<ul class="current">
+<ul>
 <li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Dependencies</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#core">Core</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#gui">GUI</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#python-bindings">Python bindings</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#documentation">Documentation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#packaged-in-libs">Packaged in libs/</a></li>
-</ul>
-</li>
+<li class="toctree-l1"><a class="reference internal" href="dependencies.html">Dependencies</a></li>
 <li class="toctree-l1"><a class="reference internal" href="consuming.html">Consuming slsDetectorPackage</a></li>
 </ul>
 <p class="caption"><span class="caption-text">C++ API</span></p>
-<ul>
+<ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="detector.html">Detector</a></li>
 <li class="toctree-l1"><a class="reference internal" href="result.html">Result</a></li>
 <li class="toctree-l1"><a class="reference internal" href="receiver.html">Receiver</a></li>
-<li class="toctree-l1"><a class="reference internal" href="examples.html">Examples</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Examples</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#setup">Setup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#compile-examples">Compile examples</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#running-a-config-file-e1">Running a config file [e1]</a></li>
+</ul>
+</li>
 </ul>
 <p class="caption"><span class="caption-text">Python API</span></p>
 <ul>
@@ -164,13 +162,13 @@
     
       <li><a href="index.html">Docs</a> &raquo;</li>
         
-      <li>Dependencies</li>
+      <li>Examples</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
             
-            <a href="_sources/dependencies.rst.txt" rel="nofollow"> View page source</a>
+            <a href="_sources/examples.rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -183,64 +181,59 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="dependencies">
-<h1>Dependencies<a class="headerlink" href="#dependencies" title="Permalink to this headline">¶</a></h1>
-<p>While we value few dependencies some libraries are required in
-order to not have to reinvent the wheel. Due to the state of package
-management in C++ we decided to bundle some of them with our source
-code. These are found in the libs/ directory.</p>
-<div class="section" id="core">
-<h2>Core<a class="headerlink" href="#core" title="Permalink to this headline">¶</a></h2>
-<p>To use the basic building blocks, meaning sls_detector_get/put and
-the shared libraries these are needed:</p>
-<blockquote>
-<div><ul class="simple">
-<li><p>Linux, preferably recent kernel (currently no cross platform support)</p></li>
-<li><p>CMake &gt; 3.12</p></li>
-<li><p>C++11 compatible compiler. (We test with gcc and clang)</p></li>
-<li><p>ZeroMQ version 4</p></li>
-</ul>
-</div></blockquote>
+  <div class="section" id="examples">
+<h1>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="setup">
+<h2>Setup<a class="headerlink" href="#setup" title="Permalink to this headline">¶</a></h2>
+<p>The examples here assume that you have compiled and installed slsDetectorPackage
+to ~/sls/install and that the option for SLS_USE_SIMULATOR was enabled. This also builds
+the virtual detector servers that we will be using for testing.</p>
+<p>We also add ~/sls/detector/install/bin to the path for convenience.</p>
 </div>
-<div class="section" id="gui">
-<h2>GUI<a class="headerlink" href="#gui" title="Permalink to this headline">¶</a></h2>
-<p>The GUI is currently using Qt4 but watch out for an upgrade to 5.</p>
-<blockquote>
-<div><ul class="simple">
-<li><p>Qt 4.8</p></li>
-<li><p>Qwt 6.1</p></li>
-</ul>
-</div></blockquote>
+<div class="section" id="compile-examples">
+<h2>Compile examples<a class="headerlink" href="#compile-examples" title="Permalink to this headline">¶</a></h2>
+<p>The source code of the examples is available at:
+<a class="reference external" href="https://github.com/slsdetectorgroup/api-examples">https://github.com/slsdetectorgroup/api-examples</a></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git clone https://github.com/slsdetectorgroup/api-examples.git
+mkdir build <span class="o">&amp;&amp;</span> <span class="nb">cd</span> build
+cmake ../api-examples -DCMAKE_PREFIX_PATH<span class="o">=</span>~/sls/detector/install
+make
+</pre></div>
 </div>
-<div class="section" id="python-bindings">
-<h2>Python bindings<a class="headerlink" href="#python-bindings" title="Permalink to this headline">¶</a></h2>
-<blockquote>
-<div><ul class="simple">
-<li><p>Python &gt; 3.6</p></li>
-<li><p>pybind11 (packaged in libs/)</p></li>
-</ul>
-</div></blockquote>
 </div>
-<div class="section" id="documentation">
-<h2>Documentation<a class="headerlink" href="#documentation" title="Permalink to this headline">¶</a></h2>
-<p>The documentation that you are reading now is built with</p>
-<blockquote>
-<div><ul class="simple">
-<li><p>Doxygen (to extract C++ classes etc.)</p></li>
-<li><p>Breathe (Sphinx plugin to handle doxygen xml)</p></li>
-<li><p>Sphinx</p></li>
-</ul>
-</div></blockquote>
+<div class="section" id="running-a-config-file-e1">
+<h2>Running a config file [e1]<a class="headerlink" href="#running-a-config-file-e1" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="cpf">&quot;Detector.h&quot;</span><span class="cp"></span>
+<span class="p">...</span>
+<span class="n">sls</span><span class="o">::</span><span class="n">Detector</span> <span class="n">det</span><span class="p">;</span>
+<span class="n">det</span><span class="p">.</span><span class="n">loadConfig</span><span class="p">(</span><span class="s">&quot;path/to/config/file.config&quot;</span><span class="p">);</span>
+</pre></div>
 </div>
-<div class="section" id="packaged-in-libs">
-<h2>Packaged in libs/<a class="headerlink" href="#packaged-in-libs" title="Permalink to this headline">¶</a></h2>
-<blockquote>
-<div><ul class="simple">
-<li><p>catch2 (unit testing)</p></li>
-<li><p>rapidjson (streaming from receiver)</p></li>
-<li><p>pybind11 (python bindings)</p></li>
-</ul>
-</div></blockquote>
+<p>To configure the connection between PC and detector the easiest
+is to run a config file. For this example we first launch a virtual Jungfrau server and
+then set up the detector.</p>
+<p><strong>Launch a virtual detector server</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>jungfrauDetectorServer_virtual
+</pre></div>
+</div>
+<p>This launches a virtual Jungfrau detector server. As default is uses port 1952 and 1953
+for communication over TCP. Most commands go on 1952 and only stop and status on 1953.</p>
+<p><strong>Run example to configure</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>./e1-config one_det_no_receiver.config
+- <span class="m">12</span>:01:06.371 INFO: Shared memory deleted /slsDetectorPackage_multi_0_sls_0
+- <span class="m">12</span>:01:06.371 INFO: Shared memory deleted /slsDetectorPackage_multi_0
+- <span class="m">12</span>:01:06.372 INFO: Shared memory created /slsDetectorPackage_multi_0
+- <span class="m">12</span>:01:06.376 INFO: Loading configuration file: one_det_no_receiver.config
+- <span class="m">12</span>:01:06.376 INFO: Adding detector localhost
+- <span class="m">12</span>:01:06.377 INFO: Shared memory created /slsDetectorPackage_multi_0_sls_0
+- <span class="m">12</span>:01:06.377 INFO: Checking Detector Version Compatibility
+- <span class="m">12</span>:01:06.378 INFO: Detector connecting - updating!
+hostname <span class="o">[</span>localhost<span class="o">]</span>
+
+
+Jungfrau detector with <span class="m">1</span> modules configured
+</pre></div>
+</div>
 </div>
 </div>
 
@@ -252,10 +245,10 @@ the shared libraries these are needed:</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="consuming.html" class="btn btn-neutral float-right" title="Consuming slsDetectorPackage" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="pydetector.html" class="btn btn-neutral float-right" title="Detector" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="installation.html" class="btn btn-neutral float-left" title="Installation" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="receiver.html" class="btn btn-neutral float-left" title="Receiver" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

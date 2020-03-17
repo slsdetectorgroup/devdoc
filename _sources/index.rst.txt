@@ -26,6 +26,7 @@ Welcome to slsDetectorPackage's documentation!
     detector
     result
     receiver
+    examples
 
 .. toctree::
     :caption: Python API
