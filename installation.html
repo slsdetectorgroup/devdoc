@@ -88,6 +88,8 @@
 <ul class="current">
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Installation</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#build-from-source-using-cmake">Build from source using CMake</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#install-binaries-using-conda">Install binaries using conda</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#build-from-source-on-old-distributions">Build from source on old distributions</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="dependencies.html">Dependencies</a></li>
@@ -196,6 +198,36 @@ mkdir build <span class="o">&amp;&amp;</span> <span class="nb">cd</span> build
 cmake ../slsDetectorPackage -DCMAKE_INSTALL_PREFIX<span class="o">=</span>/your/install/path
 make -j12
 make install
+</pre></div>
+</div>
+</div>
+<div class="section" id="install-binaries-using-conda">
+<h2>Install binaries using conda<a class="headerlink" href="#install-binaries-using-conda" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1">#Add channels for dependencies and our library</span>
+conda config --add channels conda-forge
+conda config --add channels slsdetectorgroup
+conda config --set channel_priority strict
+
+<span class="c1">#cerate an environment with our library, then activate</span>
+conda create -n myenv <span class="nv">slsdetlib</span><span class="o">=</span><span class="m">2020</span>.03.18.dev2
+codna activate myenv
+
+<span class="c1">#ready to use</span>
+sls_detector_get exptime
+etc ...
+</pre></div>
+</div>
+</div>
+<div class="section" id="build-from-source-on-old-distributions">
+<h2>Build from source on old distributions<a class="headerlink" href="#build-from-source-on-old-distributions" title="Permalink to this headline">¶</a></h2>
+<p>If your linux distribution doesn’t come with a C++11 compiler (gcc&gt;4.8) then
+it’s possible to install a newer gcc using conda and build the slsDetectorPackage
+using this compiler</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1">#Create an environment with the dependencies</span>
+conda create -n myenv gxx_linux-64 cmake zmq
+conda activate myenv
+cmake ../slsDetectorPackage -DCMAKE_PREFIX_PATH<span class="o">=</span><span class="nv">$CONDA_PREFIX</span>
+make -j12
 </pre></div>
 </div>
 </div>
