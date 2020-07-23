@@ -1,8 +1,7 @@
 
 
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<html class="writer-html5" lang="en" >
 <head>
   <meta charset="utf-8">
   
@@ -12,12 +11,18 @@
   
 
   
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+
+  
   
   
   
 
   
-  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
@@ -29,10 +34,6 @@
     <script type="text/javascript" src="_static/js/theme.js"></script>
 
     
-
-  
-  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Dependencies" href="dependencies.html" />
@@ -50,7 +51,7 @@
           
 
           
-            <a href="index.html" class="icon icon-home"> slsDetectorPackage
+            <a href="index.html" class="icon icon-home" alt="Documentation Home"> slsDetectorPackage
           
 
           
@@ -77,6 +78,7 @@
           
         </div>
 
+        
         <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
           
             
@@ -90,6 +92,7 @@
 <li class="toctree-l2"><a class="reference internal" href="#build-from-source-using-cmake">Build from source using CMake</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#install-binaries-using-conda">Install binaries using conda</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#build-from-source-on-old-distributions">Build from source on old distributions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#build-this-documentation">Build this documentation</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="dependencies.html">Dependencies</a></li>
@@ -122,6 +125,7 @@
             
           
         </div>
+        
       </div>
     </nav>
 
@@ -160,7 +164,7 @@
 
   <ul class="wy-breadcrumbs">
     
-      <li><a href="index.html">Docs</a> &raquo;</li>
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
         
       <li>Installation</li>
     
@@ -181,11 +185,7 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="installation">
-<h1>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="build-from-source-using-cmake">
-<h2>Build from source using CMake<a class="headerlink" href="#build-from-source-using-cmake" title="Permalink to this headline">¶</a></h2>
-<div class="admonition note">
+  <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>The default branch of our git repository is developer. It contains the
 latest development version. It is expected to compile and work but
@@ -193,28 +193,60 @@ features might be added or tweaked. In some cases the API might also change
 without being communicated. If absolute stability of the API is needed please
 use one of the release versions.</p>
 </div>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git clone https://github.com/slsdetectorgroup/slsDetectorPackage.git
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Before building from source make sure that you have the
+<a class="reference internal" href="dependencies.html"><span class="doc">dependencies</span></a> installed. If installing using conda, conda will
+manage the dependencies.</p>
+</div>
+<div class="section" id="installation">
+<h1>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="build-from-source-using-cmake">
+<h2>Build from source using CMake<a class="headerlink" href="#build-from-source-using-cmake" title="Permalink to this headline">¶</a></h2>
+<p>Note that on some systems, for example RH7,  cmake v3+ is available under the cmake3 alias.
+It is also required to clone with the option –recursive to get the git submodules used
+in the package.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git clone --recursive https://github.com/slsdetectorgroup/slsDetectorPackage.git
 mkdir build <span class="o">&amp;&amp;</span> <span class="nb">cd</span> build
 cmake ../slsDetectorPackage -DCMAKE_INSTALL_PREFIX<span class="o">=</span>/your/install/path
-make -j12
+make -j12 <span class="c1">#or whatever number of cores you are using to build</span>
 make install
+</pre></div>
+</div>
+<p>The easiest way to configure options is to use the ccmake utility.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1">#from the build directory</span>
+ccmake .
 </pre></div>
 </div>
 </div>
 <div class="section" id="install-binaries-using-conda">
 <h2>Install binaries using conda<a class="headerlink" href="#install-binaries-using-conda" title="Permalink to this headline">¶</a></h2>
+<p>Conda is not only useful to manage python environments but can also
+be used as a user space package manager.</p>
+<p>We have three different packages available:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><strong>slsdetlib</strong>, shared libraries and command line utilities</p></li>
+<li><p><strong>slsdetgui</strong>, GUI</p></li>
+<li><p><strong>slsdet</strong>, Python bindings</p></li>
+</ul>
+</div></blockquote>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1">#Add channels for dependencies and our library</span>
 conda config --add channels conda-forge
 conda config --add channels slsdetectorgroup
 conda config --set channel_priority strict
 
 <span class="c1">#cerate an environment with our library, then activate</span>
-conda create -n myenv <span class="nv">slsdetlib</span><span class="o">=</span><span class="m">2020</span>.03.18.dev2
-codna activate myenv
+conda create -n myenv <span class="nv">slsdetlib</span><span class="o">=</span><span class="m">2020</span>.07.23.dev0
+conda activate myenv
 
 <span class="c1">#ready to use</span>
 sls_detector_get exptime
 etc ...
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1">#List available versions</span>
+conda search slsdet
 </pre></div>
 </div>
 </div>
@@ -228,6 +260,20 @@ conda create -n myenv gxx_linux-64 cmake zmq
 conda activate myenv
 cmake ../slsDetectorPackage -DCMAKE_PREFIX_PATH<span class="o">=</span><span class="nv">$CONDA_PREFIX</span>
 make -j12
+</pre></div>
+</div>
+</div>
+<div class="section" id="build-this-documentation">
+<h2>Build this documentation<a class="headerlink" href="#build-this-documentation" title="Permalink to this headline">¶</a></h2>
+<p>The documentation for the slsDetectorPackage is build using a combination
+of Doxygen, Sphinx and Breathe. The easiest way to install the dependencies
+is to use conda</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda create -n myenv python sphinx sphinx_rtd_theme
+</pre></div>
+</div>
+<p>Then enable the option SLS_BUILD_DOCS to create the targets</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>make docs <span class="c1"># generate API docs and build Sphinx RST</span>
+make rst <span class="c1"># rst only, saves time in case the API did not change</span>
 </pre></div>
 </div>
 </div>
@@ -253,11 +299,19 @@ make -j12
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2019, PSD Detector Group
+        
+        &copy; Copyright 2020, PSD Detector Group
 
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
 
@@ -268,7 +322,6 @@ make -j12
 
   </div>
   
-
 
   <script type="text/javascript">
       jQuery(function () {

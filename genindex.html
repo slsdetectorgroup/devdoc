@@ -1,9 +1,7 @@
 
 
-
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<html class="writer-html5" lang="en" >
 <head>
   <meta charset="utf-8">
   
@@ -13,12 +11,18 @@
   
 
   
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+
+  
   
   
   
 
   
-  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
@@ -30,10 +34,6 @@
     <script type="text/javascript" src="_static/js/theme.js"></script>
 
     
-
-  
-  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="#" />
     <link rel="search" title="Search" href="search.html" /> 
 </head>
@@ -49,7 +49,7 @@
           
 
           
-            <a href="index.html" class="icon icon-home"> slsDetectorPackage
+            <a href="index.html" class="icon icon-home" alt="Documentation Home"> slsDetectorPackage
           
 
           
@@ -76,6 +76,7 @@
           
         </div>
 
+        
         <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
           
             
@@ -116,6 +117,7 @@
             
           
         </div>
+        
       </div>
     </nav>
 
@@ -154,7 +156,7 @@
 
   <ul class="wy-breadcrumbs">
     
-      <li><a href="index.html">Docs</a> &raquo;</li>
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
         
       <li>Index</li>
     
@@ -203,13 +205,13 @@
 <h2 id="A">A</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="commandline.html#term-acquire-acquire-the-number-of-frames-set-up"><strong>acquire - Acquire the number of frames set up.</strong></a>
+      <li><a href="commandline.html#term-acquire-Acquire-the-number-of-frames-set-up."><strong>acquire - Acquire the number of frames set up.</strong></a>
 </li>
       <li><a href="commandline.html#term-activate-0-1-optional-padding-nopadding"><strong>activate [0, 1] [(optional) padding|nopadding]</strong></a>
 </li>
-      <li><a href="commandline.html#term-adc-n-channel-0-7-for-channel-8-for-temperature"><strong>adc [n_channel (0-7 for channel|8 for temperature)]</strong></a>
+      <li><a href="commandline.html#term-adc-n_channel-0-7-for-channel-8-for-temperature"><strong>adc [n_channel (0-7 for channel|8 for temperature)]</strong></a>
 </li>
-      <li><a href="commandline.html#term-adcclk-n-clk-in-mhz"><strong>adcclk [n_clk in MHz]</strong></a>
+      <li><a href="commandline.html#term-adcclk-n_clk-in-MHz"><strong>adcclk [n_clk in MHz]</strong></a>
 </li>
       <li><a href="pydetector.html#slsdet.Detector.adcclk">adcclk() (slsdet.Detector property)</a>
 </li>
@@ -219,13 +221,13 @@
 </li>
       <li><a href="commandline.html#term-adcinvert-bitmask"><strong>adcinvert [bitmask]</strong></a>
 </li>
-      <li><a href="commandline.html#term-adcphase-n-value-optional-deg"><strong>adcphase [n_value] [(optional)deg]</strong></a>
+      <li><a href="commandline.html#term-adcphase-n_value-optional-deg"><strong>adcphase [n_value] [(optional)deg]</strong></a>
 </li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="pydetector.html#slsdet.Detector.adcphase">adcphase() (slsdet.Detector property)</a>
 </li>
-      <li><a href="commandline.html#term-adcpipeline-n-value"><strong>adcpipeline [n_value]</strong></a>
+      <li><a href="commandline.html#term-adcpipeline-n_value"><strong>adcpipeline [n_value]</strong></a>
 </li>
       <li><a href="pydetector.html#slsdet.Detector.adcpipeline">adcpipeline() (slsdet.Detector property)</a>
 </li>
@@ -239,7 +241,9 @@
 </li>
       <li><a href="pydetector.html#slsdet.Detector.asamples">asamples() (slsdet.Detector property)</a>
 </li>
-      <li><a href="commandline.html#term-auto-comp-disable-0-1"><strong>auto_comp_disable [0, 1]</strong></a>
+      <li><a href="commandline.html#term-auto_comp_disable-0-1"><strong>auto_comp_disable [0, 1]</strong></a>
+</li>
+      <li><a href="pydetector.html#slsdet.Detector.auto_comp_disable">auto_comp_disable() (slsdet.Detector property)</a>
 </li>
   </ul></td>
 </tr></table>
@@ -247,13 +251,17 @@
 <h2 id="B">B</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="commandline.html#term-burstmode-off-or-0-internal-or-1-external-or-2"><strong>burstmode [off or 0, internal or 1, external or 2]</strong></a>
+      <li><a href="commandline.html#term-badchannels-fname"><strong>badchannels [fname]</strong></a>
 </li>
-      <li><a href="commandline.html#term-burstperiod-duration-optional-unit-ns-us-ms-s"><strong>burstperiod [duration] [(optional unit) ns|us|ms|s]</strong></a>
+      <li><a href="pyenums.html#slsdet.burstMode">burstMode (class in slsdet)</a>
+</li>
+      <li><a href="commandline.html#term-burstmode-off-or-0-internal-or-1-external-or-2"><strong>burstmode [off or 0, internal or 1, external or 2]</strong></a>
 </li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="commandline.html#term-bursts-n-bursts"><strong>bursts [n_bursts]</strong></a>
+      <li><a href="commandline.html#term-burstperiod-duration-optional-unit-ns-us-ms-s"><strong>burstperiod [duration] [(optional unit) ns|us|ms|s]</strong></a>
+</li>
+      <li><a href="commandline.html#term-bursts-n_bursts"><strong>bursts [n_bursts]</strong></a>
 </li>
       <li><a href="commandline.html#term-bustest"><strong>bustest</strong></a>
 </li>
@@ -263,7 +271,9 @@
 <h2 id="C">C</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="commandline.html#term-clearbit-n-value"><strong>clearbit [n_value]</strong></a>
+      <li><a href="commandline.html#term-cdsgain-0-1"><strong>cdsgain [0, 1]</strong></a>
+</li>
+      <li><a href="commandline.html#term-clearbit-n_value"><strong>clearbit [n_value]</strong></a>
 </li>
       <li><a href="commandline.html#term-clearbusy"><strong>clearbusy</strong></a>
 </li>
@@ -273,23 +283,27 @@
 </li>
       <li><a href="commandline.html#term-clientversion"><strong>clientversion</strong></a>
 </li>
-      <li><a href="commandline.html#term-clkdiv-n-clock-0-8-n-divider"><strong>clkdiv [n_clock (0-8)] [n_divider]</strong></a>
+      <li><a href="commandline.html#term-clkdiv-n_clock-0-8-n_divider"><strong>clkdiv [n_clock (0-8)] [n_divider]</strong></a>
 </li>
       <li><a href="pydetector.html#slsdet.Detector.clkdivider">clkdivider() (slsdet.Detector property)</a>
 </li>
+      <li><a href="commandline.html#term-clkfreq-n_clock-0-8-freq_in_Hz"><strong>clkfreq [n_clock (0-8)] [freq_in_Hz]</strong></a>
+</li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="commandline.html#term-clkfreq-n-clock-0-8-freq-in-hz"><strong>clkfreq [n_clock (0-8)] [freq_in_Hz]</strong></a>
+      <li><a href="commandline.html#term-clkphase-n_clock-0-8-phase-deg-optional"><strong>clkphase [n_clock (0-8)] [phase] [deg (optional)]</strong></a>
 </li>
-      <li><a href="commandline.html#term-clkphase-n-clock-0-8-phase-deg-optional"><strong>clkphase [n_clock (0-8)] [phase] [deg (optional)]</strong></a>
+      <li><a href="pyenums.html#slsdet.clockIndex">clockIndex (class in slsdet)</a>
+</li>
+      <li><a href="commandline.html#term-confadc-chip-index-0-10-1-for-all-adc-index-0-31-1-for-all-12-bit-configuration-value-in-hex"><strong>confadc [chip index 0-10, -1 for all] [adc index 0-31, -1 for all] [12 bit configuration value in hex]</strong></a>
 </li>
       <li><a href="commandline.html#term-config-fname"><strong>config [fname]</strong></a>
 </li>
       <li><a href="pydetector.html#slsdet.Detector.config">config() (slsdet.Detector property)</a>
 </li>
-      <li><a href="commandline.html#term-copydetectorserver-server-name-pc-host-name"><strong>copydetectorserver [server_name] [pc_host_name]</strong></a>
+      <li><a href="commandline.html#term-copydetectorserver-server_name-pc_host_name"><strong>copydetectorserver [server_name] [pc_host_name]</strong></a>
 </li>
-      <li><a href="commandline.html#term-counters-i0-i1-i2"><strong>counters [i0] [i1] [i2]...</strong></a>
+      <li><a href="commandline.html#term-counters-i0-i1-i2-..."><strong>counters [i0] [i1] [i2]...</strong></a>
 </li>
       <li><a href="pydetector.html#slsdet.Detector.counters">counters() (slsdet.Detector property)</a>
 </li>
@@ -303,45 +317,59 @@
   <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="commandline.html#term-dac-dac-index-dac-or-mv-value-optional-unit-mv"><strong>dac [dac index] [dac or mv value] [(optional unit) mv]</strong></a>
 </li>
+      <li><a href="pyenums.html#slsdet.dacIndex">dacIndex (class in slsdet)</a>
+</li>
       <li><a href="commandline.html#term-daclist"><strong>daclist</strong></a>
 </li>
-      <li><a href="commandline.html#term-dacvalues"><strong>dacvalues</strong></a>
+      <li><a href="commandline.html#term-dacvalues-optional-unit-mv"><strong>dacvalues [(optional unit) mv]</strong></a>
 </li>
-      <li><a href="commandline.html#term-dbitclk-n-clk-in-mhz"><strong>dbitclk [n_clk in MHz]</strong></a>
+      <li><a href="commandline.html#term-dbitclk-n_clk-in-MHz"><strong>dbitclk [n_clk in MHz]</strong></a>
 </li>
       <li><a href="pydetector.html#slsdet.Detector.dbitclk">dbitclk() (slsdet.Detector property)</a>
 </li>
-      <li><a href="commandline.html#term-dbitphase-n-value-optional-deg"><strong>dbitphase [n_value] [(optional)deg]</strong></a>
+      <li><a href="commandline.html#term-dbitphase-n_value-optional-deg"><strong>dbitphase [n_value] [(optional)deg]</strong></a>
 </li>
       <li><a href="pydetector.html#slsdet.Detector.dbitphase">dbitphase() (slsdet.Detector property)</a>
 </li>
-      <li><a href="commandline.html#term-dbitpipeline-n-value"><strong>dbitpipeline [n_value]</strong></a>
+      <li><a href="commandline.html#term-dbitpipeline-n_value"><strong>dbitpipeline [n_value]</strong></a>
 </li>
       <li><a href="pydetector.html#slsdet.Detector.dbitpipeline">dbitpipeline() (slsdet.Detector property)</a>
 </li>
       <li><a href="commandline.html#term-delay-duration-optional-unit-ns-us-ms-s"><strong>delay [duration] [(optional unit) ns|us|ms|s]</strong></a>
 </li>
+      <li><a href="pydetector.html#slsdet.Detector.delay">delay() (slsdet.Detector property)</a>
+</li>
       <li><a href="commandline.html#term-delayl"><strong>delayl</strong></a>
+</li>
+      <li><a href="pydetector.html#slsdet.Detector.delayl">delayl() (slsdet.Detector property)</a>
+</li>
+      <li><a href="pydetector.html#slsdet.Detector">Detector (class in slsdet)</a>
 </li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="pydetector.html#slsdet.Detector">Detector (class in slsdet)</a>
-</li>
       <li><a href="pydetector.html#slsdet.Detector.detector_size">detector_size() (slsdet.Detector property)</a>
 </li>
       <li><a href="pydetector.html#slsdet.Detector.detector_type">detector_type() (slsdet.Detector property)</a>
 </li>
       <li><a href="commandline.html#term-detectormode-counting-interpolating-analog"><strong>detectormode [counting|interpolating|analog]</strong></a>
 </li>
+      <li><a href="pyenums.html#slsdet.detectorModeType">detectorModeType (class in slsdet)</a>
+</li>
       <li><a href="commandline.html#term-detectornumber"><strong>detectornumber</strong></a>
 </li>
       <li><a href="commandline.html#term-detectorserverversion"><strong>detectorserverversion</strong></a>
 </li>
+      <li><a href="pyenums.html#slsdet.detectorSettings">detectorSettings (class in slsdet)</a>
+</li>
+      <li><a href="pyenums.html#slsdet.detectorType">detectorType (class in slsdet)</a>
+</li>
       <li><a href="commandline.html#term-detsize-nx-ny"><strong>detsize [nx] [ny]</strong></a>
+</li>
+      <li><a href="pyenums.html#slsdet.dimension">dimension (class in slsdet)</a>
 </li>
       <li><a href="commandline.html#term-diodelay-64-bit-bitmask-0-775"><strong>diodelay [64 bit bitmask] [0-775]</strong></a>
 </li>
-      <li><a href="commandline.html#term-dr-4-8-16-32"><strong>dr [4|8|16|32]</strong></a>
+      <li><a href="commandline.html#term-dr-value"><strong>dr [value]</strong></a>
 </li>
       <li><a href="pydetector.html#slsdet.Detector.dr">dr() (slsdet.Detector property)</a>
 </li>
@@ -355,25 +383,33 @@
 <h2 id="E">E</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="commandline.html#term-emax-n-value"><strong>emax [n_value]</strong></a>
+      <li><a href="commandline.html#term-emax-n_value"><strong>emax [n_value]</strong></a>
 </li>
-      <li><a href="commandline.html#term-emin-n-value"><strong>emin [n_value]</strong></a>
+      <li><a href="commandline.html#term-emin-n_value"><strong>emin [n_value]</strong></a>
 </li>
       <li><a href="commandline.html#term-execcommand-command"><strong>execcommand [command]</strong></a>
 </li>
       <li><a href="commandline.html#term-exptime-duration-optional-unit-ns-us-ms-s"><strong>exptime [duration] [(optional unit) ns|us|ms|s]</strong></a>
 </li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="pydetector.html#slsdet.Detector.exptime">exptime() (slsdet.Detector property)</a>
 </li>
+      <li><a href="commandline.html#term-exptime1-n_value"><strong>exptime1 [n_value]</strong></a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="commandline.html#term-exptime2-n_value"><strong>exptime2 [n_value]</strong></a>
+</li>
+      <li><a href="commandline.html#term-exptime3-n_value"><strong>exptime3 [n_value]</strong></a>
+</li>
       <li><a href="commandline.html#term-exptimel-optional-unit-ns-us-ms-s"><strong>exptimel [(optional unit) ns|us|ms|s]</strong></a>
+</li>
+      <li><a href="pyenums.html#slsdet.externalSignalFlag">externalSignalFlag (class in slsdet)</a>
 </li>
       <li><a href="commandline.html#term-extsampling-0-1"><strong>extsampling [0, 1]</strong></a>
 </li>
       <li><a href="commandline.html#term-extsamplingsrc-0-63"><strong>extsamplingsrc [0-63]</strong></a>
 </li>
-      <li><a href="commandline.html#term-extsig-trigger-in-rising-edge-trigger-in-falling-edge"><strong>extsig [trigger_in_rising_edge|trigger_in_falling_edge]</strong></a>
+      <li><a href="commandline.html#term-extsig-n_signal-signal_type-External-signal-mode-for-trigger-timing-mode."><strong>extsig [n_signal] [signal_type] External signal mode for trigger timing mode.</strong></a>
 </li>
   </ul></td>
 </tr></table>
@@ -384,6 +420,10 @@
       <li><a href="commandline.html#term-fformat-binary-hdf5"><strong>fformat [binary|hdf5]</strong></a>
 </li>
       <li><a href="pydetector.html#slsdet.Detector.fformat">fformat() (slsdet.Detector property)</a>
+</li>
+      <li><a href="pyenums.html#slsdet.fileFormat">fileFormat (class in slsdet)</a>
+</li>
+      <li><a href="commandline.html#term-filter-0-1-2-3"><strong>filter [0|1|2|3]</strong></a>
 </li>
       <li><a href="commandline.html#term-findex-0-1"><strong>findex [0, 1]</strong></a>
 </li>
@@ -417,11 +457,15 @@
 </li>
       <li><a href="pydetector.html#slsdet.Detector.fpath">fpath() (slsdet.Detector property)</a>
 </li>
+      <li><a href="pyenums.html#slsdet.frameDiscardPolicy">frameDiscardPolicy (class in slsdet)</a>
+</li>
       <li><a href="pydetector.html#slsdet.Detector.frameindex">frameindex() (slsdet.Detector property)</a>
 </li>
       <li><a href="commandline.html#term-framemode-pedestal-newpedestal-flatfield-newflatfield"><strong>framemode [pedestal|newpedestal|flatfield|newflatfield]</strong></a>
 </li>
-      <li><a href="commandline.html#term-frames-n-frames"><strong>frames [n_frames]</strong></a>
+      <li><a href="pyenums.html#slsdet.frameModeType">frameModeType (class in slsdet)</a>
+</li>
+      <li><a href="commandline.html#term-frames-n_frames"><strong>frames [n_frames]</strong></a>
 </li>
       <li><a href="pydetector.html#slsdet.Detector.frames">frames() (slsdet.Detector property)</a>
 </li>
@@ -445,11 +489,23 @@
   <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="commandline.html#term-gappixels-0-1"><strong>gappixels [0, 1]</strong></a>
 </li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="pydetector.html#slsdet.Detector.gappixels">gappixels() (slsdet.Detector property)</a>
 </li>
-      <li><a href="commandline.html#term-getbit-n-value"><strong>getbit [n_value]</strong></a>
+      <li><a href="commandline.html#term-gatedelay-duration-optional-unit-ns-us-ms-s"><strong>gatedelay [duration] [(optional unit) ns|us|ms|s]</strong></a>
+</li>
+      <li><a href="pydetector.html#slsdet.Detector.gatedelay">gatedelay() (slsdet.Detector property)</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="commandline.html#term-gatedelay1-n_value"><strong>gatedelay1 [n_value]</strong></a>
+</li>
+      <li><a href="commandline.html#term-gatedelay2-n_value"><strong>gatedelay2 [n_value]</strong></a>
+</li>
+      <li><a href="commandline.html#term-gatedelay3-n_value"><strong>gatedelay3 [n_value]</strong></a>
+</li>
+      <li><a href="commandline.html#term-gates-n_gates"><strong>gates [n_gates]</strong></a>
+</li>
+      <li><a href="commandline.html#term-getbit-n_value"><strong>getbit [n_value]</strong></a>
 </li>
   </ul></td>
 </tr></table>
@@ -469,29 +525,29 @@
 <h2 id="I">I</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="commandline.html#term-ib-test-c-dac-or-mv-value-optional-unit-mv"><strong>ib_test_c [dac or mv value][(optional unit) mv]</strong></a>
+      <li><a href="commandline.html#term-ib_test_c-dac-or-mv-value-optional-unit-mv"><strong>ib_test_c [dac or mv value][(optional unit) mv]</strong></a>
 </li>
-      <li><a href="commandline.html#term-ibias-sfp-dac-or-mv-value-optional-unit-mv"><strong>ibias_sfp [dac or mv value][(optional unit) mv]</strong></a>
+      <li><a href="commandline.html#term-ibias_sfp-dac-or-mv-value-optional-unit-mv"><strong>ibias_sfp [dac or mv value][(optional unit) mv]</strong></a>
 </li>
-      <li><a href="commandline.html#term-im-a"><strong>im_a</strong></a>
+      <li><a href="commandline.html#term-im_a"><strong>im_a</strong></a>
 </li>
       <li><a href="pydetector.html#slsdet.Detector.im_a">im_a() (slsdet.Detector property)</a>
 </li>
-      <li><a href="commandline.html#term-im-b"><strong>im_b</strong></a>
+      <li><a href="commandline.html#term-im_b"><strong>im_b</strong></a>
 </li>
       <li><a href="pydetector.html#slsdet.Detector.im_b">im_b() (slsdet.Detector property)</a>
 </li>
-      <li><a href="commandline.html#term-im-c"><strong>im_c</strong></a>
+      <li><a href="commandline.html#term-im_c"><strong>im_c</strong></a>
 </li>
       <li><a href="pydetector.html#slsdet.Detector.im_c">im_c() (slsdet.Detector property)</a>
 </li>
-      <li><a href="commandline.html#term-im-d"><strong>im_d</strong></a>
+      <li><a href="commandline.html#term-im_d"><strong>im_d</strong></a>
 </li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="pydetector.html#slsdet.Detector.im_d">im_d() (slsdet.Detector property)</a>
 </li>
-      <li><a href="commandline.html#term-im-io"><strong>im_io</strong></a>
+      <li><a href="commandline.html#term-im_io"><strong>im_io</strong></a>
 </li>
       <li><a href="pydetector.html#slsdet.Detector.im_io">im_io() (slsdet.Detector property)</a>
 </li>
@@ -499,7 +555,7 @@
 </li>
       <li><a href="commandline.html#term-initialchecks-0-1"><strong>initialchecks [0, 1]</strong></a>
 </li>
-      <li><a href="commandline.html#term-inj-ch-offset-increment"><strong>inj_ch [offset] [increment]</strong></a>
+      <li><a href="commandline.html#term-inj_ch-offset-increment"><strong>inj_ch [offset] [increment]</strong></a>
 </li>
       <li><a href="commandline.html#term-interruptsubframe-0-1"><strong>interruptsubframe [0, 1]</strong></a>
 </li>
@@ -535,11 +591,13 @@
 <h2 id="M">M</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="pyenums.html#slsdet.masterFlags">masterFlags (class in slsdet)</a>
+</li>
       <li><a href="commandline.html#term-maxadcphaseshift"><strong>maxadcphaseshift</strong></a>
 </li>
       <li><a href="pydetector.html#slsdet.Detector.maxadcphaseshift">maxadcphaseshift() (slsdet.Detector property)</a>
 </li>
-      <li><a href="commandline.html#term-maxclkphaseshift-n-clock-0-8"><strong>maxclkphaseshift [n_clock (0-8)]</strong></a>
+      <li><a href="commandline.html#term-maxclkphaseshift-n_clock-0-8"><strong>maxclkphaseshift [n_clock (0-8)]</strong></a>
 </li>
       <li><a href="commandline.html#term-maxdbitphaseshift"><strong>maxdbitphaseshift</strong></a>
 </li>
@@ -567,11 +625,13 @@
   <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="commandline.html#term-nframes"><strong>nframes</strong></a>
 </li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="commandline.html#term-now-optional-unit-ns-us-ms-s"><strong>now [(optional unit) ns|us|ms|s]</strong></a>
 </li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="commandline.html#term-numinterfaces-1-2"><strong>numinterfaces [1, 2]</strong></a>
+</li>
+      <li><a href="pydetector.html#slsdet.Detector.numinterfaces">numinterfaces() (slsdet.Detector property)</a>
 </li>
   </ul></td>
 </tr></table>
@@ -603,10 +663,6 @@
 </li>
       <li><a href="pydetector.html#slsdet.Detector.partialreset">partialreset() (slsdet.Detector property)</a>
 </li>
-      <li><a href="commandline.html#term-patclkctrl-64-bit-mask"><strong>patclkctrl [64 bit mask]</strong></a>
-</li>
-      <li><a href="pydetector.html#slsdet.Detector.patclkctrl">patclkctrl() (slsdet.Detector property)</a>
-</li>
       <li><a href="commandline.html#term-patioctrl-64-bit-mask"><strong>patioctrl [64 bit mask]</strong></a>
 </li>
       <li><a href="pydetector.html#slsdet.Detector.patioctrl">patioctrl() (slsdet.Detector property)</a>
@@ -631,25 +687,27 @@
 </li>
       <li><a href="pydetector.html#slsdet.Detector.patmask">patmask() (slsdet.Detector property)</a>
 </li>
-      <li><a href="commandline.html#term-patnloop0-n-cycles"><strong>patnloop0 [n_cycles]</strong></a>
+      <li><a href="commandline.html#term-patnloop0-n_cycles"><strong>patnloop0 [n_cycles]</strong></a>
 </li>
       <li><a href="pydetector.html#slsdet.Detector.patnloop0">patnloop0() (slsdet.Detector property)</a>
 </li>
-      <li><a href="commandline.html#term-patnloop1-n-cycles"><strong>patnloop1 [n_cycles]</strong></a>
+      <li><a href="commandline.html#term-patnloop1-n_cycles"><strong>patnloop1 [n_cycles]</strong></a>
 </li>
       <li><a href="pydetector.html#slsdet.Detector.patnloop1">patnloop1() (slsdet.Detector property)</a>
 </li>
-      <li><a href="commandline.html#term-patnloop2-n-cycles"><strong>patnloop2 [n_cycles]</strong></a>
+      <li><a href="commandline.html#term-patnloop2-n_cycles"><strong>patnloop2 [n_cycles]</strong></a>
 </li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="pydetector.html#slsdet.Detector.patnloop2">patnloop2() (slsdet.Detector property)</a>
 </li>
       <li><a href="commandline.html#term-patsetbit-64-bit-mask"><strong>patsetbit [64 bit mask]</strong></a>
 </li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="commandline.html#term-pattern-fname"><strong>pattern [fname]</strong></a>
 </li>
       <li><a href="pydetector.html#slsdet.Detector.pattern">pattern() (slsdet.Detector property)</a>
+</li>
+      <li><a href="commandline.html#term-patternstart"><strong>patternstart</strong></a>
 </li>
       <li><a href="commandline.html#term-patwait0-addr"><strong>patwait0 [addr]</strong></a>
 </li>
@@ -663,15 +721,15 @@
 </li>
       <li><a href="pydetector.html#slsdet.Detector.patwait2">patwait2() (slsdet.Detector property)</a>
 </li>
-      <li><a href="commandline.html#term-patwaittime0-n-clk"><strong>patwaittime0 [n_clk]</strong></a>
+      <li><a href="commandline.html#term-patwaittime0-n_clk"><strong>patwaittime0 [n_clk]</strong></a>
 </li>
       <li><a href="pydetector.html#slsdet.Detector.patwaittime0">patwaittime0() (slsdet.Detector property)</a>
 </li>
-      <li><a href="commandline.html#term-patwaittime1-n-clk"><strong>patwaittime1 [n_clk]</strong></a>
+      <li><a href="commandline.html#term-patwaittime1-n_clk"><strong>patwaittime1 [n_clk]</strong></a>
 </li>
       <li><a href="pydetector.html#slsdet.Detector.patwaittime1">patwaittime1() (slsdet.Detector property)</a>
 </li>
-      <li><a href="commandline.html#term-patwaittime2-n-clk"><strong>patwaittime2 [n_clk]</strong></a>
+      <li><a href="commandline.html#term-patwaittime2-n_clk"><strong>patwaittime2 [n_clk]</strong></a>
 </li>
       <li><a href="pydetector.html#slsdet.Detector.patwaittime2">patwaittime2() (slsdet.Detector property)</a>
 </li>
@@ -687,13 +745,13 @@
 </li>
       <li><a href="commandline.html#term-powerchip-0-1"><strong>powerchip [0, 1]</strong></a>
 </li>
-      <li><a href="commandline.html#term-programfpga-fname-pof-fname-rbf"><strong>programfpga [fname.pof | fname.rbf]</strong></a>
+      <li><a href="commandline.html#term-programfpga-fname.pof-fname.rbf"><strong>programfpga [fname.pof | fname.rbf]</strong></a>
 </li>
-      <li><a href="commandline.html#term-pulse-n-times-x-y"><strong>pulse [n_times] [x] [y]</strong></a>
+      <li><a href="commandline.html#term-pulse-n_times-x-y"><strong>pulse [n_times] [x] [y]</strong></a>
 </li>
-      <li><a href="commandline.html#term-pulsechip-n-times"><strong>pulsechip [n_times]</strong></a>
+      <li><a href="commandline.html#term-pulsechip-n_times"><strong>pulsechip [n_times]</strong></a>
 </li>
-      <li><a href="commandline.html#term-pulsenmove-n-times-x-y"><strong>pulsenmove [n_times] [x] [y]</strong></a>
+      <li><a href="commandline.html#term-pulsenmove-n_times-x-y"><strong>pulsenmove [n_times] [x] [y]</strong></a>
 </li>
   </ul></td>
 </tr></table>
@@ -709,13 +767,29 @@
 <h2 id="R">R</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="commandline.html#term-ratecorr-n-rate-in-ns"><strong>ratecorr [n_rate (in ns)]</strong></a>
+      <li><a href="commandline.html#term-ratecorr-n_rate-in-ns"><strong>ratecorr [n_rate (in ns)]</strong></a>
 </li>
       <li><a href="pydetector.html#slsdet.Detector.ratecorr">ratecorr() (slsdet.Detector property)</a>
 </li>
       <li><a href="commandline.html#term-readnlines-1-256"><strong>readnlines [1 - 256]</strong></a>
 </li>
+      <li><a href="pyenums.html#slsdet.readoutMode">readoutMode (class in slsdet)</a>
+</li>
       <li><a href="commandline.html#term-rebootcontroller"><strong>rebootcontroller</strong></a>
+</li>
+      <li><a href="receiver.html#_CPPv48Receiver">Receiver (C++ class)</a>
+</li>
+      <li><a href="receiver.html#_CPPv4N8Receiver18getReceiverVersionEv">Receiver::getReceiverVersion (C++ function)</a>
+</li>
+      <li><a href="receiver.html#_CPPv4N8Receiver8ReceiverEi">Receiver::Receiver (C++ function)</a>, <a href="receiver.html#_CPPv4N8Receiver8ReceiverEiA_Pc">[1]</a>
+</li>
+      <li><a href="receiver.html#_CPPv4N8Receiver35registerCallBackAcquisitionFinishedEPFv8uint64_tPvEPv">Receiver::registerCallBackAcquisitionFinished (C++ function)</a>
+</li>
+      <li><a href="receiver.html#_CPPv4N8Receiver34registerCallBackRawDataModifyReadyEPFvPcPcR8uint32_tPvEPv">Receiver::registerCallBackRawDataModifyReady (C++ function)</a>
+</li>
+      <li><a href="receiver.html#_CPPv4N8Receiver28registerCallBackRawDataReadyEPFvPcPc8uint32_tPvEPv">Receiver::registerCallBackRawDataReady (C++ function)</a>
+</li>
+      <li><a href="receiver.html#_CPPv4N8Receiver32registerCallBackStartAcquisitionEPFiNSt6stringENSt6stringE8uint64_t8uint32_tPvEPv">Receiver::registerCallBackStartAcquisition (C++ function)</a>
 </li>
       <li><a href="commandline.html#term-reg-address-32-bit-value"><strong>reg [address] [32 bit value]</strong></a>
 </li>
@@ -725,119 +799,125 @@
 </li>
       <li><a href="commandline.html#term-roi-xmin-xmax"><strong>roi [xmin] [xmax]</strong></a>
 </li>
-      <li><a href="commandline.html#term-romode-analog-digital-analog-digital"><strong>romode [analog|digital|analog_digital]</strong></a>
+      <li><a href="commandline.html#term-romode-analog-digital-analog_digital"><strong>romode [analog|digital|analog_digital]</strong></a>
 </li>
       <li><a href="pydetector.html#slsdet.Detector.romode">romode() (slsdet.Detector property)</a>
 </li>
-      <li><a href="commandline.html#term-runclk-n-clk-in-mhz"><strong>runclk [n_clk in MHz]</strong></a>
+      <li><a href="commandline.html#term-runclk-n_clk-in-MHz"><strong>runclk [n_clk in MHz]</strong></a>
 </li>
       <li><a href="pydetector.html#slsdet.Detector.runclk">runclk() (slsdet.Detector property)</a>
 </li>
-      <li><a href="commandline.html#term-rx-datastream-0-1"><strong>rx_datastream [0, 1]</strong></a>
+      <li><a href="pyenums.html#slsdet.runStatus">runStatus (class in slsdet)</a>
+</li>
+      <li><a href="commandline.html#term-rx_datastream-0-1"><strong>rx_datastream [0, 1]</strong></a>
 </li>
       <li><a href="pydetector.html#slsdet.Detector.rx_datastream">rx_datastream() (slsdet.Detector property)</a>
 </li>
-      <li><a href="commandline.html#term-rx-dbitlist-all-or-i0-i1-i2"><strong>rx_dbitlist [all] or [i0] [i1] [i2]...</strong></a>
+      <li><a href="commandline.html#term-rx_dbitlist-all-or-i0-i1-i2-..."><strong>rx_dbitlist [all] or [i0] [i1] [i2]...</strong></a>
 </li>
       <li><a href="pydetector.html#slsdet.Detector.rx_dbitlist">rx_dbitlist() (slsdet.Detector property)</a>
 </li>
-      <li><a href="commandline.html#term-rx-dbitoffset-n-bytes"><strong>rx_dbitoffset [n_bytes]</strong></a>
+      <li><a href="commandline.html#term-rx_dbitoffset-n_bytes"><strong>rx_dbitoffset [n_bytes]</strong></a>
 </li>
       <li><a href="pydetector.html#slsdet.Detector.rx_dbitoffset">rx_dbitoffset() (slsdet.Detector property)</a>
 </li>
-      <li><a href="commandline.html#term-rx-discardpolicy-nodiscard-default-discardempty-discardpartial-fastest"><strong>rx_discardpolicy [nodiscard (default)|discardempty|discardpartial(fastest)]</strong></a>
+      <li><a href="commandline.html#term-rx_discardpolicy-nodiscard-default-discardempty-discardpartial-fastest"><strong>rx_discardpolicy [nodiscard (default)|discardempty|discardpartial(fastest)]</strong></a>
 </li>
       <li><a href="pydetector.html#slsdet.Detector.rx_discardpolicy">rx_discardpolicy() (slsdet.Detector property)</a>
 </li>
-      <li><a href="commandline.html#term-rx-fifodepth-n-frames"><strong>rx_fifodepth [n_frames]</strong></a>
+      <li><a href="commandline.html#term-rx_fifodepth-n_frames"><strong>rx_fifodepth [n_frames]</strong></a>
 </li>
       <li><a href="pydetector.html#slsdet.Detector.rx_fifodepth">rx_fifodepth() (slsdet.Detector property)</a>
 </li>
-      <li><a href="commandline.html#term-rx-frameindex"><strong>rx_frameindex</strong></a>
+      <li><a href="commandline.html#term-rx_frameindex"><strong>rx_frameindex</strong></a>
 </li>
       <li><a href="pydetector.html#slsdet.Detector.rx_frameindex">rx_frameindex() (slsdet.Detector property)</a>
 </li>
-      <li><a href="commandline.html#term-rx-framescaught"><strong>rx_framescaught</strong></a>
+      <li><a href="commandline.html#term-rx_framescaught"><strong>rx_framescaught</strong></a>
 </li>
       <li><a href="pydetector.html#slsdet.Detector.rx_framescaught">rx_framescaught() (slsdet.Detector property)</a>
 </li>
-      <li><a href="commandline.html#term-rx-framesperfile-n-frames"><strong>rx_framesperfile [n_frames]</strong></a>
+      <li><a href="commandline.html#term-rx_framesperfile-n_frames"><strong>rx_framesperfile [n_frames]</strong></a>
 </li>
       <li><a href="pydetector.html#slsdet.Detector.rx_framesperfile">rx_framesperfile() (slsdet.Detector property)</a>
 </li>
-      <li><a href="commandline.html#term-rx-hostname-hostname-or-ip-address"><strong>rx_hostname [hostname or ip address]</strong></a>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="commandline.html#term-rx_hostname-hostname-or-ip-address"><strong>rx_hostname [hostname or ip address]</strong></a>
 </li>
       <li><a href="pydetector.html#slsdet.Detector.rx_hostname">rx_hostname() (slsdet.Detector property)</a>
 </li>
-      <li><a href="commandline.html#term-rx-jsonaddheader-label1-value1-label2-value2"><strong>rx_jsonaddheader [&#34;label1&#34;:&#34;value1&#34;], [&#34;label2&#34;:&#34;value2&#34;]</strong></a>
+      <li><a href="commandline.html#term-rx_jsonaddheader-key1-value1-key2-value2-...-keyn-valuen"><strong>rx_jsonaddheader [key1] [value1] [key2] [value2]...[keyn] [valuen]</strong></a>
 </li>
-      <li><a href="commandline.html#term-rx-jsonpara-key1-value1"><strong>rx_jsonpara [key1] [value1]</strong></a>
+      <li><a href="commandline.html#term-rx_jsonpara-key1-value1"><strong>rx_jsonpara [key1] [value1]</strong></a>
 </li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="commandline.html#term-rx-lastclient"><strong>rx_lastclient</strong></a>
+      <li><a href="commandline.html#term-rx_lastclient"><strong>rx_lastclient</strong></a>
 </li>
       <li><a href="pydetector.html#slsdet.Detector.rx_lastclient">rx_lastclient() (slsdet.Detector property)</a>
 </li>
-      <li><a href="commandline.html#term-rx-lock-0-1"><strong>rx_lock [0, 1]</strong></a>
+      <li><a href="commandline.html#term-rx_lock-0-1"><strong>rx_lock [0, 1]</strong></a>
 </li>
       <li><a href="pydetector.html#slsdet.Detector.rx_lock">rx_lock() (slsdet.Detector property)</a>
 </li>
-      <li><a href="commandline.html#term-rx-missingpackets"><strong>rx_missingpackets</strong></a>
+      <li><a href="commandline.html#term-rx_missingpackets"><strong>rx_missingpackets</strong></a>
 </li>
       <li><a href="pydetector.html#slsdet.Detector.rx_missingpackets">rx_missingpackets() (slsdet.Detector property)</a>
 </li>
-      <li><a href="commandline.html#term-rx-padding-0-1"><strong>rx_padding [0, 1]</strong></a>
+      <li><a href="commandline.html#term-rx_padding-0-1"><strong>rx_padding [0, 1]</strong></a>
 </li>
       <li><a href="pydetector.html#slsdet.Detector.rx_padding">rx_padding() (slsdet.Detector property)</a>
 </li>
-      <li><a href="commandline.html#term-rx-printconfig"><strong>rx_printconfig</strong></a>
+      <li><a href="commandline.html#term-rx_printconfig"><strong>rx_printconfig</strong></a>
 </li>
-      <li><a href="commandline.html#term-rx-readfreq-nth-frame"><strong>rx_readfreq [nth frame]</strong></a>
+      <li><a href="commandline.html#term-rx_readfreq-nth-frame"><strong>rx_readfreq [nth frame]</strong></a>
 </li>
       <li><a href="pydetector.html#slsdet.Detector.rx_readfreq">rx_readfreq() (slsdet.Detector property)</a>
 </li>
-      <li><a href="commandline.html#term-rx-realudpsocksize"><strong>rx_realudpsocksize</strong></a>
+      <li><a href="commandline.html#term-rx_realudpsocksize"><strong>rx_realudpsocksize</strong></a>
 </li>
       <li><a href="pydetector.html#slsdet.Detector.rx_realudpsocksize">rx_realudpsocksize() (slsdet.Detector property)</a>
 </li>
-      <li><a href="commandline.html#term-rx-silent-0-1"><strong>rx_silent [0, 1]</strong></a>
+      <li><a href="commandline.html#term-rx_silent-0-1"><strong>rx_silent [0, 1]</strong></a>
 </li>
       <li><a href="pydetector.html#slsdet.Detector.rx_silent">rx_silent() (slsdet.Detector property)</a>
 </li>
-      <li><a href="commandline.html#term-rx-start"><strong>rx_start</strong></a>
+      <li><a href="commandline.html#term-rx_start"><strong>rx_start</strong></a>
 </li>
-      <li><a href="commandline.html#term-rx-status-running-idle"><strong>rx_status running, idle]</strong></a>
+      <li><a href="commandline.html#term-rx_status-running-idle"><strong>rx_status running, idle]</strong></a>
 </li>
       <li><a href="pydetector.html#slsdet.Detector.rx_status">rx_status() (slsdet.Detector property)</a>
 </li>
-      <li><a href="commandline.html#term-rx-stop"><strong>rx_stop</strong></a>
+      <li><a href="commandline.html#term-rx_stop"><strong>rx_stop</strong></a>
 </li>
-      <li><a href="commandline.html#term-rx-tcpport-port"><strong>rx_tcpport [port]</strong></a>
+      <li><a href="commandline.html#term-rx_tcpport-port"><strong>rx_tcpport [port]</strong></a>
 </li>
       <li><a href="pydetector.html#slsdet.Detector.rx_tcpport">rx_tcpport() (slsdet.Detector property)</a>
 </li>
-      <li><a href="commandline.html#term-rx-udpsocksize-n-size"><strong>rx_udpsocksize [n_size]</strong></a>
+      <li><a href="commandline.html#term-rx_threads"><strong>rx_threads</strong></a>
+</li>
+      <li><a href="commandline.html#term-rx_udpsocksize-n_size"><strong>rx_udpsocksize [n_size]</strong></a>
 </li>
       <li><a href="pydetector.html#slsdet.Detector.rx_udpsocksize">rx_udpsocksize() (slsdet.Detector property)</a>
 </li>
-      <li><a href="commandline.html#term-rx-version"><strong>rx_version</strong></a>
+      <li><a href="commandline.html#term-rx_version"><strong>rx_version</strong></a>
 </li>
       <li><a href="pydetector.html#slsdet.Detector.rx_version">rx_version() (slsdet.Detector property)</a>
 </li>
       <li><a href="pydetector.html#slsdet.Detector.rx_zmqdatastream">rx_zmqdatastream() (slsdet.Detector property)</a>
 </li>
-      <li><a href="commandline.html#term-rx-zmqip-x-x-x-x"><strong>rx_zmqip [x.x.x.x]</strong></a>
+      <li><a href="commandline.html#term-rx_zmqip-x.x.x.x"><strong>rx_zmqip [x.x.x.x]</strong></a>
 </li>
       <li><a href="pydetector.html#slsdet.Detector.rx_zmqip">rx_zmqip() (slsdet.Detector property)</a>
 </li>
-      <li><a href="commandline.html#term-rx-zmqport-port"><strong>rx_zmqport [port]</strong></a>
+      <li><a href="commandline.html#term-rx_zmqport-port"><strong>rx_zmqport [port]</strong></a>
 </li>
       <li><a href="pydetector.html#slsdet.Detector.rx_zmqport">rx_zmqport() (slsdet.Detector property)</a>
 </li>
-      <li><a href="commandline.html#term-rxb-lb-dac-or-mv-value-optional-unit-mv"><strong>rxb_lb [dac or mv value][(optional unit) mv]</strong></a>
+      <li><a href="commandline.html#term-rx_zmqstartfnum-fnum"><strong>rx_zmqstartfnum [fnum]</strong></a>
 </li>
-      <li><a href="commandline.html#term-rxb-rb-dac-or-mv-value-optional-unit-mv"><strong>rxb_rb [dac or mv value][(optional unit) mv]</strong></a>
+      <li><a href="commandline.html#term-rxb_lb-dac-or-mv-value-optional-unit-mv"><strong>rxb_lb [dac or mv value][(optional unit) mv]</strong></a>
+</li>
+      <li><a href="commandline.html#term-rxb_rb-dac-or-mv-value-optional-unit-mv"><strong>rxb_rb [dac or mv value][(optional unit) mv]</strong></a>
 </li>
   </ul></td>
 </tr></table>
@@ -845,19 +925,27 @@
 <h2 id="S">S</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="commandline.html#term-samples-n-samples"><strong>samples [n_samples]</strong></a>
+      <li><a href="commandline.html#term-samples-n_samples"><strong>samples [n_samples]</strong></a>
 </li>
       <li><a href="commandline.html#term-savepattern-fname"><strong>savepattern [fname]</strong></a>
 </li>
+      <li><a href="commandline.html#term-scan-dac_name-0-trimbit_scan-start_val-stop_val-step_size-dac-settling-time-ns-us-ms-s"><strong>scan [dac_name|0|trimbit_scan] [start_val] [stop_val] [step_size] [dac settling time ns|us|ms|s]</strong></a>
+</li>
+      <li><a href="commandline.html#term-scanerrmsg"><strong>scanerrmsg</strong></a>
+</li>
       <li><a href="commandline.html#term-selinterface-0-1"><strong>selinterface [0, 1]</strong></a>
+</li>
+      <li><a href="pydetector.html#slsdet.Detector.selinterface">selinterface() (slsdet.Detector property)</a>
 </li>
       <li><a href="pydetector.html#slsdet.Detector.server_version">server_version() (slsdet.Detector property)</a>
 </li>
       <li><a href="commandline.html#term-setbit-address-value"><strong>setbit [address] [value</strong></a>
 </li>
-      <li><a href="commandline.html#term-settings-standard-fast-highgain-dynamicgain-lowgain-mediumgain-veryhighgain-dynamichg0-fixgain1-fixgain2-forceswitchg1-forceswitchg2-verylowgain-g1-hg-g1-lg-g2-hc-hg-g2-hc-lg-g2-lc-hg-g2-lc-lg-g4-hg-g4-lg"><strong>settings [standard, fast, highgain, dynamicgain, lowgain, mediumgain, veryhighgain, dynamichg0, fixgain1, fixgain2, forceswitchg1, forceswitchg2, verylowgain, g1_hg, g1_lg, g2_hc_hg, g2_hc_lg, g2_lc_hg, g2_lc_lg, g4_hg, g4_lg]</strong></a>
+      <li><a href="commandline.html#term-settings-standard-fast-highgain-dynamicgain-lowgain-mediumgain-veryhighgain-dynamichg0-fixgain1-fixgain2-forceswitchg1-forceswitchg2-verylowgain-g1_hg-g1_lg-g2_hc_hg-g2_hc_lg-g2_lc_hg-g2_lc_lg-g4_hg-g4_lg"><strong>settings [standard, fast, highgain, dynamicgain, lowgain, mediumgain, veryhighgain, dynamichg0, fixgain1, fixgain2, forceswitchg1, forceswitchg2, verylowgain, g1_hg, g1_lg, g2_hc_hg, g2_hc_lg, g2_lc_hg, g2_lc_lg, g4_hg, g4_lg]</strong></a>
 </li>
       <li><a href="pydetector.html#slsdet.Detector.settings">settings() (slsdet.Detector property)</a>
+</li>
+      <li><a href="commandline.html#term-settingslist"><strong>settingslist</strong></a>
 </li>
       <li><a href="commandline.html#term-settingspath-path"><strong>settingspath [path]</strong></a>
 </li>
@@ -909,6 +997,8 @@
 </li>
       <li><a href="detector.html#_CPPv4NK3sls8Detector11getADCClockE9Positions">sls::Detector::getADCClock (C++ function)</a>
 </li>
+      <li><a href="detector.html#_CPPv4NK3sls8Detector19getADCConfigurationEKiKi9Positions">sls::Detector::getADCConfiguration (C++ function)</a>
+</li>
       <li><a href="detector.html#_CPPv4NK3sls8Detector16getADCEnableMaskE9Positions">sls::Detector::getADCEnableMask (C++ function)</a>
 </li>
       <li><a href="detector.html#_CPPv4NK3sls8Detector12getADCInvertE9Positions">sls::Detector::getADCInvert (C++ function)</a>
@@ -927,11 +1017,15 @@
 </li>
       <li><a href="detector.html#_CPPv4NK3sls8Detector18getAutoCompDisableE9Positions">sls::Detector::getAutoCompDisable (C++ function)</a>
 </li>
+      <li><a href="detector.html#_CPPv4NK3sls8Detector14getBadChannelsERKNSt6stringE9Positions">sls::Detector::getBadChannels (C++ function)</a>
+</li>
       <li><a href="detector.html#_CPPv4NK3sls8Detector9getBottomE9Positions">sls::Detector::getBottom (C++ function)</a>
 </li>
       <li><a href="detector.html#_CPPv4N3sls8Detector12getBurstModeE9Positions">sls::Detector::getBurstMode (C++ function)</a>
 </li>
       <li><a href="detector.html#_CPPv4NK3sls8Detector14getBurstPeriodE9Positions">sls::Detector::getBurstPeriod (C++ function)</a>
+</li>
+      <li><a href="detector.html#_CPPv4NK3sls8Detector10getCDSGainE9Positions">sls::Detector::getCDSGain (C++ function)</a>
 </li>
       <li><a href="detector.html#_CPPv4NK3sls8Detector16getClientVersionEv">sls::Detector::getClientVersion (C++ function)</a>
 </li>
@@ -954,6 +1048,8 @@
       <li><a href="detector.html#_CPPv4NK3sls8Detector16getCurrentSourceE9Positions">sls::Detector::getCurrentSource (C++ function)</a>
 </li>
       <li><a href="detector.html#_CPPv4NK3sls8Detector6getDACEN4defs8dacIndexEb9Positions">sls::Detector::getDAC (C++ function)</a>
+</li>
+      <li><a href="detector.html#_CPPv4NK3sls8Detector10getDacListEv">sls::Detector::getDacList (C++ function)</a>
 </li>
       <li><a href="detector.html#_CPPv4NK3sls8Detector12getDBITClockE9Positions">sls::Detector::getDBITClock (C++ function)</a>
 </li>
@@ -995,7 +1091,9 @@
 </li>
       <li><a href="detector.html#_CPPv4NK3sls8Detector15getDynamicRangeE9Positions">sls::Detector::getDynamicRange (C++ function)</a>
 </li>
-      <li><a href="detector.html#_CPPv4NK3sls8Detector10getExptimeE9Positions">sls::Detector::getExptime (C++ function)</a>
+      <li><a href="detector.html#_CPPv4NK3sls8Detector10getExptimeE9Positions">sls::Detector::getExptime (C++ function)</a>, <a href="detector.html#_CPPv4NK3sls8Detector10getExptimeEi9Positions">[1]</a>
+</li>
+      <li><a href="detector.html#_CPPv4NK3sls8Detector21getExptimeForAllGatesE9Positions">sls::Detector::getExptimeForAllGates (C++ function)</a>
 </li>
       <li><a href="detector.html#_CPPv4NK3sls8Detector14getExptimeLeftE9Positions">sls::Detector::getExptimeLeft (C++ function)</a>
 </li>
@@ -1003,7 +1101,7 @@
 </li>
       <li><a href="detector.html#_CPPv4NK3sls8Detector25getExternalSamplingSourceE9Positions">sls::Detector::getExternalSamplingSource (C++ function)</a>
 </li>
-      <li><a href="detector.html#_CPPv4NK3sls8Detector22getExternalSignalFlagsE9Positions">sls::Detector::getExternalSignalFlags (C++ function)</a>
+      <li><a href="detector.html#_CPPv4NK3sls8Detector22getExternalSignalFlagsEi9Positions">sls::Detector::getExternalSignalFlags (C++ function)</a>
 </li>
       <li><a href="detector.html#_CPPv4NK3sls8Detector13getFileFormatE9Positions">sls::Detector::getFileFormat (C++ function)</a>
 </li>
@@ -1015,6 +1113,8 @@
 </li>
       <li><a href="detector.html#_CPPv4NK3sls8Detector12getFileWriteE9Positions">sls::Detector::getFileWrite (C++ function)</a>
 </li>
+      <li><a href="detector.html#_CPPv4NK3sls8Detector9getFilterE9Positions">sls::Detector::getFilter (C++ function)</a>
+</li>
       <li><a href="detector.html#_CPPv4NK3sls8Detector18getFirmwareVersionE9Positions">sls::Detector::getFirmwareVersion (C++ function)</a>
 </li>
       <li><a href="detector.html#_CPPv4NK3sls8Detector12getFrameModeE9Positions">sls::Detector::getFrameMode (C++ function)</a>
@@ -1022,6 +1122,12 @@
       <li><a href="detector.html#_CPPv4NK3sls8Detector15getFramesCaughtE9Positions">sls::Detector::getFramesCaught (C++ function)</a>
 </li>
       <li><a href="detector.html#_CPPv4NK3sls8Detector16getFramesPerFileE9Positions">sls::Detector::getFramesPerFile (C++ function)</a>
+</li>
+      <li><a href="detector.html#_CPPv4NK3sls8Detector22getGapPixelsinCallbackEv">sls::Detector::getGapPixelsinCallback (C++ function)</a>
+</li>
+      <li><a href="detector.html#_CPPv4NK3sls8Detector12getGateDelayEi9Positions">sls::Detector::getGateDelay (C++ function)</a>
+</li>
+      <li><a href="detector.html#_CPPv4NK3sls8Detector23getGateDelayForAllGatesE9Positions">sls::Detector::getGateDelayForAllGates (C++ function)</a>
 </li>
       <li><a href="detector.html#_CPPv4NK3sls8Detector14getHighVoltageE9Positions">sls::Detector::getHighVoltage (C++ function)</a>
 </li>
@@ -1075,6 +1181,8 @@
 </li>
       <li><a href="detector.html#_CPPv4NK3sls8Detector21getNumberOfFramesLeftE9Positions">sls::Detector::getNumberOfFramesLeft (C++ function)</a>
 </li>
+      <li><a href="detector.html#_CPPv4NK3sls8Detector16getNumberOfGatesE9Positions">sls::Detector::getNumberOfGates (C++ function)</a>
+</li>
       <li><a href="detector.html#_CPPv4NK3sls8Detector19getNumberOfTriggersE9Positions">sls::Detector::getNumberOfTriggers (C++ function)</a>
 </li>
       <li><a href="detector.html#_CPPv4NK3sls8Detector23getNumberOfTriggersLeftE9Positions">sls::Detector::getNumberOfTriggersLeft (C++ function)</a>
@@ -1098,8 +1206,6 @@
       <li><a href="detector.html#_CPPv4NK3sls8Detector15getPartialResetE9Positions">sls::Detector::getPartialReset (C++ function)</a>
 </li>
       <li><a href="detector.html#_CPPv4NK3sls8Detector17getPatternBitMaskE9Positions">sls::Detector::getPatternBitMask (C++ function)</a>
-</li>
-      <li><a href="detector.html#_CPPv4NK3sls8Detector22getPatternClockControlE9Positions">sls::Detector::getPatternClockControl (C++ function)</a>
 </li>
       <li><a href="detector.html#_CPPv4NK3sls8Detector19getPatternIOControlE9Positions">sls::Detector::getPatternIOControl (C++ function)</a>
 </li>
@@ -1135,8 +1241,6 @@
 </li>
       <li><a href="detector.html#_CPPv4NK3sls8Detector11getRUNClockE9Positions">sls::Detector::getRUNClock (C++ function)</a>
 </li>
-      <li><a href="detector.html#_CPPv4NK3sls8Detector17getRxAddGapPixelsE9Positions">sls::Detector::getRxAddGapPixels (C++ function)</a>
-</li>
       <li><a href="detector.html#_CPPv4NK3sls8Detector22getRxCurrentFrameIndexE9Positions">sls::Detector::getRxCurrentFrameIndex (C++ function)</a>
 </li>
       <li><a href="detector.html#_CPPv4NK3sls8Detector13getRxDbitListE9Positions">sls::Detector::getRxDbitList (C++ function)</a>
@@ -1161,6 +1265,8 @@
 </li>
       <li><a href="detector.html#_CPPv4NK3sls8Detector15getRxSilentModeE9Positions">sls::Detector::getRxSilentMode (C++ function)</a>
 </li>
+      <li><a href="detector.html#_CPPv4NK3sls8Detector14getRxThreadIdsE9Positions">sls::Detector::getRxThreadIds (C++ function)</a>
+</li>
       <li><a href="detector.html#_CPPv4NK3sls8Detector24getRxUDPSocketBufferSizeE9Positions">sls::Detector::getRxUDPSocketBufferSize (C++ function)</a>
 </li>
       <li><a href="detector.html#_CPPv4NK3sls8Detector18getRxZmqDataStreamE9Positions">sls::Detector::getRxZmqDataStream (C++ function)</a>
@@ -1171,13 +1277,21 @@
 </li>
       <li><a href="detector.html#_CPPv4NK3sls8Detector12getRxZmqPortE9Positions">sls::Detector::getRxZmqPort (C++ function)</a>
 </li>
+      <li><a href="detector.html#_CPPv4NK3sls8Detector21getRxZmqStartingFrameE9Positions">sls::Detector::getRxZmqStartingFrame (C++ function)</a>
+</li>
       <li><a href="detector.html#_CPPv4NK3sls8Detector13getRxZmqTimerE9Positions">sls::Detector::getRxZmqTimer (C++ function)</a>
+</li>
+      <li><a href="detector.html#_CPPv4NK3sls8Detector7getScanE9Positions">sls::Detector::getScan (C++ function)</a>
+</li>
+      <li><a href="detector.html#_CPPv4NK3sls8Detector19getScanErrorMessageE9Positions">sls::Detector::getScanErrorMessage (C++ function)</a>
 </li>
       <li><a href="detector.html#_CPPv4NK3sls8Detector23getSelectedUDPInterfaceE9Positions">sls::Detector::getSelectedUDPInterface (C++ function)</a>
 </li>
       <li><a href="detector.html#_CPPv4NK3sls8Detector15getSerialNumberE9Positions">sls::Detector::getSerialNumber (C++ function)</a>
 </li>
       <li><a href="detector.html#_CPPv4NK3sls8Detector11getSettingsE9Positions">sls::Detector::getSettings (C++ function)</a>
+</li>
+      <li><a href="detector.html#_CPPv4NK3sls8Detector15getSettingsListEv">sls::Detector::getSettingsList (C++ function)</a>
 </li>
       <li><a href="detector.html#_CPPv4NK3sls8Detector15getSettingsPathE9Positions">sls::Detector::getSettingsPath (C++ function)</a>
 </li>
@@ -1202,8 +1316,6 @@
       <li><a href="detector.html#_CPPv4NK3sls8Detector19getStorageCellDelayE9Positions">sls::Detector::getStorageCellDelay (C++ function)</a>
 </li>
       <li><a href="detector.html#_CPPv4NK3sls8Detector19getStorageCellStartE9Positions">sls::Detector::getStorageCellStart (C++ function)</a>
-</li>
-      <li><a href="detector.html#_CPPv4NK3sls8Detector17getStoreInRamModeE9Positions">sls::Detector::getStoreInRamMode (C++ function)</a>
 </li>
       <li><a href="detector.html#_CPPv4NK3sls8Detector14getSubDeadTimeE9Positions">sls::Detector::getSubDeadTime (C++ function)</a>
 </li>
@@ -1243,6 +1355,8 @@
 </li>
       <li><a href="detector.html#_CPPv4NK3sls8Detector18getUseReceiverFlagE9Positions">sls::Detector::getUseReceiverFlag (C++ function)</a>
 </li>
+      <li><a href="detector.html#_CPPv4NK3sls8Detector7getVetoE9Positions">sls::Detector::getVeto (C++ function)</a>
+</li>
       <li><a href="detector.html#_CPPv4N3sls8Detector13getVetoPhotonEKi9Positions">sls::Detector::getVetoPhoton (C++ function)</a>
 </li>
       <li><a href="detector.html#_CPPv4NK3sls8Detector10getVoltageEN4defs8dacIndexE9Positions">sls::Detector::getVoltage (C++ function)</a>
@@ -1269,12 +1383,12 @@
 </li>
       <li><a href="detector.html#_CPPv4N3sls8Detector35registerAcquisitionFinishedCallbackEPFvdiPvEPv">sls::Detector::registerAcquisitionFinishedCallback (C++ function)</a>
 </li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="detector.html#_CPPv4N3sls8Detector20registerDataCallbackEPFvP12detectorData8uint64_t8uint32_tPvEPv">sls::Detector::registerDataCallback (C++ function)</a>
 </li>
       <li><a href="detector.html#_CPPv4N3sls8Detector9resetFPGAE9Positions">sls::Detector::resetFPGA (C++ function)</a>
 </li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="detector.html#_CPPv4N3sls8Detector21resetTemperatureEventE9Positions">sls::Detector::resetTemperatureEvent (C++ function)</a>
 </li>
       <li><a href="detector.html#_CPPv4N3sls8Detector11savePatternERKNSt6stringE">sls::Detector::savePattern (C++ function)</a>
@@ -1285,9 +1399,11 @@
 </li>
       <li><a href="detector.html#_CPPv4N3sls8Detector19setAcquisitionIndexE7int64_t9Positions">sls::Detector::setAcquisitionIndex (C++ function)</a>
 </li>
-      <li><a href="detector.html#_CPPv4N3sls8Detector9setActiveEb9Positions">sls::Detector::setActive (C++ function)</a>
+      <li><a href="detector.html#_CPPv4N3sls8Detector9setActiveEKb9Positions">sls::Detector::setActive (C++ function)</a>
 </li>
       <li><a href="detector.html#_CPPv4N3sls8Detector11setADCClockEi9Positions">sls::Detector::setADCClock (C++ function)</a>
+</li>
+      <li><a href="detector.html#_CPPv4N3sls8Detector19setADCConfigurationEKiKiKi9Positions">sls::Detector::setADCConfiguration (C++ function)</a>
 </li>
       <li><a href="detector.html#_CPPv4N3sls8Detector16setADCEnableMaskE8uint32_t9Positions">sls::Detector::setADCEnableMask (C++ function)</a>
 </li>
@@ -1299,13 +1415,15 @@
 </li>
       <li><a href="detector.html#_CPPv4N3sls8Detector14setADCPipelineEi9Positions">sls::Detector::setADCPipeline (C++ function)</a>
 </li>
-      <li><a href="detector.html#_CPPv4N3sls8Detector23setAdditionalJsonHeaderERKNSt6stringE9Positions">sls::Detector::setAdditionalJsonHeader (C++ function)</a>
+      <li><a href="detector.html#_CPPv4N3sls8Detector23setAdditionalJsonHeaderERKNSt3mapINSt6stringENSt6stringEEE9Positions">sls::Detector::setAdditionalJsonHeader (C++ function)</a>
 </li>
       <li><a href="detector.html#_CPPv4N3sls8Detector26setAdditionalJsonParameterERKNSt6stringERKNSt6stringE9Positions">sls::Detector::setAdditionalJsonParameter (C++ function)</a>
 </li>
       <li><a href="detector.html#_CPPv4N3sls8Detector14setAllTrimbitsEi9Positions">sls::Detector::setAllTrimbits (C++ function)</a>
 </li>
       <li><a href="detector.html#_CPPv4N3sls8Detector18setAutoCompDisableEb9Positions">sls::Detector::setAutoCompDisable (C++ function)</a>
+</li>
+      <li><a href="detector.html#_CPPv4N3sls8Detector14setBadChannelsERKNSt6stringE9Positions">sls::Detector::setBadChannels (C++ function)</a>
 </li>
       <li><a href="detector.html#_CPPv4N3sls8Detector6setBitE8uint32_ti9Positions">sls::Detector::setBit (C++ function)</a>
 </li>
@@ -1314,6 +1432,8 @@
       <li><a href="detector.html#_CPPv4N3sls8Detector12setBurstModeEN4defs9burstModeE9Positions">sls::Detector::setBurstMode (C++ function)</a>
 </li>
       <li><a href="detector.html#_CPPv4N3sls8Detector14setBurstPeriodE2ns9Positions">sls::Detector::setBurstPeriod (C++ function)</a>
+</li>
+      <li><a href="detector.html#_CPPv4N3sls8Detector10setCDSGainEb9Positions">sls::Detector::setCDSGain (C++ function)</a>
 </li>
       <li><a href="detector.html#_CPPv4N3sls8Detector14setClientZmqIpEK6IpAddr9Positions">sls::Detector::setClientZmqIp (C++ function)</a>
 </li>
@@ -1371,13 +1491,13 @@
 </li>
       <li><a href="detector.html#_CPPv4N3sls8Detector15setDynamicRangeEi">sls::Detector::setDynamicRange (C++ function)</a>
 </li>
-      <li><a href="detector.html#_CPPv4N3sls8Detector10setExptimeE2ns9Positions">sls::Detector::setExptime (C++ function)</a>
+      <li><a href="detector.html#_CPPv4N3sls8Detector10setExptimeE2ns9Positions">sls::Detector::setExptime (C++ function)</a>, <a href="detector.html#_CPPv4N3sls8Detector10setExptimeEi2ns9Positions">[1]</a>
 </li>
       <li><a href="detector.html#_CPPv4N3sls8Detector19setExternalSamplingEb9Positions">sls::Detector::setExternalSampling (C++ function)</a>
 </li>
       <li><a href="detector.html#_CPPv4N3sls8Detector25setExternalSamplingSourceEi9Positions">sls::Detector::setExternalSamplingSource (C++ function)</a>
 </li>
-      <li><a href="detector.html#_CPPv4N3sls8Detector22setExternalSignalFlagsEN4defs18externalSignalFlagE9Positions">sls::Detector::setExternalSignalFlags (C++ function)</a>
+      <li><a href="detector.html#_CPPv4N3sls8Detector22setExternalSignalFlagsEiN4defs18externalSignalFlagE9Positions">sls::Detector::setExternalSignalFlags (C++ function)</a>
 </li>
       <li><a href="detector.html#_CPPv4N3sls8Detector13setFileFormatEN4defs10fileFormatE9Positions">sls::Detector::setFileFormat (C++ function)</a>
 </li>
@@ -1389,9 +1509,15 @@
 </li>
       <li><a href="detector.html#_CPPv4N3sls8Detector12setFileWriteEb9Positions">sls::Detector::setFileWrite (C++ function)</a>
 </li>
+      <li><a href="detector.html#_CPPv4N3sls8Detector9setFilterEi9Positions">sls::Detector::setFilter (C++ function)</a>
+</li>
       <li><a href="detector.html#_CPPv4N3sls8Detector12setFrameModeEN4defs13frameModeTypeE9Positions">sls::Detector::setFrameMode (C++ function)</a>
 </li>
       <li><a href="detector.html#_CPPv4N3sls8Detector16setFramesPerFileEi9Positions">sls::Detector::setFramesPerFile (C++ function)</a>
+</li>
+      <li><a href="detector.html#_CPPv4N3sls8Detector22setGapPixelsinCallbackEKb">sls::Detector::setGapPixelsinCallback (C++ function)</a>
+</li>
+      <li><a href="detector.html#_CPPv4N3sls8Detector12setGateDelayEi2ns9Positions">sls::Detector::setGateDelay (C++ function)</a>
 </li>
       <li><a href="detector.html#_CPPv4N3sls8Detector14setHighVoltageEi9Positions">sls::Detector::setHighVoltage (C++ function)</a>
 </li>
@@ -1419,6 +1545,8 @@
 </li>
       <li><a href="detector.html#_CPPv4N3sls8Detector17setNumberOfFramesE7int64_t">sls::Detector::setNumberOfFrames (C++ function)</a>
 </li>
+      <li><a href="detector.html#_CPPv4N3sls8Detector16setNumberOfGatesEi9Positions">sls::Detector::setNumberOfGates (C++ function)</a>
+</li>
       <li><a href="detector.html#_CPPv4N3sls8Detector19setNumberOfTriggersE7int64_t">sls::Detector::setNumberOfTriggers (C++ function)</a>
 </li>
       <li><a href="detector.html#_CPPv4N3sls8Detector24setNumberofUDPInterfacesEi9Positions">sls::Detector::setNumberofUDPInterfaces (C++ function)</a>
@@ -1438,8 +1566,6 @@
       <li><a href="detector.html#_CPPv4N3sls8Detector10setPatternERKNSt6stringE9Positions">sls::Detector::setPattern (C++ function)</a>
 </li>
       <li><a href="detector.html#_CPPv4N3sls8Detector17setPatternBitMaskE8uint64_t9Positions">sls::Detector::setPatternBitMask (C++ function)</a>
-</li>
-      <li><a href="detector.html#_CPPv4N3sls8Detector22setPatternClockControlE8uint64_t9Positions">sls::Detector::setPatternClockControl (C++ function)</a>
 </li>
       <li><a href="detector.html#_CPPv4N3sls8Detector19setPatternIOControlE8uint64_t9Positions">sls::Detector::setPatternIOControl (C++ function)</a>
 </li>
@@ -1469,8 +1595,6 @@
 </li>
       <li><a href="detector.html#_CPPv4N3sls8Detector11setRUNClockEi9Positions">sls::Detector::setRUNClock (C++ function)</a>
 </li>
-      <li><a href="detector.html#_CPPv4N3sls8Detector17setRxAddGapPixelsEb">sls::Detector::setRxAddGapPixels (C++ function)</a>
-</li>
       <li><a href="detector.html#_CPPv4N3sls8Detector13setRxDbitListERKNSt6vectorIiEE9Positions">sls::Detector::setRxDbitList (C++ function)</a>
 </li>
       <li><a href="detector.html#_CPPv4N3sls8Detector15setRxDbitOffsetEi9Positions">sls::Detector::setRxDbitOffset (C++ function)</a>
@@ -1479,7 +1603,7 @@
 </li>
       <li><a href="detector.html#_CPPv4N3sls8Detector23setRxFrameDiscardPolicyEN4defs18frameDiscardPolicyE9Positions">sls::Detector::setRxFrameDiscardPolicy (C++ function)</a>
 </li>
-      <li><a href="detector.html#_CPPv4N3sls8Detector13setRxHostnameERKNSt6stringE9Positions">sls::Detector::setRxHostname (C++ function)</a>
+      <li><a href="detector.html#_CPPv4N3sls8Detector13setRxHostnameERKNSt6stringE9Positions">sls::Detector::setRxHostname (C++ function)</a>, <a href="detector.html#_CPPv4N3sls8Detector13setRxHostnameERKNSt6vectorINSt6stringEEE">[1]</a>
 </li>
       <li><a href="detector.html#_CPPv4N3sls8Detector9setRxLockEb9Positions">sls::Detector::setRxLock (C++ function)</a>
 </li>
@@ -1499,7 +1623,11 @@
 </li>
       <li><a href="detector.html#_CPPv4N3sls8Detector12setRxZmqPortEii">sls::Detector::setRxZmqPort (C++ function)</a>
 </li>
+      <li><a href="detector.html#_CPPv4N3sls8Detector21setRxZmqStartingFrameEi9Positions">sls::Detector::setRxZmqStartingFrame (C++ function)</a>
+</li>
       <li><a href="detector.html#_CPPv4N3sls8Detector13setRxZmqTimerEi9Positions">sls::Detector::setRxZmqTimer (C++ function)</a>
+</li>
+      <li><a href="detector.html#_CPPv4N3sls8Detector7setScanEKN4defs14scanParametersE">sls::Detector::setScan (C++ function)</a>
 </li>
       <li><a href="detector.html#_CPPv4N3sls8Detector11setSettingsEN4defs16detectorSettingsE9Positions">sls::Detector::setSettings (C++ function)</a>
 </li>
@@ -1521,9 +1649,7 @@
 </li>
       <li><a href="detector.html#_CPPv4N3sls8Detector19setStorageCellDelayE2ns9Positions">sls::Detector::setStorageCellDelay (C++ function)</a>
 </li>
-      <li><a href="detector.html#_CPPv4N3sls8Detector19setStoragecellStartEi9Positions">sls::Detector::setStoragecellStart (C++ function)</a>
-</li>
-      <li><a href="detector.html#_CPPv4N3sls8Detector17setStoreInRamModeEb9Positions">sls::Detector::setStoreInRamMode (C++ function)</a>
+      <li><a href="detector.html#_CPPv4N3sls8Detector19setStorageCellStartEi9Positions">sls::Detector::setStorageCellStart (C++ function)</a>
 </li>
       <li><a href="detector.html#_CPPv4N3sls8Detector14setSubDeadTimeE2ns9Positions">sls::Detector::setSubDeadTime (C++ function)</a>
 </li>
@@ -1553,6 +1679,10 @@
 </li>
       <li><a href="detector.html#_CPPv4N3sls8Detector15setTrimEnergiesENSt6vectorIiEE9Positions">sls::Detector::setTrimEnergies (C++ function)</a>
 </li>
+      <li><a href="detector.html#_CPPv4N3sls8Detector7setVetoEKb9Positions">sls::Detector::setVeto (C++ function)</a>
+</li>
+      <li><a href="detector.html#_CPPv4N3sls8Detector11setVetoFileEKiRKNSt6stringE9Positions">sls::Detector::setVetoFile (C++ function)</a>
+</li>
       <li><a href="detector.html#_CPPv4N3sls8Detector13setVetoPhotonEKiKiKiRKNSt6stringE9Positions">sls::Detector::setVetoPhoton (C++ function)</a>
 </li>
       <li><a href="detector.html#_CPPv4N3sls8Detector16setVetoReferenceEKiKi9Positions">sls::Detector::setVetoReference (C++ function)</a>
@@ -1564,6 +1694,8 @@
       <li><a href="detector.html#_CPPv4NK3sls8Detector4sizeEv">sls::Detector::size (C++ function)</a>
 </li>
       <li><a href="detector.html#_CPPv4N3sls8Detector13startDetectorEv">sls::Detector::startDetector (C++ function)</a>
+</li>
+      <li><a href="detector.html#_CPPv4N3sls8Detector12startPatternE9Positions">sls::Detector::startPattern (C++ function)</a>
 </li>
       <li><a href="detector.html#_CPPv4N3sls8Detector13startReceiverEv">sls::Detector::startReceiver (C++ function)</a>
 </li>
@@ -1579,15 +1711,35 @@
 </li>
       <li><a href="detector.html#_CPPv4N3sls8DetectorD0Ev">sls::Detector::~Detector (C++ function)</a>
 </li>
-      <li><a href="type_traits.html#_CPPv4I00EN3sls16has_emplace_backE">sls::has_emplace_back (C++ class)</a>
+      <li><a href="type_traits.html#_CPPv4I00EN3sls16has_emplace_backE">sls::has_emplace_back (C++ struct)</a>
 </li>
-      <li><a href="type_traits.html#_CPPv4I00EN3sls7has_strE">sls::has_str (C++ class)</a>
+      <li><a href="type_traits.html#_CPPv4I0EN3sls16has_emplace_backI1TNSt11conditionalIXL0EE23has_emplace_back_helperIDTcldtclNSt7declvalI1TEEE12emplace_backEEEvE4typeEEE">sls::has_emplace_back&lt;T, typename std::conditional&lt;false, has_emplace_back_helper&lt;decltype(std::declval&lt;T&gt;().emplace_back())&gt;, void&gt;::type&gt; (C++ struct)</a>
 </li>
-      <li><a href="type_traits.html#_CPPv4I00EN3sls12is_containerE">sls::is_container (C++ class)</a>
+      <li><a href="type_traits.html#_CPPv4IDpEN3sls23has_emplace_back_helperE">sls::has_emplace_back_helper (C++ struct)</a>
 </li>
-      <li><a href="type_traits.html#_CPPv4I00EN3sls11is_durationE">sls::is_duration (C++ class)</a>
+      <li><a href="type_traits.html#_CPPv4I00EN3sls7has_strE">sls::has_str (C++ struct)</a>
 </li>
-      <li><a href="type_traits.html#_CPPv4I00EN3sls18is_light_containerE">sls::is_light_container (C++ class)</a>
+      <li><a href="type_traits.html#_CPPv4I0EN3sls7has_strI1TNSt11conditionalIXL0EE14has_str_helperIDTcldtclNSt7declvalI1TEEE3strEEEvE4typeEEE">sls::has_str&lt;T, typename std::conditional&lt;false, has_str_helper&lt;decltype(std::declval&lt;T&gt;().str())&gt;, void&gt;::type&gt; (C++ struct)</a>
+</li>
+      <li><a href="type_traits.html#_CPPv4IDpEN3sls14has_str_helperE">sls::has_str_helper (C++ struct)</a>
+</li>
+      <li><a href="type_traits.html#_CPPv4I00EN3sls12is_containerE">sls::is_container (C++ struct)</a>
+</li>
+      <li><a href="type_traits.html#_CPPv4I0EN3sls12is_containerI1TNSt11conditionalIXL0EE19is_container_helperIN1T10value_typeEN1T9size_typeEN1T8iteratorEN1T14const_iteratorEDTcldtclNSt7declvalI1TEEE4sizeEEDTcldtclNSt7declvalI1TEEE5beginEEDTcldtclNSt7declvalI1TEEE3endEEDTcldtclNSt7declvalI1TEEE6cbeginEEDTcldtclNSt7declvalI1TEEE4cendEEDTcldtclNSt7declvalI1TEEE5emptyEEEvE4typeEEE">sls::is_container&lt;T, typename std::conditional&lt;false, is_container_helper&lt;typename T::value_type, typename T::size_type, typename T::iterator, typename T::const_iterator, decltype(std::declval&lt;T&gt;().size()), decltype(std::declval&lt;T&gt;().begin()), decltype(std::declval&lt;T&gt;().end()), decltype(std::declval&lt;T&gt;().cbegin()), decltype(std::declval&lt;T&gt;().cend()), decltype(std::declval&lt;T&gt;().empty())&gt;, void&gt;::type&gt; (C++ struct)</a>
+</li>
+      <li><a href="type_traits.html#_CPPv4IDpEN3sls19is_container_helperE">sls::is_container_helper (C++ struct)</a>
+</li>
+      <li><a href="type_traits.html#_CPPv4I00EN3sls11is_durationE">sls::is_duration (C++ struct)</a>
+</li>
+      <li><a href="type_traits.html#_CPPv4I0EN3sls11is_durationI1TNSt11conditionalIXL0EE18is_duration_helperIN1T3repEN1T6periodEDTcldtclNSt7declvalI1TEEE3minEEDTcldtclNSt7declvalI1TEEE3maxEEDTcldtclNSt7declvalI1TEEE4zeroEEEvE4typeEEE">sls::is_duration&lt;T, typename std::conditional&lt;false, is_duration_helper&lt;typename T::rep, typename T::period, decltype(std::declval&lt;T&gt;().min()), decltype(std::declval&lt;T&gt;().max()), decltype(std::declval&lt;T&gt;().zero())&gt;, void&gt;::type&gt; (C++ struct)</a>
+</li>
+      <li><a href="type_traits.html#_CPPv4IDpEN3sls18is_duration_helperE">sls::is_duration_helper (C++ struct)</a>
+</li>
+      <li><a href="type_traits.html#_CPPv4I00EN3sls18is_light_containerE">sls::is_light_container (C++ struct)</a>
+</li>
+      <li><a href="type_traits.html#_CPPv4I0EN3sls18is_light_containerI1TNSt11conditionalIXL0EE19is_container_helperIN1T10value_typeEN1T9size_typeEN1T8iteratorEN1T14const_iteratorEDTcldtclNSt7declvalI1TEEE4sizeEEDTcldtclNSt7declvalI1TEEE5beginEEDTcldtclNSt7declvalI1TEEE3endEEEvE4typeEEE">sls::is_light_container&lt;T, typename std::conditional&lt;false, is_container_helper&lt;typename T::value_type, typename T::size_type, typename T::iterator, typename T::const_iterator, decltype(std::declval&lt;T&gt;().size()), decltype(std::declval&lt;T&gt;().begin()), decltype(std::declval&lt;T&gt;().end())&gt;, void&gt;::type&gt; (C++ struct)</a>
+</li>
+      <li><a href="type_traits.html#_CPPv4IDpEN3sls25is_light_container_helperE">sls::is_light_container_helper (C++ struct)</a>
 </li>
       <li><a href="container_utils.html#_CPPv4I0DpEN3sls11make_uniqueENSt9enable_ifIXntNSt8is_arrayI1TE5valueEENSt10unique_ptrI1TEEE4typeEDpRR4Args">sls::make_unique (C++ function)</a>, <a href="container_utils.html#_CPPv4I0EN3sls11make_uniqueENSt9enable_ifINSt8is_arrayI1TE5valueENSt10unique_ptrI1TEEE4typeENSt6size_tE">[1]</a>
 </li>
@@ -1603,6 +1755,10 @@
 </li>
       <li><a href="result.html#_CPPv4NK3sls6Result4cendEv">sls::Result::cend (C++ function)</a>
 </li>
+      <li><a href="result.html#_CPPv4N3sls6Result14const_iteratorE">sls::Result::const_iterator (C++ type)</a>
+</li>
+      <li><a href="result.html#_CPPv4N3sls6Result15const_referenceE">sls::Result::const_reference (C++ type)</a>
+</li>
       <li><a href="result.html#_CPPv4NK3sls6Result5emptyEv">sls::Result::empty (C++ function)</a>
 </li>
       <li><a href="result.html#_CPPv4N3sls6Result3endEv">sls::Result::end (C++ function)</a>, <a href="result.html#_CPPv4NK3sls6Result3endEv">[1]</a>
@@ -1611,11 +1767,15 @@
 </li>
       <li><a href="result.html#_CPPv4N3sls6Result5frontEv">sls::Result::front (C++ function)</a>, <a href="result.html#_CPPv4NK3sls6Result5frontEv">[1]</a>
 </li>
+      <li><a href="result.html#_CPPv4N3sls6Result8iteratorE">sls::Result::iterator (C++ type)</a>
+</li>
       <li><a href="result.html#_CPPv4N3sls6ResultcvNSt6vectorI1TEEEv">sls::Result::operator std::vector&lt;T&gt; (C++ function)</a>
 </li>
       <li><a href="result.html#_CPPv4N3sls6ResultixE9size_type">sls::Result::operator[] (C++ function)</a>, <a href="result.html#_CPPv4NK3sls6ResultixE9size_type">[1]</a>
 </li>
-      <li><a href="result.html#_CPPv4I0EN3sls6Result9push_backEDa1V">sls::Result::push_back (C++ function)</a>
+      <li><a href="result.html#_CPPv4I0EN3sls6Result9push_backEDTcldt3vec9push_back5valueEE1V">sls::Result::push_back (C++ function)</a>
+</li>
+      <li><a href="result.html#_CPPv4N3sls6Result9referenceE">sls::Result::reference (C++ type)</a>
 </li>
       <li><a href="result.html#_CPPv4N3sls6Result7reserveE9size_type">sls::Result::reserve (C++ function)</a>
 </li>
@@ -1623,35 +1783,29 @@
 </li>
       <li><a href="result.html#_CPPv4NK3sls6Result4sizeEv">sls::Result::size (C++ function)</a>
 </li>
+      <li><a href="result.html#_CPPv4N3sls6Result9size_typeE">sls::Result::size_type (C++ type)</a>
+</li>
       <li><a href="result.html#_CPPv4NK3sls6Result6squashERK1T">sls::Result::squash (C++ function)</a>, <a href="result.html#_CPPv4NK3sls6Result6squashEv">[1]</a>
 </li>
       <li><a href="result.html#_CPPv4N3sls6Result7tsquashERKNSt6stringE">sls::Result::tsquash (C++ function)</a>
 </li>
+      <li><a href="result.html#_CPPv4N3sls6Result10value_typeE">sls::Result::value_type (C++ type)</a>
+</li>
       <li><a href="result.html#_CPPv4N3sls6Result3vecE">sls::Result::vec (C++ member)</a>
-</li>
-      <li><a href="result.html#_CPPv4IEN3sls6ResultI1T9AllocatorE14const_iteratorE">sls::Result&lt;T, Allocator&gt;::const_iterator (C++ type)</a>
-</li>
-      <li><a href="result.html#_CPPv4IEN3sls6ResultI1T9AllocatorE15const_referenceE">sls::Result&lt;T, Allocator&gt;::const_reference (C++ type)</a>
-</li>
-      <li><a href="result.html#_CPPv4IEN3sls6ResultI1T9AllocatorE8iteratorE">sls::Result&lt;T, Allocator&gt;::iterator (C++ type)</a>
-</li>
-      <li><a href="result.html#_CPPv4IEN3sls6ResultI1T9AllocatorE9referenceE">sls::Result&lt;T, Allocator&gt;::reference (C++ type)</a>
-</li>
-      <li><a href="result.html#_CPPv4IEN3sls6ResultI1T9AllocatorE9size_typeE">sls::Result&lt;T, Allocator&gt;::size_type (C++ type)</a>
-</li>
-      <li><a href="result.html#_CPPv4IEN3sls6ResultI1T9AllocatorE10value_typeE">sls::Result&lt;T, Allocator&gt;::value_type (C++ type)</a>
 </li>
       <li><a href="container_utils.html#_CPPv4I0EN3sls6SquashEN9Container10value_typeERK9ContainerN9Container10value_typeE">sls::Squash (C++ function)</a>
 </li>
-      <li><a href="ToString.html#_CPPv4I0EN3sls8StringToE1TRKNSt6stringE">sls::StringTo (C++ function)</a>, <a href="ToString.html#_CPPv4I0EN3sls8StringToE1TRKNSt6stringERKNSt6stringE">[1]</a>, <a href="ToString.html#_CPPv4IEN3sls8StringToEN4defs10fileFormatERKNSt6stringE">[2]</a>, <a href="ToString.html#_CPPv4IEN3sls8StringToEN4defs10speedLevelERKNSt6stringE">[3]</a>, <a href="ToString.html#_CPPv4IEN3sls8StringToEN4defs10timingModeERKNSt6stringE">[4]</a>, <a href="ToString.html#_CPPv4IEN3sls8StringToEN4defs11readoutModeERKNSt6stringE">[5]</a>, <a href="ToString.html#_CPPv4IEN3sls8StringToEN4defs12detectorTypeERKNSt6stringE">[6]</a>, <a href="ToString.html#_CPPv4IEN3sls8StringToEN4defs13frameModeTypeERKNSt6stringE">[7]</a>, <a href="ToString.html#_CPPv4IEN3sls8StringToEN4defs16detectorModeTypeERKNSt6stringE">[8]</a>, <a href="ToString.html#_CPPv4IEN3sls8StringToEN4defs16detectorSettingsERKNSt6stringE">[9]</a>, <a href="ToString.html#_CPPv4IEN3sls8StringToEN4defs16timingSourceTypeERKNSt6stringE">[10]</a>, <a href="ToString.html#_CPPv4IEN3sls8StringToEN4defs18externalSignalFlagERKNSt6stringE">[11]</a>, <a href="ToString.html#_CPPv4IEN3sls8StringToEN4defs18frameDiscardPolicyERKNSt6stringE">[12]</a>, <a href="ToString.html#_CPPv4IEN3sls8StringToEN4defs8dacIndexERKNSt6stringE">[13]</a>, <a href="ToString.html#_CPPv4IEN3sls8StringToEN4defs9burstModeERKNSt6stringE">[14]</a>
+      <li><a href="ToString.html#_CPPv4I0EN3sls8StringToE1TRKNSt6stringE">sls::StringTo (C++ function)</a>, <a href="ToString.html#_CPPv4I0EN3sls8StringToE1TRKNSt6stringERKNSt6stringE">[1]</a>, <a href="ToString.html#_CPPv4I0EN3sls8StringToENSt6vectorI1TEERKNSt6vectorINSt6stringEEE">[2]</a>
 </li>
       <li><a href="container_utils.html#_CPPv4I0EN3sls3sumENSt9enable_ifINSt13is_arithmeticI1TE5valueE1TE4typeERKNSt6vectorI1TEE">sls::sum (C++ function)</a>
 </li>
-      <li><a href="ToString.html#_CPPv4I00EN3sls8ToStringENSt9enable_ifIN11is_durationI1TE5valueENSt6stringEE4typeE1TRKNSt6stringE">sls::ToString (C++ function)</a>, <a href="ToString.html#_CPPv4I0EN3sls8ToStringENSt9enable_ifIN11is_durationI4FromE5valueENSt6stringEE4typeE4From">[1]</a>, <a href="ToString.html#_CPPv4I0EN3sls8ToStringENSt9enable_ifIN12is_containerI1TE5valueENSt6stringEE4typeERK1TRKNSt6stringE">[2]</a>, <a href="ToString.html#_CPPv4I0EN3sls8ToStringENSt9enable_ifIN7has_strI1TE5valueENSt6stringEE4typeERK1T">[3]</a>, <a href="ToString.html#_CPPv4I0EN3sls8ToStringENSt9enable_ifINSt11is_integralI1TE5valueENSt6stringEE4typeERK1T">[4]</a>, <a href="ToString.html#_CPPv4I0EN3sls8ToStringENSt9enable_ifINSt17is_floating_pointI1TE5valueENSt6stringEE4typeERK1T">[5]</a>, <a href="ToString.html#_CPPv4I0EN3sls8ToStringENSt9enable_ifIXaaN12is_containerI1TE5valueENSt7is_sameIN1T10value_typeENSt6stringEE5valueEENSt6stringEE4typeERK1T">[6]</a>, <a href="ToString.html#_CPPv4I0EN3sls8ToStringENSt9enable_ifIXaaN12is_containerI1TE5valueEntNSt7is_sameIN1T10value_typeENSt6stringEE5valueEENSt6stringEE4typeERK1T">[7]</a>, <a href="ToString.html#_CPPv4N3sls8ToStringEKN4defs10fileFormatE">[8]</a>, <a href="ToString.html#_CPPv4N3sls8ToStringEKN4defs10speedLevelE">[9]</a>, <a href="ToString.html#_CPPv4N3sls8ToStringEKN4defs10timingModeE">[10]</a>, <a href="ToString.html#_CPPv4N3sls8ToStringEKN4defs11readoutModeE">[11]</a>, <a href="ToString.html#_CPPv4N3sls8ToStringEKN4defs12detectorTypeE">[12]</a>, <a href="ToString.html#_CPPv4N3sls8ToStringEKN4defs13frameModeTypeE">[13]</a>, <a href="ToString.html#_CPPv4N3sls8ToStringEKN4defs16detectorModeTypeE">[14]</a>, <a href="ToString.html#_CPPv4N3sls8ToStringEKN4defs16detectorSettingsE">[15]</a>, <a href="ToString.html#_CPPv4N3sls8ToStringEKN4defs16timingSourceTypeE">[16]</a>, <a href="ToString.html#_CPPv4N3sls8ToStringEKN4defs18externalSignalFlagE">[17]</a>, <a href="ToString.html#_CPPv4N3sls8ToStringEKN4defs18frameDiscardPolicyE">[18]</a>, <a href="ToString.html#_CPPv4N3sls8ToStringEKN4defs9burstModeE">[19]</a>, <a href="ToString.html#_CPPv4N3sls8ToStringEKN4defs9runStatusE">[20]</a>, <a href="ToString.html#_CPPv4N3sls8ToStringERKNSt6stringE">[21]</a>
+      <li><a href="ToString.html#_CPPv4I00EN3sls8ToStringENSt6stringERKNSt3mapI7KeyType9ValueTypeEE">sls::ToString (C++ function)</a>, <a href="ToString.html#_CPPv4I00EN3sls8ToStringENSt9enable_ifIN11is_durationI1TE5valueENSt6stringEE4typeE1TRKNSt6stringE">[1]</a>, <a href="ToString.html#_CPPv4I0EN3sls8ToStringENSt9enable_ifIN11is_durationI4FromE5valueENSt6stringEE4typeE4From">[2]</a>, <a href="ToString.html#_CPPv4I0EN3sls8ToStringENSt9enable_ifIN12is_containerI1TE5valueENSt6stringEE4typeERK1TRKNSt6stringE">[3]</a>, <a href="ToString.html#_CPPv4I0EN3sls8ToStringENSt9enable_ifIN7has_strI1TE5valueENSt6stringEE4typeERK1T">[4]</a>, <a href="ToString.html#_CPPv4I0EN3sls8ToStringENSt9enable_ifINSt11is_integralI1TE5valueENSt6stringEE4typeERK1T">[5]</a>, <a href="ToString.html#_CPPv4I0EN3sls8ToStringENSt9enable_ifINSt17is_floating_pointI1TE5valueENSt6stringEE4typeERK1T">[6]</a>, <a href="ToString.html#_CPPv4I0EN3sls8ToStringENSt9enable_ifIXaaN12is_containerI1TE5valueENSt7is_sameIN1T10value_typeENSt6stringEE5valueEENSt6stringEE4typeERK1T">[7]</a>, <a href="ToString.html#_CPPv4I0EN3sls8ToStringENSt9enable_ifIXaaN12is_containerI1TE5valueEntNSt7is_sameIN1T10value_typeENSt6stringEE5valueEENSt6stringEE4typeERK1T">[8]</a>
 </li>
-      <li><a href="ToString.html#_CPPv4I0EN3sls11ToStringHexENSt9enable_ifINSt11is_integralI1TE5valueENSt6stringEE4typeERK1T">sls::ToStringHex (C++ function)</a>, <a href="ToString.html#_CPPv4I0EN3sls11ToStringHexENSt9enable_ifIXaaN12is_containerI1TE5valueEntNSt7is_sameIN1T10value_typeENSt6stringEE5valueEENSt6stringEE4typeERK1T">[1]</a>
+      <li><a href="ToString.html#_CPPv4I0EN3sls11ToStringHexENSt9enable_ifINSt11is_integralI1TE5valueENSt6stringEE4typeERK1T">sls::ToStringHex (C++ function)</a>, <a href="ToString.html#_CPPv4I0EN3sls11ToStringHexENSt9enable_ifINSt11is_integralI1TE5valueENSt6stringEE4typeERK1Ti">[1]</a>, <a href="ToString.html#_CPPv4I0EN3sls11ToStringHexENSt9enable_ifIXaaN12is_containerI1TE5valueEntNSt7is_sameIN1T10value_typeENSt6stringEE5valueEENSt6stringEE4typeERK1T">[2]</a>, <a href="ToString.html#_CPPv4I0EN3sls11ToStringHexENSt9enable_ifIXaaN12is_containerI1TE5valueEntNSt7is_sameIN1T10value_typeENSt6stringEE5valueEENSt6stringEE4typeERK1Ti">[3]</a>
 </li>
-      <li><a href="commandline.html#term-speed-0-or-full-speed-1-or-half-speed-2-or-quarter-speed"><strong>speed [0 or full_speed|1 or half_speed|2 or quarter_speed]</strong></a>
+      <li><a href="commandline.html#term-speed-0-or-full_speed-1-or-half_speed-2-or-quarter_speed"><strong>speed [0 or full_speed|1 or half_speed|2 or quarter_speed]</strong></a>
+</li>
+      <li><a href="pyenums.html#slsdet.speedLevel">speedLevel (class in slsdet)</a>
 </li>
       <li><a href="pydetector.html#slsdet.Detector.src_udpip">src_udpip() (slsdet.Detector property)</a>
 </li>
@@ -1663,7 +1817,7 @@
 </li>
       <li><a href="commandline.html#term-start"><strong>start</strong></a>
 </li>
-      <li><a href="commandline.html#term-startingfnum-n-value"><strong>startingfnum [n_value]</strong></a>
+      <li><a href="commandline.html#term-startingfnum-n_value"><strong>startingfnum [n_value]</strong></a>
 </li>
       <li><a href="pydetector.html#slsdet.Detector.startingfnum">startingfnum() (slsdet.Detector property)</a>
 </li>
@@ -1675,15 +1829,17 @@
 </li>
       <li><a href="commandline.html#term-stopport-n"><strong>stopport [n]</strong></a>
 </li>
-      <li><a href="commandline.html#term-storagecell-delay-duration-0-1638375-ns-optional-unit-ns-us-ms-s"><strong>storagecell_delay [duration (0-1638375 ns)] [(optional unit) ns|us|ms|s]</strong></a>
+      <li><a href="commandline.html#term-storagecell_delay-duration-0-1638375-ns-optional-unit-ns-us-ms-s"><strong>storagecell_delay [duration (0-1638375 ns)] [(optional unit) ns|us|ms|s]</strong></a>
 </li>
-      <li><a href="commandline.html#term-storagecell-start-0-15"><strong>storagecell_start [0-15]</strong></a>
+      <li><a href="pydetector.html#slsdet.Detector.storagecell_delay">storagecell_delay() (slsdet.Detector property)</a>
+</li>
+      <li><a href="commandline.html#term-storagecell_start-0-15"><strong>storagecell_start [0-15]</strong></a>
+</li>
+      <li><a href="pydetector.html#slsdet.Detector.storagecell_start">storagecell_start() (slsdet.Detector property)</a>
 </li>
       <li><a href="commandline.html#term-storagecells-0-15"><strong>storagecells [0-15]</strong></a>
 </li>
-      <li><a href="commandline.html#term-storeinram-0-1"><strong>storeinram [0, 1]</strong></a>
-</li>
-      <li><a href="pydetector.html#slsdet.Detector.storeinram">storeinram() (slsdet.Detector property)</a>
+      <li><a href="pydetector.html#slsdet.Detector.storagecells">storagecells() (slsdet.Detector property)</a>
 </li>
       <li><a href="commandline.html#term-subdeadtime-duration-optional-unit-ns-us-ms-s"><strong>subdeadtime [duration] [(optional unit) ns|us|ms|s]</strong></a>
 </li>
@@ -1693,7 +1849,7 @@
 </li>
       <li><a href="pydetector.html#slsdet.Detector.subexptime">subexptime() (slsdet.Detector property)</a>
 </li>
-      <li><a href="commandline.html#term-syncclk-n-clk-in-mhz"><strong>syncclk [n_clk in MHz]</strong></a>
+      <li><a href="commandline.html#term-syncclk-n_clk-in-MHz"><strong>syncclk [n_clk in MHz]</strong></a>
 </li>
       <li><a href="pydetector.html#slsdet.Detector.syncclk">syncclk() (slsdet.Detector property)</a>
 </li>
@@ -1703,53 +1859,65 @@
 <h2 id="T">T</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="commandline.html#term-temp-10ge-n-value"><strong>temp_10ge [n_value]</strong></a>
+      <li><a href="commandline.html#term-temp_10ge-n_value"><strong>temp_10ge [n_value]</strong></a>
 </li>
-      <li><a href="commandline.html#term-temp-adc-n-value"><strong>temp_adc [n_value]</strong></a>
+      <li><a href="commandline.html#term-temp_adc-n_value"><strong>temp_adc [n_value]</strong></a>
 </li>
-      <li><a href="commandline.html#term-temp-control-0-1"><strong>temp_control [0, 1]</strong></a>
+      <li><a href="commandline.html#term-temp_control-0-1"><strong>temp_control [0, 1]</strong></a>
 </li>
-      <li><a href="commandline.html#term-temp-dcdc-n-value"><strong>temp_dcdc [n_value]</strong></a>
+      <li><a href="pydetector.html#slsdet.Detector.temp_control">temp_control() (slsdet.Detector property)</a>
 </li>
-      <li><a href="commandline.html#term-temp-event-0"><strong>temp_event [0]</strong></a>
+      <li><a href="commandline.html#term-temp_dcdc-n_value"><strong>temp_dcdc [n_value]</strong></a>
 </li>
-      <li><a href="commandline.html#term-temp-fpga-n-value"><strong>temp_fpga [n_value]</strong></a>
+      <li><a href="commandline.html#term-temp_event-0"><strong>temp_event [0]</strong></a>
 </li>
-      <li><a href="commandline.html#term-temp-fpgaext-n-value"><strong>temp_fpgaext [n_value]</strong></a>
+      <li><a href="pydetector.html#slsdet.Detector.temp_event">temp_event() (slsdet.Detector property)</a>
 </li>
-      <li><a href="commandline.html#term-temp-fpgafl-n-value"><strong>temp_fpgafl [n_value]</strong></a>
+      <li><a href="commandline.html#term-temp_fpga-n_value"><strong>temp_fpga [n_value]</strong></a>
 </li>
-      <li><a href="commandline.html#term-temp-fpgafr-n-value"><strong>temp_fpgafr [n_value]</strong></a>
+      <li><a href="commandline.html#term-temp_fpgaext-n_value"><strong>temp_fpgaext [n_value]</strong></a>
 </li>
-      <li><a href="commandline.html#term-temp-sodl-n-value"><strong>temp_sodl [n_value]</strong></a>
+      <li><a href="commandline.html#term-temp_fpgafl-n_value"><strong>temp_fpgafl [n_value]</strong></a>
 </li>
-      <li><a href="commandline.html#term-temp-sodr-n-value"><strong>temp_sodr [n_value]</strong></a>
+      <li><a href="commandline.html#term-temp_fpgafr-n_value"><strong>temp_fpgafr [n_value]</strong></a>
 </li>
-      <li><a href="commandline.html#term-temp-threshold-n-temp-in-degrees"><strong>temp_threshold [n_temp (in degrees)]</strong></a>
+      <li><a href="commandline.html#term-temp_sodl-n_value"><strong>temp_sodl [n_value]</strong></a>
+</li>
+      <li><a href="commandline.html#term-temp_sodr-n_value"><strong>temp_sodr [n_value]</strong></a>
+</li>
+      <li><a href="commandline.html#term-temp_threshold-n_temp-in-degrees"><strong>temp_threshold [n_temp (in degrees)]</strong></a>
+</li>
+      <li><a href="pydetector.html#slsdet.Detector.temp_threshold">temp_threshold() (slsdet.Detector property)</a>
 </li>
       <li><a href="commandline.html#term-tengiga-0-1"><strong>tengiga [0, 1]</strong></a>
 </li>
       <li><a href="pydetector.html#slsdet.Detector.tengiga">tengiga() (slsdet.Detector property)</a>
 </li>
-      <li><a href="commandline.html#term-threshold-ev-optinal-settings-standard-lowgain-veryhighgain-verylowgain"><strong>threshold [eV] [(optinal settings) standard, lowgain, veryhighgain, verylowgain]</strong></a>
+      <li><a href="commandline.html#term-threshold-eV-optinal-settings-standard-lowgain-veryhighgain-verylowgain"><strong>threshold [eV] [(optinal settings) standard, lowgain, veryhighgain, verylowgain]</strong></a>
 </li>
       <li><a href="pydetector.html#slsdet.Detector.threshold">threshold() (slsdet.Detector property)</a>
 </li>
-      <li><a href="commandline.html#term-thresholdnotb-ev-optional-settings-standard-lowgain-veryhighgain-verylowgain"><strong>thresholdnotb [eV] [(optional settings) standard, lowgain, veryhighgain, verylowgain]</strong></a>
+      <li><a href="commandline.html#term-thresholdnotb-eV-optional-settings-standard-lowgain-veryhighgain-verylowgain"><strong>thresholdnotb [eV] [(optional settings) standard, lowgain, veryhighgain, verylowgain]</strong></a>
 </li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="commandline.html#term-timestamp-optional-unit-ns-us-ms-s"><strong>timestamp [(optional unit) ns|us|ms|s]</strong></a>
 </li>
-      <li><a href="commandline.html#term-timing-auto-trigger-gating-burst-trigger"><strong>timing [auto|trigger|gating|burst_trigger]</strong></a>
+      <li><a href="commandline.html#term-timing-auto-trigger-gating-burst_trigger"><strong>timing [auto|trigger|gating|burst_trigger]</strong></a>
 </li>
       <li><a href="pydetector.html#slsdet.Detector.timing">timing() (slsdet.Detector property)</a>
 </li>
+      <li><a href="pyenums.html#slsdet.timingMode">timingMode (class in slsdet)</a>
+</li>
       <li><a href="commandline.html#term-timingsource-internal-external"><strong>timingsource [internal|external]</strong></a>
+</li>
+      <li><a href="pyenums.html#slsdet.timingSourceType">timingSourceType (class in slsdet)</a>
 </li>
       <li><a href="commandline.html#term-trigger"><strong>trigger</strong></a>
 </li>
-      <li><a href="commandline.html#term-triggers-n-triggers"><strong>triggers [n_triggers]</strong></a>
+      <li><a href="commandline.html#term-triggers-n_triggers"><strong>triggers [n_triggers]</strong></a>
+</li>
+      <li><a href="pydetector.html#slsdet.Detector.triggers">triggers() (slsdet.Detector property)</a>
 </li>
       <li><a href="commandline.html#term-triggersl"><strong>triggersl</strong></a>
 </li>
@@ -1757,17 +1925,17 @@
 </li>
       <li><a href="pydetector.html#slsdet.Detector.trimbits">trimbits() (slsdet.Detector property)</a>
 </li>
-      <li><a href="commandline.html#term-trimen-trim-ev1-trim-ev2-optional-trim-ev3-optional"><strong>trimen [trim_ev1] [trim_Ev2 (optional)] [trim_ev3 (optional)] ...</strong></a>
+      <li><a href="commandline.html#term-trimen-trim_ev1-trim_Ev2-optional-trim_ev3-optional-..."><strong>trimen [trim_ev1] [trim_Ev2 (optional)] [trim_ev3 (optional)] ...</strong></a>
 </li>
       <li><a href="pydetector.html#slsdet.Detector.trimen">trimen() (slsdet.Detector property)</a>
 </li>
-      <li><a href="commandline.html#term-trimval-n-trimval"><strong>trimval [n_trimval]</strong></a>
+      <li><a href="commandline.html#term-trimval-n_trimval"><strong>trimval [n_trimval]</strong></a>
 </li>
-      <li><a href="commandline.html#term-txndelay-frame-n-delay"><strong>txndelay_frame [n_delay]</strong></a>
+      <li><a href="commandline.html#term-txndelay_frame-n_delay"><strong>txndelay_frame [n_delay]</strong></a>
 </li>
-      <li><a href="commandline.html#term-txndelay-left-n-delay"><strong>txndelay_left [n_delay]</strong></a>
+      <li><a href="commandline.html#term-txndelay_left-n_delay"><strong>txndelay_left [n_delay]</strong></a>
 </li>
-      <li><a href="commandline.html#term-txndelay-right-n-delay"><strong>txndelay_right [n_delay]</strong></a>
+      <li><a href="commandline.html#term-txndelay_right-n_delay"><strong>txndelay_right [n_delay]</strong></a>
 </li>
       <li><a href="commandline.html#term-type"><strong>type</strong></a>
 </li>
@@ -1779,29 +1947,29 @@
 <h2 id="U">U</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="commandline.html#term-udp-dstip-x-x-x-x"><strong>udp_dstip [x.x.x.x]</strong></a>
+      <li><a href="commandline.html#term-udp_dstip-x.x.x.x-or-auto"><strong>udp_dstip [x.x.x.x] or auto</strong></a>
 </li>
       <li><a href="pydetector.html#slsdet.Detector.udp_dstip">udp_dstip() (slsdet.Detector property)</a>
 </li>
-      <li><a href="commandline.html#term-udp-dstip2-x-x-x-x"><strong>udp_dstip2 [x.x.x.x]</strong></a>
+      <li><a href="commandline.html#term-udp_dstip2-x.x.x.x-or-auto"><strong>udp_dstip2 [x.x.x.x] or auto</strong></a>
 </li>
       <li><a href="pydetector.html#slsdet.Detector.udp_dstip2">udp_dstip2() (slsdet.Detector property)</a>
 </li>
-      <li><a href="commandline.html#term-udp-dstmac-x-x-x-x-x-x"><strong>udp_dstmac [x:x:x:x:x:x]</strong></a>
+      <li><a href="commandline.html#term-udp_dstmac-x-x-x-x-x-x"><strong>udp_dstmac [x:x:x:x:x:x]</strong></a>
 </li>
       <li><a href="pydetector.html#slsdet.Detector.udp_dstmac">udp_dstmac() (slsdet.Detector property)</a>
 </li>
-      <li><a href="commandline.html#term-udp-dstmac2-x-x-x-x-x-x"><strong>udp_dstmac2 [x:x:x:x:x:x]</strong></a>
+      <li><a href="commandline.html#term-udp_dstmac2-x-x-x-x-x-x"><strong>udp_dstmac2 [x:x:x:x:x:x]</strong></a>
 </li>
       <li><a href="pydetector.html#slsdet.Detector.udp_dstmac2">udp_dstmac2() (slsdet.Detector property)</a>
 </li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="commandline.html#term-udp-dstport-n"><strong>udp_dstport [n]</strong></a>
+      <li><a href="commandline.html#term-udp_dstport-n"><strong>udp_dstport [n]</strong></a>
 </li>
       <li><a href="pydetector.html#slsdet.Detector.udp_dstport">udp_dstport() (slsdet.Detector property)</a>
 </li>
-      <li><a href="commandline.html#term-udp-dstport2-n"><strong>udp_dstport2 [n]</strong></a>
+      <li><a href="commandline.html#term-udp_dstport2-n"><strong>udp_dstport2 [n]</strong></a>
 </li>
       <li><a href="pydetector.html#slsdet.Detector.udp_dstport2">udp_dstport2() (slsdet.Detector property)</a>
 </li>
@@ -1832,6 +2000,8 @@
       <li><a href="pydetector.html#slsdet.Detector.v_io">v_io() (slsdet.Detector property)</a>
 </li>
       <li><a href="pydetector.html#slsdet.Detector.v_limit">v_limit() (slsdet.Detector property)</a>
+</li>
+      <li><a href="pydetector.html#slsdet.Detector.veto">veto() (slsdet.Detector property)</a>
 </li>
       <li><a href="pydetector.html#slsdet.Detector.vhighvoltage">vhighvoltage() (slsdet.Detector property)</a>
 </li>
@@ -1864,11 +2034,19 @@
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2019, PSD Detector Group
+        
+        &copy; Copyright 2020, PSD Detector Group
 
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
 
@@ -1879,7 +2057,6 @@
 
   </div>
   
-
 
   <script type="text/javascript">
       jQuery(function () {
