@@ -101,6 +101,7 @@
 </ul>
 <p class="caption"><span class="caption-text">Python API</span></p>
 <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="pygettingstarted.html">Getting Started</a></li>
 <li class="toctree-l1"><a class="reference internal" href="pydetector.html">Detector</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Enums</a></li>
 <li class="toctree-l1"><a class="reference internal" href="pyexamples.html">Examples</a></li>
@@ -183,6 +184,28 @@
 <h1>Enums<a class="headerlink" href="#enums" title="Permalink to this headline">¶</a></h1>
 <p>These enums are defined in slsDetectorDefs in the C++ package and
 exposed to Python through pybind11.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Most settings are represented as enums that can be</span>
+<span class="c1"># explicitly imported</span>
+
+<span class="kn">from</span> <span class="nn">slsdet</span> <span class="kn">import</span> <span class="n">Detector</span><span class="p">,</span> <span class="n">fileFormat</span>
+<span class="n">d</span> <span class="o">=</span> <span class="n">Detector</span><span class="p">()</span>
+<span class="n">d</span><span class="o">.</span><span class="n">fformat</span> <span class="o">=</span> <span class="n">fileFormat</span><span class="o">.</span><span class="n">BINARY</span>
+
+<span class="c1"># Altough not recommended for convenience all enums</span>
+<span class="c1"># and some other things can be impored using *</span>
+
+<span class="kn">from</span> <span class="nn">slsdet</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="n">d</span><span class="o">.</span><span class="n">speed</span> <span class="o">=</span> <span class="n">speedLevel</span><span class="o">.</span><span class="n">FULL_SPEED</span>
+
+<span class="c1"># To list the available enums, use dir()</span>
+
+<span class="kn">import</span> <span class="nn">slsdet.enums</span>
+<span class="k">for</span> <span class="n">enum</span> <span class="ow">in</span> <span class="nb">dir</span><span class="p">(</span><span class="n">slsdet</span><span class="o">.</span><span class="n">enums</span><span class="p">):</span>
+    <span class="c1"># filter out special memebers</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">enum</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">&#39;_&#39;</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">enum</span><span class="p">)</span>
+</pre></div>
+</div>
 <dl class="py class">
 <dt id="slsdet.runStatus">
 <em class="property">class </em><code class="sig-prename descclassname">slsdet.</code><code class="sig-name descname">runStatus</code><a class="headerlink" href="#slsdet.runStatus" title="Permalink to this definition">¶</a></dt>
@@ -225,10 +248,8 @@ exposed to Python through pybind11.</p>
 <em class="property">class </em><code class="sig-prename descclassname">slsdet.</code><code class="sig-name descname">fileFormat</code><a class="headerlink" href="#slsdet.fileFormat" title="Permalink to this definition">¶</a></dt>
 <dd><p>Members:</p>
 <p>BINARY</p>
-<blockquote>
-<div><p>HDF5</p>
+<p>HDF5</p>
 <p>NUM_FILE_FORMATS</p>
-</div></blockquote>
 </dd></dl>
 
 <dl class="py class">
@@ -236,9 +257,7 @@ exposed to Python through pybind11.</p>
 <em class="property">class </em><code class="sig-prename descclassname">slsdet.</code><code class="sig-name descname">dimension</code><a class="headerlink" href="#slsdet.dimension" title="Permalink to this definition">¶</a></dt>
 <dd><p>Members:</p>
 <p>X</p>
-<blockquote>
-<div><p>Y</p>
-</div></blockquote>
+<p>Y</p>
 </dd></dl>
 
 <dl class="py class">
@@ -358,6 +377,7 @@ exposed to Python through pybind11.</p>
 <p>TEMPERATURE_SODR</p>
 <p>TEMPERATURE_FPGA2</p>
 <p>TEMPERATURE_FPGA3</p>
+<p>TRIMBIT_SCAN</p>
 <p>V_POWER_A</p>
 <p>V_POWER_B</p>
 <p>V_POWER_C</p>
@@ -415,11 +435,9 @@ exposed to Python through pybind11.</p>
 <em class="property">class </em><code class="sig-prename descclassname">slsdet.</code><code class="sig-name descname">clockIndex</code><a class="headerlink" href="#slsdet.clockIndex" title="Permalink to this definition">¶</a></dt>
 <dd><p>Members:</p>
 <p>ADC_CLOCK</p>
-<blockquote>
-<div><p>DBIT_CLOCK</p>
+<p>DBIT_CLOCK</p>
 <p>RUN_CLOCK</p>
 <p>SYNC_CLOCK</p>
-</div></blockquote>
 </dd></dl>
 
 <dl class="py class">
@@ -427,10 +445,8 @@ exposed to Python through pybind11.</p>
 <em class="property">class </em><code class="sig-prename descclassname">slsdet.</code><code class="sig-name descname">speedLevel</code><a class="headerlink" href="#slsdet.speedLevel" title="Permalink to this definition">¶</a></dt>
 <dd><p>Members:</p>
 <p>FULL_SPEED</p>
-<blockquote>
-<div><p>HALF_SPEED</p>
+<p>HALF_SPEED</p>
 <p>QUARTER_SPEED</p>
-</div></blockquote>
 </dd></dl>
 
 <dl class="py class">
@@ -438,10 +454,8 @@ exposed to Python through pybind11.</p>
 <em class="property">class </em><code class="sig-prename descclassname">slsdet.</code><code class="sig-name descname">readoutMode</code><a class="headerlink" href="#slsdet.readoutMode" title="Permalink to this definition">¶</a></dt>
 <dd><p>Members:</p>
 <p>ANALOG_ONLY</p>
-<blockquote>
-<div><p>DIGITAL_ONLY</p>
+<p>DIGITAL_ONLY</p>
 <p>ANALOG_AND_DIGITAL</p>
-</div></blockquote>
 </dd></dl>
 
 <dl class="py class">
@@ -449,10 +463,8 @@ exposed to Python through pybind11.</p>
 <em class="property">class </em><code class="sig-prename descclassname">slsdet.</code><code class="sig-name descname">masterFlags</code><a class="headerlink" href="#slsdet.masterFlags" title="Permalink to this definition">¶</a></dt>
 <dd><p>Members:</p>
 <p>NO_MASTER</p>
-<blockquote>
-<div><p>IS_MASTER</p>
+<p>IS_MASTER</p>
 <p>IS_SLAVE</p>
-</div></blockquote>
 </dd></dl>
 
 <dl class="py class">
@@ -460,11 +472,9 @@ exposed to Python through pybind11.</p>
 <em class="property">class </em><code class="sig-prename descclassname">slsdet.</code><code class="sig-name descname">frameModeType</code><a class="headerlink" href="#slsdet.frameModeType" title="Permalink to this definition">¶</a></dt>
 <dd><p>Members:</p>
 <p>PEDESTAL</p>
-<blockquote>
-<div><p>NEW_PEDESTAL</p>
+<p>NEW_PEDESTAL</p>
 <p>FLATFIELD</p>
 <p>NEW_FLATFIELD</p>
-</div></blockquote>
 </dd></dl>
 
 <dl class="py class">
@@ -472,10 +482,8 @@ exposed to Python through pybind11.</p>
 <em class="property">class </em><code class="sig-prename descclassname">slsdet.</code><code class="sig-name descname">detectorModeType</code><a class="headerlink" href="#slsdet.detectorModeType" title="Permalink to this definition">¶</a></dt>
 <dd><p>Members:</p>
 <p>COUNTING</p>
-<blockquote>
-<div><p>INTERPOLATING</p>
+<p>INTERPOLATING</p>
 <p>ANALOG</p>
-</div></blockquote>
 </dd></dl>
 
 <dl class="py class">
@@ -493,9 +501,7 @@ exposed to Python through pybind11.</p>
 <em class="property">class </em><code class="sig-prename descclassname">slsdet.</code><code class="sig-name descname">timingSourceType</code><a class="headerlink" href="#slsdet.timingSourceType" title="Permalink to this definition">¶</a></dt>
 <dd><p>Members:</p>
 <p>TIMING_INTERNAL</p>
-<blockquote>
-<div><p>TIMING_EXTERNAL</p>
-</div></blockquote>
+<p>TIMING_EXTERNAL</p>
 </dd></dl>
 
 </div>

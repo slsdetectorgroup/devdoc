@@ -1,7 +1,46 @@
 Examples
 ================
 
-Some short hints on how to use the detector
+Some short examples on how to use slsdet. If something is missing don't hesitate to
+open an issue in our our  `github repo
+<https://github.com/slsdetectorgroup/slsDetectorPackage>`_. 
+
+
+------------------------------------
+Converting numbers to hex
+------------------------------------
+
+Python support entering numbers in  format by using the 0x prefix. However, when reading 
+back you will get a normal integer. This can then be converted to a hex string representation
+using the built in hex() function. 
+
+.. code-block :: python
+
+    from slsdet import Detector
+    d = Detector()
+    >>> d.patwait0 = 0xaa
+    >>> d.patwait0
+    170
+
+    # Convert to  string
+    >>> (d.patwait0)
+    '0xaa'
+
+For multiple values one can use a list comprehension to loop over the values. 
+
+.. code-block :: python
+
+    >>> values = [1,2,3,4,5]
+    >>> [(v) for v in values]
+    ['0x1', '0x2', '0x3', '0x4', '0x5']
+
+    # or to a single string by passing the list to .join
+    >>> ', '.join([hex(v) for v in values])
+    '0x1, 0x2, 0x3, 0x4, 0x5'
+
+
+
+    
 
 ------------------------
 Simple threshold scan
@@ -74,37 +113,39 @@ But lets start looking at the at the manual way:
 ::
 
     import time
-    from slsdet import Eiger
-    d = Eiger()
+    from slsdet import Detector, runStatus
 
-    n = 10
-    t = 1
 
-    d.exposure_time = t
-    d.n_frames = n
-    d.reset_frames_caught()
+    n_frames = 10
+    t_exp = 1
 
-    #Start the measurement
+    # Set exposure time and number of frames
+    d = Detector()
+    d.exptime = t_exp
+    d.frames = n_frames
+
+    # Start the measurement
     t0 = time.time()
-    d.start_receiver()
-    d.start_detector()
+    d.startDetector()
+    d.startReceiver()
 
-    #Wait for the detector to be ready or do other important stuff
-    time.sleep(t*n)
+    # Wait for the detector to be ready or do other important stuff
+    time.sleep(t_exp * n_frames)
 
-    #check if the detector is ready otherwise wait a bit longer
-    while d.status != 'idle':
+    # check if the detector is ready otherwise wait a bit longer
+    while d.status != runStatus.IDLE:
         time.sleep(0.1)
 
-    #Stop the receiver after we got the frames
-    #Detector is already idle so we don't need to stop it
-    d.stop_receiver()
+    # Stop the receiver after we got the frames
+    # Detector is already idle so we don't need to stop it
+    d.stopReceiver()
 
-    lost = d.frames_caught - n
-    print(f'{n} frames of {t}s took {time.time()-t0:{.3}}s with {lost} frames lost ')
+    lost = d.rx_framescaught - n_frames
+    print(
+        f"{n_frames} frames of {t_exp}s took {time.time()-t0:{.3}}s with {lost} frames lost "
+    )
 
-    #Reset to not interfere with a potential next measurement
-    d.reset_frames_caught()
+
 
 Instead launching d.acq() from a different process is a bit easier since the control of receiver and detector
 is handled in the acq call. However, you need to join the process used otherwise a lot of zombie processes would
@@ -114,30 +155,104 @@ hang around until the main process exits.
 
     import time
     from multiprocessing import Process
-    from slsdet import Eiger
+    from slsdet import Detector, runStatus
 
-    def acquire():
-        """
-        Create a new Eiger object that still referes to the same actual detector
-        and same shared memory. Then launch acq.
-        """
-        detector = Eiger()
-        detector.acq()
 
-    #This is the detector we use throughout the session
-    d = Eiger()
+    d = Detector()
 
-    #Process to run acquire
-    p = Process(target=acquire)
+    #Create a separate process to run acquire in
+    p = Process(target=d.acquire)
 
     #Start the thread and short sleep to allow the acq to start
     p.start()
     time.sleep(0.01)
 
     #Do some other work
-    while d.busy is True:
-        print(d.busy)
+    while d.status != runStatus.IDLE:
+        print("Working")
         time.sleep(0.1)
 
     #Join the process
     p.join()
+
+
+------------------------------
+Setting and getting times
+------------------------------
+
+::
+
+    import datetime as dt
+    from slsdet import Detector
+    from slsdet.utils import element_if_equal
+
+    d = Detector()
+
+    # The simplest way is to set the exposure time in 
+    # seconds by using the exptime property
+    # This sets the exposure time for all modules
+    d.exptime = 0.5
+
+    # exptime also accepts a python datetime.timedelta
+    # which can be used to set the time in almost any unit
+    t = dt.timedelta(milliseconds = 2.3)
+    d.exptime = t
+
+    # or combination of units
+    t = dt.timedelta(minutes = 3, seconds = 1.23)
+    d.exptime = t
+
+    # exptime however always returns the time in seconds
+    >>> d.exptime
+    181.23 
+
+    # To get back the exposure time for each module 
+    # it's possible to use getExptime, this also returns
+    # the values as datetime.timedelta
+
+    >>> d.getExptime()
+    [datetime.timedelta(seconds=181, microseconds=230000), datetime.timedelta(seconds=181, microseconds=230000)]
+
+    # In case the values are the same it's possible to use the
+    # element_if_equal function to reduce the values to a single 
+    # value
+
+    >>> t = d.getExptime()
+    >>> element_if_equal(t)
+    datetime.timedelta(seconds=1)
+
+--------------
+Reading dacs
+--------------
+
+::
+
+    from slsdet import Detector, Eiger, dacIndex
+
+    #using the specialized class
+    e = Eiger()
+    >>> e.dacs
+    ========== DACS =========
+    vsvp      :    0    0
+    vtrim     : 2480 2480
+    vrpreamp  : 3300 3300
+    vrshaper  : 1400 1400
+    vsvn      : 4000 4000
+    vtgstv    : 2556 2556
+    vcmp_ll   : 1000 1000
+    vcmp_lr   : 1000 1000
+    vcal      :    0    0
+    vcmp_rl   : 1000 1000
+    rxb_rb    : 1100 1100
+    rxb_lb    : 1100 1100
+    vcmp_rr   : 1000 1000
+    vcp       : 1000 1000
+    vcn       : 2000 2000
+    vishaper  : 1550 1550
+    iodelay   :  650  650
+
+    # or using the general class and the list
+    d = Detector()
+    for dac in d.daclist:
+        r = d.getDAC(dac, False)
+        print(f'{dac.name:10s} {r}')

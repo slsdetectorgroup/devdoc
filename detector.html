@@ -101,6 +101,7 @@
 </ul>
 <p class="caption"><span class="caption-text">Python API</span></p>
 <ul>
+<li class="toctree-l1"><a class="reference internal" href="pygettingstarted.html">Getting Started</a></li>
 <li class="toctree-l1"><a class="reference internal" href="pydetector.html">Detector</a></li>
 <li class="toctree-l1"><a class="reference internal" href="pyenums.html">Enums</a></li>
 <li class="toctree-l1"><a class="reference internal" href="pyexamples.html">Examples</a></li>
@@ -219,11 +220,18 @@ containing results from all modules. (Result&lt;T&gt;)</p>
 <dl class="cpp function">
 <dt id="_CPPv4N3sls8Detector10loadConfigERKNSt6stringE">
 <span id="_CPPv3N3sls8Detector10loadConfigERKNSt6stringE"></span><span id="_CPPv2N3sls8Detector10loadConfigERKNSt6stringE"></span><span id="sls::Detector::loadConfig__ssCR"></span><span class="target" id="classsls_1_1Detector_1a7289f88770fdbd7c9a633493c0a62acd"></span>void <code class="sig-name descname">loadConfig</code><span class="sig-paren">(</span><em class="property">const</em> std::string &amp;<em>fname</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3sls8Detector10loadConfigERKNSt6stringE" title="Permalink to this definition">¶</a><br /></dt>
-<dd></dd></dl>
+<dd><p>Frees shared memory before loading configuration file. Set up once normally </p>
+</dd></dl>
 
 <dl class="cpp function">
 <dt id="_CPPv4N3sls8Detector14loadParametersERKNSt6stringE">
 <span id="_CPPv3N3sls8Detector14loadParametersERKNSt6stringE"></span><span id="_CPPv2N3sls8Detector14loadParametersERKNSt6stringE"></span><span id="sls::Detector::loadParameters__ssCR"></span><span class="target" id="classsls_1_1Detector_1ae6660c418449d60392b9d33fe90c5e59"></span>void <code class="sig-name descname">loadParameters</code><span class="sig-paren">(</span><em class="property">const</em> std::string &amp;<em>fname</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3sls8Detector14loadParametersERKNSt6stringE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Shared memory not freed prior. Set up per measurement. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4N3sls8Detector14loadParametersERKNSt6vectorINSt6stringEEE">
+<span id="_CPPv3N3sls8Detector14loadParametersERKNSt6vectorINSt6stringEEE"></span><span id="_CPPv2N3sls8Detector14loadParametersERKNSt6vectorINSt6stringEEE"></span><span id="sls::Detector::loadParameters__std::vector:ss:CR"></span><span class="target" id="classsls_1_1Detector_1a2a13e7ccdd087bc9d11f645ade12c3cb"></span>void <code class="sig-name descname">loadParameters</code><span class="sig-paren">(</span><em class="property">const</em> std::vector&lt;std::string&gt; &amp;<em>parameters</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3sls8Detector14loadParametersERKNSt6vectorINSt6stringEEE" title="Permalink to this definition">¶</a><br /></dt>
 <dd></dd></dl>
 
 <dl class="cpp function">
@@ -332,7 +340,12 @@ containing results from all modules. (Result&lt;T&gt;)</p>
 <dl class="cpp function">
 <dt id="_CPPv4N3sls8Detector11setSettingsEN4defs16detectorSettingsE9Positions">
 <span id="_CPPv3N3sls8Detector11setSettingsEN4defs16detectorSettingsE9Positions"></span><span id="_CPPv2N3sls8Detector11setSettingsEN4defs16detectorSettingsE9Positions"></span><span id="sls::Detector::setSettings__defs::detectorSettings.Positions"></span><span class="target" id="classsls_1_1Detector_1a3cb3ded00ea647e82f254ab47efdef4a"></span>void <code class="sig-name descname">setSettings</code><span class="sig-paren">(</span>defs::detectorSettings <em>value</em>, Positions <em>pos</em> = {}<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3sls8Detector11setSettingsEN4defs16detectorSettingsE9Positions" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>[Jungfrau] Options:DYNAMICGAIN, DYNAMICHG0, FIXGAIN1, FIXGAIN2, FORCESWITCHG1, FORCESWITCHG2 [Gotthard] Options: DYNAMICGAIN, HIGHGAIN, LOWGAIN, MEDIUMGAIN, VERYHIGHGAIN [Gotthard2] Options: DYNAMICGAIN, FIXGAIN1, FIXGAIN2 [Moench] Options: G1_HIGHGAIN, G1_LOWGAIN, G2_HIGHCAP_HIGHGAIN, G2_HIGHCAP_LOWGAIN, G2_LOWCAP_HIGHGAIN, G2_LOWCAP_LOWGAIN, G4_HIGHGAIN, G4_LOWGAIN </p>
+<dd><p>[Jungfrau] DYNAMICGAIN, DYNAMICHG0, FIXGAIN1, FIXGAIN2, FORCESWITCHG1, FORCESWITCHG2 [Gotthard] <p> DYNAMICGAIN, HIGHGAIN, LOWGAIN, MEDIUMGAIN, VERYHIGHGAIN [Gotthard2] </p>
+<p> DYNAMICGAIN, FIXGAIN1, FIXGAIN2 [Moench] </p>
+<p> G1_HIGHGAIN, G1_LOWGAIN, G2_HIGHCAP_HIGHGAIN, G2_HIGHCAP_LOWGAIN, G2_LOWCAP_HIGHGAIN, G2_LOWCAP_LOWGAIN, G4_HIGHGAIN, G4_LOWGAIN </p>
+<p> [Eiger] Use threshold command </p>
+<p> [Eiger settings loaded from file found in settingspath </p>
+</p>
 </dd></dl>
 
 <dl class="cpp function">
@@ -362,7 +375,7 @@ containing results from all modules. (Result&lt;T&gt;)</p>
 <dl class="cpp function">
 <dt id="_CPPv4N3sls8Detector22setGapPixelsinCallbackEKb">
 <span id="_CPPv3N3sls8Detector22setGapPixelsinCallbackEKb"></span><span id="_CPPv2N3sls8Detector22setGapPixelsinCallbackEKb"></span><span id="sls::Detector::setGapPixelsinCallback__bC"></span><span class="target" id="classsls_1_1Detector_1acf8082f3ba05bd48daa832a88159db86"></span>void <code class="sig-name descname">setGapPixelsinCallback</code><span class="sig-paren">(</span><em class="property">const</em> bool <em>enable</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3sls8Detector22setGapPixelsinCallbackEKb" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>[Eiger][Jungfrau] Only in client data call back Fills in gap pixels in data </p>
+<dd><p>[Eiger][Jungfrau] Include gap pixels in client data call back. Will not be in detector streaming, receiver file or streaming. Default is disabled. </p>
 </dd></dl>
 
 <dl class="cpp function">
@@ -399,7 +412,8 @@ containing results from all modules. (Result&lt;T&gt;)</p>
 <dl class="cpp function">
 <dt id="_CPPv4N3sls8Detector17setNumberOfFramesE7int64_t">
 <span id="_CPPv3N3sls8Detector17setNumberOfFramesE7int64_t"></span><span id="_CPPv2N3sls8Detector17setNumberOfFramesE7int64_t"></span><span id="sls::Detector::setNumberOfFrames__int64_t"></span><span class="target" id="classsls_1_1Detector_1aa0221f5cbeff9beed46f13e0a193a8be"></span>void <code class="sig-name descname">setNumberOfFrames</code><span class="sig-paren">(</span>int64_t <em>value</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3sls8Detector17setNumberOfFramesE7int64_t" title="Permalink to this definition">¶</a><br /></dt>
-<dd></dd></dl>
+<dd><p>In trigger mode, number of frames per trigger. In scan mode, number of frames is set to number of steps </p>
+</dd></dl>
 
 <dl class="cpp function">
 <dt id="_CPPv4NK3sls8Detector19getNumberOfTriggersE9Positions">
@@ -414,12 +428,16 @@ containing results from all modules. (Result&lt;T&gt;)</p>
 <dl class="cpp function">
 <dt id="_CPPv4NK3sls8Detector10getExptimeE9Positions">
 <span id="_CPPv3NK3sls8Detector10getExptimeE9Positions"></span><span id="_CPPv2NK3sls8Detector10getExptimeE9Positions"></span><span id="sls::Detector::getExptime__PositionsC"></span><span class="target" id="classsls_1_1Detector_1aa0e7f017c3a7c7604c246499cddd7e33"></span><a class="reference internal" href="result.html#_CPPv4I00EN3sls6ResultE" title="sls::Result">Result</a>&lt;ns&gt; <code class="sig-name descname">getExptime</code><span class="sig-paren">(</span>Positions <em>pos</em> = {}<span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv4NK3sls8Detector10getExptimeE9Positions" title="Permalink to this definition">¶</a><br /></dt>
-<dd></dd></dl>
+<dd><p>[Gotthard][Jungfrau][Eiger][CTB][Moench][Gotthard2] <p>[Mythen3] use function with gate index </p>
+</p>
+</dd></dl>
 
 <dl class="cpp function">
 <dt id="_CPPv4N3sls8Detector10setExptimeE2ns9Positions">
 <span id="_CPPv3N3sls8Detector10setExptimeE2ns9Positions"></span><span id="_CPPv2N3sls8Detector10setExptimeE2ns9Positions"></span><span id="sls::Detector::setExptime__ns.Positions"></span><span class="target" id="classsls_1_1Detector_1a9952b05b2fa13c6638162bfc3bb63f55"></span>void <code class="sig-name descname">setExptime</code><span class="sig-paren">(</span>ns <em>t</em>, Positions <em>pos</em> = {}<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3sls8Detector10setExptimeE2ns9Positions" title="Permalink to this definition">¶</a><br /></dt>
-<dd></dd></dl>
+<dd><p>[Gotthard][Jungfrau][Eiger][CTB][Moench][Gotthard2] <p>[Mythen3] sets exptime for all gate signals. To specify gate index, use function with gate index </p>
+</p>
+</dd></dl>
 
 <dl class="cpp function">
 <dt id="_CPPv4NK3sls8Detector9getPeriodE9Positions">
@@ -475,7 +493,15 @@ containing results from all modules. (Result&lt;T&gt;)</p>
 <dl class="cpp function">
 <dt id="_CPPv4N3sls8Detector15setDynamicRangeEi">
 <span id="_CPPv3N3sls8Detector15setDynamicRangeEi"></span><span id="_CPPv2N3sls8Detector15setDynamicRangeEi"></span><span id="sls::Detector::setDynamicRange__i"></span><span class="target" id="classsls_1_1Detector_1aea4826b3394627aef9d6c2fe6ae3fe4a"></span>void <code class="sig-name descname">setDynamicRange</code><span class="sig-paren">(</span>int <em>value</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3sls8Detector15setDynamicRangeEi" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>[Eiger] Options: 4, 8, 16, 32 [Mythen3] Options: 8, 16, 32 [Eiger] If i is 32, also sets clkdivider to 2, if 16, sets clkdivider to 1 </p>
+<dd><p>[Eiger] Options: 4, 8, 16, 32. If i is 32, also sets clkdivider to 2, if 16, sets clkdivider to 1 <p> [Mythen3] Options: 8, 16, 32 </p>
+<p>[Jungfrau][Gotthard][Ctb][Moench][Mythen3][Gotthard2] 16 </p>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4NK3sls8Detector19getDynamicRangeListEv">
+<span id="_CPPv3NK3sls8Detector19getDynamicRangeListEv"></span><span id="_CPPv2NK3sls8Detector19getDynamicRangeListEv"></span><span id="sls::Detector::getDynamicRangeListC"></span><span class="target" id="classsls_1_1Detector_1a8bdc51a704106be3eb4ac34d80b37497"></span>std::vector&lt;int&gt; <code class="sig-name descname">getDynamicRangeList</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv4NK3sls8Detector19getDynamicRangeListEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>list of possible dynamic ranges for this detector </p>
 </dd></dl>
 
 <dl class="cpp function">
@@ -490,6 +516,12 @@ containing results from all modules. (Result&lt;T&gt;)</p>
 </dd></dl>
 
 <dl class="cpp function">
+<dt id="_CPPv4NK3sls8Detector17getTimingModeListEv">
+<span id="_CPPv3NK3sls8Detector17getTimingModeListEv"></span><span id="_CPPv2NK3sls8Detector17getTimingModeListEv"></span><span id="sls::Detector::getTimingModeListC"></span><span class="target" id="classsls_1_1Detector_1a087ff2090c7f9b0a4cc8b385cf68803d"></span>std::vector&lt;defs::timingMode&gt; <code class="sig-name descname">getTimingModeList</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv4NK3sls8Detector17getTimingModeListEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>list of possible timing modes for this detector </p>
+</dd></dl>
+
+<dl class="cpp function">
 <dt id="_CPPv4NK3sls8Detector8getSpeedE9Positions">
 <span id="_CPPv3NK3sls8Detector8getSpeedE9Positions"></span><span id="_CPPv2NK3sls8Detector8getSpeedE9Positions"></span><span id="sls::Detector::getSpeed__PositionsC"></span><span class="target" id="classsls_1_1Detector_1a08fc84bace060da0994f49ff89d234c3"></span><a class="reference internal" href="result.html#_CPPv4I00EN3sls6ResultE" title="sls::Result">Result</a>&lt;defs::speedLevel&gt; <code class="sig-name descname">getSpeed</code><span class="sig-paren">(</span>Positions <em>pos</em> = {}<span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv4NK3sls8Detector8getSpeedE9Positions" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>[Eiger][Jungfrau] </p>
@@ -498,19 +530,23 @@ containing results from all modules. (Result&lt;T&gt;)</p>
 <dl class="cpp function">
 <dt id="_CPPv4N3sls8Detector8setSpeedEN4defs10speedLevelE9Positions">
 <span id="_CPPv3N3sls8Detector8setSpeedEN4defs10speedLevelE9Positions"></span><span id="_CPPv2N3sls8Detector8setSpeedEN4defs10speedLevelE9Positions"></span><span id="sls::Detector::setSpeed__defs::speedLevel.Positions"></span><span class="target" id="classsls_1_1Detector_1a044ca8f94179533d8e67dddb459fbc6b"></span>void <code class="sig-name descname">setSpeed</code><span class="sig-paren">(</span>defs::speedLevel <em>value</em>, Positions <em>pos</em> = {}<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3sls8Detector8setSpeedEN4defs10speedLevelE9Positions" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>[Eiger][Jungfrau] Options: FULL_SPEED, HALF_SPEED, QUARTER_SPEED </p>
+<dd><p>[Eiger][Jungfrau] Options: FULL_SPEED, HALF_SPEED, QUARTER_SPEED <p>[Jungfrau] FULL_SPEED option only available from v2.0 boards and with setting number of interfaces to 2. </p>
+<p> Also overwrites adcphase to recommended default. </p>
+</p>
 </dd></dl>
 
 <dl class="cpp function">
 <dt id="_CPPv4NK3sls8Detector11getADCPhaseE9Positions">
 <span id="_CPPv3NK3sls8Detector11getADCPhaseE9Positions"></span><span id="_CPPv2NK3sls8Detector11getADCPhaseE9Positions"></span><span id="sls::Detector::getADCPhase__PositionsC"></span><span class="target" id="classsls_1_1Detector_1a2b037ca8ab803b28aa3d4799c01d0eec"></span><a class="reference internal" href="result.html#_CPPv4I00EN3sls6ResultE" title="sls::Result">Result</a>&lt;int&gt; <code class="sig-name descname">getADCPhase</code><span class="sig-paren">(</span>Positions <em>pos</em> = {}<span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv4NK3sls8Detector11getADCPhaseE9Positions" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>[Gotthard][Jungfrau][CTB][Moench] </p>
+<dd><p>[Jungfrau][CTB][Moench] </p>
 </dd></dl>
 
 <dl class="cpp function">
 <dt id="_CPPv4N3sls8Detector11setADCPhaseEi9Positions">
 <span id="_CPPv3N3sls8Detector11setADCPhaseEi9Positions"></span><span id="_CPPv2N3sls8Detector11setADCPhaseEi9Positions"></span><span id="sls::Detector::setADCPhase__i.Positions"></span><span class="target" id="classsls_1_1Detector_1a7f8a36a2d8d0a45ec6acc80b5318122a"></span>void <code class="sig-name descname">setADCPhase</code><span class="sig-paren">(</span>int <em>value</em>, Positions <em>pos</em> = {}<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3sls8Detector11setADCPhaseEi9Positions" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>[Gotthard][Jungfrau][CTB][Moench] </p>
+<dd><p>[Gotthard][Jungfrau][CTB][Moench] [Jungfrau] Absolute phase shift. Changing Speed also resets adcphase to recommended defaults. <p>[Ctb][Moench] Absolute phase shift. Changing adcclk also resets adcphase and sets it to previous values. </p>
+<p>[Gotthard] Relative phase shift </p>
+</p>
 </dd></dl>
 
 <dl class="cpp function">
@@ -528,7 +564,9 @@ containing results from all modules. (Result&lt;T&gt;)</p>
 <dl class="cpp function">
 <dt id="_CPPv4N3sls8Detector20setADCPhaseInDegreesEi9Positions">
 <span id="_CPPv3N3sls8Detector20setADCPhaseInDegreesEi9Positions"></span><span id="_CPPv2N3sls8Detector20setADCPhaseInDegreesEi9Positions"></span><span id="sls::Detector::setADCPhaseInDegrees__i.Positions"></span><span class="target" id="classsls_1_1Detector_1aded78715d515dfef5a05ad24de5d8ac0"></span>void <code class="sig-name descname">setADCPhaseInDegrees</code><span class="sig-paren">(</span>int <em>value</em>, Positions <em>pos</em> = {}<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3sls8Detector20setADCPhaseInDegreesEi9Positions" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>[Gotthard][Jungfrau][CTB][Moench] </p>
+<dd><p>[Gotthard][Jungfrau][CTB][Moench] [Jungfrau] Absolute phase shift. Changing Speed also resets adcphase to recommended defaults. <p>[Ctb][Moench] Absolute phase shift. Changing adcclk also resets adcphase and sets it to previous values. </p>
+<p>[Gotthard] Relative phase shift </p>
+</p>
 </dd></dl>
 
 <dl class="cpp function">
@@ -540,7 +578,8 @@ containing results from all modules. (Result&lt;T&gt;)</p>
 <dl class="cpp function">
 <dt id="_CPPv4N3sls8Detector12setDBITPhaseEi9Positions">
 <span id="_CPPv3N3sls8Detector12setDBITPhaseEi9Positions"></span><span id="_CPPv2N3sls8Detector12setDBITPhaseEi9Positions"></span><span id="sls::Detector::setDBITPhase__i.Positions"></span><span class="target" id="classsls_1_1Detector_1a6ed3dc085b936184ae62da40e08620fe"></span>void <code class="sig-name descname">setDBITPhase</code><span class="sig-paren">(</span>int <em>value</em>, Positions <em>pos</em> = {}<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3sls8Detector12setDBITPhaseEi9Positions" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>[CTB][Jungfrau] </p>
+<dd><p>[CTB][Jungfrau] Absolute phase shift <p>[CTB] changing dbitclk also resets dbitphase and sets to previous values. </p>
+</p>
 </dd></dl>
 
 <dl class="cpp function">
@@ -558,7 +597,8 @@ containing results from all modules. (Result&lt;T&gt;)</p>
 <dl class="cpp function">
 <dt id="_CPPv4N3sls8Detector21setDBITPhaseInDegreesEi9Positions">
 <span id="_CPPv3N3sls8Detector21setDBITPhaseInDegreesEi9Positions"></span><span id="_CPPv2N3sls8Detector21setDBITPhaseInDegreesEi9Positions"></span><span id="sls::Detector::setDBITPhaseInDegrees__i.Positions"></span><span class="target" id="classsls_1_1Detector_1ac1bbd7241ac2562045cbb9b21d797c2e"></span>void <code class="sig-name descname">setDBITPhaseInDegrees</code><span class="sig-paren">(</span>int <em>value</em>, Positions <em>pos</em> = {}<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3sls8Detector21setDBITPhaseInDegreesEi9Positions" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>[CTB][Jungfrau] </p>
+<dd><p>[CTB][Jungfrau] Absolute phase shift <p>[CTB] changing dbitclk also resets dbitphase and sets to previous values. </p>
+</p>
 </dd></dl>
 
 <dl class="cpp function">
@@ -651,6 +691,12 @@ containing results from all modules. (Result&lt;T&gt;)</p>
 </dd></dl>
 
 <dl class="cpp function">
+<dt id="_CPPv4NK3sls8Detector18getTemperatureListEv">
+<span id="_CPPv3NK3sls8Detector18getTemperatureListEv"></span><span id="_CPPv2NK3sls8Detector18getTemperatureListEv"></span><span id="sls::Detector::getTemperatureListC"></span><span class="target" id="classsls_1_1Detector_1ad4ab3aa6f1b9ae06b0328147ad7b1932"></span>std::vector&lt;defs::dacIndex&gt; <code class="sig-name descname">getTemperatureList</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv4NK3sls8Detector18getTemperatureListEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>gets list of temperature indices for this detector </p>
+</dd></dl>
+
+<dl class="cpp function">
 <dt id="_CPPv4NK3sls8Detector14getTemperatureEN4defs8dacIndexE9Positions">
 <span id="_CPPv3NK3sls8Detector14getTemperatureEN4defs8dacIndexE9Positions"></span><span id="_CPPv2NK3sls8Detector14getTemperatureEN4defs8dacIndexE9Positions"></span><span id="sls::Detector::getTemperature__defs::dacIndex.PositionsC"></span><span class="target" id="classsls_1_1Detector_1a891e22251665841ba7fef2b8d8dc160d"></span><a class="reference internal" href="result.html#_CPPv4I00EN3sls6ResultE" title="sls::Result">Result</a>&lt;int&gt; <code class="sig-name descname">getTemperature</code><span class="sig-paren">(</span>defs::dacIndex <em>index</em>, Positions <em>pos</em> = {}<span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv4NK3sls8Detector14getTemperatureEN4defs8dacIndexE9Positions" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>(Degrees) [Gotthard] Options: TEMPERATURE_ADC, TEMPERATURE_FPGA [Jungfrau] Options: TEMPERATURE_ADC, TEMPERATURE_FPGA [Eiger] Options: TEMPERATURE_FPGA, TEMPERATURE_FPGAEXT, TEMPERATURE_10GE, TEMPERATURE_DCDC, TEMPERATURE_SODL, TEMPERATURE_SODR, TEMPERATURE_FPGA2, TEMPERATURE_FPGA3 [CTB] Options: SLOW_ADC_TEMP </p>
@@ -659,7 +705,7 @@ containing results from all modules. (Result&lt;T&gt;)</p>
 <dl class="cpp function">
 <dt id="_CPPv4NK3sls8Detector10getDacListEv">
 <span id="_CPPv3NK3sls8Detector10getDacListEv"></span><span id="_CPPv2NK3sls8Detector10getDacListEv"></span><span id="sls::Detector::getDacListC"></span><span class="target" id="classsls_1_1Detector_1a756c208db653701db3ccd30a3f88d0ff"></span>std::vector&lt;defs::dacIndex&gt; <code class="sig-name descname">getDacList</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv4NK3sls8Detector10getDacListEv" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>gets list of dac indices for this detector </p>
+<dd><p>gets list of dac enums for this detector </p>
 </dd></dl>
 
 <dl class="cpp function">
@@ -718,36 +764,38 @@ containing results from all modules. (Result&lt;T&gt;)</p>
 <dl class="cpp function">
 <dt id="_CPPv4N3sls8Detector13startReceiverEv">
 <span id="_CPPv3N3sls8Detector13startReceiverEv"></span><span id="_CPPv2N3sls8Detector13startReceiverEv"></span><span id="sls::Detector::startReceiver"></span><span class="target" id="classsls_1_1Detector_1a75e6b6002def6b15b2101873626c55db"></span>void <code class="sig-name descname">startReceiver</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3sls8Detector13startReceiverEv" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Non Blocking: Start receiver listener </p>
+<dd><p>Non Blocking: Start receiver listener and create data file if file write enabled </p>
 </dd></dl>
 
 <dl class="cpp function">
 <dt id="_CPPv4N3sls8Detector12stopReceiverEv">
 <span id="_CPPv3N3sls8Detector12stopReceiverEv"></span><span id="_CPPv2N3sls8Detector12stopReceiverEv"></span><span id="sls::Detector::stopReceiver"></span><span class="target" id="classsls_1_1Detector_1a016f42ba548637f801c1c54f39f53cee"></span>void <code class="sig-name descname">stopReceiver</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3sls8Detector12stopReceiverEv" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Non Blocking: Stop receiver listener </p>
+<dd><p>Non Blocking: Stops receiver listener for detector data packets and closes current data file (if file write enabled). </p>
 </dd></dl>
 
 <dl class="cpp function">
 <dt id="_CPPv4N3sls8Detector13startDetectorEv">
 <span id="_CPPv3N3sls8Detector13startDetectorEv"></span><span id="_CPPv2N3sls8Detector13startDetectorEv"></span><span id="sls::Detector::startDetector"></span><span class="target" id="classsls_1_1Detector_1acb4ac628ef774e28d73f93547f2dfcef"></span>void <code class="sig-name descname">startDetector</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3sls8Detector13startDetectorEv" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Non blocking: start detector acquisition detector status changes from RUNNING to IDLE when finished </p>
+<dd><p>Non blocking: start detector acquisition. Status changes to RUNNING or WAITING and automatically returns to idle at the end of acquisition. </p>
 </dd></dl>
 
 <dl class="cpp function">
 <dt id="_CPPv4N3sls8Detector12stopDetectorEv">
 <span id="_CPPv3N3sls8Detector12stopDetectorEv"></span><span id="_CPPv2N3sls8Detector12stopDetectorEv"></span><span id="sls::Detector::stopDetector"></span><span class="target" id="classsls_1_1Detector_1a2c7563f0b29bd7907ea489c41771b870"></span>void <code class="sig-name descname">stopDetector</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3sls8Detector12stopDetectorEv" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Non blocking: abort detector acquisition </p>
+<dd><p>Non blocking: Abort detector acquisition. Status changes to IDLE or STOPPED </p>
 </dd></dl>
 
 <dl class="cpp function">
 <dt id="_CPPv4NK3sls8Detector17getDetectorStatusE9Positions">
 <span id="_CPPv3NK3sls8Detector17getDetectorStatusE9Positions"></span><span id="_CPPv2NK3sls8Detector17getDetectorStatusE9Positions"></span><span id="sls::Detector::getDetectorStatus__PositionsC"></span><span class="target" id="classsls_1_1Detector_1aa158012170414a7fe3438129e46c06b1"></span><a class="reference internal" href="result.html#_CPPv4I00EN3sls6ResultE" title="sls::Result">Result</a>&lt;defs::runStatus&gt; <code class="sig-name descname">getDetectorStatus</code><span class="sig-paren">(</span>Positions <em>pos</em> = {}<span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv4NK3sls8Detector17getDetectorStatusE9Positions" title="Permalink to this definition">¶</a><br /></dt>
-<dd></dd></dl>
+<dd><p>IDLE, ERROR, WAITING, RUN_FINISHED, TRANSMITTING, RUNNING, STOPPED </p>
+</dd></dl>
 
 <dl class="cpp function">
 <dt id="_CPPv4NK3sls8Detector17getReceiverStatusE9Positions">
 <span id="_CPPv3NK3sls8Detector17getReceiverStatusE9Positions"></span><span id="_CPPv2NK3sls8Detector17getReceiverStatusE9Positions"></span><span id="sls::Detector::getReceiverStatus__PositionsC"></span><span class="target" id="classsls_1_1Detector_1a9e46e220063251ad29fd9e00c0cadc93"></span><a class="reference internal" href="result.html#_CPPv4I00EN3sls6ResultE" title="sls::Result">Result</a>&lt;defs::runStatus&gt; <code class="sig-name descname">getReceiverStatus</code><span class="sig-paren">(</span>Positions <em>pos</em> = {}<span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv4NK3sls8Detector17getReceiverStatusE9Positions" title="Permalink to this definition">¶</a><br /></dt>
-<dd></dd></dl>
+<dd><p>Options: IDLE, TRANSMITTING, RUNNING </p>
+</dd></dl>
 
 <dl class="cpp function">
 <dt id="_CPPv4NK3sls8Detector15getFramesCaughtE9Positions">
@@ -757,7 +805,8 @@ containing results from all modules. (Result&lt;T&gt;)</p>
 <dl class="cpp function">
 <dt id="_CPPv4NK3sls8Detector20getNumMissingPacketsE9Positions">
 <span id="_CPPv3NK3sls8Detector20getNumMissingPacketsE9Positions"></span><span id="_CPPv2NK3sls8Detector20getNumMissingPacketsE9Positions"></span><span id="sls::Detector::getNumMissingPackets__PositionsC"></span><span class="target" id="classsls_1_1Detector_1a760bb076e1fa2a7ce61f48a9051ad32a"></span><a class="reference internal" href="result.html#_CPPv4I00EN3sls6ResultE" title="sls::Result">Result</a>&lt;std::vector&lt;uint64_t&gt;&gt; <code class="sig-name descname">getNumMissingPackets</code><span class="sig-paren">(</span>Positions <em>pos</em> = {}<span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv4NK3sls8Detector20getNumMissingPacketsE9Positions" title="Permalink to this definition">¶</a><br /></dt>
-<dd></dd></dl>
+<dd><p>Gets the number of missing packets for each port in receiver. </p>
+</dd></dl>
 
 <dl class="cpp function">
 <dt id="_CPPv4NK3sls8Detector22getStartingFrameNumberE9Positions">
@@ -768,7 +817,7 @@ containing results from all modules. (Result&lt;T&gt;)</p>
 <dl class="cpp function">
 <dt id="_CPPv4N3sls8Detector22setStartingFrameNumberE8uint64_t9Positions">
 <span id="_CPPv3N3sls8Detector22setStartingFrameNumberE8uint64_t9Positions"></span><span id="_CPPv2N3sls8Detector22setStartingFrameNumberE8uint64_t9Positions"></span><span id="sls::Detector::setStartingFrameNumber__uint64_t.Positions"></span><span class="target" id="classsls_1_1Detector_1aaefa438bc3092bd852258e6fbe127aba"></span>void <code class="sig-name descname">setStartingFrameNumber</code><span class="sig-paren">(</span>uint64_t <em>value</em>, Positions <em>pos</em> = {}<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3sls8Detector22setStartingFrameNumberE8uint64_t9Positions" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>[Eiger][Jungfrau] </p>
+<dd><p>[Eiger][Jungfrau] Stopping acquiistion might result in different frame numbers for different modules. </p>
 </dd></dl>
 
 <dl class="cpp function">
@@ -803,7 +852,10 @@ containing results from all modules. (Result&lt;T&gt;)</p>
 <dl class="cpp function">
 <dt id="_CPPv4N3sls8Detector24setNumberofUDPInterfacesEi9Positions">
 <span id="_CPPv3N3sls8Detector24setNumberofUDPInterfacesEi9Positions"></span><span id="_CPPv2N3sls8Detector24setNumberofUDPInterfacesEi9Positions"></span><span id="sls::Detector::setNumberofUDPInterfaces__i.Positions"></span><span class="target" id="classsls_1_1Detector_1ab83e812851f73f92a50c4dc10977e94d"></span>void <code class="sig-name descname">setNumberofUDPInterfaces</code><span class="sig-paren">(</span>int <em>n</em>, Positions <em>pos</em> = {}<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3sls8Detector24setNumberofUDPInterfacesEi9Positions" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>[Jungfrau][Gotthard2] Also restarts client and receiver zmq sockets [Gotthard2] second interface enabled to send veto information via 10gbps for debugging. By default it is sent via 2.5gbps if veto enabled n can be 1 or 2 </p>
+<dd><p>[Jungfrau][Gotthard2] Number of udp interfaces to stream data from detector. Default is 1. <p> Also enables second interface in receiver for listening (Writes a file per interface if writing enabled). </p>
+<p> Also restarts client and receiver zmq sockets if zmq streaming enabled. </p>
+<p>[Gotthard2] second interface enabled to send veto information via 10Gbps for debugging. By default, if veto enabled, it is sent via 2.5 gbps interface. </p>
+</p>
 </dd></dl>
 
 <dl class="cpp function">
@@ -932,6 +984,16 @@ containing results from all modules. (Result&lt;T&gt;)</p>
 </dd></dl>
 
 <dl class="cpp function">
+<dt id="_CPPv4N3sls8Detector25reconfigureUDPDestinationE9Positions">
+<span id="_CPPv3N3sls8Detector25reconfigureUDPDestinationE9Positions"></span><span id="_CPPv2N3sls8Detector25reconfigureUDPDestinationE9Positions"></span><span id="sls::Detector::reconfigureUDPDestination__Positions"></span><span class="target" id="classsls_1_1Detector_1ae440efbc1f8287903a97680ab631d56b"></span>void <code class="sig-name descname">reconfigureUDPDestination</code><span class="sig-paren">(</span>Positions <em>pos</em> = {}<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3sls8Detector25reconfigureUDPDestinationE9Positions" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4N3sls8Detector24validateUDPConfigurationE9Positions">
+<span id="_CPPv3N3sls8Detector24validateUDPConfigurationE9Positions"></span><span id="_CPPv2N3sls8Detector24validateUDPConfigurationE9Positions"></span><span id="sls::Detector::validateUDPConfiguration__Positions"></span><span class="target" id="classsls_1_1Detector_1aaacb44fe20484780f2e2a4a3ad1f6303"></span>void <code class="sig-name descname">validateUDPConfiguration</code><span class="sig-paren">(</span>Positions <em>pos</em> = {}<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3sls8Detector24validateUDPConfigurationE9Positions" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
 <dt id="_CPPv4NK3sls8Detector20printRxConfigurationE9Positions">
 <span id="_CPPv3NK3sls8Detector20printRxConfigurationE9Positions"></span><span id="_CPPv2NK3sls8Detector20printRxConfigurationE9Positions"></span><span id="sls::Detector::printRxConfiguration__PositionsC"></span><span class="target" id="classsls_1_1Detector_1a22aa4fa6205fdefafb1aaafb518c3cac"></span><a class="reference internal" href="result.html#_CPPv4I00EN3sls6ResultE" title="sls::Result">Result</a>&lt;std::string&gt; <code class="sig-name descname">printRxConfiguration</code><span class="sig-paren">(</span>Positions <em>pos</em> = {}<span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv4NK3sls8Detector20printRxConfigurationE9Positions" title="Permalink to this definition">¶</a><br /></dt>
 <dd></dd></dl>
@@ -951,25 +1013,25 @@ containing results from all modules. (Result&lt;T&gt;)</p>
 <dl class="cpp function">
 <dt id="_CPPv4NK3sls8Detector21getTenGigaFlowControlE9Positions">
 <span id="_CPPv3NK3sls8Detector21getTenGigaFlowControlE9Positions"></span><span id="_CPPv2NK3sls8Detector21getTenGigaFlowControlE9Positions"></span><span id="sls::Detector::getTenGigaFlowControl__PositionsC"></span><span class="target" id="classsls_1_1Detector_1a164ba3c1c909c197d8eaf88659c37ae4"></span><a class="reference internal" href="result.html#_CPPv4I00EN3sls6ResultE" title="sls::Result">Result</a>&lt;bool&gt; <code class="sig-name descname">getTenGigaFlowControl</code><span class="sig-paren">(</span>Positions <em>pos</em> = {}<span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv4NK3sls8Detector21getTenGigaFlowControlE9Positions" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>[Eiger, Jungfrau] </p>
+<dd><p>[Eiger][Jungfrau] </p>
 </dd></dl>
 
 <dl class="cpp function">
 <dt id="_CPPv4N3sls8Detector21setTenGigaFlowControlEb9Positions">
 <span id="_CPPv3N3sls8Detector21setTenGigaFlowControlEb9Positions"></span><span id="_CPPv2N3sls8Detector21setTenGigaFlowControlEb9Positions"></span><span id="sls::Detector::setTenGigaFlowControl__b.Positions"></span><span class="target" id="classsls_1_1Detector_1a620950d5da68f58faeef0198cd9a6030"></span>void <code class="sig-name descname">setTenGigaFlowControl</code><span class="sig-paren">(</span>bool <em>enable</em>, Positions <em>pos</em> = {}<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3sls8Detector21setTenGigaFlowControlEb9Positions" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>[Eiger, Jungfrau] </p>
+<dd><p>[Eiger][Jungfrau] </p>
 </dd></dl>
 
 <dl class="cpp function">
 <dt id="_CPPv4NK3sls8Detector25getTransmissionDelayFrameE9Positions">
 <span id="_CPPv3NK3sls8Detector25getTransmissionDelayFrameE9Positions"></span><span id="_CPPv2NK3sls8Detector25getTransmissionDelayFrameE9Positions"></span><span id="sls::Detector::getTransmissionDelayFrame__PositionsC"></span><span class="target" id="classsls_1_1Detector_1afbbae729397b5d430d38a9559d70f87c"></span><a class="reference internal" href="result.html#_CPPv4I00EN3sls6ResultE" title="sls::Result">Result</a>&lt;int&gt; <code class="sig-name descname">getTransmissionDelayFrame</code><span class="sig-paren">(</span>Positions <em>pos</em> = {}<span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv4NK3sls8Detector25getTransmissionDelayFrameE9Positions" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>[Eiger, Jungfrau] </p>
+<dd><p>[Eiger][Jungfrau][Mythen3] </p>
 </dd></dl>
 
 <dl class="cpp function">
 <dt id="_CPPv4N3sls8Detector25setTransmissionDelayFrameEi9Positions">
 <span id="_CPPv3N3sls8Detector25setTransmissionDelayFrameEi9Positions"></span><span id="_CPPv2N3sls8Detector25setTransmissionDelayFrameEi9Positions"></span><span id="sls::Detector::setTransmissionDelayFrame__i.Positions"></span><span class="target" id="classsls_1_1Detector_1a2139dfae9a182dc98d753ed8b366c396"></span>void <code class="sig-name descname">setTransmissionDelayFrame</code><span class="sig-paren">(</span>int <em>value</em>, Positions <em>pos</em> = {}<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3sls8Detector25setTransmissionDelayFrameEi9Positions" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>[Jungfrau]: Sets the transmission delay of the first UDP packet being streamed out of the module. Options: 0 - 31, each value represenets 1 ms [Eiger]: Sets the transmission delay of entire frame streamed out for both left and right UDP ports. Options: //TODO possible values </p>
+<dd><p>[Jungfrau]: Sets the transmission delay of the first UDP packet being streamed out of the module. Options: 0 - 31, each value represenets 1 ms [Eiger]: Sets the transmission delay of entire frame streamed out for both left and right UDP ports. Options: //TODO possible values [Mythen3] Options: [0-16777215] Each value represents 8 ns (125 MHz clock), max is 134 ms. </p>
 </dd></dl>
 
 <dl class="cpp function">
@@ -1010,13 +1072,16 @@ containing results from all modules. (Result&lt;T&gt;)</p>
 <dl class="cpp function">
 <dt id="_CPPv4N3sls8Detector13setRxHostnameERKNSt6stringE9Positions">
 <span id="_CPPv3N3sls8Detector13setRxHostnameERKNSt6stringE9Positions"></span><span id="_CPPv2N3sls8Detector13setRxHostnameERKNSt6stringE9Positions"></span><span id="sls::Detector::setRxHostname__ssCR.Positions"></span><span class="target" id="classsls_1_1Detector_1adb496151124a690e6710e2d2c1183008"></span>void <code class="sig-name descname">setRxHostname</code><span class="sig-paren">(</span><em class="property">const</em> std::string &amp;<em>receiver</em>, Positions <em>pos</em> = {}<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3sls8Detector13setRxHostnameERKNSt6stringE9Positions" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Validates and sets the receiver. Updates local receiver cache parameters Configures the detector to the receiver as UDP destination receiver is receiver hostname or IP address, can include tcp port eg. hostname:port </p>
+<dd><p>Sets receiver hostname or IP address for each module. <p> Used for TCP control communication between client and receiver to configure receiver. Also updates receiver with detector parameters. </p>
+<p> Also resets any prior receiver property (not on detector). </p>
+<p> receiver is receiver hostname or IP address, can include tcp port eg. hostname:port </p>
+</p>
 </dd></dl>
 
 <dl class="cpp function">
 <dt id="_CPPv4N3sls8Detector13setRxHostnameERKNSt6vectorINSt6stringEEE">
 <span id="_CPPv3N3sls8Detector13setRxHostnameERKNSt6vectorINSt6stringEEE"></span><span id="_CPPv2N3sls8Detector13setRxHostnameERKNSt6vectorINSt6stringEEE"></span><span id="sls::Detector::setRxHostname__std::vector:ss:CR"></span><span class="target" id="classsls_1_1Detector_1a3437d06bcfc3fa4dfa9eddb9468f58db"></span>void <code class="sig-name descname">setRxHostname</code><span class="sig-paren">(</span><em class="property">const</em> std::vector&lt;std::string&gt; &amp;<em>name</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3sls8Detector13setRxHostnameERKNSt6vectorINSt6stringEEE" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>multiple rx hostnames (same as setRxHostname) </p>
+<dd><p>multiple rx hostnames. Single element will set it for all </p>
 </dd></dl>
 
 <dl class="cpp function">
@@ -1027,7 +1092,11 @@ containing results from all modules. (Result&lt;T&gt;)</p>
 <dl class="cpp function">
 <dt id="_CPPv4N3sls8Detector9setRxPortEii">
 <span id="_CPPv3N3sls8Detector9setRxPortEii"></span><span id="_CPPv2N3sls8Detector9setRxPortEii"></span><span id="sls::Detector::setRxPort__i.i"></span><span class="target" id="classsls_1_1Detector_1a99e5bac723302a9572596fbe09f05c91"></span>void <code class="sig-name descname">setRxPort</code><span class="sig-paren">(</span>int <em>port</em>, int <em>module_id</em> = -1<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3sls8Detector9setRxPortEii" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p><a class="reference internal" href="receiver.html#classReceiver"><span class="std std-ref">Receiver</span></a> TCP port (for client communication with <a class="reference internal" href="receiver.html#classReceiver"><span class="std std-ref">Receiver</span></a>) module_id is -1 for all detectors, ports for each module is calculated (increments) </p>
+<dd><p>TCP port for client-receiver communication. <p> Default is 1954. </p>
+<p> Must be different if multiple receivers on same pc. </p>
+<p> Must be first command to set a receiver parameter to be able to communicate. </p>
+<p> Multi command will automatically increment port for individual modules. </p>
+</p>
 </dd></dl>
 
 <dl class="cpp function">
@@ -1049,7 +1118,7 @@ containing results from all modules. (Result&lt;T&gt;)</p>
 <dl class="cpp function">
 <dt id="_CPPv4N3sls8Detector15setRxSilentModeEb9Positions">
 <span id="_CPPv3N3sls8Detector15setRxSilentModeEb9Positions"></span><span id="_CPPv2N3sls8Detector15setRxSilentModeEb9Positions"></span><span id="sls::Detector::setRxSilentMode__b.Positions"></span><span class="target" id="classsls_1_1Detector_1a6e20717e26f8d35129b5a2998ed9b34b"></span>void <code class="sig-name descname">setRxSilentMode</code><span class="sig-paren">(</span>bool <em>value</em>, Positions <em>pos</em> = {}<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3sls8Detector15setRxSilentModeEb9Positions" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>receiver prints hardly any information while acquiring </p>
+<dd><p>Switch on or off receiver text output during acquisition </p>
 </dd></dl>
 
 <dl class="cpp function">
@@ -1060,7 +1129,7 @@ containing results from all modules. (Result&lt;T&gt;)</p>
 <dl class="cpp function">
 <dt id="_CPPv4N3sls8Detector23setRxFrameDiscardPolicyEN4defs18frameDiscardPolicyE9Positions">
 <span id="_CPPv3N3sls8Detector23setRxFrameDiscardPolicyEN4defs18frameDiscardPolicyE9Positions"></span><span id="_CPPv2N3sls8Detector23setRxFrameDiscardPolicyEN4defs18frameDiscardPolicyE9Positions"></span><span id="sls::Detector::setRxFrameDiscardPolicy__defs::frameDiscardPolicy.Positions"></span><span class="target" id="classsls_1_1Detector_1abcda8844d914f79d377a660eb6dbf652"></span>void <code class="sig-name descname">setRxFrameDiscardPolicy</code><span class="sig-paren">(</span>defs::frameDiscardPolicy <em>f</em>, Positions <em>pos</em> = {}<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3sls8Detector23setRxFrameDiscardPolicyEN4defs18frameDiscardPolicyE9Positions" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>default NO_DISCARD Options: NO_DISCARD, DISCARD_EMPTY_FRAMES, DISCARD_PARTIAL_FRAMES discard partial frames is the fastest </p>
+<dd><p>Options: NO_DISCARD, DISCARD_EMPTY_FRAMES, DISCARD_PARTIAL_FRAMES Default: NO_DISCARD discard partial frames is the fastest </p>
 </dd></dl>
 
 <dl class="cpp function">
@@ -1071,7 +1140,7 @@ containing results from all modules. (Result&lt;T&gt;)</p>
 <dl class="cpp function">
 <dt id="_CPPv4N3sls8Detector23setPartialFramesPaddingEb9Positions">
 <span id="_CPPv3N3sls8Detector23setPartialFramesPaddingEb9Positions"></span><span id="_CPPv2N3sls8Detector23setPartialFramesPaddingEb9Positions"></span><span id="sls::Detector::setPartialFramesPadding__b.Positions"></span><span class="target" id="classsls_1_1Detector_1adb98fc1038d334bfa98e453e3e9714b4"></span>void <code class="sig-name descname">setPartialFramesPadding</code><span class="sig-paren">(</span>bool <em>value</em>, Positions <em>pos</em> = {}<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3sls8Detector23setPartialFramesPaddingEb9Positions" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>padding enabled. Disabling padding is the fastest </p>
+<dd><p>Default: padding enabled. Disabling padding is the fastest </p>
 </dd></dl>
 
 <dl class="cpp function">
@@ -1082,12 +1151,13 @@ containing results from all modules. (Result&lt;T&gt;)</p>
 <dl class="cpp function">
 <dt id="_CPPv4N3sls8Detector24setRxUDPSocketBufferSizeE7int64_t9Positions">
 <span id="_CPPv3N3sls8Detector24setRxUDPSocketBufferSizeE7int64_t9Positions"></span><span id="_CPPv2N3sls8Detector24setRxUDPSocketBufferSizeE7int64_t9Positions"></span><span id="sls::Detector::setRxUDPSocketBufferSize__int64_t.Positions"></span><span class="target" id="classsls_1_1Detector_1ae116506cff6ff0b09cfc9087b1dd6b00"></span>void <code class="sig-name descname">setRxUDPSocketBufferSize</code><span class="sig-paren">(</span>int64_t <em>udpsockbufsize</em>, Positions <em>pos</em> = {}<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3sls8Detector24setRxUDPSocketBufferSizeE7int64_t9Positions" title="Permalink to this definition">¶</a><br /></dt>
-<dd></dd></dl>
+<dd><p>UDP socket buffer size in receiver. Tune rmem_default and rmem_max accordingly </p>
+</dd></dl>
 
 <dl class="cpp function">
 <dt id="_CPPv4NK3sls8Detector28getRxRealUDPSocketBufferSizeE9Positions">
 <span id="_CPPv3NK3sls8Detector28getRxRealUDPSocketBufferSizeE9Positions"></span><span id="_CPPv2NK3sls8Detector28getRxRealUDPSocketBufferSizeE9Positions"></span><span id="sls::Detector::getRxRealUDPSocketBufferSize__PositionsC"></span><span class="target" id="classsls_1_1Detector_1a643d21f406266745dd06ce13b231562a"></span><a class="reference internal" href="result.html#_CPPv4I00EN3sls6ResultE" title="sls::Result">Result</a>&lt;int64_t&gt; <code class="sig-name descname">getRxRealUDPSocketBufferSize</code><span class="sig-paren">(</span>Positions <em>pos</em> = {}<span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv4NK3sls8Detector28getRxRealUDPSocketBufferSizeE9Positions" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>TODO: Linux kernel allocates twice the amount you set for bookkeeping purposes </p>
+<dd><p>TODO: Gets actual udp socket buffer size. Double the size of rx_udpsocksize due to kernel bookkeeping. </p>
 </dd></dl>
 
 <dl class="cpp function">
@@ -1098,13 +1168,14 @@ containing results from all modules. (Result&lt;T&gt;)</p>
 <dl class="cpp function">
 <dt id="_CPPv4N3sls8Detector9setRxLockEb9Positions">
 <span id="_CPPv3N3sls8Detector9setRxLockEb9Positions"></span><span id="_CPPv2N3sls8Detector9setRxLockEb9Positions"></span><span id="sls::Detector::setRxLock__b.Positions"></span><span class="target" id="classsls_1_1Detector_1a61f6789bc6492d317ec957d54b2354fe"></span>void <code class="sig-name descname">setRxLock</code><span class="sig-paren">(</span>bool <em>value</em>, Positions <em>pos</em> = {}<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3sls8Detector9setRxLockEb9Positions" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>locks receiver server to client IP </p>
+<dd><p>Lock receiver to one client IP, 1 locks, 0 unlocks. Default is unlocked. </p>
 </dd></dl>
 
 <dl class="cpp function">
 <dt id="_CPPv4NK3sls8Detector17getRxLastClientIPE9Positions">
 <span id="_CPPv3NK3sls8Detector17getRxLastClientIPE9Positions"></span><span id="_CPPv2NK3sls8Detector17getRxLastClientIPE9Positions"></span><span id="sls::Detector::getRxLastClientIP__PositionsC"></span><span class="target" id="classsls_1_1Detector_1aa569bc813813bffcf2cc67e53ce875f4"></span><a class="reference internal" href="result.html#_CPPv4I00EN3sls6ResultE" title="sls::Result">Result</a>&lt;<a class="reference internal" href="ToString.html#_CPPv43sls" title="sls">sls</a>::IpAddr&gt; <code class="sig-name descname">getRxLastClientIP</code><span class="sig-paren">(</span>Positions <em>pos</em> = {}<span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv4NK3sls8Detector17getRxLastClientIPE9Positions" title="Permalink to this definition">¶</a><br /></dt>
-<dd></dd></dl>
+<dd><p>Client IP Address that last communicated with the receiver </p>
+</dd></dl>
 
 <dl class="cpp function">
 <dt id="_CPPv4NK3sls8Detector14getRxThreadIdsE9Positions">
@@ -1130,7 +1201,8 @@ containing results from all modules. (Result&lt;T&gt;)</p>
 <dl class="cpp function">
 <dt id="_CPPv4N3sls8Detector11setFilePathERKNSt6stringE9Positions">
 <span id="_CPPv3N3sls8Detector11setFilePathERKNSt6stringE9Positions"></span><span id="_CPPv2N3sls8Detector11setFilePathERKNSt6stringE9Positions"></span><span id="sls::Detector::setFilePath__ssCR.Positions"></span><span class="target" id="classsls_1_1Detector_1ac13d027827e0a4110a60220c21752220"></span>void <code class="sig-name descname">setFilePath</code><span class="sig-paren">(</span><em class="property">const</em> std::string &amp;<em>fpath</em>, Positions <em>pos</em> = {}<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3sls8Detector11setFilePathERKNSt6stringE9Positions" title="Permalink to this definition">¶</a><br /></dt>
-<dd></dd></dl>
+<dd><p>If path does not exist, it will try to create it </p>
+</dd></dl>
 
 <dl class="cpp function">
 <dt id="_CPPv4NK3sls8Detector17getFileNamePrefixE9Positions">
@@ -1151,7 +1223,8 @@ containing results from all modules. (Result&lt;T&gt;)</p>
 <dl class="cpp function">
 <dt id="_CPPv4N3sls8Detector19setAcquisitionIndexE7int64_t9Positions">
 <span id="_CPPv3N3sls8Detector19setAcquisitionIndexE7int64_t9Positions"></span><span id="_CPPv2N3sls8Detector19setAcquisitionIndexE7int64_t9Positions"></span><span id="sls::Detector::setAcquisitionIndex__int64_t.Positions"></span><span class="target" id="classsls_1_1Detector_1ae46f1fecbda49de91e2a602615c59a58"></span>void <code class="sig-name descname">setAcquisitionIndex</code><span class="sig-paren">(</span>int64_t <em>i</em>, Positions <em>pos</em> = {}<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3sls8Detector19setAcquisitionIndexE7int64_t9Positions" title="Permalink to this definition">¶</a><br /></dt>
-<dd></dd></dl>
+<dd><p>file or Acquisition index in receiver </p>
+</dd></dl>
 
 <dl class="cpp function">
 <dt id="_CPPv4NK3sls8Detector12getFileWriteE9Positions">
@@ -1161,7 +1234,7 @@ containing results from all modules. (Result&lt;T&gt;)</p>
 <dl class="cpp function">
 <dt id="_CPPv4N3sls8Detector12setFileWriteEb9Positions">
 <span id="_CPPv3N3sls8Detector12setFileWriteEb9Positions"></span><span id="_CPPv2N3sls8Detector12setFileWriteEb9Positions"></span><span id="sls::Detector::setFileWrite__b.Positions"></span><span class="target" id="classsls_1_1Detector_1a6e681b393f686fa85d798e8d49b6563f"></span>void <code class="sig-name descname">setFileWrite</code><span class="sig-paren">(</span>bool <em>value</em>, Positions <em>pos</em> = {}<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3sls8Detector12setFileWriteEb9Positions" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>default writes </p>
+<dd><p>default enabled </p>
 </dd></dl>
 
 <dl class="cpp function">
@@ -1193,7 +1266,8 @@ containing results from all modules. (Result&lt;T&gt;)</p>
 <dl class="cpp function">
 <dt id="_CPPv4N3sls8Detector16setFramesPerFileEi9Positions">
 <span id="_CPPv3N3sls8Detector16setFramesPerFileEi9Positions"></span><span id="_CPPv2N3sls8Detector16setFramesPerFileEi9Positions"></span><span id="sls::Detector::setFramesPerFile__i.Positions"></span><span class="target" id="classsls_1_1Detector_1af48b764e16cc463a84ac3f15b1018765"></span>void <code class="sig-name descname">setFramesPerFile</code><span class="sig-paren">(</span>int <em>n</em>, Positions <em>pos</em> = {}<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3sls8Detector16setFramesPerFileEi9Positions" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>0 will set frames per file to unlimited </p>
+<dd><p>Default depends on detector type. <p> 0 will set frames per file to unlimited </p>
+</p>
 </dd></dl>
 
 <dl class="cpp function">
@@ -1204,7 +1278,11 @@ containing results from all modules. (Result&lt;T&gt;)</p>
 <dl class="cpp function">
 <dt id="_CPPv4N3sls8Detector18setRxZmqDataStreamEb9Positions">
 <span id="_CPPv3N3sls8Detector18setRxZmqDataStreamEb9Positions"></span><span id="_CPPv2N3sls8Detector18setRxZmqDataStreamEb9Positions"></span><span id="sls::Detector::setRxZmqDataStream__b.Positions"></span><span class="target" id="classsls_1_1Detector_1ae5764e30dd0df2cb81bf326ea6bddadc"></span>void <code class="sig-name descname">setRxZmqDataStream</code><span class="sig-paren">(</span>bool <em>value</em>, Positions <em>pos</em> = {}<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3sls8Detector18setRxZmqDataStreamEb9Positions" title="Permalink to this definition">¶</a><br /></dt>
-<dd></dd></dl>
+<dd><p>Enable/ disable data streaming from receiver via zmq (eg. to GUI or to another process for further processing). <p> This creates/ destroys zmq streamer threads in receiver. </p>
+<p> Switching to Gui automatically enables data streaming in receiver. </p>
+<p> Switching back to command line or API acquire will require disabling data streaming in receiver for fast applications (if not needed for client data call backs). </p>
+</p>
+</dd></dl>
 
 <dl class="cpp function">
 <dt id="_CPPv4NK3sls8Detector17getRxZmqFrequencyE9Positions">
@@ -1214,7 +1292,10 @@ containing results from all modules. (Result&lt;T&gt;)</p>
 <dl class="cpp function">
 <dt id="_CPPv4N3sls8Detector17setRxZmqFrequencyEi9Positions">
 <span id="_CPPv3N3sls8Detector17setRxZmqFrequencyEi9Positions"></span><span id="_CPPv2N3sls8Detector17setRxZmqFrequencyEi9Positions"></span><span id="sls::Detector::setRxZmqFrequency__i.Positions"></span><span class="target" id="classsls_1_1Detector_1a7471955c5bfc957f1b8ca71049a320a1"></span>void <code class="sig-name descname">setRxZmqFrequency</code><span class="sig-paren">(</span>int <em>freq</em>, Positions <em>pos</em> = {}<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3sls8Detector17setRxZmqFrequencyEi9Positions" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>freq is nth frame streamed out of receiver. If 0, streaming timer is the timeout, after which current frame sent out. Default is 0 at 200 ms. Default is 1: send every frame. If you want just to see some frames for gui purposes, set to 0 (200ms default timer). </p>
+<dd><p>Frequency of frames streamed out from receiver via zmq. <p> Default: 1, Means every frame is streamed out. </p>
+<p> If 2, every second frame is streamed out. </p>
+<p> If 0, streaming timer is the timeout, after which current frame is sent out. (default timeout is 200 ms). Usually used for gui purposes. </p>
+</p>
 </dd></dl>
 
 <dl class="cpp function">
@@ -1247,7 +1328,12 @@ containing results from all modules. (Result&lt;T&gt;)</p>
 <dl class="cpp function">
 <dt id="_CPPv4N3sls8Detector12setRxZmqPortEii">
 <span id="_CPPv3N3sls8Detector12setRxZmqPortEii"></span><span id="_CPPv2N3sls8Detector12setRxZmqPortEii"></span><span id="sls::Detector::setRxZmqPort__i.i"></span><span class="target" id="classsls_1_1Detector_1a57a3bedcf0b624c924180c9c0411ff71"></span>void <code class="sig-name descname">setRxZmqPort</code><span class="sig-paren">(</span>int <em>port</em>, int <em>module_id</em> = -1<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3sls8Detector12setRxZmqPortEii" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>module_id is -1 for all detectors, ports for each module is calculated (increments) Restarts receiver zmq sockets only if it was already enabled </p>
+<dd><p>Zmq port for data to be streamed out of the receiver. <p>Also restarts receiver zmq streaming if enabled. </p>
+<p> Default is 30001. </p>
+<p>Modified only when using an intermediate process after receiver. </p>
+<p> Must be different for every detector (and udp port). </p>
+<p> module_id is -1 for all detectors, ports for each module is calculated (increments) Restarts receiver zmq sockets only if it was already enabled </p>
+</p>
 </dd></dl>
 
 <dl class="cpp function">
@@ -1258,7 +1344,11 @@ containing results from all modules. (Result&lt;T&gt;)</p>
 <dl class="cpp function">
 <dt id="_CPPv4N3sls8Detector10setRxZmqIPEK6IpAddr9Positions">
 <span id="_CPPv3N3sls8Detector10setRxZmqIPEK6IpAddr9Positions"></span><span id="_CPPv2N3sls8Detector10setRxZmqIPEK6IpAddr9Positions"></span><span id="sls::Detector::setRxZmqIP__IpAddrC.Positions"></span><span class="target" id="classsls_1_1Detector_1a730e64840d6ece324892907e62fa5f03"></span>void <code class="sig-name descname">setRxZmqIP</code><span class="sig-paren">(</span><em class="property">const</em> IpAddr <em>ip</em>, Positions <em>pos</em> = {}<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3sls8Detector10setRxZmqIPEK6IpAddr9Positions" title="Permalink to this definition">¶</a><br /></dt>
-<dd></dd></dl>
+<dd><p>Zmq Ip Address from which data is to be streamed out of the receiver. <p>Also restarts receiver zmq streaming if enabled. </p>
+<p> Default is from rx_hostname. </p>
+<p> Modified only when using an intermediate process between receiver. </p>
+</p>
+</dd></dl>
 
 <dl class="cpp function">
 <dt id="_CPPv4NK3sls8Detector16getClientZmqPortE9Positions">
@@ -1326,7 +1416,7 @@ containing results from all modules. (Result&lt;T&gt;)</p>
 <dl class="cpp function">
 <dt id="_CPPv4N3sls8Detector15setSettingsPathERKNSt6stringE9Positions">
 <span id="_CPPv3N3sls8Detector15setSettingsPathERKNSt6stringE9Positions"></span><span id="_CPPv2N3sls8Detector15setSettingsPathERKNSt6stringE9Positions"></span><span id="sls::Detector::setSettingsPath__ssCR.Positions"></span><span class="target" id="classsls_1_1Detector_1a45556bc002e3a27ebcdaa85a3068e25a"></span>void <code class="sig-name descname">setSettingsPath</code><span class="sig-paren">(</span><em class="property">const</em> std::string &amp;<em>value</em>, Positions <em>pos</em> = {}<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3sls8Detector15setSettingsPathERKNSt6stringE9Positions" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>[Eiger] </p>
+<dd><p>[Eiger] Directory where settings files are loaded from/to </p>
 </dd></dl>
 
 <dl class="cpp function">
@@ -1350,7 +1440,7 @@ containing results from all modules. (Result&lt;T&gt;)</p>
 <dl class="cpp function">
 <dt id="_CPPv4N3sls8Detector15setOverFlowModeEb9Positions">
 <span id="_CPPv3N3sls8Detector15setOverFlowModeEb9Positions"></span><span id="_CPPv2N3sls8Detector15setOverFlowModeEb9Positions"></span><span id="sls::Detector::setOverFlowMode__b.Positions"></span><span class="target" id="classsls_1_1Detector_1aa391bb690f36ca8ecae228849b48d256"></span>void <code class="sig-name descname">setOverFlowMode</code><span class="sig-paren">(</span>bool <em>value</em>, Positions <em>pos</em> = {}<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3sls8Detector15setOverFlowModeEb9Positions" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>[Eiger] </p>
+<dd><p>[Eiger] Overflow in 32 bit mode. Default is disabled. </p>
 </dd></dl>
 
 <dl class="cpp function">
@@ -1416,7 +1506,7 @@ containing results from all modules. (Result&lt;T&gt;)</p>
 <dl class="cpp function">
 <dt id="_CPPv4N3sls8Detector20setInterruptSubframeEKb9Positions">
 <span id="_CPPv3N3sls8Detector20setInterruptSubframeEKb9Positions"></span><span id="_CPPv2N3sls8Detector20setInterruptSubframeEKb9Positions"></span><span id="sls::Detector::setInterruptSubframe__bC.Positions"></span><span class="target" id="classsls_1_1Detector_1a1f4507313c51d07f0e2a0e60aaa0db69"></span>void <code class="sig-name descname">setInterruptSubframe</code><span class="sig-paren">(</span><em class="property">const</em> bool <em>enable</em>, Positions <em>pos</em> = {}<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3sls8Detector20setInterruptSubframeEKb9Positions" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>[Eiger] when set, the last subframe is interrupted at end of acq </p>
+<dd><p>[Eiger] Enable last subframe interrupt at required exposure time. Disabling will wait for last sub frame to finish exposing. Default is disabled. </p>
 </dd></dl>
 
 <dl class="cpp function">
@@ -1464,7 +1554,7 @@ containing results from all modules. (Result&lt;T&gt;)</p>
 <dl class="cpp function">
 <dt id="_CPPv4N3sls8Detector15setPartialResetEb9Positions">
 <span id="_CPPv3N3sls8Detector15setPartialResetEb9Positions"></span><span id="_CPPv2N3sls8Detector15setPartialResetEb9Positions"></span><span id="sls::Detector::setPartialReset__b.Positions"></span><span class="target" id="classsls_1_1Detector_1a4665473995614fc2802feae41963c585"></span>void <code class="sig-name descname">setPartialReset</code><span class="sig-paren">(</span>bool <em>value</em>, Positions <em>pos</em> = {}<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3sls8Detector15setPartialResetEb9Positions" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>[Eiger] Advanced used for pulsing chips </p>
+<dd><p>[Eiger] Advanced used for pulsing chips. Default is Complete reset </p>
 </dd></dl>
 
 <dl class="cpp function">
@@ -1542,7 +1632,8 @@ containing results from all modules. (Result&lt;T&gt;)</p>
 <dl class="cpp function">
 <dt id="_CPPv4N3sls8Detector18setAutoCompDisableEb9Positions">
 <span id="_CPPv3N3sls8Detector18setAutoCompDisableEb9Positions"></span><span id="_CPPv2N3sls8Detector18setAutoCompDisableEb9Positions"></span><span id="sls::Detector::setAutoCompDisable__b.Positions"></span><span class="target" id="classsls_1_1Detector_1ad9858026a3eace9f34cbcda3ac39c831"></span>void <code class="sig-name descname">setAutoCompDisable</code><span class="sig-paren">(</span>bool <em>value</em>, Positions <em>pos</em> = {}<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3sls8Detector18setAutoCompDisableEb9Positions" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>[Jungfrau] Advanced //TODO naming By default, the on-chip gain switching is active during the entire exposure. This mode disables the on-chip gain switching comparator automatically after 93.75% of exposure time (only for longer than 100us). </p>
+<dd><p>[Jungfrau] Advanced //TODO naming By default, the on-chip gain switching is active during the entire exposure. This mode disables the on-chip gain switching comparator automatically after 93.75% of exposure time (only for longer than 100us).<p>Default is false or this mode disabled(comparator enabled throughout). true enables ” “mode. 0 disables mode. </p>
+</p>
 </dd></dl>
 
 <dl class="cpp function">
@@ -1554,7 +1645,9 @@ containing results from all modules. (Result&lt;T&gt;)</p>
 <dl class="cpp function">
 <dt id="_CPPv4N3sls8Detector33setNumberOfAdditionalStorageCellsEi">
 <span id="_CPPv3N3sls8Detector33setNumberOfAdditionalStorageCellsEi"></span><span id="_CPPv2N3sls8Detector33setNumberOfAdditionalStorageCellsEi"></span><span id="sls::Detector::setNumberOfAdditionalStorageCells__i"></span><span class="target" id="classsls_1_1Detector_1adc570eec563cf81b0939b0547072a90a"></span>void <code class="sig-name descname">setNumberOfAdditionalStorageCells</code><span class="sig-paren">(</span>int <em>value</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3sls8Detector33setNumberOfAdditionalStorageCellsEi" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>[Jungfrau] Advanced </p>
+<dd><p>[Jungfrau] Advanced <p>Options: 0 - 15. Default: 0. </p>
+<p>The #images = #frames x #triggers x (#storagecells + 1) </p>
+</p>
 </dd></dl>
 
 <dl class="cpp function">
@@ -1566,7 +1659,7 @@ containing results from all modules. (Result&lt;T&gt;)</p>
 <dl class="cpp function">
 <dt id="_CPPv4N3sls8Detector19setStorageCellStartEi9Positions">
 <span id="_CPPv3N3sls8Detector19setStorageCellStartEi9Positions"></span><span id="_CPPv2N3sls8Detector19setStorageCellStartEi9Positions"></span><span id="sls::Detector::setStorageCellStart__i.Positions"></span><span class="target" id="classsls_1_1Detector_1a44bc7b8e8ce14773718208aac868171f"></span>void <code class="sig-name descname">setStorageCellStart</code><span class="sig-paren">(</span>int <em>cell</em>, Positions <em>pos</em> = {}<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3sls8Detector19setStorageCellStartEi9Positions" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>[Jungfrau] Advanced. Sets the storage cell storing the first acquisition of the series. Options: 0-15 </p>
+<dd><p>[Jungfrau] Advanced. Sets the storage cell storing the first acquisition of the series. Options: 0-15. Default: 15. </p>
 </dd></dl>
 
 <dl class="cpp function">
@@ -1578,7 +1671,8 @@ containing results from all modules. (Result&lt;T&gt;)</p>
 <dl class="cpp function">
 <dt id="_CPPv4N3sls8Detector19setStorageCellDelayE2ns9Positions">
 <span id="_CPPv3N3sls8Detector19setStorageCellDelayE2ns9Positions"></span><span id="_CPPv2N3sls8Detector19setStorageCellDelayE2ns9Positions"></span><span id="sls::Detector::setStorageCellDelay__ns.Positions"></span><span class="target" id="classsls_1_1Detector_1a44ed650e4bb267d0c9f19ed7505bd8f0"></span>void <code class="sig-name descname">setStorageCellDelay</code><span class="sig-paren">(</span>ns <em>value</em>, Positions <em>pos</em> = {}<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3sls8Detector19setStorageCellDelayE2ns9Positions" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>[Jungfrau] Advanced Options: (0-1638375 ns (resolution of 25ns) </p>
+<dd><p>[Jungfrau] Advanced <p>Options: (0-1638375 ns (resolution of 25ns) </p>
+</p>
 </dd></dl>
 
 <dl class="cpp function">
@@ -1642,9 +1736,9 @@ containing results from all modules. (Result&lt;T&gt;)</p>
 </dd></dl>
 
 <dl class="cpp function">
-<dt id="_CPPv4N3sls8Detector13getVetoPhotonEKi9Positions">
-<span id="_CPPv3N3sls8Detector13getVetoPhotonEKi9Positions"></span><span id="_CPPv2N3sls8Detector13getVetoPhotonEKi9Positions"></span><span id="sls::Detector::getVetoPhoton__iC.Positions"></span><span class="target" id="classsls_1_1Detector_1a0b66e9085db5206b6660d1a10f71ba0e"></span><a class="reference internal" href="result.html#_CPPv4I00EN3sls6ResultE" title="sls::Result">Result</a>&lt;std::vector&lt;int&gt;&gt; <code class="sig-name descname">getVetoPhoton</code><span class="sig-paren">(</span><em class="property">const</em> int <em>chipIndex</em>, Positions <em>pos</em> = {}<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3sls8Detector13getVetoPhotonEKi9Positions" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>[Gotthard2] adu values for each channel </p>
+<dt id="_CPPv4N3sls8Detector13getVetoPhotonEKiRKNSt6stringE9Positions">
+<span id="_CPPv3N3sls8Detector13getVetoPhotonEKiRKNSt6stringE9Positions"></span><span id="_CPPv2N3sls8Detector13getVetoPhotonEKiRKNSt6stringE9Positions"></span><span id="sls::Detector::getVetoPhoton__iC.ssCR.Positions"></span><span class="target" id="classsls_1_1Detector_1a5cfc3542f4a328f5fa573b105b9e71ab"></span>void <code class="sig-name descname">getVetoPhoton</code><span class="sig-paren">(</span><em class="property">const</em> int <em>chipIndex</em>, <em class="property">const</em> std::string &amp;<em>fname</em>, Positions <em>pos</em> = {}<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3sls8Detector13getVetoPhotonEKiRKNSt6stringE9Positions" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>[Gotthard2] gain indices and adu values for each channel </p>
 </dd></dl>
 
 <dl class="cpp function">
@@ -1662,7 +1756,7 @@ containing results from all modules. (Result&lt;T&gt;)</p>
 <dl class="cpp function">
 <dt id="_CPPv4N3sls8Detector11setVetoFileEKiRKNSt6stringE9Positions">
 <span id="_CPPv3N3sls8Detector11setVetoFileEKiRKNSt6stringE9Positions"></span><span id="_CPPv2N3sls8Detector11setVetoFileEKiRKNSt6stringE9Positions"></span><span id="sls::Detector::setVetoFile__iC.ssCR.Positions"></span><span class="target" id="classsls_1_1Detector_1a150a68de0e6b2e6b3304b21a345e4df7"></span>void <code class="sig-name descname">setVetoFile</code><span class="sig-paren">(</span><em class="property">const</em> int <em>chipIndex</em>, <em class="property">const</em> std::string &amp;<em>fname</em>, Positions <em>pos</em> = {}<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3sls8Detector11setVetoFileEKiRKNSt6stringE9Positions" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>[Gotthard2] </p>
+<dd><p>[Gotthard2] gain indices and adu values for each channel </p>
 </dd></dl>
 
 <dl class="cpp function">
@@ -1770,7 +1864,7 @@ containing results from all modules. (Result&lt;T&gt;)</p>
 <dl class="cpp function">
 <dt id="_CPPv4N3sls8Detector14setCounterMaskE8uint32_t9Positions">
 <span id="_CPPv3N3sls8Detector14setCounterMaskE8uint32_t9Positions"></span><span id="_CPPv2N3sls8Detector14setCounterMaskE8uint32_t9Positions"></span><span id="sls::Detector::setCounterMask__uint32_t.Positions"></span><span class="target" id="classsls_1_1Detector_1a609e5568ea5a1386a079d27fd5e4dd81"></span>void <code class="sig-name descname">setCounterMask</code><span class="sig-paren">(</span>uint32_t <em>countermask</em>, Positions <em>pos</em> = {}<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3sls8Detector14setCounterMaskE8uint32_t9Positions" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>[Mythen3] countermask bit set for each counter enabled </p>
+<dd><p>[Mythen3] countermask bit set for each counter index enabled </p>
 </dd></dl>
 
 <dl class="cpp function">
@@ -1817,7 +1911,7 @@ containing results from all modules. (Result&lt;T&gt;)</p>
 <dl class="cpp function">
 <dt id="_CPPv4NK3sls8Detector23getGateDelayForAllGatesE9Positions">
 <span id="_CPPv3NK3sls8Detector23getGateDelayForAllGatesE9Positions"></span><span id="_CPPv2NK3sls8Detector23getGateDelayForAllGatesE9Positions"></span><span id="sls::Detector::getGateDelayForAllGates__PositionsC"></span><span class="target" id="classsls_1_1Detector_1aacee0fb040adf1b146303192434f33d3"></span><a class="reference internal" href="result.html#_CPPv4I00EN3sls6ResultE" title="sls::Result">Result</a>&lt;std::array&lt;ns, 3&gt;&gt; <code class="sig-name descname">getGateDelayForAllGates</code><span class="sig-paren">(</span>Positions <em>pos</em> = {}<span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv4NK3sls8Detector23getGateDelayForAllGatesE9Positions" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>[Mythen3] gate delay for each gate signal in auto or trigger timing mode (internal gating). Gate index: 0-2, -1 for all </p>
+<dd><p>[Mythen3] gate delay for all gates in auto or trigger timing mode (internal gating). Gate index: 0-2, -1 for all </p>
 </dd></dl>
 
 <dl class="cpp function">
@@ -1931,7 +2025,9 @@ containing results from all modules. (Result&lt;T&gt;)</p>
 <dl class="cpp function">
 <dt id="_CPPv4N3sls8Detector14setReadoutModeEN4defs11readoutModeE9Positions">
 <span id="_CPPv3N3sls8Detector14setReadoutModeEN4defs11readoutModeE9Positions"></span><span id="_CPPv2N3sls8Detector14setReadoutModeEN4defs11readoutModeE9Positions"></span><span id="sls::Detector::setReadoutMode__defs::readoutMode.Positions"></span><span class="target" id="classsls_1_1Detector_1a4b33e603deab8deda641034ede9d104c"></span>void <code class="sig-name descname">setReadoutMode</code><span class="sig-paren">(</span>defs::readoutMode <em>value</em>, Positions <em>pos</em> = {}<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3sls8Detector14setReadoutModeEN4defs11readoutModeE9Positions" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>[CTB] Options: ANALOG_ONLY = 0, DIGITAL_ONLY = 1, ANALOG_AND_DIGITAL </p>
+<dd><p>[CTB] Options: ANALOG_ONLY, DIGITAL_ONLY, ANALOG_AND_DIGITAL</p>
+<p>Options: ANALOG_ONLY, DIGITAL_ONLY, ANALOG_AND_DIGITAL <p>Default: ANALOG_ONLY </p>
+</p>
 </dd></dl>
 
 <dl class="cpp function">
@@ -2009,7 +2105,7 @@ containing results from all modules. (Result&lt;T&gt;)</p>
 <dl class="cpp function">
 <dt id="_CPPv4N3sls8Detector13setRxDbitListERKNSt6vectorIiEE9Positions">
 <span id="_CPPv3N3sls8Detector13setRxDbitListERKNSt6vectorIiEE9Positions"></span><span id="_CPPv2N3sls8Detector13setRxDbitListERKNSt6vectorIiEE9Positions"></span><span id="sls::Detector::setRxDbitList__std::vector:i:CR.Positions"></span><span class="target" id="classsls_1_1Detector_1a46ea8816cf6331b84d1d5a0b2a9e8a8d"></span>void <code class="sig-name descname">setRxDbitList</code><span class="sig-paren">(</span><em class="property">const</em> std::vector&lt;int&gt; &amp;<em>list</em>, Positions <em>pos</em> = {}<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3sls8Detector13setRxDbitListERKNSt6vectorIiEE9Positions" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>[CTB] list contains the set of bits (0-63) to save </p>
+<dd><p>[CTB] list contains the set of digital signal bits (0-63) to save, must be non repetitive </p>
 </dd></dl>
 
 <dl class="cpp function">
@@ -2039,7 +2135,7 @@ containing results from all modules. (Result&lt;T&gt;)</p>
 <dl class="cpp function">
 <dt id="_CPPv4N3sls8Detector12setLEDEnableEb9Positions">
 <span id="_CPPv3N3sls8Detector12setLEDEnableEb9Positions"></span><span id="_CPPv2N3sls8Detector12setLEDEnableEb9Positions"></span><span id="sls::Detector::setLEDEnable__b.Positions"></span><span class="target" id="classsls_1_1Detector_1a306155d617dba6212f6f45acbf001b85"></span>void <code class="sig-name descname">setLEDEnable</code><span class="sig-paren">(</span>bool <em>enable</em>, Positions <em>pos</em> = {}<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3sls8Detector12setLEDEnableEb9Positions" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>[CTB] </p>
+<dd><p>[CTB] Default is enabled. </p>
 </dd></dl>
 
 <dl class="cpp function">
@@ -2142,7 +2238,7 @@ containing results from all modules. (Result&lt;T&gt;)</p>
 <dl class="cpp function">
 <dt id="_CPPv4N3sls8Detector14setPatternMaskE8uint64_t9Positions">
 <span id="_CPPv3N3sls8Detector14setPatternMaskE8uint64_t9Positions"></span><span id="_CPPv2N3sls8Detector14setPatternMaskE8uint64_t9Positions"></span><span id="sls::Detector::setPatternMask__uint64_t.Positions"></span><span class="target" id="classsls_1_1Detector_1a1da8f372938628e3079923a8784196eb"></span>void <code class="sig-name descname">setPatternMask</code><span class="sig-paren">(</span>uint64_t <em>mask</em>, Positions <em>pos</em> = {}<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3sls8Detector14setPatternMaskE8uint64_t9Positions" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>[CTB][Moench][Mythen3] Sets the mask applied to every pattern to the selected bit mask </p>
+<dd><p>[CTB][Moench][Mythen3] Sets the mask applied to every pattern to the selected bits </p>
 </dd></dl>
 
 <dl class="cpp function">
@@ -2154,7 +2250,7 @@ containing results from all modules. (Result&lt;T&gt;)</p>
 <dl class="cpp function">
 <dt id="_CPPv4N3sls8Detector17setPatternBitMaskE8uint64_t9Positions">
 <span id="_CPPv3N3sls8Detector17setPatternBitMaskE8uint64_t9Positions"></span><span id="_CPPv2N3sls8Detector17setPatternBitMaskE8uint64_t9Positions"></span><span id="sls::Detector::setPatternBitMask__uint64_t.Positions"></span><span class="target" id="classsls_1_1Detector_1a088b37a6263735c0f3d16bbc315ba008"></span>void <code class="sig-name descname">setPatternBitMask</code><span class="sig-paren">(</span>uint64_t <em>mask</em>, Positions <em>pos</em> = {}<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3sls8Detector17setPatternBitMaskE8uint64_t9Positions" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>[CTB][Moench][Mythen3] Sets the bitmask that the mask will be applied to for every pattern </p>
+<dd><p>[CTB][Moench][Mythen3] Selects the bits that will have a pattern mask applied to the selected patmask for every pattern. </p>
 </dd></dl>
 
 <dl class="cpp function">
@@ -2226,92 +2322,99 @@ containing results from all modules. (Result&lt;T&gt;)</p>
 <dl class="cpp function">
 <dt id="_CPPv4N3sls8Detector11programFPGAERKNSt6stringE9Positions">
 <span id="_CPPv3N3sls8Detector11programFPGAERKNSt6stringE9Positions"></span><span id="_CPPv2N3sls8Detector11programFPGAERKNSt6stringE9Positions"></span><span id="sls::Detector::programFPGA__ssCR.Positions"></span><span class="target" id="classsls_1_1Detector_1a11696046feeb0854bc6b1c31ece6ab30"></span>void <code class="sig-name descname">programFPGA</code><span class="sig-paren">(</span><em class="property">const</em> std::string &amp;<em>fname</em>, Positions <em>pos</em> = {}<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3sls8Detector11programFPGAERKNSt6stringE9Positions" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>[Jungfrau][CTB][Moench] fname is a pof file [Mythen3][Gotthard2] fname is an rbf file </p>
+<dd><p>Advanced user Function! [Jungfrau][CTB][Moench] fname is a pof file [Mythen3][Gotthard2] fname is an rbf file </p>
 </dd></dl>
 
 <dl class="cpp function">
 <dt id="_CPPv4N3sls8Detector9resetFPGAE9Positions">
 <span id="_CPPv3N3sls8Detector9resetFPGAE9Positions"></span><span id="_CPPv2N3sls8Detector9resetFPGAE9Positions"></span><span id="sls::Detector::resetFPGA__Positions"></span><span class="target" id="classsls_1_1Detector_1a199d51fc6f66ad5a48a5c109ea79b66b"></span>void <code class="sig-name descname">resetFPGA</code><span class="sig-paren">(</span>Positions <em>pos</em> = {}<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3sls8Detector9resetFPGAE9Positions" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>[Jungfrau][CTB][Moench] </p>
+<dd><p>[Jungfrau][CTB][Moench] Advanced user Function! </p>
 </dd></dl>
 
 <dl class="cpp function">
 <dt id="_CPPv4N3sls8Detector18copyDetectorServerERKNSt6stringERKNSt6stringE9Positions">
 <span id="_CPPv3N3sls8Detector18copyDetectorServerERKNSt6stringERKNSt6stringE9Positions"></span><span id="_CPPv2N3sls8Detector18copyDetectorServerERKNSt6stringERKNSt6stringE9Positions"></span><span id="sls::Detector::copyDetectorServer__ssCR.ssCR.Positions"></span><span class="target" id="classsls_1_1Detector_1a378fefaea2797dd825ca463e2999e985"></span>void <code class="sig-name descname">copyDetectorServer</code><span class="sig-paren">(</span><em class="property">const</em> std::string &amp;<em>fname</em>, <em class="property">const</em> std::string &amp;<em>hostname</em>, Positions <em>pos</em> = {}<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3sls8Detector18copyDetectorServerERKNSt6stringERKNSt6stringE9Positions" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>[Jungfrau][Gotthard][CTB][Moench][Mythen3][Gotthard2] Copy detector server fname from tftp folder of hostname to detector Also changes respawn server, which is effective after a reboot. </p>
+<dd><p>[Jungfrau][Gotthard][CTB][Moench][Mythen3][Gotthard2] Advanced user Function! Copy detector server fname from tftp folder of hostname to detector Also changes respawn server, which is effective after a reboot. </p>
 </dd></dl>
 
 <dl class="cpp function">
 <dt id="_CPPv4N3sls8Detector16rebootControllerE9Positions">
 <span id="_CPPv3N3sls8Detector16rebootControllerE9Positions"></span><span id="_CPPv2N3sls8Detector16rebootControllerE9Positions"></span><span id="sls::Detector::rebootController__Positions"></span><span class="target" id="classsls_1_1Detector_1af0c2fa8f9012cb36c230eda621e1e25e"></span>void <code class="sig-name descname">rebootController</code><span class="sig-paren">(</span>Positions <em>pos</em> = {}<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3sls8Detector16rebootControllerE9Positions" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>[Jungfrau][Gotthard][CTB][Moench][Mythen3][Gotthard2] </p>
+<dd><p>[Jungfrau][Gotthard][CTB][Moench][Mythen3][Gotthard2] Advanced user Function! </p>
 </dd></dl>
 
 <dl class="cpp function">
 <dt id="_CPPv4N3sls8Detector23updateFirmwareAndServerERKNSt6stringERKNSt6stringERKNSt6stringE9Positions">
 <span id="_CPPv3N3sls8Detector23updateFirmwareAndServerERKNSt6stringERKNSt6stringERKNSt6stringE9Positions"></span><span id="_CPPv2N3sls8Detector23updateFirmwareAndServerERKNSt6stringERKNSt6stringERKNSt6stringE9Positions"></span><span id="sls::Detector::updateFirmwareAndServer__ssCR.ssCR.ssCR.Positions"></span><span class="target" id="classsls_1_1Detector_1a043ff398a66280c916fb0127a6364907"></span>void <code class="sig-name descname">updateFirmwareAndServer</code><span class="sig-paren">(</span><em class="property">const</em> std::string &amp;<em>sname</em>, <em class="property">const</em> std::string &amp;<em>hostname</em>, <em class="property">const</em> std::string &amp;<em>fname</em>, Positions <em>pos</em> = {}<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3sls8Detector23updateFirmwareAndServerERKNSt6stringERKNSt6stringERKNSt6stringE9Positions" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>[Jungfrau][Gotthard][CTB][Moench] Updates the firmware, detector server and then reboots detector controller blackfin. sname is name of detector server binary found on tftp folder of host pc hostname is name of pc to tftp from fname is programming file name </p>
+<dd><p>[Jungfrau][Gotthard][CTB][Moench] Advanced user Function! Updates the firmware, detector server and then reboots detector controller blackfin. sname is name of detector server binary found on tftp folder of host pc hostname is name of pc to tftp from fname is programming file name </p>
 </dd></dl>
 
 <dl class="cpp function">
 <dt id="_CPPv4NK3sls8Detector12readRegisterE8uint32_t9Positions">
 <span id="_CPPv3NK3sls8Detector12readRegisterE8uint32_t9Positions"></span><span id="_CPPv2NK3sls8Detector12readRegisterE8uint32_t9Positions"></span><span id="sls::Detector::readRegister__uint32_t.PositionsC"></span><span class="target" id="classsls_1_1Detector_1a5f41207d1b365605e5b96bfc63402cd0"></span><a class="reference internal" href="result.html#_CPPv4I00EN3sls6ResultE" title="sls::Result">Result</a>&lt;uint32_t&gt; <code class="sig-name descname">readRegister</code><span class="sig-paren">(</span>uint32_t <em>addr</em>, Positions <em>pos</em> = {}<span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv4NK3sls8Detector12readRegisterE8uint32_t9Positions" title="Permalink to this definition">¶</a><br /></dt>
-<dd></dd></dl>
+<dd><p>Advanced user Function! <p>[Eiger] Address is +0x100 for only left, +0x200 for only right. </p>
+</p>
+</dd></dl>
 
 <dl class="cpp function">
 <dt id="_CPPv4N3sls8Detector13writeRegisterE8uint32_t8uint32_t9Positions">
 <span id="_CPPv3N3sls8Detector13writeRegisterE8uint32_t8uint32_t9Positions"></span><span id="_CPPv2N3sls8Detector13writeRegisterE8uint32_t8uint32_t9Positions"></span><span id="sls::Detector::writeRegister__uint32_t.uint32_t.Positions"></span><span class="target" id="classsls_1_1Detector_1abd40c16afc0c1977dc2273a5b39fad75"></span>void <code class="sig-name descname">writeRegister</code><span class="sig-paren">(</span>uint32_t <em>addr</em>, uint32_t <em>val</em>, Positions <em>pos</em> = {}<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3sls8Detector13writeRegisterE8uint32_t8uint32_t9Positions" title="Permalink to this definition">¶</a><br /></dt>
-<dd></dd></dl>
+<dd><p>Advanced user Function! <p>[Eiger] Address is +0x100 for only left, +0x200 for only right. </p>
+</p>
+</dd></dl>
 
 <dl class="cpp function">
 <dt id="_CPPv4N3sls8Detector6setBitE8uint32_ti9Positions">
 <span id="_CPPv3N3sls8Detector6setBitE8uint32_ti9Positions"></span><span id="_CPPv2N3sls8Detector6setBitE8uint32_ti9Positions"></span><span id="sls::Detector::setBit__uint32_t.i.Positions"></span><span class="target" id="classsls_1_1Detector_1a56a5d7994ba003d1d18fb40b5e0fedda"></span>void <code class="sig-name descname">setBit</code><span class="sig-paren">(</span>uint32_t <em>addr</em>, int <em>bitnr</em>, Positions <em>pos</em> = {}<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3sls8Detector6setBitE8uint32_ti9Positions" title="Permalink to this definition">¶</a><br /></dt>
-<dd></dd></dl>
+<dd><p>Advanced user Function! </p>
+</dd></dl>
 
 <dl class="cpp function">
 <dt id="_CPPv4N3sls8Detector8clearBitE8uint32_ti9Positions">
 <span id="_CPPv3N3sls8Detector8clearBitE8uint32_ti9Positions"></span><span id="_CPPv2N3sls8Detector8clearBitE8uint32_ti9Positions"></span><span id="sls::Detector::clearBit__uint32_t.i.Positions"></span><span class="target" id="classsls_1_1Detector_1af2019da6286bc2dd4ee6e55f54d87103"></span>void <code class="sig-name descname">clearBit</code><span class="sig-paren">(</span>uint32_t <em>addr</em>, int <em>bitnr</em>, Positions <em>pos</em> = {}<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3sls8Detector8clearBitE8uint32_ti9Positions" title="Permalink to this definition">¶</a><br /></dt>
-<dd></dd></dl>
+<dd><p>Advanced user Function! </p>
+</dd></dl>
 
 <dl class="cpp function">
 <dt id="_CPPv4N3sls8Detector19executeFirmwareTestE9Positions">
 <span id="_CPPv3N3sls8Detector19executeFirmwareTestE9Positions"></span><span id="_CPPv2N3sls8Detector19executeFirmwareTestE9Positions"></span><span id="sls::Detector::executeFirmwareTest__Positions"></span><span class="target" id="classsls_1_1Detector_1a468d0a3ae3d927ec4da59eb0b9785bb2"></span>void <code class="sig-name descname">executeFirmwareTest</code><span class="sig-paren">(</span>Positions <em>pos</em> = {}<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3sls8Detector19executeFirmwareTestE9Positions" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>[Gotthard][Jungfrau][Mythen3][Gotthard2][CTB][Moench] </p>
+<dd><p>[Gotthard][Jungfrau][Mythen3][Gotthard2][CTB][Moench] Advanced user Function! </p>
 </dd></dl>
 
 <dl class="cpp function">
 <dt id="_CPPv4N3sls8Detector14executeBusTestE9Positions">
 <span id="_CPPv3N3sls8Detector14executeBusTestE9Positions"></span><span id="_CPPv2N3sls8Detector14executeBusTestE9Positions"></span><span id="sls::Detector::executeBusTest__Positions"></span><span class="target" id="classsls_1_1Detector_1aac5d10ed2808cd65a33d934aba5f2f8c"></span>void <code class="sig-name descname">executeBusTest</code><span class="sig-paren">(</span>Positions <em>pos</em> = {}<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3sls8Detector14executeBusTestE9Positions" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>[Gotthard][Jungfrau][Mythen3][Gotthard2][CTB][Moench] </p>
+<dd><p>[Gotthard][Jungfrau][Mythen3][Gotthard2][CTB][Moench] Advanced user Function! </p>
 </dd></dl>
 
 <dl class="cpp function">
 <dt id="_CPPv4N3sls8Detector16writeAdcRegisterE8uint32_t8uint32_t9Positions">
 <span id="_CPPv3N3sls8Detector16writeAdcRegisterE8uint32_t8uint32_t9Positions"></span><span id="_CPPv2N3sls8Detector16writeAdcRegisterE8uint32_t8uint32_t9Positions"></span><span id="sls::Detector::writeAdcRegister__uint32_t.uint32_t.Positions"></span><span class="target" id="classsls_1_1Detector_1a69f9df02ae88dbc8a67eacf6c032bb95"></span>void <code class="sig-name descname">writeAdcRegister</code><span class="sig-paren">(</span>uint32_t <em>addr</em>, uint32_t <em>value</em>, Positions <em>pos</em> = {}<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3sls8Detector16writeAdcRegisterE8uint32_t8uint32_t9Positions" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>[Gotthard][Jungfrau][CTB][Moench] not possible to read back </p>
+<dd><p>[Gotthard][Jungfrau][CTB][Moench] Advanced user Function! not possible to read back </p>
 </dd></dl>
 
 <dl class="cpp function">
 <dt id="_CPPv4NK3sls8Detector16getInitialChecksEv">
 <span id="_CPPv3NK3sls8Detector16getInitialChecksEv"></span><span id="_CPPv2NK3sls8Detector16getInitialChecksEv"></span><span id="sls::Detector::getInitialChecksC"></span><span class="target" id="classsls_1_1Detector_1a4c7ca8db8e7d4690a8a8f326ae72daf2"></span>bool <code class="sig-name descname">getInitialChecks</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv4NK3sls8Detector16getInitialChecksEv" title="Permalink to this definition">¶</a><br /></dt>
-<dd></dd></dl>
+<dd><p>Advanced user Function! </p>
+</dd></dl>
 
 <dl class="cpp function">
 <dt id="_CPPv4N3sls8Detector16setInitialChecksEKb">
 <span id="_CPPv3N3sls8Detector16setInitialChecksEKb"></span><span id="_CPPv2N3sls8Detector16setInitialChecksEKb"></span><span id="sls::Detector::setInitialChecks__bC"></span><span class="target" id="classsls_1_1Detector_1a2a1061a7be1dfc93f4a85335687b4dbe"></span>void <code class="sig-name descname">setInitialChecks</code><span class="sig-paren">(</span><em class="property">const</em> bool <em>value</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3sls8Detector16setInitialChecksEKb" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>initial compaibility and other server start up checks default enabled </p>
+<dd><p>initial compaibility and other server start up checks default enabled Advanced user Function! </p>
 </dd></dl>
 
 <dl class="cpp function">
 <dt id="_CPPv4NK3sls8Detector12getADCInvertE9Positions">
 <span id="_CPPv3NK3sls8Detector12getADCInvertE9Positions"></span><span id="_CPPv2NK3sls8Detector12getADCInvertE9Positions"></span><span id="sls::Detector::getADCInvert__PositionsC"></span><span class="target" id="classsls_1_1Detector_1a879a930d1dc00c0282a2399922a00f26"></span><a class="reference internal" href="result.html#_CPPv4I00EN3sls6ResultE" title="sls::Result">Result</a>&lt;uint32_t&gt; <code class="sig-name descname">getADCInvert</code><span class="sig-paren">(</span>Positions <em>pos</em> = {}<span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv4NK3sls8Detector12getADCInvertE9Positions" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>[CTB][Moench][Jungfrau] </p>
+<dd><p>[CTB][Moench][Jungfrau] Advanced user Function! </p>
 </dd></dl>
 
 <dl class="cpp function">
 <dt id="_CPPv4N3sls8Detector12setADCInvertE8uint32_t9Positions">
 <span id="_CPPv3N3sls8Detector12setADCInvertE8uint32_t9Positions"></span><span id="_CPPv2N3sls8Detector12setADCInvertE8uint32_t9Positions"></span><span id="sls::Detector::setADCInvert__uint32_t.Positions"></span><span class="target" id="classsls_1_1Detector_1aac6b9cbefbbb1566d82b7754b2c3ac7a"></span>void <code class="sig-name descname">setADCInvert</code><span class="sig-paren">(</span>uint32_t <em>value</em>, Positions <em>pos</em> = {}<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3sls8Detector12setADCInvertE8uint32_t9Positions" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>[CTB][Moench][Jungfrau] </p>
+<dd><p>[CTB][Moench][Jungfrau] Advanced user Function! </p>
 </dd></dl>
 
 <dl class="cpp function">
@@ -2344,7 +2447,8 @@ containing results from all modules. (Result&lt;T&gt;)</p>
 <dl class="cpp function">
 <dt id="_CPPv4N3sls8Detector15setDetectorLockEb9Positions">
 <span id="_CPPv3N3sls8Detector15setDetectorLockEb9Positions"></span><span id="_CPPv2N3sls8Detector15setDetectorLockEb9Positions"></span><span id="sls::Detector::setDetectorLock__b.Positions"></span><span class="target" id="classsls_1_1Detector_1a0cbb7b255ef2834fa17c16d23733837a"></span>void <code class="sig-name descname">setDetectorLock</code><span class="sig-paren">(</span>bool <em>lock</em>, Positions <em>pos</em> = {}<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3sls8Detector15setDetectorLockEb9Positions" title="Permalink to this definition">¶</a><br /></dt>
-<dd></dd></dl>
+<dd><p>lock detector to one client IP. default is unlocked </p>
+</dd></dl>
 
 <dl class="cpp function">
 <dt id="_CPPv4NK3sls8Detector15getLastClientIPE9Positions">
