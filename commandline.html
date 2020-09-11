@@ -13,6 +13,7 @@
   
   <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/css/extra.css" type="text/css" />
 
   
   
@@ -120,6 +121,10 @@
 <li class="toctree-l1"><a class="reference internal" href="type_traits.html">TypeTraits</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ToString.html">ToString</a></li>
 </ul>
+<p class="caption"><span class="caption-text">Servers</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="servers.html">Default values</a></li>
+</ul>
 
             
           
@@ -205,10 +210,6 @@
 <div class="line">Padding will pad data files for deactivates readouts.</div>
 </div>
 </dd>
-<dt id="term-adc-n_channel-0-7-for-channel-8-for-temperature">adc [n_channel (0-7 for channel|8 for temperature)]</dt><dd><div class="line-block">
-<div class="line">[Ctb] Slow ADC channel in mV or °C.</div>
-</div>
-</dd>
 <dt id="term-adcclk-n_clk-in-MHz">adcclk [n_clk in MHz]</dt><dd><div class="line-block">
 <div class="line">[Ctb][Moench] ADC clock frequency in MHz.</div>
 </div>
@@ -261,8 +262,8 @@
 <div class="line">[Gotthard2] Sets the bad channels (from file of bad channel numbers) to be masked out.</div>
 </div>
 </dd>
-<dt id="term-burstmode-off-or-0-internal-or-1-external-or-2">burstmode [off or 0, internal or 1, external or 2]</dt><dd><div class="line-block">
-<div class="line">[Gotthard2] Default is burst internal type</div>
+<dt id="term-burstmode-burst_internal-or-0-burst_external-or-1-cw_internal-or-2-cw_external-or-3">burstmode [burst_internal or 0, burst_external or 1, cw_internal or 2, cw_external or 3]</dt><dd><div class="line-block">
+<div class="line">[Gotthard2] Default is burst_internal type</div>
 </div>
 </dd>
 <dt id="term-burstperiod-duration-optional-unit-ns-us-ms-s">burstperiod [duration] [(optional unit) ns|us|ms|s]</dt><dd><div class="line-block">
@@ -297,15 +298,15 @@
 <div class="line">Client software version in format [0xYYMMDD].</div>
 </div>
 </dd>
-<dt id="term-clkdiv-n_clock-0-8-n_divider">clkdiv [n_clock (0-8)] [n_divider]</dt><dd><div class="line-block">
+<dt id="term-clkdiv-n_clock-0-5-n_divider">clkdiv [n_clock (0-5)] [n_divider]</dt><dd><div class="line-block">
 <div class="line">[Gotthard2][Mythen3] Clock Divider of clock n_clock. Must be greater than 1.</div>
 </div>
 </dd>
-<dt id="term-clkfreq-n_clock-0-8-freq_in_Hz">clkfreq [n_clock (0-8)] [freq_in_Hz]</dt><dd><div class="line-block">
+<dt id="term-clkfreq-n_clock-0-5-freq_in_Hz">clkfreq [n_clock (0-5)] [freq_in_Hz]</dt><dd><div class="line-block">
 <div class="line">[Gotthard2][Mythen3] Frequency of clock n_clock in Hz. Use clkdiv to set frequency.</div>
 </div>
 </dd>
-<dt id="term-clkphase-n_clock-0-8-phase-deg-optional">clkphase [n_clock (0-8)] [phase] [deg (optional)]</dt><dd><div class="line-block">
+<dt id="term-clkphase-n_clock-0-5-phase-deg-optional">clkphase [n_clock (0-5)] [phase] [deg (optional)]</dt><dd><div class="line-block">
 <div class="line">[Gotthard2][Mythen3] Phase of clock n_clock. If deg, then phase shift in degrees, else absolute phase shift values.</div>
 </div>
 </dd>
@@ -363,10 +364,6 @@
 <div class="line">[Gotthard2] only in continuous mode.</div>
 </div>
 </dd>
-<dt id="term-detectormode-counting-interpolating-analog">detectormode [counting|interpolating|analog]</dt><dd><div class="line-block">
-<div class="line">[Moench] Detector mode (soft setting) in processor.</div>
-</div>
-</dd>
 <dt id="term-detectornumber">detectornumber</dt><dd><div class="line-block">
 <div class="line">Receiver version in format [0xYYMMDD].</div>
 </div>
@@ -396,14 +393,6 @@
 </dd>
 <dt id="term-dsamples-n_value">dsamples [n_value]</dt><dd><div class="line-block">
 <div class="line">[CTB] Number of digital samples expected.</div>
-</div>
-</dd>
-<dt id="term-emax-n_value">emax [n_value]</dt><dd><div class="line-block">
-<div class="line">[Moench] Maximum energy threshold (soft setting) for processor.</div>
-</div>
-</dd>
-<dt id="term-emin-n_value">emin [n_value]</dt><dd><div class="line-block">
-<div class="line">[Moench] Minimum energy threshold (soft setting) for processor.</div>
 </div>
 </dd>
 <dt id="term-execcommand-command">execcommand [command]</dt><dd><div class="line-block">
@@ -489,10 +478,6 @@
 </dd>
 <dt id="term-fpath-path">fpath [path]</dt><dd><div class="line-block">
 <div class="line">Directory where output data files are written in receiver. If path does not exist, it will try to create it.</div>
-</div>
-</dd>
-<dt id="term-framemode-pedestal-newpedestal-flatfield-newflatfield">framemode [pedestal|newpedestal|flatfield|newflatfield]</dt><dd><div class="line-block">
-<div class="line">[Moench] Frame mode (soft setting) in processor.</div>
 </div>
 </dd>
 <dt id="term-frames-n_frames">frames [n_frames]</dt><dd><div class="line-block">
@@ -621,7 +606,7 @@
 <div class="line">[Jungfrau][CTB][Moench] Absolute maximum Phase shift of ADC clock.</div>
 </div>
 </dd>
-<dt id="term-maxclkphaseshift-n_clock-0-8">maxclkphaseshift [n_clock (0-8)]</dt><dd><div class="line-block">
+<dt id="term-maxclkphaseshift-n_clock-0-5">maxclkphaseshift [n_clock (0-5)]</dt><dd><div class="line-block">
 <div class="line">[Gotthard2][Mythen3] Absolute Maximum Phase shift of clock n_clock.</div>
 </div>
 </dd>
@@ -640,6 +625,10 @@
 <dt id="term-nframes">nframes</dt><dd><div class="line-block">
 <div class="line">[Jungfrau][Mythen3][Gotthard2][Moench][CTB] Number of frames from start run control.</div>
 <div class="line">[Gotthard2] only in continuous mode.</div>
+</div>
+</dd>
+<dt id="term-nmod">nmod</dt><dd><div class="line-block">
+<div class="line">Number of modules in shared memory.</div>
 </div>
 </dd>
 <dt id="term-now-optional-unit-ns-us-ms-s">now [(optional unit) ns|us|ms|s]</dt><dd><div class="line-block">
@@ -663,7 +652,8 @@
 </div>
 </dd>
 <dt id="term-parallel-0-1">parallel [0, 1]</dt><dd><div class="line-block">
-<div class="line">[Eiger] Enable or disable parallel mode.</div>
+<div class="line">[Eiger][Mythen3] Enable or disable parallel mode.</div>
+<div class="line">[Mythen3] If exptime is too short, the acquisition will return ERROR status and take fewer frames than expected.</div>
 </div>
 </dd>
 <dt id="term-parameters-fname">parameters [fname]</dt><dd><div class="line-block">
@@ -824,12 +814,6 @@
 <div class="line">[Ctb][Moench] Run clock in MHz.</div>
 </div>
 </dd>
-<dt id="term-rx_datastream-0-1">rx_datastream [0, 1]</dt><dd><div class="line-block">
-<div class="line">Enable/ disable data streaming from receiver via zmq (eg. to GUI or to another process for further processing). This creates/ destroys zmq streamer threads in receiver.</div>
-<div class="line">Switching to Gui automatically enables data streaming in receiver.</div>
-<div class="line">Switching back to command line acquire will require disabling data streaming in receiver for fast applications.</div>
-</div>
-</dd>
 <dt id="term-rx_dbitlist-all-or-i0-i1-i2-...">rx_dbitlist [all] or [i0] [i1] [i2]…</dt><dd><div class="line-block">
 <div class="line">[Ctb] List of digital signal bits read out. If all is used instead of a list, all digital bits (64) enabled. Each element in list can be 0 - 63 and must be non repetitive.</div>
 </div>
@@ -893,13 +877,6 @@
 <div class="line">Prints the receiver configuration.</div>
 </div>
 </dd>
-<dt id="term-rx_readfreq-nth-frame">rx_readfreq [nth frame]</dt><dd><div class="line-block">
-<div class="line">Frequency of frames streamed out from receiver via zmq</div>
-<div class="line">Default: 1, Means every frame is streamed out.</div>
-<div class="line">If 2, every second frame is streamed out.</div>
-<div class="line">If 0, streaming timer is the timeout, after which current frame is sent out. (default timeout is 200 ms). Usually used for gui purposes.</div>
-</div>
-</dd>
 <dt id="term-rx_realudpsocksize">rx_realudpsocksize</dt><dd><div class="line-block">
 <div class="line">Actual udp socket buffer size. Double the size of rx_udpsocksize due to kernel bookkeeping.</div>
 </div>
@@ -936,6 +913,13 @@
 <div class="line">Receiver version in format [0xYYMMDD].</div>
 </div>
 </dd>
+<dt id="term-rx_zmqfreq-nth-frame">rx_zmqfreq [nth frame]</dt><dd><div class="line-block">
+<div class="line">Frequency of frames streamed out from receiver via zmq</div>
+<div class="line">Default: 1, Means every frame is streamed out.</div>
+<div class="line">If 2, every second frame is streamed out.</div>
+<div class="line">If 0, streaming timer is the timeout, after which current frame is sent out. (default timeout is 200 ms). Usually used for gui purposes.</div>
+</div>
+</dd>
 <dt id="term-rx_zmqip-x.x.x.x">rx_zmqip [x.x.x.x]</dt><dd><div class="line-block">
 <div class="line">Zmq Ip Address from which data is to be streamed out of the receiver. Also restarts receiver zmq streaming if enabled. Default is from rx_hostname. Modified only when using an intermediate process between receiver.</div>
 </div>
@@ -946,6 +930,12 @@
 </dd>
 <dt id="term-rx_zmqstartfnum-fnum">rx_zmqstartfnum [fnum]</dt><dd><div class="line-block">
 <div class="line">The starting frame index to stream out. 0 by default, which streams the first frame in an acquisition, and then depending on the rx zmq frequency/ timer</div>
+</div>
+</dd>
+<dt id="term-rx_zmqstream-0-1">rx_zmqstream [0, 1]</dt><dd><div class="line-block">
+<div class="line">Enable/ disable data streaming from receiver via zmq (eg. to GUI or to another process for further processing). This creates/ destroys zmq streamer threads in receiver.</div>
+<div class="line">Switching to Gui automatically enables data streaming in receiver.</div>
+<div class="line">Switching back to command line acquire will require disabling data streaming in receiver for fast applications.</div>
 </div>
 </dd>
 <dt id="term-rxb_lb-dac-or-mV-value-optional-unit-mV">rxb_lb [dac or mV value][(optional unit) mV]</dt><dd><div class="line-block">
@@ -1003,6 +993,10 @@
 <div class="line">[Eiger] Directory where settings files are loaded from/to.</div>
 </div>
 </dd>
+<dt id="term-slowadc-n_channel-0-7-for-channel">slowadc [n_channel (0-7 for channel]</dt><dd><div class="line-block">
+<div class="line">[Ctb] Slow ADC channel in mV</div>
+</div>
+</dd>
 <dt id="term-speed-0-or-full_speed-1-or-half_speed-2-or-quarter_speed">speed [0 or full_speed|1 or half_speed|2 or quarter_speed]</dt><dd><div class="line-block">
 <div class="line">[Eiger][Jungfrau] Readout speed of chip.</div>
 <div class="line">[Jungfrau] FULL_SPEED option only available from v2.0 boards and with setting number of interfaces to 2. Also overwrites adcphase to recommended default.</div>
@@ -1046,7 +1040,7 @@
 </div>
 </dd>
 <dt id="term-subexptime-duration-optional-unit-ns-us-ms-s">subexptime [duration] [(optional unit) ns|us|ms|s]</dt><dd><div class="line-block">
-<div class="line">[Eiger] Exposure time of EIGER subframes</div>
+<div class="line">[Eiger] Exposure time of EIGER subframes in 32 bit mode.</div>
 </div>
 </dd>
 <dt id="term-syncclk-n_clk-in-MHz">syncclk [n_clk in MHz]</dt><dd><div class="line-block">
@@ -1083,11 +1077,11 @@
 </div>
 </dd>
 <dt id="term-temp_fpgafl-n_value">temp_fpgafl [n_value]</dt><dd><div class="line-block">
-<div class="line">[Eiger]Temperature of the left front end board fpga</div>
+<div class="line">[Eiger]Temperature of the left front end board fpga. Cannot call this while blocking acquire is going on.</div>
 </div>
 </dd>
 <dt id="term-temp_fpgafr-n_value">temp_fpgafr [n_value]</dt><dd><div class="line-block">
-<div class="line">[Eiger]Temperature of the left front end board fpga</div>
+<div class="line">[Eiger]Temperature of the left front end board fpga. Cannot call this while blocking acquire is going on.</div>
 </div>
 </dd>
 <dt id="term-temp_slowadc-n_value">temp_slowadc [n_value]</dt><dd><div class="line-block">
@@ -1119,7 +1113,7 @@
 </div>
 </dd>
 <dt id="term-threshold-eV-optinal-settings-standard-lowgain-veryhighgain-verylowgain">threshold [eV] [(optinal settings) standard, lowgain, veryhighgain, verylowgain]</dt><dd><div class="line-block">
-<div class="line">[Eiger] Threshold in eV</div>
+<div class="line">[Eiger] Threshold in eV. It loads trim files from settingspath.</div>
 </div>
 </dd>
 <dt id="term-thresholdnotb-eV-optional-settings-standard-lowgain-veryhighgain-verylowgain">thresholdnotb [eV] [(optional settings) standard, lowgain, veryhighgain, verylowgain]</dt><dd><div class="line-block">
@@ -1133,8 +1127,8 @@
 </dd>
 <dt id="term-timing-auto-trigger-gating-burst_trigger">timing [auto|trigger|gating|burst_trigger]</dt><dd><div class="line-block">
 <div class="line">Timing Mode of detector.</div>
-<div class="line">[Jungfrau][Gotthard][Mythen3][Ctb][Moench] [auto|trigger]</div>
-<div class="line">[Gotthard2] [auto|trigger|gating|trigger_gating]</div>
+<div class="line">[Jungfrau][Gotthard][Ctb][Moench][Gotthard2] [auto|trigger]</div>
+<div class="line">[Mythen3] [auto|trigger|gating|trigger_gating]</div>
 <div class="line">[Eiger] [auto|trigger|gating|burst_trigger]</div>
 </div>
 </dd>
@@ -1147,7 +1141,7 @@
 </div>
 </dd>
 <dt id="term-trigger">trigger</dt><dd><div class="line-block">
-<div class="line">[Eiger] Sends software trigger signal to detector.</div>
+<div class="line">[Eiger][Mythen3] Sends software trigger signal to detector.</div>
 </div>
 </dd>
 <dt id="term-triggers-n_triggers">triggers [n_triggers]</dt><dd><div class="line-block">

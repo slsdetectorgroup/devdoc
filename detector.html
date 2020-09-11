@@ -13,6 +13,7 @@
   
   <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/css/extra.css" type="text/css" />
 
   
   
@@ -115,6 +116,10 @@
 <li class="toctree-l1"><a class="reference internal" href="container_utils.html">ContainerUtils</a></li>
 <li class="toctree-l1"><a class="reference internal" href="type_traits.html">TypeTraits</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ToString.html">ToString</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Servers</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="servers.html">Default values</a></li>
 </ul>
 
             
@@ -512,7 +517,9 @@ containing results from all modules. (Result&lt;T&gt;)</p>
 <dl class="cpp function">
 <dt id="_CPPv4N3sls8Detector13setTimingModeEN4defs10timingModeE9Positions">
 <span id="_CPPv3N3sls8Detector13setTimingModeEN4defs10timingModeE9Positions"></span><span id="_CPPv2N3sls8Detector13setTimingModeEN4defs10timingModeE9Positions"></span><span id="sls::Detector::setTimingMode__defs::timingMode.Positions"></span><span class="target" id="classsls_1_1Detector_1a9535c7962dded9c8f21ed35683876726"></span>void <code class="sig-name descname">setTimingMode</code><span class="sig-paren">(</span>defs::timingMode <em>value</em>, Positions <em>pos</em> = {}<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3sls8Detector13setTimingModeEN4defs10timingModeE9Positions" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>[Gotthard][Jungfrau][CTB][Moench][Mythen3] Options: AUTO_TIMING, TRIGGER_EXPOSURE [Gotthard2] Options: AUTO_TIMING, TRIGGER_EXPOSURE, GATED, TRIGGER_GATED [Eiger] Options: AUTO_TIMING, TRIGGER_EXPOSURE, GATED, BURST_TRIGGER </p>
+<dd><p>[Gotthard][Jungfrau][Gotthard][CTB][Moench][Gotthard2] Options: AUTO_TIMING, TRIGGER_EXPOSURE <p>[Mythen3] Options: AUTO_TIMING, TRIGGER_EXPOSURE, GATED, TRIGGER_GATED </p>
+<p>[Eiger] Options: AUTO_TIMING, TRIGGER_EXPOSURE, GATED, BURST_TRIGGER </p>
+</p>
 </dd></dl>
 
 <dl class="cpp function">
@@ -699,7 +706,11 @@ containing results from all modules. (Result&lt;T&gt;)</p>
 <dl class="cpp function">
 <dt id="_CPPv4NK3sls8Detector14getTemperatureEN4defs8dacIndexE9Positions">
 <span id="_CPPv3NK3sls8Detector14getTemperatureEN4defs8dacIndexE9Positions"></span><span id="_CPPv2NK3sls8Detector14getTemperatureEN4defs8dacIndexE9Positions"></span><span id="sls::Detector::getTemperature__defs::dacIndex.PositionsC"></span><span class="target" id="classsls_1_1Detector_1a891e22251665841ba7fef2b8d8dc160d"></span><a class="reference internal" href="result.html#_CPPv4I00EN3sls6ResultE" title="sls::Result">Result</a>&lt;int&gt; <code class="sig-name descname">getTemperature</code><span class="sig-paren">(</span>defs::dacIndex <em>index</em>, Positions <em>pos</em> = {}<span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv4NK3sls8Detector14getTemperatureEN4defs8dacIndexE9Positions" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>(Degrees) [Gotthard] Options: TEMPERATURE_ADC, TEMPERATURE_FPGA [Jungfrau] Options: TEMPERATURE_ADC, TEMPERATURE_FPGA [Eiger] Options: TEMPERATURE_FPGA, TEMPERATURE_FPGAEXT, TEMPERATURE_10GE, TEMPERATURE_DCDC, TEMPERATURE_SODL, TEMPERATURE_SODR, TEMPERATURE_FPGA2, TEMPERATURE_FPGA3 [CTB] Options: SLOW_ADC_TEMP </p>
+<dd><p>(Degrees) [Gotthard] Options: TEMPERATURE_ADC, TEMPERATURE_FPGA <p>[Jungfrau] Options: TEMPERATURE_ADC, TEMPERATURE_FPGA </p>
+<p>[Eiger] Options: TEMPERATURE_FPGA, TEMPERATURE_FPGAEXT, TEMPERATURE_10GE, TEMPERATURE_DCDC, TEMPERATURE_SODL, TEMPERATURE_SODR, TEMPERATURE_FPGA2, TEMPERATURE_FPGA3 </p>
+<p>Cannot call TEMPERATURE_FPGA2 and TEMPERATURE_FPGA3 when blocking acquire in progress </p>
+<p> [CTB] Options: SLOW_ADC_TEMP </p>
+</p>
 </dd></dl>
 
 <dl class="cpp function">
@@ -710,12 +721,12 @@ containing results from all modules. (Result&lt;T&gt;)</p>
 
 <dl class="cpp function">
 <dt id="_CPPv4NK3sls8Detector6getDACEN4defs8dacIndexEb9Positions">
-<span id="_CPPv3NK3sls8Detector6getDACEN4defs8dacIndexEb9Positions"></span><span id="_CPPv2NK3sls8Detector6getDACEN4defs8dacIndexEb9Positions"></span><span id="sls::Detector::getDAC__defs::dacIndex.b.PositionsC"></span><span class="target" id="classsls_1_1Detector_1ab77f9382b0059d15243640906183dba6"></span><a class="reference internal" href="result.html#_CPPv4I00EN3sls6ResultE" title="sls::Result">Result</a>&lt;int&gt; <code class="sig-name descname">getDAC</code><span class="sig-paren">(</span>defs::dacIndex <em>index</em>, bool <em>mV</em>, Positions <em>pos</em> = {}<span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv4NK3sls8Detector6getDACEN4defs8dacIndexEb9Positions" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv3NK3sls8Detector6getDACEN4defs8dacIndexEb9Positions"></span><span id="_CPPv2NK3sls8Detector6getDACEN4defs8dacIndexEb9Positions"></span><span id="sls::Detector::getDAC__defs::dacIndex.b.PositionsC"></span><span class="target" id="classsls_1_1Detector_1aba6ce205749b306f6e753bb3661b5fdf"></span><a class="reference internal" href="result.html#_CPPv4I00EN3sls6ResultE" title="sls::Result">Result</a>&lt;int&gt; <code class="sig-name descname">getDAC</code><span class="sig-paren">(</span>defs::dacIndex <em>index</em>, bool <em>mV</em> = false, Positions <em>pos</em> = {}<span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv4NK3sls8Detector6getDACEN4defs8dacIndexEb9Positions" title="Permalink to this definition">¶</a><br /></dt>
 <dd></dd></dl>
 
 <dl class="cpp function">
 <dt id="_CPPv4N3sls8Detector6setDACEN4defs8dacIndexEib9Positions">
-<span id="_CPPv3N3sls8Detector6setDACEN4defs8dacIndexEib9Positions"></span><span id="_CPPv2N3sls8Detector6setDACEN4defs8dacIndexEib9Positions"></span><span id="sls::Detector::setDAC__defs::dacIndex.i.b.Positions"></span><span class="target" id="classsls_1_1Detector_1a03c4bd743d34847ab9c5f40749eb01af"></span>void <code class="sig-name descname">setDAC</code><span class="sig-paren">(</span>defs::dacIndex <em>index</em>, int <em>value</em>, bool <em>mV</em>, Positions <em>pos</em> = {}<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3sls8Detector6setDACEN4defs8dacIndexEib9Positions" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv3N3sls8Detector6setDACEN4defs8dacIndexEib9Positions"></span><span id="_CPPv2N3sls8Detector6setDACEN4defs8dacIndexEib9Positions"></span><span id="sls::Detector::setDAC__defs::dacIndex.i.b.Positions"></span><span class="target" id="classsls_1_1Detector_1acb2f2a6876ac1eab6a54c4799327a9f7"></span>void <code class="sig-name descname">setDAC</code><span class="sig-paren">(</span>defs::dacIndex <em>index</em>, int <em>value</em>, bool <em>mV</em> = false, Positions <em>pos</em> = {}<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3sls8Detector6setDACEN4defs8dacIndexEib9Positions" title="Permalink to this definition">¶</a><br /></dt>
 <dd></dd></dl>
 
 <dl class="cpp function">
@@ -738,6 +749,18 @@ containing results from all modules. (Result&lt;T&gt;)</p>
 <dt id="_CPPv4N3sls8Detector22setExternalSignalFlagsEiN4defs18externalSignalFlagE9Positions">
 <span id="_CPPv3N3sls8Detector22setExternalSignalFlagsEiN4defs18externalSignalFlagE9Positions"></span><span id="_CPPv2N3sls8Detector22setExternalSignalFlagsEiN4defs18externalSignalFlagE9Positions"></span><span id="sls::Detector::setExternalSignalFlags__i.defs::externalSignalFlag.Positions"></span><span class="target" id="classsls_1_1Detector_1af3ccf364e38d79df3ff651e7bd7c1857"></span>void <code class="sig-name descname">setExternalSignalFlags</code><span class="sig-paren">(</span>int <em>signalIndex</em>, defs::externalSignalFlag <em>value</em>, Positions <em>pos</em> = {}<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3sls8Detector22setExternalSignalFlagsEiN4defs18externalSignalFlagE9Positions" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>[Gotthard] signal index is 0 Options: TRIGGER_IN_RISING_EDGE, TRIGGER_IN_FALLING_EDGE [Mythen3] signal index 0 is master input trigger signal, 1-3 for master input gate signals, 4 is busy out signal, 5-7 is master output gate signals. Options: TRIGGER_IN_RISING_EDGE, TRIGGER_IN_FALLING_EDGE (for master input trigger only), INVERSION_ON, INVERSION_OFF </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4NK3sls8Detector15getParallelModeE9Positions">
+<span id="_CPPv3NK3sls8Detector15getParallelModeE9Positions"></span><span id="_CPPv2NK3sls8Detector15getParallelModeE9Positions"></span><span id="sls::Detector::getParallelMode__PositionsC"></span><span class="target" id="classsls_1_1Detector_1a8665325d69ec80a12a9397e7f714911b"></span><a class="reference internal" href="result.html#_CPPv4I00EN3sls6ResultE" title="sls::Result">Result</a>&lt;bool&gt; <code class="sig-name descname">getParallelMode</code><span class="sig-paren">(</span>Positions <em>pos</em> = {}<span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv4NK3sls8Detector15getParallelModeE9Positions" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>[Eiger][Mythen3] </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4N3sls8Detector15setParallelModeEb9Positions">
+<span id="_CPPv3N3sls8Detector15setParallelModeEb9Positions"></span><span id="_CPPv2N3sls8Detector15setParallelModeEb9Positions"></span><span id="sls::Detector::setParallelMode__b.Positions"></span><span class="target" id="classsls_1_1Detector_1a0bfcda9a742d46b9a98876a5b4263ec3"></span>void <code class="sig-name descname">setParallelMode</code><span class="sig-paren">(</span>bool <em>value</em>, Positions <em>pos</em> = {}<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3sls8Detector15setParallelModeEb9Positions" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>[Eiger][Mythen3] [Mythen3] If exposure time is too short, acquisition will return with an ERROR and take fewer frames than expected </p>
 </dd></dl>
 
 <dl class="cpp function">
@@ -823,7 +846,7 @@ containing results from all modules. (Result&lt;T&gt;)</p>
 <dl class="cpp function">
 <dt id="_CPPv4N3sls8Detector19sendSoftwareTriggerE9Positions">
 <span id="_CPPv3N3sls8Detector19sendSoftwareTriggerE9Positions"></span><span id="_CPPv2N3sls8Detector19sendSoftwareTriggerE9Positions"></span><span id="sls::Detector::sendSoftwareTrigger__Positions"></span><span class="target" id="classsls_1_1Detector_1a036440a4cecc1d2bd8428c462d430a55"></span>void <code class="sig-name descname">sendSoftwareTrigger</code><span class="sig-paren">(</span>Positions <em>pos</em> = {}<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3sls8Detector19sendSoftwareTriggerE9Positions" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>[Eiger] Sends an internal software trigger to the detector </p>
+<dd><p>[Eiger][Mythen3] Sends an internal software trigger to the detector </p>
 </dd></dl>
 
 <dl class="cpp function">
@@ -1404,7 +1427,7 @@ containing results from all modules. (Result&lt;T&gt;)</p>
 <dl class="cpp function">
 <dt id="_CPPv4N3sls8Detector18setThresholdEnergyEiN4defs16detectorSettingsEb9Positions">
 <span id="_CPPv3N3sls8Detector18setThresholdEnergyEiN4defs16detectorSettingsEb9Positions"></span><span id="_CPPv2N3sls8Detector18setThresholdEnergyEiN4defs16detectorSettingsEb9Positions"></span><span id="sls::Detector::setThresholdEnergy__i.defs::detectorSettings.b.Positions"></span><span class="target" id="classsls_1_1Detector_1a592a14cd8e257009412660e9f5b1a7e6"></span>void <code class="sig-name descname">setThresholdEnergy</code><span class="sig-paren">(</span>int <em>threshold_ev</em>, defs::detectorSettings <em>settings</em> = defs::STANDARD, bool <em>trimbits</em> = true, Positions <em>pos</em> = {}<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3sls8Detector18setThresholdEnergyEiN4defs16detectorSettingsEb9Positions" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>[Eiger] </p>
+<dd><p>[Eiger] It loads trim files from settingspath </p>
 </dd></dl>
 
 <dl class="cpp function">
@@ -1417,18 +1440,6 @@ containing results from all modules. (Result&lt;T&gt;)</p>
 <dt id="_CPPv4N3sls8Detector15setSettingsPathERKNSt6stringE9Positions">
 <span id="_CPPv3N3sls8Detector15setSettingsPathERKNSt6stringE9Positions"></span><span id="_CPPv2N3sls8Detector15setSettingsPathERKNSt6stringE9Positions"></span><span id="sls::Detector::setSettingsPath__ssCR.Positions"></span><span class="target" id="classsls_1_1Detector_1a45556bc002e3a27ebcdaa85a3068e25a"></span>void <code class="sig-name descname">setSettingsPath</code><span class="sig-paren">(</span><em class="property">const</em> std::string &amp;<em>value</em>, Positions <em>pos</em> = {}<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3sls8Detector15setSettingsPathERKNSt6stringE9Positions" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>[Eiger] Directory where settings files are loaded from/to </p>
-</dd></dl>
-
-<dl class="cpp function">
-<dt id="_CPPv4NK3sls8Detector15getParallelModeE9Positions">
-<span id="_CPPv3NK3sls8Detector15getParallelModeE9Positions"></span><span id="_CPPv2NK3sls8Detector15getParallelModeE9Positions"></span><span id="sls::Detector::getParallelMode__PositionsC"></span><span class="target" id="classsls_1_1Detector_1a8665325d69ec80a12a9397e7f714911b"></span><a class="reference internal" href="result.html#_CPPv4I00EN3sls6ResultE" title="sls::Result">Result</a>&lt;bool&gt; <code class="sig-name descname">getParallelMode</code><span class="sig-paren">(</span>Positions <em>pos</em> = {}<span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv4NK3sls8Detector15getParallelModeE9Positions" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>[Eiger] </p>
-</dd></dl>
-
-<dl class="cpp function">
-<dt id="_CPPv4N3sls8Detector15setParallelModeEb9Positions">
-<span id="_CPPv3N3sls8Detector15setParallelModeEb9Positions"></span><span id="_CPPv2N3sls8Detector15setParallelModeEb9Positions"></span><span id="sls::Detector::setParallelMode__b.Positions"></span><span class="target" id="classsls_1_1Detector_1a0bfcda9a742d46b9a98876a5b4263ec3"></span>void <code class="sig-name descname">setParallelMode</code><span class="sig-paren">(</span>bool <em>value</em>, Positions <em>pos</em> = {}<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3sls8Detector15setParallelModeEb9Positions" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>[Eiger] </p>
 </dd></dl>
 
 <dl class="cpp function">
@@ -1596,7 +1607,8 @@ containing results from all modules. (Result&lt;T&gt;)</p>
 <dl class="cpp function">
 <dt id="_CPPv4N3sls8Detector23setThresholdTemperatureEi9Positions">
 <span id="_CPPv3N3sls8Detector23setThresholdTemperatureEi9Positions"></span><span id="_CPPv2N3sls8Detector23setThresholdTemperatureEi9Positions"></span><span id="sls::Detector::setThresholdTemperature__i.Positions"></span><span class="target" id="classsls_1_1Detector_1abc32f5d8c08476d61e6b10606a4c2271"></span>void <code class="sig-name descname">setThresholdTemperature</code><span class="sig-paren">(</span>int <em>temp</em>, Positions <em>pos</em> = {}<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3sls8Detector23setThresholdTemperatureEi9Positions" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>[Jungfrau]Set threshold temperature If temperature crosses threshold temperature and temperature control is enabled, power to chip will be switched off and temperature event will be set val is value in degrees </p>
+<dd><p>[Jungfrau]Set threshold temperature If temperature crosses threshold temperature and temperature control is enabled (default is disabled), power to chip will be switched off and temperature event will be set. <p> To power on chip again, temperature has to be less than threshold temperature and temperature event has to be cleared. val is value in degrees </p>
+</p>
 </dd></dl>
 
 <dl class="cpp function">
@@ -1608,19 +1620,19 @@ containing results from all modules. (Result&lt;T&gt;)</p>
 <dl class="cpp function">
 <dt id="_CPPv4N3sls8Detector21setTemperatureControlEb9Positions">
 <span id="_CPPv3N3sls8Detector21setTemperatureControlEb9Positions"></span><span id="_CPPv2N3sls8Detector21setTemperatureControlEb9Positions"></span><span id="sls::Detector::setTemperatureControl__b.Positions"></span><span class="target" id="classsls_1_1Detector_1a5c8dcbadfd28495ec84620ac4c4e44de"></span>void <code class="sig-name descname">setTemperatureControl</code><span class="sig-paren">(</span>bool <em>enable</em>, Positions <em>pos</em> = {}<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3sls8Detector21setTemperatureControlEb9Positions" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>[Jungfrau] </p>
+<dd><p>[Jungfrau] refer to setThresholdTemperature Default is disabled </p>
 </dd></dl>
 
 <dl class="cpp function">
 <dt id="_CPPv4NK3sls8Detector19getTemperatureEventE9Positions">
 <span id="_CPPv3NK3sls8Detector19getTemperatureEventE9Positions"></span><span id="_CPPv2NK3sls8Detector19getTemperatureEventE9Positions"></span><span id="sls::Detector::getTemperatureEvent__PositionsC"></span><span class="target" id="classsls_1_1Detector_1a4e5ee88cbba1ad26d8a2b2f690942759"></span><a class="reference internal" href="result.html#_CPPv4I00EN3sls6ResultE" title="sls::Result">Result</a>&lt;int&gt; <code class="sig-name descname">getTemperatureEvent</code><span class="sig-paren">(</span>Positions <em>pos</em> = {}<span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv4NK3sls8Detector19getTemperatureEventE9Positions" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>[Jungfrau] </p>
+<dd><p>[Jungfrau] refer to setThresdholdTemperature </p>
 </dd></dl>
 
 <dl class="cpp function">
 <dt id="_CPPv4N3sls8Detector21resetTemperatureEventE9Positions">
 <span id="_CPPv3N3sls8Detector21resetTemperatureEventE9Positions"></span><span id="_CPPv2N3sls8Detector21resetTemperatureEventE9Positions"></span><span id="sls::Detector::resetTemperatureEvent__Positions"></span><span class="target" id="classsls_1_1Detector_1a23818607cd8f4f4c52c75474b585e97a"></span>void <code class="sig-name descname">resetTemperatureEvent</code><span class="sig-paren">(</span>Positions <em>pos</em> = {}<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3sls8Detector21resetTemperatureEventE9Positions" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>[Jungfrau] </p>
+<dd><p>[Jungfrau] refer to setThresdholdTemperature </p>
 </dd></dl>
 
 <dl class="cpp function">
@@ -1768,7 +1780,7 @@ containing results from all modules. (Result&lt;T&gt;)</p>
 <dl class="cpp function">
 <dt id="_CPPv4N3sls8Detector12setBurstModeEN4defs9burstModeE9Positions">
 <span id="_CPPv3N3sls8Detector12setBurstModeEN4defs9burstModeE9Positions"></span><span id="_CPPv2N3sls8Detector12setBurstModeEN4defs9burstModeE9Positions"></span><span id="sls::Detector::setBurstMode__defs::burstMode.Positions"></span><span class="target" id="classsls_1_1Detector_1a5699047305a0bcc7ac33c588dac83257"></span>void <code class="sig-name descname">setBurstMode</code><span class="sig-paren">(</span>defs::burstMode <em>value</em>, Positions <em>pos</em> = {}<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3sls8Detector12setBurstModeEN4defs9burstModeE9Positions" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>[Gotthard2] BURST_OFF, BURST_INTERNAL (default), BURST_EXTERNAL </p>
+<dd><p>[Gotthard2] BURST_INTERNAL (default), BURST_EXTERNAL, CONTINUOUS_INTERNAL, CONTINUOUS_EXTERNAL </p>
 </dd></dl>
 
 <dl class="cpp function">
@@ -1953,7 +1965,7 @@ containing results from all modules. (Result&lt;T&gt;)</p>
 <dl class="cpp function">
 <dt id="_CPPv4NK3sls8Detector12getSYNCClockE9Positions">
 <span id="_CPPv3NK3sls8Detector12getSYNCClockE9Positions"></span><span id="_CPPv2NK3sls8Detector12getSYNCClockE9Positions"></span><span id="sls::Detector::getSYNCClock__PositionsC"></span><span class="target" id="classsls_1_1Detector_1add0a97687d025a0067365d2087d4ed25"></span><a class="reference internal" href="result.html#_CPPv4I00EN3sls6ResultE" title="sls::Result">Result</a>&lt;int&gt; <code class="sig-name descname">getSYNCClock</code><span class="sig-paren">(</span>Positions <em>pos</em> = {}<span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv4NK3sls8Detector12getSYNCClockE9Positions" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>[CTB][Moench] </p>
+<dd><p>[CTB][Moench] in MHZ </p>
 </dd></dl>
 
 <dl class="cpp function">
@@ -2281,42 +2293,6 @@ containing results from all modules. (Result&lt;T&gt;)</p>
 <dt id="_CPPv4N3sls8Detector26setAdditionalJsonParameterERKNSt6stringERKNSt6stringE9Positions">
 <span id="_CPPv3N3sls8Detector26setAdditionalJsonParameterERKNSt6stringERKNSt6stringE9Positions"></span><span id="_CPPv2N3sls8Detector26setAdditionalJsonParameterERKNSt6stringERKNSt6stringE9Positions"></span><span id="sls::Detector::setAdditionalJsonParameter__ssCR.ssCR.Positions"></span><span class="target" id="classsls_1_1Detector_1aac6d355d4374b45b51801cd5a56a9d71"></span>void <code class="sig-name descname">setAdditionalJsonParameter</code><span class="sig-paren">(</span><em class="property">const</em> std::string &amp;<em>key</em>, <em class="property">const</em> std::string &amp;<em>value</em>, Positions <em>pos</em> = {}<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3sls8Detector26setAdditionalJsonParameterERKNSt6stringERKNSt6stringE9Positions" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>[Moench] Sets the value for additional json header parameters if found, else appends the parameter key and value If empty, deletes parameter. Max 20 characters for each key/value </p>
-</dd></dl>
-
-<dl class="cpp function">
-<dt id="_CPPv4NK3sls8Detector32getDetectorMinMaxEnergyThresholdEKb9Positions">
-<span id="_CPPv3NK3sls8Detector32getDetectorMinMaxEnergyThresholdEKb9Positions"></span><span id="_CPPv2NK3sls8Detector32getDetectorMinMaxEnergyThresholdEKb9Positions"></span><span id="sls::Detector::getDetectorMinMaxEnergyThreshold__bC.PositionsC"></span><span class="target" id="classsls_1_1Detector_1a072ab2ff1e41fc301128fc1b64738283"></span><a class="reference internal" href="result.html#_CPPv4I00EN3sls6ResultE" title="sls::Result">Result</a>&lt;int&gt; <code class="sig-name descname">getDetectorMinMaxEnergyThreshold</code><span class="sig-paren">(</span><em class="property">const</em> bool <em>isEmax</em>, Positions <em>pos</em> = {}<span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv4NK3sls8Detector32getDetectorMinMaxEnergyThresholdEKb9Positions" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>[Moench] TODO! How do we do this best??? Can be refactored to something else? Use a generic zmq message passing system… For now limiting to all detectors working the same [Moench: -1 if not found or cannot convert to int] </p>
-</dd></dl>
-
-<dl class="cpp function">
-<dt id="_CPPv4N3sls8Detector32setDetectorMinMaxEnergyThresholdEKbKi9Positions">
-<span id="_CPPv3N3sls8Detector32setDetectorMinMaxEnergyThresholdEKbKi9Positions"></span><span id="_CPPv2N3sls8Detector32setDetectorMinMaxEnergyThresholdEKbKi9Positions"></span><span id="sls::Detector::setDetectorMinMaxEnergyThreshold__bC.iC.Positions"></span><span class="target" id="classsls_1_1Detector_1ac62e26e253a0b240d49970443f9b007c"></span>void <code class="sig-name descname">setDetectorMinMaxEnergyThreshold</code><span class="sig-paren">(</span><em class="property">const</em> bool <em>isEmax</em>, <em class="property">const</em> int <em>value</em>, Positions <em>pos</em> = {}<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3sls8Detector32setDetectorMinMaxEnergyThresholdEKbKi9Positions" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>[Moench] </p>
-</dd></dl>
-
-<dl class="cpp function">
-<dt id="_CPPv4NK3sls8Detector12getFrameModeE9Positions">
-<span id="_CPPv3NK3sls8Detector12getFrameModeE9Positions"></span><span id="_CPPv2NK3sls8Detector12getFrameModeE9Positions"></span><span id="sls::Detector::getFrameMode__PositionsC"></span><span class="target" id="classsls_1_1Detector_1af5688f2715cca4435b8d79309753d622"></span><a class="reference internal" href="result.html#_CPPv4I00EN3sls6ResultE" title="sls::Result">Result</a>&lt;defs::frameModeType&gt; <code class="sig-name descname">getFrameMode</code><span class="sig-paren">(</span>Positions <em>pos</em> = {}<span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv4NK3sls8Detector12getFrameModeE9Positions" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>[Moench: -1 if unknown mode] </p>
-</dd></dl>
-
-<dl class="cpp function">
-<dt id="_CPPv4N3sls8Detector12setFrameModeEN4defs13frameModeTypeE9Positions">
-<span id="_CPPv3N3sls8Detector12setFrameModeEN4defs13frameModeTypeE9Positions"></span><span id="_CPPv2N3sls8Detector12setFrameModeEN4defs13frameModeTypeE9Positions"></span><span id="sls::Detector::setFrameMode__defs::frameModeType.Positions"></span><span class="target" id="classsls_1_1Detector_1aafb09d79d6b6901fc8fd8f8df63ce1a1"></span>void <code class="sig-name descname">setFrameMode</code><span class="sig-paren">(</span>defs::frameModeType <em>value</em>, Positions <em>pos</em> = {}<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3sls8Detector12setFrameModeEN4defs13frameModeTypeE9Positions" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>[Moench] </p>
-</dd></dl>
-
-<dl class="cpp function">
-<dt id="_CPPv4NK3sls8Detector15getDetectorModeE9Positions">
-<span id="_CPPv3NK3sls8Detector15getDetectorModeE9Positions"></span><span id="_CPPv2NK3sls8Detector15getDetectorModeE9Positions"></span><span id="sls::Detector::getDetectorMode__PositionsC"></span><span class="target" id="classsls_1_1Detector_1a4747d8c3a93fcb03d0d6852e201c97ff"></span><a class="reference internal" href="result.html#_CPPv4I00EN3sls6ResultE" title="sls::Result">Result</a>&lt;defs::detectorModeType&gt; <code class="sig-name descname">getDetectorMode</code><span class="sig-paren">(</span>Positions <em>pos</em> = {}<span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv4NK3sls8Detector15getDetectorModeE9Positions" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>[Moench: -1 if unknown mode] </p>
-</dd></dl>
-
-<dl class="cpp function">
-<dt id="_CPPv4N3sls8Detector15setDetectorModeEN4defs16detectorModeTypeE9Positions">
-<span id="_CPPv3N3sls8Detector15setDetectorModeEN4defs16detectorModeTypeE9Positions"></span><span id="_CPPv2N3sls8Detector15setDetectorModeEN4defs16detectorModeTypeE9Positions"></span><span id="sls::Detector::setDetectorMode__defs::detectorModeType.Positions"></span><span class="target" id="classsls_1_1Detector_1a474c9298b0e80a097cbc16724d1533c2"></span>void <code class="sig-name descname">setDetectorMode</code><span class="sig-paren">(</span>defs::detectorModeType <em>value</em>, Positions <em>pos</em> = {}<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3sls8Detector15setDetectorModeEN4defs16detectorModeTypeE9Positions" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>[Moench] </p>
 </dd></dl>
 
 <dl class="cpp function">

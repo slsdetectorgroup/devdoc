@@ -13,6 +13,7 @@
   
   <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/css/extra.css" type="text/css" />
 
   
   
@@ -116,6 +117,10 @@
 <li class="toctree-l1"><a class="reference internal" href="type_traits.html">TypeTraits</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ToString.html">ToString</a></li>
 </ul>
+<p class="caption"><span class="caption-text">Servers</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="servers.html">Default values</a></li>
+</ul>
 
             
           
@@ -192,8 +197,9 @@ like the getExptime() function that uses the
 C++ API directly and the simplified exptime property.</p>
 <dl class="py method">
 <dt id="slsdet.Detector.acquire">
-<code class="sig-name descname">acquire</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">self</span><span class="p">:</span> <span class="n">_slsdet.CppDetectorApi</span></em><span class="sig-paren">)</span> &#x2192; None<a class="headerlink" href="#slsdet.Detector.acquire" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<code class="sig-name descname">acquire</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#slsdet.Detector.acquire" title="Permalink to this definition">¶</a></dt>
+<dd><p>Run the configured measurement</p>
+</dd></dl>
 
 <dl class="py method">
 <dt id="slsdet.Detector.adcclk">
@@ -272,8 +278,13 @@ C++ API directly and the simplified exptime property.</p>
 <dd></dd></dl>
 
 <dl class="py method">
-<dt id="slsdet.Detector.client_version">
-<em class="property">property </em><code class="sig-name descname">client_version</code><a class="headerlink" href="#slsdet.Detector.client_version" title="Permalink to this definition">¶</a></dt>
+<dt id="slsdet.Detector.clientversion">
+<em class="property">property </em><code class="sig-name descname">clientversion</code><a class="headerlink" href="#slsdet.Detector.clientversion" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="slsdet.Detector.clkdiv">
+<em class="property">property </em><code class="sig-name descname">clkdiv</code><a class="headerlink" href="#slsdet.Detector.clkdiv" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
@@ -386,13 +397,13 @@ Set up once.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="slsdet.Detector.detector_size">
-<em class="property">property </em><code class="sig-name descname">detector_size</code><a class="headerlink" href="#slsdet.Detector.detector_size" title="Permalink to this definition">¶</a></dt>
+<dt id="slsdet.Detector.detectorserverversion">
+<em class="property">property </em><code class="sig-name descname">detectorserverversion</code><a class="headerlink" href="#slsdet.Detector.detectorserverversion" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
-<dt id="slsdet.Detector.detector_type">
-<em class="property">property </em><code class="sig-name descname">detector_type</code><a class="headerlink" href="#slsdet.Detector.detector_type" title="Permalink to this definition">¶</a></dt>
+<dt id="slsdet.Detector.detsize">
+<em class="property">property </em><code class="sig-name descname">detsize</code><a class="headerlink" href="#slsdet.Detector.detsize" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
@@ -406,6 +417,11 @@ Set up once.</p>
 <p>[Jungfrau][Gotthard][Ctb][Moench][Mythen3][Gotthard2] 16</p>
 </div>
 </dd></dl>
+
+<dl class="py method">
+<dt id="slsdet.Detector.drlist">
+<em class="property">property </em><code class="sig-name descname">drlist</code><a class="headerlink" href="#slsdet.Detector.drlist" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
 
 <dl class="py method">
 <dt id="slsdet.Detector.dsamples">
@@ -458,6 +474,11 @@ Set up once.</p>
 </dd></dl>
 
 <dl class="py method">
+<dt id="slsdet.Detector.exptimel">
+<em class="property">property </em><code class="sig-name descname">exptimel</code><a class="headerlink" href="#slsdet.Detector.exptimel" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
 <dt id="slsdet.Detector.fformat">
 <em class="property">property </em><code class="sig-name descname">fformat</code><a class="headerlink" href="#slsdet.Detector.fformat" title="Permalink to this definition">¶</a></dt>
 <dd><p>fileFormat</p>
@@ -481,6 +502,11 @@ For HDF5, package must be compiled with HDF5 flags. Default is binary.</p>
 <em class="property">property </em><code class="sig-name descname">findex</code><a class="headerlink" href="#slsdet.Detector.findex" title="Permalink to this definition">¶</a></dt>
 <dd><p>File or Acquisition index in receiver.</p>
 </dd></dl>
+
+<dl class="py method">
+<dt id="slsdet.Detector.firmwareversion">
+<em class="property">property </em><code class="sig-name descname">firmwareversion</code><a class="headerlink" href="#slsdet.Detector.firmwareversion" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
 
 <dl class="py method">
 <dt id="slsdet.Detector.flowcontrol10g">
@@ -526,11 +552,6 @@ eg. file name: run_d0_f0_5.raw</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="slsdet.Detector.frameindex">
-<em class="property">property </em><code class="sig-name descname">frameindex</code><a class="headerlink" href="#slsdet.Detector.frameindex" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="py method">
 <dt id="slsdet.Detector.frames">
 <em class="property">property </em><code class="sig-name descname">frames</code><a class="headerlink" href="#slsdet.Detector.frames" title="Permalink to this definition">¶</a></dt>
 <dd><p>Number of frames per acquisition. In trigger mode, number of frames per trigger.</p>
@@ -541,6 +562,11 @@ In scan mode, number of frames is set to number of steps.
 </dd></dl>
 
 <dl class="py method">
+<dt id="slsdet.Detector.framesl">
+<em class="property">property </em><code class="sig-name descname">framesl</code><a class="headerlink" href="#slsdet.Detector.framesl" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
 <dt id="slsdet.Detector.free">
 <code class="sig-name descname">free</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#slsdet.Detector.free" title="Permalink to this definition">¶</a></dt>
 <dd><p>Free detector shared memory</p>
@@ -549,11 +575,6 @@ In scan mode, number of frames is set to number of steps.
 <dl class="py method">
 <dt id="slsdet.Detector.freeSharedMemory">
 <code class="sig-name descname">freeSharedMemory</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">self</span><span class="p">:</span> <span class="n">_slsdet.CppDetectorApi</span></em><span class="sig-paren">)</span> &#x2192; None<a class="headerlink" href="#slsdet.Detector.freeSharedMemory" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="py method">
-<dt id="slsdet.Detector.fw_version">
-<em class="property">property </em><code class="sig-name descname">fw_version</code><a class="headerlink" href="#slsdet.Detector.fw_version" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
@@ -742,7 +763,7 @@ In scan mode, number of frames is set to number of steps.
 
 <dl class="py method">
 <dt id="slsdet.Detector.getDAC">
-<code class="sig-name descname">getDAC</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">self</span><span class="p">:</span> <span class="n">_slsdet.CppDetectorApi</span></em>, <em class="sig-param"><span class="n">arg0</span><span class="p">:</span> <span class="n">_slsdet.slsDetectorDefs.dacIndex</span></em>, <em class="sig-param"><span class="n">arg1</span><span class="p">:</span> <span class="n">bool</span></em>, <em class="sig-param"><span class="n">arg2</span><span class="p">:</span> <span class="n">List<span class="p">[</span>int<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">[]</span></em><span class="sig-paren">)</span> &#x2192; List<span class="p">[</span>int<span class="p">]</span><a class="headerlink" href="#slsdet.Detector.getDAC" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">getDAC</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">self</span><span class="p">:</span> <span class="n">_slsdet.CppDetectorApi</span></em>, <em class="sig-param"><span class="n">arg0</span><span class="p">:</span> <span class="n">_slsdet.slsDetectorDefs.dacIndex</span></em>, <em class="sig-param"><span class="n">arg1</span><span class="p">:</span> <span class="n">bool</span> <span class="o">=</span> <span class="default_value">False</span></em>, <em class="sig-param"><span class="n">arg2</span><span class="p">:</span> <span class="n">List<span class="p">[</span>int<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">[]</span></em><span class="sig-paren">)</span> &#x2192; List<span class="p">[</span>int<span class="p">]</span><a class="headerlink" href="#slsdet.Detector.getDAC" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
@@ -813,16 +834,6 @@ In scan mode, number of frames is set to number of steps.
 <dl class="py method">
 <dt id="slsdet.Detector.getDetectorLock">
 <code class="sig-name descname">getDetectorLock</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">self</span><span class="p">:</span> <span class="n">_slsdet.CppDetectorApi</span></em>, <em class="sig-param"><span class="n">arg0</span><span class="p">:</span> <span class="n">List<span class="p">[</span>int<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">[]</span></em><span class="sig-paren">)</span> &#x2192; List<span class="p">[</span>bool<span class="p">]</span><a class="headerlink" href="#slsdet.Detector.getDetectorLock" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="py method">
-<dt id="slsdet.Detector.getDetectorMinMaxEnergyThreshold">
-<code class="sig-name descname">getDetectorMinMaxEnergyThreshold</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">self</span><span class="p">:</span> <span class="n">_slsdet.CppDetectorApi</span></em>, <em class="sig-param"><span class="n">arg0</span><span class="p">:</span> <span class="n">bool</span></em>, <em class="sig-param"><span class="n">arg1</span><span class="p">:</span> <span class="n">List<span class="p">[</span>int<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">[]</span></em><span class="sig-paren">)</span> &#x2192; List<span class="p">[</span>int<span class="p">]</span><a class="headerlink" href="#slsdet.Detector.getDetectorMinMaxEnergyThreshold" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="py method">
-<dt id="slsdet.Detector.getDetectorMode">
-<code class="sig-name descname">getDetectorMode</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">self</span><span class="p">:</span> <span class="n">_slsdet.CppDetectorApi</span></em>, <em class="sig-param"><span class="n">arg0</span><span class="p">:</span> <span class="n">List<span class="p">[</span>int<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">[]</span></em><span class="sig-paren">)</span> &#x2192; List<span class="p">[</span>_slsdet.slsDetectorDefs.detectorModeType<span class="p">]</span><a class="headerlink" href="#slsdet.Detector.getDetectorMode" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
@@ -923,11 +934,6 @@ In scan mode, number of frames is set to number of steps.
 <dl class="py method">
 <dt id="slsdet.Detector.getFirmwareVersion">
 <code class="sig-name descname">getFirmwareVersion</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">self</span><span class="p">:</span> <span class="n">_slsdet.CppDetectorApi</span></em>, <em class="sig-param"><span class="n">arg0</span><span class="p">:</span> <span class="n">List<span class="p">[</span>int<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">[]</span></em><span class="sig-paren">)</span> &#x2192; List<span class="p">[</span>int<span class="p">]</span><a class="headerlink" href="#slsdet.Detector.getFirmwareVersion" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="py method">
-<dt id="slsdet.Detector.getFrameMode">
-<code class="sig-name descname">getFrameMode</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">self</span><span class="p">:</span> <span class="n">_slsdet.CppDetectorApi</span></em>, <em class="sig-param"><span class="n">arg0</span><span class="p">:</span> <span class="n">List<span class="p">[</span>int<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">[]</span></em><span class="sig-paren">)</span> &#x2192; List<span class="p">[</span>_slsdet.slsDetectorDefs.frameModeType<span class="p">]</span><a class="headerlink" href="#slsdet.Detector.getFrameMode" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
@@ -1710,6 +1716,21 @@ In scan mode, number of frames is set to number of steps.
 <dd></dd></dl>
 
 <dl class="py method">
+<dt id="slsdet.Detector.nframes">
+<em class="property">property </em><code class="sig-name descname">nframes</code><a class="headerlink" href="#slsdet.Detector.nframes" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="slsdet.Detector.nmod">
+<em class="property">property </em><code class="sig-name descname">nmod</code><a class="headerlink" href="#slsdet.Detector.nmod" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="slsdet.Detector.now">
+<em class="property">property </em><code class="sig-name descname">now</code><a class="headerlink" href="#slsdet.Detector.now" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
 <dt id="slsdet.Detector.numinterfaces">
 <em class="property">property </em><code class="sig-name descname">numinterfaces</code><a class="headerlink" href="#slsdet.Detector.numinterfaces" title="Permalink to this definition">¶</a></dt>
 <dd><p>[Jungfrau][Gotthard2] Number of udp interfaces to stream data from detector. Default is 1.
@@ -1727,6 +1748,17 @@ In scan mode, number of frames is set to number of steps.
 <dt id="slsdet.Detector.overflow">
 <em class="property">property </em><code class="sig-name descname">overflow</code><a class="headerlink" href="#slsdet.Detector.overflow" title="Permalink to this definition">¶</a></dt>
 <dd><p>[Eiger] Enable or disable show overflow flag in 32 bit mode. Default is disabled.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="slsdet.Detector.packageversion">
+<em class="property">property </em><code class="sig-name descname">packageversion</code><a class="headerlink" href="#slsdet.Detector.packageversion" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="slsdet.Detector.parallel">
+<em class="property">property </em><code class="sig-name descname">parallel</code><a class="headerlink" href="#slsdet.Detector.parallel" title="Permalink to this definition">¶</a></dt>
+<dd><p>[Eiger][Mythen3] Enable or disable the parallel readout mode of detector.</p>
 </dd></dl>
 
 <dl class="py method">
@@ -1954,6 +1986,16 @@ In scan mode, number of frames is set to number of steps.
 </dd></dl>
 
 <dl class="py method">
+<dt id="slsdet.Detector.port">
+<em class="property">property </em><code class="sig-name descname">port</code><a class="headerlink" href="#slsdet.Detector.port" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="slsdet.Detector.powerchip">
+<em class="property">property </em><code class="sig-name descname">powerchip</code><a class="headerlink" href="#slsdet.Detector.powerchip" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
 <dt id="slsdet.Detector.printRxConfiguration">
 <code class="sig-name descname">printRxConfiguration</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">self</span><span class="p">:</span> <span class="n">_slsdet.CppDetectorApi</span></em>, <em class="sig-param"><span class="n">arg0</span><span class="p">:</span> <span class="n">List<span class="p">[</span>int<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">[]</span></em><span class="sig-paren">)</span> &#x2192; List<span class="p">[</span>str<span class="p">]</span><a class="headerlink" href="#slsdet.Detector.printRxConfiguration" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
@@ -1976,6 +2018,11 @@ In scan mode, number of frames is set to number of steps.
 <dl class="py method">
 <dt id="slsdet.Detector.pulsePixelNMove">
 <code class="sig-name descname">pulsePixelNMove</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">self</span><span class="p">:</span> <span class="n">_slsdet.CppDetectorApi</span></em>, <em class="sig-param"><span class="n">arg0</span><span class="p">:</span> <span class="n">int</span></em>, <em class="sig-param"><span class="n">arg1</span><span class="p">:</span> <span class="n">_slsdet.xy</span></em>, <em class="sig-param"><span class="n">arg2</span><span class="p">:</span> <span class="n">List<span class="p">[</span>int<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">[]</span></em><span class="sig-paren">)</span> &#x2192; None<a class="headerlink" href="#slsdet.Detector.pulsePixelNMove" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="slsdet.Detector.quad">
+<em class="property">property </em><code class="sig-name descname">quad</code><a class="headerlink" href="#slsdet.Detector.quad" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
@@ -2006,6 +2053,11 @@ In scan mode, number of frames is set to number of steps.
 <dl class="py method">
 <dt id="slsdet.Detector.readRegister">
 <code class="sig-name descname">readRegister</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">self</span><span class="p">:</span> <span class="n">_slsdet.CppDetectorApi</span></em>, <em class="sig-param"><span class="n">arg0</span><span class="p">:</span> <span class="n">int</span></em>, <em class="sig-param"><span class="n">arg1</span><span class="p">:</span> <span class="n">List<span class="p">[</span>int<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">[]</span></em><span class="sig-paren">)</span> &#x2192; List<span class="p">[</span>int<span class="p">]</span><a class="headerlink" href="#slsdet.Detector.readRegister" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="slsdet.Detector.readnlines">
+<em class="property">property </em><code class="sig-name descname">readnlines</code><a class="headerlink" href="#slsdet.Detector.readnlines" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
@@ -2073,15 +2125,6 @@ Default: ANALOG_ONLY</p>
 <dt id="slsdet.Detector.runclk">
 <em class="property">property </em><code class="sig-name descname">runclk</code><a class="headerlink" href="#slsdet.Detector.runclk" title="Permalink to this definition">¶</a></dt>
 <dd><p>[Ctb][Moench] Run clock in MHz.</p>
-</dd></dl>
-
-<dl class="py method">
-<dt id="slsdet.Detector.rx_datastream">
-<em class="property">property </em><code class="sig-name descname">rx_datastream</code><a class="headerlink" href="#slsdet.Detector.rx_datastream" title="Permalink to this definition">¶</a></dt>
-<dd><p>Enable/ disable data streaming from receiver via zmq (eg. to GUI or to another process for further processing).</p>
-<p>This creates/ destroys zmq streamer threads in receiver.</p>
-<p>Switching to Gui automatically enables data streaming in receiver.</p>
-<p>Switching back to command line acquire will require disabling data streaming in receiver for fast applications.</p>
 </dd></dl>
 
 <dl class="py method">
@@ -2178,6 +2221,26 @@ Default: ANALOG_ONLY</p>
 </dd></dl>
 
 <dl class="py method">
+<dt id="slsdet.Detector.rx_jsonaddheader">
+<em class="property">property </em><code class="sig-name descname">rx_jsonaddheader</code><a class="headerlink" href="#slsdet.Detector.rx_jsonaddheader" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="slsdet.Detector.rx_jsonpara">
+<em class="property">property </em><code class="sig-name descname">rx_jsonpara</code><a class="headerlink" href="#slsdet.Detector.rx_jsonpara" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the receiver additional json parameter. In case the parameter is different between
+the modules a list of strings will be returned. On setting the value is automatically
+converted to a string.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">d</span><span class="o">.</span><span class="n">rx_jsonpara</span><span class="p">[</span><span class="s1">&#39;emin&#39;</span><span class="p">]</span>
+<span class="go">&#39;4500&#39;</span>
+</pre></div>
+</div>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">d</span><span class="o">.</span><span class="n">rx_jsonpara</span><span class="p">[</span><span class="s1">&#39;emin&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">5000</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
 <dt id="slsdet.Detector.rx_lastclient">
 <em class="property">property </em><code class="sig-name descname">rx_lastclient</code><a class="headerlink" href="#slsdet.Detector.rx_lastclient" title="Permalink to this definition">¶</a></dt>
 <dd><p>Client IP Address that last communicated with the receiver.</p>
@@ -2202,16 +2265,6 @@ Default: ANALOG_ONLY</p>
 .. rubric:: Notes</p>
 <p>Default: enabled</p>
 <p>Disabling is fastest.</p>
-</dd></dl>
-
-<dl class="py method">
-<dt id="slsdet.Detector.rx_readfreq">
-<em class="property">property </em><code class="sig-name descname">rx_readfreq</code><a class="headerlink" href="#slsdet.Detector.rx_readfreq" title="Permalink to this definition">¶</a></dt>
-<dd><p>Frequency of frames streamed out from receiver via zmq.
-.. rubric:: Notes</p>
-<p>Default: 1, Means every frame is streamed out.</p>
-<p>If 2, every second frame is streamed out.</p>
-<p>If 0, streaming timer is the timeout, after which current frame is sent out. (default timeout is 200 ms). Usually used for gui purposes.</p>
 </dd></dl>
 
 <dl class="py method">
@@ -2284,12 +2337,13 @@ runStatus.IDLE</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="slsdet.Detector.rx_zmqdatastream">
-<em class="property">property </em><code class="sig-name descname">rx_zmqdatastream</code><a class="headerlink" href="#slsdet.Detector.rx_zmqdatastream" title="Permalink to this definition">¶</a></dt>
-<dd><p>Enable/ disable data streaming from receiver via zmq (eg. to GUI or to another process for further processing).</p>
-<p>This creates/ destroys zmq streamer threads in receiver.</p>
-<p>Switching to Gui automatically enables data streaming in receiver.</p>
-<p>Switching back to command line acquire will require disabling data streaming in receiver for fast applications.</p>
+<dt id="slsdet.Detector.rx_zmqfreq">
+<em class="property">property </em><code class="sig-name descname">rx_zmqfreq</code><a class="headerlink" href="#slsdet.Detector.rx_zmqfreq" title="Permalink to this definition">¶</a></dt>
+<dd><p>Frequency of frames streamed out from receiver via zmq.
+.. rubric:: Notes</p>
+<p>Default: 1, Means every frame is streamed out.</p>
+<p>If 2, every second frame is streamed out.</p>
+<p>If 0, streaming timer is the timeout, after which current frame is sent out. (default timeout is 200 ms). Usually used for gui purposes.</p>
 </dd></dl>
 
 <dl class="py method">
@@ -2317,13 +2371,29 @@ runStatus.IDLE</p>
 <p>Default is 30001.</p>
 <p>Modified only when using an intermediate process after receiver.</p>
 <p>Must be different for every detector (and udp port).</p>
-<p>Multi command will automatically increment for individual modules, use setRxZmqPort.
-Exmaples
-——–
-&gt;&gt;&gt; d.rx_zmqport
-[30001, 30002, 30003, 300004]
-&gt;&gt;&gt; d.rx_zmqport = ?????</p>
+<p>Multi command will automatically increment for individual modules, use setRxZmqPort.</p>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">d</span><span class="o">.</span><span class="n">rx_zmqport</span>
+<span class="go">[30001, 30002, 30003, 300004]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">d</span><span class="o">.</span><span class="n">rx_zmqport</span> <span class="o">=</span> <span class="mi">30001</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">d</span><span class="o">.</span><span class="n">rx_zmqport</span> <span class="o">=</span> <span class="p">[</span><span class="mi">30001</span><span class="p">,</span> <span class="mi">30005</span><span class="p">]</span> <span class="c1">#Set ports for the two first detectors</span>
+</pre></div>
+</div>
 </dd></dl>
+
+<dl class="py method">
+<dt id="slsdet.Detector.rx_zmqstream">
+<em class="property">property </em><code class="sig-name descname">rx_zmqstream</code><a class="headerlink" href="#slsdet.Detector.rx_zmqstream" title="Permalink to this definition">¶</a></dt>
+<dd><p>Enable/ disable data streaming from receiver via zmq (eg. to GUI or to another process for further processing).</p>
+<p>This creates/ destroys zmq streamer threads in receiver.</p>
+<p>Switching to Gui automatically enables data streaming in receiver.</p>
+<p>Switching back to command line acquire will require disabling data streaming in receiver for fast applications.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="slsdet.Detector.samples">
+<em class="property">property </em><code class="sig-name descname">samples</code><a class="headerlink" href="#slsdet.Detector.samples" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
 
 <dl class="py method">
 <dt id="slsdet.Detector.savePattern">
@@ -2346,11 +2416,6 @@ Exmaples
 <dl class="py method">
 <dt id="slsdet.Detector.sendSoftwareTrigger">
 <code class="sig-name descname">sendSoftwareTrigger</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">self</span><span class="p">:</span> <span class="n">_slsdet.CppDetectorApi</span></em>, <em class="sig-param"><span class="n">arg0</span><span class="p">:</span> <span class="n">List<span class="p">[</span>int<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">[]</span></em><span class="sig-paren">)</span> &#x2192; None<a class="headerlink" href="#slsdet.Detector.sendSoftwareTrigger" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="py method">
-<dt id="slsdet.Detector.server_version">
-<em class="property">property </em><code class="sig-name descname">server_version</code><a class="headerlink" href="#slsdet.Detector.server_version" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
@@ -2455,7 +2520,7 @@ Exmaples
 
 <dl class="py method">
 <dt id="slsdet.Detector.setClientZmqPort">
-<code class="sig-name descname">setClientZmqPort</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">self</span><span class="p">:</span> <span class="n">_slsdet.CppDetectorApi</span></em>, <em class="sig-param"><span class="n">arg0</span><span class="p">:</span> <span class="n">int</span></em>, <em class="sig-param"><span class="n">arg1</span><span class="p">:</span> <span class="n">int</span></em><span class="sig-paren">)</span> &#x2192; None<a class="headerlink" href="#slsdet.Detector.setClientZmqPort" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">setClientZmqPort</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">self</span><span class="p">:</span> <span class="n">_slsdet.CppDetectorApi</span></em>, <em class="sig-param"><span class="n">arg0</span><span class="p">:</span> <span class="n">int</span></em>, <em class="sig-param"><span class="n">arg1</span><span class="p">:</span> <span class="n">int</span> <span class="o">=</span> <span class="default_value">- 1</span></em><span class="sig-paren">)</span> &#x2192; None<a class="headerlink" href="#slsdet.Detector.setClientZmqPort" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
@@ -2495,7 +2560,7 @@ Exmaples
 
 <dl class="py method">
 <dt id="slsdet.Detector.setDAC">
-<code class="sig-name descname">setDAC</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">self</span><span class="p">:</span> <span class="n">_slsdet.CppDetectorApi</span></em>, <em class="sig-param"><span class="n">arg0</span><span class="p">:</span> <span class="n">_slsdet.slsDetectorDefs.dacIndex</span></em>, <em class="sig-param"><span class="n">arg1</span><span class="p">:</span> <span class="n">int</span></em>, <em class="sig-param"><span class="n">arg2</span><span class="p">:</span> <span class="n">bool</span></em>, <em class="sig-param"><span class="n">arg3</span><span class="p">:</span> <span class="n">List<span class="p">[</span>int<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">[]</span></em><span class="sig-paren">)</span> &#x2192; None<a class="headerlink" href="#slsdet.Detector.setDAC" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">setDAC</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">self</span><span class="p">:</span> <span class="n">_slsdet.CppDetectorApi</span></em>, <em class="sig-param"><span class="n">arg0</span><span class="p">:</span> <span class="n">_slsdet.slsDetectorDefs.dacIndex</span></em>, <em class="sig-param"><span class="n">arg1</span><span class="p">:</span> <span class="n">int</span></em>, <em class="sig-param"><span class="n">arg2</span><span class="p">:</span> <span class="n">bool</span> <span class="o">=</span> <span class="default_value">False</span></em>, <em class="sig-param"><span class="n">arg3</span><span class="p">:</span> <span class="n">List<span class="p">[</span>int<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">[]</span></em><span class="sig-paren">)</span> &#x2192; None<a class="headerlink" href="#slsdet.Detector.setDAC" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
@@ -2550,27 +2615,17 @@ Exmaples
 
 <dl class="py method">
 <dt id="slsdet.Detector.setDestinationUDPPort">
-<code class="sig-name descname">setDestinationUDPPort</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">self</span><span class="p">:</span> <span class="n">_slsdet.CppDetectorApi</span></em>, <em class="sig-param"><span class="n">arg0</span><span class="p">:</span> <span class="n">int</span></em>, <em class="sig-param"><span class="n">arg1</span><span class="p">:</span> <span class="n">int</span></em><span class="sig-paren">)</span> &#x2192; None<a class="headerlink" href="#slsdet.Detector.setDestinationUDPPort" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">setDestinationUDPPort</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">self</span><span class="p">:</span> <span class="n">_slsdet.CppDetectorApi</span></em>, <em class="sig-param"><span class="n">arg0</span><span class="p">:</span> <span class="n">int</span></em>, <em class="sig-param"><span class="n">arg1</span><span class="p">:</span> <span class="n">int</span> <span class="o">=</span> <span class="default_value">- 1</span></em><span class="sig-paren">)</span> &#x2192; None<a class="headerlink" href="#slsdet.Detector.setDestinationUDPPort" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
 <dt id="slsdet.Detector.setDestinationUDPPort2">
-<code class="sig-name descname">setDestinationUDPPort2</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">self</span><span class="p">:</span> <span class="n">_slsdet.CppDetectorApi</span></em>, <em class="sig-param"><span class="n">arg0</span><span class="p">:</span> <span class="n">int</span></em>, <em class="sig-param"><span class="n">arg1</span><span class="p">:</span> <span class="n">int</span></em><span class="sig-paren">)</span> &#x2192; None<a class="headerlink" href="#slsdet.Detector.setDestinationUDPPort2" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">setDestinationUDPPort2</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">self</span><span class="p">:</span> <span class="n">_slsdet.CppDetectorApi</span></em>, <em class="sig-param"><span class="n">arg0</span><span class="p">:</span> <span class="n">int</span></em>, <em class="sig-param"><span class="n">arg1</span><span class="p">:</span> <span class="n">int</span> <span class="o">=</span> <span class="default_value">- 1</span></em><span class="sig-paren">)</span> &#x2192; None<a class="headerlink" href="#slsdet.Detector.setDestinationUDPPort2" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
 <dt id="slsdet.Detector.setDetectorLock">
 <code class="sig-name descname">setDetectorLock</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">self</span><span class="p">:</span> <span class="n">_slsdet.CppDetectorApi</span></em>, <em class="sig-param"><span class="n">arg0</span><span class="p">:</span> <span class="n">bool</span></em>, <em class="sig-param"><span class="n">arg1</span><span class="p">:</span> <span class="n">List<span class="p">[</span>int<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">[]</span></em><span class="sig-paren">)</span> &#x2192; None<a class="headerlink" href="#slsdet.Detector.setDetectorLock" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="py method">
-<dt id="slsdet.Detector.setDetectorMinMaxEnergyThreshold">
-<code class="sig-name descname">setDetectorMinMaxEnergyThreshold</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">self</span><span class="p">:</span> <span class="n">_slsdet.CppDetectorApi</span></em>, <em class="sig-param"><span class="n">arg0</span><span class="p">:</span> <span class="n">bool</span></em>, <em class="sig-param"><span class="n">arg1</span><span class="p">:</span> <span class="n">int</span></em>, <em class="sig-param"><span class="n">arg2</span><span class="p">:</span> <span class="n">List<span class="p">[</span>int<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">[]</span></em><span class="sig-paren">)</span> &#x2192; None<a class="headerlink" href="#slsdet.Detector.setDetectorMinMaxEnergyThreshold" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="py method">
-<dt id="slsdet.Detector.setDetectorMode">
-<code class="sig-name descname">setDetectorMode</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">self</span><span class="p">:</span> <span class="n">_slsdet.CppDetectorApi</span></em>, <em class="sig-param"><span class="n">arg0</span><span class="p">:</span> <span class="n">_slsdet.slsDetectorDefs.detectorModeType</span></em>, <em class="sig-param"><span class="n">arg1</span><span class="p">:</span> <span class="n">List<span class="p">[</span>int<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">[]</span></em><span class="sig-paren">)</span> &#x2192; None<a class="headerlink" href="#slsdet.Detector.setDetectorMode" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
@@ -2641,11 +2696,6 @@ Exmaples
 <dl class="py method">
 <dt id="slsdet.Detector.setFilter">
 <code class="sig-name descname">setFilter</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">self</span><span class="p">:</span> <span class="n">_slsdet.CppDetectorApi</span></em>, <em class="sig-param"><span class="n">arg0</span><span class="p">:</span> <span class="n">int</span></em>, <em class="sig-param"><span class="n">arg1</span><span class="p">:</span> <span class="n">List<span class="p">[</span>int<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">[]</span></em><span class="sig-paren">)</span> &#x2192; None<a class="headerlink" href="#slsdet.Detector.setFilter" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="py method">
-<dt id="slsdet.Detector.setFrameMode">
-<code class="sig-name descname">setFrameMode</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">self</span><span class="p">:</span> <span class="n">_slsdet.CppDetectorApi</span></em>, <em class="sig-param"><span class="n">arg0</span><span class="p">:</span> <span class="n">_slsdet.slsDetectorDefs.frameModeType</span></em>, <em class="sig-param"><span class="n">arg1</span><span class="p">:</span> <span class="n">List<span class="p">[</span>int<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">[]</span></em><span class="sig-paren">)</span> &#x2192; None<a class="headerlink" href="#slsdet.Detector.setFrameMode" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
@@ -2895,7 +2945,7 @@ Exmaples
 
 <dl class="py method">
 <dt id="slsdet.Detector.setRxPort">
-<code class="sig-name descname">setRxPort</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">self</span><span class="p">:</span> <span class="n">_slsdet.CppDetectorApi</span></em>, <em class="sig-param"><span class="n">arg0</span><span class="p">:</span> <span class="n">int</span></em>, <em class="sig-param"><span class="n">arg1</span><span class="p">:</span> <span class="n">int</span></em><span class="sig-paren">)</span> &#x2192; None<a class="headerlink" href="#slsdet.Detector.setRxPort" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">setRxPort</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">self</span><span class="p">:</span> <span class="n">_slsdet.CppDetectorApi</span></em>, <em class="sig-param"><span class="n">arg0</span><span class="p">:</span> <span class="n">int</span></em>, <em class="sig-param"><span class="n">arg1</span><span class="p">:</span> <span class="n">int</span> <span class="o">=</span> <span class="default_value">- 1</span></em><span class="sig-paren">)</span> &#x2192; None<a class="headerlink" href="#slsdet.Detector.setRxPort" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
@@ -2925,7 +2975,7 @@ Exmaples
 
 <dl class="py method">
 <dt id="slsdet.Detector.setRxZmqPort">
-<code class="sig-name descname">setRxZmqPort</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">self</span><span class="p">:</span> <span class="n">_slsdet.CppDetectorApi</span></em>, <em class="sig-param"><span class="n">arg0</span><span class="p">:</span> <span class="n">int</span></em>, <em class="sig-param"><span class="n">arg1</span><span class="p">:</span> <span class="n">int</span></em><span class="sig-paren">)</span> &#x2192; None<a class="headerlink" href="#slsdet.Detector.setRxZmqPort" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">setRxZmqPort</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">self</span><span class="p">:</span> <span class="n">_slsdet.CppDetectorApi</span></em>, <em class="sig-param"><span class="n">arg0</span><span class="p">:</span> <span class="n">int</span></em>, <em class="sig-param"><span class="n">arg1</span><span class="p">:</span> <span class="n">int</span> <span class="o">=</span> <span class="default_value">- 1</span></em><span class="sig-paren">)</span> &#x2192; None<a class="headerlink" href="#slsdet.Detector.setRxZmqPort" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
@@ -3030,7 +3080,7 @@ Exmaples
 
 <dl class="py method">
 <dt id="slsdet.Detector.setThresholdEnergy">
-<code class="sig-name descname">setThresholdEnergy</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">self</span><span class="p">:</span> <span class="n">_slsdet.CppDetectorApi</span></em>, <em class="sig-param"><span class="n">arg0</span><span class="p">:</span> <span class="n">int</span></em>, <em class="sig-param"><span class="n">arg1</span><span class="p">:</span> <span class="n">_slsdet.slsDetectorDefs.detectorSettings</span></em>, <em class="sig-param"><span class="n">arg2</span><span class="p">:</span> <span class="n">bool</span></em>, <em class="sig-param"><span class="n">arg3</span><span class="p">:</span> <span class="n">List<span class="p">[</span>int<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">[]</span></em><span class="sig-paren">)</span> &#x2192; None<a class="headerlink" href="#slsdet.Detector.setThresholdEnergy" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">setThresholdEnergy</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">self</span><span class="p">:</span> <span class="n">_slsdet.CppDetectorApi</span></em>, <em class="sig-param"><span class="n">arg0</span><span class="p">:</span> <span class="n">int</span></em>, <em class="sig-param"><span class="n">arg1</span><span class="p">:</span> <span class="n">_slsdet.slsDetectorDefs.detectorSettings</span> <span class="o">=</span> <span class="default_value">detectorSettings.STANDARD</span></em>, <em class="sig-param"><span class="n">arg2</span><span class="p">:</span> <span class="n">bool</span> <span class="o">=</span> <span class="default_value">True</span></em>, <em class="sig-param"><span class="n">arg3</span><span class="p">:</span> <span class="n">List<span class="p">[</span>int<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">[]</span></em><span class="sig-paren">)</span> &#x2192; None<a class="headerlink" href="#slsdet.Detector.setThresholdEnergy" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
@@ -3133,6 +3183,11 @@ Exmaples
 <dd></dd></dl>
 
 <dl class="py method">
+<dt id="slsdet.Detector.slowadc">
+<em class="property">property </em><code class="sig-name descname">slowadc</code><a class="headerlink" href="#slsdet.Detector.slowadc" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
 <dt id="slsdet.Detector.speed">
 <em class="property">property </em><code class="sig-name descname">speed</code><a class="headerlink" href="#slsdet.Detector.speed" title="Permalink to this definition">¶</a></dt>
 <dd><p>speedLevel
@@ -3146,26 +3201,6 @@ Exmaples
 </dd>
 </dl>
 </dd></dl>
-
-<dl class="py method">
-<dt id="slsdet.Detector.src_udpip">
-<em class="property">property </em><code class="sig-name descname">src_udpip</code><a class="headerlink" href="#slsdet.Detector.src_udpip" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="py method">
-<dt id="slsdet.Detector.src_udpip2">
-<em class="property">property </em><code class="sig-name descname">src_udpip2</code><a class="headerlink" href="#slsdet.Detector.src_udpip2" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="py method">
-<dt id="slsdet.Detector.src_udpmac">
-<em class="property">property </em><code class="sig-name descname">src_udpmac</code><a class="headerlink" href="#slsdet.Detector.src_udpmac" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="py method">
-<dt id="slsdet.Detector.src_udpmac2">
-<em class="property">property </em><code class="sig-name descname">src_udpmac2</code><a class="headerlink" href="#slsdet.Detector.src_udpmac2" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
 
 <dl class="py method">
 <dt id="slsdet.Detector.start">
@@ -3223,6 +3258,11 @@ runStatus.IDLE</p>
 <dl class="py method">
 <dt id="slsdet.Detector.stopReceiver">
 <code class="sig-name descname">stopReceiver</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">self</span><span class="p">:</span> <span class="n">_slsdet.CppDetectorApi</span></em><span class="sig-paren">)</span> &#x2192; None<a class="headerlink" href="#slsdet.Detector.stopReceiver" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="slsdet.Detector.stopport">
+<em class="property">property </em><code class="sig-name descname">stopport</code><a class="headerlink" href="#slsdet.Detector.stopport" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
@@ -3315,22 +3355,47 @@ Options 0-15. Default is 15.</p>
 <dl class="py method">
 <dt id="slsdet.Detector.syncclk">
 <em class="property">property </em><code class="sig-name descname">syncclk</code><a class="headerlink" href="#slsdet.Detector.syncclk" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>[Ctb][Moench] Sync clock in MHz.
+.. note:: :setter: Not implemented</p>
+</dd></dl>
 
 <dl class="py method">
 <dt id="slsdet.Detector.temp_control">
 <em class="property">property </em><code class="sig-name descname">temp_control</code><a class="headerlink" href="#slsdet.Detector.temp_control" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>[Jungfrau] Temperature control enable.
+.. note:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Default</span> <span class="ow">is</span> <span class="mi">0</span> <span class="p">(</span><span class="n">disabled</span><span class="p">)</span><span class="o">.</span>
+
+<span class="n">If</span> <span class="n">temperature</span> <span class="n">crosses</span> <span class="n">threshold</span> <span class="n">temperature</span> <span class="ow">and</span> <span class="n">temperature</span> <span class="n">control</span> <span class="ow">is</span> <span class="n">enabled</span><span class="p">,</span> <span class="n">power</span> <span class="n">to</span> <span class="n">chip</span> <span class="n">will</span> <span class="n">be</span> <span class="n">switched</span> <span class="n">off</span> <span class="ow">and</span> <span class="n">temperature</span> <span class="n">event</span> <span class="n">occurs</span><span class="o">.</span>
+
+<span class="n">To</span> <span class="n">power</span> <span class="n">on</span> <span class="n">chip</span> <span class="n">again</span><span class="p">,</span> <span class="n">temperature</span> <span class="n">has</span> <span class="n">to</span> <span class="n">be</span> <span class="n">less</span> <span class="n">than</span> <span class="n">threshold</span> <span class="n">temperature</span> <span class="ow">and</span> <span class="n">temperature</span> <span class="n">event</span> <span class="n">has</span> <span class="n">to</span> <span class="n">be</span> <span class="n">cleared</span><span class="o">/</span><span class="n">reset</span><span class="o">.</span>
+</pre></div>
+</div>
+</dd></dl>
 
 <dl class="py method">
 <dt id="slsdet.Detector.temp_event">
 <em class="property">property </em><code class="sig-name descname">temp_event</code><a class="headerlink" href="#slsdet.Detector.temp_event" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>[Jungfrau] 1, if a temperature event occured.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If temperature crosses threshold temperature and temperature control is enabled, power to chip will be switched off and temperature event occurs.</p>
+<p>To power on chip again, temperature has to be less than threshold temperature and temperature event has to be cleared/reset.
+:setter: To clear the event, set it to 0.</p>
+</div>
+</dd></dl>
 
 <dl class="py method">
 <dt id="slsdet.Detector.temp_threshold">
 <em class="property">property </em><code class="sig-name descname">temp_threshold</code><a class="headerlink" href="#slsdet.Detector.temp_threshold" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>[Jungfrau] Threshold temperature in degrees.
+.. note:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">If</span> <span class="n">temperature</span> <span class="n">crosses</span> <span class="n">threshold</span> <span class="n">temperature</span> <span class="ow">and</span> <span class="n">temperature</span> <span class="n">control</span> <span class="ow">is</span> <span class="n">enabled</span><span class="p">,</span> <span class="n">power</span> <span class="n">to</span> <span class="n">chip</span> <span class="n">will</span> <span class="n">be</span> <span class="n">switched</span> <span class="n">off</span> <span class="ow">and</span> <span class="n">temperature</span> <span class="n">event</span> <span class="n">occurs</span><span class="o">.</span>
+
+<span class="n">To</span> <span class="n">power</span> <span class="n">on</span> <span class="n">chip</span> <span class="n">again</span><span class="p">,</span> <span class="n">temperature</span> <span class="n">has</span> <span class="n">to</span> <span class="n">be</span> <span class="n">less</span> <span class="n">than</span> <span class="n">threshold</span> <span class="n">temperature</span> <span class="ow">and</span> <span class="n">temperature</span> <span class="n">event</span> <span class="n">has</span> <span class="n">to</span> <span class="n">be</span> <span class="n">cleared</span><span class="o">/</span><span class="n">reset</span><span class="o">.</span>
+</pre></div>
+</div>
+</dd></dl>
 
 <dl class="py method">
 <dt id="slsdet.Detector.templist">
@@ -3346,17 +3411,45 @@ Options 0-15. Default is 15.</p>
 <dl class="py method">
 <dt id="slsdet.Detector.tengiga">
 <em class="property">property </em><code class="sig-name descname">tengiga</code><a class="headerlink" href="#slsdet.Detector.tengiga" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>[Eiger][Ctb][Moench][Mythen3] 10GbE Enable.</p>
+</dd></dl>
 
 <dl class="py method">
 <dt id="slsdet.Detector.threshold">
 <em class="property">property </em><code class="sig-name descname">threshold</code><a class="headerlink" href="#slsdet.Detector.threshold" title="Permalink to this definition">¶</a></dt>
+<dd><p>[Eiger] Threshold in eV
+.. note:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">To</span> <span class="n">change</span> <span class="n">settings</span> <span class="k">as</span> <span class="n">well</span> <span class="ow">or</span> <span class="nb">set</span> <span class="n">threshold</span> <span class="n">without</span> <span class="n">trimbits</span><span class="p">,</span> <span class="n">use</span> <span class="n">setThresholdEnergy</span><span class="o">.</span>
+<span class="p">:</span><span class="n">setter</span><span class="p">:</span> <span class="n">It</span> <span class="n">loads</span> <span class="n">trim</span> <span class="n">files</span> <span class="kn">from</span> <span class="nn">settingspath.</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt id="slsdet.Detector.timestamp">
+<em class="property">property </em><code class="sig-name descname">timestamp</code><a class="headerlink" href="#slsdet.Detector.timestamp" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
 <dt id="slsdet.Detector.timing">
 <em class="property">property </em><code class="sig-name descname">timing</code><a class="headerlink" href="#slsdet.Detector.timing" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>timingMode
+.. note:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Default</span><span class="p">:</span> <span class="n">AUTO_TIMING</span>
+
+<span class="p">[</span><span class="n">Jungfrau</span><span class="p">][</span><span class="n">Gotthard</span><span class="p">][</span><span class="n">Ctb</span><span class="p">][</span><span class="n">Moench</span><span class="p">][</span><span class="n">Gotthard2</span><span class="p">]</span> <span class="n">AUTO_TIMING</span><span class="p">,</span> <span class="n">TRIGGER_EXPOSURE</span>
+
+<span class="p">[</span><span class="n">Mythen3</span><span class="p">]</span> <span class="n">AUTO_TIMING</span><span class="p">,</span> <span class="n">TRIGGER_EXPOSURE</span><span class="p">,</span> <span class="n">GATED</span><span class="p">,</span> <span class="n">TRIGGER_GATED</span>
+
+<span class="p">[</span><span class="n">Eiger</span><span class="p">]</span> <span class="n">AUTO_TIMING</span><span class="p">,</span> <span class="n">TRIGGER_EXPOSURE</span><span class="p">,</span> <span class="n">GATED</span><span class="p">,</span> <span class="n">BURST_TRIGGER</span>
+</pre></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>Set Timing Mode of detector. Enum</p>
+</dd>
+</dl>
+</dd></dl>
 
 <dl class="py method">
 <dt id="slsdet.Detector.timinglist">
@@ -3364,8 +3457,18 @@ Options 0-15. Default is 15.</p>
 <dd></dd></dl>
 
 <dl class="py method">
+<dt id="slsdet.Detector.timingsource">
+<em class="property">property </em><code class="sig-name descname">timingsource</code><a class="headerlink" href="#slsdet.Detector.timingsource" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
 <dt id="slsdet.Detector.triggers">
 <em class="property">property </em><code class="sig-name descname">triggers</code><a class="headerlink" href="#slsdet.Detector.triggers" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="slsdet.Detector.triggersl">
+<em class="property">property </em><code class="sig-name descname">triggersl</code><a class="headerlink" href="#slsdet.Detector.triggersl" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
@@ -3376,6 +3479,27 @@ Options 0-15. Default is 15.</p>
 <dl class="py method">
 <dt id="slsdet.Detector.trimen">
 <em class="property">property </em><code class="sig-name descname">trimen</code><a class="headerlink" href="#slsdet.Detector.trimen" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="slsdet.Detector.trimval">
+<em class="property">property </em><code class="sig-name descname">trimval</code><a class="headerlink" href="#slsdet.Detector.trimval" title="Permalink to this definition">¶</a></dt>
+<dd><p>[Eiger][Mythen3] Set all trimbits to this value. Returns -1 if all trimbits are different values.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="slsdet.Detector.txndelay_frame">
+<em class="property">property </em><code class="sig-name descname">txndelay_frame</code><a class="headerlink" href="#slsdet.Detector.txndelay_frame" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="slsdet.Detector.txndelay_left">
+<em class="property">property </em><code class="sig-name descname">txndelay_left</code><a class="headerlink" href="#slsdet.Detector.txndelay_left" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="slsdet.Detector.txndelay_right">
+<em class="property">property </em><code class="sig-name descname">txndelay_right</code><a class="headerlink" href="#slsdet.Detector.txndelay_right" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
@@ -3421,6 +3545,16 @@ Options 0-15. Default is 15.</p>
 <dl class="py method">
 <dt id="slsdet.Detector.udp_srcip2">
 <em class="property">property </em><code class="sig-name descname">udp_srcip2</code><a class="headerlink" href="#slsdet.Detector.udp_srcip2" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="slsdet.Detector.udp_srcmac">
+<em class="property">property </em><code class="sig-name descname">udp_srcmac</code><a class="headerlink" href="#slsdet.Detector.udp_srcmac" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="slsdet.Detector.udp_srcmac2">
+<em class="property">property </em><code class="sig-name descname">udp_srcmac2</code><a class="headerlink" href="#slsdet.Detector.udp_srcmac2" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
@@ -3474,9 +3608,49 @@ Options 0-15. Default is 15.</p>
 <dd></dd></dl>
 
 <dl class="py method">
+<dt id="slsdet.Detector.versions">
+<em class="property">property </em><code class="sig-name descname">versions</code><a class="headerlink" href="#slsdet.Detector.versions" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
 <dt id="slsdet.Detector.veto">
 <em class="property">property </em><code class="sig-name descname">veto</code><a class="headerlink" href="#slsdet.Detector.veto" title="Permalink to this definition">¶</a></dt>
 <dd><p>[Gotthard2] Enable or disable veto data streaming from detector. Default is 0.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="slsdet.Detector.vetofile">
+<em class="property">property </em><code class="sig-name descname">vetofile</code><a class="headerlink" href="#slsdet.Detector.vetofile" title="Permalink to this definition">¶</a></dt>
+<dd><p>[Gotthard2] Set veto reference for each 128 channels for specific chip.
+The file should have 128 rows of gain index and 12 bit value in dec</p>
+<p class="rubric">Examples</p>
+<p>d.vetofile = ‘/path/to/file.txt’ #set for all chips
+d.vetofile = 3, ‘/path/to/file.txt’ # set for chip 3</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="slsdet.Detector.vetophoton">
+<em class="property">property </em><code class="sig-name descname">vetophoton</code><a class="headerlink" href="#slsdet.Detector.vetophoton" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="slsdet.Detector.vetoref">
+<em class="property">property </em><code class="sig-name descname">vetoref</code><a class="headerlink" href="#slsdet.Detector.vetoref" title="Permalink to this definition">¶</a></dt>
+<dd><p>[Gotthard2] Set veto reference for all 128 channels for all chips.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">d</span><span class="o">.</span><span class="n">vetoref</span> <span class="o">=</span> <span class="n">chip</span><span class="p">,</span> <span class="n">value</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt id="slsdet.Detector.virtual">
+<em class="property">property </em><code class="sig-name descname">virtual</code><a class="headerlink" href="#slsdet.Detector.virtual" title="Permalink to this definition">¶</a></dt>
+<dd><p>Setup with n virtual servers running on localhost
+starting with port p</p>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">d</span><span class="o">.</span><span class="n">virtual</span> <span class="o">=</span> <span class="n">n</span><span class="p">,</span> <span class="n">p</span>
+</pre></div>
+</div>
 </dd></dl>
 
 <dl class="py method">
