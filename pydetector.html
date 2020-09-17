@@ -198,7 +198,19 @@ C++ API directly and the simplified exptime property.</p>
 <dl class="py method">
 <dt id="slsdet.Detector.acquire">
 <code class="sig-name descname">acquire</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#slsdet.Detector.acquire" title="Permalink to this definition">¶</a></dt>
-<dd><p>Run the configured measurement</p>
+<dd><p>Run the configured measurement
+.. note:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Blocking</span> <span class="n">command</span><span class="p">,</span> <span class="n">where</span> <span class="n">control</span> <span class="n">server</span> <span class="ow">is</span> <span class="n">blocked</span> <span class="ow">and</span> <span class="n">cannot</span> <span class="n">accept</span> <span class="n">other</span> <span class="n">commands</span> <span class="n">until</span> <span class="n">acquisition</span> <span class="ow">is</span> <span class="n">done</span><span class="o">.</span>
+
+<span class="o">-</span> <span class="n">sets</span> <span class="n">acquiring</span> <span class="n">flag</span>
+<span class="o">-</span> <span class="n">starts</span> <span class="n">the</span> <span class="n">receiver</span> <span class="n">listener</span> <span class="p">(</span><span class="k">if</span> <span class="n">enabled</span><span class="p">)</span>
+<span class="o">-</span> <span class="n">starts</span> <span class="n">detector</span> <span class="n">acquisition</span> <span class="k">for</span> <span class="n">number</span> <span class="n">of</span> <span class="n">frames</span> <span class="nb">set</span>
+<span class="o">-</span> <span class="n">monitors</span> <span class="n">detector</span> <span class="n">status</span> <span class="kn">from</span> <span class="nn">running</span> <span class="n">to</span> <span class="n">idle</span>
+<span class="o">-</span> <span class="n">stops</span> <span class="n">the</span> <span class="n">receiver</span> <span class="n">listener</span> <span class="p">(</span><span class="k">if</span> <span class="n">enabled</span><span class="p">)</span>
+<span class="o">-</span> <span class="n">increments</span> <span class="n">file</span> <span class="n">index</span> <span class="k">if</span> <span class="n">file</span> <span class="n">write</span> <span class="n">enabled</span>
+<span class="o">-</span> <span class="n">resets</span> <span class="n">acquiring</span> <span class="n">flag</span>
+</pre></div>
+</div>
 </dd></dl>
 
 <dl class="py method">
@@ -206,6 +218,21 @@ C++ API directly and the simplified exptime property.</p>
 <em class="property">property </em><code class="sig-name descname">adcclk</code><a class="headerlink" href="#slsdet.Detector.adcclk" title="Permalink to this definition">¶</a></dt>
 <dd><p>[Ctb][Moench] Sets ADC clock frequency in MHz.</p>
 </dd></dl>
+
+<dl class="py method">
+<dt id="slsdet.Detector.adcenable">
+<em class="property">property </em><code class="sig-name descname">adcenable</code><a class="headerlink" href="#slsdet.Detector.adcenable" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="slsdet.Detector.adcenable10g">
+<em class="property">property </em><code class="sig-name descname">adcenable10g</code><a class="headerlink" href="#slsdet.Detector.adcenable10g" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="slsdet.Detector.adcinvert">
+<em class="property">property </em><code class="sig-name descname">adcinvert</code><a class="headerlink" href="#slsdet.Detector.adcinvert" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
 
 <dl class="py method">
 <dt id="slsdet.Detector.adcphase">
@@ -263,6 +290,26 @@ C++ API directly and the simplified exptime property.</p>
 </dd></dl>
 
 <dl class="py method">
+<dt id="slsdet.Detector.burstmode">
+<em class="property">property </em><code class="sig-name descname">burstmode</code><a class="headerlink" href="#slsdet.Detector.burstmode" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="slsdet.Detector.burstperiod">
+<em class="property">property </em><code class="sig-name descname">burstperiod</code><a class="headerlink" href="#slsdet.Detector.burstperiod" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="slsdet.Detector.bursts">
+<em class="property">property </em><code class="sig-name descname">bursts</code><a class="headerlink" href="#slsdet.Detector.bursts" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="slsdet.Detector.cdsgain">
+<em class="property">property </em><code class="sig-name descname">cdsgain</code><a class="headerlink" href="#slsdet.Detector.cdsgain" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
 <dt id="slsdet.Detector.clearAcquiringFlag">
 <code class="sig-name descname">clearAcquiringFlag</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">self</span><span class="p">:</span> <span class="n">_slsdet.CppDetectorApi</span></em><span class="sig-paren">)</span> &#x2192; None<a class="headerlink" href="#slsdet.Detector.clearAcquiringFlag" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
@@ -280,11 +327,17 @@ C++ API directly and the simplified exptime property.</p>
 <dl class="py method">
 <dt id="slsdet.Detector.clientversion">
 <em class="property">property </em><code class="sig-name descname">clientversion</code><a class="headerlink" href="#slsdet.Detector.clientversion" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>Client software version in format [YYMMDD]</p>
+</dd></dl>
 
 <dl class="py method">
 <dt id="slsdet.Detector.clkdiv">
 <em class="property">property </em><code class="sig-name descname">clkdiv</code><a class="headerlink" href="#slsdet.Detector.clkdiv" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="slsdet.Detector.clkfreq">
+<em class="property">property </em><code class="sig-name descname">clkfreq</code><a class="headerlink" href="#slsdet.Detector.clkfreq" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
@@ -304,7 +357,7 @@ Set up once.</p>
 </dd>
 </dl>
 </div>
-<p class="rubric">Examples</p>
+<p class="rubric">Example</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">d</span><span class="o">.</span><span class="n">config</span> <span class="o">=</span> <span class="s2">&quot;/path/to/config/file.config&quot;</span>
 </pre></div>
 </div>
@@ -323,7 +376,7 @@ Set up once.</p>
 <p class="admonition-title">Note</p>
 <p>Each element in list can be 0 - 2 and must be non repetitive.</p>
 </div>
-<p class="rubric">Examples</p>
+<p class="rubric">Example</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">d</span><span class="o">.</span><span class="n">counters</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
 </pre></div>
 </div>
@@ -367,7 +420,7 @@ Set up once.</p>
 <dt id="slsdet.Detector.delay">
 <em class="property">property </em><code class="sig-name descname">delay</code><a class="headerlink" href="#slsdet.Detector.delay" title="Permalink to this definition">¶</a></dt>
 <dd><p>[Gotthard][Jungfrau][CTB][Moench][Mythen3][Gotthard2] Delay after trigger, accepts either a value in seconds or datetime.timedelta</p>
-<p class="rubric">Examples</p>
+<p class="rubric">Example</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">d</span><span class="o">.</span><span class="n">delay</span> <span class="o">=</span> <span class="mf">1.05</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">d</span><span class="o">.</span><span class="n">delay</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">timedelta</span><span class="p">(</span><span class="n">minutes</span> <span class="o">=</span> <span class="mi">3</span><span class="p">,</span> <span class="n">seconds</span> <span class="o">=</span> <span class="mf">1.23</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">d</span><span class="o">.</span><span class="n">delay</span>
@@ -387,7 +440,7 @@ Set up once.</p>
 <p>[Gotthard2] only in continuous mdoe.
 :getter: always returns in seconds. To get in datetime.delta, use getDelayAfterTriggerLeft</p>
 </div>
-<p class="rubric">Examples</p>
+<p class="rubric">Example</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">d</span><span class="o">.</span><span class="n">delay</span>
 <span class="go">181.23</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">d</span><span class="o">.</span><span class="n">getDelayAfterTrigger</span><span class="p">()</span>
@@ -462,7 +515,7 @@ Set up once.</p>
 </dd>
 </dl>
 </div>
-<p class="rubric">Examples</p>
+<p class="rubric">Example</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">d</span><span class="o">.</span><span class="n">exptime</span> <span class="o">=</span> <span class="mf">1.05</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">d</span><span class="o">.</span><span class="n">exptime</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">timedelta</span><span class="p">(</span><span class="n">minutes</span> <span class="o">=</span> <span class="mi">3</span><span class="p">,</span> <span class="n">seconds</span> <span class="o">=</span> <span class="mf">1.23</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">d</span><span class="o">.</span><span class="n">exptime</span>
@@ -498,6 +551,11 @@ For HDF5, package must be compiled with HDF5 flags. Default is binary.</p>
 </dd></dl>
 
 <dl class="py method">
+<dt id="slsdet.Detector.filter">
+<em class="property">property </em><code class="sig-name descname">filter</code><a class="headerlink" href="#slsdet.Detector.filter" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
 <dt id="slsdet.Detector.findex">
 <em class="property">property </em><code class="sig-name descname">findex</code><a class="headerlink" href="#slsdet.Detector.findex" title="Permalink to this definition">¶</a></dt>
 <dd><p>File or Acquisition index in receiver.</p>
@@ -528,7 +586,7 @@ For HDF5, package must be compiled with HDF5 flags. Default is binary.</p>
 <p class="admonition-title">Note</p>
 <p>File name: [file name prefix]_d[detector index]_f[sub file index]_[acquisition/file index].[raw/h5].</p>
 </div>
-<p class="rubric">Examples</p>
+<p class="rubric">Example</p>
 <p>d.fname = ‘run’
 eg. file name: run_d0_f0_5.raw</p>
 </dd></dl>
@@ -547,7 +605,7 @@ eg. file name: run_d0_f0_5.raw</p>
 <p class="admonition-title">Note</p>
 <p>If path does not exist, it will try to create it.</p>
 </div>
-<p class="rubric">Examples</p>
+<p class="rubric">Example</p>
 <p>d.fpath = ‘/tmp/run_20201705’</p>
 </dd></dl>
 
@@ -555,10 +613,12 @@ eg. file name: run_d0_f0_5.raw</p>
 <dt id="slsdet.Detector.frames">
 <em class="property">property </em><code class="sig-name descname">frames</code><a class="headerlink" href="#slsdet.Detector.frames" title="Permalink to this definition">¶</a></dt>
 <dd><p>Number of frames per acquisition. In trigger mode, number of frames per trigger.</p>
-<p class="rubric">Notes</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
 <p>Cannot be set in modular level. ????
 In scan mode, number of frames is set to number of steps.
 [Gotthard2] Burst mode has a maximum of 2720 frames.</p>
+</div>
 </dd></dl>
 
 <dl class="py method">
@@ -602,7 +662,7 @@ In scan mode, number of frames is set to number of steps.
 </dd>
 </dl>
 </div>
-<p class="rubric">Examples</p>
+<p class="rubric">Example</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">d</span><span class="o">.</span><span class="n">gatedelay</span> <span class="o">=</span> <span class="mf">1.05</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">d</span><span class="o">.</span><span class="n">gatedelay</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">timedelta</span><span class="p">(</span><span class="n">minutes</span> <span class="o">=</span> <span class="mi">3</span><span class="p">,</span> <span class="n">seconds</span> <span class="o">=</span> <span class="mf">1.23</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">d</span><span class="o">.</span><span class="n">gatedelay</span>
@@ -615,6 +675,11 @@ In scan mode, number of frames is set to number of steps.
 </pre></div>
 </div>
 </dd></dl>
+
+<dl class="py method">
+<dt id="slsdet.Detector.gates">
+<em class="property">property </em><code class="sig-name descname">gates</code><a class="headerlink" href="#slsdet.Detector.gates" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
 
 <dl class="py method">
 <dt id="slsdet.Detector.getADCClock">
@@ -1573,61 +1638,36 @@ In scan mode, number of frames is set to number of steps.
 <dt id="slsdet.Detector.im_a">
 <em class="property">property </em><code class="sig-name descname">im_a</code><a class="headerlink" href="#slsdet.Detector.im_a" title="Permalink to this definition">¶</a></dt>
 <dd><p>[Ctb] Measured current of power supply a in mA.</p>
-<p class="rubric">Notes</p>
-<dl class="field-list simple">
-<dt class="field-odd">Setter</dt>
-<dd class="field-odd"><p>Not implemented</p>
-</dd>
-</dl>
 </dd></dl>
 
 <dl class="py method">
 <dt id="slsdet.Detector.im_b">
 <em class="property">property </em><code class="sig-name descname">im_b</code><a class="headerlink" href="#slsdet.Detector.im_b" title="Permalink to this definition">¶</a></dt>
 <dd><p>[Ctb] Measured current of power supply b in mA.</p>
-<p class="rubric">Notes</p>
-<dl class="field-list simple">
-<dt class="field-odd">Setter</dt>
-<dd class="field-odd"><p>Not implemented</p>
-</dd>
-</dl>
 </dd></dl>
 
 <dl class="py method">
 <dt id="slsdet.Detector.im_c">
 <em class="property">property </em><code class="sig-name descname">im_c</code><a class="headerlink" href="#slsdet.Detector.im_c" title="Permalink to this definition">¶</a></dt>
 <dd><p>[Ctb] Measured current of power supply c in mA.</p>
-<p class="rubric">Notes</p>
-<dl class="field-list simple">
-<dt class="field-odd">Setter</dt>
-<dd class="field-odd"><p>Not implemented</p>
-</dd>
-</dl>
 </dd></dl>
 
 <dl class="py method">
 <dt id="slsdet.Detector.im_d">
 <em class="property">property </em><code class="sig-name descname">im_d</code><a class="headerlink" href="#slsdet.Detector.im_d" title="Permalink to this definition">¶</a></dt>
 <dd><p>[Ctb] Measured current of power supply d in mA.</p>
-<p class="rubric">Notes</p>
-<dl class="field-list simple">
-<dt class="field-odd">Setter</dt>
-<dd class="field-odd"><p>Not implemented</p>
-</dd>
-</dl>
 </dd></dl>
 
 <dl class="py method">
 <dt id="slsdet.Detector.im_io">
 <em class="property">property </em><code class="sig-name descname">im_io</code><a class="headerlink" href="#slsdet.Detector.im_io" title="Permalink to this definition">¶</a></dt>
 <dd><p>[Ctb] Measured current of power supply io in mA.</p>
-<p class="rubric">Notes</p>
-<dl class="field-list simple">
-<dt class="field-odd">Setter</dt>
-<dd class="field-odd"><p>Not implemented</p>
-</dd>
-</dl>
 </dd></dl>
+
+<dl class="py method">
+<dt id="slsdet.Detector.initialchecks">
+<em class="property">property </em><code class="sig-name descname">initialchecks</code><a class="headerlink" href="#slsdet.Detector.initialchecks" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
 
 <dl class="py method">
 <dt id="slsdet.Detector.interruptsubframe">
@@ -1679,6 +1719,11 @@ In scan mode, number of frames is set to number of steps.
 <dd><p>[Jungfrau][CTB][Moench] Absolute maximum Phase shift of ADC clock.
 .. note:: :setter: Not Implemented</p>
 </dd></dl>
+
+<dl class="py method">
+<dt id="slsdet.Detector.maxclkphaseshift">
+<em class="property">property </em><code class="sig-name descname">maxclkphaseshift</code><a class="headerlink" href="#slsdet.Detector.maxclkphaseshift" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
 
 <dl class="py method">
 <dt id="slsdet.Detector.maxdbitphaseshift">
@@ -1794,7 +1839,7 @@ In scan mode, number of frames is set to number of steps.
 <dt id="slsdet.Detector.patioctrl">
 <em class="property">property </em><code class="sig-name descname">patioctrl</code><a class="headerlink" href="#slsdet.Detector.patioctrl" title="Permalink to this definition">¶</a></dt>
 <dd><p>[Ctb][Moench] 64 bit mask defining input (0) and output (1) signals.</p>
-<p class="rubric">Examples</p>
+<p class="rubric">Example</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">d</span><span class="o">.</span><span class="n">patioctrl</span> <span class="o">=</span> <span class="mh">0x8f0effff6dbffdbf</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">hex</span><span class="p">(</span><span class="n">d</span><span class="o">.</span><span class="n">patioctrl</span><span class="p">)</span>
 <span class="go">&#39;0x8f0effff6dbffdbf&#39;</span>
@@ -1806,7 +1851,7 @@ In scan mode, number of frames is set to number of steps.
 <dt id="slsdet.Detector.patlimits">
 <em class="property">property </em><code class="sig-name descname">patlimits</code><a class="headerlink" href="#slsdet.Detector.patlimits" title="Permalink to this definition">¶</a></dt>
 <dd><p>[Ctb][Moench][Mythen3] Limits (start and stop address) of complete pattern.</p>
-<p class="rubric">Examples</p>
+<p class="rubric">Example</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">d</span><span class="o">.</span><span class="n">patlimits</span> <span class="o">=</span> <span class="p">[</span><span class="mh">0x0</span><span class="p">,</span> <span class="mh">0x18c</span><span class="p">]</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">d</span><span class="o">.</span><span class="n">patlimits</span>
 <span class="go">[0, 396]</span>
@@ -1820,7 +1865,7 @@ In scan mode, number of frames is set to number of steps.
 <dt id="slsdet.Detector.patloop0">
 <em class="property">property </em><code class="sig-name descname">patloop0</code><a class="headerlink" href="#slsdet.Detector.patloop0" title="Permalink to this definition">¶</a></dt>
 <dd><p>[Ctb][Moench][Mythen3] Limits (start and stop address) of loop 0.</p>
-<p class="rubric">Examples</p>
+<p class="rubric">Example</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">d</span><span class="o">.</span><span class="n">patloop0</span> <span class="o">=</span> <span class="p">[</span><span class="mh">0x0</span><span class="p">,</span> <span class="mh">0x18c</span><span class="p">]</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">d</span><span class="o">.</span><span class="n">patloop0</span>
 <span class="go">[0, 396]</span>
@@ -1834,7 +1879,7 @@ In scan mode, number of frames is set to number of steps.
 <dt id="slsdet.Detector.patloop1">
 <em class="property">property </em><code class="sig-name descname">patloop1</code><a class="headerlink" href="#slsdet.Detector.patloop1" title="Permalink to this definition">¶</a></dt>
 <dd><p>[Ctb][Moench][Mythen3] Limits (start and stop address) of loop 1.</p>
-<p class="rubric">Examples</p>
+<p class="rubric">Example</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">d</span><span class="o">.</span><span class="n">patloop1</span> <span class="o">=</span> <span class="p">[</span><span class="mh">0x0</span><span class="p">,</span> <span class="mh">0x18c</span><span class="p">]</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">d</span><span class="o">.</span><span class="n">patloop1</span>
 <span class="go">[0, 396]</span>
@@ -1848,7 +1893,7 @@ In scan mode, number of frames is set to number of steps.
 <dt id="slsdet.Detector.patloop2">
 <em class="property">property </em><code class="sig-name descname">patloop2</code><a class="headerlink" href="#slsdet.Detector.patloop2" title="Permalink to this definition">¶</a></dt>
 <dd><p>[Ctb][Moench][Mythen3] Limits (start and stop address) of loop 2.</p>
-<p class="rubric">Examples</p>
+<p class="rubric">Example</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">d</span><span class="o">.</span><span class="n">patloop2</span> <span class="o">=</span> <span class="p">[</span><span class="mh">0x0</span><span class="p">,</span> <span class="mh">0x18c</span><span class="p">]</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">d</span><span class="o">.</span><span class="n">patloop2</span>
 <span class="go">[0, 396]</span>
@@ -1862,7 +1907,7 @@ In scan mode, number of frames is set to number of steps.
 <dt id="slsdet.Detector.patmask">
 <em class="property">property </em><code class="sig-name descname">patmask</code><a class="headerlink" href="#slsdet.Detector.patmask" title="Permalink to this definition">¶</a></dt>
 <dd><p>[Ctb][Moench][Mythen3] Sets the mask applied to every pattern to the selected bits.</p>
-<p class="rubric">Examples</p>
+<p class="rubric">Example</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">d</span><span class="o">.</span><span class="n">patmask</span> <span class="o">=</span> <span class="mh">0x8f0effff6dbffdbf</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">hex</span><span class="p">(</span><span class="n">d</span><span class="o">.</span><span class="n">patmask</span><span class="p">)</span>
 <span class="go">&#39;0x8f0effff6dbffdbf&#39;</span>
@@ -1892,7 +1937,7 @@ In scan mode, number of frames is set to number of steps.
 <dt id="slsdet.Detector.patsetbit">
 <em class="property">property </em><code class="sig-name descname">patsetbit</code><a class="headerlink" href="#slsdet.Detector.patsetbit" title="Permalink to this definition">¶</a></dt>
 <dd><p>[Ctb][Moench][Mythen3] Selects the bits that will have a pattern mask applied to the selected patmask for every pattern.</p>
-<p class="rubric">Examples</p>
+<p class="rubric">Example</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">d</span><span class="o">.</span><span class="n">patsetbit</span> <span class="o">=</span> <span class="mh">0x8f0effff6dbffdbf</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">hex</span><span class="p">(</span><span class="n">d</span><span class="o">.</span><span class="n">patsetbit</span><span class="p">)</span>
 <span class="go">&#39;0x8f0effff6dbffdbf&#39;</span>
@@ -1904,7 +1949,7 @@ In scan mode, number of frames is set to number of steps.
 <dt id="slsdet.Detector.pattern">
 <em class="property">property </em><code class="sig-name descname">pattern</code><a class="headerlink" href="#slsdet.Detector.pattern" title="Permalink to this definition">¶</a></dt>
 <dd><p>[Mythen3][Moench][Ctb] Loads ASCII pattern file directly to server (instead of executing line by line).</p>
-<p class="rubric">Examples</p>
+<p class="rubric">Example</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">d</span><span class="o">.</span><span class="n">pattern</span> <span class="o">=</span> <span class="s1">&#39;/tmp/pat.txt&#39;</span>
 </pre></div>
 </div>
@@ -1914,7 +1959,7 @@ In scan mode, number of frames is set to number of steps.
 <dt id="slsdet.Detector.patwait0">
 <em class="property">property </em><code class="sig-name descname">patwait0</code><a class="headerlink" href="#slsdet.Detector.patwait0" title="Permalink to this definition">¶</a></dt>
 <dd><p>[Ctb][Moench][Mythen3] Wait 0 address.</p>
-<p class="rubric">Examples</p>
+<p class="rubric">Example</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">d</span><span class="o">.</span><span class="n">patwait0</span> <span class="o">=</span> <span class="mh">0xaa</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">d</span><span class="o">.</span><span class="n">patwait0</span>
 <span class="go">170</span>
@@ -1928,7 +1973,7 @@ In scan mode, number of frames is set to number of steps.
 <dt id="slsdet.Detector.patwait1">
 <em class="property">property </em><code class="sig-name descname">patwait1</code><a class="headerlink" href="#slsdet.Detector.patwait1" title="Permalink to this definition">¶</a></dt>
 <dd><p>[Ctb][Moench][Mythen3] Wait 1 address.</p>
-<p class="rubric">Examples</p>
+<p class="rubric">Example</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">d</span><span class="o">.</span><span class="n">patwait1</span> <span class="o">=</span> <span class="mh">0xaa</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">d</span><span class="o">.</span><span class="n">patwait1</span>
 <span class="go">170</span>
@@ -1942,7 +1987,7 @@ In scan mode, number of frames is set to number of steps.
 <dt id="slsdet.Detector.patwait2">
 <em class="property">property </em><code class="sig-name descname">patwait2</code><a class="headerlink" href="#slsdet.Detector.patwait2" title="Permalink to this definition">¶</a></dt>
 <dd><p>[Ctb][Moench][Mythen3] Wait 2 address.</p>
-<p class="rubric">Examples</p>
+<p class="rubric">Example</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">d</span><span class="o">.</span><span class="n">patwait2</span> <span class="o">=</span> <span class="mh">0xaa</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">d</span><span class="o">.</span><span class="n">patwait2</span>
 <span class="go">170</span>
@@ -1974,7 +2019,7 @@ In scan mode, number of frames is set to number of steps.
 <dt id="slsdet.Detector.period">
 <em class="property">property </em><code class="sig-name descname">period</code><a class="headerlink" href="#slsdet.Detector.period" title="Permalink to this definition">¶</a></dt>
 <dd><p>Period between frames, accepts either a value in seconds or datetime.timedelta</p>
-<p class="rubric">Examples</p>
+<p class="rubric">Example</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">d</span><span class="o">.</span><span class="n">period</span> <span class="o">=</span> <span class="mf">1.05</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">d</span><span class="o">.</span><span class="n">period</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">timedelta</span><span class="p">(</span><span class="n">minutes</span> <span class="o">=</span> <span class="mi">3</span><span class="p">,</span> <span class="n">seconds</span> <span class="o">=</span> <span class="mf">1.23</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">d</span><span class="o">.</span><span class="n">period</span>
@@ -1984,6 +2029,11 @@ In scan mode, number of frames is set to number of steps.
 </pre></div>
 </div>
 </dd></dl>
+
+<dl class="py method">
+<dt id="slsdet.Detector.periodl">
+<em class="property">property </em><code class="sig-name descname">periodl</code><a class="headerlink" href="#slsdet.Detector.periodl" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
 
 <dl class="py method">
 <dt id="slsdet.Detector.port">
@@ -2042,7 +2092,7 @@ In scan mode, number of frames is set to number of steps.
 </dl>
 <p>Or use setDefaultRateCorrection to set the default one from trimbit file</p>
 </div>
-<p class="rubric">Examples</p>
+<p class="rubric">Example</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">d</span><span class="o">.</span><span class="n">ratecorr</span> <span class="o">=</span> <span class="mf">10e-9</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">d</span><span class="o">.</span><span class="n">setDefaultRateCorrection</span><span class="p">()</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">d</span><span class="o">.</span><span class="n">ratecorr</span> <span class="o">=</span> <span class="mf">0.0</span>
@@ -2105,10 +2155,12 @@ In scan mode, number of frames is set to number of steps.
 <dt id="slsdet.Detector.romode">
 <em class="property">property </em><code class="sig-name descname">romode</code><a class="headerlink" href="#slsdet.Detector.romode" title="Permalink to this definition">¶</a></dt>
 <dd><p>readoutMode</p>
-<p class="rubric">Notes</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
 <p>Options: ANALOG_ONLY, DIGITAL_ONLY, ANALOG_AND_DIGITAL
 Default: ANALOG_ONLY</p>
-<p class="rubric">Examples</p>
+</div>
+<p class="rubric">Example</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">d</span><span class="o">.</span><span class="n">romode</span> <span class="o">=</span> <span class="n">readoutMode</span><span class="o">.</span><span class="n">ANALOG_ONLY</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">d</span><span class="o">.</span><span class="n">romode</span>
 <span class="go">readoutMode.ANALOG_ONLY</span>
@@ -2131,9 +2183,11 @@ Default: ANALOG_ONLY</p>
 <dt id="slsdet.Detector.rx_dbitlist">
 <em class="property">property </em><code class="sig-name descname">rx_dbitlist</code><a class="headerlink" href="#slsdet.Detector.rx_dbitlist" title="Permalink to this definition">¶</a></dt>
 <dd><p>[Ctb] List of digital signal bits read out.</p>
-<p class="rubric">Notes</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
 <p>Each element in list can be 0 - 63 and must be non repetitive.</p>
-<p class="rubric">Examples</p>
+</div>
+<p class="rubric">Example</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">d</span><span class="o">.</span><span class="n">rxdbitlist</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">61</span><span class="p">,</span> <span class="mi">9</span><span class="p">]</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">d</span><span class="o">.</span><span class="n">rxdbitlist</span>
 <span class="go">[0, 1, 61, 9]</span>
@@ -2154,10 +2208,14 @@ Default: ANALOG_ONLY</p>
 <dt id="slsdet.Detector.rx_discardpolicy">
 <em class="property">property </em><code class="sig-name descname">rx_discardpolicy</code><a class="headerlink" href="#slsdet.Detector.rx_discardpolicy" title="Permalink to this definition">¶</a></dt>
 <dd><p>frameDiscardPolicy
-.. rubric:: Notes</p>
-<p>Options: NO_DISCARD, DISCARD_EMPTY_FRAMES, DISCARD_PARTIAL_FRAMES</p>
-<p>Default: NO_DISCARD</p>
-<p>DISCARD_PARTIAL_FRAMES is the fastest.</p>
+.. note:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Options</span><span class="p">:</span> <span class="n">NO_DISCARD</span><span class="p">,</span> <span class="n">DISCARD_EMPTY_FRAMES</span><span class="p">,</span> <span class="n">DISCARD_PARTIAL_FRAMES</span>
+
+<span class="n">Default</span><span class="p">:</span> <span class="n">NO_DISCARD</span>
+
+<span class="n">DISCARD_PARTIAL_FRAMES</span> <span class="ow">is</span> <span class="n">the</span> <span class="n">fastest</span><span class="o">.</span>
+</pre></div>
+</div>
 <p class="rubric">Example</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">d</span><span class="o">.</span><span class="n">rx_discardpolicy</span> <span class="o">=</span> <span class="n">frameDiscardPolicy</span><span class="o">.</span><span class="n">NO_DISCARD</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">d</span><span class="o">.</span><span class="n">rx_discardpolicy</span>
@@ -2193,19 +2251,25 @@ Default: ANALOG_ONLY</p>
 <dt id="slsdet.Detector.rx_framesperfile">
 <em class="property">property </em><code class="sig-name descname">rx_framesperfile</code><a class="headerlink" href="#slsdet.Detector.rx_framesperfile" title="Permalink to this definition">¶</a></dt>
 <dd><p>Sets the number of frames per file in receiver.</p>
-<p class="rubric">Notes</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
 <p>Default: depends on detector type.</p>
 <p>0 is infinite or all frames in single file.</p>
+</div>
 </dd></dl>
 
 <dl class="py method">
 <dt id="slsdet.Detector.rx_hostname">
 <em class="property">property </em><code class="sig-name descname">rx_hostname</code><a class="headerlink" href="#slsdet.Detector.rx_hostname" title="Permalink to this definition">¶</a></dt>
 <dd><p>Sets receiver hostname or IP address. Used for TCP control communication between client and receiver to configure receiver. Also updates receiver with detector parameters.
-.. rubric:: Notes</p>
-<p>Also resets any prior receiver property (not on detector).</p>
-<p>Can concatenate receiver hostnames for every module.</p>
-<p>If port included, then its the receiver tcp port for every receiver hostname.</p>
+.. note:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Also</span> <span class="n">resets</span> <span class="nb">any</span> <span class="n">prior</span> <span class="n">receiver</span> <span class="nb">property</span> <span class="p">(</span><span class="ow">not</span> <span class="n">on</span> <span class="n">detector</span><span class="p">)</span><span class="o">.</span>
+
+<span class="n">Can</span> <span class="n">concatenate</span> <span class="n">receiver</span> <span class="n">hostnames</span> <span class="k">for</span> <span class="n">every</span> <span class="n">module</span><span class="o">.</span>
+
+<span class="n">If</span> <span class="n">port</span> <span class="n">included</span><span class="p">,</span> <span class="n">then</span> <span class="n">its</span> <span class="n">the</span> <span class="n">receiver</span> <span class="n">tcp</span> <span class="n">port</span> <span class="k">for</span> <span class="n">every</span> <span class="n">receiver</span> <span class="n">hostname</span><span class="o">.</span>
+</pre></div>
+</div>
 <p class="rubric">Example</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">d</span><span class="o">.</span><span class="n">rx_hostname</span>
 <span class="go">&#39;mpc1922&#39;</span>
@@ -2231,6 +2295,7 @@ Default: ANALOG_ONLY</p>
 <dd><p>Get the receiver additional json parameter. In case the parameter is different between
 the modules a list of strings will be returned. On setting the value is automatically
 converted to a string.</p>
+<p class="rubric">Example</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">d</span><span class="o">.</span><span class="n">rx_jsonpara</span><span class="p">[</span><span class="s1">&#39;emin&#39;</span><span class="p">]</span>
 <span class="go">&#39;4500&#39;</span>
 </pre></div>
@@ -2262,9 +2327,12 @@ converted to a string.</p>
 <dt id="slsdet.Detector.rx_padding">
 <em class="property">property </em><code class="sig-name descname">rx_padding</code><a class="headerlink" href="#slsdet.Detector.rx_padding" title="Permalink to this definition">¶</a></dt>
 <dd><p>Partial frames padding enable in the receiver.
-.. rubric:: Notes</p>
-<p>Default: enabled</p>
-<p>Disabling is fastest.</p>
+.. note:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Default</span><span class="p">:</span> <span class="n">enabled</span>
+
+<span class="n">Disabling</span> <span class="ow">is</span> <span class="n">fastest</span><span class="o">.</span>
+</pre></div>
+</div>
 </dd></dl>
 
 <dl class="py method">
@@ -2289,10 +2357,12 @@ converted to a string.</p>
 <dt id="slsdet.Detector.rx_status">
 <em class="property">property </em><code class="sig-name descname">rx_status</code><a class="headerlink" href="#slsdet.Detector.rx_status" title="Permalink to this definition">¶</a></dt>
 <dd><p>runStatus
-.. rubric:: Notes</p>
-<p>Options: IDLE, TRANSMITTING, RUNNING
-&gt;&gt;&gt; d.rx_status
-runStatus.IDLE</p>
+.. note:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Options</span><span class="p">:</span> <span class="n">IDLE</span><span class="p">,</span> <span class="n">TRANSMITTING</span><span class="p">,</span> <span class="n">RUNNING</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">d</span><span class="o">.</span><span class="n">rx_status</span>
+<span class="n">runStatus</span><span class="o">.</span><span class="n">IDLE</span>
+</pre></div>
+</div>
 <dl class="field-list simple">
 <dt class="field-odd">Type</dt>
 <dd class="field-odd"><p>Gets receiver listener status. Enum</p>
@@ -2310,11 +2380,16 @@ runStatus.IDLE</p>
 <dt id="slsdet.Detector.rx_tcpport">
 <em class="property">property </em><code class="sig-name descname">rx_tcpport</code><a class="headerlink" href="#slsdet.Detector.rx_tcpport" title="Permalink to this definition">¶</a></dt>
 <dd><p>TCP port for client-receiver communication.
-.. rubric:: Notes</p>
-<p>Default is 1954.</p>
-<p>Must be different if multiple receivers on same pc.</p>
-<p>Must be first command to set a receiver parameter to be able to communicate.</p>
-<p>Multi command will automatically increment port for individual modules, which must be set via setRxPort.</p>
+.. note:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Default</span> <span class="ow">is</span> <span class="mf">1954.</span>
+
+<span class="n">Must</span> <span class="n">be</span> <span class="n">different</span> <span class="k">if</span> <span class="n">multiple</span> <span class="n">receivers</span> <span class="n">on</span> <span class="n">same</span> <span class="n">pc</span><span class="o">.</span>
+
+<span class="n">Must</span> <span class="n">be</span> <span class="n">first</span> <span class="n">command</span> <span class="n">to</span> <span class="nb">set</span> <span class="n">a</span> <span class="n">receiver</span> <span class="n">parameter</span> <span class="n">to</span> <span class="n">be</span> <span class="n">able</span> <span class="n">to</span> <span class="n">communicate</span><span class="o">.</span>
+
+<span class="n">Multi</span> <span class="n">command</span> <span class="n">will</span> <span class="n">automatically</span> <span class="n">increment</span> <span class="n">port</span> <span class="k">for</span> <span class="n">individual</span> <span class="n">modules</span><span class="p">,</span> <span class="n">which</span> <span class="n">must</span> <span class="n">be</span> <span class="nb">set</span> <span class="n">via</span> <span class="n">setRxPort</span><span class="o">.</span>
+</pre></div>
+</div>
 <p class="rubric">Example</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">d</span><span class="o">.</span><span class="n">rx_tcpport</span>
 <span class="go">2010</span>
@@ -2323,6 +2398,11 @@ runStatus.IDLE</p>
 </pre></div>
 </div>
 </dd></dl>
+
+<dl class="py method">
+<dt id="slsdet.Detector.rx_threads">
+<em class="property">property </em><code class="sig-name descname">rx_threads</code><a class="headerlink" href="#slsdet.Detector.rx_threads" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
 
 <dl class="py method">
 <dt id="slsdet.Detector.rx_udpsocksize">
@@ -2340,24 +2420,32 @@ runStatus.IDLE</p>
 <dt id="slsdet.Detector.rx_zmqfreq">
 <em class="property">property </em><code class="sig-name descname">rx_zmqfreq</code><a class="headerlink" href="#slsdet.Detector.rx_zmqfreq" title="Permalink to this definition">¶</a></dt>
 <dd><p>Frequency of frames streamed out from receiver via zmq.
-.. rubric:: Notes</p>
-<p>Default: 1, Means every frame is streamed out.</p>
-<p>If 2, every second frame is streamed out.</p>
-<p>If 0, streaming timer is the timeout, after which current frame is sent out. (default timeout is 200 ms). Usually used for gui purposes.</p>
+.. note:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Default</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="n">Means</span> <span class="n">every</span> <span class="n">frame</span> <span class="ow">is</span> <span class="n">streamed</span> <span class="n">out</span><span class="o">.</span>
+
+<span class="n">If</span> <span class="mi">2</span><span class="p">,</span> <span class="n">every</span> <span class="n">second</span> <span class="n">frame</span> <span class="ow">is</span> <span class="n">streamed</span> <span class="n">out</span><span class="o">.</span>
+
+<span class="n">If</span> <span class="mi">0</span><span class="p">,</span> <span class="n">streaming</span> <span class="n">timer</span> <span class="ow">is</span> <span class="n">the</span> <span class="n">timeout</span><span class="p">,</span> <span class="n">after</span> <span class="n">which</span> <span class="n">current</span> <span class="n">frame</span> <span class="ow">is</span> <span class="n">sent</span> <span class="n">out</span><span class="o">.</span> <span class="p">(</span><span class="n">default</span> <span class="n">timeout</span> <span class="ow">is</span> <span class="mi">200</span> <span class="n">ms</span><span class="p">)</span><span class="o">.</span> <span class="n">Usually</span> <span class="n">used</span> <span class="k">for</span> <span class="n">gui</span> <span class="n">purposes</span><span class="o">.</span>
+</pre></div>
+</div>
 </dd></dl>
 
 <dl class="py method">
 <dt id="slsdet.Detector.rx_zmqip">
 <em class="property">property </em><code class="sig-name descname">rx_zmqip</code><a class="headerlink" href="#slsdet.Detector.rx_zmqip" title="Permalink to this definition">¶</a></dt>
 <dd><p>Zmq Ip Address from which data is to be streamed out of the receiver.
-.. rubric:: Notes</p>
-<p>Also restarts receiver zmq streaming if enabled.</p>
-<p>Default is from rx_hostname.</p>
-<p>Modified only when using an intermediate process after receiver.</p>
+.. note:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Also</span> <span class="n">restarts</span> <span class="n">receiver</span> <span class="n">zmq</span> <span class="n">streaming</span> <span class="k">if</span> <span class="n">enabled</span><span class="o">.</span>
+
+<span class="n">Default</span> <span class="ow">is</span> <span class="kn">from</span> <span class="nn">rx_hostname.</span>
+
+<span class="n">Modified</span> <span class="n">only</span> <span class="n">when</span> <span class="n">using</span> <span class="n">an</span> <span class="n">intermediate</span> <span class="n">process</span> <span class="n">after</span> <span class="n">receiver</span><span class="o">.</span>
+</pre></div>
+</div>
 <p class="rubric">Example</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; d.rx_zmqip
-192.168.0.101
-&gt;&gt;&gt; d.rx_zmqip = ?????
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">d</span><span class="o">.</span><span class="n">rx_zmqip</span>
+<span class="go">192.168.0.101</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">d</span><span class="o">.</span><span class="n">rx_zmqip</span> <span class="o">=</span> <span class="s1">&#39;192.168.0.101&#39;</span>
 </pre></div>
 </div>
 </dd></dl>
@@ -2366,13 +2454,17 @@ runStatus.IDLE</p>
 <dt id="slsdet.Detector.rx_zmqport">
 <em class="property">property </em><code class="sig-name descname">rx_zmqport</code><a class="headerlink" href="#slsdet.Detector.rx_zmqport" title="Permalink to this definition">¶</a></dt>
 <dd><p>Zmq port for data to be streamed out of the receiver.
-.. rubric:: Notes</p>
-<p>Also restarts receiver zmq streaming if enabled.</p>
-<p>Default is 30001.</p>
-<p>Modified only when using an intermediate process after receiver.</p>
-<p>Must be different for every detector (and udp port).</p>
-<p>Multi command will automatically increment for individual modules, use setRxZmqPort.</p>
-<p class="rubric">Examples</p>
+.. note:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Also</span> <span class="n">restarts</span> <span class="n">receiver</span> <span class="n">zmq</span> <span class="n">streaming</span> <span class="k">if</span> <span class="n">enabled</span><span class="o">.</span>
+
+<span class="n">Default</span> <span class="ow">is</span> <span class="mf">30001.</span>
+
+<span class="n">Must</span> <span class="n">be</span> <span class="n">different</span> <span class="k">for</span> <span class="n">every</span> <span class="n">detector</span> <span class="p">(</span><span class="ow">and</span> <span class="n">udp</span> <span class="n">port</span><span class="p">)</span><span class="o">.</span>
+
+<span class="n">Multi</span> <span class="n">command</span> <span class="n">will</span> <span class="n">automatically</span> <span class="n">increment</span> <span class="k">for</span> <span class="n">individual</span> <span class="n">modules</span><span class="p">,</span> <span class="n">use</span> <span class="n">setRxZmqPort</span><span class="o">.</span>
+</pre></div>
+</div>
+<p class="rubric">Example</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">d</span><span class="o">.</span><span class="n">rx_zmqport</span>
 <span class="go">[30001, 30002, 30003, 300004]</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">d</span><span class="o">.</span><span class="n">rx_zmqport</span> <span class="o">=</span> <span class="mi">30001</span>
@@ -2380,6 +2472,11 @@ runStatus.IDLE</p>
 </pre></div>
 </div>
 </dd></dl>
+
+<dl class="py method">
+<dt id="slsdet.Detector.rx_zmqstartfnum">
+<em class="property">property </em><code class="sig-name descname">rx_zmqstartfnum</code><a class="headerlink" href="#slsdet.Detector.rx_zmqstartfnum" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
 
 <dl class="py method">
 <dt id="slsdet.Detector.rx_zmqstream">
@@ -2401,6 +2498,11 @@ runStatus.IDLE</p>
 <dd></dd></dl>
 
 <dl class="py method">
+<dt id="slsdet.Detector.scanerrmsg">
+<em class="property">property </em><code class="sig-name descname">scanerrmsg</code><a class="headerlink" href="#slsdet.Detector.scanerrmsg" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
 <dt id="slsdet.Detector.selectUDPInterface">
 <code class="sig-name descname">selectUDPInterface</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">self</span><span class="p">:</span> <span class="n">_slsdet.CppDetectorApi</span></em>, <em class="sig-param"><span class="n">arg0</span><span class="p">:</span> <span class="n">int</span></em>, <em class="sig-param"><span class="n">arg1</span><span class="p">:</span> <span class="n">List<span class="p">[</span>int<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">[]</span></em><span class="sig-paren">)</span> &#x2192; None<a class="headerlink" href="#slsdet.Detector.selectUDPInterface" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
@@ -2409,8 +2511,7 @@ runStatus.IDLE</p>
 <dt id="slsdet.Detector.selinterface">
 <em class="property">property </em><code class="sig-name descname">selinterface</code><a class="headerlink" href="#slsdet.Detector.selinterface" title="Permalink to this definition">¶</a></dt>
 <dd><p>[Jungfrau] The udp interface to stream data from detector.
-.. rubric:: Notes</p>
-<p>Effective only when number of interfaces is 1. Default: 0 (outer). Inner is 1.</p>
+.. note:: Effective only when number of interfaces is 1. Default: 0 (outer). Inner is 1.</p>
 </dd></dl>
 
 <dl class="py method">
@@ -2526,11 +2627,6 @@ runStatus.IDLE</p>
 <dl class="py method">
 <dt id="slsdet.Detector.setClockDivider">
 <code class="sig-name descname">setClockDivider</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">self</span><span class="p">:</span> <span class="n">_slsdet.CppDetectorApi</span></em>, <em class="sig-param"><span class="n">arg0</span><span class="p">:</span> <span class="n">int</span></em>, <em class="sig-param"><span class="n">arg1</span><span class="p">:</span> <span class="n">int</span></em>, <em class="sig-param"><span class="n">arg2</span><span class="p">:</span> <span class="n">List<span class="p">[</span>int<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">[]</span></em><span class="sig-paren">)</span> &#x2192; None<a class="headerlink" href="#slsdet.Detector.setClockDivider" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="py method">
-<dt id="slsdet.Detector.setClockFrequency">
-<code class="sig-name descname">setClockFrequency</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">self</span><span class="p">:</span> <span class="n">_slsdet.CppDetectorApi</span></em>, <em class="sig-param"><span class="n">arg0</span><span class="p">:</span> <span class="n">int</span></em>, <em class="sig-param"><span class="n">arg1</span><span class="p">:</span> <span class="n">int</span></em>, <em class="sig-param"><span class="n">arg2</span><span class="p">:</span> <span class="n">List<span class="p">[</span>int<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">[]</span></em><span class="sig-paren">)</span> &#x2192; None<a class="headerlink" href="#slsdet.Detector.setClockFrequency" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
@@ -3152,13 +3248,19 @@ runStatus.IDLE</p>
 <dt id="slsdet.Detector.settings">
 <em class="property">property </em><code class="sig-name descname">settings</code><a class="headerlink" href="#slsdet.Detector.settings" title="Permalink to this definition">¶</a></dt>
 <dd><p>detectorSettings
-.. rubric:: Notes</p>
-<p>[Eiger] Use threshold command to load settings
-[Jungfrau] DYNAMICGAIN, DYNAMICHG0, FIXGAIN1, FIXGAIN2, FORCESWITCHG1, FORCESWITCHG2</p>
-<p>[Gotthard] DYNAMICGAIN, HIGHGAIN, LOWGAIN, MEDIUMGAIN, VERYHIGHGAIN</p>
-<p>[Gotthard2] DYNAMICGAIN, FIXGAIN1, FIXGAIN2</p>
-<p>[Moench] G1_HIGHGAIN, G1_LOWGAIN, G2_HIGHCAP_HIGHGAIN, G2_HIGHCAP_LOWGAIN, G2_LOWCAP_HIGHGAIN, G2_LOWCAP_LOWGAIN, G4_HIGHGAIN, G4_LOWGAIN</p>
-<p>[Eiger] settings loaded from file found in settingspath</p>
+.. note:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">Eiger</span><span class="p">]</span> <span class="n">Use</span> <span class="n">threshold</span> <span class="n">command</span> <span class="n">to</span> <span class="n">load</span> <span class="n">settings</span>
+<span class="p">[</span><span class="n">Jungfrau</span><span class="p">]</span> <span class="n">DYNAMICGAIN</span><span class="p">,</span> <span class="n">DYNAMICHG0</span><span class="p">,</span> <span class="n">FIXGAIN1</span><span class="p">,</span> <span class="n">FIXGAIN2</span><span class="p">,</span> <span class="n">FORCESWITCHG1</span><span class="p">,</span> <span class="n">FORCESWITCHG2</span>
+
+<span class="p">[</span><span class="n">Gotthard</span><span class="p">]</span> <span class="n">DYNAMICGAIN</span><span class="p">,</span> <span class="n">HIGHGAIN</span><span class="p">,</span> <span class="n">LOWGAIN</span><span class="p">,</span> <span class="n">MEDIUMGAIN</span><span class="p">,</span> <span class="n">VERYHIGHGAIN</span>
+
+<span class="p">[</span><span class="n">Gotthard2</span><span class="p">]</span> <span class="n">DYNAMICGAIN</span><span class="p">,</span> <span class="n">FIXGAIN1</span><span class="p">,</span> <span class="n">FIXGAIN2</span>
+
+<span class="p">[</span><span class="n">Moench</span><span class="p">]</span> <span class="n">G1_HIGHGAIN</span><span class="p">,</span> <span class="n">G1_LOWGAIN</span><span class="p">,</span> <span class="n">G2_HIGHCAP_HIGHGAIN</span><span class="p">,</span> <span class="n">G2_HIGHCAP_LOWGAIN</span><span class="p">,</span> <span class="n">G2_LOWCAP_HIGHGAIN</span><span class="p">,</span> <span class="n">G2_LOWCAP_LOWGAIN</span><span class="p">,</span> <span class="n">G4_HIGHGAIN</span><span class="p">,</span> <span class="n">G4_LOWGAIN</span>
+
+<span class="p">[</span><span class="n">Eiger</span><span class="p">]</span> <span class="n">settings</span> <span class="n">loaded</span> <span class="kn">from</span> <span class="nn">file</span> <span class="n">found</span> <span class="ow">in</span> <span class="n">settingspath</span>
+</pre></div>
+</div>
 <dl class="field-list simple">
 <dt class="field-odd">Type</dt>
 <dd class="field-odd"><p>Detector settings. Enum</p>
@@ -3191,10 +3293,14 @@ runStatus.IDLE</p>
 <dt id="slsdet.Detector.speed">
 <em class="property">property </em><code class="sig-name descname">speed</code><a class="headerlink" href="#slsdet.Detector.speed" title="Permalink to this definition">¶</a></dt>
 <dd><p>speedLevel
-.. rubric:: Notes</p>
-<p>Options: FULL_SPEED, HALF_SPEED, QUARTER_SPEED</p>
-<p>[Jungfrau] FULL_SPEED option only available from v2.0 boards and with setting number of interfaces to 2.</p>
-<p>Also overwrites adcphase to recommended default.</p>
+.. note:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Options</span><span class="p">:</span> <span class="n">FULL_SPEED</span><span class="p">,</span> <span class="n">HALF_SPEED</span><span class="p">,</span> <span class="n">QUARTER_SPEED</span>
+
+<span class="p">[</span><span class="n">Jungfrau</span><span class="p">]</span> <span class="n">FULL_SPEED</span> <span class="n">option</span> <span class="n">only</span> <span class="n">available</span> <span class="kn">from</span> <span class="nn">v2.</span><span class="mi">0</span> <span class="n">boards</span> <span class="ow">and</span> <span class="k">with</span> <span class="n">setting</span> <span class="n">number</span> <span class="n">of</span> <span class="n">interfaces</span> <span class="n">to</span> <span class="mf">2.</span>
+
+<span class="n">Also</span> <span class="n">overwrites</span> <span class="n">adcphase</span> <span class="n">to</span> <span class="n">recommended</span> <span class="n">default</span><span class="o">.</span>
+</pre></div>
+</div>
 <dl class="field-list simple">
 <dt class="field-odd">Type</dt>
 <dd class="field-odd"><p>[Eiger][Jungfrau] Readout speed of chip. Enum</p>
@@ -3233,10 +3339,12 @@ runStatus.IDLE</p>
 <dt id="slsdet.Detector.status">
 <em class="property">property </em><code class="sig-name descname">status</code><a class="headerlink" href="#slsdet.Detector.status" title="Permalink to this definition">¶</a></dt>
 <dd><p>runStatus
-.. rubric:: Notes</p>
-<p>Options: IDLE, ERROR, WAITING, RUN_FINISHED, TRANSMITTING, RUNNING, STOPPED
-&gt;&gt;&gt; d.status
-runStatus.IDLE</p>
+.. note:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Options</span><span class="p">:</span> <span class="n">IDLE</span><span class="p">,</span> <span class="n">ERROR</span><span class="p">,</span> <span class="n">WAITING</span><span class="p">,</span> <span class="n">RUN_FINISHED</span><span class="p">,</span> <span class="n">TRANSMITTING</span><span class="p">,</span> <span class="n">RUNNING</span><span class="p">,</span> <span class="n">STOPPED</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">d</span><span class="o">.</span><span class="n">status</span>
+<span class="n">runStatus</span><span class="o">.</span><span class="n">IDLE</span>
+</pre></div>
+</div>
 <dl class="field-list simple">
 <dt class="field-odd">Type</dt>
 <dd class="field-odd"><p>Gets detector status. Enum</p>
@@ -3277,7 +3385,7 @@ runStatus.IDLE</p>
 <span class="p">:</span><span class="n">getter</span><span class="p">:</span> <span class="n">always</span> <span class="n">returns</span> <span class="ow">in</span> <span class="n">seconds</span><span class="o">.</span> <span class="n">To</span> <span class="n">get</span> <span class="ow">in</span> <span class="n">datetime</span><span class="o">.</span><span class="n">delta</span><span class="p">,</span> <span class="n">use</span> <span class="n">getStorageCellDelay</span>
 </pre></div>
 </div>
-<p class="rubric">Examples</p>
+<p class="rubric">Example</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">d</span><span class="o">.</span><span class="n">storagecell_delay</span> <span class="o">=</span> <span class="mf">0.00056</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">d</span><span class="o">.</span><span class="n">storagecell_delay</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">timedelta</span><span class="p">(</span><span class="n">microseconds</span> <span class="o">=</span> <span class="mi">45</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">d</span><span class="o">.</span><span class="n">storagecell_delay</span>
@@ -3321,7 +3429,7 @@ Options 0-15. Default is 15.</p>
 <span class="p">:</span><span class="n">getter</span><span class="p">:</span> <span class="n">always</span> <span class="n">returns</span> <span class="ow">in</span> <span class="n">seconds</span><span class="o">.</span> <span class="n">To</span> <span class="n">get</span> <span class="ow">in</span> <span class="n">datetime</span><span class="o">.</span><span class="n">delta</span><span class="p">,</span> <span class="n">use</span> <span class="n">getSubDeadTime</span>
 </pre></div>
 </div>
-<p class="rubric">Examples</p>
+<p class="rubric">Example</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">d</span><span class="o">.</span><span class="n">subdeadtime</span> <span class="o">=</span> <span class="mf">1.230203</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">d</span><span class="o">.</span><span class="n">subdeadtime</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">timedelta</span><span class="p">(</span><span class="n">seconds</span> <span class="o">=</span> <span class="mf">1.23</span><span class="p">,</span> <span class="n">microseconds</span> <span class="o">=</span> <span class="mi">203</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">d</span><span class="o">.</span><span class="n">subdeadtime</span>
@@ -3341,7 +3449,7 @@ Options 0-15. Default is 15.</p>
 <span class="p">:</span><span class="n">getter</span><span class="p">:</span> <span class="n">always</span> <span class="n">returns</span> <span class="ow">in</span> <span class="n">seconds</span><span class="o">.</span> <span class="n">To</span> <span class="n">get</span> <span class="ow">in</span> <span class="n">datetime</span><span class="o">.</span><span class="n">delta</span><span class="p">,</span> <span class="n">use</span> <span class="n">getSubExptime</span>
 </pre></div>
 </div>
-<p class="rubric">Examples</p>
+<p class="rubric">Example</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">d</span><span class="o">.</span><span class="n">subexptime</span> <span class="o">=</span> <span class="mf">1.230203</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">d</span><span class="o">.</span><span class="n">subexptime</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">timedelta</span><span class="p">(</span><span class="n">seconds</span> <span class="o">=</span> <span class="mf">1.23</span><span class="p">,</span> <span class="n">microseconds</span> <span class="o">=</span> <span class="mi">203</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">d</span><span class="o">.</span><span class="n">subexptime</span>
@@ -3464,7 +3572,8 @@ Options 0-15. Default is 15.</p>
 <dl class="py method">
 <dt id="slsdet.Detector.triggers">
 <em class="property">property </em><code class="sig-name descname">triggers</code><a class="headerlink" href="#slsdet.Detector.triggers" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>Number of triggers per aquire. Set timing mode to use triggers.</p>
+</dd></dl>
 
 <dl class="py method">
 <dt id="slsdet.Detector.triggersl">
@@ -3474,12 +3583,32 @@ Options 0-15. Default is 15.</p>
 <dl class="py method">
 <dt id="slsdet.Detector.trimbits">
 <em class="property">property </em><code class="sig-name descname">trimbits</code><a class="headerlink" href="#slsdet.Detector.trimbits" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>[Eiger][Mythen3] Loads custom trimbit file to detector.
+.. note:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">If</span> <span class="n">no</span> <span class="n">extension</span> <span class="n">specified</span><span class="p">,</span> <span class="n">serial</span> <span class="n">number</span> <span class="n">of</span> <span class="n">each</span> <span class="n">module</span> <span class="ow">is</span> <span class="n">attached</span><span class="o">.</span>
+<span class="p">:</span><span class="n">getter</span><span class="p">:</span> <span class="n">Not</span> <span class="n">implemented</span>
+</pre></div>
+</div>
+<p class="rubric">Example</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">d</span><span class="o">.</span><span class="n">trimbits</span> <span class="o">=</span> <span class="s1">&#39;/path_to_file/noise&#39;</span>
+<span class="go">- 14:53:27.931 INFO: Settings file loaded: /path_to_file/noise.sn000</span>
+</pre></div>
+</div>
+</dd></dl>
 
 <dl class="py method">
 <dt id="slsdet.Detector.trimen">
 <em class="property">property </em><code class="sig-name descname">trimen</code><a class="headerlink" href="#slsdet.Detector.trimen" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>[Eiger] List of trim energies, where corresponding default trim files exist in corresponding trim folders.
+.. rubric:: Example</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">d</span><span class="o">.</span><span class="n">trimen</span>
+<span class="go">[]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">d</span><span class="o">.</span><span class="n">trimen</span> <span class="o">=</span> <span class="p">[</span><span class="mi">4500</span><span class="p">,</span> <span class="mi">5400</span><span class="p">,</span> <span class="mi">6400</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">d</span><span class="o">.</span><span class="n">trimen</span>
+<span class="go">[4500, 5400, 6400]</span>
+</pre></div>
+</div>
+</dd></dl>
 
 <dl class="py method">
 <dt id="slsdet.Detector.trimval">
@@ -3505,57 +3634,212 @@ Options 0-15. Default is 15.</p>
 <dl class="py method">
 <dt id="slsdet.Detector.type">
 <em class="property">property </em><code class="sig-name descname">type</code><a class="headerlink" href="#slsdet.Detector.type" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>detectorType
+.. note:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">:</span><span class="n">setter</span><span class="p">:</span> <span class="n">Not</span> <span class="n">implemented</span>
+<span class="n">Values</span><span class="p">:</span> <span class="n">EIGER</span><span class="p">,</span> <span class="n">JUNGFRAU</span><span class="p">,</span> <span class="n">GOTTHARD</span><span class="p">,</span> <span class="n">MOENCH</span><span class="p">,</span> <span class="n">MYTHEN3</span><span class="p">,</span> <span class="n">GOTTHARD2</span><span class="p">,</span> <span class="n">CHIPTESTBOARD</span>
+</pre></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>Returns detector type. Enum</p>
+</dd>
+</dl>
+</dd></dl>
 
 <dl class="py method">
 <dt id="slsdet.Detector.udp_dstip">
 <em class="property">property </em><code class="sig-name descname">udp_dstip</code><a class="headerlink" href="#slsdet.Detector.udp_dstip" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>Ip address of the receiver (destination) udp interface.
+.. note:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">If</span> <span class="s1">&#39;auto&#39;</span> <span class="n">used</span><span class="p">,</span> <span class="n">then</span> <span class="n">ip</span> <span class="ow">is</span> <span class="nb">set</span> <span class="n">to</span> <span class="n">ip</span> <span class="n">of</span> <span class="n">rx_hostname</span><span class="o">.</span>
+
+<span class="n">To</span> <span class="nb">set</span> <span class="n">IPs</span> <span class="k">for</span> <span class="n">individual</span> <span class="n">modules</span><span class="p">,</span> <span class="n">use</span> <span class="n">setDestinationUDPIP</span><span class="o">.</span>
+</pre></div>
+</div>
+<p class="rubric">Example</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">d</span><span class="o">.</span><span class="n">udp_dstip</span> <span class="o">=</span> <span class="s1">&#39;192.168.1.110&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">d</span><span class="o">.</span><span class="n">udp_dstip</span>
+<span class="go">192.168.1.110</span>
+</pre></div>
+</div>
+</dd></dl>
 
 <dl class="py method">
 <dt id="slsdet.Detector.udp_dstip2">
 <em class="property">property </em><code class="sig-name descname">udp_dstip2</code><a class="headerlink" href="#slsdet.Detector.udp_dstip2" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>[Jungfrau][Gotthard2] Ip address of the receiver (destination) udp interface 2.
+.. note:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">Jungfrau</span><span class="p">]</span> <span class="n">bottom</span> <span class="n">half</span>
+
+<span class="p">[</span><span class="n">Gotthard2</span><span class="p">]</span> <span class="n">veto</span> <span class="n">debugging</span>
+
+<span class="n">If</span> <span class="s1">&#39;auto&#39;</span> <span class="n">used</span><span class="p">,</span> <span class="n">then</span> <span class="n">ip</span> <span class="ow">is</span> <span class="nb">set</span> <span class="n">to</span> <span class="n">ip</span> <span class="n">of</span> <span class="n">rx_hostname</span><span class="o">.</span>
+
+<span class="n">To</span> <span class="nb">set</span> <span class="n">IPs</span> <span class="k">for</span> <span class="n">individual</span> <span class="n">modules</span><span class="p">,</span> <span class="n">use</span> <span class="n">setDestinationUDPIP2</span><span class="o">.</span>
+</pre></div>
+</div>
+<p class="rubric">Example</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">d</span><span class="o">.</span><span class="n">udp_dstip2</span> <span class="o">=</span> <span class="s1">&#39;10.1.1.185&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">d</span><span class="o">.</span><span class="n">udp_dstip2</span>
+<span class="go">10.1.1.185</span>
+</pre></div>
+</div>
+</dd></dl>
 
 <dl class="py method">
 <dt id="slsdet.Detector.udp_dstmac">
 <em class="property">property </em><code class="sig-name descname">udp_dstmac</code><a class="headerlink" href="#slsdet.Detector.udp_dstmac" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>Mac address of the receiver (destination) udp interface.
+.. note:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Not</span> <span class="n">mandatory</span> <span class="n">to</span> <span class="nb">set</span> <span class="k">as</span> <span class="n">udp_dstip</span> <span class="n">retrieves</span> <span class="n">it</span> <span class="kn">from</span> <span class="nn">slsReceiver</span> <span class="n">process</span> <span class="n">but</span> <span class="n">must</span> <span class="n">be</span> <span class="nb">set</span> <span class="k">if</span> <span class="n">you</span> <span class="n">use</span> <span class="n">a</span> <span class="n">custom</span> <span class="n">receiver</span> <span class="p">(</span><span class="ow">not</span> <span class="n">slsReceiver</span><span class="p">)</span><span class="o">.</span>
+
+<span class="n">To</span> <span class="nb">set</span> <span class="n">MACs</span> <span class="k">for</span> <span class="n">individual</span> <span class="n">modules</span><span class="p">,</span> <span class="n">use</span> <span class="n">setDestinationUDPMAC</span><span class="o">.</span>
+</pre></div>
+</div>
+<p class="rubric">Example</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">d</span><span class="o">.</span><span class="n">udp_dstmac</span> <span class="o">=</span> <span class="s1">&#39;00:1b:31:01:8a:de&#39;</span>
+<span class="go">d.udp_dstmac</span>
+<span class="go">00:1b:31:01:8a:de</span>
+</pre></div>
+</div>
+</dd></dl>
 
 <dl class="py method">
 <dt id="slsdet.Detector.udp_dstmac2">
 <em class="property">property </em><code class="sig-name descname">udp_dstmac2</code><a class="headerlink" href="#slsdet.Detector.udp_dstmac2" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>[Jungfrau][Gotthard2] Mac address of the receiver (destination) udp interface 2.
+.. note:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Not</span> <span class="n">mandatory</span> <span class="n">to</span> <span class="nb">set</span> <span class="k">as</span> <span class="n">udp_dstip2</span> <span class="n">retrieves</span> <span class="n">it</span> <span class="kn">from</span> <span class="nn">slsReceiver</span> <span class="n">process</span> <span class="n">but</span> <span class="n">must</span> <span class="n">be</span> <span class="nb">set</span> <span class="k">if</span> <span class="n">you</span> <span class="n">use</span> <span class="n">a</span> <span class="n">custom</span> <span class="n">receiver</span> <span class="p">(</span><span class="ow">not</span> <span class="n">slsReceiver</span><span class="p">)</span><span class="o">.</span>
+
+<span class="n">To</span> <span class="nb">set</span> <span class="n">MACs</span> <span class="k">for</span> <span class="n">individual</span> <span class="n">modules</span><span class="p">,</span> <span class="n">use</span> <span class="n">setDestinationUDPMAC2</span><span class="o">.</span>
+
+<span class="p">[</span><span class="n">Jungfrau</span><span class="p">]</span> <span class="n">bottom</span> <span class="n">half</span>
+
+<span class="p">[</span><span class="n">Gotthard2</span><span class="p">]</span> <span class="n">veto</span> <span class="n">debugging</span>
+</pre></div>
+</div>
+<p class="rubric">Example</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">d</span><span class="o">.</span><span class="n">udp_dstmac2</span> <span class="o">=</span> <span class="s1">&#39;00:1b:31:01:8a:de&#39;</span>
+<span class="go">d.udp_dstmac2</span>
+<span class="go">00:1b:31:01:8a:de</span>
+</pre></div>
+</div>
+</dd></dl>
 
 <dl class="py method">
 <dt id="slsdet.Detector.udp_dstport">
 <em class="property">property </em><code class="sig-name descname">udp_dstport</code><a class="headerlink" href="#slsdet.Detector.udp_dstport" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>Port number of the receiver (destination) udp interface.
+.. note:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Default</span> <span class="ow">is</span> <span class="mf">50001.</span>
+
+<span class="n">Ports</span> <span class="k">for</span> <span class="n">each</span> <span class="n">module</span> <span class="ow">is</span> <span class="n">calculated</span> <span class="p">(</span><span class="n">incremented</span> <span class="n">by</span> <span class="mi">1</span> <span class="k">if</span> <span class="n">no</span> <span class="mi">2</span><span class="n">nd</span> <span class="n">interface</span><span class="p">)</span>
+
+<span class="n">To</span> <span class="nb">set</span> <span class="n">ports</span> <span class="k">for</span> <span class="n">individual</span> <span class="n">modules</span><span class="p">,</span> <span class="n">use</span> <span class="n">setDestinationUDPPort</span><span class="o">.</span>
+</pre></div>
+</div>
+</dd></dl>
 
 <dl class="py method">
 <dt id="slsdet.Detector.udp_dstport2">
 <em class="property">property </em><code class="sig-name descname">udp_dstport2</code><a class="headerlink" href="#slsdet.Detector.udp_dstport2" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>Port number of the receiver (destination) udp interface.
+.. note:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Default</span> <span class="ow">is</span> <span class="mf">50002.</span>
+
+<span class="p">[</span><span class="n">Eiger</span><span class="p">]</span> <span class="n">right</span> <span class="n">half</span>
+
+<span class="p">[</span><span class="n">Jungfrau</span><span class="p">]</span> <span class="n">bottom</span> <span class="n">half</span>
+
+<span class="p">[</span><span class="n">Gotthard2</span><span class="p">]</span> <span class="n">veto</span> <span class="n">debugging</span>
+
+<span class="n">Ports</span> <span class="k">for</span> <span class="n">each</span> <span class="n">module</span> <span class="ow">is</span> <span class="n">calculated</span> <span class="p">(</span><span class="n">incremented</span> <span class="n">by</span> <span class="mi">2</span><span class="p">)</span>
+
+<span class="n">To</span> <span class="nb">set</span> <span class="n">ports</span> <span class="k">for</span> <span class="n">individual</span> <span class="n">modules</span><span class="p">,</span> <span class="n">use</span> <span class="n">setDestinationUDPPort2</span><span class="o">.</span>
+</pre></div>
+</div>
+</dd></dl>
 
 <dl class="py method">
 <dt id="slsdet.Detector.udp_srcip">
 <em class="property">property </em><code class="sig-name descname">udp_srcip</code><a class="headerlink" href="#slsdet.Detector.udp_srcip" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>Ip address of the detector (source) udp interface.
+.. note:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Must</span> <span class="n">be</span> <span class="n">same</span> <span class="n">subnet</span> <span class="k">as</span> <span class="n">destination</span> <span class="n">udp</span> <span class="n">ip</span><span class="o">.</span>
+
+<span class="p">[</span><span class="n">Eiger</span><span class="p">]</span> <span class="n">Set</span> <span class="n">only</span> <span class="k">for</span> <span class="mi">10</span><span class="n">G</span><span class="o">.</span> <span class="n">For</span> <span class="mi">1</span><span class="n">G</span><span class="p">,</span> <span class="n">detector</span> <span class="n">will</span> <span class="n">replace</span> <span class="k">with</span> <span class="n">its</span> <span class="n">own</span> <span class="n">DHCP</span> <span class="n">IP</span> <span class="n">address</span><span class="o">.</span>
+
+<span class="n">To</span> <span class="nb">set</span> <span class="n">IPs</span> <span class="k">for</span> <span class="n">individual</span> <span class="n">modules</span><span class="p">,</span> <span class="n">use</span> <span class="n">setSourceUDPIP</span><span class="o">.</span>
+</pre></div>
+</div>
+<p class="rubric">Example</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">d</span><span class="o">.</span><span class="n">udp_srcip</span> <span class="o">=</span> <span class="s1">&#39;192.168.1.127&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">d</span><span class="o">.</span><span class="n">udp_srcip</span>
+<span class="go">192.168.1.127</span>
+</pre></div>
+</div>
+</dd></dl>
 
 <dl class="py method">
 <dt id="slsdet.Detector.udp_srcip2">
 <em class="property">property </em><code class="sig-name descname">udp_srcip2</code><a class="headerlink" href="#slsdet.Detector.udp_srcip2" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>[Jungfrau][Gotthard2] Ip address of the detector (source) udp interface 2.
+.. note:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">Jungfrau</span><span class="p">]</span> <span class="n">bottom</span> <span class="n">half</span>
+
+<span class="p">[</span><span class="n">Gotthard2</span><span class="p">]</span> <span class="n">veto</span> <span class="n">debugging</span>
+
+<span class="n">Must</span> <span class="n">be</span> <span class="n">same</span> <span class="n">subnet</span> <span class="k">as</span> <span class="n">destination</span> <span class="n">udp</span> <span class="n">ip2</span><span class="o">.</span>
+
+<span class="n">To</span> <span class="nb">set</span> <span class="n">IPs</span> <span class="k">for</span> <span class="n">individual</span> <span class="n">modules</span><span class="p">,</span> <span class="n">use</span> <span class="n">setSourceUDPIP2</span><span class="o">.</span>
+</pre></div>
+</div>
+<p class="rubric">Example</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">d</span><span class="o">.</span><span class="n">udp_srcip2</span> <span class="o">=</span> <span class="s1">&#39;192.168.1.127&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">d</span><span class="o">.</span><span class="n">udp_srcip2</span>
+<span class="go">192.168.1.127</span>
+</pre></div>
+</div>
+</dd></dl>
 
 <dl class="py method">
 <dt id="slsdet.Detector.udp_srcmac">
 <em class="property">property </em><code class="sig-name descname">udp_srcmac</code><a class="headerlink" href="#slsdet.Detector.udp_srcmac" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>Mac address of the receiver (source) udp interface.
+.. note:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">Eiger</span><span class="p">]</span> <span class="n">Do</span> <span class="ow">not</span> <span class="nb">set</span> <span class="k">as</span> <span class="n">detector</span> <span class="n">will</span> <span class="n">replace</span> <span class="k">with</span> <span class="n">its</span> <span class="n">own</span> <span class="n">DHCP</span> <span class="n">Mac</span> <span class="p">(</span><span class="mi">1</span><span class="n">G</span><span class="p">)</span> <span class="ow">or</span> <span class="n">DHCP</span> <span class="n">Mac</span> <span class="o">+</span> <span class="mi">1</span> <span class="p">(</span><span class="mi">10</span><span class="n">G</span><span class="p">)</span><span class="o">.</span>
+
+<span class="n">To</span> <span class="nb">set</span> <span class="n">MACs</span> <span class="k">for</span> <span class="n">individual</span> <span class="n">modules</span><span class="p">,</span> <span class="n">use</span> <span class="n">setSourceUDPMAC</span><span class="o">.</span>
+</pre></div>
+</div>
+<p class="rubric">Example</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">d</span><span class="o">.</span><span class="n">udp_srcmac</span> <span class="o">=</span> <span class="s1">&#39;00:1b:31:01:8a:de&#39;</span>
+<span class="go">d.udp_srcmac</span>
+<span class="go">00:1b:31:01:8a:de</span>
+</pre></div>
+</div>
+</dd></dl>
 
 <dl class="py method">
 <dt id="slsdet.Detector.udp_srcmac2">
 <em class="property">property </em><code class="sig-name descname">udp_srcmac2</code><a class="headerlink" href="#slsdet.Detector.udp_srcmac2" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>[Jungfrau][Gotthard2] Mac address of the receiver (source) udp interface 2.
+.. note:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">Jungfrau</span><span class="p">]</span> <span class="n">bottom</span> <span class="n">half</span>
+
+<span class="p">[</span><span class="n">Gotthard2</span><span class="p">]</span> <span class="n">veto</span> <span class="n">debugging</span>
+
+<span class="n">To</span> <span class="nb">set</span> <span class="n">MACs</span> <span class="k">for</span> <span class="n">individual</span> <span class="n">modules</span><span class="p">,</span> <span class="n">use</span> <span class="n">setSourceUDPMAC2</span><span class="o">.</span>
+</pre></div>
+</div>
+<p class="rubric">Example</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">d</span><span class="o">.</span><span class="n">udp_srcmac2</span> <span class="o">=</span> <span class="s1">&#39;00:1b:31:01:8a:de&#39;</span>
+<span class="go">d.udp_srcmac2</span>
+<span class="go">00:1b:31:01:8a:de</span>
+</pre></div>
+</div>
+</dd></dl>
 
 <dl class="py method">
 <dt id="slsdet.Detector.updateFirmwareAndServer">
@@ -3570,37 +3854,44 @@ Options 0-15. Default is 15.</p>
 <dl class="py method">
 <dt id="slsdet.Detector.user">
 <em class="property">property </em><code class="sig-name descname">user</code><a class="headerlink" href="#slsdet.Detector.user" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>Retrieve user details from shared memory (hostname, type, PID, User, Date)</p>
+</dd></dl>
 
 <dl class="py method">
 <dt id="slsdet.Detector.v_a">
 <em class="property">property </em><code class="sig-name descname">v_a</code><a class="headerlink" href="#slsdet.Detector.v_a" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>[Ctb] Voltage supply a in mV.</p>
+</dd></dl>
 
 <dl class="py method">
 <dt id="slsdet.Detector.v_b">
 <em class="property">property </em><code class="sig-name descname">v_b</code><a class="headerlink" href="#slsdet.Detector.v_b" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>[Ctb] Voltage supply a in mV.</p>
+</dd></dl>
 
 <dl class="py method">
 <dt id="slsdet.Detector.v_c">
 <em class="property">property </em><code class="sig-name descname">v_c</code><a class="headerlink" href="#slsdet.Detector.v_c" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>[Ctb] Voltage supply a in mV.</p>
+</dd></dl>
 
 <dl class="py method">
 <dt id="slsdet.Detector.v_d">
 <em class="property">property </em><code class="sig-name descname">v_d</code><a class="headerlink" href="#slsdet.Detector.v_d" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>[Ctb] Voltage supply a in mV.</p>
+</dd></dl>
 
 <dl class="py method">
 <dt id="slsdet.Detector.v_io">
 <em class="property">property </em><code class="sig-name descname">v_io</code><a class="headerlink" href="#slsdet.Detector.v_io" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>[Ctb] Voltage supply a in mV.</p>
+</dd></dl>
 
 <dl class="py method">
 <dt id="slsdet.Detector.v_limit">
 <em class="property">property </em><code class="sig-name descname">v_limit</code><a class="headerlink" href="#slsdet.Detector.v_limit" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>[Ctb][Moench] Soft limit for power supplies (ctb only) and DACS in mV.</p>
+</dd></dl>
 
 <dl class="py method">
 <dt id="slsdet.Detector.validateUDPConfiguration">
@@ -3615,7 +3906,8 @@ Options 0-15. Default is 15.</p>
 <dl class="py method">
 <dt id="slsdet.Detector.veto">
 <em class="property">property </em><code class="sig-name descname">veto</code><a class="headerlink" href="#slsdet.Detector.veto" title="Permalink to this definition">¶</a></dt>
-<dd><p>[Gotthard2] Enable or disable veto data streaming from detector. Default is 0.</p>
+<dd><p>[Gotthard2] Enable or disable veto data streaming from detector.
+.. note:: Default is 0.</p>
 </dd></dl>
 
 <dl class="py method">
@@ -3623,7 +3915,7 @@ Options 0-15. Default is 15.</p>
 <em class="property">property </em><code class="sig-name descname">vetofile</code><a class="headerlink" href="#slsdet.Detector.vetofile" title="Permalink to this definition">¶</a></dt>
 <dd><p>[Gotthard2] Set veto reference for each 128 channels for specific chip.
 The file should have 128 rows of gain index and 12 bit value in dec</p>
-<p class="rubric">Examples</p>
+<p class="rubric">Example</p>
 <p>d.vetofile = ‘/path/to/file.txt’ #set for all chips
 d.vetofile = 3, ‘/path/to/file.txt’ # set for chip 3</p>
 </dd></dl>
@@ -3637,6 +3929,7 @@ d.vetofile = 3, ‘/path/to/file.txt’ # set for chip 3</p>
 <dt id="slsdet.Detector.vetoref">
 <em class="property">property </em><code class="sig-name descname">vetoref</code><a class="headerlink" href="#slsdet.Detector.vetoref" title="Permalink to this definition">¶</a></dt>
 <dd><p>[Gotthard2] Set veto reference for all 128 channels for all chips.</p>
+<p class="rubric">Example</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">d</span><span class="o">.</span><span class="n">vetoref</span> <span class="o">=</span> <span class="n">chip</span><span class="p">,</span> <span class="n">value</span>
 </pre></div>
 </div>
@@ -3647,7 +3940,7 @@ d.vetofile = 3, ‘/path/to/file.txt’ # set for chip 3</p>
 <em class="property">property </em><code class="sig-name descname">virtual</code><a class="headerlink" href="#slsdet.Detector.virtual" title="Permalink to this definition">¶</a></dt>
 <dd><p>Setup with n virtual servers running on localhost
 starting with port p</p>
-<p class="rubric">Examples</p>
+<p class="rubric">Example</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">d</span><span class="o">.</span><span class="n">virtual</span> <span class="o">=</span> <span class="n">n</span><span class="p">,</span> <span class="n">p</span>
 </pre></div>
 </div>
@@ -3656,7 +3949,14 @@ starting with port p</p>
 <dl class="py method">
 <dt id="slsdet.Detector.vthreshold">
 <em class="property">property </em><code class="sig-name descname">vthreshold</code><a class="headerlink" href="#slsdet.Detector.vthreshold" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>[Eiger][Mythen3] Detector threshold voltage for single photon counters in dac units.
+.. note:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">Eiger</span><span class="p">]</span> <span class="n">Sets</span> <span class="n">vcmp_ll</span><span class="p">,</span> <span class="n">vcmp_lr</span><span class="p">,</span> <span class="n">vcmp_rl</span><span class="p">,</span> <span class="n">vcmp_rr</span> <span class="ow">and</span> <span class="n">vcp</span> <span class="n">to</span> <span class="n">the</span> <span class="n">same</span> <span class="n">value</span><span class="o">.</span>
+
+<span class="p">[</span><span class="n">Mythen3</span><span class="p">]</span> <span class="n">Sets</span> <span class="n">vth1</span><span class="p">,</span> <span class="n">vth2</span> <span class="ow">and</span> <span class="n">vth3</span> <span class="n">to</span> <span class="n">the</span> <span class="n">same</span> <span class="n">value</span><span class="o">.</span>
+</pre></div>
+</div>
+</dd></dl>
 
 <dl class="py method">
 <dt id="slsdet.Detector.writeAdcRegister">
@@ -3671,12 +3971,45 @@ starting with port p</p>
 <dl class="py method">
 <dt id="slsdet.Detector.zmqip">
 <em class="property">property </em><code class="sig-name descname">zmqip</code><a class="headerlink" href="#slsdet.Detector.zmqip" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>Ip Address to listen to zmq data streamed out from receiver or intermediate process.
+.. note:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Also</span> <span class="n">restarts</span> <span class="n">client</span> <span class="n">zmq</span> <span class="n">streaming</span> <span class="k">if</span> <span class="n">enabled</span><span class="o">.</span>
+
+<span class="n">Default</span> <span class="ow">is</span> <span class="kn">from</span> <span class="nn">rx_hostname.</span>
+
+<span class="n">Modified</span> <span class="n">only</span> <span class="n">when</span> <span class="n">using</span> <span class="n">an</span> <span class="n">intermediate</span> <span class="n">process</span> <span class="n">after</span> <span class="n">receiver</span><span class="o">.</span>
+</pre></div>
+</div>
+<p class="rubric">Example</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">d</span><span class="o">.</span><span class="n">zmqip</span>
+<span class="go">192.168.0.101</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">d</span><span class="o">.</span><span class="n">zmqip</span> <span class="o">=</span> <span class="s1">&#39;192.168.0.101&#39;</span>
+</pre></div>
+</div>
+</dd></dl>
 
 <dl class="py method">
 <dt id="slsdet.Detector.zmqport">
 <em class="property">property </em><code class="sig-name descname">zmqport</code><a class="headerlink" href="#slsdet.Detector.zmqport" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>Port number to listen to zmq data streamed out from receiver or intermediate process.
+.. note:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Also</span> <span class="n">restarts</span> <span class="n">client</span> <span class="n">zmq</span> <span class="n">streaming</span> <span class="k">if</span> <span class="n">enabled</span><span class="o">.</span>
+
+<span class="n">Default</span> <span class="n">connects</span> <span class="n">to</span> <span class="n">receiver</span> <span class="n">zmq</span> <span class="n">streaming</span> <span class="n">out</span> <span class="n">port</span> <span class="p">(</span><span class="mi">30001</span><span class="p">)</span><span class="o">.</span>
+
+<span class="n">Must</span> <span class="n">be</span> <span class="n">different</span> <span class="k">for</span> <span class="n">every</span> <span class="n">detector</span> <span class="p">(</span><span class="ow">and</span> <span class="n">udp</span> <span class="n">port</span><span class="p">)</span><span class="o">.</span>
+
+<span class="n">Multi</span> <span class="n">command</span> <span class="n">will</span> <span class="n">automatically</span> <span class="n">increment</span> <span class="k">for</span> <span class="n">individual</span> <span class="n">modules</span><span class="p">,</span> <span class="n">use</span> <span class="n">setClientZmqPort</span><span class="o">.</span>
+</pre></div>
+</div>
+<p class="rubric">Example</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">d</span><span class="o">.</span><span class="n">zmqport</span>
+<span class="go">[30001, 30003]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">d</span><span class="o">.</span><span class="n">zmqport</span> <span class="o">=</span> <span class="mi">30002</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">d</span><span class="o">.</span><span class="n">zmqport</span> <span class="o">=</span> <span class="p">[</span><span class="mi">30002</span><span class="p">,</span> <span class="mi">30004</span><span class="p">]</span> <span class="c1">#Set ports for the two first detectors</span>
+</pre></div>
+</div>
+</dd></dl>
 
 </dd></dl>
 

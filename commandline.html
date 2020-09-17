@@ -203,6 +203,14 @@
 <dl class="glossary">
 <dt id="term-acquire">acquire</dt><dd><div class="line-block">
 <div class="line">Acquire the number of frames set up.</div>
+<div class="line">Blocking command, where control server is blocked and cannot accept other commands until acquisition is done.</div>
+<div class="line">- sets acquiring flag</div>
+<div class="line">- starts the receiver listener (if enabled)</div>
+<div class="line">- starts detector acquisition for number of frames set</div>
+<div class="line">- monitors detector status from running to idle</div>
+<div class="line">- stops the receiver listener (if enabled)</div>
+<div class="line">- increments file index if file write enabled</div>
+<div class="line">- resets acquiring flag</div>
 </div>
 </dd>
 <dt id="term-activate-0-1-optional-padding-nopadding">activate [0, 1] [(optional) padding|nopadding]</dt><dd><div class="line-block">
@@ -1145,7 +1153,7 @@
 </div>
 </dd>
 <dt id="term-triggers-n_triggers">triggers [n_triggers]</dt><dd><div class="line-block">
-<div class="line">Number of triggers per aquire. Use timing command to set timing mode.</div>
+<div class="line">Number of triggers per aquire. Set timing mode to use triggers.</div>
 </div>
 </dd>
 <dt id="term-triggersl">triggersl</dt><dd><div class="line-block">
@@ -1181,7 +1189,7 @@
 </div>
 </dd>
 <dt id="term-type">type</dt><dd><div class="line-block">
-<div class="line">Serial number or MAC of detector (hex).</div>
+<div class="line">Returns detector type. Can be Eiger, Jungfrau, Gotthard, Moench, Mythen3, Gotthard2, ChipTestBoard</div>
 </div>
 </dd>
 <dt id="term-udp_dstip-x.x.x.x-or-auto">udp_dstip [x.x.x.x] or auto</dt><dd><div class="line-block">
@@ -1189,25 +1197,34 @@
 </div>
 </dd>
 <dt id="term-udp_dstip2-x.x.x.x-or-auto">udp_dstip2 [x.x.x.x] or auto</dt><dd><div class="line-block">
-<div class="line">[Jungfrau] Ip address of the receiver (destination) udp interface where the second half of detector data is sent to. If ‘auto’ used, then ip is set to ip of rx_hostname.</div>
+<div class="line">[Jungfrau][Gotthard2] Ip address of the receiver (destination) udp interface 2. If ‘auto’ used, then ip is set to ip of rx_hostname.</div>
+<div class="line">[Jungfrau] bottom half</div>
+<div class="line">[Gotthard2] veto debugging.</div>
 </div>
 </dd>
 <dt id="term-udp_dstmac-x-x-x-x-x-x">udp_dstmac [x:x:x:x:x:x]</dt><dd><div class="line-block">
-<div class="line">Mac address of the receiver (destination) udp interface. Can be unused as udp_dstip retrieves it.</div>
+<div class="line">Mac address of the receiver (destination) udp interface. Not mandatory to set as udp_dstip retrieves it from slsReceiver process, but must be set if you use a custom receiver (not slsReceiver).</div>
 </div>
 </dd>
 <dt id="term-udp_dstmac2-x-x-x-x-x-x">udp_dstmac2 [x:x:x:x:x:x]</dt><dd><div class="line-block">
-<div class="line">[Jungfrau] Mac address of the receiver (destination) udp interface where the second half of detector data is sent to. Can be unused as udp_dstip2 retrieves it.</div>
+<div class="line">[Jungfrau] Mac address of the receiver (destination) udp interface 2. Not mandatory to set as udp_dstip2 retrieves it from slsReceiver process but must be set if you use a custom receiver (not slsReceiver).</div>
+<div class="line-block">
+<div class="line">[Jungfrau] bottom half</div>
+<div class="line">[Gotthard2] veto debugging.</div>
+</div>
 </div>
 </dd>
 <dt id="term-udp_dstport-n">udp_dstport [n]</dt><dd><div class="line-block">
 <div class="line">Port number of the receiver (destination) udp interface. Default is 50001.</div>
+<div class="line">If multi command, ports for each module is calculated (incremented by 1 if no 2nd interface)</div>
 </div>
 </dd>
 <dt id="term-udp_dstport2-n">udp_dstport2 [n]</dt><dd><div class="line-block">
-<div class="line">Default is 50002.</div>
-<div class="line">[Jungfrau] Port number of the receiver (destination) udp interface where the second half of detector data is sent to.</div>
-<div class="line">[Eiger] Port number of the reciever (desintation) udp interface where the right half of the detector data is sent to.</div>
+<div class="line">[Jungfrau][Eiger][Gotthard2] Port number of the receiver (destination) udp interface 2. Default is 50002.</div>
+<div class="line">If multi command, ports for each module is calculated (incremented by 2)</div>
+<div class="line">[Jungfrau] bottom half</div>
+<div class="line">[Eiger] right half</div>
+<div class="line">[Gotthard2] veto debugging</div>
 </div>
 </dd>
 <dt id="term-udp_reconfigure">udp_reconfigure</dt><dd><div class="line-block">
@@ -1216,14 +1233,20 @@
 </dd>
 <dt id="term-udp_srcip-x.x.x.x">udp_srcip [x.x.x.x]</dt><dd><div class="line-block">
 <div class="line">Ip address of the detector (source) udp interface. Must be same subnet as destination udp ip.</div>
+<div class="line">[Eiger] Set only for 10G. For 1G, detector will replace with its own DHCP IP address.</div>
 </div>
 </dd>
 <dt id="term-udp_srcip2-x.x.x.x">udp_srcip2 [x.x.x.x]</dt><dd><div class="line-block">
-<div class="line">[Jungfrau] Ip address of the bottom half of detector (source) udp interface. Must be same subnet as destination udp ip2.</div>
+<div class="line">[Jungfrau][Gotthard2] Ip address of the detector (source) udp interface 2. Must be same subnet as destination udp ip2.</div>
+<div class="line-block">
+<div class="line">[Jungfrau] bottom half</div>
+<div class="line">[Gotthard2] veto debugging.</div>
+</div>
 </div>
 </dd>
 <dt id="term-udp_srcmac-x-x-x-x-x-x">udp_srcmac [x:x:x:x:x:x]</dt><dd><div class="line-block">
 <div class="line">Mac address of the detector (source) udp interface.</div>
+<div class="line">[Eiger] Do not set as detector will replace with its own DHCP Mac (1G) or DHCP Mac + 1 (10G).</div>
 </div>
 </dd>
 <dt id="term-udp_srcmac2-x-x-x-x-x-x">udp_srcmac2 [x:x:x:x:x:x]</dt><dd><div class="line-block">
@@ -1239,7 +1262,7 @@
 </div>
 </dd>
 <dt id="term-user">user</dt><dd><div class="line-block">
-<div class="line">User details from shared memory.</div>
+<div class="line">User details from shared memory (hostname, type, PID, User, Date).</div>
 </div>
 </dd>
 <dt id="term-v_a-n_value">v_a [n_value]</dt><dd><div class="line-block">
@@ -1267,7 +1290,7 @@
 </div>
 </dd>
 <dt id="term-v_limit-n_value">v_limit [n_value]</dt><dd><div class="line-block">
-<div class="line">[Ctb][Moench] Soft limit for power supplies(ctb only) and DACS in mV.</div>
+<div class="line">[Ctb][Moench] Soft limit for power supplies (ctb only) and DACS in mV.</div>
 </div>
 </dd>
 <dt id="term-vb_comp-dac-or-mV-value-optional-unit-mV">vb_comp [dac or mV value][(optional unit) mV]</dt><dd><div class="line-block">
@@ -1571,6 +1594,8 @@
 </dd>
 <dt id="term-vthreshold-dac-or-mV-value-optional-unit-mV">vthreshold [dac or mV value][(optional unit) mV]</dt><dd><div class="line-block">
 <div class="line">[Eiger][Mythen3] Detector threshold voltage for single photon counters.</div>
+<div class="line">[Eiger] Sets vcmp_ll, vcmp_lr, vcmp_rl, vcmp_rr and vcp to the same value.</div>
+<div class="line">[Mythen3] Sets vth1, vth2 and vth3 to the same value.</div>
 </div>
 </dd>
 <dt id="term-vtrim-dac-or-mV-value-optional-unit-mV">vtrim [dac or mV value][(optional unit) mV]</dt><dd><div class="line-block">
@@ -1579,11 +1604,11 @@
 </div>
 </dd>
 <dt id="term-zmqip-x.x.x.x">zmqip [x.x.x.x]</dt><dd><div class="line-block">
-<div class="line">Zmq IP Address in client(gui) or intermediate process for data to be streamed to from receiver.  Default connects to receiver zmq Ip Address (from rx_hostname). Modified only when using an intermediate process between receiver and client(gui). Also restarts client zmq streaming if enabled.</div>
+<div class="line">Ip Address to listen to zmq data streamed out from receiver or intermediate process. Default connects to receiver zmq Ip Address (from rx_hostname). Modified only when using an intermediate process between receiver and client(gui). Also restarts client zmq streaming if enabled.</div>
 </div>
 </dd>
 <dt id="term-zmqport-port">zmqport [port]</dt><dd><div class="line-block">
-<div class="line">Zmq port in client(gui) or intermediate process for data to be streamed to from receiver. efault connects to receiver zmq streaming out port (30001). Modified only when using an intermediate process between receiver and client(gui). Also restarts client zmq streaming if enabled. Must be different for every detector (and udp port). Multi command will automatically increment for individual modules.</div>
+<div class="line">Zmq port in client(gui) or intermediate process for data to be streamed to from receiver. Default connects to receiver zmq streaming out port (30001). Modified only when using an intermediate process between receiver and client(gui). Also restarts client zmq streaming if enabled. Must be different for every detector (and udp port). Multi command will automatically increment for individual modules.</div>
 </div>
 </dd>
 </dl>
