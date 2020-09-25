@@ -1,0 +1,676 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Firmware Upgrade &mdash; slsDetectorPackage  documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/css/extra.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Server Upgrade" href="serverupgrade.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home" alt="Documentation Home"> slsDetectorPackage
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                5.0.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Installation:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dependencies.html">Dependencies</a></li>
+<li class="toctree-l1"><a class="reference internal" href="consuming.html">Consuming slsDetectorPackage</a></li>
+</ul>
+<p class="caption"><span class="caption-text">C++ API</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="detector.html">Detector</a></li>
+<li class="toctree-l1"><a class="reference internal" href="result.html">Result</a></li>
+<li class="toctree-l1"><a class="reference internal" href="receiver.html">Receiver</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples.html">Examples</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Python API</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="pygettingstarted.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pydetector.html">Detector</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pyenums.html">Enums</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pyexamples.html">Examples</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Command line</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="commandline.html">Command line interface</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Developer</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="container_utils.html">ContainerUtils</a></li>
+<li class="toctree-l1"><a class="reference internal" href="type_traits.html">TypeTraits</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ToString.html">ToString</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Servers</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="servers.html">Default values</a></li>
+<li class="toctree-l1"><a class="reference internal" href="serverupgrade.html">Server Upgrade</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Firmware</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Firmware Upgrade</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#eiger">Eiger</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#compatibility">Compatibility</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#upgrade">Upgrade</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#jungfrau">Jungfrau</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id1">Compatibility</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#upgrade-from-v4-x-x">Upgrade (from v4.x.x)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#upgrade-from-v5-0-0-rc1">Upgrade (from v5.0.0-rc1)</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#gotthard">Gotthard</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id3">Compatibility</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id5">Upgrade</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#mythen3">Mythen3</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id6">Compatibility</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id7">Upgrade (from v5.0.0-rc1)</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#gotthard2">Gotthard2</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id8">Compatibility</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id9">Upgrade (from v5.0.0-rc1)</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#moench">Moench</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id10">Compatibility</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id11">Upgrade (from v5.0.0-rc1)</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#ctb">Ctb</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id12">Compatibility</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id13">Upgrade (from v5.0.0-rc1)</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">slsDetectorPackage</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>Firmware Upgrade</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/firmware.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="firmware-upgrade">
+<h1>Firmware Upgrade<a class="headerlink" href="#firmware-upgrade" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="eiger">
+<h2>Eiger<a class="headerlink" href="#eiger" title="Permalink to this headline">¶</a></h2>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<div class="line-block">
+<div class="line">Eiger firmware can be upgraded remotely.</div>
+<div class="line">The programming executable (bcp) and corresponding bit files are provided by the SLS Detector group.</div>
+</div>
+</div>
+<div class="section" id="compatibility">
+<h3>Compatibility<a class="headerlink" href="#compatibility" title="Permalink to this headline">¶</a></h3>
+<dl>
+<dt><strong>Release candidate 5.0.0-rc1</strong></dt><dd><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>Minimum compatible version  : <span class="m">27</span>
+Latest compatible version   : <span class="m">27</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+<p><a class="reference external" href="https://www.psi.ch/en/detectors/latest-installation">Older versions</a></p>
+</div>
+<div class="section" id="upgrade">
+<h3>Upgrade<a class="headerlink" href="#upgrade" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic">
+<li><p>Tftp must be already installed on your pc to use the bcp executable.</p></li>
+<li><p>Kill the on-board servers and copy new servers to the board.</p>
+<blockquote>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Option 1: from detector console</span>
+<span class="c1"># kill old server</span>
+ssh root@bebxxx
+killall eigerDetectorServer
+
+<span class="c1"># copy new server</span>
+<span class="nb">cd</span> executables
+scp user@pc:/path/eigerDetectorServerxxx .
+chmod <span class="m">777</span> eigerDetectorServerxxx
+ln -sf eigerDetectorServerxxx eigerDetectorServer
+sync
+
+<span class="c1"># Options 2: from client console for multiple modules</span>
+<span class="k">for</span> i in bebxxx bebyyy<span class="p">;</span>
+<span class="k">do</span> ssh root@<span class="nv">$i</span> killall eigerDetectorServer<span class="p">;</span>
+scp eigerDetectorServerxxx root@<span class="nv">$i</span>:~/executables/eigerDetectorServer<span class="p">;</span>
+ssh root@<span class="nv">$i</span> sync<span class="p">;</span> <span class="k">done</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>This is crucial when registers between firmwares change. Failure to do so will result in linux on boards to crash and boards can’t be pinged anymore.</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p>Bring the board into programmable mode using either of the 2 ways. Both methods result in only the central LED blinking.</p>
+<blockquote>
+<div><ul>
+<li><p><strong>Manual:</strong></p>
+<blockquote>
+<div><p>Do a hard reset for each half module on back panel boards, between the LEDs, closer to each of the 1G ethernet connectors. Push until all LEDs start to blink.</p>
+</div></blockquote>
+</li>
+<li><dl>
+<dt>Software:</dt><dd><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ssh root@bebxxx
+<span class="nb">cd</span> executables
+./boot_recovery
+</pre></div>
+</div>
+</dd>
+</dl>
+</li>
+</ul>
+</div></blockquote>
+</li>
+<li><p>Start a terminal for each half module and run the following to see progress.</p>
+<blockquote>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>nc -p <span class="m">3000</span> -u bebxxx <span class="m">3000</span>
+<span class="c1"># Press enter twice to see prompt with board name.</span>
+&gt; bebxxx
+<span class="c1"># After each bcp command, wait for this terminal to print &quot;Success&quot;.</span>
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p>In another terminal, run the following to update firmware. Please update bit files with great caution as it could make your board inaccessible, if done incorrectly.</p>
+<blockquote>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1">#update back end fpga</span>
+bcp download.bit bebxxx:/fw0
+
+<span class="c1">#update front left fpga</span>
+bcp download.bit bebxxx:/febl
+
+<span class="c1">#update front right fpga</span>
+bcp download.bit bebxxx:/febr
+
+<span class="c1">#update kernel (only if required by the SLS Detector Group)</span>
+bcp download.bit bebxxx:/kernel
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p>Reboot the detector.</p></li>
+</ol>
+</div>
+</div>
+<div class="section" id="jungfrau">
+<h2>Jungfrau<a class="headerlink" href="#jungfrau" title="Permalink to this headline">¶</a></h2>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<div class="line-block">
+<div class="line">Jungfrau firmware can be upgraded remotely.</div>
+<div class="line">The corresponding programming file (pof) is provided by the SLS Detector group.</div>
+</div>
+</div>
+<div class="section" id="id1">
+<h3>Compatibility<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<p><strong>Release candidate 5.0.0-rc1</strong></p>
+<blockquote>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># PCB v1.0</span>
+Minimum compatible version : <span class="m">24</span>.07.2020 <span class="o">(</span>v0.8<span class="o">)</span>
+Latest compatible version  : <span class="m">24</span>.07.2020 <span class="o">(</span>v0.8<span class="o">)</span>
+<span class="c1"># PCB v2.0</span>
+Minimum compatible version : <span class="m">21</span>.07.2020 <span class="o">(</span>v2.1<span class="o">)</span>
+Latest compatible version  : <span class="m">21</span>.07.2020 <span class="o">(</span>v2.1<span class="o">)</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p><a class="reference external" href="https://www.psi.ch/en/detectors/latest-installation">Older versions</a></p>
+</div>
+<div class="section" id="upgrade-from-v4-x-x">
+<h3>Upgrade (from v4.x.x)<a class="headerlink" href="#upgrade-from-v4-x-x" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic">
+<li><p>Tftp must be installed on pc.</p></li>
+<li><p>Update client package to the latest (5.0.0-rc1).</p></li>
+<li><dl>
+<dt>Disable server respawning or kill old server</dt><dd><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Option 1: if respawning enabled</span>
+telnet bchipxxx
+<span class="c1"># edit /etc/inittab</span>
+<span class="c1"># comment out line #ttyS0::respawn:/jungfrauDetectorServervxxx</span>
+reboot
+<span class="c1"># ensure servers did not start up after reboot</span>
+telnet bchipxxx
+ps
+
+<span class="c1">#  Option 2: if respawning already disabled</span>
+telnet bchipxxx
+killall jungfrauDetectorServerv*
+</pre></div>
+</div>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt>Copy new server and start in update mode</dt><dd><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>tftp pcxxx -r jungfrauDetectorServervxxx -g
+chmod <span class="m">777</span> jungfrauDetectorServervxxx
+./jungfrauDetectorServervxxx -u
+</pre></div>
+</div>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt>Program fpga from the client console</dt><dd><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sls_detector_get free
+<span class="c1"># Crucial that the next command executes without any errors</span>
+sls_detector_put hostname bchipxxx
+sls_detector_put programfpga xxx.pof
+</pre></div>
+</div>
+</dd>
+</dl>
+</li>
+<li><p>After programming, kill update server using Ctrl + C.</p></li>
+<li><dl>
+<dt>Enable server respawning if needed</dt><dd><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>telnet bchipxxx
+<span class="c1"># edit /etc/inittab</span>
+<span class="c1"># uncomment out line #ttyS0::respawn:/jungfrauDetectorServervxxx</span>
+<span class="c1"># ensure the line has the new server name</span>
+reboot
+<span class="c1"># ensure both servers are running using ps</span>
+jungfrauDetectorServervxxx
+jungfrauDetectorServervxxx --stop-server <span class="m">1953</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+</li>
+</ol>
+</div>
+<div class="section" id="upgrade-from-v5-0-0-rc1">
+<h3>Upgrade (from v5.0.0-rc1)<a class="headerlink" href="#upgrade-from-v5-0-0-rc1" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic">
+<li><dl>
+<dt>Program from console</dt><dd><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># copies server from tftp folder of pc, programs fpga,</span>
+<span class="c1"># removes old server from respawn, sets up new server to respawn</span>
+<span class="c1"># and reboots</span>
+sls_detector_put update jungfrauDetectorServervxxx pcxxx xx.pof
+
+<span class="c1"># Or only program firmware</span>
+sls_detector_put programfpga xxx.pof
+</pre></div>
+</div>
+</dd>
+</dl>
+</li>
+</ol>
+</div>
+</div>
+<div class="section" id="gotthard">
+<h2>Gotthard<a class="headerlink" href="#gotthard" title="Permalink to this headline">¶</a></h2>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<div class="line-block">
+<div class="line">Gotthard firmware cannot be upgraded remotely and requires the use of USB-Blaster.</div>
+<div class="line">It is generally updated by the SLS Detector group.</div>
+</div>
+</div>
+<div class="section" id="id3">
+<h3>Compatibility<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+<p><strong>Release candidate 5.0.0-rc1</strong></p>
+<blockquote>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>Minimum compatible version  : <span class="m">11</span>.01.2013
+Latest compatible version   : <span class="m">08</span>.02.2018 <span class="o">(</span>50um and 25um Master<span class="o">)</span>
+                          <span class="m">09</span>.02.2018 <span class="o">(</span><span class="m">25</span> um Slave<span class="o">)</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p><a class="reference external" href="https://www.psi.ch/en/detectors/latest-installation">Older versions</a></p>
+</div>
+<div class="section" id="id5">
+<h3>Upgrade<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic simple">
+<li><p>Download <a class="reference external" href="https://fpgasoftware.intel.com/20.1/?edition=standard&amp;platform=linux&amp;product=qprogrammer#tabs-4">Altera Quartus software or Quartus programmer</a>.</p></li>
+<li><p>Start Quartus programmer, click on Hardware Setup. In the “Currently selected hardware” window, select USB-Blaster.</p></li>
+<li><p>In the Mode combo box, select “Active Serial Programming”.</p></li>
+<li><p>Plug the end of your USB-Blaster with the adaptor provided to the connector ‘AS config’ on the Gotthard board.</p></li>
+<li><p>Click on ‘Add file’. Select programming (pof) file provided by the SLS Detector group.</p></li>
+<li><p>Check “Program/Configure” and “Verify”. Push the start button. Wait until the programming process is finished.</p></li>
+<li><p>In case of error messages, check the polarity of cable (that pin1 corresponds) and that the correct programming connector is selected.</p></li>
+<li><p>Reboot the detector.</p></li>
+</ol>
+</div>
+</div>
+<div class="section" id="mythen3">
+<h2>Mythen3<a class="headerlink" href="#mythen3" title="Permalink to this headline">¶</a></h2>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<div class="line-block">
+<div class="line">Mythen3 firmware can be upgraded remotely.</div>
+<div class="line">The corresponding programming file (rbf) is provided by the SLS Detector group.</div>
+</div>
+</div>
+<div class="section" id="id6">
+<h3>Compatibility<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h3>
+<p><strong>Release candidate 5.0.0-rc1</strong></p>
+<blockquote>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>Minimum compatible version : <span class="m">25</span>.09.2020
+Latest compatible version  : <span class="m">25</span>.09.2020
+</pre></div>
+</div>
+</div></blockquote>
+</div>
+<div class="section" id="id7">
+<h3>Upgrade (from v5.0.0-rc1)<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic">
+<li><dl>
+<dt>Program from console</dt><dd><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># copies server from tftp folder of pc, programs fpga,</span>
+<span class="c1"># and reboots (new server not respawned currently)</span>
+sls_detector_put update mythen3DetectorServervxxx pcxxx xxx.rbf
+
+<span class="c1"># Or only program firmware</span>
+sls_detector_put programfpga xxx.rbf
+</pre></div>
+</div>
+</dd>
+</dl>
+</li>
+</ol>
+</div>
+</div>
+<div class="section" id="gotthard2">
+<h2>Gotthard2<a class="headerlink" href="#gotthard2" title="Permalink to this headline">¶</a></h2>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<div class="line-block">
+<div class="line">Gotthard2 firmware can be upgraded remotely.</div>
+<div class="line">The corresponding programming file (rbf) is provided by the SLS Detector group.</div>
+</div>
+</div>
+<div class="section" id="id8">
+<h3>Compatibility<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h3>
+<p><strong>Release candidate 5.0.0-rc1</strong></p>
+<blockquote>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>Minimum compatible version : <span class="m">25</span>.09.2020
+Latest compatible version  : <span class="m">25</span>.09.2020
+</pre></div>
+</div>
+</div></blockquote>
+</div>
+<div class="section" id="id9">
+<h3>Upgrade (from v5.0.0-rc1)<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic">
+<li><dl>
+<dt>Program from console</dt><dd><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># copies server from tftp folder of pc, programs fpga,</span>
+<span class="c1"># and reboots (new server not respawned currently)</span>
+sls_detector_put update gotthard2DetectorServervxxx pcxxx xxx.rbf
+
+<span class="c1"># Or only program firmware</span>
+sls_detector_put programfpga xxx.rbf
+</pre></div>
+</div>
+</dd>
+</dl>
+</li>
+</ol>
+</div>
+</div>
+<div class="section" id="moench">
+<h2>Moench<a class="headerlink" href="#moench" title="Permalink to this headline">¶</a></h2>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<div class="line-block">
+<div class="line">Moench firmware can be upgraded remotely.</div>
+<div class="line">The corresponding programming file (pof) is provided by the SLS Detector group.</div>
+</div>
+</div>
+<div class="section" id="id10">
+<h3>Compatibility<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h3>
+<p><strong>Release candidate 5.0.0-rc1</strong></p>
+<blockquote>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>Minimum compatible version : <span class="m">02</span>.03.2020
+Latest compatible version  : <span class="m">02</span>.03.2020
+</pre></div>
+</div>
+</div></blockquote>
+</div>
+<div class="section" id="id11">
+<h3>Upgrade (from v5.0.0-rc1)<a class="headerlink" href="#id11" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic">
+<li><dl>
+<dt>Program from console</dt><dd><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># copies server from tftp folder of pc, programs fpga,</span>
+<span class="c1"># removes old server from respawn, sets up new server to respawn</span>
+<span class="c1"># and reboots</span>
+sls_detector_put update moenchDetectorServervxxx pcxxx xx.pof
+
+<span class="c1"># Or only program firmware</span>
+sls_detector_put programfpga xxx.pof
+</pre></div>
+</div>
+</dd>
+</dl>
+</li>
+</ol>
+</div>
+</div>
+<div class="section" id="ctb">
+<h2>Ctb<a class="headerlink" href="#ctb" title="Permalink to this headline">¶</a></h2>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<div class="line-block">
+<div class="line">Ctb firmware can be upgraded remotely.</div>
+<div class="line">The corresponding programming file (pof) is provided by the SLS Detector group.</div>
+</div>
+</div>
+<div class="section" id="id12">
+<h3>Compatibility<a class="headerlink" href="#id12" title="Permalink to this headline">¶</a></h3>
+<p><strong>Release candidate 5.0.0-rc1</strong></p>
+<blockquote>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>Minimum compatible version : <span class="m">27</span>.11.2019
+Latest compatible version  : <span class="m">27</span>.11.2019
+</pre></div>
+</div>
+</div></blockquote>
+</div>
+<div class="section" id="id13">
+<h3>Upgrade (from v5.0.0-rc1)<a class="headerlink" href="#id13" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic">
+<li><dl>
+<dt>Program from console</dt><dd><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># copies server from tftp folder of pc, programs fpga,</span>
+<span class="c1"># removes old server from respawn, sets up new server to respawn</span>
+<span class="c1"># and reboots</span>
+sls_detector_put update ctbDetectorServervxxx pcxxx xx.pof
+
+<span class="c1"># Or only program firmware</span>
+sls_detector_put programfpga xxx.pof
+</pre></div>
+</div>
+</dd>
+</dl>
+</li>
+</ol>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href="serverupgrade.html" class="btn btn-neutral float-left" title="Server Upgrade" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2020, PSD Detector Group
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

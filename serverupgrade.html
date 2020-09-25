@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Detector &mdash; slsDetectorPackage  documentation</title>
+  <title>Server Upgrade &mdash; slsDetectorPackage  documentation</title>
   
 
   
@@ -37,8 +37,8 @@
     
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Enums" href="pyenums.html" />
-    <link rel="prev" title="Getting Started" href="pygettingstarted.html" /> 
+    <link rel="next" title="Firmware Upgrade" href="firmware.html" />
+    <link rel="prev" title="Default values" href="servers.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -101,9 +101,9 @@
 <li class="toctree-l1"><a class="reference internal" href="examples.html">Examples</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Python API</span></p>
-<ul class="current">
+<ul>
 <li class="toctree-l1"><a class="reference internal" href="pygettingstarted.html">Getting Started</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Detector</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pydetector.html">Detector</a></li>
 <li class="toctree-l1"><a class="reference internal" href="pyenums.html">Enums</a></li>
 <li class="toctree-l1"><a class="reference internal" href="pyexamples.html">Examples</a></li>
 </ul>
@@ -118,9 +118,18 @@
 <li class="toctree-l1"><a class="reference internal" href="ToString.html">ToString</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Servers</span></p>
-<ul>
+<ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="servers.html">Default values</a></li>
-<li class="toctree-l1"><a class="reference internal" href="serverupgrade.html">Server Upgrade</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Server Upgrade</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#eiger">Eiger</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#jungfrau">Jungfrau</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#gotthard">Gotthard</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#mythen3">Mythen3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#gotthard2">Gotthard2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#moench">Moench</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#ctb">Ctb</a></li>
+</ul>
+</li>
 </ul>
 <p class="caption"><span class="caption-text">Firmware</span></p>
 <ul>
@@ -171,13 +180,13 @@
     
       <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
         
-      <li>Detector</li>
+      <li>Server Upgrade</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
             
-            <a href="_sources/pydetector.rst.txt" rel="nofollow"> View page source</a>
+            <a href="_sources/serverupgrade.rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -190,8 +199,115 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="detector">
-<h1>Detector<a class="headerlink" href="#detector" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="server-upgrade">
+<h1>Server Upgrade<a class="headerlink" href="#server-upgrade" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="eiger">
+<h2>Eiger<a class="headerlink" href="#eiger" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic">
+<li><dl>
+<dt>Kill old server and copy new server</dt><dd><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Option 1: from detector console</span>
+<span class="c1"># kill old server</span>
+ssh root@bebxxx
+killall eigerDetectorServer
+
+<span class="c1"># copy new server</span>
+<span class="nb">cd</span> executables
+scp user@pc:/path/eigerDetectorServerxxx .
+chmod <span class="m">777</span> eigerDetectorServerxxx
+ln -sf eigerDetectorServerxxx eigerDetectorServer
+sync
+
+<span class="c1"># Options 2: from client console for multiple modules</span>
+<span class="k">for</span> i in bebxxx bebyyy<span class="p">;</span>
+<span class="k">do</span> ssh root@<span class="nv">$i</span> killall eigerDetectorServer<span class="p">;</span>
+scp eigerDetectorServerxxx root@<span class="nv">$i</span>:~/executables/eigerDetectorServer<span class="p">;</span>
+ssh root@<span class="nv">$i</span> sync<span class="p">;</span> <span class="k">done</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+</li>
+<li><p>Reboot the detector.</p></li>
+</ol>
+</div>
+<div class="section" id="jungfrau">
+<h2>Jungfrau<a class="headerlink" href="#jungfrau" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic">
+<li><dl>
+<dt>Program from console (only from 5.0.0-rc1)</dt><dd><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># copies new server from pc tftp folder, respawns and reboots</span>
+sls_detector_put copydetectorserver jungfrauDetectorServerxxx pcxxx
+</pre></div>
+</div>
+</dd>
+</dl>
+</li>
+</ol>
+</div>
+<div class="section" id="gotthard">
+<h2>Gotthard<a class="headerlink" href="#gotthard" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic">
+<li><dl>
+<dt>Program from console (only from 5.0.0-rc1)</dt><dd><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># copies new server from pc tftp folder, respawns and reboots</span>
+sls_detector_put copydetectorserver gotthardDetectorServerxxx pcxxx
+</pre></div>
+</div>
+</dd>
+</dl>
+</li>
+</ol>
+</div>
+<div class="section" id="mythen3">
+<h2>Mythen3<a class="headerlink" href="#mythen3" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic">
+<li><dl>
+<dt>Program from console (only from 5.0.0-rc1)</dt><dd><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># copies new server from pc tftp folder and reboots (does not respawn)</span>
+sls_detector_put copydetectorserver mythen3DetectorServerxxx pcxxx
+</pre></div>
+</div>
+</dd>
+</dl>
+</li>
+</ol>
+</div>
+<div class="section" id="gotthard2">
+<h2>Gotthard2<a class="headerlink" href="#gotthard2" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic">
+<li><dl>
+<dt>Program from console (only from 5.0.0-rc1)</dt><dd><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># copies new server from pc tftp folder and reboots (does not respawn)</span>
+sls_detector_put copydetectorserver gotthard2DetectorServerxxx pcxxx
+</pre></div>
+</div>
+</dd>
+</dl>
+</li>
+</ol>
+</div>
+<div class="section" id="moench">
+<h2>Moench<a class="headerlink" href="#moench" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic">
+<li><dl>
+<dt>Program from console (only from 5.0.0-rc1)</dt><dd><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># copies new server from pc tftp folder, respawns and reboots</span>
+sls_detector_put copydetectorserver moenchDetectorServerxxx pcxxx
+</pre></div>
+</div>
+</dd>
+</dl>
+</li>
+</ol>
+</div>
+<div class="section" id="ctb">
+<h2>Ctb<a class="headerlink" href="#ctb" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic">
+<li><dl>
+<dt>Program from console (only from 5.0.0-rc1)</dt><dd><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># copies new server from pc tftp folder, respawns and reboots</span>
+sls_detector_put copydetectorserver ctbDetectorServerxxx pcxxx
+</pre></div>
+</div>
+</dd>
+</dl>
+</li>
+</ol>
+</div>
 </div>
 
 
@@ -202,10 +318,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="pyenums.html" class="btn btn-neutral float-right" title="Enums" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="firmware.html" class="btn btn-neutral float-right" title="Firmware Upgrade" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="pygettingstarted.html" class="btn btn-neutral float-left" title="Getting Started" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="servers.html" class="btn btn-neutral float-left" title="Default values" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

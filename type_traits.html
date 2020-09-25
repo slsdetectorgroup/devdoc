@@ -120,6 +120,11 @@
 <p class="caption"><span class="caption-text">Servers</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="servers.html">Default values</a></li>
+<li class="toctree-l1"><a class="reference internal" href="serverupgrade.html">Server Upgrade</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Firmware</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="firmware.html">Firmware Upgrade</a></li>
 </ul>
 
             
@@ -223,19 +228,19 @@ from the standard library.</p>
 <dt id="_CPPv43sls">
 <span id="_CPPv33sls"></span><span id="_CPPv23sls"></span><span id="sls"></span><span class="target" id="namespacesls"></span><em class="property">namespace </em><code class="sig-name descname">sls</code><br /></dt>
 <dd><dl class="cpp struct">
-<dt id="_CPPv4I00EN3sls16has_emplace_backE">
-<span id="_CPPv3I00EN3sls16has_emplace_backE"></span><span id="_CPPv2I00EN3sls16has_emplace_backE"></span>template&lt;typename <code class="sig-name descname">T</code>, typename <code class="sig-name descname">_</code> = void&gt;<br /><span class="target" id="structsls_1_1has__emplace__back"></span><em class="property">struct </em><code class="sig-name descname">has_emplace_back</code> : <em class="property">public</em> false_type<a class="headerlink" href="#_CPPv4I00EN3sls16has_emplace_backE" title="Permalink to this definition">¶</a><br /></dt>
-<dd><em>#include &lt;TypeTraits.h&gt;</em><p>Has emplace_back method </p>
+<dt id="_CPPv4I00EN3sls11is_durationE">
+<span id="_CPPv3I00EN3sls11is_durationE"></span><span id="_CPPv2I00EN3sls11is_durationE"></span>template&lt;typename <code class="sig-name descname">T</code>, typename <code class="sig-name descname">_</code> = void&gt;<br /><span class="target" id="structsls_1_1is__duration"></span><em class="property">struct </em><code class="sig-name descname">is_duration</code> : <em class="property">public</em> false_type<a class="headerlink" href="#_CPPv4I00EN3sls11is_durationE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><em>#include &lt;TypeTraits.h&gt;</em><p>Type trait to check if a template parameter is a std::chrono::duration </p>
 </dd></dl>
 
 <dl class="cpp struct">
-<dt>
-<span class="target" id="structsls_1_1has__emplace__back_3_01T_00_01typename_01std_1_1conditional_3_01false_00_01has__empee60c51926c8ef22afbe62d7401f9a1e"></span><code class="sig-name descname">template&lt;typename T&gt; type &gt; : public true_type</code></dt>
+<dt id="_CPPv4IDpEN3sls18is_duration_helperE">
+<span id="_CPPv3IDpEN3sls18is_duration_helperE"></span><span id="_CPPv2IDpEN3sls18is_duration_helperE"></span>template&lt;typename ...<code class="sig-name descname">Ts</code>&gt;<br /><span class="target" id="structsls_1_1is__duration__helper"></span><em class="property">struct </em><code class="sig-name descname">is_duration_helper</code><a class="headerlink" href="#_CPPv4IDpEN3sls18is_duration_helperE" title="Permalink to this definition">¶</a><br /></dt>
 <dd><em>#include &lt;TypeTraits.h&gt;</em></dd></dl>
 
 <dl class="cpp struct">
-<dt id="_CPPv4IDpEN3sls23has_emplace_back_helperE">
-<span id="_CPPv3IDpEN3sls23has_emplace_back_helperE"></span><span id="_CPPv2IDpEN3sls23has_emplace_back_helperE"></span>template&lt;typename ...<code class="sig-name descname">Ts</code>&gt;<br /><span class="target" id="structsls_1_1has__emplace__back__helper"></span><em class="property">struct </em><code class="sig-name descname">has_emplace_back_helper</code><a class="headerlink" href="#_CPPv4IDpEN3sls23has_emplace_back_helperE" title="Permalink to this definition">¶</a><br /></dt>
+<dt>
+<span class="target" id="structsls_1_1is__duration_3_01T_00_01typename_01std_1_1conditional_3_01false_00_01is__duration__c30651fa2ffa878c571edc29ad6ec593"></span><code class="sig-name descname">template&lt;typename T&gt; type &gt; : public true_type</code></dt>
 <dd><em>#include &lt;TypeTraits.h&gt;</em></dd></dl>
 
 <dl class="cpp struct">
@@ -245,13 +250,29 @@ from the standard library.</p>
 </dd></dl>
 
 <dl class="cpp struct">
+<dt id="_CPPv4IDpEN3sls14has_str_helperE">
+<span id="_CPPv3IDpEN3sls14has_str_helperE"></span><span id="_CPPv2IDpEN3sls14has_str_helperE"></span>template&lt;typename ...<code class="sig-name descname">Ts</code>&gt;<br /><span class="target" id="structsls_1_1has__str__helper"></span><em class="property">struct </em><code class="sig-name descname">has_str_helper</code><a class="headerlink" href="#_CPPv4IDpEN3sls14has_str_helperE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><em>#include &lt;TypeTraits.h&gt;</em></dd></dl>
+
+<dl class="cpp struct">
 <dt>
 <span class="target" id="structsls_1_1has__str_3_01T_00_01typename_01std_1_1conditional_3_01false_00_01has__str__helper_35d871cbbe6161c70eb49cddf5a829a9d"></span><code class="sig-name descname">template&lt;typename T&gt; type &gt; : public true_type</code></dt>
 <dd><em>#include &lt;TypeTraits.h&gt;</em></dd></dl>
 
 <dl class="cpp struct">
-<dt id="_CPPv4IDpEN3sls14has_str_helperE">
-<span id="_CPPv3IDpEN3sls14has_str_helperE"></span><span id="_CPPv2IDpEN3sls14has_str_helperE"></span>template&lt;typename ...<code class="sig-name descname">Ts</code>&gt;<br /><span class="target" id="structsls_1_1has__str__helper"></span><em class="property">struct </em><code class="sig-name descname">has_str_helper</code><a class="headerlink" href="#_CPPv4IDpEN3sls14has_str_helperE" title="Permalink to this definition">¶</a><br /></dt>
+<dt id="_CPPv4I00EN3sls16has_emplace_backE">
+<span id="_CPPv3I00EN3sls16has_emplace_backE"></span><span id="_CPPv2I00EN3sls16has_emplace_backE"></span>template&lt;typename <code class="sig-name descname">T</code>, typename <code class="sig-name descname">_</code> = void&gt;<br /><span class="target" id="structsls_1_1has__emplace__back"></span><em class="property">struct </em><code class="sig-name descname">has_emplace_back</code> : <em class="property">public</em> false_type<a class="headerlink" href="#_CPPv4I00EN3sls16has_emplace_backE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><em>#include &lt;TypeTraits.h&gt;</em><p>Has emplace_back method </p>
+</dd></dl>
+
+<dl class="cpp struct">
+<dt id="_CPPv4IDpEN3sls23has_emplace_back_helperE">
+<span id="_CPPv3IDpEN3sls23has_emplace_back_helperE"></span><span id="_CPPv2IDpEN3sls23has_emplace_back_helperE"></span>template&lt;typename ...<code class="sig-name descname">Ts</code>&gt;<br /><span class="target" id="structsls_1_1has__emplace__back__helper"></span><em class="property">struct </em><code class="sig-name descname">has_emplace_back_helper</code><a class="headerlink" href="#_CPPv4IDpEN3sls23has_emplace_back_helperE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><em>#include &lt;TypeTraits.h&gt;</em></dd></dl>
+
+<dl class="cpp struct">
+<dt>
+<span class="target" id="structsls_1_1has__emplace__back_3_01T_00_01typename_01std_1_1conditional_3_01false_00_01has__empee60c51926c8ef22afbe62d7401f9a1e"></span><code class="sig-name descname">template&lt;typename T&gt; type &gt; : public true_type</code></dt>
 <dd><em>#include &lt;TypeTraits.h&gt;</em></dd></dl>
 
 <dl class="cpp struct">
@@ -261,29 +282,13 @@ from the standard library.</p>
 </dd></dl>
 
 <dl class="cpp struct">
-<dt>
-<span class="target" id="structsls_1_1is__container_3_01T_00_01typename_01std_1_1conditional_3_01false_00_01is__containerb378320cb5b225b797fda40e8eebf2a5"></span><code class="sig-name descname">template&lt;typename T&gt; type &gt; : public true_type</code></dt>
-<dd><em>#include &lt;TypeTraits.h&gt;</em></dd></dl>
-
-<dl class="cpp struct">
 <dt id="_CPPv4IDpEN3sls19is_container_helperE">
 <span id="_CPPv3IDpEN3sls19is_container_helperE"></span><span id="_CPPv2IDpEN3sls19is_container_helperE"></span>template&lt;typename ...<code class="sig-name descname">Ts</code>&gt;<br /><span class="target" id="structsls_1_1is__container__helper"></span><em class="property">struct </em><code class="sig-name descname">is_container_helper</code><a class="headerlink" href="#_CPPv4IDpEN3sls19is_container_helperE" title="Permalink to this definition">¶</a><br /></dt>
 <dd><em>#include &lt;TypeTraits.h&gt;</em></dd></dl>
 
 <dl class="cpp struct">
-<dt id="_CPPv4I00EN3sls11is_durationE">
-<span id="_CPPv3I00EN3sls11is_durationE"></span><span id="_CPPv2I00EN3sls11is_durationE"></span>template&lt;typename <code class="sig-name descname">T</code>, typename <code class="sig-name descname">_</code> = void&gt;<br /><span class="target" id="structsls_1_1is__duration"></span><em class="property">struct </em><code class="sig-name descname">is_duration</code> : <em class="property">public</em> false_type<a class="headerlink" href="#_CPPv4I00EN3sls11is_durationE" title="Permalink to this definition">¶</a><br /></dt>
-<dd><em>#include &lt;TypeTraits.h&gt;</em><p>Type trait to check if a template parameter is a std::chrono::duration </p>
-</dd></dl>
-
-<dl class="cpp struct">
 <dt>
-<span class="target" id="structsls_1_1is__duration_3_01T_00_01typename_01std_1_1conditional_3_01false_00_01is__duration__c30651fa2ffa878c571edc29ad6ec593"></span><code class="sig-name descname">template&lt;typename T&gt; type &gt; : public true_type</code></dt>
-<dd><em>#include &lt;TypeTraits.h&gt;</em></dd></dl>
-
-<dl class="cpp struct">
-<dt id="_CPPv4IDpEN3sls18is_duration_helperE">
-<span id="_CPPv3IDpEN3sls18is_duration_helperE"></span><span id="_CPPv2IDpEN3sls18is_duration_helperE"></span>template&lt;typename ...<code class="sig-name descname">Ts</code>&gt;<br /><span class="target" id="structsls_1_1is__duration__helper"></span><em class="property">struct </em><code class="sig-name descname">is_duration_helper</code><a class="headerlink" href="#_CPPv4IDpEN3sls18is_duration_helperE" title="Permalink to this definition">¶</a><br /></dt>
+<span class="target" id="structsls_1_1is__container_3_01T_00_01typename_01std_1_1conditional_3_01false_00_01is__containerb378320cb5b225b797fda40e8eebf2a5"></span><code class="sig-name descname">template&lt;typename T&gt; type &gt; : public true_type</code></dt>
 <dd><em>#include &lt;TypeTraits.h&gt;</em></dd></dl>
 
 <dl class="cpp struct">
@@ -293,13 +298,13 @@ from the standard library.</p>
 </dd></dl>
 
 <dl class="cpp struct">
-<dt>
-<span class="target" id="structsls_1_1is__light__container_3_01T_00_01typename_01std_1_1conditional_3_01false_00_01is__cobb63572298b06a9ca8590e5609b0803f"></span><code class="sig-name descname">template&lt;typename T&gt; type &gt; : public true_type</code></dt>
+<dt id="_CPPv4IDpEN3sls25is_light_container_helperE">
+<span id="_CPPv3IDpEN3sls25is_light_container_helperE"></span><span id="_CPPv2IDpEN3sls25is_light_container_helperE"></span>template&lt;typename ...<code class="sig-name descname">Ts</code>&gt;<br /><span class="target" id="structsls_1_1is__light__container__helper"></span><em class="property">struct </em><code class="sig-name descname">is_light_container_helper</code><a class="headerlink" href="#_CPPv4IDpEN3sls25is_light_container_helperE" title="Permalink to this definition">¶</a><br /></dt>
 <dd><em>#include &lt;TypeTraits.h&gt;</em></dd></dl>
 
 <dl class="cpp struct">
-<dt id="_CPPv4IDpEN3sls25is_light_container_helperE">
-<span id="_CPPv3IDpEN3sls25is_light_container_helperE"></span><span id="_CPPv2IDpEN3sls25is_light_container_helperE"></span>template&lt;typename ...<code class="sig-name descname">Ts</code>&gt;<br /><span class="target" id="structsls_1_1is__light__container__helper"></span><em class="property">struct </em><code class="sig-name descname">is_light_container_helper</code><a class="headerlink" href="#_CPPv4IDpEN3sls25is_light_container_helperE" title="Permalink to this definition">¶</a><br /></dt>
+<dt>
+<span class="target" id="structsls_1_1is__light__container_3_01T_00_01typename_01std_1_1conditional_3_01false_00_01is__cobb63572298b06a9ca8590e5609b0803f"></span><code class="sig-name descname">template&lt;typename T&gt; type &gt; : public true_type</code></dt>
 <dd><em>#include &lt;TypeTraits.h&gt;</em></dd></dl>
 
 <dl class="cpp struct">

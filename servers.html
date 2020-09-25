@@ -37,6 +37,7 @@
     
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Server Upgrade" href="serverupgrade.html" />
     <link rel="prev" title="ToString" href="ToString.html" /> 
 </head>
 
@@ -146,6 +147,11 @@
 </li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="serverupgrade.html">Server Upgrade</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Firmware</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="firmware.html">Firmware Upgrade</a></li>
 </ul>
 
             
@@ -1244,148 +1250,151 @@
 <tr class="row-even"><td><p>STATUS_ERROR</p></td>
 <td><p>2</p></td>
 </tr>
-<tr class="row-odd"><td><p>TOP_NAMES</p></td>
+<tr class="row-odd"><td><p>ADC_NAMES</p></td>
+<td><p>FPGA EXT, 10GE, DCDC, SODL, SODR, FPGA, FPGA_FL, FPGA_FR</p></td>
+</tr>
+<tr class="row-even"><td><p>TOP_NAMES</p></td>
 <td><p>hardware, top, bottom</p></td>
 </tr>
-<tr class="row-even"><td><p>MASTER_NAMES</p></td>
+<tr class="row-odd"><td><p>MASTER_NAMES</p></td>
 <td><p>hardware, master, slave</p></td>
 </tr>
-<tr class="row-odd"><td><p>NCHAN</p></td>
+<tr class="row-even"><td><p>NCHAN</p></td>
 <td><p>256 * 256</p></td>
 </tr>
-<tr class="row-even"><td><p>NCHIP</p></td>
+<tr class="row-odd"><td><p>NCHIP</p></td>
 <td><p>4</p></td>
 </tr>
-<tr class="row-odd"><td><p>NDAC</p></td>
+<tr class="row-even"><td><p>NDAC</p></td>
 <td><p>16</p></td>
 </tr>
-<tr class="row-even"><td><p>TEN_GIGA_BUFFER_SIZE</p></td>
+<tr class="row-odd"><td><p>TEN_GIGA_BUFFER_SIZE</p></td>
 <td><p>4112</p></td>
 </tr>
-<tr class="row-odd"><td><p>ONE_GIGA_BUFFER_SIZE</p></td>
+<tr class="row-even"><td><p>ONE_GIGA_BUFFER_SIZE</p></td>
 <td><p>1040</p></td>
 </tr>
-<tr class="row-even"><td><p>TEN_GIGA_CONSTANT</p></td>
+<tr class="row-odd"><td><p>TEN_GIGA_CONSTANT</p></td>
 <td><p>4</p></td>
 </tr>
-<tr class="row-odd"><td><p>ONE_GIGA_CONSTANT</p></td>
+<tr class="row-even"><td><p>ONE_GIGA_CONSTANT</p></td>
 <td><p>16</p></td>
 </tr>
-<tr class="row-even"><td><p>NORMAL_HIGHVOLTAGE_INPUTPORT</p></td>
+<tr class="row-odd"><td><p>NORMAL_HIGHVOLTAGE_INPUTPORT</p></td>
 <td><p>/sys/class/hwmon/hwmon5/device/in0_input</p></td>
 </tr>
-<tr class="row-odd"><td><p>NORMAL_HIGHVOLTAGE_OUTPUTPORT</p></td>
+<tr class="row-even"><td><p>NORMAL_HIGHVOLTAGE_OUTPUTPORT</p></td>
 <td><p>/sys/class/hwmon/hwmon5/device/out0_output</p></td>
 </tr>
-<tr class="row-even"><td><p>SPECIAL9M_HIGHVOLTAGE_PORT</p></td>
+<tr class="row-odd"><td><p>SPECIAL9M_HIGHVOLTAGE_PORT</p></td>
 <td><p>/dev/ttyS1</p></td>
 </tr>
-<tr class="row-odd"><td><p>SPECIAL9M_HIGHVOLTAGE_BUFFERSIZE</p></td>
+<tr class="row-even"><td><p>SPECIAL9M_HIGHVOLTAGE_BUFFERSIZE</p></td>
 <td><p>16</p></td>
 </tr>
-<tr class="row-even"><td><p>DEFAULT_UDP_SOURCE_PORT</p></td>
+<tr class="row-odd"><td><p>DEFAULT_UDP_SOURCE_PORT</p></td>
 <td><p>0xE185</p></td>
 </tr>
-<tr class="row-odd"><td><p>DEFAULT_NUM_FRAMES</p></td>
+<tr class="row-even"><td><p>DEFAULT_NUM_FRAMES</p></td>
 <td><p>1</p></td>
 </tr>
-<tr class="row-even"><td><p>DEFAULT_STARTING_FRAME_NUMBER</p></td>
+<tr class="row-odd"><td><p>DEFAULT_STARTING_FRAME_NUMBER</p></td>
 <td><p>1</p></td>
 </tr>
-<tr class="row-odd"><td><p>DEFAULT_NUM_CYCLES</p></td>
+<tr class="row-even"><td><p>DEFAULT_NUM_CYCLES</p></td>
 <td><p>1</p></td>
 </tr>
-<tr class="row-even"><td><p>DEFAULT_EXPTIME</p></td>
+<tr class="row-odd"><td><p>DEFAULT_EXPTIME</p></td>
 <td><p>1E9</p></td>
 </tr>
-<tr class="row-odd"><td><p>DEFAULT_PERIOD</p></td>
+<tr class="row-even"><td><p>DEFAULT_PERIOD</p></td>
 <td><p>1E9</p></td>
 </tr>
-<tr class="row-even"><td><p>DEFAULT_DELAY</p></td>
-<td><p>0</p></td>
-</tr>
-<tr class="row-odd"><td><p>DEFAULT_HIGH_VOLTAGE</p></td>
-<td><p>0</p></td>
-</tr>
-<tr class="row-even"><td><p>DEFAULT_SETTINGS</p></td>
-<td><p>DYNAMICGAIN</p></td>
-</tr>
-<tr class="row-odd"><td><p>DEFAULT_SUBFRAME_EXPOSURE</p></td>
-<td><p>2621440</p></td>
-</tr>
-<tr class="row-even"><td><p>DEFAULT_SUBFRAME_DEADTIME</p></td>
-<td><p>0</p></td>
-</tr>
-<tr class="row-odd"><td><p>DEFAULT_DYNAMIC_RANGE</p></td>
-<td><p>16</p></td>
-</tr>
-<tr class="row-even"><td><p>DEFAULT_PARALLEL_MODE</p></td>
-<td><p>1</p></td>
-</tr>
-<tr class="row-odd"><td><p>DEFAULT_READOUT_OVERFLOW32_MODE</p></td>
-<td><p>0</p></td>
-</tr>
-<tr class="row-even"><td><p>DEFAULT_CLK_SPEED</p></td>
-<td><p>FULL_SPEED</p></td>
-</tr>
-<tr class="row-odd"><td><p>DEFAULT_IO_DELAY</p></td>
-<td><p>650</p></td>
-</tr>
-<tr class="row-even"><td><p>DEFAULT_TIMING_MODE</p></td>
-<td><p>AUTO_TIMING</p></td>
-</tr>
-<tr class="row-odd"><td><p>DEFAULT_PHOTON_ENERGY</p></td>
-<td><p>-1</p></td>
-</tr>
-<tr class="row-even"><td><p>DEFAULT_RATE_CORRECTION</p></td>
-<td><p>0</p></td>
-</tr>
-<tr class="row-odd"><td><p>DEFAULT_EXT_GATING_ENABLE</p></td>
-<td><p>0</p></td>
-</tr>
-<tr class="row-even"><td><p>DEFAULT_EXT_GATING_POLARITY</p></td>
-<td><p>1</p></td>
-</tr>
-<tr class="row-odd"><td><p>DEFAULT_TEST_MODE</p></td>
+<tr class="row-odd"><td><p>DEFAULT_DELAY</p></td>
 <td><p>0</p></td>
 </tr>
 <tr class="row-even"><td><p>DEFAULT_HIGH_VOLTAGE</p></td>
 <td><p>0</p></td>
 </tr>
-<tr class="row-odd"><td><p>MAX_TRIMBITS_VALUE</p></td>
+<tr class="row-odd"><td><p>DEFAULT_SETTINGS</p></td>
+<td><p>DYNAMICGAIN</p></td>
+</tr>
+<tr class="row-even"><td><p>DEFAULT_SUBFRAME_EXPOSURE</p></td>
+<td><p>2621440</p></td>
+</tr>
+<tr class="row-odd"><td><p>DEFAULT_SUBFRAME_DEADTIME</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-even"><td><p>DEFAULT_DYNAMIC_RANGE</p></td>
+<td><p>16</p></td>
+</tr>
+<tr class="row-odd"><td><p>DEFAULT_PARALLEL_MODE</p></td>
+<td><p>1</p></td>
+</tr>
+<tr class="row-even"><td><p>DEFAULT_READOUT_OVERFLOW32_MODE</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-odd"><td><p>DEFAULT_CLK_SPEED</p></td>
+<td><p>FULL_SPEED</p></td>
+</tr>
+<tr class="row-even"><td><p>DEFAULT_IO_DELAY</p></td>
+<td><p>650</p></td>
+</tr>
+<tr class="row-odd"><td><p>DEFAULT_TIMING_MODE</p></td>
+<td><p>AUTO_TIMING</p></td>
+</tr>
+<tr class="row-even"><td><p>DEFAULT_PHOTON_ENERGY</p></td>
+<td><p>-1</p></td>
+</tr>
+<tr class="row-odd"><td><p>DEFAULT_RATE_CORRECTION</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-even"><td><p>DEFAULT_EXT_GATING_ENABLE</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-odd"><td><p>DEFAULT_EXT_GATING_POLARITY</p></td>
+<td><p>1</p></td>
+</tr>
+<tr class="row-even"><td><p>DEFAULT_TEST_MODE</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-odd"><td><p>DEFAULT_HIGH_VOLTAGE</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-even"><td><p>MAX_TRIMBITS_VALUE</p></td>
 <td><p>63</p></td>
 </tr>
-<tr class="row-even"><td><p>MAX_ROWS_PER_READOUT</p></td>
+<tr class="row-odd"><td><p>MAX_ROWS_PER_READOUT</p></td>
 <td><p>256</p></td>
 </tr>
-<tr class="row-odd"><td><p>MAX_PACKETS_PER_REQUEST</p></td>
+<tr class="row-even"><td><p>MAX_PACKETS_PER_REQUEST</p></td>
 <td><p>256</p></td>
 </tr>
-<tr class="row-even"><td><p>UDP_HEADER_MAX_FRAME_VALUE</p></td>
+<tr class="row-odd"><td><p>UDP_HEADER_MAX_FRAME_VALUE</p></td>
 <td><p>0xFFFFFFFFFFFF</p></td>
 </tr>
-<tr class="row-odd"><td><p>DAC_MIN_MV</p></td>
+<tr class="row-even"><td><p>DAC_MIN_MV</p></td>
 <td><p>0</p></td>
 </tr>
-<tr class="row-even"><td><p>DAC_MAX_MV</p></td>
+<tr class="row-odd"><td><p>DAC_MAX_MV</p></td>
 <td><p>2048</p></td>
 </tr>
-<tr class="row-odd"><td><p>LTC2620_MIN_VAL</p></td>
+<tr class="row-even"><td><p>LTC2620_MIN_VAL</p></td>
 <td><p>0</p></td>
 </tr>
-<tr class="row-even"><td><p>LTC2620_MAX_VAL</p></td>
+<tr class="row-odd"><td><p>LTC2620_MAX_VAL</p></td>
 <td><p>4095</p></td>
 </tr>
-<tr class="row-odd"><td><p>DAC_MAX_STEPS</p></td>
+<tr class="row-even"><td><p>DAC_MAX_STEPS</p></td>
 <td><p>4096</p></td>
 </tr>
-<tr class="row-even"><td><p>MAX_SUBFRAME_EXPOSURE_VAL_IN_10NS</p></td>
+<tr class="row-odd"><td><p>MAX_SUBFRAME_EXPOSURE_VAL_IN_10NS</p></td>
 <td><p>0x1FFFFFFF</p></td>
 </tr>
-<tr class="row-odd"><td><p>SLAVE_HIGH_VOLTAGE_READ_VAL</p></td>
+<tr class="row-even"><td><p>SLAVE_HIGH_VOLTAGE_READ_VAL</p></td>
 <td><p>-999</p></td>
 </tr>
-<tr class="row-even"><td><p>HIGH_VOLTAGE_TOLERANCE</p></td>
+<tr class="row-odd"><td><p>HIGH_VOLTAGE_TOLERANCE</p></td>
 <td><p>5</p></td>
 </tr>
 </tbody>
@@ -1854,6 +1863,8 @@
           <footer>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="serverupgrade.html" class="btn btn-neutral float-right" title="Server Upgrade" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="ToString.html" class="btn btn-neutral float-left" title="ToString" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
