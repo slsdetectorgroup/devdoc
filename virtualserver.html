@@ -36,6 +36,7 @@
   <link rel="stylesheet" href="_static/css/extra.css" type="text/css" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Default Values" href="serverdefaults.html" />
     <link rel="prev" title="Detector Server Upgrade" href="serverupgrade.html" /> 
 </head>
 
@@ -120,7 +121,7 @@
 </ul>
 <p class="caption"><span class="caption-text">Detector Server</span></p>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="servers.html">Default values</a></li>
+<li class="toctree-l1"><a class="reference internal" href="servers.html">Detector Servers</a></li>
 <li class="toctree-l1"><a class="reference internal" href="serverupgrade.html">Detector Server Upgrade</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Detector Simulators</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#compilation">Compilation</a><ul>
@@ -137,6 +138,7 @@
 <li class="toctree-l2"><a class="reference internal" href="#limitations">Limitations</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="serverdefaults.html">Default Values</a></li>
 </ul>
 
             
@@ -240,23 +242,13 @@ ctbDetectorServer_virtual
 </div>
 <div class="section" id="arguments">
 <h2>Arguments<a class="headerlink" href="#arguments" title="Permalink to this headline">¶</a></h2>
+<p>The arguments are the same as the <a class="reference internal" href="servers.html#detector-server-arguments"><span class="std std-ref">normal server arguments</span></a>.</p>
 <dl>
-<dt>The arguments are the same as the normal server.</dt><dd><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>Possible arguments are:
--v, --version            : Software version
--p, --port &lt;port&gt;        : TCP communication port with client.
--g, --nomodule           : <span class="o">[</span>Mythen3<span class="o">][</span>Gotthard2<span class="o">]</span> Generic or No Module mode. Skips detector <span class="nb">type</span> checks.
--f, --phaseshift &lt;value&gt; : <span class="o">[</span>Gotthard<span class="o">]</span> only. Sets phase shift.
--d, --devel              : Developer mode. Skips firmware checks.
--u, --update             : Update mode. Skips firmware checks and initial detector setup.
--s, --stopserver         : Stop server. Do not use as it is created by control server
-</pre></div>
-</div>
-</dd>
 <dt>When using multiple modules, the most important one for the virtual server is to have different ports for each virtual server.</dt><dd><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># will start control server at port 1912 and stop server at port 1913</span>
-mythen3DetectorServer --port <span class="m">1912</span> <span class="p">&amp;</span>
+jungfrauDetectorServer --port <span class="m">1912</span> <span class="p">&amp;</span>
 
 <span class="c1"># will start second control server at port 1914 and stop server at port 1915</span>
-mythen3DetectorServer --port <span class="m">1914</span> <span class="p">&amp;</span>
+jungfrauDetectorServer --port <span class="m">1914</span> <span class="p">&amp;</span>
 </pre></div>
 </div>
 </dd>
@@ -360,6 +352,8 @@ slsMultiReceiver <span class="m">2012</span> <span class="m">2</span> <span clas
           <footer>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="serverdefaults.html" class="btn btn-neutral float-right" title="Default Values" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="serverupgrade.html" class="btn btn-neutral float-left" title="Detector Server Upgrade" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
