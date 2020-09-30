@@ -130,6 +130,7 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="servers.html">Default values</a></li>
 <li class="toctree-l1"><a class="reference internal" href="serverupgrade.html">Detector Server Upgrade</a></li>
+<li class="toctree-l1"><a class="reference internal" href="virtualserver.html">Detector Simulators</a></li>
 </ul>
 
             
@@ -230,7 +231,9 @@ ccmake .
 </div>
 <div class="section" id="build-using-cmk-sh-script">
 <h2>Build using cmk.sh script<a class="headerlink" href="#build-using-cmk-sh-script" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># new build and make with 9 parallel threads</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>The binaries are generated in slsDetectorPackage/build/bin directory.
+
+<span class="c1"># new build and make with 9 parallel threads</span>
 ./cmk.sh -cbj9
 
 <span class="c1"># build with python</span>
