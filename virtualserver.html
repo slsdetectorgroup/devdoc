@@ -244,7 +244,7 @@ ctbDetectorServer_virtual
 <h2>Arguments<a class="headerlink" href="#arguments" title="Permalink to this headline">¶</a></h2>
 <p>The arguments are the same as the <a class="reference internal" href="servers.html#detector-server-arguments"><span class="std std-ref">normal server arguments</span></a>.</p>
 <dl>
-<dt>When using multiple modules, the most important one for the virtual server is to have different ports for each virtual server.</dt><dd><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># will start control server at port 1912 and stop server at port 1913</span>
+<dt>When using multiple modules, use different ports for each virtual server.</dt><dd><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># will start control server at port 1912 and stop server at port 1913</span>
 jungfrauDetectorServer --port <span class="m">1912</span> <span class="p">&amp;</span>
 
 <span class="c1"># will start second control server at port 1914 and stop server at port 1915</span>
