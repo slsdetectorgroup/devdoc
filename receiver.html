@@ -1,7 +1,8 @@
 
 
 <!DOCTYPE html>
-<html class="writer-html5" lang="en" >
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
   
@@ -11,30 +12,28 @@
   
 
   
-  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="_static/css/extra.css" type="text/css" />
-
-  
   
   
   
 
   
-  <!--[if lt IE 9]>
-    <script src="_static/js/html5shiv.min.js"></script>
-  <![endif]-->
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
-        <script src="_static/jquery.js"></script>
-        <script src="_static/underscore.js"></script>
-        <script src="_static/doctools.js"></script>
-        <script src="_static/language_data.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/language_data.js"></script>
     
     <script type="text/javascript" src="_static/js/theme.js"></script>
 
     
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/css/extra.css" type="text/css" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Examples" href="examples.html" />
@@ -52,7 +51,7 @@
           
 
           
-            <a href="index.html" class="icon icon-home" alt="Documentation Home"> slsDetectorPackage
+            <a href="index.html" class="icon icon-home"> slsDetectorPackage
           
 
           
@@ -79,7 +78,6 @@
           
         </div>
 
-        
         <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
           
             
@@ -130,7 +128,6 @@
             
           
         </div>
-        
       </div>
     </nav>
 
@@ -169,7 +166,7 @@
 
   <ul class="wy-breadcrumbs">
     
-      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+      <li><a href="index.html">Docs</a> &raquo;</li>
         
       <li>Receiver</li>
     
@@ -192,12 +189,12 @@
             
   <div class="section" id="receiver">
 <h1>Receiver<a class="headerlink" href="#receiver" title="Permalink to this headline">¶</a></h1>
-<dl class="cpp class">
+<dl class="class">
 <dt id="_CPPv48Receiver">
 <span id="_CPPv38Receiver"></span><span id="_CPPv28Receiver"></span><span id="Receiver"></span><span class="target" id="classReceiver"></span><em class="property">class </em><code class="sig-name descname">Receiver</code> : <em class="property">private</em> <em class="property">virtual</em> slsDetectorDefs<a class="headerlink" href="#_CPPv48Receiver" title="Permalink to this definition">¶</a><br /></dt>
 <dd><div class="breathe-sectiondef docutils container">
 <p class="breathe-sectiondef-title rubric">Public Functions</p>
-<dl class="cpp function">
+<dl class="function">
 <dt id="_CPPv4N8Receiver8ReceiverEiA_Pc">
 <span id="_CPPv3N8Receiver8ReceiverEiA_Pc"></span><span id="_CPPv2N8Receiver8ReceiverEiA_Pc"></span><span id="Receiver::Receiver__i.cPA"></span><span class="target" id="classReceiver_1a026a2cd1f0ad8a01ff43b29613a8701a"></span><code class="sig-name descname">Receiver</code><span class="sig-paren">(</span>int <em>argc</em>, char *<em>argv</em>[]<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Receiver8ReceiverEiA_Pc" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Constructor Starts up a <a class="reference internal" href="#classReceiver"><span class="std std-ref">Receiver</span></a> server. Reads configuration file, options, and assembles a <a class="reference internal" href="#classReceiver"><span class="std std-ref">Receiver</span></a> using TCP and UDP detector interfaces throws an exception in case of failure <dl class="simple">
@@ -210,7 +207,7 @@
 </p>
 </dd></dl>
 
-<dl class="cpp function">
+<dl class="function">
 <dt id="_CPPv4N8Receiver8ReceiverEi">
 <span id="_CPPv3N8Receiver8ReceiverEi"></span><span id="_CPPv2N8Receiver8ReceiverEi"></span><span id="Receiver::Receiver__i"></span><span class="target" id="classReceiver_1a1a4b5b8e113f50c9862df60394babca0"></span><code class="sig-name descname">Receiver</code><span class="sig-paren">(</span>int <em>tcpip_port_no</em> = 1954<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Receiver8ReceiverEi" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Constructor Starts up a <a class="reference internal" href="#classReceiver"><span class="std std-ref">Receiver</span></a> server. Reads configuration file, options, and assembles a <a class="reference internal" href="#classReceiver"><span class="std std-ref">Receiver</span></a> using TCP and UDP detector interfaces throws an exception in case of failure <dl class="simple">
@@ -222,7 +219,7 @@
 </p>
 </dd></dl>
 
-<dl class="cpp function">
+<dl class="function">
 <dt id="_CPPv4N8Receiver18getReceiverVersionEv">
 <span id="_CPPv3N8Receiver18getReceiverVersionEv"></span><span id="_CPPv2N8Receiver18getReceiverVersionEv"></span><span id="Receiver::getReceiverVersion"></span><span class="target" id="classReceiver_1abe9a027e34d56a9b4da3a71cf5e9bb3e"></span>int64_t <code class="sig-name descname">getReceiverVersion</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Receiver18getReceiverVersionEv" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>get get <a class="reference internal" href="#classReceiver"><span class="std std-ref">Receiver</span></a> Version <dl class="simple">
@@ -232,28 +229,28 @@
 </p>
 </dd></dl>
 
-<dl class="cpp function">
+<dl class="function">
 <dt id="_CPPv4N8Receiver32registerCallBackStartAcquisitionEPFiNSt6stringENSt6stringE8uint64_t8uint32_tPvEPv">
-<span id="_CPPv3N8Receiver32registerCallBackStartAcquisitionEPFiNSt6stringENSt6stringE8uint64_t8uint32_tPvEPv"></span><span id="_CPPv2N8Receiver32registerCallBackStartAcquisitionEPFiNSt6stringENSt6stringE8uint64_t8uint32_tPvEPv"></span><span class="target" id="classReceiver_1a9b77f4432e5551395b96e0b34087657d"></span>void <code class="sig-name descname">registerCallBackStartAcquisition</code><span class="sig-paren">(</span>int (*<em>func</em>)<span class="sig-paren">(</span>std::string, std::string, uint64_t, uint32_t, void*<span class="sig-paren">)</span>, void *<em>arg</em>, <span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Receiver32registerCallBackStartAcquisitionEPFiNSt6stringENSt6stringE8uint64_t8uint32_tPvEPv" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv3N8Receiver32registerCallBackStartAcquisitionEPFiNSt6stringENSt6stringE8uint64_t8uint32_tPvEPv"></span><span id="_CPPv2N8Receiver32registerCallBackStartAcquisitionEPFiNSt6stringENSt6stringE8uint64_t8uint32_tPvEPv"></span><span class="target" id="classReceiver_1a9b77f4432e5551395b96e0b34087657d"></span>void <code class="sig-name descname">registerCallBackStartAcquisition</code><span class="sig-paren">(</span>int (*<em>func</em>)<span class="sig-paren">(</span>std::string, std::string, uint64_t, uint32_t, void *<span class="sig-paren">)</span>, void *<em>arg</em>, <span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Receiver32registerCallBackStartAcquisitionEPFiNSt6stringENSt6stringE8uint64_t8uint32_tPvEPv" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Call back for start acquisition callback arguments are filepath filename fileindex datasize</p>
 <p>return value is undefined at the moment we write depending on file write enable users get data to write depending on call backs registered </p>
 </dd></dl>
 
-<dl class="cpp function">
+<dl class="function">
 <dt id="_CPPv4N8Receiver35registerCallBackAcquisitionFinishedEPFv8uint64_tPvEPv">
-<span id="_CPPv3N8Receiver35registerCallBackAcquisitionFinishedEPFv8uint64_tPvEPv"></span><span id="_CPPv2N8Receiver35registerCallBackAcquisitionFinishedEPFv8uint64_tPvEPv"></span><span class="target" id="classReceiver_1aecbf403b5ad01826661b1b86f19dfa09"></span>void <code class="sig-name descname">registerCallBackAcquisitionFinished</code><span class="sig-paren">(</span>void (*<em>func</em>)<span class="sig-paren">(</span>uint64_t, void*<span class="sig-paren">)</span>, void *<em>arg</em>, <span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Receiver35registerCallBackAcquisitionFinishedEPFv8uint64_tPvEPv" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv3N8Receiver35registerCallBackAcquisitionFinishedEPFv8uint64_tPvEPv"></span><span id="_CPPv2N8Receiver35registerCallBackAcquisitionFinishedEPFv8uint64_tPvEPv"></span><span class="target" id="classReceiver_1aecbf403b5ad01826661b1b86f19dfa09"></span>void <code class="sig-name descname">registerCallBackAcquisitionFinished</code><span class="sig-paren">(</span>void (*<em>func</em>)<span class="sig-paren">(</span>uint64_t, void *<span class="sig-paren">)</span>, void *<em>arg</em>, <span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Receiver35registerCallBackAcquisitionFinishedEPFv8uint64_tPvEPv" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Call back for acquisition finished callback argument is total frames caught </p>
 </dd></dl>
 
-<dl class="cpp function">
+<dl class="function">
 <dt id="_CPPv4N8Receiver28registerCallBackRawDataReadyEPFvPcPc8uint32_tPvEPv">
-<span id="_CPPv3N8Receiver28registerCallBackRawDataReadyEPFvPcPc8uint32_tPvEPv"></span><span id="_CPPv2N8Receiver28registerCallBackRawDataReadyEPFvPcPc8uint32_tPvEPv"></span><span class="target" id="classReceiver_1a2245318397d2b75f7ebf7b14116b8317"></span>void <code class="sig-name descname">registerCallBackRawDataReady</code><span class="sig-paren">(</span>void (*<em>func</em>)<span class="sig-paren">(</span>char*, char*, uint32_t, void*<span class="sig-paren">)</span>, void *<em>arg</em>, <span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Receiver28registerCallBackRawDataReadyEPFvPcPc8uint32_tPvEPv" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv3N8Receiver28registerCallBackRawDataReadyEPFvPcPc8uint32_tPvEPv"></span><span id="_CPPv2N8Receiver28registerCallBackRawDataReadyEPFvPcPc8uint32_tPvEPv"></span><span class="target" id="classReceiver_1a2245318397d2b75f7ebf7b14116b8317"></span>void <code class="sig-name descname">registerCallBackRawDataReady</code><span class="sig-paren">(</span>void (*<em>func</em>)<span class="sig-paren">(</span>char *, char *, uint32_t, void *<span class="sig-paren">)</span>, void *<em>arg</em>, <span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Receiver28registerCallBackRawDataReadyEPFvPcPc8uint32_tPvEPv" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Call back for raw data args to raw data ready callback are sls_receiver_header frame metadata, dataPointer is the pointer to the data, dataSize in bytes is the size of the data in bytes. </p>
 </dd></dl>
 
-<dl class="cpp function">
+<dl class="function">
 <dt id="_CPPv4N8Receiver34registerCallBackRawDataModifyReadyEPFvPcPcR8uint32_tPvEPv">
-<span id="_CPPv3N8Receiver34registerCallBackRawDataModifyReadyEPFvPcPcR8uint32_tPvEPv"></span><span id="_CPPv2N8Receiver34registerCallBackRawDataModifyReadyEPFvPcPcR8uint32_tPvEPv"></span><span class="target" id="classReceiver_1ae53ae97198bd03459f2275ca42a5f221"></span>void <code class="sig-name descname">registerCallBackRawDataModifyReady</code><span class="sig-paren">(</span>void (*<em>func</em>)<span class="sig-paren">(</span>char*, char*, uint32_t&amp;, void*<span class="sig-paren">)</span>, void *<em>arg</em>, <span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Receiver34registerCallBackRawDataModifyReadyEPFvPcPcR8uint32_tPvEPv" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv3N8Receiver34registerCallBackRawDataModifyReadyEPFvPcPcR8uint32_tPvEPv"></span><span id="_CPPv2N8Receiver34registerCallBackRawDataModifyReadyEPFvPcPcR8uint32_tPvEPv"></span><span class="target" id="classReceiver_1ae53ae97198bd03459f2275ca42a5f221"></span>void <code class="sig-name descname">registerCallBackRawDataModifyReady</code><span class="sig-paren">(</span>void (*<em>func</em>)<span class="sig-paren">(</span>char *, char *, uint32_t&amp;, void *<span class="sig-paren">)</span>, void *<em>arg</em>, <span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Receiver34registerCallBackRawDataModifyReadyEPFvPcPcR8uint32_tPvEPv" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Call back for raw data (modified) args to raw data ready callback are sls_receiver_header frame metadata, dataPointer is the pointer to the data, revDatasize is the reference of data size in bytes. Can be modified to the new size to be written/streamed. (only smaller value). </p>
 </dd></dl>
 
@@ -282,19 +279,11 @@
 
   <div role="contentinfo">
     <p>
-        
         &copy; Copyright 2020, PSD Detector Group
 
     </p>
   </div>
-    
-    
-    
-    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
-    
-    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
-    
-    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
 
@@ -305,6 +294,7 @@
 
   </div>
   
+
 
   <script type="text/javascript">
       jQuery(function () {
