@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Server Upgrade &mdash; slsDetectorPackage  documentation</title>
+  <title>Detector Server Upgrade &mdash; slsDetectorPackage  documentation</title>
   
 
   
@@ -36,7 +36,6 @@
   <link rel="stylesheet" href="_static/css/extra.css" type="text/css" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Firmware Upgrade" href="firmware.html" />
     <link rel="prev" title="Default values" href="servers.html" /> 
 </head>
 
@@ -115,10 +114,14 @@
 <li class="toctree-l1"><a class="reference internal" href="type_traits.html">TypeTraits</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ToString.html">ToString</a></li>
 </ul>
-<p class="caption"><span class="caption-text">Servers</span></p>
+<p class="caption"><span class="caption-text">Firmware</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="firmware.html">Firmware Upgrade</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Detector Server</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="servers.html">Default values</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Server Upgrade</a><ul>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Detector Server Upgrade</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#eiger">Eiger</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#jungfrau">Jungfrau</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#gotthard">Gotthard</a></li>
@@ -128,10 +131,6 @@
 <li class="toctree-l2"><a class="reference internal" href="#ctb">Ctb</a></li>
 </ul>
 </li>
-</ul>
-<p class="caption"><span class="caption-text">Firmware</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="firmware.html">Firmware Upgrade</a></li>
 </ul>
 
             
@@ -177,7 +176,7 @@
     
       <li><a href="index.html">Docs</a> &raquo;</li>
         
-      <li>Server Upgrade</li>
+      <li>Detector Server Upgrade</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -196,10 +195,14 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="server-upgrade">
-<h1>Server Upgrade<a class="headerlink" href="#server-upgrade" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="detector-server-upgrade">
+<h1>Detector Server Upgrade<a class="headerlink" href="#detector-server-upgrade" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="eiger">
 <h2>Eiger<a class="headerlink" href="#eiger" title="Permalink to this headline">¶</a></h2>
+<div class="line-block">
+<div class="line"><strong>Location:</strong></div>
+<div class="line">5.0.0-rc1: slsDetectorPackage/slsDetectorServer/eigerDetectorServer/bin/eigerDetectorServer_developer</div>
+</div>
 <ol class="arabic">
 <li><dl>
 <dt>Kill old server and copy new server</dt><dd><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Option 1: from detector console</span>
@@ -229,7 +232,12 @@ ssh root@<span class="nv">$i</span> sync<span class="p">;</span> <span class="k"
 </div>
 <div class="section" id="jungfrau">
 <h2>Jungfrau<a class="headerlink" href="#jungfrau" title="Permalink to this headline">¶</a></h2>
+<div class="line-block">
+<div class="line"><strong>Location:</strong></div>
+<div class="line">5.0.0-rc1: slsDetectorPackage/slsDetectorServer/jungfrauDetectorServer/bin/jungfrauDetectorServer_developer</div>
+</div>
 <ol class="arabic">
+<li><p>Install tftp and copy detector server binary to tftp folder</p></li>
 <li><dl>
 <dt>Program from console (only from 5.0.0-rc1)</dt><dd><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># copies new server from pc tftp folder, respawns and reboots</span>
 sls_detector_put copydetectorserver jungfrauDetectorServerxxx pcxxx
@@ -242,7 +250,12 @@ sls_detector_put copydetectorserver jungfrauDetectorServerxxx pcxxx
 </div>
 <div class="section" id="gotthard">
 <h2>Gotthard<a class="headerlink" href="#gotthard" title="Permalink to this headline">¶</a></h2>
+<div class="line-block">
+<div class="line"><strong>Location:</strong></div>
+<div class="line">5.0.0-rc1: slsDetectorPackage/slsDetectorServer/gotthardDetectorServer/bin/gotthardDetectorServer_developer</div>
+</div>
 <ol class="arabic">
+<li><p>Install tftp and copy detector server binary to tftp folder</p></li>
 <li><dl>
 <dt>Program from console (only from 5.0.0-rc1)</dt><dd><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># copies new server from pc tftp folder, respawns and reboots</span>
 sls_detector_put copydetectorserver gotthardDetectorServerxxx pcxxx
@@ -255,7 +268,12 @@ sls_detector_put copydetectorserver gotthardDetectorServerxxx pcxxx
 </div>
 <div class="section" id="mythen3">
 <h2>Mythen3<a class="headerlink" href="#mythen3" title="Permalink to this headline">¶</a></h2>
+<div class="line-block">
+<div class="line"><strong>Location:</strong></div>
+<div class="line">5.0.0-rc1: slsDetectorPackage/slsDetectorServer/mythen3DetectorServer/bin/mythen3DetectorServer_developer</div>
+</div>
 <ol class="arabic">
+<li><p>Install tftp and copy detector server binary to tftp folder</p></li>
 <li><dl>
 <dt>Program from console (only from 5.0.0-rc1)</dt><dd><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># copies new server from pc tftp folder and reboots (does not respawn)</span>
 sls_detector_put copydetectorserver mythen3DetectorServerxxx pcxxx
@@ -268,7 +286,12 @@ sls_detector_put copydetectorserver mythen3DetectorServerxxx pcxxx
 </div>
 <div class="section" id="gotthard2">
 <h2>Gotthard2<a class="headerlink" href="#gotthard2" title="Permalink to this headline">¶</a></h2>
+<div class="line-block">
+<div class="line"><strong>Location:</strong></div>
+<div class="line">5.0.0-rc1: slsDetectorPackage/slsDetectorServer/gotthard2DetectorServer/bin/gotthard2DetectorServer_developer</div>
+</div>
 <ol class="arabic">
+<li><p>Install tftp and copy detector server binary to tftp folder</p></li>
 <li><dl>
 <dt>Program from console (only from 5.0.0-rc1)</dt><dd><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># copies new server from pc tftp folder and reboots (does not respawn)</span>
 sls_detector_put copydetectorserver gotthard2DetectorServerxxx pcxxx
@@ -281,7 +304,12 @@ sls_detector_put copydetectorserver gotthard2DetectorServerxxx pcxxx
 </div>
 <div class="section" id="moench">
 <h2>Moench<a class="headerlink" href="#moench" title="Permalink to this headline">¶</a></h2>
+<div class="line-block">
+<div class="line"><strong>Location:</strong></div>
+<div class="line">5.0.0-rc1: slsDetectorPackage/slsDetectorServer/moenchDetectorServer/bin/moenchDetectorServer_developer</div>
+</div>
 <ol class="arabic">
+<li><p>Install tftp and copy detector server binary to tftp folder</p></li>
 <li><dl>
 <dt>Program from console (only from 5.0.0-rc1)</dt><dd><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># copies new server from pc tftp folder, respawns and reboots</span>
 sls_detector_put copydetectorserver moenchDetectorServerxxx pcxxx
@@ -294,7 +322,12 @@ sls_detector_put copydetectorserver moenchDetectorServerxxx pcxxx
 </div>
 <div class="section" id="ctb">
 <h2>Ctb<a class="headerlink" href="#ctb" title="Permalink to this headline">¶</a></h2>
+<div class="line-block">
+<div class="line"><strong>Location:</strong></div>
+<div class="line">5.0.0-rc1: slsDetectorPackage/slsDetectorServer/ctbDetectorServer/bin/ctbDetectorServer_developer</div>
+</div>
 <ol class="arabic">
+<li><p>Install tftp and copy detector server binary to tftp folder</p></li>
 <li><dl>
 <dt>Program from console (only from 5.0.0-rc1)</dt><dd><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># copies new server from pc tftp folder, respawns and reboots</span>
 sls_detector_put copydetectorserver ctbDetectorServerxxx pcxxx
@@ -314,8 +347,6 @@ sls_detector_put copydetectorserver ctbDetectorServerxxx pcxxx
           <footer>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-      
-        <a href="firmware.html" class="btn btn-neutral float-right" title="Firmware Upgrade" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="servers.html" class="btn btn-neutral float-left" title="Default values" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
