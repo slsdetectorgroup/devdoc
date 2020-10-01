@@ -1,0 +1,678 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Troubleshooting &mdash; slsDetectorPackage  documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/css/extra.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Default Values" href="serverdefaults.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> slsDetectorPackage
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                5.0.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Installation:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dependencies.html">Dependencies</a></li>
+<li class="toctree-l1"><a class="reference internal" href="consuming.html">Consuming slsDetectorPackage</a></li>
+</ul>
+<p class="caption"><span class="caption-text">C++ API</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="detector.html">Detector</a></li>
+<li class="toctree-l1"><a class="reference internal" href="result.html">Result</a></li>
+<li class="toctree-l1"><a class="reference internal" href="receiver_api.html">Receiver</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples.html">Examples</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Python API</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="pygettingstarted.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pydetector.html">Detector</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pyenums.html">Enums</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pyexamples.html">Examples</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Command line</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="commandline.html">Command line interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="quick_start_guide.html">Quick Start Guide</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Developer</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="container_utils.html">ContainerUtils</a></li>
+<li class="toctree-l1"><a class="reference internal" href="type_traits.html">TypeTraits</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ToString.html">ToString</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Firmware</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="firmware.html">Firmware Upgrade</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Detector Server</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="servers.html">Detector Servers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="serverupgrade.html">Detector Server Upgrade</a></li>
+<li class="toctree-l1"><a class="reference internal" href="virtualserver.html">Detector Simulators</a></li>
+<li class="toctree-l1"><a class="reference internal" href="serverdefaults.html">Default Values</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Troubleshooting</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Troubleshooting</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#common">Common</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#missing-packets">Missing Packets</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#receiver-pc-tuning-options">Receiver PC Tuning Options</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#slsreceiver-tuning">slsReceiver Tuning</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#shared-memory-error">Shared memory error</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#cannot-connect-to-detector">Cannot connect to detector</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#cannot-connect-to-receiver">Cannot connect to receiver</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#receiver-cannot-bind-socket">Receiver: cannot bind socket</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#cannot-get-multi-module-data">Cannot get multi module data</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#gotthard">Gotthard</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#missing-first-frame-or-next-frame-after-a-delay">Missing first frame or next frame after a delay</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#jungfrau">Jungfrau</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#temperature-event-occured">Temperature event occured</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#jungfrau-troubleshooting-power-supply">Cannot get multi module data</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">slsDetectorPackage</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>Troubleshooting</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/troubleshooting.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="troubleshooting">
+<h1>Troubleshooting<a class="headerlink" href="#troubleshooting" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="common">
+<h2>Common<a class="headerlink" href="#common" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="missing-packets">
+<h3>Missing Packets<a class="headerlink" href="#missing-packets" title="Permalink to this headline">¶</a></h3>
+<p>Possible causes could be the following:</p>
+<ol class="arabic">
+<li><dl class="simple">
+<dt>Receiver PC is not tuned for socket buffer size and input packet queue.</dt><dd><ul class="simple">
+<li><p>Refer to <a class="reference internal" href="#receiver-pc-tuning"><span class="std std-ref">Increase rmem_default, rmem_max and max_backlog</span></a></p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>Wiring</dt><dd><ul class="simple">
+<li><p>Faulty wiring or connecting cable to incorrect interface.</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>Link up and speed</dt><dd><ul class="simple">
+<li><p>Check to see if there is a blue LED on board to signal that the link is up. Check ethtool and find if Link Deteced:Yes and Speed is acceptable (&gt;10k).</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt>Detector is not acquiring (Not Eiger)</dt><dd><ul>
+<li><dl>
+<dt>Take an acquisition with many images and using the following steps instead of acquire:</dt><dd><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sls_detector_put status start
+<span class="c1"># keep executing this command to see if the number of frames left keeps decreasing,</span>
+<span class="c1"># which means the detector is acquiring.</span>
+sls_detector_get framesl
+</pre></div>
+</div>
+</dd>
+</dl>
+</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If you are using multiple modules, the previous command can return -1 because each module will return different values. Then, check for a single module instead: sls_detector_get 0:framesl</p>
+</div>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>Data cable plugged into the wrong interface on board (Jungfrau)</dt><dd><ul class="simple">
+<li><p>Please ensure that the data cable is plugged into the rightmost interface. The middle one is disabled for PCB v1.0 and must be selected via command for PCB v2.0.</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>Detector is not sending data</dt><dd><ul class="simple">
+<li><p>Check the board to see if the green LED is blinking next to the data cable, which means that the detector is sending data.</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>Firewall or security feature</dt><dd><ul class="simple">
+<li><p>A firewall or some security feature could be blocking the reception of data.</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>Ethernet interface not configured properly</dt><dd><ul class="simple">
+<li><p>Ensure that the interfaces used are configured properly with the right mask and ip. Eg. use ifconfig and route commands to verify.</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>Ethernet interface not configured for Jumbo frames (10Gb)</dt><dd><ul class="simple">
+<li><p>Ensure that the interfaces used in receiver pc have MTU 9000 (jumbo frames) enabled.</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>Detector IP (Not Eiger)</dt><dd><ul class="simple">
+<li><p>Ensure it is valid and does not end if 0 or 255. Also ensure that the detector ip is in the same subnet as rx_udpip and the masking in the interface configuration ensures this rule.</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>Tcpdump or wireshark</dt><dd><ul class="simple">
+<li><p>Use one of these to confirm that you receive packets (with the right filtering ie. source and destination ports, ip).</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>Check SFP modules</dt><dd><ul class="simple">
+<li><p>Check if the SFP modules on both sides of the fiber are of same type.</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>Pinging the subnet (receiving only a few number of packets each time)</dt><dd><ul class="simple">
+<li><p>If a switch is used between a receiver pc and detector instead of plugging the cables directly, one might have to ping any ip in the subnet of the Ethernet interface constantly so that it does not forget the ip during operation.</p></li>
+<li><p>Eg. if rx_udpip is 10.2.3.100, then ping constantly 10.2.3.xxx, where xxx is any ip other than 100.</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ol>
+</div>
+<div class="section" id="receiver-pc-tuning-options">
+<span id="receiver-pc-tuning"></span><h3>Receiver PC Tuning Options<a class="headerlink" href="#receiver-pc-tuning-options" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic">
+<li><dl>
+<dt>Increase maximum receive socket buffer size and socket input packet queue.</dt><dd><ul>
+<li><dl>
+<dt>Temporarily (until shut down)</dt><dd><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># check size</span>
+sysctl -a <span class="p">|</span> grep rmem
+sysctl -a <span class="p">|</span> grep backlog
+
+<span class="c1"># set max and default (use 1Gb for Jungfrau and 100Mb for others)</span>
+sysctl net.core.rmem_max<span class="o">=</span><span class="k">$((</span><span class="m">100</span><span class="o">*</span><span class="m">1024</span><span class="o">*</span><span class="m">1024</span><span class="k">))</span>
+sysctl net.core.rmem_default<span class="o">=</span><span class="k">$((</span><span class="m">100</span><span class="o">*</span><span class="m">1024</span><span class="o">*</span><span class="m">1024</span><span class="k">))</span>
+sysctl net.core.netdev_max_backlog<span class="o">=</span><span class="m">250000</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt>Permanently</dt><dd><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># edit /etc/sysctl.conf file</span>
+<span class="c1"># set max and default (use 1Gb for Jungfrau and 100Mb for others)</span>
+net.core.rmem_max <span class="o">=</span> <span class="m">104857600</span>
+net.core.rmem_default<span class="o">=</span> <span class="m">104857600</span>
+net.core.netdev_max_backlog <span class="o">=</span> <span class="m">250000</span>
+
+<span class="c1"># save file and run the following</span>
+sysctl -p
+</pre></div>
+</div>
+</dd>
+</dl>
+</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This is the most basic setting, which is sometimes more than enough.</p>
+</div>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>For 10Gb,</dt><dd><ul class="simple">
+<li><p>MTU must be set up to 9000 for jumbo frames on detector, switch and server NIC</p></li>
+<li><p>Set up static MAC address tables with separated VLANs</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt>Write to memory if not a large disk and pc not fast enough.</dt><dd><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>mount -t tmpfs none /ramdisk_folder
+<span class="c1"># or</span>
+mount -t tmpfs none /mnt/ramdisk -o <span class="nv">size</span><span class="o">=</span>10G
+<span class="c1"># check how many GB memory you can allocate, to avoid swapping otherwise</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt>Modify ethtool settings.</dt><dd><ul>
+<li><dl>
+<dt>rx ring parameters</dt><dd><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># check</span>
+ethtool -g xth1
+
+<span class="c1"># set to max value in your pc settings</span>
+ethtool -G xth1 rx <span class="m">4096</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt>coalesce settings (might not always work)</dt><dd><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># check</span>
+ethtool -c xth1
+
+<span class="c1"># set to max value in your pc settings</span>
+ethtool -C xth1 rx-usecs <span class="m">100</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt>pause parameters</dt><dd><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># check</span>
+ethtool -a xth1
+
+<span class="c1"># set to max value in your pc settings</span>
+ethtool -A xth1 rx on
+</pre></div>
+</div>
+</dd>
+</dl>
+</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<div class="line-block">
+<div class="line">xth1 is example interface name.</div>
+<div class="line">These settings are lost at pc reboot.</div>
+</div>
+</div>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt>Give user speicific user scheduling privileges.</dt><dd><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># edit /etc/security/limits.conf</span>
+<span class="c1"># add following line or similar depending on your distribution</span>
+username rtprio <span class="m">99</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This is also set if slsReceiver is run as root user.</p>
+</div>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt>Disable power saving in CPU frequency</dt><dd><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># or similar command depending on your distribution</span>
+cpupower frequency-info
+cpupower frequency-set -g performance
+
+<span class="c1"># or</span>
+cpufreq-info
+<span class="k">for</span> i in ‘seq <span class="m">0</span> <span class="m">7</span>‘<span class="p">;</span> <span class="k">do</span> cpufreq-set -c <span class="nv">$i</span> -g performance<span class="p">;</span> <span class="k">done</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+</li>
+</ol>
+</div>
+<div class="section" id="slsreceiver-tuning">
+<h3>slsReceiver Tuning<a class="headerlink" href="#slsreceiver-tuning" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic">
+<li><p>Starting receiver as root to have scheduling privileges.</p></li>
+<li><dl>
+<dt>For 10g, enable flow control</dt><dd><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sls_detector_put flowcontrol10g <span class="m">1</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt>Increase slsReceiver fifo depth between listening and processing threads.</dt><dd><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sls_detector_get rx_fifodepth
+<span class="c1"># sets number of frames in fifo to 5000</span>
+sls_detector_put rx_fifodepth <span class="m">5000</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt>Increase number of frames per file to reduce time taken to open and close files.</dt><dd><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sls_detector_get rx_framesperfile
+sls_detector_put rx_framesperfile <span class="m">20000</span>
+<span class="c1"># writes all frames into a single file</span>
+sls_detector_put rx_framesperfile <span class="m">0</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+</li>
+</ol>
+</div>
+<div class="section" id="shared-memory-error">
+<h3>Shared memory error<a class="headerlink" href="#shared-memory-error" title="Permalink to this headline">¶</a></h3>
+<div class="line-block">
+<div class="line">For errors due to access or size, delete shared memory files nd try again.</div>
+</div>
+<dl>
+<dt>To list all shared memory files of sls detector package.</dt><dd><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ll /dev/shm/slsDetectorPackage*
+-rw-------. <span class="m">1</span> l_d l_d  <span class="m">136</span> Oct  <span class="m">1</span> <span class="m">11</span>:42 /dev/shm/slsDetectorPackage_multi_0
+-rw-------. <span class="m">1</span> l_d l_d <span class="m">3476</span> Oct  <span class="m">1</span> <span class="m">11</span>:42 /dev/shm/slsDetectorPackage_multi_0_sls_0
+-rw-------. <span class="m">1</span> l_d l_d <span class="m">3476</span> Oct  <span class="m">1</span> <span class="m">11</span>:42 /dev/shm/slsDetectorPackage_multi_0_sls_1
+</pre></div>
+</div>
+</dd>
+</dl>
+</div>
+<div class="section" id="cannot-connect-to-detector">
+<h3>Cannot connect to detector<a class="headerlink" href="#cannot-connect-to-detector" title="Permalink to this headline">¶</a></h3>
+<dl>
+<dt>Ensure both control and stop servers are running on the detector.</dt><dd><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ps -ef <span class="p">|</span> grep jungfrauDetectorServer*
+</pre></div>
+</div>
+</dd>
+</dl>
+</div>
+<div class="section" id="cannot-connect-to-receiver">
+<h3>Cannot connect to receiver<a class="headerlink" href="#cannot-connect-to-receiver" title="Permalink to this headline">¶</a></h3>
+<p>Start receiver before running a client command that needs to communicate with receiver.</p>
+</div>
+<div class="section" id="receiver-cannot-bind-socket">
+<h3>Receiver: cannot bind socket<a class="headerlink" href="#receiver-cannot-bind-socket" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic">
+<li><dl class="simple">
+<dt>slsReceiver or slsMultiReceiver is already open somewhere.</dt><dd><ul class="simple">
+<li><p>Kill it and restart it.</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt>Tcp port is in use by another application.</dt><dd><ul>
+<li><dl>
+<dt>Start Receiver with a different tcp port and adjust it config file</dt><dd><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># restart receiver with different port</span>
+slsReceiver -t1980
+
+<span class="c1"># adjust in config file</span>
+rx_hostname pcxxxx:1980
+</pre></div>
+</div>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ol>
+</div>
+<div class="section" id="cannot-get-multi-module-data">
+<span id="common-troubleshooting-multi-module-data"></span><h3>Cannot get multi module data<a class="headerlink" href="#cannot-get-multi-module-data" title="Permalink to this headline">¶</a></h3>
+<p>Possible causes could be the following:</p>
+<ol class="arabic simple">
+<li><dl class="simple">
+<dt>Network</dt><dd><ul class="simple">
+<li><p>If you have a direct connection, check to see if the network cables are connected correctly to corresponding interfaces on the PC side. Check also the network configuration and that the detectors and receivers are in the corresponding subnet.</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>Power Supply</dt><dd><ul class="simple">
+<li><p>Check power supply current limit.</p></li>
+<li><p>For Jungfrau, refer to <a class="reference internal" href="#jungfrau-troubleshooting-power-supply"><span class="std std-ref">Jungfrau Power Supply Troubleshooting</span></a>.</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ol>
+</div>
+</div>
+<div class="section" id="gotthard">
+<h2>Gotthard<a class="headerlink" href="#gotthard" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="missing-first-frame-or-next-frame-after-a-delay">
+<h3>Missing first frame or next frame after a delay<a class="headerlink" href="#missing-first-frame-or-next-frame-after-a-delay" title="Permalink to this headline">¶</a></h3>
+<p>Connect the data link from the Module directly to receiver pc or to a private network.</p>
+</div>
+</div>
+<div class="section" id="jungfrau">
+<h2>Jungfrau<a class="headerlink" href="#jungfrau" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="temperature-event-occured">
+<h3>Temperature event occured<a class="headerlink" href="#temperature-event-occured" title="Permalink to this headline">¶</a></h3>
+<p>This will occur only if:
+* temp_threshold (threshold temperature) has been set to a value
+* temp_control (temperature control) set to 1
+* and the temperature overshooted the threshold temperature.</p>
+<p><strong>Consequence</strong>
+* sls_detector_get temp_event will give 1 # temperature event occured
+* the chip will be powered off</p>
+<p><strong>Solution</strong>
+* Even after fixing the cooling, any subsequent powerchip command will fail unless the temperature event has been cleared.</p>
+<ul>
+<li><dl>
+<dt>Clear the temperature event</dt><dd><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># gives the current chip power status (zero currently as chip powered off)</span>
+sls_detector_get powerchip
+
+<span class="c1"># clear temperature event</span>
+sls_detector_put temp_event <span class="m">0</span>
+
+<span class="c1"># power on the chip</span>
+sls_detector_put powerchip <span class="m">1</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+</li>
+</ul>
+</div>
+<div class="section" id="jungfrau-troubleshooting-power-supply">
+<span id="id1"></span><h3>Cannot get multi module data<a class="headerlink" href="#jungfrau-troubleshooting-power-supply" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic simple">
+<li><p>Check <a class="reference internal" href="#common-troubleshooting-multi-module-data"><span class="std std-ref">Common Multi Module Troubleshooting</span></a></p></li>
+<li><dl class="simple">
+<dt>Power Supply</dt><dd><ul class="simple">
+<li><p>Comment out this line in the config file: powerchip 1</p></li>
+<li><p>Powering on the chip increases the power consumption by a considerable amount. If commenting out this line aids in getting data (strange data due to powered off chip), then it could be the power supply current limit. Fix it (possibly to 8A current limit) and uncomment the powerchip line back in config file.</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ol>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href="serverdefaults.html" class="btn btn-neutral float-left" title="Default Values" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, PSD Detector Group
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

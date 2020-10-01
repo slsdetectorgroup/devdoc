@@ -95,7 +95,7 @@
 <ul class="current">
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Detector</a></li>
 <li class="toctree-l1"><a class="reference internal" href="result.html">Result</a></li>
-<li class="toctree-l1"><a class="reference internal" href="receiver.html">Receiver</a></li>
+<li class="toctree-l1"><a class="reference internal" href="receiver_api.html">Receiver</a></li>
 <li class="toctree-l1"><a class="reference internal" href="examples.html">Examples</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Python API</span></p>
@@ -108,6 +108,7 @@
 <p class="caption"><span class="caption-text">Command line</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="commandline.html">Command line interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="quick_start_guide.html">Quick Start Guide</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Developer</span></p>
 <ul>
@@ -125,6 +126,10 @@
 <li class="toctree-l1"><a class="reference internal" href="serverupgrade.html">Detector Server Upgrade</a></li>
 <li class="toctree-l1"><a class="reference internal" href="virtualserver.html">Detector Simulators</a></li>
 <li class="toctree-l1"><a class="reference internal" href="serverdefaults.html">Default Values</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Troubleshooting</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="troubleshooting.html">Troubleshooting</a></li>
 </ul>
 
             
@@ -393,7 +398,7 @@ containing results from all modules. (Result&lt;T&gt;)</p>
 <dl class="function">
 <dt id="_CPPv4N3sls8Detector20registerDataCallbackEPFvP12detectorData8uint64_t8uint32_tPvEPv">
 <span id="_CPPv3N3sls8Detector20registerDataCallbackEPFvP12detectorData8uint64_t8uint32_tPvEPv"></span><span id="_CPPv2N3sls8Detector20registerDataCallbackEPFvP12detectorData8uint64_t8uint32_tPvEPv"></span><span class="target" id="classsls_1_1Detector_1a268b2b8950298473f69876766eddd2ae"></span>void <code class="sig-name descname">registerDataCallback</code><span class="sig-paren">(</span>void (*<em>func</em>)<span class="sig-paren">(</span>detectorData *, uint64_t, uint32_t, void *<span class="sig-paren">)</span>, void *<em>pArg</em>, <span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3sls8Detector20registerDataCallbackEPFvP12detectorData8uint64_t8uint32_tPvEPv" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>register callback for accessing reconstructed complete images <a class="reference internal" href="receiver.html#classReceiver"><span class="std std-ref">Receiver</span></a> sends out images via zmq, the client reconstructs them into complete images. Therefore, it also enables zmq streaming from receiver and the client. <dl class="simple">
+<dd><p>register callback for accessing reconstructed complete images <a class="reference internal" href="receiver_api.html#classReceiver"><span class="std std-ref">Receiver</span></a> sends out images via zmq, the client reconstructs them into complete images. Therefore, it also enables zmq streaming from receiver and the client. <dl class="simple">
 <dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">func</span></code>: function to be called for each image with parameters: detector data structure, frame number, sub frame number (for eiger in 32 bit mode), pArg pointer </p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">pArg</span></code>: pointer that is returned in call back </p></li>
@@ -1348,7 +1353,7 @@ containing results from all modules. (Result&lt;T&gt;)</p>
 <span id="_CPPv3N3sls8Detector17setRxZmqFrequencyEi9Positions"></span><span id="_CPPv2N3sls8Detector17setRxZmqFrequencyEi9Positions"></span><span id="sls::Detector::setRxZmqFrequency__i.Positions"></span><span class="target" id="classsls_1_1Detector_1a7471955c5bfc957f1b8ca71049a320a1"></span>void <code class="sig-name descname">setRxZmqFrequency</code><span class="sig-paren">(</span>int <em>freq</em>, Positions <em>pos</em> = {}<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3sls8Detector17setRxZmqFrequencyEi9Positions" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Frequency of frames streamed out from receiver via zmq. <p> Default: 1, Means every frame is streamed out. </p>
 <p> If 2, every second frame is streamed out. </p>
-<p> If 0, streaming timer is the timeout, after which current frame is sent out. (default timeout is 200 ms). Usually used for gui purposes. </p>
+<p> If 0, streaming timer is the timeout, after which current frame is sent out. (default timeout is 500 ms). Usually used for gui purposes. </p>
 </p>
 </dd></dl>
 
@@ -1360,7 +1365,7 @@ containing results from all modules. (Result&lt;T&gt;)</p>
 <dl class="function">
 <dt id="_CPPv4N3sls8Detector13setRxZmqTimerEi9Positions">
 <span id="_CPPv3N3sls8Detector13setRxZmqTimerEi9Positions"></span><span id="_CPPv2N3sls8Detector13setRxZmqTimerEi9Positions"></span><span id="sls::Detector::setRxZmqTimer__i.Positions"></span><span class="target" id="classsls_1_1Detector_1ab3c5d294675d90eb689618020edfe3c4"></span>void <code class="sig-name descname">setRxZmqTimer</code><span class="sig-paren">(</span>int <em>time_in_ms</em>, Positions <em>pos</em> = {}<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3sls8Detector13setRxZmqTimerEi9Positions" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>If receiver streaming frequency is 0 (default), then this timer between each data stream is set. Default is 200 ms. </p>
+<dd><p>If receiver streaming frequency is 0 (default), then this timer between each data stream is set. Default is 500 ms. </p>
 </dd></dl>
 
 <dl class="function">
@@ -2203,7 +2208,7 @@ ROI per module <p>Either all channels or a single adc or 2 chips (256 channels).
 <dl class="function">
 <dt id="_CPPv4N3sls8Detector15setRxDbitOffsetEi9Positions">
 <span id="_CPPv3N3sls8Detector15setRxDbitOffsetEi9Positions"></span><span id="_CPPv2N3sls8Detector15setRxDbitOffsetEi9Positions"></span><span id="sls::Detector::setRxDbitOffset__i.Positions"></span><span class="target" id="classsls_1_1Detector_1ad37027f07f4de49f2e5077a9ad801962"></span>void <code class="sig-name descname">setRxDbitOffset</code><span class="sig-paren">(</span>int <em>value</em>, Positions <em>pos</em> = {}<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3sls8Detector15setRxDbitOffsetEi9Positions" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>[CTB] Set number of bytes of digital data to skip in the <a class="reference internal" href="receiver.html#classReceiver"><span class="std std-ref">Receiver</span></a> </p>
+<dd><p>[CTB] Set number of bytes of digital data to skip in the <a class="reference internal" href="receiver_api.html#classReceiver"><span class="std std-ref">Receiver</span></a> </p>
 </dd></dl>
 
 <dl class="function">

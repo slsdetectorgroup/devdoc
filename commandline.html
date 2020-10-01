@@ -36,7 +36,7 @@
   <link rel="stylesheet" href="_static/css/extra.css" type="text/css" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="ContainerUtils" href="container_utils.html" />
+    <link rel="next" title="Quick Start Guide" href="quick_start_guide.html" />
     <link rel="prev" title="Examples" href="pyexamples.html" /> 
 </head>
 
@@ -95,7 +95,7 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="detector.html">Detector</a></li>
 <li class="toctree-l1"><a class="reference internal" href="result.html">Result</a></li>
-<li class="toctree-l1"><a class="reference internal" href="receiver.html">Receiver</a></li>
+<li class="toctree-l1"><a class="reference internal" href="receiver_api.html">Receiver</a></li>
 <li class="toctree-l1"><a class="reference internal" href="examples.html">Examples</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Python API</span></p>
@@ -113,6 +113,7 @@
 <li class="toctree-l2"><a class="reference internal" href="#commands">Commands</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="quick_start_guide.html">Quick Start Guide</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Developer</span></p>
 <ul>
@@ -130,6 +131,10 @@
 <li class="toctree-l1"><a class="reference internal" href="serverupgrade.html">Detector Server Upgrade</a></li>
 <li class="toctree-l1"><a class="reference internal" href="virtualserver.html">Detector Simulators</a></li>
 <li class="toctree-l1"><a class="reference internal" href="serverdefaults.html">Default Values</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Troubleshooting</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="troubleshooting.html">Troubleshooting</a></li>
 </ul>
 
             
@@ -939,7 +944,7 @@
 <div class="line">Frequency of frames streamed out from receiver via zmq</div>
 <div class="line">Default: 1, Means every frame is streamed out.</div>
 <div class="line">If 2, every second frame is streamed out.</div>
-<div class="line">If 0, streaming timer is the timeout, after which current frame is sent out. (default timeout is 200 ms). Usually used for gui purposes.</div>
+<div class="line">If 0, streaming timer is the timeout, after which current frame is sent out. (default timeout is 500 ms). Usually used for gui purposes.</div>
 </div>
 </dd>
 <dt id="term-rx-zmqip-x-x-x-x">rx_zmqip [x.x.x.x]</dt><dd><div class="line-block">
@@ -1406,7 +1411,7 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="container_utils.html" class="btn btn-neutral float-right" title="ContainerUtils" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="quick_start_guide.html" class="btn btn-neutral float-right" title="Quick Start Guide" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="pyexamples.html" class="btn btn-neutral float-left" title="Examples" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>

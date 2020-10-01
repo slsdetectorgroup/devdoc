@@ -94,7 +94,7 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="detector.html">Detector</a></li>
 <li class="toctree-l1"><a class="reference internal" href="result.html">Result</a></li>
-<li class="toctree-l1"><a class="reference internal" href="receiver.html">Receiver</a></li>
+<li class="toctree-l1"><a class="reference internal" href="receiver_api.html">Receiver</a></li>
 <li class="toctree-l1"><a class="reference internal" href="examples.html">Examples</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Python API</span></p>
@@ -107,6 +107,7 @@
 <p class="caption"><span class="caption-text">Command line</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="commandline.html">Command line interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="quick_start_guide.html">Quick Start Guide</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Developer</span></p>
 <ul>
@@ -124,6 +125,10 @@
 <li class="toctree-l1"><a class="reference internal" href="serverupgrade.html">Detector Server Upgrade</a></li>
 <li class="toctree-l1"><a class="reference internal" href="virtualserver.html">Detector Simulators</a></li>
 <li class="toctree-l1"><a class="reference internal" href="serverdefaults.html">Default Values</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Troubleshooting</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="troubleshooting.html">Troubleshooting</a></li>
 </ul>
 
             
@@ -208,7 +213,7 @@ For documentation on current and previous releases visit the official page: <a c
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="detector.html">Detector</a></li>
 <li class="toctree-l1"><a class="reference internal" href="result.html">Result</a></li>
-<li class="toctree-l1"><a class="reference internal" href="receiver.html">Receiver</a></li>
+<li class="toctree-l1"><a class="reference internal" href="receiver_api.html">Receiver</a></li>
 <li class="toctree-l1"><a class="reference internal" href="examples.html">Examples</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="examples.html#setup">Setup</a></li>
 <li class="toctree-l2"><a class="reference internal" href="examples.html#compile-examples">Compile examples</a></li>
@@ -255,6 +260,13 @@ For documentation on current and previous releases visit the official page: <a c
 <li class="toctree-l2"><a class="reference internal" href="commandline.html#commands">Commands</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="quick_start_guide.html">Quick Start Guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="quick_start_guide.html#detector">Detector</a></li>
+<li class="toctree-l2"><a class="reference internal" href="quick_start_guide.html#receiver">Receiver</a></li>
+<li class="toctree-l2"><a class="reference internal" href="quick_start_guide.html#client">Client</a></li>
+<li class="toctree-l2"><a class="reference internal" href="quick_start_guide.html#gui">Gui</a></li>
+</ul>
+</li>
 </ul>
 </div>
 <div class="toctree-wrapper compound">
@@ -269,49 +281,13 @@ For documentation on current and previous releases visit the official page: <a c
 <p class="caption"><span class="caption-text">Firmware</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="firmware.html">Firmware Upgrade</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="firmware.html#eiger">Eiger</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="firmware.html#compatibility">Compatibility</a></li>
-<li class="toctree-l3"><a class="reference internal" href="firmware.html#corrsponding-detector-server">Corrsponding Detector Server</a></li>
-<li class="toctree-l3"><a class="reference internal" href="firmware.html#upgrade">Upgrade</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="firmware.html#jungfrau">Jungfrau</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="firmware.html#id1">Compatibility</a></li>
-<li class="toctree-l3"><a class="reference internal" href="firmware.html#id3">Corrsponding Detector Server</a></li>
-<li class="toctree-l3"><a class="reference internal" href="firmware.html#upgrade-from-v4-x-x">Upgrade (from v4.x.x)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="firmware.html#upgrade-from-v5-0-0-rc1">Upgrade (from v5.0.0-rc1)</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="firmware.html#gotthard">Gotthard</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="firmware.html#id4">Compatibility</a></li>
-<li class="toctree-l3"><a class="reference internal" href="firmware.html#id6">Corrsponding Detector Server</a></li>
-<li class="toctree-l3"><a class="reference internal" href="firmware.html#id7">Upgrade</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="firmware.html#mythen3">Mythen3</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="firmware.html#id8">Compatibility</a></li>
-<li class="toctree-l3"><a class="reference internal" href="firmware.html#id9">Corrsponding Detector Server</a></li>
-<li class="toctree-l3"><a class="reference internal" href="firmware.html#id10">Upgrade (from v5.0.0-rc1)</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="firmware.html#gotthard2">Gotthard2</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="firmware.html#id11">Compatibility</a></li>
-<li class="toctree-l3"><a class="reference internal" href="firmware.html#id12">Corrsponding Detector Server</a></li>
-<li class="toctree-l3"><a class="reference internal" href="firmware.html#id13">Upgrade (from v5.0.0-rc1)</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="firmware.html#moench">Moench</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="firmware.html#id14">Compatibility</a></li>
-<li class="toctree-l3"><a class="reference internal" href="firmware.html#id15">Corrsponding Detector Server</a></li>
-<li class="toctree-l3"><a class="reference internal" href="firmware.html#id16">Upgrade (from v5.0.0-rc1)</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="firmware.html#ctb">Ctb</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="firmware.html#id17">Compatibility</a></li>
-<li class="toctree-l3"><a class="reference internal" href="firmware.html#id18">Corrsponding Detector Server</a></li>
-<li class="toctree-l3"><a class="reference internal" href="firmware.html#id19">Upgrade (from v5.0.0-rc1)</a></li>
-</ul>
-</li>
+<li class="toctree-l2"><a class="reference internal" href="firmware.html#eiger">Eiger</a></li>
+<li class="toctree-l2"><a class="reference internal" href="firmware.html#jungfrau">Jungfrau</a></li>
+<li class="toctree-l2"><a class="reference internal" href="firmware.html#gotthard">Gotthard</a></li>
+<li class="toctree-l2"><a class="reference internal" href="firmware.html#mythen3">Mythen3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="firmware.html#gotthard2">Gotthard2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="firmware.html#moench">Moench</a></li>
+<li class="toctree-l2"><a class="reference internal" href="firmware.html#ctb">Ctb</a></li>
 </ul>
 </li>
 </ul>
@@ -334,44 +310,48 @@ For documentation on current and previous releases visit the official page: <a c
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="virtualserver.html">Detector Simulators</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="virtualserver.html#compilation">Compilation</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="virtualserver.html#binaries">Binaries</a></li>
-</ul>
-</li>
+<li class="toctree-l2"><a class="reference internal" href="virtualserver.html#compilation">Compilation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="virtualserver.html#arguments">Arguments</a></li>
-<li class="toctree-l2"><a class="reference internal" href="virtualserver.html#client">Client</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="virtualserver.html#sample-config-file">Sample Config file</a></li>
-</ul>
-</li>
+<li class="toctree-l2"><a class="reference internal" href="virtualserver.html#client">Client</a></li>
 <li class="toctree-l2"><a class="reference internal" href="virtualserver.html#receivers">Receivers</a></li>
 <li class="toctree-l2"><a class="reference internal" href="virtualserver.html#gui">Gui</a></li>
 <li class="toctree-l2"><a class="reference internal" href="virtualserver.html#limitations">Limitations</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="serverdefaults.html">Default Values</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="serverdefaults.html#mythen3">Mythen3</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="serverdefaults.html#dacs">DACS</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="serverdefaults.html#gotthard2">Gotthard2</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="serverdefaults.html#id1">DACS</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="serverdefaults.html#moench">Moench</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="serverdefaults.html#id4">DACS</a></li>
-</ul>
-</li>
+<li class="toctree-l2"><a class="reference internal" href="serverdefaults.html#mythen3">Mythen3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="serverdefaults.html#gotthard2">Gotthard2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="serverdefaults.html#moench">Moench</a></li>
 <li class="toctree-l2"><a class="reference internal" href="serverdefaults.html#ctb">Ctb</a></li>
-<li class="toctree-l2"><a class="reference internal" href="serverdefaults.html#eiger">Eiger</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="serverdefaults.html#id5">DACS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="serverdefaults.html#eiger">Eiger</a></li>
+<li class="toctree-l2"><a class="reference internal" href="serverdefaults.html#jungfrau">Jungfrau</a></li>
+<li class="toctree-l2"><a class="reference internal" href="serverdefaults.html#gotthard">Gotthard</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="serverdefaults.html#jungfrau">Jungfrau</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="serverdefaults.html#id6">DACS</a></li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<p class="caption"><span class="caption-text">Troubleshooting</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="troubleshooting.html">Troubleshooting</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="troubleshooting.html#common">Common</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="troubleshooting.html#missing-packets">Missing Packets</a></li>
+<li class="toctree-l3"><a class="reference internal" href="troubleshooting.html#receiver-pc-tuning-options">Receiver PC Tuning Options</a></li>
+<li class="toctree-l3"><a class="reference internal" href="troubleshooting.html#slsreceiver-tuning">slsReceiver Tuning</a></li>
+<li class="toctree-l3"><a class="reference internal" href="troubleshooting.html#shared-memory-error">Shared memory error</a></li>
+<li class="toctree-l3"><a class="reference internal" href="troubleshooting.html#cannot-connect-to-detector">Cannot connect to detector</a></li>
+<li class="toctree-l3"><a class="reference internal" href="troubleshooting.html#cannot-connect-to-receiver">Cannot connect to receiver</a></li>
+<li class="toctree-l3"><a class="reference internal" href="troubleshooting.html#receiver-cannot-bind-socket">Receiver: cannot bind socket</a></li>
+<li class="toctree-l3"><a class="reference internal" href="troubleshooting.html#cannot-get-multi-module-data">Cannot get multi module data</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="serverdefaults.html#gotthard">Gotthard</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="serverdefaults.html#id7">DACS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="troubleshooting.html#gotthard">Gotthard</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="troubleshooting.html#missing-first-frame-or-next-frame-after-a-delay">Missing first frame or next frame after a delay</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="troubleshooting.html#jungfrau">Jungfrau</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="troubleshooting.html#temperature-event-occured">Temperature event occured</a></li>
+<li class="toctree-l3"><a class="reference internal" href="troubleshooting.html#jungfrau-troubleshooting-power-supply">Cannot get multi module data</a></li>
 </ul>
 </li>
 </ul>

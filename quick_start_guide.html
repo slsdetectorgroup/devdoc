@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Dependencies &mdash; slsDetectorPackage  documentation</title>
+  <title>Quick Start Guide &mdash; slsDetectorPackage  documentation</title>
   
 
   
@@ -36,8 +36,8 @@
   <link rel="stylesheet" href="_static/css/extra.css" type="text/css" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Consuming slsDetectorPackage" href="consuming.html" />
-    <link rel="prev" title="Installation" href="installation.html" /> 
+    <link rel="next" title="ContainerUtils" href="container_utils.html" />
+    <link rel="prev" title="Command line interface" href="commandline.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -86,16 +86,9 @@
             
             
               <p class="caption"><span class="caption-text">Installation:</span></p>
-<ul class="current">
+<ul>
 <li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Dependencies</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#core">Core</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#gui">GUI</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#python-bindings">Python bindings</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#documentation">Documentation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#packaged-in-libs">Packaged in libs/</a></li>
-</ul>
-</li>
+<li class="toctree-l1"><a class="reference internal" href="dependencies.html">Dependencies</a></li>
 <li class="toctree-l1"><a class="reference internal" href="consuming.html">Consuming slsDetectorPackage</a></li>
 </ul>
 <p class="caption"><span class="caption-text">C++ API</span></p>
@@ -113,9 +106,18 @@
 <li class="toctree-l1"><a class="reference internal" href="pyexamples.html">Examples</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Command line</span></p>
-<ul>
+<ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="commandline.html">Command line interface</a></li>
-<li class="toctree-l1"><a class="reference internal" href="quick_start_guide.html">Quick Start Guide</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Quick Start Guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#detector">Detector</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#receiver">Receiver</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#client">Client</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#sample-config-file">Sample Config file</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#gui">Gui</a></li>
+</ul>
+</li>
 </ul>
 <p class="caption"><span class="caption-text">Developer</span></p>
 <ul>
@@ -182,13 +184,13 @@
     
       <li><a href="index.html">Docs</a> &raquo;</li>
         
-      <li>Dependencies</li>
+      <li>Quick Start Guide</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
             
-            <a href="_sources/dependencies.rst.txt" rel="nofollow"> View page source</a>
+            <a href="_sources/quick_start_guide.rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -201,64 +203,106 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="dependencies">
-<h1>Dependencies<a class="headerlink" href="#dependencies" title="Permalink to this headline">¶</a></h1>
-<p>While we value few dependencies some libraries are required in
-order to not have to reinvent the wheel. Due to the state of package
-management in C++ we decided to bundle some of them with our source
-code. These are found in the libs/ directory.</p>
-<div class="section" id="core">
-<h2>Core<a class="headerlink" href="#core" title="Permalink to this headline">¶</a></h2>
-<p>To use the basic building blocks, meaning sls_detector_get/put and
-the shared libraries these are needed:</p>
-<blockquote>
-<div><ul class="simple">
-<li><p>Linux, preferably recent kernel (currently no cross platform support)</p></li>
-<li><p>CMake &gt; 3.12</p></li>
-<li><p>C++11 compatible compiler. (We test with gcc and clang)</p></li>
-<li><p>ZeroMQ version 4</p></li>
-</ul>
-</div></blockquote>
+  <div class="section" id="quick-start-guide">
+<h1>Quick Start Guide<a class="headerlink" href="#quick-start-guide" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="detector">
+<h2>Detector<a class="headerlink" href="#detector" title="Permalink to this headline">¶</a></h2>
+<p>Start up detector (with cooling if required). Ensure both control server and stop server is running on-board.</p>
+<p>Or use a detector simulator to test. Click <a class="reference internal" href="virtualserver.html#virtual-detector-servers"><span class="std std-ref">here</span></a> for further instructions.</p>
+</div>
+<div class="section" id="receiver">
+<h2>Receiver<a class="headerlink" href="#receiver" title="Permalink to this headline">¶</a></h2>
+<div class="line-block">
+<div class="line">One has to start the slsReceiver before loading config file or using any receiver commands (prefix: <strong>rx_</strong> )</div>
+</div>
+<dl>
+<dt>For a Single Module</dt><dd><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># default port 1954</span>
+slsReceiver
+
+<span class="c1"># custom port 2012</span>
+slsReceiver -t2012
+</pre></div>
+</div>
+</dd>
+<dt>For Multiple Modules</dt><dd><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># slsMultiReceiver [starting port] [number of receivers] [print each frame header for debugging]</span>
+slsMultiReceiver <span class="m">2012</span> <span class="m">2</span> <span class="m">0</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+</div>
+<div class="section" id="client">
+<h2>Client<a class="headerlink" href="#client" title="Permalink to this headline">¶</a></h2>
+<p>Refer <a class="reference internal" href="#sample-config-file"><span class="std std-ref">Sample Config file</span></a> to create config file.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># load config file</span>
+sls_detector_put config /path/sample.config
+
+<span class="c1"># set number of frames</span>
+sls_detector_put frames <span class="m">5</span>
+
+<span class="c1"># acquire</span>
+sls_detector_acquire
+</pre></div>
+</div>
+<div class="section" id="sample-config-file">
+<span id="id1"></span><h3>Sample Config file<a class="headerlink" href="#sample-config-file" title="Permalink to this headline">¶</a></h3>
+<dl>
+<dt>For a Single Module</dt><dd><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># connects to module</span>
+hostname bchipxxx
+
+<span class="c1"># connects to receiver at default port</span>
+rx_hostname mpc1922
+<span class="c1"># or to connect to specific port</span>
+<span class="c1"># rx_hostname mpc1922:2012</span>
+
+<span class="c1"># sets destination udp ports (not needed, default is 50001)</span>
+udp_dstport <span class="m">50012</span>
+
+<span class="c1"># source udp ips must be same subnet at destintaion udp ips</span>
+udp_srcip <span class="m">192</span>.168.1.112
+
+<span class="c1"># destination udp ip picked up from rx_hostname (if auto)</span>
+udp_dstip auto
+</pre></div>
+</div>
+</dd>
+<dt>For Multiple Modules</dt><dd><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># connects to mulitple modules</span>
+hostname bchipxxx+bchipyyy+
+
+<span class="c1"># connects to receivers at ports 2012 and 2014</span>
+rx_hostname mpc1922:2012+mpc1922:2013+
+
+<span class="c1"># sets differernt destination udp ports</span>
+<span class="m">0</span>:udp_dstport <span class="m">50012</span>
+<span class="m">1</span>:udp_dstport <span class="m">50014</span>
+
+<span class="c1"># source udp ips must be same subnet at destintaion udp ips</span>
+<span class="m">0</span>:udp_srcip <span class="m">192</span>.168.1.112
+<span class="m">1</span>:udp_srcip <span class="m">192</span>.168.1.114
+
+<span class="c1"># destination udp ip picked up from rx_hostname (if auto)</span>
+udp_dstip auto
+</pre></div>
+</div>
+</dd>
+</dl>
+</div>
 </div>
 <div class="section" id="gui">
-<h2>GUI<a class="headerlink" href="#gui" title="Permalink to this headline">¶</a></h2>
-<p>The GUI is currently using Qt4 but watch out for an upgrade to 5.</p>
-<blockquote>
-<div><ul class="simple">
-<li><p>Qt 4.8</p></li>
-<li><p>Qwt 6.1</p></li>
-</ul>
-</div></blockquote>
+<h2>Gui<a class="headerlink" href="#gui" title="Permalink to this headline">¶</a></h2>
+<p>Compile with SLS_USE_GUI=ON in cmake or -g option in cmk.sh script. One can also just use the conda binary. Refer <a class="reference internal" href="installation.html#installation"><span class="std std-ref">installation instructions</span></a>.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>slsDetectorGui
+</pre></div>
 </div>
-<div class="section" id="python-bindings">
-<h2>Python bindings<a class="headerlink" href="#python-bindings" title="Permalink to this headline">¶</a></h2>
-<blockquote>
-<div><ul class="simple">
-<li><p>Python &gt; 3.6</p></li>
-<li><p>pybind11 (packaged in libs/)</p></li>
-</ul>
-</div></blockquote>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<div class="line-block">
+<div class="line">The streaming frequency (commmand: rx_zmqfreq) is set by default in the receiver to 1 (send every frame).</div>
+<div class="line">At Gui startup, this value is set to 0. It will set to use a timer of 500 ms. Hence, every frame will not be streamed to the gui. This is done to reduce the load for fast and large detectors for display purposes.</div>
+<div class="line">One can still change this setting in the gui in the Plot tab (Plotting frequency) or from the command line (rx_zmqfreq).</div>
+<div class="line">First frame is always streamed out, no matter if timer or frequency is used.</div>
 </div>
-<div class="section" id="documentation">
-<h2>Documentation<a class="headerlink" href="#documentation" title="Permalink to this headline">¶</a></h2>
-<p>The documentation that you are reading now is built with</p>
-<blockquote>
-<div><ul class="simple">
-<li><p>Doxygen (to extract C++ classes etc.)</p></li>
-<li><p>Breathe (Sphinx plugin to handle doxygen xml)</p></li>
-<li><p>Sphinx with sphinx_rtd_theme</p></li>
-</ul>
-</div></blockquote>
 </div>
-<div class="section" id="packaged-in-libs">
-<h2>Packaged in libs/<a class="headerlink" href="#packaged-in-libs" title="Permalink to this headline">¶</a></h2>
-<blockquote>
-<div><ul class="simple">
-<li><p>catch2 (unit testing)</p></li>
-<li><p>rapidjson (streaming from receiver)</p></li>
-<li><p>pybind11 (python bindings)</p></li>
-</ul>
-</div></blockquote>
 </div>
 </div>
 
@@ -270,10 +314,10 @@ the shared libraries these are needed:</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="consuming.html" class="btn btn-neutral float-right" title="Consuming slsDetectorPackage" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="container_utils.html" class="btn btn-neutral float-right" title="ContainerUtils" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="installation.html" class="btn btn-neutral float-left" title="Installation" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="commandline.html" class="btn btn-neutral float-left" title="Command line interface" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
