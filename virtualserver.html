@@ -273,6 +273,7 @@ sls_detector_put virtual <span class="m">2</span> <span class="m">1912</span>
 <p>Use the same in the config file.</p>
 <div class="section" id="sample-config-file">
 <h3>Sample Config file<a class="headerlink" href="#sample-config-file" title="Permalink to this headline">¶</a></h3>
+<p>There are sample config files for each detector in slsDetectorPackage/examples folder.</p>
 <dl>
 <dt>For a Single Module</dt><dd><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># connects to control port 1912</span>
 hostname localhost:1912+
@@ -288,6 +289,9 @@ udp_srcip <span class="m">192</span>.168.1.112
 
 <span class="c1"># destination udp ip picked up from rx_hostname (if auto)</span>
 udp_dstip auto
+
+<span class="c1"># set file path</span>
+fpath /tmp
 </pre></div>
 </div>
 </dd>
@@ -308,6 +312,9 @@ rx_hostname mpc1922:2012+mpc1922:2013+
 
 <span class="c1"># destination udp ip picked up from rx_hostname (if auto)</span>
 udp_dstip auto
+
+<span class="c1"># set file path</span>
+fpath /tmp
 </pre></div>
 </div>
 </dd>
