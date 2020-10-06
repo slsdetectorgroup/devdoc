@@ -123,7 +123,9 @@
 <p class="caption"><span class="caption-text">Detector Server</span></p>
 <ul class="current">
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Detector Servers</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#location">Location</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#arguments">Arguments</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#basics">Basics</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="serverupgrade.html">Detector Server Upgrade</a></li>
@@ -199,6 +201,30 @@
             
   <div class="section" id="detector-servers">
 <h1>Detector Servers<a class="headerlink" href="#detector-servers" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="location">
+<h2>Location<a class="headerlink" href="#location" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><p>slsDetectorPackage/serverBin/ folder in every release.</p>
+</div></blockquote>
+</div>
+<div class="section" id="arguments">
+<span id="detector-server-arguments"></span><h2>Arguments<a class="headerlink" href="#arguments" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>Possible arguments are:
+-v, --version            : Software version
+-p, --port &lt;port&gt;        : TCP communication port with client.
+-g, --nomodule           : <span class="o">[</span>Mythen3<span class="o">][</span>Gotthard2<span class="o">]</span> Generic or No Module mode.
+                           Skips detector <span class="nb">type</span> checks.
+-f, --phaseshift &lt;value&gt; : <span class="o">[</span>Gotthard<span class="o">]</span> only. Sets phase shift.
+-d, --devel              : Developer mode. Skips firmware checks.
+-u, --update             : Update mode. Skips firmware checks and initial detector setup.
+-s, --stopserver         : Stop server. Do not use as it is created by control server
+</pre></div>
+</div>
+</div></blockquote>
+</div>
+<div class="section" id="basics">
+<h2>Basics<a class="headerlink" href="#basics" title="Permalink to this headline">¶</a></h2>
 <dl class="simple">
 <dt>Detector Servers include:</dt><dd><ul class="simple">
 <li><dl class="simple">
@@ -219,20 +245,6 @@
 </dd>
 </dl>
 <p>When using a blocking acquire command (sls_detector_acquire or Detector::acquire), the control server is blocked until end of acquisition. However, stop server commands could be used in parallel.</p>
-<div class="section" id="arguments">
-<h2>Arguments<a class="headerlink" href="#arguments" title="Permalink to this headline">¶</a></h2>
-<blockquote>
-<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>Possible arguments are:
--v, --version            : Software version
--p, --port &lt;port&gt;        : TCP communication port with client.
--g, --nomodule           : <span class="o">[</span>Mythen3<span class="o">][</span>Gotthard2<span class="o">]</span> Generic or No Module mode. Skips detector <span class="nb">type</span> checks.
--f, --phaseshift &lt;value&gt; : <span class="o">[</span>Gotthard<span class="o">]</span> only. Sets phase shift.
--d, --devel              : Developer mode. Skips firmware checks.
--u, --update             : Update mode. Skips firmware checks and initial detector setup.
--s, --stopserver         : Stop server. Do not use as it is created by control server
-</pre></div>
-</div>
-</div></blockquote>
 </div>
 </div>
 

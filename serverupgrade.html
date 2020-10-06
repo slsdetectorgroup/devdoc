@@ -207,10 +207,7 @@
 <h1>Detector Server Upgrade<a class="headerlink" href="#detector-server-upgrade" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="eiger">
 <h2>Eiger<a class="headerlink" href="#eiger" title="Permalink to this headline">¶</a></h2>
-<div class="line-block">
-<div class="line"><strong>Location:</strong></div>
-<div class="line">5.0.0-rc1: slsDetectorPackage/slsDetectorServer/eigerDetectorServer/bin/eigerDetectorServer_developer</div>
-</div>
+<p><strong>Location:</strong> slsDetectorPackage/serverBin/ folder for every release.</p>
 <ol class="arabic">
 <li><dl>
 <dt>Kill old server and copy new server</dt><dd><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Option 1: from detector console</span>
@@ -240,14 +237,11 @@ ssh root@<span class="nv">$i</span> sync<span class="p">;</span> <span class="k"
 </div>
 <div class="section" id="jungfrau">
 <h2>Jungfrau<a class="headerlink" href="#jungfrau" title="Permalink to this headline">¶</a></h2>
-<div class="line-block">
-<div class="line"><strong>Location:</strong></div>
-<div class="line">5.0.0-rc1: slsDetectorPackage/slsDetectorServer/jungfrauDetectorServer/bin/jungfrauDetectorServer_developer</div>
-</div>
+<p><strong>Location:</strong> slsDetectorPackage/serverBin/ folder for every release.</p>
 <ol class="arabic">
 <li><p>Install tftp and copy detector server binary to tftp folder</p></li>
 <li><dl>
-<dt>Program from console (only from 5.0.0-rc1)</dt><dd><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># copies new server from pc tftp folder, respawns and reboots</span>
+<dt>Program from console (only from 5.0.0-rcx)</dt><dd><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># copies new server from pc tftp folder, respawns and reboots</span>
 sls_detector_put copydetectorserver jungfrauDetectorServerxxx pcxxx
 </pre></div>
 </div>
@@ -258,14 +252,11 @@ sls_detector_put copydetectorserver jungfrauDetectorServerxxx pcxxx
 </div>
 <div class="section" id="gotthard">
 <h2>Gotthard<a class="headerlink" href="#gotthard" title="Permalink to this headline">¶</a></h2>
-<div class="line-block">
-<div class="line"><strong>Location:</strong></div>
-<div class="line">5.0.0-rc1: slsDetectorPackage/slsDetectorServer/gotthardDetectorServer/bin/gotthardDetectorServer_developer</div>
-</div>
+<p><strong>Location:</strong> slsDetectorPackage/serverBin/ folder for every release.</p>
 <ol class="arabic">
 <li><p>Install tftp and copy detector server binary to tftp folder</p></li>
 <li><dl>
-<dt>Program from console (only from 5.0.0-rc1)</dt><dd><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># copies new server from pc tftp folder, respawns and reboots</span>
+<dt>Program from console (only from 5.0.0-rcx)</dt><dd><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># copies new server from pc tftp folder, respawns and reboots</span>
 sls_detector_put copydetectorserver gotthardDetectorServerxxx pcxxx
 </pre></div>
 </div>
@@ -276,14 +267,11 @@ sls_detector_put copydetectorserver gotthardDetectorServerxxx pcxxx
 </div>
 <div class="section" id="mythen3">
 <h2>Mythen3<a class="headerlink" href="#mythen3" title="Permalink to this headline">¶</a></h2>
-<div class="line-block">
-<div class="line"><strong>Location:</strong></div>
-<div class="line">5.0.0-rc1: slsDetectorPackage/slsDetectorServer/mythen3DetectorServer/bin/mythen3DetectorServer_developer</div>
-</div>
+<p><strong>Location:</strong> slsDetectorPackage/serverBin/ folder for every release.</p>
 <ol class="arabic">
 <li><p>Install tftp and copy detector server binary to tftp folder</p></li>
 <li><dl>
-<dt>Program from console (only from 5.0.0-rc1)</dt><dd><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># copies new server from pc tftp folder and reboots (does not respawn)</span>
+<dt>Program from console (only from 5.0.0-rcx)</dt><dd><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># copies new server from pc tftp folder and reboots (does not respawn)</span>
 sls_detector_put copydetectorserver mythen3DetectorServerxxx pcxxx
 </pre></div>
 </div>
@@ -294,14 +282,11 @@ sls_detector_put copydetectorserver mythen3DetectorServerxxx pcxxx
 </div>
 <div class="section" id="gotthard2">
 <h2>Gotthard2<a class="headerlink" href="#gotthard2" title="Permalink to this headline">¶</a></h2>
-<div class="line-block">
-<div class="line"><strong>Location:</strong></div>
-<div class="line">5.0.0-rc1: slsDetectorPackage/slsDetectorServer/gotthard2DetectorServer/bin/gotthard2DetectorServer_developer</div>
-</div>
+<p><strong>Location:</strong> slsDetectorPackage/serverBin/ folder for every release.</p>
 <ol class="arabic">
 <li><p>Install tftp and copy detector server binary to tftp folder</p></li>
 <li><dl>
-<dt>Program from console (only from 5.0.0-rc1)</dt><dd><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># copies new server from pc tftp folder and reboots (does not respawn)</span>
+<dt>Program from console (only from 5.0.0-rcx)</dt><dd><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># copies new server from pc tftp folder and reboots (does not respawn)</span>
 sls_detector_put copydetectorserver gotthard2DetectorServerxxx pcxxx
 </pre></div>
 </div>
@@ -312,14 +297,11 @@ sls_detector_put copydetectorserver gotthard2DetectorServerxxx pcxxx
 </div>
 <div class="section" id="moench">
 <h2>Moench<a class="headerlink" href="#moench" title="Permalink to this headline">¶</a></h2>
-<div class="line-block">
-<div class="line"><strong>Location:</strong></div>
-<div class="line">5.0.0-rc1: slsDetectorPackage/slsDetectorServer/moenchDetectorServer/bin/moenchDetectorServer_developer</div>
-</div>
+<p><strong>Location:</strong> slsDetectorPackage/serverBin/ folder for every release.</p>
 <ol class="arabic">
 <li><p>Install tftp and copy detector server binary to tftp folder</p></li>
 <li><dl>
-<dt>Program from console (only from 5.0.0-rc1)</dt><dd><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># copies new server from pc tftp folder, respawns and reboots</span>
+<dt>Program from console (only from 5.0.0-rcx)</dt><dd><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># copies new server from pc tftp folder, respawns and reboots</span>
 sls_detector_put copydetectorserver moenchDetectorServerxxx pcxxx
 </pre></div>
 </div>
@@ -330,14 +312,11 @@ sls_detector_put copydetectorserver moenchDetectorServerxxx pcxxx
 </div>
 <div class="section" id="ctb">
 <h2>Ctb<a class="headerlink" href="#ctb" title="Permalink to this headline">¶</a></h2>
-<div class="line-block">
-<div class="line"><strong>Location:</strong></div>
-<div class="line">5.0.0-rc1: slsDetectorPackage/slsDetectorServer/ctbDetectorServer/bin/ctbDetectorServer_developer</div>
-</div>
+<p><strong>Location:</strong> slsDetectorPackage/serverBin/ folder for every release.</p>
 <ol class="arabic">
 <li><p>Install tftp and copy detector server binary to tftp folder</p></li>
 <li><dl>
-<dt>Program from console (only from 5.0.0-rc1)</dt><dd><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># copies new server from pc tftp folder, respawns and reboots</span>
+<dt>Program from console (only from 5.0.0-rcx)</dt><dd><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># copies new server from pc tftp folder, respawns and reboots</span>
 sls_detector_put copydetectorserver ctbDetectorServerxxx pcxxx
 </pre></div>
 </div>
