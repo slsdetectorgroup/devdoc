@@ -947,6 +947,10 @@
 <div class="line">If 0, streaming timer is the timeout, after which current frame is sent out. (default timeout is 500 ms). Usually used for gui purposes.</div>
 </div>
 </dd>
+<dt id="term-rx-zmqhwm-n-value">rx_zmqhwm [n_value]</dt><dd><div class="line-block">
+<div class="line">Receiver’s zmq send high water mark. Default is the zmq library’s default (1000). This is a high number and can be set to 2 for gui purposes. One must also set the client’s receive high water mark to similar value. Final effect is sum of them. Also restarts receiver zmq streaming if enabled. Can set to -1 to set default value.</div>
+</div>
+</dd>
 <dt id="term-rx-zmqip-x-x-x-x">rx_zmqip [x.x.x.x]</dt><dd><div class="line-block">
 <div class="line">Zmq Ip Address from which data is to be streamed out of the receiver. Also restarts receiver zmq streaming if enabled. Default is from rx_hostname. Modified only when using an intermediate process between receiver.</div>
 </div>
@@ -1356,6 +1360,7 @@
 </dl>
 <dl>
 <dt>[ichip] [output file]</dt><dd><blockquote>
+<div><blockquote>
 <div><div class="line-block">
 <div class="line">Get gain indices and veto reference for 128 channels for chip ichip, saved to file.</div>
 </div>
@@ -1389,6 +1394,21 @@
 <div class="line">[Ctb] Measured voltage of power supply io in mV.</div>
 </div>
 </dd>
+<dt>zmqhwm [n_limit]</dt><dd><div class="line-block">
+<div class="line">Client’s zmq receive high water mark. Default is the zmq library’s default (1000), can also be set here using -1.</div>
+</div>
+</dd>
+</dl>
+</div></blockquote>
+<p>This is a high number and can be set to 2 for gui purposes.
+One must also set the receiver’s send high water mark to similar value. Final effect is sum of them.</p>
+<blockquote>
+<div><blockquote>
+<div><div class="line-block">
+<div class="line">Setting it via command line is useful only before zmq enabled (before opening gui).</div>
+</div>
+</div></blockquote>
+<dl>
 <dt>zmqip [x.x.x.x]</dt><dd><div class="line-block">
 <div class="line">Ip Address to listen to zmq data streamed out from receiver or intermediate process. Default connects to receiver zmq Ip Address (from rx_hostname). Modified only when using an intermediate process between receiver and client(gui). Also restarts client zmq streaming if enabled.</div>
 </div>
@@ -1398,6 +1418,7 @@
 </div>
 </dd>
 </dl>
+</div></blockquote>
 </dd>
 </dl>
 </div>

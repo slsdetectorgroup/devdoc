@@ -1438,6 +1438,35 @@ containing results from all modules. (Result&lt;T&gt;)</p>
 </p>
 </dd></dl>
 
+<dl class="function">
+<dt id="_CPPv4NK3sls8Detector15getClientZmqHwmEv">
+<span id="_CPPv3NK3sls8Detector15getClientZmqHwmEv"></span><span id="_CPPv2NK3sls8Detector15getClientZmqHwmEv"></span><span id="sls::Detector::getClientZmqHwmC"></span><span class="target" id="classsls_1_1Detector_1a322c5a139187e280fb84261b2ac80301"></span>int <code class="sig-name descname">getClientZmqHwm</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv4NK3sls8Detector15getClientZmqHwmEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv4N3sls8Detector15setClientZmqHwmEKi">
+<span id="_CPPv3N3sls8Detector15setClientZmqHwmEKi"></span><span id="_CPPv2N3sls8Detector15setClientZmqHwmEKi"></span><span id="sls::Detector::setClientZmqHwm__iC"></span><span class="target" id="classsls_1_1Detector_1a0e7d6c95784a2cb7fb99cefe7aaafe25"></span>void <code class="sig-name descname">setClientZmqHwm</code><span class="sig-paren">(</span><em class="property">const</em> int <em>limit</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3sls8Detector15setClientZmqHwmEKi" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Client’s zmq receive high water mark. <p> Default is the zmq library’s default (1000), can also be set here using -1. </p>
+<p> This is a high number and can be set to 2 for gui purposes. </p>
+<p> One must also set the receiver’s send high water mark to similar value. Final effect is sum of them. </p>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv4NK3sls8Detector11getRxZmqHwmE9Positions">
+<span id="_CPPv3NK3sls8Detector11getRxZmqHwmE9Positions"></span><span id="_CPPv2NK3sls8Detector11getRxZmqHwmE9Positions"></span><span id="sls::Detector::getRxZmqHwm__PositionsC"></span><span class="target" id="classsls_1_1Detector_1a3134c5de6748c13b2c196b3753df50f8"></span>Result&lt;int&gt; <code class="sig-name descname">getRxZmqHwm</code><span class="sig-paren">(</span>Positions <em>pos</em> = {}<span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv4NK3sls8Detector11getRxZmqHwmE9Positions" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv4N3sls8Detector11setRxZmqHwmEKi">
+<span id="_CPPv3N3sls8Detector11setRxZmqHwmEKi"></span><span id="_CPPv2N3sls8Detector11setRxZmqHwmEKi"></span><span id="sls::Detector::setRxZmqHwm__iC"></span><span class="target" id="classsls_1_1Detector_1ad65d66eaa7a2ae21ac98ffcd026e5b55"></span>void <code class="sig-name descname">setRxZmqHwm</code><span class="sig-paren">(</span><em class="property">const</em> int <em>limit</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3sls8Detector11setRxZmqHwmEKi" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p><a class="reference internal" href="receiver_api.html#classReceiver"><span class="std std-ref">Receiver</span></a>’s zmq send high water mark. <p> Default is the zmq library’s default (1000) </p>
+<p> This is a high number and can be set to 2 for gui purposes. </p>
+<p> One must also set the client’s receive high water mark to similar value. Final effect is sum of them. Also restarts receiver zmq streaming if enabled. </p>
+<p> Can set to -1 to set default. </p>
+</p>
+</dd></dl>
+
 </div>
 <div class="breathe-sectiondef docutils container">
 <p class="breathe-sectiondef-title rubric">Eiger Specific</p>
