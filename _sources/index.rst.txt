@@ -67,6 +67,13 @@ Welcome to slsDetectorPackage's documentation!
     serverdefaults
 
 .. toctree::
+    :caption: Receiver
+    :maxdepth: 2
+
+    receivers
+    slsreceiver
+
+.. toctree::
     :caption: Troubleshooting
 
     troubleshooting

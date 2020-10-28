@@ -1,0 +1,417 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>slsReceiver/ slsMultiReceiver &mdash; slsDetectorPackage  documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/css/extra.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Troubleshooting" href="troubleshooting.html" />
+    <link rel="prev" title="Receivers" href="receivers.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> slsDetectorPackage
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                5.0.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Installation:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dependencies.html">Dependencies</a></li>
+<li class="toctree-l1"><a class="reference internal" href="consuming.html">Consuming slsDetectorPackage</a></li>
+</ul>
+<p class="caption"><span class="caption-text">C++ API</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="detector.html">Detector</a></li>
+<li class="toctree-l1"><a class="reference internal" href="result.html">Result</a></li>
+<li class="toctree-l1"><a class="reference internal" href="receiver_api.html">Receiver</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples.html">Examples</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Python API</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="pygettingstarted.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pydetector.html">Detector</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pyenums.html">Enums</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pyexamples.html">Examples</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Command line</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="commandline.html">Command line interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="quick_start_guide.html">Quick Start Guide</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Developer</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="container_utils.html">ContainerUtils</a></li>
+<li class="toctree-l1"><a class="reference internal" href="type_traits.html">TypeTraits</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ToString.html">ToString</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Firmware</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="firmware.html">Firmware Upgrade</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Detector Server</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="servers.html">Detector Servers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="serverupgrade.html">Detector Server Upgrade</a></li>
+<li class="toctree-l1"><a class="reference internal" href="virtualserver.html">Detector Simulators</a></li>
+<li class="toctree-l1"><a class="reference internal" href="serverdefaults.html">Default Values</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Receiver</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="receivers.html">Receivers</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">slsReceiver/ slsMultiReceiver</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#client-commands">Client Commands</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#file-format">File format</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#performance">Performance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#using-callbacks">Using Callbacks</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Troubleshooting</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="troubleshooting.html">Troubleshooting</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">slsDetectorPackage</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>slsReceiver/ slsMultiReceiver</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/slsreceiver.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="slsreceiver-slsmultireceiver">
+<h1>slsReceiver/ slsMultiReceiver<a class="headerlink" href="#slsreceiver-slsmultireceiver" title="Permalink to this headline">¶</a></h1>
+<div class="line-block">
+<div class="line">One has to start the slsReceiver before loading config file or using any receiver commands (prefix: <strong>rx_</strong> )</div>
+</div>
+<dl>
+<dt>For a Single Module</dt><dd><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># default port 1954</span>
+slsReceiver
+
+<span class="c1"># custom port 2012</span>
+slsReceiver -t2012
+</pre></div>
+</div>
+</dd>
+<dt>For Multiple Modules</dt><dd><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># each receiver (for each module) requires a unique tcp port (if all on same machine)</span>
+
+<span class="c1"># using slsReceiver in multiple consoles</span>
+slsReceiver
+slsReceiver -t1955
+
+<span class="c1"># slsMultiReceiver [starting port] [number of receivers]</span>
+slsMultiReceiver <span class="m">2012</span> <span class="m">2</span>
+
+<span class="c1"># slsMultiReceiver [starting port] [number of receivers] [print each frame header for debugging]</span>
+slsMultiReceiver <span class="m">2012</span> <span class="m">2</span> <span class="m">1</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+<div class="section" id="client-commands">
+<h2>Client Commands<a class="headerlink" href="#client-commands" title="Permalink to this headline">¶</a></h2>
+<div class="line-block">
+<div class="line">One can remove <strong>udp_dstmac</strong> from the config file, as the slsReceiver fetches this from the <strong>udp_ip</strong>.</div>
+</div>
+<div class="line-block">
+<div class="line">One can use “auto” for <strong>udp_dstip</strong> if one wants to use default ip of <strong>rx_hostname</strong>.</div>
+</div>
+<div class="line-block">
+<div class="line">The first command to the receiver (<strong>rx_</strong> commands) should be <strong>rx_hostname</strong>. The following are the different ways to establish contact.</div>
+</div>
+<blockquote>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># default receiver tcp port (1954)</span>
+rx_hostname xxx
+
+<span class="c1"># custom receiver port</span>
+rx_hostname xxx:1957
+
+<span class="c1"># custom receiver port</span>
+rx_tcpport <span class="m">1954</span>
+rx_hostname xxx
+
+<span class="c1"># multi modules with custom ports</span>
+rx_hostname xxx:1955+xxx:1956+
+
+<span class="c1"># multi modules with custom ports on same rxr pc</span>
+<span class="m">0</span>:rx_tcpport <span class="m">1954</span>
+<span class="m">1</span>:rx_tcpport <span class="m">1955</span>
+<span class="m">2</span>:rx_tcpport <span class="m">1956</span>
+rx_hostname xxx
+
+<span class="c1"># multi modules with custom ports on different rxr pc</span>
+<span class="m">0</span>:rx_tcpport <span class="m">1954</span>
+<span class="m">0</span>:rx_hostname xxx
+<span class="m">1</span>:rx_tcpport <span class="m">1955</span>
+<span class="m">1</span>:rx_hostname yyy
+</pre></div>
+</div>
+</div></blockquote>
+<div class="line-block">
+<div class="line">Example commands:</div>
+</div>
+<blockquote>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># to get a list of receiver commands (these dont include file commands)</span>
+sls_detector_get list <span class="p">|</span> grep rx_
+
+<span class="c1"># some file commands are:</span>
+fwrite
+foverwrite
+findex
+fpath
+fname
+fmaster
+fformat
+
+<span class="c1"># to get help on a single commands</span>
+sls_detector_get -h rx_framescaught
+</pre></div>
+</div>
+</div></blockquote>
+</div>
+<div class="section" id="file-format">
+<h2>File format<a class="headerlink" href="#file-format" title="Permalink to this headline">¶</a></h2>
+<ul>
+<li><p>The file name format is [fpath]/[fname]_dx_fy_[findex].raw, where x is module index and y is file index. <strong>fname</strong> is file name prefix and by default “run”. <strong>fpath</strong> is ‘/’ by default.</p></li>
+<li><p>Each acquisition will have an increasing acquisition index or findex (if file write enabled). This can be retrieved by using <strong>findex</strong> command.</p></li>
+<li><p>Each acquisition can have multiple files (the file index number <strong>y</strong>), with <strong>rx_framesperfile</strong> being the maximum number of frames per file. The default varies for each detector type.</p></li>
+<li><p>Some file name examples:</p>
+<blockquote>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># first file</span>
+path-to-file/run_d0_f0_0.raw
+
+<span class="c1"># second file after reaching max frames in first file</span>
+path-to-file/run_d0_f1_0.raw
+
+<span class="c1"># second acquisition, first file</span>
+path-to-file/run_d0_f0_1.raw
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p>Each acquisition will create a master file that can be enabled/disabled using <strong>fmaster</strong>. This should have parameters relevant to the acquisition.</p></li>
+<li><p>SLS Receiver Header consist of SLS Detector Header + 64 bytes of bitmask, altogether 112 bytes. The packetNumber in the sls detector header part, will be updated to number of packets caught by receiver for that frame. Furthermore, the bit mask will specify which packets have been received.</p></li>
+</ul>
+<p><strong>Binary file format</strong></p>
+<ul class="simple">
+<li><p>This is the default file format.</p></li>
+<li><p>Each data file will consist of frames, each consisting of slsReceiver Header followed by data for 1 frame.</p></li>
+<li><p>Master file is of ASCII format and will also include the format of the slsReceiver Header.</p></li>
+</ul>
+<p><strong>HDF5 file formats</strong></p>
+<ol class="arabic">
+<li><p>Compile the package with HDF5 option enabled</p>
+<blockquote>
+<div><ol class="arabic simple">
+<li><p>Using cmk script: ./cmk.sh -hj9 -d [path of hdf5 dir]</p></li>
+<li><p>Enable using cmake <strong>-DCMAKE_INSTALL_PREFIX=/path/to/hdf/installation</strong> and <strong>-DSLS_USE_HDF5=ON</strong></p></li>
+</ol>
+</div></blockquote>
+</li>
+<li><p>Start Receiver process</p></li>
+<li><p>Load config file</p></li>
+<li><dl>
+<dt>Set file format from client or in config file</dt><dd><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sls_detector_put fformat hdf5
+</pre></div>
+</div>
+</dd>
+</dl>
+</li>
+</ol>
+<div class="line-block">
+<div class="line">For multiple, modules, a virtual file linking all the modules is created. Both the data files and virtual files are linked in the master file.</div>
+</div>
+</div>
+<div class="section" id="performance">
+<h2>Performance<a class="headerlink" href="#performance" title="Permalink to this headline">¶</a></h2>
+<p>Please refer to Receiver PC Tuning options and slsReceiver Tuning under <a class="reference external" href="https://slsdetectorgroup.github.io/devdoc/troubleshooting.html">Troubleshooting</a>.</p>
+</div>
+<div class="section" id="using-callbacks">
+<h2>Using Callbacks<a class="headerlink" href="#using-callbacks" title="Permalink to this headline">¶</a></h2>
+<div class="line-block">
+<div class="line">One can get a callback in the receiver for each frame to:
+* manipulate the data that will be written to file, or
+* disable file writing in slsReceiver and take care of the data for each call back</div>
+</div>
+<div class="line-block">
+<div class="line">When handling callbacks, the control should be returned as soon as possible, to prevent packet loss from fifo being full.</div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="troubleshooting.html" class="btn btn-neutral float-right" title="Troubleshooting" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="receivers.html" class="btn btn-neutral float-left" title="Receivers" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, PSD Detector Group
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

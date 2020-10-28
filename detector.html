@@ -127,6 +127,11 @@
 <li class="toctree-l1"><a class="reference internal" href="virtualserver.html">Detector Simulators</a></li>
 <li class="toctree-l1"><a class="reference internal" href="serverdefaults.html">Default Values</a></li>
 </ul>
+<p class="caption"><span class="caption-text">Receiver</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="receivers.html">Receivers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="slsreceiver.html">slsReceiver/ slsMultiReceiver</a></li>
+</ul>
 <p class="caption"><span class="caption-text">Troubleshooting</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="troubleshooting.html">Troubleshooting</a></li>
@@ -805,6 +810,12 @@ containing results from all modules. (Result&lt;T&gt;)</p>
 <dt id="_CPPv4N3sls8Detector13startDetectorEv">
 <span id="_CPPv3N3sls8Detector13startDetectorEv"></span><span id="_CPPv2N3sls8Detector13startDetectorEv"></span><span id="sls::Detector::startDetector"></span><span class="target" id="classsls_1_1Detector_1acb4ac628ef774e28d73f93547f2dfcef"></span>void <code class="sig-name descname">startDetector</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3sls8Detector13startDetectorEv" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Non blocking: start detector acquisition. Status changes to RUNNING or WAITING and automatically returns to idle at the end of acquisition. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv4N3sls8Detector20startDetectorReadoutEv">
+<span id="_CPPv3N3sls8Detector20startDetectorReadoutEv"></span><span id="_CPPv2N3sls8Detector20startDetectorReadoutEv"></span><span id="sls::Detector::startDetectorReadout"></span><span class="target" id="classsls_1_1Detector_1ac7f60f7c2a59e543274319b8e967831e"></span>void <code class="sig-name descname">startDetectorReadout</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3sls8Detector20startDetectorReadoutEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>[Mythen3] Non blocking: start detector readout of counters in chip. Status changes to TRANSMITTING and automatically returns to idle at the end of readout. </p>
 </dd></dl>
 
 <dl class="function">

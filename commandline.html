@@ -132,6 +132,11 @@
 <li class="toctree-l1"><a class="reference internal" href="virtualserver.html">Detector Simulators</a></li>
 <li class="toctree-l1"><a class="reference internal" href="serverdefaults.html">Default Values</a></li>
 </ul>
+<p class="caption"><span class="caption-text">Receiver</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="receivers.html">Receivers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="slsreceiver.html">slsReceiver/ slsMultiReceiver</a></li>
+</ul>
 <p class="caption"><span class="caption-text">Troubleshooting</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="troubleshooting.html">Troubleshooting</a></li>
@@ -813,6 +818,10 @@
 <div class="line">[Eiger] Number of rows to readout per half module starting from the centre. Options: 0 - 256. 256 is default. The permissible values depend on dynamic range and 10Gbe enabled.</div>
 </div>
 </dd>
+<dt id="term-readout">readout</dt><dd><div class="line-block">
+<div class="line">[Mythen3] Starts detector readout. Status changes to TRANSMITTING and automatically returns to idle at the end of readout.</div>
+</div>
+</dd>
 <dt id="term-rebootcontroller">rebootcontroller</dt><dd><div class="line-block">
 <div class="line">[Jungfrau][Ctb][Moench][Gotthard][Mythen3][Gotthard2] Reboot controller of detector.</div>
 </div>
@@ -979,11 +988,11 @@
 <div class="line">[Ctb][Moench] Also executes pattern.</div>
 </div>
 </dd>
-<dt id="term-scan-dac-name-0-trimbit-scan-start-val-stop-val-step-size-dac-settling-time-ns-us-ms-s">scan [dac_name|0|trimbit_scan] [start_val] [stop_val] [step_size] [dac settling time ns|us|ms|s]</dt><dd><div class="line-block">
+<dt id="term-scan-dac-name-0-trimbits-start-val-stop-val-step-size-dac-settling-time-ns-us-ms-s">scan [dac_name|0|trimbits] [start_val] [stop_val] [step_size] [dac settling time ns|us|ms|s]</dt><dd><div class="line-block">
 <div class="line">Enables/ disables scans for dac and trimbits</div>
 <div class="line">Enabling scan sets number of frames to number of steps in receiver.</div>
 <div class="line">To cancel scan configuration, set dac to ‘0’, which also sets number of frames to 1.</div>
-<div class="line">[Eiger][Mythen3] Use trimbit_scan as dac name for a trimbit scan.</div>
+<div class="line">[Eiger][Mythen3] Use trimbits as dac name for a trimbit scan.</div>
 </div>
 </dd>
 <dt id="term-scanerrmsg">scanerrmsg</dt><dd><div class="line-block">
@@ -1032,7 +1041,7 @@
 </div>
 </dd>
 <dt id="term-start">start</dt><dd><div class="line-block">
-<div class="line">Starts detector acquisition. Status changes to RUNNING or WAITING and automatically returns to idle at the end of acquisition.</div>
+<div class="line">Starts detector acquisition. Status changes to RUNNING or WAITING and automatically returns to idle at the end of acquisition. If the acquisition was abruptly stopped, some detectors come back to STOPPED.</div>
 </div>
 </dd>
 <dt id="term-startingfnum-n-value">startingfnum [n_value]</dt><dd><div class="line-block">
@@ -1229,7 +1238,7 @@
 <dt id="term-udp-dstmac2-x-x-x-x-x-x">udp_dstmac2 [x:x:x:x:x:x]</dt><dd><div class="line-block">
 <div class="line">[Jungfrau] Mac address of the receiver (destination) udp interface 2. Not mandatory to set as udp_dstip2 retrieves it from slsReceiver process but must be set if you use a custom receiver (not slsReceiver).</div>
 <div class="line-block">
-<div class="line">[Jungfrau] bottom half</div>
+<div class="line">[Jungfrau] top half or inner interface</div>
 <div class="line">[Gotthard2] veto debugging.</div>
 </div>
 </div>
@@ -1242,7 +1251,7 @@
 <dt id="term-udp-dstport2-n">udp_dstport2 [n]</dt><dd><div class="line-block">
 <div class="line">[Jungfrau][Eiger][Gotthard2] Port number of the receiver (destination) udp interface 2. Default is 50002.</div>
 <div class="line">If multi command, ports for each module is calculated (incremented by 2)</div>
-<div class="line">[Jungfrau] bottom half</div>
+<div class="line">[Jungfrau] top half or inner interface</div>
 <div class="line">[Eiger] right half</div>
 <div class="line">[Gotthard2] veto debugging</div>
 </div>
@@ -1259,7 +1268,7 @@
 <dt id="term-udp-srcip2-x-x-x-x">udp_srcip2 [x.x.x.x]</dt><dd><div class="line-block">
 <div class="line">[Jungfrau][Gotthard2] Ip address of the detector (source) udp interface 2. Must be same subnet as destination udp ip2.</div>
 <div class="line-block">
-<div class="line">[Jungfrau] bottom half</div>
+<div class="line">[Jungfrau] top half or inner interface</div>
 <div class="line">[Gotthard2] veto debugging.</div>
 </div>
 </div>
@@ -1270,7 +1279,7 @@
 </div>
 </dd>
 <dt id="term-udp-srcmac2-x-x-x-x-x-x">udp_srcmac2 [x:x:x:x:x:x]</dt><dd><div class="line-block">
-<div class="line">[Jungfrau] Mac address of the bottom half of detector (source) udp interface.</div>
+<div class="line">[Jungfrau] Mac address of the top half or inner (source) udp interface.</div>
 </div>
 </dd>
 <dt id="term-udp-validate">udp_validate</dt><dd><div class="line-block">

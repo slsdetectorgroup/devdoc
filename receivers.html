@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Search &mdash; slsDetectorPackage  documentation</title>
+  <title>Receivers &mdash; slsDetectorPackage  documentation</title>
   
 
   
@@ -17,7 +17,6 @@
   
 
   
-    
   <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
   
     
@@ -30,14 +29,15 @@
     <script type="text/javascript" src="_static/js/theme.js"></script>
 
     
-    <script type="text/javascript" src="_static/searchtools.js"></script>
 
   
   <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="_static/css/extra.css" type="text/css" />
     <link rel="index" title="Index" href="genindex.html" />
-    <link rel="search" title="Search" href="#" /> 
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="slsReceiver/ slsMultiReceiver" href="slsreceiver.html" />
+    <link rel="prev" title="Default Values" href="serverdefaults.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -68,7 +68,7 @@
 
           
 <div role="search">
-  <form id="rtd-search-form" class="wy-form" action="#" method="get">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
@@ -128,8 +128,13 @@
 <li class="toctree-l1"><a class="reference internal" href="serverdefaults.html">Default Values</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Receiver</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="receivers.html">Receivers</a></li>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Receivers</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#detector-udp-header">Detector UDP Header</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#udp-configuration-in-config-file">UDP configuration in Config file</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#custom-receiver">Custom Receiver</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="slsreceiver.html">slsReceiver/ slsMultiReceiver</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Troubleshooting</span></p>
@@ -180,12 +185,14 @@
     
       <li><a href="index.html">Docs</a> &raquo;</li>
         
-      <li>Search</li>
+      <li>Receivers</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
             
+            <a href="_sources/receivers.rst.txt" rel="nofollow"> View page source</a>
+          
         
       </li>
     
@@ -197,24 +204,87 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <noscript>
-  <div id="fallback" class="admonition warning">
-    <p class="last">
-      Please activate JavaScript to enable the search
-      functionality.
-    </p>
-  </div>
-  </noscript>
+  <div class="section" id="receivers">
+<h1>Receivers<a class="headerlink" href="#receivers" title="Permalink to this headline">¶</a></h1>
+<p>Receiver processes can be run on same or different machines as the client, receives the data from the detector (via UDP packets).
+When using the slsReceiver/ slsMultiReceiver, they can be further configured by the client control software (via TCP/IP) to set file name, file path, progress of acquisition etc.</p>
+<div class="section" id="detector-udp-header">
+<h2>Detector UDP Header<a class="headerlink" href="#detector-udp-header" title="Permalink to this headline">¶</a></h2>
+<div class="line-block">
+<div class="line">The UDP data format for the packets consist of a common header for all detectors, followed by the data for that one packet.</div>
+</div>
+<p><strong>The SLS Detector Header</strong></p>
+<table class="colwidths-given docutils align-center" id="id1">
+<caption><span class="caption-text">&lt;——————————– 8 bytes ——————————–&gt;</span><a class="headerlink" href="#id1" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col style="width: 23%" />
+<col style="width: 23%" />
+<col style="width: 23%" />
+<col style="width: 23%" />
+<col style="width: 6%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td colspan="5"><p>frameNumber</p></td>
+</tr>
+<tr class="row-even"><td colspan="2"><p>expLength</p></td>
+<td colspan="3"><p>packetNumber</p></td>
+</tr>
+<tr class="row-odd"><td colspan="5"><p>bunchId</p></td>
+</tr>
+<tr class="row-even"><td colspan="5"><p>timestamp</p></td>
+</tr>
+<tr class="row-odd"><td><p>modId</p></td>
+<td><p>row</p></td>
+<td><p>column</p></td>
+<td colspan="2"><p>reserved</p></td>
+</tr>
+<tr class="row-even"><td colspan="2"><p>debug</p></td>
+<td><p>roundRNumber</p></td>
+<td><p>detType</p></td>
+<td><p>version</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="udp-configuration-in-config-file">
+<h2>UDP configuration in Config file<a class="headerlink" href="#udp-configuration-in-config-file" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li><p>UDP source port is hardcoded in detector server, starting at 32410.</p></li>
+<li><p><strong>udp_dstport</strong> : UDP destination port number. Port in receiver pc to listen to packets from the detector.</p></li>
+<li><p><strong>udp_dstip</strong> : IP address of UDP destination interface. IP address of interface in receiver pc to listen to packets from detector. If <strong>auto</strong> is used (only when using slsReceiver/ slsMultiReceiver), the IP of <strong>rx_hostname</strong> is picked up.</p></li>
+<li><p><strong>udp_dstmac</strong> : Mac address of UDP destination interface. MAC address of interface in receiver pc to list to packets from detector. Only required when using custom receiver, else slsReceiver/slsMultiReceiver picks it up from <strong>udp_dstip</strong>.</p></li>
+<li><p><strong>udp_srcip</strong> : IP address of UDP source interface. IP address of detector UDP interface to send packets from. Do not use for Eiger 1Gb interface (uses its hardware IP). For others, must be in the same subnet as <strong>udp_dstip</strong>.</p></li>
+<li><p><strong>udp_srcmac</strong> : MAC address of UDP source interface. MAC address of detector UDP interface to send packets from. Do not use for Eiger (uses hardware mac). For others, it is not necessary, but can help for switch and debugging to put unique values for each module.</p></li>
+</ol>
+</div>
+<div class="section" id="custom-receiver">
+<h2>Custom Receiver<a class="headerlink" href="#custom-receiver" title="Permalink to this headline">¶</a></h2>
+<div class="line-block">
+<div class="line">When using  custom receiver with our package, ensure that <strong>udp_dstmac</strong> is also configured in the config file. This parameter is not required when using slsReceiver.</div>
+</div>
+<div class="line-block">
+<div class="line">Cannot use “auto” for <strong>udp_dstip</strong>.</div>
+</div>
+<div class="line-block">
+<div class="line">Also ensure that there are no <strong>rx_</strong> commands in the config file. These commands are for configuring the slsReceiver.</div>
+</div>
+</div>
+</div>
 
-  
-  <div id="search-results">
-  
-  </div>
 
            </div>
            
           </div>
           <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="slsreceiver.html" class="btn btn-neutral float-right" title="slsReceiver/ slsMultiReceiver" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="serverdefaults.html" class="btn btn-neutral float-left" title="Default Values" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
   
 
   <hr/>
@@ -247,14 +317,7 @@
   
   
     
-  
-  <script type="text/javascript">
-    jQuery(function() { Search.loadIndex("searchindex.js"); });
-  </script>
-  
-  <script type="text/javascript" id="searchindexloader"></script>
    
-
 
 </body>
 </html>
