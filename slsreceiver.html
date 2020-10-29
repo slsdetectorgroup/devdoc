@@ -354,14 +354,30 @@ path-to-file/run_d0_f0_1.raw
 </div>
 <div class="section" id="using-callbacks">
 <h2>Using Callbacks<a class="headerlink" href="#using-callbacks" title="Permalink to this headline">¶</a></h2>
-<div class="line-block">
-<div class="line">One can get a callback in the receiver for each frame to:
-* manipulate the data that will be written to file, or
-* disable file writing in slsReceiver and take care of the data for each call back</div>
+<dl class="simple">
+<dt>One can get a callback in the receiver for each frame to:</dt><dd><ul class="simple">
+<li><p>manipulate the data that will be written to file, or</p></li>
+<li><p>disable file writing in slsReceiver and take care of the data for each call back</p></li>
+</ul>
+</dd>
+</dl>
+<p>When handling callbacks, the control should be returned as soon as possible, to prevent packet loss from fifo being full.</p>
+<dl>
+<dt><strong>Example</strong></dt><dd><ul>
+<li><p><a class="reference external" href="https://github.com/slsdetectorgroup/api-examples/blob/master/e4-receiver_callbacks.cpp">main cpp file</a></p></li>
+<li><p><a class="reference external" href="https://github.com/slsdetectorgroup/api-examples/blob/master/CMakeLists.txt">cmake file</a>.</p></li>
+<li><p>how to install the slsDetectorPackage is provided <a class="reference internal" href="installation.html#build-from-source-using-cmake"><span class="std std-ref">here</span></a>.</p></li>
+<li><p>compile the example <strong>e4-rxr</strong> by:</p>
+<blockquote>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>cmake ../path/to/your/source -DCMAKE_PREFIX_PATH<span class="o">=</span>/path/to/sls/install
+make
+</pre></div>
 </div>
-<div class="line-block">
-<div class="line">When handling callbacks, the control should be returned as soon as possible, to prevent packet loss from fifo being full.</div>
-</div>
+</div></blockquote>
+</li>
+</ul>
+</dd>
+</dl>
 </div>
 </div>
 
