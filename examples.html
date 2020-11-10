@@ -229,7 +229,7 @@ make
 </div>
 <div class="section" id="running-a-config-file-e1">
 <h2>Running a config file [e1]<a class="headerlink" href="#running-a-config-file-e1" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="cpf">&quot;Detector.h&quot;</span><span class="cp"></span>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="cpf">&quot;sls/Detector.h&quot;</span><span class="cp"></span>
 <span class="p">...</span>
 <span class="n">sls</span><span class="o">::</span><span class="n">Detector</span> <span class="n">det</span><span class="p">;</span>
 <span class="n">det</span><span class="p">.</span><span class="n">loadConfig</span><span class="p">(</span><span class="s">&quot;path/to/config/file.config&quot;</span><span class="p">);</span>
@@ -281,7 +281,7 @@ std::vector.</p>
 we use std::chrono::duration.</p>
 <p>Example 3 shows how to set and read exposure time as well
 as converting to floating point.</p>
-<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="cpf">&quot;Detector.h&quot;</span><span class="cp"></span>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="cpf">&quot;sls/Detector.h&quot;</span><span class="cp"></span>
 <span class="cp">#include</span> <span class="cpf">&lt;chrono&gt;</span><span class="cp"></span>
 <span class="p">...</span>
 <span class="n">std</span><span class="o">::</span><span class="n">chrono</span><span class="o">::</span><span class="n">microseconds</span> <span class="n">t0</span><span class="p">{</span><span class="mi">500</span><span class="p">};</span>

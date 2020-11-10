@@ -242,24 +242,21 @@ ccmake .
 </div>
 <div class="section" id="build-using-cmk-sh-script">
 <h2>Build using cmk.sh script<a class="headerlink" href="#build-using-cmk-sh-script" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>The binaries are generated in slsDetectorPackage/build/bin directory.
-
-<span class="c1"># new build and make with 9 parallel threads</span>
-./cmk.sh -cbj9
-
-<span class="c1"># build with python</span>
-./cmk.sh -bpj9
-
-<span class="c1"># build with GUI</span>
-./cmk.sh -bgj9
-
-<span class="c1"># build with hdf5</span>
-./cmk.sh -hj9 -d <span class="o">[</span>path of hdf5 dir<span class="o">]</span>
-
-<span class="c1"># get all options</span>
-./cmk.sh -?
-</pre></div>
-</div>
+<p>These are mainly aimed at those not familiar with using ccmake and cmake.
+.. code-block:: bash</p>
+<blockquote>
+<div><p>The binaries are generated in slsDetectorPackage/build/bin directory.</p>
+<p># new build and make with 9 parallel threads
+./cmk.sh -cbj9</p>
+<p># build with python
+./cmk.sh -bpj9</p>
+<p># build with GUI
+./cmk.sh -bgj9</p>
+<p># build with hdf5
+./cmk.sh -hj9 -d [path of hdf5 dir]</p>
+<p># get all options
+./cmk.sh -?</p>
+</div></blockquote>
 </div>
 <div class="section" id="install-binaries-using-conda">
 <h2>Install binaries using conda<a class="headerlink" href="#install-binaries-using-conda" title="Permalink to this headline">¶</a></h2>
