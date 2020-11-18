@@ -204,10 +204,74 @@
             
   <div class="section" id="receiver">
 <h1>Receiver<a class="headerlink" href="#receiver" title="Permalink to this headline">¶</a></h1>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>doxygenclass: Cannot find class “Receiver” in doxygen xml output for project “slsDetectorPackage” from directory: /afs/psi.ch/project/sls_det_software/dhanya_softwareDevelopment/mySoft/slsDetectorPackage/build/docs/xml</p>
+<dl class="cpp class">
+<dt id="_CPPv4N3sls8ReceiverE">
+<span id="_CPPv3N3sls8ReceiverE"></span><span id="_CPPv2N3sls8ReceiverE"></span><span id="sls::Receiver"></span><span class="target" id="classsls_1_1Receiver"></span><em class="property">class </em><code class="sig-prename descclassname"><a class="reference internal" href="ToString.html#_CPPv43sls" title="sls">sls</a><code class="sig-prename descclassname">::</code></code><code class="sig-name descname">Receiver</code> : <em class="property">private</em> <em class="property">virtual</em> slsDetectorDefs<a class="headerlink" href="#_CPPv4N3sls8ReceiverE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Public Functions</p>
+<dl class="cpp function">
+<dt id="_CPPv4N3sls8Receiver8ReceiverEiA_Pc">
+<span id="_CPPv3N3sls8Receiver8ReceiverEiA_Pc"></span><span id="_CPPv2N3sls8Receiver8ReceiverEiA_Pc"></span><span id="sls::Receiver::Receiver__i.cPA"></span><span class="target" id="classsls_1_1Receiver_1ac6f6ce4e02e44c94bc223d4312a63472"></span><code class="sig-name descname">Receiver</code><span class="sig-paren">(</span>int <em>argc</em>, char *<em>argv</em>[]<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3sls8Receiver8ReceiverEiA_Pc" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Constructor Starts up a <a class="reference internal" href="#classsls_1_1Receiver"><span class="std std-ref">Receiver</span></a> server. Reads configuration file, options, and assembles a <a class="reference internal" href="#classsls_1_1Receiver"><span class="std std-ref">Receiver</span></a> using TCP and UDP detector interfaces throws an exception in case of failure <dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">argc</span></code>: from command line </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">argv</span></code>: from command line </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4N3sls8Receiver8ReceiverEi">
+<span id="_CPPv3N3sls8Receiver8ReceiverEi"></span><span id="_CPPv2N3sls8Receiver8ReceiverEi"></span><span id="sls::Receiver::Receiver__i"></span><span class="target" id="classsls_1_1Receiver_1a89d483f92e1a27560e4b91fd22be16bf"></span><code class="sig-name descname">Receiver</code><span class="sig-paren">(</span>int <em>tcpip_port_no</em> = 1954<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3sls8Receiver8ReceiverEi" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Constructor Starts up a <a class="reference internal" href="#classsls_1_1Receiver"><span class="std std-ref">Receiver</span></a> server. Reads configuration file, options, and assembles a <a class="reference internal" href="#classsls_1_1Receiver"><span class="std std-ref">Receiver</span></a> using TCP and UDP detector interfaces throws an exception in case of failure <dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">tcpip_port_no</span></code>: TCP/IP port number </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4N3sls8Receiver18getReceiverVersionEv">
+<span id="_CPPv3N3sls8Receiver18getReceiverVersionEv"></span><span id="_CPPv2N3sls8Receiver18getReceiverVersionEv"></span><span id="sls::Receiver::getReceiverVersion"></span><span class="target" id="classsls_1_1Receiver_1a554658a85e58b656a96674812b907783"></span>int64_t <code class="sig-name descname">getReceiverVersion</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3sls8Receiver18getReceiverVersionEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>get get <a class="reference internal" href="#classsls_1_1Receiver"><span class="std std-ref">Receiver</span></a> Version <dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>id </p>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4N3sls8Receiver32registerCallBackStartAcquisitionEPFiNSt6stringENSt6stringE8uint64_t8uint32_tPvEPv">
+<span id="_CPPv3N3sls8Receiver32registerCallBackStartAcquisitionEPFiNSt6stringENSt6stringE8uint64_t8uint32_tPvEPv"></span><span id="_CPPv2N3sls8Receiver32registerCallBackStartAcquisitionEPFiNSt6stringENSt6stringE8uint64_t8uint32_tPvEPv"></span><span class="target" id="classsls_1_1Receiver_1ac964933f3bcc0f07fcd58dbbbc1bb5ff"></span>void <code class="sig-name descname">registerCallBackStartAcquisition</code><span class="sig-paren">(</span>int (*<em>func</em>)<span class="sig-paren">(</span>std::string, std::string, uint64_t, uint32_t, void*<span class="sig-paren">)</span>, void *<em>arg</em>, <span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3sls8Receiver32registerCallBackStartAcquisitionEPFiNSt6stringENSt6stringE8uint64_t8uint32_tPvEPv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Call back for start acquisition callback arguments are filepath filename fileindex datasize</p>
+<p>return value is undefined at the moment we write depending on file write enable users get data to write depending on call backs registered </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4N3sls8Receiver35registerCallBackAcquisitionFinishedEPFv8uint64_tPvEPv">
+<span id="_CPPv3N3sls8Receiver35registerCallBackAcquisitionFinishedEPFv8uint64_tPvEPv"></span><span id="_CPPv2N3sls8Receiver35registerCallBackAcquisitionFinishedEPFv8uint64_tPvEPv"></span><span class="target" id="classsls_1_1Receiver_1a78b41481215f763138637a7acd4bf98d"></span>void <code class="sig-name descname">registerCallBackAcquisitionFinished</code><span class="sig-paren">(</span>void (*<em>func</em>)<span class="sig-paren">(</span>uint64_t, void*<span class="sig-paren">)</span>, void *<em>arg</em>, <span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3sls8Receiver35registerCallBackAcquisitionFinishedEPFv8uint64_tPvEPv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Call back for acquisition finished callback argument is total frames caught </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4N3sls8Receiver28registerCallBackRawDataReadyEPFvPcPc8uint32_tPvEPv">
+<span id="_CPPv3N3sls8Receiver28registerCallBackRawDataReadyEPFvPcPc8uint32_tPvEPv"></span><span id="_CPPv2N3sls8Receiver28registerCallBackRawDataReadyEPFvPcPc8uint32_tPvEPv"></span><span class="target" id="classsls_1_1Receiver_1a12906a78de5eae0fbdfcff71d92c3e1c"></span>void <code class="sig-name descname">registerCallBackRawDataReady</code><span class="sig-paren">(</span>void (*<em>func</em>)<span class="sig-paren">(</span>char*, char*, uint32_t, void*<span class="sig-paren">)</span>, void *<em>arg</em>, <span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3sls8Receiver28registerCallBackRawDataReadyEPFvPcPc8uint32_tPvEPv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Call back for raw data args to raw data ready callback are sls_receiver_header frame metadata, dataPointer is the pointer to the data, dataSize in bytes is the size of the data in bytes. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4N3sls8Receiver34registerCallBackRawDataModifyReadyEPFvPcPcR8uint32_tPvEPv">
+<span id="_CPPv3N3sls8Receiver34registerCallBackRawDataModifyReadyEPFvPcPcR8uint32_tPvEPv"></span><span id="_CPPv2N3sls8Receiver34registerCallBackRawDataModifyReadyEPFvPcPcR8uint32_tPvEPv"></span><span class="target" id="classsls_1_1Receiver_1a18d6dbe494add58ce1b31873f439da2b"></span>void <code class="sig-name descname">registerCallBackRawDataModifyReady</code><span class="sig-paren">(</span>void (*<em>func</em>)<span class="sig-paren">(</span>char*, char*, uint32_t&amp;, void*<span class="sig-paren">)</span>, void *<em>arg</em>, <span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3sls8Receiver34registerCallBackRawDataModifyReadyEPFvPcPcR8uint32_tPvEPv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Call back for raw data (modified) args to raw data ready callback are sls_receiver_header frame metadata, dataPointer is the pointer to the data, revDatasize is the reference of data size in bytes. Can be modified to the new size to be written/streamed. (only smaller value). </p>
+</dd></dl>
+
 </div>
+</dd></dl>
+
 </div>
 
 

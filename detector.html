@@ -411,7 +411,7 @@ containing results from all modules. (Result&lt;T&gt;)</p>
 <dl class="cpp function">
 <dt id="_CPPv4N3sls8Detector20registerDataCallbackEPFvP12detectorData8uint64_t8uint32_tPvEPv">
 <span id="_CPPv3N3sls8Detector20registerDataCallbackEPFvP12detectorData8uint64_t8uint32_tPvEPv"></span><span id="_CPPv2N3sls8Detector20registerDataCallbackEPFvP12detectorData8uint64_t8uint32_tPvEPv"></span><span class="target" id="classsls_1_1Detector_1a268b2b8950298473f69876766eddd2ae"></span>void <code class="sig-name descname">registerDataCallback</code><span class="sig-paren">(</span>void (*<em>func</em>)<span class="sig-paren">(</span>detectorData*, uint64_t, uint32_t, void*<span class="sig-paren">)</span>, void *<em>pArg</em>, <span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3sls8Detector20registerDataCallbackEPFvP12detectorData8uint64_t8uint32_tPvEPv" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>register callback for accessing reconstructed complete images Receiver sends out images via zmq, the client reconstructs them into complete images. Therefore, it also enables zmq streaming from receiver and the client. <dl class="simple">
+<dd><p>register callback for accessing reconstructed complete images <a class="reference internal" href="receiver_api.html#classsls_1_1Receiver"><span class="std std-ref">Receiver</span></a> sends out images via zmq, the client reconstructs them into complete images. Therefore, it also enables zmq streaming from receiver and the client. <dl class="simple">
 <dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">func</span></code>: function to be called for each image with parameters: detector data structure, frame number, sub frame number (for eiger in 32 bit mode), pArg pointer </p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">pArg</span></code>: pointer that is returned in call back </p></li>
@@ -1485,7 +1485,7 @@ containing results from all modules. (Result&lt;T&gt;)</p>
 <dl class="cpp function">
 <dt id="_CPPv4N3sls8Detector11setRxZmqHwmEKi">
 <span id="_CPPv3N3sls8Detector11setRxZmqHwmEKi"></span><span id="_CPPv2N3sls8Detector11setRxZmqHwmEKi"></span><span id="sls::Detector::setRxZmqHwm__iC"></span><span class="target" id="classsls_1_1Detector_1ad65d66eaa7a2ae21ac98ffcd026e5b55"></span>void <code class="sig-name descname">setRxZmqHwm</code><span class="sig-paren">(</span><em class="property">const</em> int <em>limit</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3sls8Detector11setRxZmqHwmEKi" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Receiver’s zmq send high water mark. <p> Default is the zmq library’s default (1000) </p>
+<dd><p><a class="reference internal" href="receiver_api.html#classsls_1_1Receiver"><span class="std std-ref">Receiver</span></a>’s zmq send high water mark. <p> Default is the zmq library’s default (1000) </p>
 <p> This is a high number and can be set to 2 for gui purposes. </p>
 <p> One must also set the client’s receive high water mark to similar value. Final effect is sum of them. Also restarts receiver zmq streaming if enabled. </p>
 <p> Can set to -1 to set default. </p>
@@ -2262,7 +2262,7 @@ ROI per module <p>Either all channels or a single adc or 2 chips (256 channels).
 <dl class="cpp function">
 <dt id="_CPPv4N3sls8Detector15setRxDbitOffsetEi9Positions">
 <span id="_CPPv3N3sls8Detector15setRxDbitOffsetEi9Positions"></span><span id="_CPPv2N3sls8Detector15setRxDbitOffsetEi9Positions"></span><span id="sls::Detector::setRxDbitOffset__i.Positions"></span><span class="target" id="classsls_1_1Detector_1ad37027f07f4de49f2e5077a9ad801962"></span>void <code class="sig-name descname">setRxDbitOffset</code><span class="sig-paren">(</span>int <em>value</em>, Positions <em>pos</em> = {}<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3sls8Detector15setRxDbitOffsetEi9Positions" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>[CTB] Set number of bytes of digital data to skip in the Receiver </p>
+<dd><p>[CTB] Set number of bytes of digital data to skip in the <a class="reference internal" href="receiver_api.html#classsls_1_1Receiver"><span class="std std-ref">Receiver</span></a> </p>
 </dd></dl>
 
 <dl class="cpp function">
