@@ -245,21 +245,37 @@ ccmake .
 </div>
 <div class="section" id="build-using-cmk-sh-script">
 <h2>Build using cmk.sh script<a class="headerlink" href="#build-using-cmk-sh-script" title="Permalink to this headline">¶</a></h2>
-<p>These are mainly aimed at those not familiar with using ccmake and cmake.
-.. code-block:: bash</p>
-<blockquote>
-<div><p>The binaries are generated in slsDetectorPackage/build/bin directory.</p>
-<p># new build and make with 9 parallel threads
-./cmk.sh -cbj9</p>
-<p># build with python
-./cmk.sh -bpj9</p>
-<p># build with GUI
-./cmk.sh -bgj9</p>
-<p># build with hdf5
-./cmk.sh -hj9 -d [path of hdf5 dir]</p>
-<p># get all options
-./cmk.sh -?</p>
-</div></blockquote>
+<p>These are mainly aimed at those not familiar with using ccmake and cmake.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>The binaries are generated in slsDetectorPackage/build/bin directory.
+
+Usage: <span class="nv">$0</span> <span class="o">[</span>-c<span class="o">]</span> <span class="o">[</span>-b<span class="o">]</span> <span class="o">[</span>-p<span class="o">]</span> <span class="o">[</span>e<span class="o">]</span> <span class="o">[</span>t<span class="o">]</span> <span class="o">[</span>r<span class="o">]</span> <span class="o">[</span>g<span class="o">]</span> <span class="o">[</span>s<span class="o">]</span> <span class="o">[</span>u<span class="o">]</span> <span class="o">[</span>i<span class="o">]</span> <span class="o">[</span>m<span class="o">]</span> <span class="o">[</span>n<span class="o">]</span> <span class="o">[</span>-h<span class="o">]</span> <span class="o">[</span>z<span class="o">]</span> <span class="o">[</span>-d &lt;HDF5 directory&gt;<span class="o">]</span> <span class="o">[</span>-l Install directory<span class="o">]</span> <span class="o">[</span>-k &lt;CMake command&gt;<span class="o">]</span> <span class="o">[</span>-j &lt;Number of threads&gt;<span class="o">]</span>
+-<span class="o">[</span>no option<span class="o">]</span>: only make
+-c: Clean
+-b: Builds/Rebuilds CMake files normal mode
+-p: Builds/Rebuilds Python API
+-h: Builds/Rebuilds Cmake files with HDF5 package
+-d: HDF5 Custom Directory
+-k: CMake <span class="nb">command</span>
+-l: Install directory
+-t: Build/Rebuilds only text client
+-r: Build/Rebuilds only receiver
+-g: Build/Rebuilds only gui
+-s: Simulator
+-u: Chip Test Gui
+-j: Number of threads to compile through
+-e: Debug mode
+-i: Builds tests
+-m: Manuals
+-n: Manuals without compiling doxygen <span class="o">(</span>only rst<span class="o">)</span>
+-z: Moench zmq processor
+
+<span class="c1"># get all options</span>
+./cmk.sh -?
+
+<span class="c1"># new build  and compile in parallel:</span>
+./cmk.sh -bj5
+</pre></div>
+</div>
 </div>
 <div class="section" id="install-binaries-using-conda">
 <h2>Install binaries using conda<a class="headerlink" href="#install-binaries-using-conda" title="Permalink to this headline">¶</a></h2>
