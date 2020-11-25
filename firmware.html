@@ -1,7 +1,8 @@
 
 
 <!DOCTYPE html>
-<html class="writer-html5" lang="en" >
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
   
@@ -11,30 +12,28 @@
   
 
   
-  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="_static/css/extra.css" type="text/css" />
-
-  
   
   
   
 
   
-  <!--[if lt IE 9]>
-    <script src="_static/js/html5shiv.min.js"></script>
-  <![endif]-->
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
-        <script src="_static/jquery.js"></script>
-        <script src="_static/underscore.js"></script>
-        <script src="_static/doctools.js"></script>
-        <script src="_static/language_data.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/language_data.js"></script>
     
     <script type="text/javascript" src="_static/js/theme.js"></script>
 
     
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/css/extra.css" type="text/css" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Detector Servers" href="servers.html" />
@@ -52,7 +51,7 @@
           
 
           
-            <a href="index.html" class="icon icon-home" alt="Documentation Home"> slsDetectorPackage
+            <a href="index.html" class="icon icon-home"> slsDetectorPackage
           
 
           
@@ -79,7 +78,6 @@
           
         </div>
 
-        
         <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
           
             
@@ -129,7 +127,7 @@
 <li class="toctree-l2"><a class="reference internal" href="#jungfrau">Jungfrau</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#id1">Download</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#upgrade-from-v4-x-x">Upgrade (from v4.x.x)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#upgrade-from-v5-0-0-rcx">Upgrade (from v5.0.0-rcx)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#upgrade-from-v5-0-0">Upgrade (from v5.0.0)</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#gotthard">Gotthard</a><ul>
@@ -139,22 +137,22 @@
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#mythen3">Mythen3</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#id4">Download</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id5">Upgrade (from v5.0.0-rcx)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id5">Upgrade (from v5.0.0)</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#gotthard2">Gotthard2</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#id6">Download</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id7">Upgrade (from v5.0.0-rcx)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id7">Upgrade (from v5.0.0)</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#moench">Moench</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#id8">Download</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id9">Upgrade (from v5.0.0-rcx)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id9">Upgrade (from v5.0.0)</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#ctb">Ctb</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#id10">Download</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id11">Upgrade (from v5.0.0-rcx)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id11">Upgrade (from v5.0.0)</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#firmware-troubleshooting-with-blackfin">Firmware Troubleshooting with blackfin</a><ul>
@@ -185,7 +183,6 @@
             
           
         </div>
-        
       </div>
     </nav>
 
@@ -224,7 +221,7 @@
 
   <ul class="wy-breadcrumbs">
     
-      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+      <li><a href="index.html">Docs</a> &raquo;</li>
         
       <li>Firmware Upgrade</li>
     
@@ -251,50 +248,10 @@
 <h2>Eiger<a class="headerlink" href="#eiger" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="download">
 <h3>Download<a class="headerlink" href="#download" title="Permalink to this headline">¶</a></h3>
-<ul>
+<ul class="simple">
 <li><p><a class="reference external" href="https://github.com/slsdetectorgroup/slsDetectorFirmware/blob/master/binaries/eiger/bcp">bcp script</a></p></li>
 <li><p>detector server corresponding to package in slsDetectorPackage/serverBin</p></li>
-<li><dl>
-<dt>bit files</dt><dd><table class="colwidths-given docutils align-default">
-<colgroup>
-<col style="width: 25%" />
-<col style="width: 10%" />
-<col style="width: 30%" />
-<col style="width: 25%" />
-<col style="width: 10%" />
-</colgroup>
-<thead>
-<tr class="row-odd"><th class="head"><p>Software</p></th>
-<th class="head"><p>Hardware</p></th>
-<th class="head"><p>Firmware Date</p></th>
-<th class="head"><p>Firmware Link</p></th>
-<th class="head"><p>Comments</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p>v5.0.0-rcx</p></td>
-<td></td>
-<td><p>08.09.2020</p></td>
-<td><p><a class="reference external" href="https://github.com/slsdetectorgroup/slsDetectorFirmware/blob/master/binaries/eiger/v27/">v27</a></p></td>
-<td></td>
-</tr>
-<tr class="row-odd"><td><p>v4.0.0 - v4.2.0</p></td>
-<td></td>
-<td><p>30.07.2019</p></td>
-<td><p><a class="reference external" href="https://github.com/slsdetectorgroup/slsDetectorFirmware/blob/master/binaries/eiger/v24/">v24</a></p></td>
-<td></td>
-</tr>
-<tr class="row-even"><td><p>v3.1.0 - v3.1.5</p></td>
-<td></td>
-<td><p>17.08.2017</p></td>
-<td><p><a class="reference external" href="https://github.com/slsdetectorgroup/slsDetectorFirmware/blob/master/binaries/eiger/v20/">v20</a></p></td>
-<td></td>
-</tr>
-</tbody>
-</table>
-</dd>
-</dl>
-</li>
+<li><p><a class="reference external" href="https://github.com/slsdetectorgroup/slsDetectorFirmware">bit files</a></p></li>
 </ul>
 </div>
 <div class="section" id="upgrade">
@@ -382,55 +339,9 @@ bcp download.bit bebxxx:/kernel
 <h2>Jungfrau<a class="headerlink" href="#jungfrau" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="id1">
 <h3>Download<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
-<ul>
+<ul class="simple">
 <li><p>detector server corresponding to package in slsDetectorPackage/serverBin</p></li>
-<li><dl>
-<dt>pof files</dt><dd><table class="colwidths-given docutils align-default">
-<colgroup>
-<col style="width: 25%" />
-<col style="width: 10%" />
-<col style="width: 30%" />
-<col style="width: 25%" />
-<col style="width: 10%" />
-</colgroup>
-<thead>
-<tr class="row-odd"><th class="head"><p>Software</p></th>
-<th class="head"><p>Hardware</p></th>
-<th class="head"><p>Firmware Date</p></th>
-<th class="head"><p>Firmware Link</p></th>
-<th class="head"><p>Comments</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p>v5.0.0-rcx</p></td>
-<td><p>2.0</p></td>
-<td><p>21.07.2020</p></td>
-<td><p><a class="reference external" href="https://github.com/slsdetectorgroup/slsDetectorFirmware/blob/master/binaries/jungfrau/v2_1/jungfrau_v2_1.pof">v2.1</a></p></td>
-<td></td>
-</tr>
-<tr class="row-odd"><td><p>v5.0.0-rcx</p></td>
-<td><p>1.0</p></td>
-<td><p>24.07.2020</p></td>
-<td><p><a class="reference external" href="https://github.com/slsdetectorgroup/slsDetectorFirmware/blob/master/binaries/jungfrau/v1_1/jungfrau_v1_1.pof">v1.1</a></p></td>
-<td></td>
-</tr>
-<tr class="row-even"><td><p>v4.0.1 - v4.2.0</p></td>
-<td><p>1.0</p></td>
-<td><p>06.12.2018</p></td>
-<td><p><a class="reference external" href="https://github.com/slsdetectorgroup/slsDetectorFirmware/blob/master/binaries/jungfrau/v0_7/jungfrau_v0_7.pof">v0.7</a></p></td>
-<td></td>
-</tr>
-<tr class="row-odd"><td><p>v3.1.0 - v3.1.5</p></td>
-<td><p>1.0</p></td>
-<td><p>13.11.2017</p></td>
-<td><p><a class="reference external" href="https://github.com/slsdetectorgroup/slsDetectorFirmware/blob/master/binaries/jungfrau/v0_6/jungfrau_v0_6.pof">v0.6</a></p></td>
-<td></td>
-</tr>
-</tbody>
-</table>
-</dd>
-</dl>
-</li>
+<li><p><a class="reference external" href="https://github.com/slsdetectorgroup/slsDetectorFirmware">pof files</a></p></li>
 </ul>
 </div>
 <div class="section" id="upgrade-from-v4-x-x">
@@ -438,7 +349,7 @@ bcp download.bit bebxxx:/kernel
 <p>Check <a class="reference internal" href="#blackfin-firmware-troubleshooting"><span class="std std-ref">firmware troubleshooting</span></a> if you run into issues while programming firmware.</p>
 <ol class="arabic">
 <li><p>Tftp must be installed on pc.</p></li>
-<li><p>Update client package to the latest (5.0.0-rc1).</p></li>
+<li><p>Update client package to the latest (5.x.x).</p></li>
 <li><dl>
 <dt>Disable server respawning or kill old server</dt><dd><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Option 1: if respawning enabled</span>
 telnet bchipxxx
@@ -493,8 +404,8 @@ jungfrauDetectorServervxxx --stop-server <span class="m">1953</span>
 </li>
 </ol>
 </div>
-<div class="section" id="upgrade-from-v5-0-0-rcx">
-<h3>Upgrade (from v5.0.0-rcx)<a class="headerlink" href="#upgrade-from-v5-0-0-rcx" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="upgrade-from-v5-0-0">
+<h3>Upgrade (from v5.0.0)<a class="headerlink" href="#upgrade-from-v5-0-0" title="Permalink to this headline">¶</a></h3>
 <p>Check <a class="reference internal" href="#blackfin-firmware-troubleshooting"><span class="std std-ref">firmware troubleshooting</span></a> if you run into issues while programming firmware.</p>
 <ol class="arabic">
 <li><dl>
@@ -517,49 +428,9 @@ sls_detector_put programfpga xxx.pof
 <h2>Gotthard<a class="headerlink" href="#gotthard" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="id2">
 <h3>Download<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
-<ul>
+<ul class="simple">
 <li><p>detector server corresponding to package in slsDetectorPackage/serverBin</p></li>
-<li><dl>
-<dt>pof files</dt><dd><table class="colwidths-given docutils align-default">
-<colgroup>
-<col style="width: 23%" />
-<col style="width: 23%" />
-<col style="width: 23%" />
-<col style="width: 23%" />
-<col style="width: 8%" />
-</colgroup>
-<thead>
-<tr class="row-odd"><th class="head"><p>Software</p></th>
-<th class="head"><p>Hardware</p></th>
-<th class="head"><p>Firmware Date</p></th>
-<th class="head"><p>Firmware Link</p></th>
-<th class="head"><p>Comments</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p>All versions</p></td>
-<td><p>50um</p></td>
-<td><p>08.02.2018</p></td>
-<td><p><a class="reference external" href="https://github.com/slsdetectorgroup/slsDetectorFirmware/blob/master/binaries/gotthard_I/50um/gotthard_I_50um.pof">50um</a></p></td>
-<td></td>
-</tr>
-<tr class="row-odd"><td><p>All versions</p></td>
-<td><p>25um (master)</p></td>
-<td><p>08.02.2018</p></td>
-<td><p><a class="reference external" href="https://github.com/slsdetectorgroup/slsDetectorFirmware/blob/master/binaries/gotthard_I/25um/master/gotthard_I_25um_master.pof">25um (master)</a></p></td>
-<td></td>
-</tr>
-<tr class="row-even"><td><p>All versions</p></td>
-<td><p>25um (slave)</p></td>
-<td><p>09.02.2018</p></td>
-<td><p><a class="reference external" href="https://github.com/slsdetectorgroup/slsDetectorFirmware/blob/master/binaries/gotthard_I/25um/slave/gotthard_I_25um_slave.pof">25um (slave)</a></p></td>
-<td></td>
-</tr>
-</tbody>
-</table>
-</dd>
-</dl>
-</li>
+<li><p><a class="reference external" href="https://github.com/slsdetectorgroup/slsDetectorFirmware">pof files</a></p></li>
 </ul>
 </div>
 <div class="section" id="firmware-upgrade-using-blaster-for-blackfin">
@@ -591,41 +462,13 @@ sls_detector_put programfpga xxx.pof
 </div>
 <div class="section" id="id4">
 <h3>Download<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
-<ul>
+<ul class="simple">
 <li><p>detector server corresponding to package in slsDetectorPackage/serverBin</p></li>
-<li><dl>
-<dt>rbf files</dt><dd><table class="colwidths-given docutils align-default">
-<colgroup>
-<col style="width: 25%" />
-<col style="width: 10%" />
-<col style="width: 30%" />
-<col style="width: 25%" />
-<col style="width: 10%" />
-</colgroup>
-<thead>
-<tr class="row-odd"><th class="head"><p>Software</p></th>
-<th class="head"><p>Hardware</p></th>
-<th class="head"><p>Firmware Date</p></th>
-<th class="head"><p>Firmware Link</p></th>
-<th class="head"><p>Comments</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p>v5.0.0-rcx</p></td>
-<td></td>
-<td><p>25.09.2020</p></td>
-<td></td>
-<td><p>development</p></td>
-</tr>
-</tbody>
-</table>
-</dd>
-</dl>
-</li>
+<li><p>rbf files (in developement)</p></li>
 </ul>
 </div>
 <div class="section" id="id5">
-<h3>Upgrade (from v5.0.0-rcx)<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
+<h3>Upgrade (from v5.0.0)<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
 <ol class="arabic">
 <li><dl>
 <dt>Program from console</dt><dd><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># copies server from tftp folder of pc, programs fpga,</span>
@@ -650,41 +493,13 @@ sls_detector_put programfpga xxx.rbf
 </div>
 <div class="section" id="id6">
 <h3>Download<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h3>
-<ul>
+<ul class="simple">
 <li><p>detector server corresponding to package in slsDetectorPackage/serverBin</p></li>
-<li><dl>
-<dt>rbf files</dt><dd><table class="colwidths-given docutils align-default">
-<colgroup>
-<col style="width: 25%" />
-<col style="width: 10%" />
-<col style="width: 30%" />
-<col style="width: 25%" />
-<col style="width: 10%" />
-</colgroup>
-<thead>
-<tr class="row-odd"><th class="head"><p>Software</p></th>
-<th class="head"><p>Hardware</p></th>
-<th class="head"><p>Firmware Date</p></th>
-<th class="head"><p>Firmware Link</p></th>
-<th class="head"><p>Comments</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p>v5.0.0-rcx</p></td>
-<td></td>
-<td><p>25.09.2020</p></td>
-<td></td>
-<td><p>development</p></td>
-</tr>
-</tbody>
-</table>
-</dd>
-</dl>
-</li>
+<li><p>rbf files (in development)</p></li>
 </ul>
 </div>
 <div class="section" id="id7">
-<h3>Upgrade (from v5.0.0-rcx)<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h3>
+<h3>Upgrade (from v5.0.0)<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h3>
 <ol class="arabic">
 <li><dl>
 <dt>Program from console</dt><dd><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># copies server from tftp folder of pc, programs fpga,</span>
@@ -705,47 +520,13 @@ sls_detector_put programfpga xxx.rbf
 <h2>Moench<a class="headerlink" href="#moench" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="id8">
 <h3>Download<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h3>
-<ul>
+<ul class="simple">
 <li><p>detector server corresponding to package in slsDetectorPackage/serverBin</p></li>
-<li><dl>
-<dt>pof files</dt><dd><table class="colwidths-given docutils align-default">
-<colgroup>
-<col style="width: 25%" />
-<col style="width: 10%" />
-<col style="width: 30%" />
-<col style="width: 25%" />
-<col style="width: 10%" />
-</colgroup>
-<thead>
-<tr class="row-odd"><th class="head"><p>Software</p></th>
-<th class="head"><p>Hardware</p></th>
-<th class="head"><p>Firmware Date</p></th>
-<th class="head"><p>Firmware Link</p></th>
-<th class="head"><p>Comments</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p>v5.0.0-rcx</p></td>
-<td><p>EPCQ128</p></td>
-<td><p>05.10.2020</p></td>
-<td><p><a class="reference external" href="https://github.com/slsdetectorgroup/slsDetectorFirmware/blob/master/binaries/moench/EPCQ128/v1_0/moench_v1_0_201005.pof">v1.0</a></p></td>
-<td></td>
-</tr>
-<tr class="row-odd"><td><p>v5.0.0-rcx</p></td>
-<td><p>EPCS128</p></td>
-<td><p>05.10.2020</p></td>
-<td><p><a class="reference external" href="https://github.com/slsdetectorgroup/slsDetectorFirmware/blob/master/binaries/moench/EPCS128/v1_0/moench_v1_0_201005.pof">v1.0</a></p></td>
-<td></td>
-</tr>
-</tbody>
-</table>
-</dd>
-</dl>
-</li>
+<li><p><a class="reference external" href="https://github.com/slsdetectorgroup/slsDetectorFirmware">pof files</a></p></li>
 </ul>
 </div>
 <div class="section" id="id9">
-<h3>Upgrade (from v5.0.0-rcx)<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h3>
+<h3>Upgrade (from v5.0.0)<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h3>
 <p>Check <a class="reference internal" href="#blackfin-firmware-troubleshooting"><span class="std std-ref">firmware troubleshooting</span></a> if you run into issues while programming firmware.</p>
 <ol class="arabic">
 <li><dl>
@@ -768,47 +549,13 @@ sls_detector_put programfpga xxx.pof
 <h2>Ctb<a class="headerlink" href="#ctb" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="id10">
 <h3>Download<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h3>
-<ul>
+<ul class="simple">
 <li><p>detector server corresponding to package in slsDetectorPackage/serverBin</p></li>
-<li><dl>
-<dt>pof files</dt><dd><table class="colwidths-given docutils align-default">
-<colgroup>
-<col style="width: 25%" />
-<col style="width: 10%" />
-<col style="width: 30%" />
-<col style="width: 25%" />
-<col style="width: 10%" />
-</colgroup>
-<thead>
-<tr class="row-odd"><th class="head"><p>Software</p></th>
-<th class="head"><p>Hardware</p></th>
-<th class="head"><p>Firmware Date</p></th>
-<th class="head"><p>Firmware Link</p></th>
-<th class="head"><p>Comments</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p>v5.0.0-rcx</p></td>
-<td><p>EPCQ128</p></td>
-<td><p>05.10.2020</p></td>
-<td><p><a class="reference external" href="https://github.com/slsdetectorgroup/slsDetectorFirmware/blob/master/binaries/ctb/EPCQ128/v1_0/ctb_v1_0_201005.pof">v1.0</a></p></td>
-<td></td>
-</tr>
-<tr class="row-odd"><td><p>v5.0.0-rcx</p></td>
-<td><p>EPCS128</p></td>
-<td><p>05.10.2020</p></td>
-<td><p><a class="reference external" href="https://github.com/slsdetectorgroup/slsDetectorFirmware/blob/master/binaries/ctb/EPCS128/v1_0/ctb_v1_0_201005.pof">v1.0</a></p></td>
-<td></td>
-</tr>
-</tbody>
-</table>
-</dd>
-</dl>
-</li>
+<li><p><a class="reference external" href="https://github.com/slsdetectorgroup/slsDetectorFirmware">pof files</a></p></li>
 </ul>
 </div>
 <div class="section" id="id11">
-<h3>Upgrade (from v5.0.0-rcx)<a class="headerlink" href="#id11" title="Permalink to this headline">¶</a></h3>
+<h3>Upgrade (from v5.0.0)<a class="headerlink" href="#id11" title="Permalink to this headline">¶</a></h3>
 <p>Check <a class="reference internal" href="#blackfin-firmware-troubleshooting"><span class="std std-ref">firmware troubleshooting</span></a> if you run into issues while programming firmware.</p>
 <ol class="arabic">
 <li><dl>
@@ -900,19 +647,11 @@ reboot
 
   <div role="contentinfo">
     <p>
-        
         &copy; Copyright 2020, PSD Detector Group
 
     </p>
   </div>
-    
-    
-    
-    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
-    
-    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
-    
-    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
 
@@ -923,6 +662,7 @@ reboot
 
   </div>
   
+
 
   <script type="text/javascript">
       jQuery(function () {
