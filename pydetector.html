@@ -61,7 +61,7 @@
             
             
               <div class="version">
-                5.0.0
+                5.1.0
               </div>
             
           
@@ -879,6 +879,11 @@ eg. file name: run_d0_f0_5.raw</p>
 <dd></dd></dl>
 
 <dl class="method">
+<dt id="slsdet.Detector.getAllThresholdEnergy">
+<code class="sig-name descname">getAllThresholdEnergy</code><span class="sig-paren">(</span><em class="sig-param">self: _slsdet.CppDetectorApi</em>, <em class="sig-param">arg0: List[int] = []</em><span class="sig-paren">)</span> &#x2192; List[List[int[3]]]<a class="headerlink" href="#slsdet.Detector.getAllThresholdEnergy" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
 <dt id="slsdet.Detector.getAllTrimbits">
 <code class="sig-name descname">getAllTrimbits</code><span class="sig-paren">(</span><em class="sig-param">self: _slsdet.CppDetectorApi</em>, <em class="sig-param">arg0: List[int] = []</em><span class="sig-paren">)</span> &#x2192; List[int]<a class="headerlink" href="#slsdet.Detector.getAllTrimbits" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
@@ -1211,6 +1216,11 @@ eg. file name: run_d0_f0_5.raw</p>
 <dl class="method">
 <dt id="slsdet.Detector.getLastClientIP">
 <code class="sig-name descname">getLastClientIP</code><span class="sig-paren">(</span><em class="sig-param">self: _slsdet.CppDetectorApi</em>, <em class="sig-param">arg0: List[int] = []</em><span class="sig-paren">)</span> &#x2192; List[sls::IpAddr]<a class="headerlink" href="#slsdet.Detector.getLastClientIP" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="slsdet.Detector.getMaster">
+<code class="sig-name descname">getMaster</code><span class="sig-paren">(</span><em class="sig-param">self: _slsdet.CppDetectorApi</em>, <em class="sig-param">arg0: List[int] = []</em><span class="sig-paren">)</span> &#x2192; List[bool]<a class="headerlink" href="#slsdet.Detector.getMaster" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="method">
@@ -1869,6 +1879,11 @@ Advanced user function!
 <dl class="method">
 <dt id="slsdet.Detector.loadConfig">
 <code class="sig-name descname">loadConfig</code><span class="sig-paren">(</span><em class="sig-param">self: _slsdet.CppDetectorApi</em>, <em class="sig-param">arg0: str</em><span class="sig-paren">)</span> &#x2192; None<a class="headerlink" href="#slsdet.Detector.loadConfig" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="slsdet.Detector.loadDefaultPattern">
+<code class="sig-name descname">loadDefaultPattern</code><span class="sig-paren">(</span><em class="sig-param">self: _slsdet.CppDetectorApi</em>, <em class="sig-param">arg0: List[int] = []</em><span class="sig-paren">)</span> &#x2192; None<a class="headerlink" href="#slsdet.Detector.loadDefaultPattern" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="method">
@@ -3225,8 +3240,13 @@ Default: ANALOG_ONLY</p>
 
 <dl class="method">
 <dt id="slsdet.Detector.setPattern">
-<code class="sig-name descname">setPattern</code><span class="sig-paren">(</span><em class="sig-param">self: _slsdet.CppDetectorApi</em>, <em class="sig-param">arg0: str</em>, <em class="sig-param">arg1: List[int] = []</em><span class="sig-paren">)</span> &#x2192; None<a class="headerlink" href="#slsdet.Detector.setPattern" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<code class="sig-name descname">setPattern</code><span class="sig-paren">(</span><em class="sig-param">*args</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#slsdet.Detector.setPattern" title="Permalink to this definition">¶</a></dt>
+<dd><p>Overloaded function.</p>
+<ol class="arabic simple">
+<li><p>setPattern(self: _slsdet.CppDetectorApi, arg0: str, arg1: List[int] = []) -&gt; None</p></li>
+<li><p>setPattern(self: _slsdet.CppDetectorApi, arg0: sls::Pattern, arg1: List[int] = []) -&gt; None</p></li>
+</ol>
+</dd></dl>
 
 <dl class="method">
 <dt id="slsdet.Detector.setPatternBitMask">
@@ -3480,8 +3500,13 @@ Default: ANALOG_ONLY</p>
 
 <dl class="method">
 <dt id="slsdet.Detector.setThresholdEnergy">
-<code class="sig-name descname">setThresholdEnergy</code><span class="sig-paren">(</span><em class="sig-param">self: _slsdet.CppDetectorApi</em>, <em class="sig-param">arg0: int</em>, <em class="sig-param">arg1: _slsdet.slsDetectorDefs.detectorSettings = &lt;detectorSettings.STANDARD: 0&gt;</em>, <em class="sig-param">arg2: bool = True</em>, <em class="sig-param">arg3: List[int] = []</em><span class="sig-paren">)</span> &#x2192; None<a class="headerlink" href="#slsdet.Detector.setThresholdEnergy" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<code class="sig-name descname">setThresholdEnergy</code><span class="sig-paren">(</span><em class="sig-param">*args</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#slsdet.Detector.setThresholdEnergy" title="Permalink to this definition">¶</a></dt>
+<dd><p>Overloaded function.</p>
+<ol class="arabic simple">
+<li><p>setThresholdEnergy(self: _slsdet.CppDetectorApi, arg0: int, arg1: _slsdet.slsDetectorDefs.detectorSettings = &lt;detectorSettings.STANDARD: 0&gt;, arg2: bool = True, arg3: List[int] = []) -&gt; None</p></li>
+<li><p>setThresholdEnergy(self: _slsdet.CppDetectorApi, arg0: List[int[3]], arg1: _slsdet.slsDetectorDefs.detectorSettings = &lt;detectorSettings.STANDARD: 0&gt;, arg2: bool = True, arg3: List[int] = []) -&gt; None</p></li>
+</ol>
+</dd></dl>
 
 <dl class="method">
 <dt id="slsdet.Detector.setThresholdTemperature">

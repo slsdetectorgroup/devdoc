@@ -61,7 +61,7 @@
             
             
               <div class="version">
-                5.0.0
+                5.1.0
               </div>
             
           
@@ -341,7 +341,7 @@ containing results from all modules. (Result&lt;T&gt;)</p>
 <dl class="function">
 <dt id="_CPPv4NK3sls8Detector11getSettingsE9Positions">
 <span id="_CPPv3NK3sls8Detector11getSettingsE9Positions"></span><span id="_CPPv2NK3sls8Detector11getSettingsE9Positions"></span><span id="sls::Detector::getSettings__PositionsC"></span><span class="target" id="classsls_1_1Detector_1a361926d4e2d3647b8db55c1e849c6b83"></span>Result&lt;defs::detectorSettings&gt; <code class="sig-name descname">getSettings</code><span class="sig-paren">(</span>Positions <em>pos</em> = {}<span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv4NK3sls8Detector11getSettingsE9Positions" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>[Jungfrau][Gotthard][Gotthard2] </p>
+<dd><p>[Jungfrau][Gotthard][Gotthard2][Mythen3] </p>
 </dd></dl>
 
 <dl class="function">
@@ -350,8 +350,45 @@ containing results from all modules. (Result&lt;T&gt;)</p>
 <dd><p>[Jungfrau] DYNAMICGAIN, DYNAMICHG0, FIXGAIN1, FIXGAIN2, FORCESWITCHG1, FORCESWITCHG2 <p> [Gotthard] DYNAMICGAIN, HIGHGAIN, LOWGAIN, MEDIUMGAIN, VERYHIGHGAIN </p>
 <p> [Gotthard2] DYNAMICGAIN, FIXGAIN1, FIXGAIN2 </p>
 <p> [Moench] G1_HIGHGAIN, G1_LOWGAIN, G2_HIGHCAP_HIGHGAIN, G2_HIGHCAP_LOWGAIN, G2_LOWCAP_HIGHGAIN, G2_LOWCAP_LOWGAIN, G4_HIGHGAIN, G4_LOWGAIN </p>
+<p> [Mythen3] STANDARD, FAST, HIGHGAIN. Also changes vrshaper and vrpreamp </p>
 <p> [Eiger] Use threshold command. Settings loaded from file found in settingspath </p>
 </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv4NK3sls8Detector18getThresholdEnergyE9Positions">
+<span id="_CPPv3NK3sls8Detector18getThresholdEnergyE9Positions"></span><span id="_CPPv2NK3sls8Detector18getThresholdEnergyE9Positions"></span><span id="sls::Detector::getThresholdEnergy__PositionsC"></span><span class="target" id="classsls_1_1Detector_1adf96ef38dfe0a45aa2a6f8c042f49f5d"></span>Result&lt;int&gt; <code class="sig-name descname">getThresholdEnergy</code><span class="sig-paren">(</span>Positions <em>pos</em> = {}<span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv4NK3sls8Detector18getThresholdEnergyE9Positions" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>[Eiger] </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv4NK3sls8Detector21getAllThresholdEnergyE9Positions">
+<span id="_CPPv3NK3sls8Detector21getAllThresholdEnergyE9Positions"></span><span id="_CPPv2NK3sls8Detector21getAllThresholdEnergyE9Positions"></span><span id="sls::Detector::getAllThresholdEnergy__PositionsC"></span><span class="target" id="classsls_1_1Detector_1a99959f0d64356c93254506bc24c28a9f"></span>Result&lt;std::array&lt;int, 3&gt;&gt; <code class="sig-name descname">getAllThresholdEnergy</code><span class="sig-paren">(</span>Positions <em>pos</em> = {}<span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv4NK3sls8Detector21getAllThresholdEnergyE9Positions" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Mythen3] threshold energy for the three counters </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv4N3sls8Detector18setThresholdEnergyEiN4defs16detectorSettingsEb9Positions">
+<span id="_CPPv3N3sls8Detector18setThresholdEnergyEiN4defs16detectorSettingsEb9Positions"></span><span id="_CPPv2N3sls8Detector18setThresholdEnergyEiN4defs16detectorSettingsEb9Positions"></span><span id="sls::Detector::setThresholdEnergy__i.defs::detectorSettings.b.Positions"></span><span class="target" id="classsls_1_1Detector_1a592a14cd8e257009412660e9f5b1a7e6"></span>void <code class="sig-name descname">setThresholdEnergy</code><span class="sig-paren">(</span>int <em>threshold_ev</em>, defs::detectorSettings <em>settings</em> = defs::STANDARD, bool <em>trimbits</em> = true, Positions <em>pos</em> = {}<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3sls8Detector18setThresholdEnergyEiN4defs16detectorSettingsEb9Positions" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>[Eiger][Mythen3] It loads trim files from settingspath </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv4N3sls8Detector18setThresholdEnergyENSt5arrayIiXL3EEEEN4defs16detectorSettingsEb9Positions">
+<span id="_CPPv3N3sls8Detector18setThresholdEnergyENSt5arrayIiXL3EEEEN4defs16detectorSettingsEb9Positions"></span><span id="_CPPv2N3sls8Detector18setThresholdEnergyENSt5arrayIiX3EEEN4defs16detectorSettingsEb9Positions"></span><span id="sls::Detector::setThresholdEnergy__std::array:i.3:.defs::detectorSettings.b.Positions"></span><span class="target" id="classsls_1_1Detector_1a80747e797753a9ed0b5db54d3157aca9"></span>void <code class="sig-name descname">setThresholdEnergy</code><span class="sig-paren">(</span>std::array&lt;int, 3&gt; <em>threshold_ev</em>, defs::detectorSettings <em>settings</em> = defs::STANDARD, bool <em>trimbits</em> = true, Positions <em>pos</em> = {}<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3sls8Detector18setThresholdEnergyENSt5arrayIiXL3EEEEN4defs16detectorSettingsEb9Positions" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>[Mythen3] It loads trim files from settingspath </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv4NK3sls8Detector15getSettingsPathE9Positions">
+<span id="_CPPv3NK3sls8Detector15getSettingsPathE9Positions"></span><span id="_CPPv2NK3sls8Detector15getSettingsPathE9Positions"></span><span id="sls::Detector::getSettingsPath__PositionsC"></span><span class="target" id="classsls_1_1Detector_1aaf360110aaaf8abd17a58a936ecac055"></span>Result&lt;std::string&gt; <code class="sig-name descname">getSettingsPath</code><span class="sig-paren">(</span>Positions <em>pos</em> = {}<span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv4NK3sls8Detector15getSettingsPathE9Positions" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>[Eiger][Mythen3] </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv4N3sls8Detector15setSettingsPathERKNSt6stringE9Positions">
+<span id="_CPPv3N3sls8Detector15setSettingsPathERKNSt6stringE9Positions"></span><span id="_CPPv2N3sls8Detector15setSettingsPathERKNSt6stringE9Positions"></span><span id="sls::Detector::setSettingsPath__ssCR.Positions"></span><span class="target" id="classsls_1_1Detector_1a45556bc002e3a27ebcdaa85a3068e25a"></span>void <code class="sig-name descname">setSettingsPath</code><span class="sig-paren">(</span><em class="property">const</em> std::string &amp;<em>value</em>, Positions <em>pos</em> = {}<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3sls8Detector15setSettingsPathERKNSt6stringE9Positions" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>[Eiger][Mythen3] Directory where settings files are loaded from/to </p>
 </dd></dl>
 
 <dl class="function">
@@ -370,6 +407,18 @@ containing results from all modules. (Result&lt;T&gt;)</p>
 <dt id="_CPPv4N3sls8Detector14setAllTrimbitsEi9Positions">
 <span id="_CPPv3N3sls8Detector14setAllTrimbitsEi9Positions"></span><span id="_CPPv2N3sls8Detector14setAllTrimbitsEi9Positions"></span><span id="sls::Detector::setAllTrimbits__i.Positions"></span><span class="target" id="classsls_1_1Detector_1a14ec8637453f06f042bed7019e7a016c"></span>void <code class="sig-name descname">setAllTrimbits</code><span class="sig-paren">(</span>int <em>value</em>, Positions <em>pos</em> = {}<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3sls8Detector14setAllTrimbitsEi9Positions" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>[Eiger][Mythen3] </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv4NK3sls8Detector15getTrimEnergiesE9Positions">
+<span id="_CPPv3NK3sls8Detector15getTrimEnergiesE9Positions"></span><span id="_CPPv2NK3sls8Detector15getTrimEnergiesE9Positions"></span><span id="sls::Detector::getTrimEnergies__PositionsC"></span><span class="target" id="classsls_1_1Detector_1a0c101befa13a7fc5ffa8b640848ccb9d"></span>Result&lt;std::vector&lt;int&gt;&gt; <code class="sig-name descname">getTrimEnergies</code><span class="sig-paren">(</span>Positions <em>pos</em> = {}<span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv4NK3sls8Detector15getTrimEnergiesE9Positions" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>[Eiger][Mythen3] Returns energies in eV where the module is trimmed </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv4N3sls8Detector15setTrimEnergiesENSt6vectorIiEE9Positions">
+<span id="_CPPv3N3sls8Detector15setTrimEnergiesENSt6vectorIiEE9Positions"></span><span id="_CPPv2N3sls8Detector15setTrimEnergiesENSt6vectorIiEE9Positions"></span><span id="sls::Detector::setTrimEnergies__std::vector:i:.Positions"></span><span class="target" id="classsls_1_1Detector_1ad36fdbe699176ad888e46cb4c1189a29"></span>void <code class="sig-name descname">setTrimEnergies</code><span class="sig-paren">(</span>std::vector&lt;int&gt; <em>energies</em>, Positions <em>pos</em> = {}<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3sls8Detector15setTrimEnergiesENSt6vectorIiEE9Positions" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>[Eiger][Mythen3] List of trim energies, where corresponding default trim files exist in corresponding trim folders </p>
 </dd></dl>
 
 <dl class="function">
@@ -1517,30 +1566,6 @@ containing results from all modules. (Result&lt;T&gt;)</p>
 </dd></dl>
 
 <dl class="function">
-<dt id="_CPPv4NK3sls8Detector18getThresholdEnergyE9Positions">
-<span id="_CPPv3NK3sls8Detector18getThresholdEnergyE9Positions"></span><span id="_CPPv2NK3sls8Detector18getThresholdEnergyE9Positions"></span><span id="sls::Detector::getThresholdEnergy__PositionsC"></span><span class="target" id="classsls_1_1Detector_1adf96ef38dfe0a45aa2a6f8c042f49f5d"></span>Result&lt;int&gt; <code class="sig-name descname">getThresholdEnergy</code><span class="sig-paren">(</span>Positions <em>pos</em> = {}<span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv4NK3sls8Detector18getThresholdEnergyE9Positions" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>[Eiger] </p>
-</dd></dl>
-
-<dl class="function">
-<dt id="_CPPv4N3sls8Detector18setThresholdEnergyEiN4defs16detectorSettingsEb9Positions">
-<span id="_CPPv3N3sls8Detector18setThresholdEnergyEiN4defs16detectorSettingsEb9Positions"></span><span id="_CPPv2N3sls8Detector18setThresholdEnergyEiN4defs16detectorSettingsEb9Positions"></span><span id="sls::Detector::setThresholdEnergy__i.defs::detectorSettings.b.Positions"></span><span class="target" id="classsls_1_1Detector_1a592a14cd8e257009412660e9f5b1a7e6"></span>void <code class="sig-name descname">setThresholdEnergy</code><span class="sig-paren">(</span>int <em>threshold_ev</em>, defs::detectorSettings <em>settings</em> = defs::STANDARD, bool <em>trimbits</em> = true, Positions <em>pos</em> = {}<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3sls8Detector18setThresholdEnergyEiN4defs16detectorSettingsEb9Positions" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>[Eiger] It loads trim files from settingspath </p>
-</dd></dl>
-
-<dl class="function">
-<dt id="_CPPv4NK3sls8Detector15getSettingsPathE9Positions">
-<span id="_CPPv3NK3sls8Detector15getSettingsPathE9Positions"></span><span id="_CPPv2NK3sls8Detector15getSettingsPathE9Positions"></span><span id="sls::Detector::getSettingsPath__PositionsC"></span><span class="target" id="classsls_1_1Detector_1aaf360110aaaf8abd17a58a936ecac055"></span>Result&lt;std::string&gt; <code class="sig-name descname">getSettingsPath</code><span class="sig-paren">(</span>Positions <em>pos</em> = {}<span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv4NK3sls8Detector15getSettingsPathE9Positions" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>[Eiger] </p>
-</dd></dl>
-
-<dl class="function">
-<dt id="_CPPv4N3sls8Detector15setSettingsPathERKNSt6stringE9Positions">
-<span id="_CPPv3N3sls8Detector15setSettingsPathERKNSt6stringE9Positions"></span><span id="_CPPv2N3sls8Detector15setSettingsPathERKNSt6stringE9Positions"></span><span id="sls::Detector::setSettingsPath__ssCR.Positions"></span><span class="target" id="classsls_1_1Detector_1a45556bc002e3a27ebcdaa85a3068e25a"></span>void <code class="sig-name descname">setSettingsPath</code><span class="sig-paren">(</span><em class="property">const</em> std::string &amp;<em>value</em>, Positions <em>pos</em> = {}<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3sls8Detector15setSettingsPathERKNSt6stringE9Positions" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>[Eiger] Directory where settings files are loaded from/to </p>
-</dd></dl>
-
-<dl class="function">
 <dt id="_CPPv4NK3sls8Detector15getOverFlowModeE9Positions">
 <span id="_CPPv3NK3sls8Detector15getOverFlowModeE9Positions"></span><span id="_CPPv2NK3sls8Detector15getOverFlowModeE9Positions"></span><span id="sls::Detector::getOverFlowMode__PositionsC"></span><span class="target" id="classsls_1_1Detector_1a6454abdef4f7e5b61786b6e2cb36c924"></span>Result&lt;bool&gt; <code class="sig-name descname">getOverFlowMode</code><span class="sig-paren">(</span>Positions <em>pos</em> = {}<span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv4NK3sls8Detector15getOverFlowModeE9Positions" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>[Eiger] </p>
@@ -1562,18 +1587,6 @@ containing results from all modules. (Result&lt;T&gt;)</p>
 <dt id="_CPPv4N3sls8Detector9setBottomEb9Positions">
 <span id="_CPPv3N3sls8Detector9setBottomEb9Positions"></span><span id="_CPPv2N3sls8Detector9setBottomEb9Positions"></span><span id="sls::Detector::setBottom__b.Positions"></span><span class="target" id="classsls_1_1Detector_1ae8ae9bc792fe6d4d1b4e3bdea28b9773"></span>void <code class="sig-name descname">setBottom</code><span class="sig-paren">(</span>bool <em>value</em>, Positions <em>pos</em> = {}<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3sls8Detector9setBottomEb9Positions" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>[Eiger] for client call back (gui) purposes to flip bottom image </p>
-</dd></dl>
-
-<dl class="function">
-<dt id="_CPPv4NK3sls8Detector15getTrimEnergiesE9Positions">
-<span id="_CPPv3NK3sls8Detector15getTrimEnergiesE9Positions"></span><span id="_CPPv2NK3sls8Detector15getTrimEnergiesE9Positions"></span><span id="sls::Detector::getTrimEnergies__PositionsC"></span><span class="target" id="classsls_1_1Detector_1a0c101befa13a7fc5ffa8b640848ccb9d"></span>Result&lt;std::vector&lt;int&gt;&gt; <code class="sig-name descname">getTrimEnergies</code><span class="sig-paren">(</span>Positions <em>pos</em> = {}<span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv4NK3sls8Detector15getTrimEnergiesE9Positions" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>[Eiger] Returns energies in eV where the module is trimmed </p>
-</dd></dl>
-
-<dl class="function">
-<dt id="_CPPv4N3sls8Detector15setTrimEnergiesENSt6vectorIiEE9Positions">
-<span id="_CPPv3N3sls8Detector15setTrimEnergiesENSt6vectorIiEE9Positions"></span><span id="_CPPv2N3sls8Detector15setTrimEnergiesENSt6vectorIiEE9Positions"></span><span id="sls::Detector::setTrimEnergies__std::vector:i:.Positions"></span><span class="target" id="classsls_1_1Detector_1ad36fdbe699176ad888e46cb4c1189a29"></span>void <code class="sig-name descname">setTrimEnergies</code><span class="sig-paren">(</span>std::vector&lt;int&gt; <em>energies</em>, Positions <em>pos</em> = {}<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3sls8Detector15setTrimEnergiesENSt6vectorIiEE9Positions" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>[Eiger] List of trim energies, where corresponding default trim files exist in corresponding trim folders </p>
 </dd></dl>
 
 <dl class="function">
@@ -2047,6 +2060,11 @@ ROI per module <p>Either all channels or a single adc or 2 chips (256 channels).
 <dd><p>[Mythen3] gate delay for all gates in auto or trigger timing mode (internal gating). Gate index: 0-2, -1 for all </p>
 </dd></dl>
 
+<dl class="function">
+<dt id="_CPPv4NK3sls8Detector9getMasterE9Positions">
+<span id="_CPPv3NK3sls8Detector9getMasterE9Positions"></span><span id="_CPPv2NK3sls8Detector9getMasterE9Positions"></span><span id="sls::Detector::getMaster__PositionsC"></span><span class="target" id="classsls_1_1Detector_1afc3f4015f40cfa2cf0d258479e603ee1"></span>Result&lt;bool&gt; <code class="sig-name descname">getMaster</code><span class="sig-paren">(</span>Positions <em>pos</em> = {}<span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv4NK3sls8Detector9getMasterE9Positions" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
 </div>
 <div class="breathe-sectiondef docutils container">
 <p class="breathe-sectiondef-title rubric">CTB / Moench Specific</p>
@@ -2290,10 +2308,22 @@ ROI per module <p>Either all channels or a single adc or 2 chips (256 channels).
 </dd></dl>
 
 <dl class="function">
+<dt id="_CPPv4N3sls8Detector10setPatternERK7Pattern9Positions">
+<span id="_CPPv3N3sls8Detector10setPatternERK7Pattern9Positions"></span><span id="_CPPv2N3sls8Detector10setPatternERK7Pattern9Positions"></span><span id="sls::Detector::setPattern__PatternCR.Positions"></span><span class="target" id="classsls_1_1Detector_1ab68a7a282a3f95dad1851f8e5ba90b22"></span>void <code class="sig-name descname">setPattern</code><span class="sig-paren">(</span><em class="property">const</em> Pattern &amp;<em>pat</em>, Positions <em>pos</em> = {}<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3sls8Detector10setPatternERK7Pattern9Positions" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>[CTB][Moench][Mythen3] Loads pattern parameters structure directly to server </p>
+</dd></dl>
+
+<dl class="function">
 <dt id="_CPPv4N3sls8Detector11savePatternERKNSt6stringE">
 <span id="_CPPv3N3sls8Detector11savePatternERKNSt6stringE"></span><span id="_CPPv2N3sls8Detector11savePatternERKNSt6stringE"></span><span id="sls::Detector::savePattern__ssCR"></span><span class="target" id="classsls_1_1Detector_1a26019d11cacd7d699288f30434af80ad"></span>void <code class="sig-name descname">savePattern</code><span class="sig-paren">(</span><em class="property">const</em> std::string &amp;<em>fname</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3sls8Detector11savePatternERKNSt6stringE" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>[CTB][Moench][Mythen3] [Ctb][Moench][Mythen3] Saves pattern to file (ascii). <p> [Ctb][Moench] Also executes pattern. </p>
 </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv4N3sls8Detector18loadDefaultPatternE9Positions">
+<span id="_CPPv3N3sls8Detector18loadDefaultPatternE9Positions"></span><span id="_CPPv2N3sls8Detector18loadDefaultPatternE9Positions"></span><span id="sls::Detector::loadDefaultPattern__Positions"></span><span class="target" id="classsls_1_1Detector_1a675624fabe61c1cf6f930a38c2c2d6aa"></span>void <code class="sig-name descname">loadDefaultPattern</code><span class="sig-paren">(</span>Positions <em>pos</em> = {}<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3sls8Detector18loadDefaultPatternE9Positions" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>[Mythen3][Moench] Loads and runs default pattern </p>
 </dd></dl>
 
 <dl class="function">

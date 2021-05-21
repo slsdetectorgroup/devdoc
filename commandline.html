@@ -61,7 +61,7 @@
             
             
               <div class="version">
-                5.0.0
+                5.1.0
               </div>
             
           
@@ -394,6 +394,10 @@
 </dd>
 <dt id="term-defaultdacs">defaultdacs</dt><dd><div class="line-block">
 <div class="line">[Eiger][Jungfrau][Gotthard][Moench][Gotthard2][Mythen3]Sets default dacs on to the detector.</div>
+</div>
+</dd>
+<dt id="term-defaultpattern">defaultpattern</dt><dd><div class="line-block">
+<div class="line">[Mythen3][Moench] Loads and runs default pattern in pattern generator. It is to go back to initial settings.</div>
 </div>
 </dd>
 <dt id="term-delay-duration-optional-unit-ns-us-ms-s">delay [duration] [(optional unit) ns|us|ms|s]</dt><dd><div class="line-block">
@@ -1033,8 +1037,9 @@
 <div class="line">[Gotthard] - [dynamicgain | highgain | lowgain | mediumgain | veryhighgain]</div>
 <div class="line">[Gotthard2] - [dynamicgain | fixgain1 | fixgain2]</div>
 <div class="line">[Moench] - [g1_hg | g1_lg | g2_hc_hg | g2_hc_lg | g2_lc_hg | g2_lc_lg | g4_hg | g4_lg]</div>
+<div class="line">[Mythen3] - [standard | fast | highgain] Also changes vrshaper and vrpreamp.</div>
 <div class="line">[Eiger] Use threshold or thresholdnotb.</div>
-<div class="line">[Eiger] settings loaded from file found in settingspath.</div>
+<div class="line">[Eiger] threshold and settings loaded from file found in settingspath.</div>
 <div class="line">[Gotthard] Also loads default dacs on to the detector.</div>
 </div>
 </dd>
@@ -1043,7 +1048,7 @@
 </div>
 </dd>
 <dt id="term-settingspath-path">settingspath [path]</dt><dd><div class="line-block">
-<div class="line">[Eiger] Directory where settings files are loaded from/to.</div>
+<div class="line">[Eiger][Mythen3] Directory where settings files are loaded from/to.</div>
 </div>
 </dd>
 <dt id="term-slowadc-n-channel-0-7-for-channel">slowadc [n_channel (0-7 for channel]</dt><dd><div class="line-block">
@@ -1161,87 +1166,103 @@
 <div class="line">[Eiger][Ctb][Moench][Mythen3] 10GbE Enable.</div>
 </div>
 </dd>
-<dt id="term-threshold-ev-optinal-settings-standard-lowgain-veryhighgain-verylowgain">threshold [eV] [(optinal settings) standard, lowgain, veryhighgain, verylowgain]</dt><dd><div class="line-block">
-<div class="line">[Eiger] Threshold in eV. It loads trim files from settingspath.</div>
+<dt id="term-threshold-ev-optinal-settings">threshold [eV] [(optinal settings)</dt><dd><div class="line-block">
+<div class="line">[Eiger][Mythen3] Threshold in eV. It loads trim files from settingspath.</div>
 </div>
 </dd>
-<dt id="term-thresholdnotb-ev-optional-settings-standard-lowgain-veryhighgain-verylowgain">thresholdnotb [eV] [(optional settings) standard, lowgain, veryhighgain, verylowgain]</dt><dd><div class="line-block">
-<div class="line">[Eiger] Threshold in eV set without setting trimbits</div>
+</dl>
+<dl>
+<dt>threshold [eV1] [eV2] [eV3] [(optional settings)]</dt><dd><blockquote>
+<div><div class="line-block">
+<div class="line">[Mythen3] Threshold in eV for each counter. It loads trim files from settingspath.</div>
+</div>
+</div></blockquote>
+<dl>
+<dt>thresholdnotb [eV] [(optinal settings)</dt><dd><div class="line-block">
+<div class="line">[Eiger][Mythen3] Threshold in eV. It loads trim files from settingspath.Trimbits are not loaded.</div>
 </div>
 </dd>
-<dt id="term-timing-auto-trigger-gating-burst-trigger">timing [auto|trigger|gating|burst_trigger]</dt><dd><div class="line-block">
+</dl>
+</dd>
+<dt>threshold [eV1] [eV2] [eV3] [(optional settings)]</dt><dd><blockquote>
+<div><div class="line-block">
+<div class="line">[Mythen3] Threshold in eV for each counter. It loads trim files from settingspath.Trimbits are not loaded.</div>
+</div>
+</div></blockquote>
+<dl>
+<dt>timing [auto|trigger|gating|burst_trigger]</dt><dd><div class="line-block">
 <div class="line">Timing Mode of detector.</div>
 <div class="line">[Jungfrau][Gotthard][Ctb][Moench][Gotthard2] [auto|trigger]</div>
 <div class="line">[Mythen3] [auto|trigger|gating|trigger_gating]</div>
 <div class="line">[Eiger] [auto|trigger|gating|burst_trigger]</div>
 </div>
 </dd>
-<dt id="term-timinglist">timinglist</dt><dd><div class="line-block">
+<dt>timinglist</dt><dd><div class="line-block">
 <div class="line">Gets the list of timing modes for this detector.</div>
 </div>
 </dd>
-<dt id="term-timingsource-internal-external">timingsource [internal|external]</dt><dd><div class="line-block">
+<dt>timingsource [internal|external]</dt><dd><div class="line-block">
 <div class="line">[Gotthard2] Timing source. Internal is crystal and external is system timing. Default is internal.</div>
 </div>
 </dd>
-<dt id="term-trigger">trigger</dt><dd><div class="line-block">
+<dt>trigger</dt><dd><div class="line-block">
 <div class="line">[Eiger][Mythen3] Sends software trigger signal to detector.</div>
 </div>
 </dd>
-<dt id="term-triggers-n-triggers">triggers [n_triggers]</dt><dd><div class="line-block">
+<dt>triggers [n_triggers]</dt><dd><div class="line-block">
 <div class="line">Number of triggers per aquire. Set timing mode to use triggers.</div>
 </div>
 </dd>
-<dt id="term-triggersl">triggersl</dt><dd><div class="line-block">
+<dt>triggersl</dt><dd><div class="line-block">
 <div class="line">[Gotthard][Jungfrau][Mythen3][Gotthard2][CTB][Moench] Number of triggers left in acquisition. Only when external trigger used.</div>
 </div>
 </dd>
-<dt id="term-trimbits-fname">trimbits [fname]</dt><dd><div class="line-block">
+<dt>trimbits [fname]</dt><dd><div class="line-block">
 <div class="line">[Eiger][Mythen3] Loads the trimbit file to detector. If no extension specified, serial number of each module is attached.</div>
 </div>
 </dd>
-<dt id="term-trimen-trim-ev1-trim-ev2-optional-trim-ev3-optional">trimen [trim_ev1] [trim_Ev2 (optional)] [trim_ev3 (optional)] …</dt><dd><div class="line-block">
-<div class="line">[Eiger] Number of trim energies and list of trim energies, where corresponding default trim files exist in corresponding trim folders.</div>
+<dt>trimen [trim_ev1] [trim_Ev2 (optional)] [trim_ev3 (optional)] …</dt><dd><div class="line-block">
+<div class="line">[Eiger][Mythen3] Number of trim energies and list of trim energies, where corresponding default trim files exist in corresponding trim folders.</div>
 </div>
 </dd>
-<dt id="term-trimval-n-trimval">trimval [n_trimval]</dt><dd><div class="line-block">
+<dt>trimval [n_trimval]</dt><dd><div class="line-block">
 <div class="line">[Eiger][Mythen3] All trimbits set to this value. Returns -1 if all trimbits are different values.</div>
 </div>
 </dd>
-<dt id="term-txndelay-frame-n-delay">txndelay_frame [n_delay]</dt><dd><div class="line-block">
+<dt>txndelay_frame [n_delay]</dt><dd><div class="line-block">
 <div class="line">[Eiger][Jungfrau][Mythen3] Transmission delay of first udp packet being streamed out of the module.</div>
 <div class="line">[Jungfrau] [0-31] Each value represents 1 ms</div>
 <div class="line">[Eiger] Additional delay to txndelay_left and txndelay_right. Each value represents 10ns. Typical value is 50000.</div>
 <div class="line">[Mythen3] [0-16777215] Each value represents 8 ns (125 MHz clock), max is 134 ms.</div>
 </div>
 </dd>
-<dt id="term-txndelay-left-n-delay">txndelay_left [n_delay]</dt><dd><div class="line-block">
+<dt>txndelay_left [n_delay]</dt><dd><div class="line-block">
 <div class="line">[Eiger] Transmission delay of first packet in an image being streamed out of the module’s left UDP port. Each value represents 10ns. Typical value is 50000.</div>
 </div>
 </dd>
-<dt id="term-txndelay-right-n-delay">txndelay_right [n_delay]</dt><dd><div class="line-block">
+<dt>txndelay_right [n_delay]</dt><dd><div class="line-block">
 <div class="line">[Eiger] Transmission delay of first packet in an image being streamed out of the module’s right UDP port. Each value represents 10ns. Typical value is 50000.</div>
 </div>
 </dd>
-<dt id="term-type">type</dt><dd><div class="line-block">
+<dt>type</dt><dd><div class="line-block">
 <div class="line">Returns detector type. Can be Eiger, Jungfrau, Gotthard, Moench, Mythen3, Gotthard2, ChipTestBoard</div>
 </div>
 </dd>
-<dt id="term-udp-dstip-x-x-x-x-or-auto">udp_dstip [x.x.x.x] or auto</dt><dd><div class="line-block">
+<dt>udp_dstip [x.x.x.x] or auto</dt><dd><div class="line-block">
 <div class="line">Ip address of the receiver (destination) udp interface. If ‘auto’ used, then ip is set to ip of rx_hostname.</div>
 </div>
 </dd>
-<dt id="term-udp-dstip2-x-x-x-x-or-auto">udp_dstip2 [x.x.x.x] or auto</dt><dd><div class="line-block">
+<dt>udp_dstip2 [x.x.x.x] or auto</dt><dd><div class="line-block">
 <div class="line">[Jungfrau][Gotthard2] Ip address of the receiver (destination) udp interface 2. If ‘auto’ used, then ip is set to ip of rx_hostname.</div>
 <div class="line">[Jungfrau] bottom half</div>
 <div class="line">[Gotthard2] veto debugging.</div>
 </div>
 </dd>
-<dt id="term-udp-dstmac-x-x-x-x-x-x">udp_dstmac [x:x:x:x:x:x]</dt><dd><div class="line-block">
+<dt>udp_dstmac [x:x:x:x:x:x]</dt><dd><div class="line-block">
 <div class="line">Mac address of the receiver (destination) udp interface. Not mandatory to set as udp_dstip retrieves it from slsReceiver process, but must be set if you use a custom receiver (not slsReceiver).</div>
 </div>
 </dd>
-<dt id="term-udp-dstmac2-x-x-x-x-x-x">udp_dstmac2 [x:x:x:x:x:x]</dt><dd><div class="line-block">
+<dt>udp_dstmac2 [x:x:x:x:x:x]</dt><dd><div class="line-block">
 <div class="line">[Jungfrau] Mac address of the receiver (destination) udp interface 2. Not mandatory to set as udp_dstip2 retrieves it from slsReceiver process but must be set if you use a custom receiver (not slsReceiver).</div>
 <div class="line-block">
 <div class="line">[Jungfrau] top half or inner interface</div>
@@ -1249,12 +1270,12 @@
 </div>
 </div>
 </dd>
-<dt id="term-udp-dstport-n">udp_dstport [n]</dt><dd><div class="line-block">
+<dt>udp_dstport [n]</dt><dd><div class="line-block">
 <div class="line">Port number of the receiver (destination) udp interface. Default is 50001.</div>
 <div class="line">If multi command, ports for each module is calculated (incremented by 1 if no 2nd interface)</div>
 </div>
 </dd>
-<dt id="term-udp-dstport2-n">udp_dstport2 [n]</dt><dd><div class="line-block">
+<dt>udp_dstport2 [n]</dt><dd><div class="line-block">
 <div class="line">[Jungfrau][Eiger][Gotthard2] Port number of the receiver (destination) udp interface 2. Default is 50002.</div>
 <div class="line">If multi command, ports for each module is calculated (incremented by 2)</div>
 <div class="line">[Jungfrau] top half or inner interface</div>
@@ -1262,16 +1283,16 @@
 <div class="line">[Gotthard2] veto debugging</div>
 </div>
 </dd>
-<dt id="term-udp-reconfigure">udp_reconfigure</dt><dd><div class="line-block">
+<dt>udp_reconfigure</dt><dd><div class="line-block">
 <div class="line">Reconfigures Detector with UDP destination. More for debugging as the configuration is done automatically when the detector has sufficient UDP details.</div>
 </div>
 </dd>
-<dt id="term-udp-srcip-x-x-x-x">udp_srcip [x.x.x.x]</dt><dd><div class="line-block">
+<dt>udp_srcip [x.x.x.x]</dt><dd><div class="line-block">
 <div class="line">Ip address of the detector (source) udp interface. Must be same subnet as destination udp ip.</div>
 <div class="line">[Eiger] Set only for 10G. For 1G, detector will replace with its own DHCP IP address.</div>
 </div>
 </dd>
-<dt id="term-udp-srcip2-x-x-x-x">udp_srcip2 [x.x.x.x]</dt><dd><div class="line-block">
+<dt>udp_srcip2 [x.x.x.x]</dt><dd><div class="line-block">
 <div class="line">[Jungfrau][Gotthard2] Ip address of the detector (source) udp interface 2. Must be same subnet as destination udp ip2.</div>
 <div class="line-block">
 <div class="line">[Jungfrau] top half or inner interface</div>
@@ -1279,20 +1300,20 @@
 </div>
 </div>
 </dd>
-<dt id="term-udp-srcmac-x-x-x-x-x-x">udp_srcmac [x:x:x:x:x:x]</dt><dd><div class="line-block">
+<dt>udp_srcmac [x:x:x:x:x:x]</dt><dd><div class="line-block">
 <div class="line">Mac address of the detector (source) udp interface.</div>
 <div class="line">[Eiger] Do not set as detector will replace with its own DHCP Mac (1G) or DHCP Mac + 1 (10G).</div>
 </div>
 </dd>
-<dt id="term-udp-srcmac2-x-x-x-x-x-x">udp_srcmac2 [x:x:x:x:x:x]</dt><dd><div class="line-block">
+<dt>udp_srcmac2 [x:x:x:x:x:x]</dt><dd><div class="line-block">
 <div class="line">[Jungfrau] Mac address of the top half or inner (source) udp interface.</div>
 </div>
 </dd>
-<dt id="term-udp-validate">udp_validate</dt><dd><div class="line-block">
+<dt>udp_validate</dt><dd><div class="line-block">
 <div class="line">Validates that UDP configuration in the detector is valid. If not configured, it will throw with error message requesting missing udp information.</div>
 </div>
 </dd>
-<dt id="term-update-server-name-pc-host-name-fname-pof">update [server_name] [pc_host_name] [fname.pof]</dt><dd><div class="line-block">
+<dt>update [server_name] [pc_host_name] [fname.pof]</dt><dd><div class="line-block">
 <div class="line">[Jungfrau][Gotthard][CTB][Moench] Updates the firmware, detector server and then reboots detector controller blackfin.</div>
 <div class="line">[Mythen3][Gotthard2] Will still have old server starting up as the new server is not respawned</div>
 <div class="line">sname is name of detector server binary found on tftp folder of host pc</div>
@@ -1300,80 +1321,80 @@
 <div class="line">fname is programming file name</div>
 </div>
 </dd>
-<dt id="term-user">user</dt><dd><div class="line-block">
+<dt>user</dt><dd><div class="line-block">
 <div class="line">User details from shared memory (hostname, type, PID, User, Date).</div>
 </div>
 </dd>
-<dt id="term-v-a-n-value">v_a [n_value]</dt><dd><div class="line-block">
+<dt>v_a [n_value]</dt><dd><div class="line-block">
 <div class="line">[Ctb] Voltage supply a in mV.</div>
 </div>
 </dd>
-<dt id="term-v-b-n-value">v_b [n_value]</dt><dd><div class="line-block">
+<dt>v_b [n_value]</dt><dd><div class="line-block">
 <div class="line">[Ctb] Voltage supply b in mV.</div>
 </div>
 </dd>
-<dt id="term-v-c-n-value">v_c [n_value]</dt><dd><div class="line-block">
+<dt>v_c [n_value]</dt><dd><div class="line-block">
 <div class="line">[Ctb] Voltage supply c in mV.</div>
 </div>
 </dd>
-<dt id="term-v-chip-n-value">v_chip [n_value]</dt><dd><div class="line-block">
+<dt>v_chip [n_value]</dt><dd><div class="line-block">
 <div class="line">[Ctb] Voltage supply chip in mV. Do not use it unless you are completely sure you will not fry the board.</div>
 </div>
 </dd>
-<dt id="term-v-d-n-value">v_d [n_value]</dt><dd><div class="line-block">
+<dt>v_d [n_value]</dt><dd><div class="line-block">
 <div class="line">[Ctb] Voltage supply d in mV.</div>
 </div>
 </dd>
-<dt id="term-v-io-n-value">v_io [n_value]</dt><dd><div class="line-block">
+<dt>v_io [n_value]</dt><dd><div class="line-block">
 <div class="line">[Ctb] Voltage supply io in mV. Minimum 1200 mV. Must be the first power regulator to be set after fpga reset (on-board detector server start up).</div>
 </div>
 </dd>
-<dt id="term-v-limit-n-value">v_limit [n_value]</dt><dd><div class="line-block">
+<dt>v_limit [n_value]</dt><dd><div class="line-block">
 <div class="line">[Ctb][Moench] Soft limit for power supplies (ctb only) and DACS in mV.</div>
 </div>
 </dd>
-<dt id="term-vchip-comp-adc-chip-index-0-10-1-for-all-10-bit-hex-value">vchip_comp_adc [chip index 0-10, -1 for all][10 bit hex value]</dt><dd><div class="line-block">
+<dt>vchip_comp_adc [chip index 0-10, -1 for all][10 bit hex value]</dt><dd><div class="line-block">
 <div class="line">[Gotthard2] On chip Dac for comparator current of ADC.</div>
 </div>
 </dd>
-<dt id="term-vchip-comp-fe-chip-index-0-10-1-for-all-10-bit-hex-value">vchip_comp_fe [chip index 0-10, -1 for all][10 bit hex value]</dt><dd><div class="line-block">
+<dt>vchip_comp_fe [chip index 0-10, -1 for all][10 bit hex value]</dt><dd><div class="line-block">
 <div class="line">[Gotthard2] On chip Dac for comparator current of analogue front end.</div>
 </div>
 </dd>
-<dt id="term-vchip-cs-chip-index-0-10-1-for-all-10-bit-hex-value">vchip_cs [chip index 0-10, -1 for all][10 bit hex value]</dt><dd><div class="line-block">
+<dt>vchip_cs [chip index 0-10, -1 for all][10 bit hex value]</dt><dd><div class="line-block">
 <div class="line">[Gotthard2] On chip Dac for current injection into preamplifier.</div>
 </div>
 </dd>
-<dt id="term-vchip-opa-1st-chip-index-0-10-1-for-all-10-bit-hex-value">vchip_opa_1st [chip index 0-10, -1 for all][10 bit hex value]</dt><dd><div class="line-block">
+<dt>vchip_opa_1st [chip index 0-10, -1 for all][10 bit hex value]</dt><dd><div class="line-block">
 <div class="line">[Gotthard2] On chip Dac for opa current for driving the other DACs in chip.</div>
 </div>
 </dd>
-<dt id="term-vchip-opa-fd-chip-index-0-10-1-for-all-10-bit-hex-value">vchip_opa_fd [chip index 0-10, -1 for all][10 bit hex value]</dt><dd><div class="line-block">
+<dt>vchip_opa_fd [chip index 0-10, -1 for all][10 bit hex value]</dt><dd><div class="line-block">
 <div class="line">[Gotthard2] On chip Dac current for CDS opa stage.</div>
 </div>
 </dd>
-<dt id="term-vchip-ref-comp-fe-chip-index-0-10-1-for-all-10-bit-hex-value">vchip_ref_comp_fe [chip index 0-10, -1 for all][10 bit hex value]</dt><dd><div class="line-block">
+<dt>vchip_ref_comp_fe [chip index 0-10, -1 for all][10 bit hex value]</dt><dd><div class="line-block">
 <div class="line">[Gotthard2] On chip Dac for reference voltage of the comparator of analogue front end.</div>
 </div>
 </dd>
-<dt id="term-versions">versions</dt><dd><div class="line-block">
+<dt>versions</dt><dd><div class="line-block">
 <div class="line">Print all versions and detector type</div>
 </div>
 </dd>
-<dt id="term-veto-0-1">veto [0, 1]</dt><dd><div class="line-block">
+<dt>veto [0, 1]</dt><dd><div class="line-block">
 <div class="line">[Gotthard2] Enable or disable veto data streaming from detector. Default is 0.</div>
 </div>
 </dd>
-<dt id="term-vetofile-chip-index-0-10-1-for-all-file-name">vetofile [chip index 0-10, -1 for all] [file name]</dt><dd><div class="line-block">
+<dt>vetofile [chip index 0-10, -1 for all] [file name]</dt><dd><div class="line-block">
 <div class="line">[Gotthard2] Set veto reference for each 128 channels for specific chip. The file should have 128 rows of gain index and 12 bit value in dec</div>
 </div>
 </dd>
-<dt id="term-vetophoton-ichip-photons-energy-in-kev-reference-file">vetophoton [ichip] [#photons] [energy in keV] [reference file]</dt><dd><div class="line-block">
+<dt>vetophoton [ichip] [#photons] [energy in keV] [reference file]</dt><dd><div class="line-block">
 <div class="line">[Gotthard2] Set veto reference for 128 channels for chip ichip according to reference file and #photons and energy in keV.</div>
 </div>
 </dd>
 </dl>
-<dl>
+</dd>
 <dt>[ichip] [output file]</dt><dd><blockquote>
 <div><blockquote>
 <div><div class="line-block">
