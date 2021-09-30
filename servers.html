@@ -126,6 +126,7 @@
 <li class="toctree-l2"><a class="reference internal" href="#location">Location</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#arguments">Arguments</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#basics">Basics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#automatic-start">Automatic start</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="serverupgrade.html">Detector Server Upgrade</a></li>
@@ -250,6 +251,64 @@
 </dd>
 </dl>
 <p>When using a blocking acquire command (sls_detector_acquire or Detector::acquire), the control server is blocked until end of acquisition. However, stop server commands could be used in parallel.</p>
+</div>
+<div class="section" id="automatic-start">
+<h2>Automatic start<a class="headerlink" href="#automatic-start" title="Permalink to this headline">¶</a></h2>
+<p>One can start the on-board detector server automatically upon powering on the board.</p>
+<ol class="arabic">
+<li><p>Create a soft link to the binary on board
+:</p>
+<blockquote>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ln -sf someDetectorServervx.x.x someDetectorServer
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p>Do the following depending on the detector type :</p>
+<dl>
+<dt>Eiger</dt><dd><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># create script in rc5.d on the board</span>
+vi /etc/rc5.d/S50board_com.sh
+
+<span class="c1"># enter the following (edit server name)</span>
+<span class="c1">#! /bin/sh</span>
+/home/root/executables/eigerDetectorServer <span class="p">&amp;</span>&gt; /dev/null <span class="p">&amp;</span>
+<span class="nb">exit</span> <span class="m">0</span>
+</pre></div>
+</div>
+</dd>
+<dt>Jungfrau | Moench | CTB | Gotthard I</dt><dd><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Edit inittab on board</span>
+vi /etc/inittab
+
+<span class="c1"># enter the following line</span>
+ttyS0::respawn:/./xxxDetectorServer
+</pre></div>
+</div>
+</dd>
+<dt>Gotthard II | Mythen III</dt><dd><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># create script in init.d on board</span>
+vi /etc/init.d/S99detServer.sh
+
+<span class="c1"># enter the following (edit server name)</span>
+<span class="c1">#! /bin/sh</span>
+<span class="nb">cd</span> /root &gt;&gt; /dev/null
+/root/xxxDetectorServer &gt;&gt; /dev/null <span class="p">&amp;</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+</li>
+<li><p>Sync, reboot and verify
+:</p>
+<blockquote>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sync
+reboot
+
+<span class="c1"># verify</span>
+ps -ef <span class="p">|</span> grep xxxDetectorServer
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+</ol>
 </div>
 </div>
 

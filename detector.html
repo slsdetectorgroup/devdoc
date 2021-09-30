@@ -287,6 +287,12 @@ containing results from all modules. (Result&lt;T&gt;)</p>
 <dd></dd></dl>
 
 <dl class="function">
+<dt id="_CPPv4NK3sls8Detector11getModuleIdE9Positions">
+<span id="_CPPv3NK3sls8Detector11getModuleIdE9Positions"></span><span id="_CPPv2NK3sls8Detector11getModuleIdE9Positions"></span><span id="sls::Detector::getModuleId__PositionsC"></span><span class="target" id="classsls_1_1Detector_1a25aa4ba727458e629023021f7a26fdf0"></span>Result&lt;int&gt; <code class="sig-name descname">getModuleId</code><span class="sig-paren">(</span>Positions <em>pos</em> = {}<span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv4NK3sls8Detector11getModuleIdE9Positions" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>[Eiger][Gotthard2][Mythen3] 6 bit value (ideally unique) that is streamed out in the UDP header of the detector. </p>
+</dd></dl>
+
+<dl class="function">
 <dt id="_CPPv4NK3sls8Detector18getReceiverVersionE9Positions">
 <span id="_CPPv3NK3sls8Detector18getReceiverVersionE9Positions"></span><span id="_CPPv2NK3sls8Detector18getReceiverVersionE9Positions"></span><span id="sls::Detector::getReceiverVersion__PositionsC"></span><span class="target" id="classsls_1_1Detector_1a962381d898a46e27cbd60925ba4a1650"></span>Result&lt;int64_t&gt; <code class="sig-name descname">getReceiverVersion</code><span class="sig-paren">(</span>Positions <em>pos</em> = {}<span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv4NK3sls8Detector18getReceiverVersionE9Positions" title="Permalink to this definition">¶</a><br /></dt>
 <dd></dd></dl>
@@ -347,7 +353,7 @@ containing results from all modules. (Result&lt;T&gt;)</p>
 <dl class="function">
 <dt id="_CPPv4N3sls8Detector11setSettingsEN4defs16detectorSettingsE9Positions">
 <span id="_CPPv3N3sls8Detector11setSettingsEN4defs16detectorSettingsE9Positions"></span><span id="_CPPv2N3sls8Detector11setSettingsEN4defs16detectorSettingsE9Positions"></span><span id="sls::Detector::setSettings__defs::detectorSettings.Positions"></span><span class="target" id="classsls_1_1Detector_1a3cb3ded00ea647e82f254ab47efdef4a"></span>void <code class="sig-name descname">setSettings</code><span class="sig-paren">(</span>defs::detectorSettings <em>value</em>, Positions <em>pos</em> = {}<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3sls8Detector11setSettingsEN4defs16detectorSettingsE9Positions" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>[Jungfrau] DYNAMICGAIN, DYNAMICHG0, FIXGAIN1, FIXGAIN2, FORCESWITCHG1, FORCESWITCHG2 <p> [Gotthard] DYNAMICGAIN, HIGHGAIN, LOWGAIN, MEDIUMGAIN, VERYHIGHGAIN </p>
+<dd><p>[Jungfrau] GAIN0, HIGHGAIN0 <p> [Gotthard] DYNAMICGAIN, HIGHGAIN, LOWGAIN, MEDIUMGAIN, VERYHIGHGAIN </p>
 <p> [Gotthard2] DYNAMICGAIN, FIXGAIN1, FIXGAIN2 </p>
 <p> [Moench] G1_HIGHGAIN, G1_LOWGAIN, G2_HIGHCAP_HIGHGAIN, G2_HIGHCAP_LOWGAIN, G2_LOWCAP_HIGHGAIN, G2_LOWCAP_LOWGAIN, G4_HIGHGAIN, G4_LOWGAIN </p>
 <p> [Mythen3] STANDARD, FAST, HIGHGAIN. Also changes vrshaper and vrpreamp </p>
@@ -431,6 +437,19 @@ containing results from all modules. (Result&lt;T&gt;)</p>
 <dt id="_CPPv4N3sls8Detector22setGapPixelsinCallbackEKb">
 <span id="_CPPv3N3sls8Detector22setGapPixelsinCallbackEKb"></span><span id="_CPPv2N3sls8Detector22setGapPixelsinCallbackEKb"></span><span id="sls::Detector::setGapPixelsinCallback__bC"></span><span class="target" id="classsls_1_1Detector_1acf8082f3ba05bd48daa832a88159db86"></span>void <code class="sig-name descname">setGapPixelsinCallback</code><span class="sig-paren">(</span><em class="property">const</em> bool <em>enable</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3sls8Detector22setGapPixelsinCallbackEKb" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>[Eiger][Jungfrau] Include gap pixels in client data call back. Will not be in detector streaming, receiver file or streaming. Default is disabled. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv4NK3sls8Detector11getFlipRowsE9Positions">
+<span id="_CPPv3NK3sls8Detector11getFlipRowsE9Positions"></span><span id="_CPPv2NK3sls8Detector11getFlipRowsE9Positions"></span><span id="sls::Detector::getFlipRows__PositionsC"></span><span class="target" id="classsls_1_1Detector_1aec8e380b84ccaec5a8fe91e6b86721c6"></span>Result&lt;bool&gt; <code class="sig-name descname">getFlipRows</code><span class="sig-paren">(</span>Positions <em>pos</em> = {}<span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv4NK3sls8Detector11getFlipRowsE9Positions" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>[Eiger][Jungfrau] </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv4N3sls8Detector11setFlipRowsEb9Positions">
+<span id="_CPPv3N3sls8Detector11setFlipRowsEb9Positions"></span><span id="_CPPv2N3sls8Detector11setFlipRowsEb9Positions"></span><span id="sls::Detector::setFlipRows__b.Positions"></span><span class="target" id="classsls_1_1Detector_1a5fb9387476b1997e4c4dfb494c8048c6"></span>void <code class="sig-name descname">setFlipRows</code><span class="sig-paren">(</span>bool <em>value</em>, Positions <em>pos</em> = {}<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3sls8Detector11setFlipRowsEb9Positions" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>[Eiger] flips rows paramater sent to slsreceiver to stream as json parameter to flip rows in gui <p>[Jungfrau] flips rows in the detector itself. For bottom module and number of interfaces must be set to 2. slsReceiver and slsDetectorGui does not handle.slsReceiver and slsDetectorGui does not handle </p>
+</p>
 </dd></dl>
 
 <dl class="function">
@@ -739,7 +758,7 @@ containing results from all modules. (Result&lt;T&gt;)</p>
 <dt id="_CPPv4N3sls8Detector12setPowerChipEb9Positions">
 <span id="_CPPv3N3sls8Detector12setPowerChipEb9Positions"></span><span id="_CPPv2N3sls8Detector12setPowerChipEb9Positions"></span><span id="sls::Detector::setPowerChip__b.Positions"></span><span class="target" id="classsls_1_1Detector_1a87b547e62b3681d1d114471c67e90091"></span>void <code class="sig-name descname">setPowerChip</code><span class="sig-paren">(</span>bool <em>on</em>, Positions <em>pos</em> = {}<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3sls8Detector12setPowerChipEb9Positions" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>[Jungfrau][Mythen3][Gotthard2][Moench] Power the chip. <p>[Moench] Default is disabled. </p>
-<p>[Jungfrau] Default is disabled. Get will return power status. Can be off if temperature event occured (temperature over temp_threshold with temp_control enabled. </p>
+<p>[Jungfrau] Default is disabled. Get will return power status. Can be off if temperature event occured (temperature over temp_threshold with temp_control enabled. Will configure chip (only chip v1.1)</p>
 <p> [Mythen3][Gotthard2] Default is 1. If module not connected or wrong module, powerchip will fail. </p>
 </p>
 </dd></dl>
@@ -779,9 +798,33 @@ containing results from all modules. (Result&lt;T&gt;)</p>
 </dd></dl>
 
 <dl class="function">
-<dt id="_CPPv4N3sls8Detector14setDefaultDacsE9Positions">
-<span id="_CPPv3N3sls8Detector14setDefaultDacsE9Positions"></span><span id="_CPPv2N3sls8Detector14setDefaultDacsE9Positions"></span><span id="sls::Detector::setDefaultDacs__Positions"></span><span class="target" id="classsls_1_1Detector_1a51328ddd4d71f1c08d344cddb00585a3"></span>void <code class="sig-name descname">setDefaultDacs</code><span class="sig-paren">(</span>Positions <em>pos</em> = {}<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3sls8Detector14setDefaultDacsE9Positions" title="Permalink to this definition">¶</a><br /></dt>
+<dt id="_CPPv4N3sls8Detector13getDefaultDacEN4defs8dacIndexE9Positions">
+<span id="_CPPv3N3sls8Detector13getDefaultDacEN4defs8dacIndexE9Positions"></span><span id="_CPPv2N3sls8Detector13getDefaultDacEN4defs8dacIndexE9Positions"></span><span id="sls::Detector::getDefaultDac__defs::dacIndex.Positions"></span><span class="target" id="classsls_1_1Detector_1acbc2f3dcca51ca0506ad654cf9a5d0e0"></span>Result&lt;int&gt; <code class="sig-name descname">getDefaultDac</code><span class="sig-paren">(</span>defs::dacIndex <em>index</em>, Positions <em>pos</em> = {}<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3sls8Detector13getDefaultDacEN4defs8dacIndexE9Positions" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>[Eiger][Jungfrau][Moench][Gotthard][Gotthard2][Mythen3] </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv4N3sls8Detector13setDefaultDacEN4defs8dacIndexEi9Positions">
+<span id="_CPPv3N3sls8Detector13setDefaultDacEN4defs8dacIndexEi9Positions"></span><span id="_CPPv2N3sls8Detector13setDefaultDacEN4defs8dacIndexEi9Positions"></span><span id="sls::Detector::setDefaultDac__defs::dacIndex.i.Positions"></span><span class="target" id="classsls_1_1Detector_1a2704dd7283c6d080cbadcc2b72beca18"></span>void <code class="sig-name descname">setDefaultDac</code><span class="sig-paren">(</span>defs::dacIndex <em>index</em>, int <em>defaultValue</em>, Positions <em>pos</em> = {}<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3sls8Detector13setDefaultDacEN4defs8dacIndexEi9Positions" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>[Eiger][Jungfrau][Moench][Gotthard][Gotthard2][Mythen3] </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv4N3sls8Detector13getDefaultDacEN4defs8dacIndexEN4defs16detectorSettingsE9Positions">
+<span id="_CPPv3N3sls8Detector13getDefaultDacEN4defs8dacIndexEN4defs16detectorSettingsE9Positions"></span><span id="_CPPv2N3sls8Detector13getDefaultDacEN4defs8dacIndexEN4defs16detectorSettingsE9Positions"></span><span id="sls::Detector::getDefaultDac__defs::dacIndex.defs::detectorSettings.Positions"></span><span class="target" id="classsls_1_1Detector_1a1daf3a7e98815d12a6b578e3a1444f37"></span>Result&lt;int&gt; <code class="sig-name descname">getDefaultDac</code><span class="sig-paren">(</span>defs::dacIndex <em>index</em>, defs::detectorSettings <em>sett</em>, Positions <em>pos</em> = {}<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3sls8Detector13getDefaultDacEN4defs8dacIndexEN4defs16detectorSettingsE9Positions" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>[Jungfrau][Mythen3] </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv4N3sls8Detector13setDefaultDacEN4defs8dacIndexEiN4defs16detectorSettingsE9Positions">
+<span id="_CPPv3N3sls8Detector13setDefaultDacEN4defs8dacIndexEiN4defs16detectorSettingsE9Positions"></span><span id="_CPPv2N3sls8Detector13setDefaultDacEN4defs8dacIndexEiN4defs16detectorSettingsE9Positions"></span><span id="sls::Detector::setDefaultDac__defs::dacIndex.i.defs::detectorSettings.Positions"></span><span class="target" id="classsls_1_1Detector_1afb0c8c69c2b62a169e34306790f0080e"></span>void <code class="sig-name descname">setDefaultDac</code><span class="sig-paren">(</span>defs::dacIndex <em>index</em>, int <em>defaultValue</em>, defs::detectorSettings <em>sett</em>, Positions <em>pos</em> = {}<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3sls8Detector13setDefaultDacEN4defs8dacIndexEiN4defs16detectorSettingsE9Positions" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>[Jungfrau][Mythen3] </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv4N3sls8Detector18resetToDefaultDacsEKb9Positions">
+<span id="_CPPv3N3sls8Detector18resetToDefaultDacsEKb9Positions"></span><span id="_CPPv2N3sls8Detector18resetToDefaultDacsEKb9Positions"></span><span id="sls::Detector::resetToDefaultDacs__bC.Positions"></span><span class="target" id="classsls_1_1Detector_1a862457c03b9de5ad1273d9fb2997e25c"></span>void <code class="sig-name descname">resetToDefaultDacs</code><span class="sig-paren">(</span><em class="property">const</em> bool <em>hardReset</em>, Positions <em>pos</em> = {}<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3sls8Detector18resetToDefaultDacsEKb9Positions" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>[Eiger][Jungfrau][Moench][Gotthard][Gotthard2][Mythen3] reset to defaults, hardReset will reset to hardcoded defaults on on-board server </p>
 </dd></dl>
 
 <dl class="function">
@@ -830,6 +873,58 @@ containing results from all modules. (Result&lt;T&gt;)</p>
 <dd><p>[Eiger][Mythen3] [Mythen3] If exposure time is too short, acquisition will return with an ERROR and take fewer frames than expected </p>
 </dd></dl>
 
+<dl class="function">
+<dt id="_CPPv4NK3sls8Detector17getFilterResistorE9Positions">
+<span id="_CPPv3NK3sls8Detector17getFilterResistorE9Positions"></span><span id="_CPPv2NK3sls8Detector17getFilterResistorE9Positions"></span><span id="sls::Detector::getFilterResistor__PositionsC"></span><span class="target" id="classsls_1_1Detector_1a06fda4fa2659a68c0314ecbeea45d5f8"></span>Result&lt;int&gt; <code class="sig-name descname">getFilterResistor</code><span class="sig-paren">(</span>Positions <em>pos</em> = {}<span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv4NK3sls8Detector17getFilterResistorE9Positions" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>[Gotthard2][Jungfrau] </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv4N3sls8Detector17setFilterResistorEi9Positions">
+<span id="_CPPv3N3sls8Detector17setFilterResistorEi9Positions"></span><span id="_CPPv2N3sls8Detector17setFilterResistorEi9Positions"></span><span id="sls::Detector::setFilterResistor__i.Positions"></span><span class="target" id="classsls_1_1Detector_1aaa5f38bd0753aba45e9f70b757c381da"></span>void <code class="sig-name descname">setFilterResistor</code><span class="sig-paren">(</span>int <em>value</em>, Positions <em>pos</em> = {}<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3sls8Detector17setFilterResistorEi9Positions" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>[Gotthard2][Jungfrau] Set filter resistor. Increasing values for increasing resistance.<p>[Gotthard2] Options: [0|1|2|3]. Default is 0.</p>
+<p>[Jungfrau] Options: [0|1]. Default is 1. </p>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv4NK3sls8Detector16getCurrentSourceE9Positions">
+<span id="_CPPv3NK3sls8Detector16getCurrentSourceE9Positions"></span><span id="_CPPv2NK3sls8Detector16getCurrentSourceE9Positions"></span><span id="sls::Detector::getCurrentSource__PositionsC"></span><span class="target" id="classsls_1_1Detector_1a10547b3774ab2139d049a01e20069416"></span>Result&lt;defs::currentSrcParameters&gt; <code class="sig-name descname">getCurrentSource</code><span class="sig-paren">(</span>Positions <em>pos</em> = {}<span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv4NK3sls8Detector16getCurrentSourceE9Positions" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>[Gotthard2][Jungfrau] </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv4N3sls8Detector16setCurrentSourceEN4defs20currentSrcParametersE9Positions">
+<span id="_CPPv3N3sls8Detector16setCurrentSourceEN4defs20currentSrcParametersE9Positions"></span><span id="_CPPv2N3sls8Detector16setCurrentSourceEN4defs20currentSrcParametersE9Positions"></span><span id="sls::Detector::setCurrentSource__defs::currentSrcParameters.Positions"></span><span class="target" id="classsls_1_1Detector_1ab0e9a1311e203012b78be564d1e57b28"></span>void <code class="sig-name descname">setCurrentSource</code><span class="sig-paren">(</span>defs::currentSrcParameters <em>par</em>, Positions <em>pos</em> = {}<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3sls8Detector16setCurrentSourceEN4defs20currentSrcParametersE9Positions" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>[Gotthard2][Jungfrau] Please refer documentation on currentSrcParameters (sls_detector_defs.h) on the structure and its members </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv4NK3sls8Detector15getDBITPipelineE9Positions">
+<span id="_CPPv3NK3sls8Detector15getDBITPipelineE9Positions"></span><span id="_CPPv2NK3sls8Detector15getDBITPipelineE9Positions"></span><span id="sls::Detector::getDBITPipeline__PositionsC"></span><span class="target" id="classsls_1_1Detector_1ada094a2534ec68a70939a5d192d64f4e"></span>Result&lt;int&gt; <code class="sig-name descname">getDBITPipeline</code><span class="sig-paren">(</span>Positions <em>pos</em> = {}<span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv4NK3sls8Detector15getDBITPipelineE9Positions" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>[CTB][Gotthard2] </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv4N3sls8Detector15setDBITPipelineEi9Positions">
+<span id="_CPPv3N3sls8Detector15setDBITPipelineEi9Positions"></span><span id="_CPPv2N3sls8Detector15setDBITPipelineEi9Positions"></span><span id="sls::Detector::setDBITPipeline__i.Positions"></span><span class="target" id="classsls_1_1Detector_1a2baf67e4d638c3409e3b3620cafe34a6"></span>void <code class="sig-name descname">setDBITPipeline</code><span class="sig-paren">(</span>int <em>value</em>, Positions <em>pos</em> = {}<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3sls8Detector15setDBITPipelineEi9Positions" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>[CTB] Options: 0-255 <p> [Gotthard2] Options: 0-7 </p>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv4NK3sls8Detector12getReadNRowsE9Positions">
+<span id="_CPPv3NK3sls8Detector12getReadNRowsE9Positions"></span><span id="_CPPv2NK3sls8Detector12getReadNRowsE9Positions"></span><span id="sls::Detector::getReadNRows__PositionsC"></span><span class="target" id="classsls_1_1Detector_1a068881d993d9d05ba9104ab0f0d6d896"></span>Result&lt;int&gt; <code class="sig-name descname">getReadNRows</code><span class="sig-paren">(</span>Positions <em>pos</em> = {}<span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv4NK3sls8Detector12getReadNRowsE9Positions" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>[Eiger][Jungfrau] </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv4N3sls8Detector12setReadNRowsEKi9Positions">
+<span id="_CPPv3N3sls8Detector12setReadNRowsEKi9Positions"></span><span id="_CPPv2N3sls8Detector12setReadNRowsEKi9Positions"></span><span id="sls::Detector::setReadNRows__iC.Positions"></span><span class="target" id="classsls_1_1Detector_1af9a0613240680856273d51f8d1c958b6"></span>void <code class="sig-name descname">setReadNRows</code><span class="sig-paren">(</span><em class="property">const</em> int <em>lines</em>, Positions <em>pos</em> = {}<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3sls8Detector12setReadNRowsEKi9Positions" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>[Eiger] Number of rows to read out per half module Options: 0 - 256. 256 is default. The permissible values depend on dynamic range and 10Gbe enabled. <p>[Jungfrau] Number of rows per module starting from the centre. Options: 8 - 512, must be multiples of 8. Default is 512. </p>
+</p>
+</dd></dl>
+
 </div>
 <div class="breathe-sectiondef docutils container">
 <p class="breathe-sectiondef-title rubric">Acquisition</p>
@@ -869,18 +964,18 @@ containing results from all modules. (Result&lt;T&gt;)</p>
 <dl class="function">
 <dt id="_CPPv4N3sls8Detector13startDetectorEv">
 <span id="_CPPv3N3sls8Detector13startDetectorEv"></span><span id="_CPPv2N3sls8Detector13startDetectorEv"></span><span id="sls::Detector::startDetector"></span><span class="target" id="classsls_1_1Detector_1acb4ac628ef774e28d73f93547f2dfcef"></span>void <code class="sig-name descname">startDetector</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3sls8Detector13startDetectorEv" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Non blocking: start detector acquisition. Status changes to RUNNING or WAITING and automatically returns to idle at the end of acquisition. </p>
+<dd><p>Non blocking: start detector acquisition. Status changes to RUNNING or WAITING and automatically returns to idle at the end of acquisition. [Mythen3] Master starts acquisition first </p>
 </dd></dl>
 
 <dl class="function">
 <dt id="_CPPv4N3sls8Detector20startDetectorReadoutEv">
 <span id="_CPPv3N3sls8Detector20startDetectorReadoutEv"></span><span id="_CPPv2N3sls8Detector20startDetectorReadoutEv"></span><span id="sls::Detector::startDetectorReadout"></span><span class="target" id="classsls_1_1Detector_1ac7f60f7c2a59e543274319b8e967831e"></span>void <code class="sig-name descname">startDetectorReadout</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3sls8Detector20startDetectorReadoutEv" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>[Mythen3] Non blocking: start detector readout of counters in chip. Status changes to TRANSMITTING and automatically returns to idle at the end of readout. </p>
+<dd><p>[Mythen3] Non blocking: start detector readout of counters in chip. Status changes to TRANSMITTING and automatically returns to idle at the end of readout. [Eiger] Master stops acquisition last </p>
 </dd></dl>
 
 <dl class="function">
-<dt id="_CPPv4N3sls8Detector12stopDetectorEv">
-<span id="_CPPv3N3sls8Detector12stopDetectorEv"></span><span id="_CPPv2N3sls8Detector12stopDetectorEv"></span><span id="sls::Detector::stopDetector"></span><span class="target" id="classsls_1_1Detector_1a2c7563f0b29bd7907ea489c41771b870"></span>void <code class="sig-name descname">stopDetector</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3sls8Detector12stopDetectorEv" title="Permalink to this definition">¶</a><br /></dt>
+<dt id="_CPPv4N3sls8Detector12stopDetectorE9Positions">
+<span id="_CPPv3N3sls8Detector12stopDetectorE9Positions"></span><span id="_CPPv2N3sls8Detector12stopDetectorE9Positions"></span><span id="sls::Detector::stopDetector__Positions"></span><span class="target" id="classsls_1_1Detector_1ad97c987c1d22cb6ec61b19ccb3250aee"></span>void <code class="sig-name descname">stopDetector</code><span class="sig-paren">(</span>Positions <em>pos</em> = {}<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3sls8Detector12stopDetectorE9Positions" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Non blocking: Abort detector acquisition. Status changes to IDLE or STOPPED. Goes to stop server. </p>
 </dd></dl>
 
@@ -921,9 +1016,9 @@ containing results from all modules. (Result&lt;T&gt;)</p>
 </dd></dl>
 
 <dl class="function">
-<dt id="_CPPv4N3sls8Detector19sendSoftwareTriggerE9Positions">
-<span id="_CPPv3N3sls8Detector19sendSoftwareTriggerE9Positions"></span><span id="_CPPv2N3sls8Detector19sendSoftwareTriggerE9Positions"></span><span id="sls::Detector::sendSoftwareTrigger__Positions"></span><span class="target" id="classsls_1_1Detector_1a036440a4cecc1d2bd8428c462d430a55"></span>void <code class="sig-name descname">sendSoftwareTrigger</code><span class="sig-paren">(</span>Positions <em>pos</em> = {}<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3sls8Detector19sendSoftwareTriggerE9Positions" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>[Eiger][Mythen3] Sends an internal software trigger to the detector </p>
+<dt id="_CPPv4N3sls8Detector19sendSoftwareTriggerEKb9Positions">
+<span id="_CPPv3N3sls8Detector19sendSoftwareTriggerEKb9Positions"></span><span id="_CPPv2N3sls8Detector19sendSoftwareTriggerEKb9Positions"></span><span id="sls::Detector::sendSoftwareTrigger__bC.Positions"></span><span class="target" id="classsls_1_1Detector_1acade9b86c42fd03e0a80ed746388d384"></span>void <code class="sig-name descname">sendSoftwareTrigger</code><span class="sig-paren">(</span><em class="property">const</em> bool <em>block</em> = false, Positions <em>pos</em> = {}<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3sls8Detector19sendSoftwareTriggerEKb9Positions" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>[Eiger][Mythen3] Sends an internal software trigger to the detector block true if command blocks till frames are sent out from that trigger </p>
 </dd></dl>
 
 <dl class="function">
@@ -1021,6 +1116,39 @@ containing results from all modules. (Result&lt;T&gt;)</p>
 <dt id="_CPPv4N3sls8Detector16setSourceUDPMAC2EK7MacAddr9Positions">
 <span id="_CPPv3N3sls8Detector16setSourceUDPMAC2EK7MacAddr9Positions"></span><span id="_CPPv2N3sls8Detector16setSourceUDPMAC2EK7MacAddr9Positions"></span><span id="sls::Detector::setSourceUDPMAC2__MacAddrC.Positions"></span><span class="target" id="classsls_1_1Detector_1acc3531e32662d5fa89449b9c7333641b"></span>void <code class="sig-name descname">setSourceUDPMAC2</code><span class="sig-paren">(</span><em class="property">const</em> MacAddr <em>mac</em>, Positions <em>pos</em> = {}<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3sls8Detector16setSourceUDPMAC2EK7MacAddr9Positions" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>[Jungfrau] bottom half [Gotthard2] veto debugging </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv4NK3sls8Detector21getDestinationUDPListEK8uint32_t9Positions">
+<span id="_CPPv3NK3sls8Detector21getDestinationUDPListEK8uint32_t9Positions"></span><span id="_CPPv2NK3sls8Detector21getDestinationUDPListEK8uint32_t9Positions"></span><span id="sls::Detector::getDestinationUDPList__uint32_tC.PositionsC"></span><span class="target" id="classsls_1_1Detector_1ab7acc891bba5fe1e337c795c407b2f8b"></span>Result&lt;UdpDestination&gt; <code class="sig-name descname">getDestinationUDPList</code><span class="sig-paren">(</span><em class="property">const</em> uint32_t <em>entry</em>, Positions <em>pos</em> = {}<span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv4NK3sls8Detector21getDestinationUDPListEK8uint32_t9Positions" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv4N3sls8Detector21setDestinationUDPListEK14UdpDestinationKi">
+<span id="_CPPv3N3sls8Detector21setDestinationUDPListEK14UdpDestinationKi"></span><span id="_CPPv2N3sls8Detector21setDestinationUDPListEK14UdpDestinationKi"></span><span id="sls::Detector::setDestinationUDPList__UdpDestinationC.iC"></span><span class="target" id="classsls_1_1Detector_1a3139f68bd11b06f380c35ac620d719cf"></span>void <code class="sig-name descname">setDestinationUDPList</code><span class="sig-paren">(</span><em class="property">const</em> UdpDestination, <em class="property">const</em> int <em>module_id</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3sls8Detector21setDestinationUDPListEK14UdpDestinationKi" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv4NK3sls8Detector26getNumberofUDPDestinationsE9Positions">
+<span id="_CPPv3NK3sls8Detector26getNumberofUDPDestinationsE9Positions"></span><span id="_CPPv2NK3sls8Detector26getNumberofUDPDestinationsE9Positions"></span><span id="sls::Detector::getNumberofUDPDestinations__PositionsC"></span><span class="target" id="classsls_1_1Detector_1ad5676ae8144712110285e96b73593fe5"></span>Result&lt;int&gt; <code class="sig-name descname">getNumberofUDPDestinations</code><span class="sig-paren">(</span>Positions <em>pos</em> = {}<span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv4NK3sls8Detector26getNumberofUDPDestinationsE9Positions" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>[Jungfrau][Eiger] </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv4N3sls8Detector20clearUDPDestinationsE9Positions">
+<span id="_CPPv3N3sls8Detector20clearUDPDestinationsE9Positions"></span><span id="_CPPv2N3sls8Detector20clearUDPDestinationsE9Positions"></span><span id="sls::Detector::clearUDPDestinations__Positions"></span><span class="target" id="classsls_1_1Detector_1ae72c9531b743eecf93374c0d5e0e4b95"></span>void <code class="sig-name descname">clearUDPDestinations</code><span class="sig-paren">(</span>Positions <em>pos</em> = {}<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3sls8Detector20clearUDPDestinationsE9Positions" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv4NK3sls8Detector22getFirstUDPDestinationE9Positions">
+<span id="_CPPv3NK3sls8Detector22getFirstUDPDestinationE9Positions"></span><span id="_CPPv2NK3sls8Detector22getFirstUDPDestinationE9Positions"></span><span id="sls::Detector::getFirstUDPDestination__PositionsC"></span><span class="target" id="classsls_1_1Detector_1a831a5f0d3d12059b0607ee40b8621541"></span>Result&lt;int&gt; <code class="sig-name descname">getFirstUDPDestination</code><span class="sig-paren">(</span>Positions <em>pos</em> = {}<span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv4NK3sls8Detector22getFirstUDPDestinationE9Positions" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>[Jungfrau] </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv4N3sls8Detector22setFirstUDPDestinationEKi9Positions">
+<span id="_CPPv3N3sls8Detector22setFirstUDPDestinationEKi9Positions"></span><span id="_CPPv2N3sls8Detector22setFirstUDPDestinationEKi9Positions"></span><span id="sls::Detector::setFirstUDPDestination__iC.Positions"></span><span class="target" id="classsls_1_1Detector_1af796c68867f5b3783a2e9be2cb9c2c15"></span>void <code class="sig-name descname">setFirstUDPDestination</code><span class="sig-paren">(</span><em class="property">const</em> int <em>value</em>, Positions <em>pos</em> = {}<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3sls8Detector22setFirstUDPDestinationEKi9Positions" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>[Jungfrau] Options 0-31 (or number of udp destinations) </p>
 </dd></dl>
 
 <dl class="function">
@@ -1578,18 +1706,6 @@ containing results from all modules. (Result&lt;T&gt;)</p>
 </dd></dl>
 
 <dl class="function">
-<dt id="_CPPv4NK3sls8Detector9getBottomE9Positions">
-<span id="_CPPv3NK3sls8Detector9getBottomE9Positions"></span><span id="_CPPv2NK3sls8Detector9getBottomE9Positions"></span><span id="sls::Detector::getBottom__PositionsC"></span><span class="target" id="classsls_1_1Detector_1a5fc313aa1af22fae3bef7b7ed382a5be"></span>Result&lt;bool&gt; <code class="sig-name descname">getBottom</code><span class="sig-paren">(</span>Positions <em>pos</em> = {}<span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv4NK3sls8Detector9getBottomE9Positions" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>[Eiger] </p>
-</dd></dl>
-
-<dl class="function">
-<dt id="_CPPv4N3sls8Detector9setBottomEb9Positions">
-<span id="_CPPv3N3sls8Detector9setBottomEb9Positions"></span><span id="_CPPv2N3sls8Detector9setBottomEb9Positions"></span><span id="sls::Detector::setBottom__b.Positions"></span><span class="target" id="classsls_1_1Detector_1ae8ae9bc792fe6d4d1b4e3bdea28b9773"></span>void <code class="sig-name descname">setBottom</code><span class="sig-paren">(</span>bool <em>value</em>, Positions <em>pos</em> = {}<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3sls8Detector9setBottomEb9Positions" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>[Eiger] for client call back (gui) purposes to flip bottom image </p>
-</dd></dl>
-
-<dl class="function">
 <dt id="_CPPv4NK3sls8Detector17getRateCorrectionE9Positions">
 <span id="_CPPv3NK3sls8Detector17getRateCorrectionE9Positions"></span><span id="_CPPv2NK3sls8Detector17getRateCorrectionE9Positions"></span><span id="sls::Detector::getRateCorrection__PositionsC"></span><span class="target" id="classsls_1_1Detector_1a3a53a8959dacd923020d5e9058540bd6"></span>Result&lt;ns&gt; <code class="sig-name descname">getRateCorrection</code><span class="sig-paren">(</span>Positions <em>pos</em> = {}<span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv4NK3sls8Detector17getRateCorrectionE9Positions" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>[Eiger] deadtime in ns, 0 = disabled </p>
@@ -1605,18 +1721,6 @@ containing results from all modules. (Result&lt;T&gt;)</p>
 <dt id="_CPPv4N3sls8Detector17setRateCorrectionE2ns9Positions">
 <span id="_CPPv3N3sls8Detector17setRateCorrectionE2ns9Positions"></span><span id="_CPPv2N3sls8Detector17setRateCorrectionE2ns9Positions"></span><span id="sls::Detector::setRateCorrection__ns.Positions"></span><span class="target" id="classsls_1_1Detector_1acc2ec63d4f60786781ffec2e1625e16a"></span>void <code class="sig-name descname">setRateCorrection</code><span class="sig-paren">(</span>ns <em>dead_time</em>, Positions <em>pos</em> = {}<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3sls8Detector17setRateCorrectionE2ns9Positions" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>//TODO: default, get, set [Eiger] Set Rate correction 0 disable correction, &gt; 0 custom deadtime, cannot be -1 </p>
-</dd></dl>
-
-<dl class="function">
-<dt id="_CPPv4NK3sls8Detector17getPartialReadoutE9Positions">
-<span id="_CPPv3NK3sls8Detector17getPartialReadoutE9Positions"></span><span id="_CPPv2NK3sls8Detector17getPartialReadoutE9Positions"></span><span id="sls::Detector::getPartialReadout__PositionsC"></span><span class="target" id="classsls_1_1Detector_1ae06c4a9cca6d7328762b21665a2f076c"></span>Result&lt;int&gt; <code class="sig-name descname">getPartialReadout</code><span class="sig-paren">(</span>Positions <em>pos</em> = {}<span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv4NK3sls8Detector17getPartialReadoutE9Positions" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>[Eiger] </p>
-</dd></dl>
-
-<dl class="function">
-<dt id="_CPPv4N3sls8Detector17setPartialReadoutEKi9Positions">
-<span id="_CPPv3N3sls8Detector17setPartialReadoutEKi9Positions"></span><span id="_CPPv2N3sls8Detector17setPartialReadoutEKi9Positions"></span><span id="sls::Detector::setPartialReadout__iC.Positions"></span><span class="target" id="classsls_1_1Detector_1a980f63c96a744e4b46efee728b7bef13"></span>void <code class="sig-name descname">setPartialReadout</code><span class="sig-paren">(</span><em class="property">const</em> int <em>lines</em>, Positions <em>pos</em> = {}<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3sls8Detector17setPartialReadoutEKi9Positions" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>[Eiger] Number of lines to read out per half module Options: 0 - 256. 256 is default. The permissible values depend on dynamic range and 10Gbe enabled. </p>
 </dd></dl>
 
 <dl class="function">
@@ -1710,9 +1814,27 @@ containing results from all modules. (Result&lt;T&gt;)</p>
 <dd><p>[Eiger] Sets detector size to a quad. 0 (disabled) is default. (Specific hardware required). </p>
 </dd></dl>
 
+<dl class="function">
+<dt id="_CPPv4NK3sls8Detector13getDataStreamEKN4defs12portPositionE9Positions">
+<span id="_CPPv3NK3sls8Detector13getDataStreamEKN4defs12portPositionE9Positions"></span><span id="_CPPv2NK3sls8Detector13getDataStreamEKN4defs12portPositionE9Positions"></span><span id="sls::Detector::getDataStream__defs::portPositionC.PositionsC"></span><span class="target" id="classsls_1_1Detector_1a5bbb5049beba90d9bc096ba69158d39c"></span>Result&lt;bool&gt; <code class="sig-name descname">getDataStream</code><span class="sig-paren">(</span><em class="property">const</em> defs::portPosition <em>port</em>, Positions <em>pos</em> = {}<span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv4NK3sls8Detector13getDataStreamEKN4defs12portPositionE9Positions" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>[Eiger] </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv4N3sls8Detector13setDataStreamEKN4defs12portPositionEKb9Positions">
+<span id="_CPPv3N3sls8Detector13setDataStreamEKN4defs12portPositionEKb9Positions"></span><span id="_CPPv2N3sls8Detector13setDataStreamEKN4defs12portPositionEKb9Positions"></span><span id="sls::Detector::setDataStream__defs::portPositionC.bC.Positions"></span><span class="target" id="classsls_1_1Detector_1a4d29b9e3538cf37c791fc236bbf21dc4"></span>void <code class="sig-name descname">setDataStream</code><span class="sig-paren">(</span><em class="property">const</em> defs::portPosition <em>port</em>, <em class="property">const</em> bool <em>enable</em>, Positions <em>pos</em> = {}<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3sls8Detector13setDataStreamEKN4defs12portPositionEKb9Positions" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>[Eiger] enable or disable data streaming from left or right of detector. Default: enabled </p>
+</dd></dl>
+
 </div>
 <div class="breathe-sectiondef docutils container">
 <p class="breathe-sectiondef-title rubric">Jungfrau Specific</p>
+<dl class="function">
+<dt id="_CPPv4NK3sls8Detector14getChipVersionE9Positions">
+<span id="_CPPv3NK3sls8Detector14getChipVersionE9Positions"></span><span id="_CPPv2NK3sls8Detector14getChipVersionE9Positions"></span><span id="sls::Detector::getChipVersion__PositionsC"></span><span class="target" id="classsls_1_1Detector_1ae70d84f9b371f8cc5334ba9856df7fc2"></span>Result&lt;double&gt; <code class="sig-name descname">getChipVersion</code><span class="sig-paren">(</span>Positions <em>pos</em> = {}<span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv4NK3sls8Detector14getChipVersionE9Positions" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>[Jungfrau] </p>
+</dd></dl>
+
 <dl class="function">
 <dt id="_CPPv4NK3sls8Detector23getThresholdTemperatureE9Positions">
 <span id="_CPPv3NK3sls8Detector23getThresholdTemperatureE9Positions"></span><span id="_CPPv2NK3sls8Detector23getThresholdTemperatureE9Positions"></span><span id="sls::Detector::getThresholdTemperature__PositionsC"></span><span class="target" id="classsls_1_1Detector_1a322f320526d593f31083e9199e4e9dcb"></span>Result&lt;int&gt; <code class="sig-name descname">getThresholdTemperature</code><span class="sig-paren">(</span>Positions <em>pos</em> = {}<span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv4NK3sls8Detector23getThresholdTemperatureE9Positions" title="Permalink to this definition">¶</a><br /></dt>
@@ -1751,16 +1873,28 @@ containing results from all modules. (Result&lt;T&gt;)</p>
 </dd></dl>
 
 <dl class="function">
-<dt id="_CPPv4NK3sls8Detector18getAutoCompDisableE9Positions">
-<span id="_CPPv3NK3sls8Detector18getAutoCompDisableE9Positions"></span><span id="_CPPv2NK3sls8Detector18getAutoCompDisableE9Positions"></span><span id="sls::Detector::getAutoCompDisable__PositionsC"></span><span class="target" id="classsls_1_1Detector_1aab5ecfec79e6ef5b20203306215eb2a5"></span>Result&lt;bool&gt; <code class="sig-name descname">getAutoCompDisable</code><span class="sig-paren">(</span>Positions <em>pos</em> = {}<span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv4NK3sls8Detector18getAutoCompDisableE9Positions" title="Permalink to this definition">¶</a><br /></dt>
+<dt id="_CPPv4NK3sls8Detector24getAutoComparatorDisableE9Positions">
+<span id="_CPPv3NK3sls8Detector24getAutoComparatorDisableE9Positions"></span><span id="_CPPv2NK3sls8Detector24getAutoComparatorDisableE9Positions"></span><span id="sls::Detector::getAutoComparatorDisable__PositionsC"></span><span class="target" id="classsls_1_1Detector_1a6b741bce374f922e285daadb12d5e4ed"></span>Result&lt;bool&gt; <code class="sig-name descname">getAutoComparatorDisable</code><span class="sig-paren">(</span>Positions <em>pos</em> = {}<span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv4NK3sls8Detector24getAutoComparatorDisableE9Positions" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>[Jungfrau] </p>
 </dd></dl>
 
 <dl class="function">
-<dt id="_CPPv4N3sls8Detector18setAutoCompDisableEb9Positions">
-<span id="_CPPv3N3sls8Detector18setAutoCompDisableEb9Positions"></span><span id="_CPPv2N3sls8Detector18setAutoCompDisableEb9Positions"></span><span id="sls::Detector::setAutoCompDisable__b.Positions"></span><span class="target" id="classsls_1_1Detector_1ad9858026a3eace9f34cbcda3ac39c831"></span>void <code class="sig-name descname">setAutoCompDisable</code><span class="sig-paren">(</span>bool <em>value</em>, Positions <em>pos</em> = {}<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3sls8Detector18setAutoCompDisableEb9Positions" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>[Jungfrau] Advanced //TODO naming By default, the on-chip gain switching is active during the entire exposure. This mode disables the on-chip gain switching comparator automatically after 93.75% of exposure time (only for longer than 100us).<p>Default is false or this mode disabled(comparator enabled throughout). true enables mode. 0 disables mode. </p>
+<dt id="_CPPv4N3sls8Detector24setAutoComparatorDisableEb9Positions">
+<span id="_CPPv3N3sls8Detector24setAutoComparatorDisableEb9Positions"></span><span id="_CPPv2N3sls8Detector24setAutoComparatorDisableEb9Positions"></span><span id="sls::Detector::setAutoComparatorDisable__b.Positions"></span><span class="target" id="classsls_1_1Detector_1aab0e197016f9e1f8317016ba3b0cff16"></span>void <code class="sig-name descname">setAutoComparatorDisable</code><span class="sig-paren">(</span>bool <em>value</em>, Positions <em>pos</em> = {}<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3sls8Detector24setAutoComparatorDisableEb9Positions" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>[Jungfrau] Advanced //TODO naming By default, the on-chip gain switching is active during the entire exposure. This mode disables the on-chip gain switching comparator automatically after 93.75% of exposure time (only for longer than 100us). The % is for chipv1.0. One can set the duration for chipv1.1 using setComparatorDisableTime<p> Default is false or this mode disabled(comparator enabled throughout). true enables mode. 0 disables mode. </p>
 </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv4NK3sls8Detector24getComparatorDisableTimeE9Positions">
+<span id="_CPPv3NK3sls8Detector24getComparatorDisableTimeE9Positions"></span><span id="_CPPv2NK3sls8Detector24getComparatorDisableTimeE9Positions"></span><span id="sls::Detector::getComparatorDisableTime__PositionsC"></span><span class="target" id="classsls_1_1Detector_1adce56d711030b4778cc0deac0b92d2aa"></span>Result&lt;ns&gt; <code class="sig-name descname">getComparatorDisableTime</code><span class="sig-paren">(</span>Positions <em>pos</em> = {}<span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv4NK3sls8Detector24getComparatorDisableTimeE9Positions" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>[Jungfrau] </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv4N3sls8Detector24setComparatorDisableTimeE2ns9Positions">
+<span id="_CPPv3N3sls8Detector24setComparatorDisableTimeE2ns9Positions"></span><span id="_CPPv2N3sls8Detector24setComparatorDisableTimeE2ns9Positions"></span><span id="sls::Detector::setComparatorDisableTime__ns.Positions"></span><span class="target" id="classsls_1_1Detector_1a88691bd06562f81b3e3d3bce65966ff1"></span>void <code class="sig-name descname">setComparatorDisableTime</code><span class="sig-paren">(</span>ns <em>t</em>, Positions <em>pos</em> = {}<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3sls8Detector24setComparatorDisableTimeE2ns9Positions" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>[Jungfrau] Time before end of exposure when comparator is disabled. It is only possible for chipv1.1. </p>
 </dd></dl>
 
 <dl class="function">
@@ -1772,7 +1906,7 @@ containing results from all modules. (Result&lt;T&gt;)</p>
 <dl class="function">
 <dt id="_CPPv4N3sls8Detector33setNumberOfAdditionalStorageCellsEi">
 <span id="_CPPv3N3sls8Detector33setNumberOfAdditionalStorageCellsEi"></span><span id="_CPPv2N3sls8Detector33setNumberOfAdditionalStorageCellsEi"></span><span id="sls::Detector::setNumberOfAdditionalStorageCells__i"></span><span class="target" id="classsls_1_1Detector_1adc570eec563cf81b0939b0547072a90a"></span>void <code class="sig-name descname">setNumberOfAdditionalStorageCells</code><span class="sig-paren">(</span>int <em>value</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3sls8Detector33setNumberOfAdditionalStorageCellsEi" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>[Jungfrau] Advanced <p>Options: 0 - 15. Default: 0. </p>
+<dd><p>[Jungfrau] Advanced <p>Only for chipv1.0. Options: 0 - 15. Default: 0. </p>
 <p>The #images = #frames x #triggers x (#storagecells + 1) </p>
 </p>
 </dd></dl>
@@ -1786,7 +1920,7 @@ containing results from all modules. (Result&lt;T&gt;)</p>
 <dl class="function">
 <dt id="_CPPv4N3sls8Detector19setStorageCellStartEi9Positions">
 <span id="_CPPv3N3sls8Detector19setStorageCellStartEi9Positions"></span><span id="_CPPv2N3sls8Detector19setStorageCellStartEi9Positions"></span><span id="sls::Detector::setStorageCellStart__i.Positions"></span><span class="target" id="classsls_1_1Detector_1a44bc7b8e8ce14773718208aac868171f"></span>void <code class="sig-name descname">setStorageCellStart</code><span class="sig-paren">(</span>int <em>cell</em>, Positions <em>pos</em> = {}<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3sls8Detector19setStorageCellStartEi9Positions" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>[Jungfrau] Advanced. Sets the storage cell storing the first acquisition of the series. Options: 0-15. Default: 15. </p>
+<dd><p>[Jungfrau] Advanced. Sets the storage cell storing the first acquisition of the series. Options: 0-max. max is 15 (default) for chipv1.0 and 3 (default) for chipv1.1. </p>
 </dd></dl>
 
 <dl class="function">
@@ -1799,8 +1933,40 @@ containing results from all modules. (Result&lt;T&gt;)</p>
 <dt id="_CPPv4N3sls8Detector19setStorageCellDelayE2ns9Positions">
 <span id="_CPPv3N3sls8Detector19setStorageCellDelayE2ns9Positions"></span><span id="_CPPv2N3sls8Detector19setStorageCellDelayE2ns9Positions"></span><span id="sls::Detector::setStorageCellDelay__ns.Positions"></span><span class="target" id="classsls_1_1Detector_1a44ed650e4bb267d0c9f19ed7505bd8f0"></span>void <code class="sig-name descname">setStorageCellDelay</code><span class="sig-paren">(</span>ns <em>value</em>, Positions <em>pos</em> = {}<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3sls8Detector19setStorageCellDelayE2ns9Positions" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>[Jungfrau] Advanced <p> Additional time delay between 2 consecutive exposures in burst mode. </p>
-<p> Options: (0-1638375 ns (resolution of 25ns) </p>
+<p> Options: (0-1638375 ns (resolution of 25ns)</p>
+<p>Only applicable for chipv1.0. </p>
 </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv4NK3sls8Detector15getGainModeListEv">
+<span id="_CPPv3NK3sls8Detector15getGainModeListEv"></span><span id="_CPPv2NK3sls8Detector15getGainModeListEv"></span><span id="sls::Detector::getGainModeListC"></span><span class="target" id="classsls_1_1Detector_1a930395b152d86393ad43b46499b1d706"></span>std::vector&lt;defs::gainMode&gt; <code class="sig-name descname">getGainModeList</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv4NK3sls8Detector15getGainModeListEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>list of possible gainmode </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv4NK3sls8Detector11getGainModeE9Positions">
+<span id="_CPPv3NK3sls8Detector11getGainModeE9Positions"></span><span id="_CPPv2NK3sls8Detector11getGainModeE9Positions"></span><span id="sls::Detector::getGainMode__PositionsC"></span><span class="target" id="classsls_1_1Detector_1a028205fdf4f1796dd078562e0298cc07"></span>Result&lt;defs::gainMode&gt; <code class="sig-name descname">getGainMode</code><span class="sig-paren">(</span>Positions <em>pos</em> = {}<span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv4NK3sls8Detector11getGainModeE9Positions" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>[Jungfrau] </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv4N3sls8Detector11setGainModeEKN4defs8gainModeE9Positions">
+<span id="_CPPv3N3sls8Detector11setGainModeEKN4defs8gainModeE9Positions"></span><span id="_CPPv2N3sls8Detector11setGainModeEKN4defs8gainModeE9Positions"></span><span id="sls::Detector::setGainMode__defs::gainModeC.Positions"></span><span class="target" id="classsls_1_1Detector_1a540faf9ac53f72164e6a32daf2d40079"></span>void <code class="sig-name descname">setGainMode</code><span class="sig-paren">(</span><em class="property">const</em> defs::gainMode <em>mode</em>, Positions <em>pos</em> = {}<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3sls8Detector11setGainModeEKN4defs8gainModeE9Positions" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>[Jungfrau] Options: DYNAMIC, FORCE_SWITCH_G1, FORCE_SWITCH_G2, FIX_G1, FIX_G2, FIX_G0 <p>\CAUTION: Do not use FIX_G0 without caution, you can damage the detector!!!</p>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv4NK3sls8Detector13getFilterCellE9Positions">
+<span id="_CPPv3NK3sls8Detector13getFilterCellE9Positions"></span><span id="_CPPv2NK3sls8Detector13getFilterCellE9Positions"></span><span id="sls::Detector::getFilterCell__PositionsC"></span><span class="target" id="classsls_1_1Detector_1a1ed4e81bdd39ea28694efd7fddfd5457"></span>Result&lt;int&gt; <code class="sig-name descname">getFilterCell</code><span class="sig-paren">(</span>Positions <em>pos</em> = {}<span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv4NK3sls8Detector13getFilterCellE9Positions" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>[Jungfrau] Advanced </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv4N3sls8Detector13setFilterCellEi9Positions">
+<span id="_CPPv3N3sls8Detector13setFilterCellEi9Positions"></span><span id="_CPPv2N3sls8Detector13setFilterCellEi9Positions"></span><span id="sls::Detector::setFilterCell__i.Positions"></span><span class="target" id="classsls_1_1Detector_1ab3d47213fbfc5534a9584c849180c59a"></span>void <code class="sig-name descname">setFilterCell</code><span class="sig-paren">(</span>int <em>cell</em>, Positions <em>pos</em> = {}<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3sls8Detector13setFilterCellEi9Positions" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>[Jungfrau] Advanced Options[0-12], only for chip v1.1 </p>
 </dd></dl>
 
 </div>
@@ -1927,30 +2093,6 @@ ROI per module <p>Either all channels or a single adc or 2 chips (256 channels).
 </dd></dl>
 
 <dl class="function">
-<dt id="_CPPv4NK3sls8Detector9getFilterE9Positions">
-<span id="_CPPv3NK3sls8Detector9getFilterE9Positions"></span><span id="_CPPv2NK3sls8Detector9getFilterE9Positions"></span><span id="sls::Detector::getFilter__PositionsC"></span><span class="target" id="classsls_1_1Detector_1a1cc3868ad5cf31a5791ef802874ba960"></span>Result&lt;int&gt; <code class="sig-name descname">getFilter</code><span class="sig-paren">(</span>Positions <em>pos</em> = {}<span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv4NK3sls8Detector9getFilterE9Positions" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>[Gotthard2] </p>
-</dd></dl>
-
-<dl class="function">
-<dt id="_CPPv4N3sls8Detector9setFilterEi9Positions">
-<span id="_CPPv3N3sls8Detector9setFilterEi9Positions"></span><span id="_CPPv2N3sls8Detector9setFilterEi9Positions"></span><span id="sls::Detector::setFilter__i.Positions"></span><span class="target" id="classsls_1_1Detector_1af26c6c8b14079f7d0eeda57f303b5d44"></span>void <code class="sig-name descname">setFilter</code><span class="sig-paren">(</span>int <em>value</em>, Positions <em>pos</em> = {}<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3sls8Detector9setFilterEi9Positions" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>[Gotthard2] Set filter resister. Options: 0-3. Default: 0 </p>
-</dd></dl>
-
-<dl class="function">
-<dt id="_CPPv4NK3sls8Detector16getCurrentSourceE9Positions">
-<span id="_CPPv3NK3sls8Detector16getCurrentSourceE9Positions"></span><span id="_CPPv2NK3sls8Detector16getCurrentSourceE9Positions"></span><span id="sls::Detector::getCurrentSource__PositionsC"></span><span class="target" id="classsls_1_1Detector_1a7e160b11de1e454c4782d1a140392640"></span>Result&lt;bool&gt; <code class="sig-name descname">getCurrentSource</code><span class="sig-paren">(</span>Positions <em>pos</em> = {}<span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv4NK3sls8Detector16getCurrentSourceE9Positions" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>[Gotthard2] </p>
-</dd></dl>
-
-<dl class="function">
-<dt id="_CPPv4N3sls8Detector16setCurrentSourceEb9Positions">
-<span id="_CPPv3N3sls8Detector16setCurrentSourceEb9Positions"></span><span id="_CPPv2N3sls8Detector16setCurrentSourceEb9Positions"></span><span id="sls::Detector::setCurrentSource__b.Positions"></span><span class="target" id="classsls_1_1Detector_1a761daf64f68a80d10b3d9888b5020f56"></span>void <code class="sig-name descname">setCurrentSource</code><span class="sig-paren">(</span>bool <em>value</em>, Positions <em>pos</em> = {}<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3sls8Detector16setCurrentSourceEb9Positions" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>default disabled </p>
-</dd></dl>
-
-<dl class="function">
 <dt id="_CPPv4NK3sls8Detector15getTimingSourceE9Positions">
 <span id="_CPPv3NK3sls8Detector15getTimingSourceE9Positions"></span><span id="_CPPv2NK3sls8Detector15getTimingSourceE9Positions"></span><span id="sls::Detector::getTimingSource__PositionsC"></span><span class="target" id="classsls_1_1Detector_1ac7b515e221a4454506e888800a6cdac5"></span>Result&lt;defs::timingSourceType&gt; <code class="sig-name descname">getTimingSource</code><span class="sig-paren">(</span>Positions <em>pos</em> = {}<span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv4NK3sls8Detector15getTimingSourceE9Positions" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>[Gotthard2] </p>
@@ -1971,7 +2113,31 @@ ROI per module <p>Either all channels or a single adc or 2 chips (256 channels).
 <dl class="function">
 <dt id="_CPPv4N3sls8Detector7setVetoEKb9Positions">
 <span id="_CPPv3N3sls8Detector7setVetoEKb9Positions"></span><span id="_CPPv2N3sls8Detector7setVetoEKb9Positions"></span><span id="sls::Detector::setVeto__bC.Positions"></span><span class="target" id="classsls_1_1Detector_1a82734aff2cc6fd637132fdb4b1947219"></span>void <code class="sig-name descname">setVeto</code><span class="sig-paren">(</span><em class="property">const</em> bool <em>enable</em>, Positions <em>pos</em> = {}<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3sls8Detector7setVetoEKb9Positions" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>[Gotthard2] Default disabled </p>
+<dd><p>[Gotthard2] Veto data in chip, Default disabled </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv4NK3sls8Detector13getVetoStreamE9Positions">
+<span id="_CPPv3NK3sls8Detector13getVetoStreamE9Positions"></span><span id="_CPPv2NK3sls8Detector13getVetoStreamE9Positions"></span><span id="sls::Detector::getVetoStream__PositionsC"></span><span class="target" id="classsls_1_1Detector_1a57261156efcd1c86b9e7a753d58aa5fd"></span>Result&lt;defs::streamingInterface&gt; <code class="sig-name descname">getVetoStream</code><span class="sig-paren">(</span>Positions <em>pos</em> = {}<span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv4NK3sls8Detector13getVetoStreamE9Positions" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>[Gotthard2] </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv4N3sls8Detector13setVetoStreamEKN4defs18streamingInterfaceE9Positions">
+<span id="_CPPv3N3sls8Detector13setVetoStreamEKN4defs18streamingInterfaceE9Positions"></span><span id="_CPPv2N3sls8Detector13setVetoStreamEKN4defs18streamingInterfaceE9Positions"></span><span id="sls::Detector::setVetoStream__defs::streamingInterfaceC.Positions"></span><span class="target" id="classsls_1_1Detector_1a1d525a1b8588d1557ec6bcb01152fcf2"></span>void <code class="sig-name descname">setVetoStream</code><span class="sig-paren">(</span><em class="property">const</em> defs::streamingInterface <em>value</em>, Positions <em>pos</em> = {}<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3sls8Detector13setVetoStreamEKN4defs18streamingInterfaceE9Positions" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>[Gotthard2] Options: NONE (Default), LOW_LATENCY_LINK, ETHERNET_10GB (debugging), ALL Enable or disable the 2 veto streaming interfaces available. Can concatenate more than one interface. \nLOW_LATENCY_LINK is the default interface to work with. \nETHERNET_10GB is for debugging and also enables second interface in receiver for listening to veto packets (writes a separate file if writing enabled). Also restarts client and receiver zmq sockets if zmq streaming enabled. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv4NK3sls8Detector16getVetoAlgorithmEKN4defs18streamingInterfaceE9Positions">
+<span id="_CPPv3NK3sls8Detector16getVetoAlgorithmEKN4defs18streamingInterfaceE9Positions"></span><span id="_CPPv2NK3sls8Detector16getVetoAlgorithmEKN4defs18streamingInterfaceE9Positions"></span><span id="sls::Detector::getVetoAlgorithm__defs::streamingInterfaceC.PositionsC"></span><span class="target" id="classsls_1_1Detector_1aee8f4b097b44de14da792f7d5498e56a"></span>Result&lt;defs::vetoAlgorithm&gt; <code class="sig-name descname">getVetoAlgorithm</code><span class="sig-paren">(</span><em class="property">const</em> defs::streamingInterface <em>value</em>, Positions <em>pos</em> = {}<span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv4NK3sls8Detector16getVetoAlgorithmEKN4defs18streamingInterfaceE9Positions" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>[Gotthard2] </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv4N3sls8Detector16setVetoAlgorithmEKN4defs13vetoAlgorithmEKN4defs18streamingInterfaceE9Positions">
+<span id="_CPPv3N3sls8Detector16setVetoAlgorithmEKN4defs13vetoAlgorithmEKN4defs18streamingInterfaceE9Positions"></span><span id="_CPPv2N3sls8Detector16setVetoAlgorithmEKN4defs13vetoAlgorithmEKN4defs18streamingInterfaceE9Positions"></span><span id="sls::Detector::setVetoAlgorithm__defs::vetoAlgorithmC.defs::streamingInterfaceC.Positions"></span><span class="target" id="classsls_1_1Detector_1a28106613862be8a308cb0547420bddc7"></span>void <code class="sig-name descname">setVetoAlgorithm</code><span class="sig-paren">(</span><em class="property">const</em> defs::vetoAlgorithm <em>alg</em>, <em class="property">const</em> defs::streamingInterface <em>value</em>, Positions <em>pos</em> = {}<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3sls8Detector16setVetoAlgorithmEKN4defs13vetoAlgorithmEKN4defs18streamingInterfaceE9Positions" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>[Gotthard2] Options(vetoAlgorithm): ALG_HITS (default), ALG_RAW. Options(streamingInterface): LOW_LATENCY_LINK, ETHERNET_10GB </p>
 </dd></dl>
 
 <dl class="function">
@@ -2010,7 +2176,7 @@ ROI per module <p>Either all channels or a single adc or 2 chips (256 channels).
 <dl class="function">
 <dt id="_CPPv4N3sls8Detector14setCounterMaskE8uint32_t9Positions">
 <span id="_CPPv3N3sls8Detector14setCounterMaskE8uint32_t9Positions"></span><span id="_CPPv2N3sls8Detector14setCounterMaskE8uint32_t9Positions"></span><span id="sls::Detector::setCounterMask__uint32_t.Positions"></span><span class="target" id="classsls_1_1Detector_1a609e5568ea5a1386a079d27fd5e4dd81"></span>void <code class="sig-name descname">setCounterMask</code><span class="sig-paren">(</span>uint32_t <em>countermask</em>, Positions <em>pos</em> = {}<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3sls8Detector14setCounterMaskE8uint32_t9Positions" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>[Mythen3] countermask bit set for each counter index enabled </p>
+<dd><p>[Mythen3] countermask bit set for each counter index enabled. Enabling counters sets vth dacs to remembered values and disabling sets them to disabled values. Setting vth dacs explicitly overwrites them. </p>
 </dd></dl>
 
 <dl class="function">
@@ -2063,6 +2229,22 @@ ROI per module <p>Either all channels or a single adc or 2 chips (256 channels).
 <dl class="function">
 <dt id="_CPPv4NK3sls8Detector9getMasterE9Positions">
 <span id="_CPPv3NK3sls8Detector9getMasterE9Positions"></span><span id="_CPPv2NK3sls8Detector9getMasterE9Positions"></span><span id="sls::Detector::getMaster__PositionsC"></span><span class="target" id="classsls_1_1Detector_1afc3f4015f40cfa2cf0d258479e603ee1"></span>Result&lt;bool&gt; <code class="sig-name descname">getMaster</code><span class="sig-paren">(</span>Positions <em>pos</em> = {}<span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv4NK3sls8Detector9getMasterE9Positions" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>[Eiger][Mythen3][Gotthard1] via stop server </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv4NK3sls8Detector21getChipStatusRegisterE9Positions">
+<span id="_CPPv3NK3sls8Detector21getChipStatusRegisterE9Positions"></span><span id="_CPPv2NK3sls8Detector21getChipStatusRegisterE9Positions"></span><span id="sls::Detector::getChipStatusRegister__PositionsC"></span><span class="target" id="classsls_1_1Detector_1a68a2efb4b1bdcd61bf5e2957db64bdfc"></span>Result&lt;int&gt; <code class="sig-name descname">getChipStatusRegister</code><span class="sig-paren">(</span>Positions <em>pos</em> = {}<span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv4NK3sls8Detector21getChipStatusRegisterE9Positions" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv4N3sls8Detector11setGainCapsEi9Positions">
+<span id="_CPPv3N3sls8Detector11setGainCapsEi9Positions"></span><span id="_CPPv2N3sls8Detector11setGainCapsEi9Positions"></span><span id="sls::Detector::setGainCaps__i.Positions"></span><span class="target" id="classsls_1_1Detector_1a6b7950de917a547974869312854d8d0a"></span>void <code class="sig-name descname">setGainCaps</code><span class="sig-paren">(</span>int <em>caps</em>, Positions <em>pos</em> = {}<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3sls8Detector11setGainCapsEi9Positions" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv4N3sls8Detector11getGainCapsE9Positions">
+<span id="_CPPv3N3sls8Detector11getGainCapsE9Positions"></span><span id="_CPPv2N3sls8Detector11getGainCapsE9Positions"></span><span id="sls::Detector::getGainCaps__Positions"></span><span class="target" id="classsls_1_1Detector_1afabb32e3abc05b2e28591000807146e5"></span>Result&lt;int&gt; <code class="sig-name descname">getGainCaps</code><span class="sig-paren">(</span>Positions <em>pos</em> = {}<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3sls8Detector11getGainCapsE9Positions" title="Permalink to this definition">¶</a><br /></dt>
 <dd></dd></dl>
 
 </div>
@@ -2198,18 +2380,6 @@ ROI per module <p>Either all channels or a single adc or 2 chips (256 channels).
 <dl class="function">
 <dt id="_CPPv4N3sls8Detector12setDBITClockEi9Positions">
 <span id="_CPPv3N3sls8Detector12setDBITClockEi9Positions"></span><span id="_CPPv2N3sls8Detector12setDBITClockEi9Positions"></span><span id="sls::Detector::setDBITClock__i.Positions"></span><span class="target" id="classsls_1_1Detector_1af671368c10ce886ba43174a586f4278a"></span>void <code class="sig-name descname">setDBITClock</code><span class="sig-paren">(</span>int <em>value_in_MHz</em>, Positions <em>pos</em> = {}<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3sls8Detector12setDBITClockEi9Positions" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>[CTB] </p>
-</dd></dl>
-
-<dl class="function">
-<dt id="_CPPv4NK3sls8Detector15getDBITPipelineE9Positions">
-<span id="_CPPv3NK3sls8Detector15getDBITPipelineE9Positions"></span><span id="_CPPv2NK3sls8Detector15getDBITPipelineE9Positions"></span><span id="sls::Detector::getDBITPipeline__PositionsC"></span><span class="target" id="classsls_1_1Detector_1ada094a2534ec68a70939a5d192d64f4e"></span>Result&lt;int&gt; <code class="sig-name descname">getDBITPipeline</code><span class="sig-paren">(</span>Positions <em>pos</em> = {}<span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv4NK3sls8Detector15getDBITPipelineE9Positions" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>[CTB] </p>
-</dd></dl>
-
-<dl class="function">
-<dt id="_CPPv4N3sls8Detector15setDBITPipelineEi9Positions">
-<span id="_CPPv3N3sls8Detector15setDBITPipelineEi9Positions"></span><span id="_CPPv2N3sls8Detector15setDBITPipelineEi9Positions"></span><span id="sls::Detector::setDBITPipeline__i.Positions"></span><span class="target" id="classsls_1_1Detector_1a2baf67e4d638c3409e3b3620cafe34a6"></span>void <code class="sig-name descname">setDBITPipeline</code><span class="sig-paren">(</span>int <em>value</em>, Positions <em>pos</em> = {}<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3sls8Detector15setDBITPipelineEi9Positions" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>[CTB] </p>
 </dd></dl>
 

@@ -303,7 +303,7 @@ C++ API directly and the simplified exptime property.</p>
 <dd><p>[Jungfrau] Enable or disable auto comparator disable mode.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>By default, the on-chip gain switching is active during the entire exposure. This mode disables the on-chip gain switching comparator automatically after 93.75% of exposure time (only for longer than 100us).</p>
+<p>By default, the on-chip gain switching is active during the entire exposure. This mode disables the on-chip gain switching comparator automatically after 93.75% of exposure time (only for longer than 100us). The % is only for chipv1.0, the duration can be set for chipv1.1.</p>
 <p>Default is 0 or this mode disabled (comparator enabled throughout). 1 enables mode. 0 disables mode.</p>
 </div>
 </dd></dl>
@@ -357,6 +357,17 @@ C++ API directly and the simplified exptime property.</p>
 <dt id="slsdet.Detector.cdsgain">
 <em class="property">property </em><code class="sig-name descname">cdsgain</code><a class="headerlink" href="#slsdet.Detector.cdsgain" title="Permalink to this definition">¶</a></dt>
 <dd><p>[Gotthard2] Enable or disable CDS gain. Default is disabled.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="slsdet.Detector.chipversion">
+<em class="property">property </em><code class="sig-name descname">chipversion</code><a class="headerlink" href="#slsdet.Detector.chipversion" title="Permalink to this definition">¶</a></dt>
+<dd><p>[Jungfrau] Chip version of module. Can be 1.0 or 1.1.</p>
+<p class="rubric">Example</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">d</span><span class="o">.</span><span class="n">chipversion</span>
+<span class="go">&#39;1.0&#39;</span>
+</pre></div>
+</div>
 </dd></dl>
 
 <dl class="method">
@@ -415,6 +426,26 @@ C++ API directly and the simplified exptime property.</p>
 </dd></dl>
 
 <dl class="method">
+<dt id="slsdet.Detector.comp_disable_time">
+<em class="property">property </em><code class="sig-name descname">comp_disable_time</code><a class="headerlink" href="#slsdet.Detector.comp_disable_time" title="Permalink to this definition">¶</a></dt>
+<dd><p>[Jungfrau] Time before end of exposure when comparator is disabled.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>It is only possible for chipv1.1.
+:getter: always returns in seconds. To get in datetime.delta, use getComparatorDisableTime</p>
+</div>
+<p class="rubric">Example</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">d</span><span class="o">.</span><span class="n">comp_disable_time</span> <span class="o">=</span> <span class="mf">1.05</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">d</span><span class="o">.</span><span class="n">comp_disable_time</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">timedelta</span><span class="p">(</span><span class="n">minutes</span> <span class="o">=</span> <span class="mi">3</span><span class="p">,</span> <span class="n">seconds</span> <span class="o">=</span> <span class="mf">1.23</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">d</span><span class="o">.</span><span class="n">comp_disable_time</span>
+<span class="go">181.23</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">d</span><span class="o">.</span><span class="n">getComparatorDisableTime</span><span class="p">()</span>
+<span class="go">[datetime.timedelta(seconds=181, microseconds=230000)]</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
 <dt id="slsdet.Detector.config">
 <em class="property">property </em><code class="sig-name descname">config</code><a class="headerlink" href="#slsdet.Detector.config" title="Permalink to this definition">¶</a></dt>
 <dd><p>Load configuration file.</p>
@@ -448,7 +479,8 @@ Set up once.</p>
 <dd><p>[Mythen3] List of counter indices enabled.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Each element in list can be 0 - 2 and must be non repetitive.</p>
+<p>Each element in list can be 0 - 2 and must be non repetitive.
+Enabling counters sets vth dacs to remembered values and disabling sets them to disabled values.</p>
 </div>
 <p class="rubric">Example</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">d</span><span class="o">.</span><span class="n">counters</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
@@ -466,6 +498,13 @@ Set up once.</p>
 <dt id="slsdet.Detector.dacvalues">
 <em class="property">property </em><code class="sig-name descname">dacvalues</code><a class="headerlink" href="#slsdet.Detector.dacvalues" title="Permalink to this definition">¶</a></dt>
 <dd><p>Gets the dac values for every dac for this detector.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="slsdet.Detector.datastream">
+<em class="property">property </em><code class="sig-name descname">datastream</code><a class="headerlink" href="#slsdet.Detector.datastream" title="Permalink to this definition">¶</a></dt>
+<dd><p>datastream [left|right] [0, 1]
+[Eiger] Enables or disables data streaming from left or/and right side of detector. 1 (enabled) by default.</p>
 </dd></dl>
 
 <dl class="method">
@@ -487,7 +526,12 @@ Set up once.</p>
 <dl class="method">
 <dt id="slsdet.Detector.dbitpipeline">
 <em class="property">property </em><code class="sig-name descname">dbitpipeline</code><a class="headerlink" href="#slsdet.Detector.dbitpipeline" title="Permalink to this definition">¶</a></dt>
-<dd><p>[Ctb] Pipeline of the clock for latching digital bits.</p>
+<dd><p>[Ctb][Gotthard2] Pipeline of the clock for latching digital bits.
+.. note:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">CTB</span><span class="p">]</span> <span class="n">Options</span><span class="p">:</span> <span class="mi">0</span> <span class="o">-</span> <span class="mi">255</span>
+<span class="p">[</span><span class="n">Gotthard2</span><span class="p">]</span> <span class="n">Options</span><span class="p">:</span> <span class="mi">0</span> <span class="o">-</span> <span class="mi">7</span>
+</pre></div>
+</div>
 </dd></dl>
 
 <dl class="method">
@@ -660,10 +704,23 @@ For HDF5, package must be compiled with HDF5 flags. Default is binary.</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="slsdet.Detector.filter">
-<em class="property">property </em><code class="sig-name descname">filter</code><a class="headerlink" href="#slsdet.Detector.filter" title="Permalink to this definition">¶</a></dt>
-<dd><p>[Gotthard2] Set filter resistor.
-.. note:: Default is 0. Options: 0-3.</p>
+<dt id="slsdet.Detector.filtercell">
+<em class="property">property </em><code class="sig-name descname">filtercell</code><a class="headerlink" href="#slsdet.Detector.filtercell" title="Permalink to this definition">¶</a></dt>
+<dd><p>[Jungfrau] Set filter capacitor.
+.. note:: [Jungfrau] Options: 0-12. Default: 0. Advanced user command. Only for chipv1.1.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="slsdet.Detector.filterresistor">
+<em class="property">property </em><code class="sig-name descname">filterresistor</code><a class="headerlink" href="#slsdet.Detector.filterresistor" title="Permalink to this definition">¶</a></dt>
+<dd><p>[Gotthard2][Jungfrau] Set filter resistor. Increasing values for increasing ”
+“resistance.
+.. note:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Advanced</span> <span class="n">user</span> <span class="n">command</span><span class="o">.</span>
+<span class="p">[</span><span class="n">Gotthard2</span><span class="p">]</span> <span class="n">Default</span> <span class="ow">is</span> <span class="mf">0.</span> <span class="n">Options</span><span class="p">:</span> <span class="mi">0</span><span class="o">-</span><span class="mf">3.</span>
+<span class="p">[</span><span class="n">Jungfrau</span><span class="p">]</span> <span class="n">Default</span> <span class="ow">is</span> <span class="mf">1.</span> <span class="n">Options</span><span class="p">:</span> <span class="mi">0</span><span class="o">-</span><span class="mf">1.</span>
+</pre></div>
+</div>
 </dd></dl>
 
 <dl class="method">
@@ -780,6 +837,29 @@ eg. file name: run_d0_f0_5.raw</p>
 </dd></dl>
 
 <dl class="method">
+<dt id="slsdet.Detector.gainmode">
+<em class="property">property </em><code class="sig-name descname">gainmode</code><a class="headerlink" href="#slsdet.Detector.gainmode" title="Permalink to this definition">¶</a></dt>
+<dd><p>gainMode
+.. note:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>[Jungfrau] DYNAMIC, FORCE_SWITCH_G1, FORCE_SWITCH_G2, FIX_G1, FIX_G2, FIX_G0
+
+CAUTION: Do not use FIX_G0 without caution, you can damage the detector!!!
+</pre></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>[Jungfrau] Detector gain mode. Enum</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="slsdet.Detector.gainmodelist">
+<em class="property">property </em><code class="sig-name descname">gainmodelist</code><a class="headerlink" href="#slsdet.Detector.gainmodelist" title="Permalink to this definition">¶</a></dt>
+<dd><p>List of gainmode implemented for this detector.</p>
+</dd></dl>
+
+<dl class="method">
 <dt id="slsdet.Detector.gappixels">
 <em class="property">property </em><code class="sig-name descname">gappixels</code><a class="headerlink" href="#slsdet.Detector.gappixels" title="Permalink to this definition">¶</a></dt>
 <dd><p>[Eiger][Jungfrau] Include Gap pixels in client data call back in Detecor api. Will not be in detector streaming, receiver file or streaming. Default is disabled.</p>
@@ -889,8 +969,8 @@ eg. file name: run_d0_f0_5.raw</p>
 <dd></dd></dl>
 
 <dl class="method">
-<dt id="slsdet.Detector.getAutoCompDisable">
-<code class="sig-name descname">getAutoCompDisable</code><span class="sig-paren">(</span><em class="sig-param">self: _slsdet.CppDetectorApi</em>, <em class="sig-param">arg0: List[int] = []</em><span class="sig-paren">)</span> &#x2192; List[bool]<a class="headerlink" href="#slsdet.Detector.getAutoCompDisable" title="Permalink to this definition">¶</a></dt>
+<dt id="slsdet.Detector.getAutoComparatorDisable">
+<code class="sig-name descname">getAutoComparatorDisable</code><span class="sig-paren">(</span><em class="sig-param">self: _slsdet.CppDetectorApi</em>, <em class="sig-param">arg0: List[int] = []</em><span class="sig-paren">)</span> &#x2192; List[bool]<a class="headerlink" href="#slsdet.Detector.getAutoComparatorDisable" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="method">
@@ -901,11 +981,6 @@ eg. file name: run_d0_f0_5.raw</p>
 <dl class="method">
 <dt id="slsdet.Detector.getBit">
 <code class="sig-name descname">getBit</code><span class="sig-paren">(</span><em class="sig-param">self: _slsdet.CppDetectorApi</em>, <em class="sig-param">arg0: int</em>, <em class="sig-param">arg1: int</em>, <em class="sig-param">arg2: List[int] = []</em><span class="sig-paren">)</span> &#x2192; List[int]<a class="headerlink" href="#slsdet.Detector.getBit" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="slsdet.Detector.getBottom">
-<code class="sig-name descname">getBottom</code><span class="sig-paren">(</span><em class="sig-param">self: _slsdet.CppDetectorApi</em>, <em class="sig-param">arg0: List[int] = []</em><span class="sig-paren">)</span> &#x2192; List[bool]<a class="headerlink" href="#slsdet.Detector.getBottom" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="method">
@@ -921,6 +996,16 @@ eg. file name: run_d0_f0_5.raw</p>
 <dl class="method">
 <dt id="slsdet.Detector.getCDSGain">
 <code class="sig-name descname">getCDSGain</code><span class="sig-paren">(</span><em class="sig-param">self: _slsdet.CppDetectorApi</em>, <em class="sig-param">arg0: List[int] = []</em><span class="sig-paren">)</span> &#x2192; List[bool]<a class="headerlink" href="#slsdet.Detector.getCDSGain" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="slsdet.Detector.getChipStatusRegister">
+<code class="sig-name descname">getChipStatusRegister</code><span class="sig-paren">(</span><em class="sig-param">self: _slsdet.CppDetectorApi</em>, <em class="sig-param">arg0: List[int] = []</em><span class="sig-paren">)</span> &#x2192; List[int]<a class="headerlink" href="#slsdet.Detector.getChipStatusRegister" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="slsdet.Detector.getChipVersion">
+<code class="sig-name descname">getChipVersion</code><span class="sig-paren">(</span><em class="sig-param">self: _slsdet.CppDetectorApi</em>, <em class="sig-param">arg0: List[int] = []</em><span class="sig-paren">)</span> &#x2192; List[float]<a class="headerlink" href="#slsdet.Detector.getChipVersion" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="method">
@@ -961,6 +1046,11 @@ eg. file name: run_d0_f0_5.raw</p>
 <dl class="method">
 <dt id="slsdet.Detector.getClockPhaseinDegrees">
 <code class="sig-name descname">getClockPhaseinDegrees</code><span class="sig-paren">(</span><em class="sig-param">self: _slsdet.CppDetectorApi</em>, <em class="sig-param">arg0: int</em>, <em class="sig-param">arg1: List[int] = []</em><span class="sig-paren">)</span> &#x2192; List[int]<a class="headerlink" href="#slsdet.Detector.getClockPhaseinDegrees" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="slsdet.Detector.getComparatorDisableTime">
+<code class="sig-name descname">getComparatorDisableTime</code><span class="sig-paren">(</span><em class="sig-param">self: _slsdet.CppDetectorApi</em>, <em class="sig-param">arg0: List[int] = []</em><span class="sig-paren">)</span> &#x2192; List[datetime.timedelta]<a class="headerlink" href="#slsdet.Detector.getComparatorDisableTime" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="method">
@@ -1007,6 +1097,21 @@ eg. file name: run_d0_f0_5.raw</p>
 <dt id="slsdet.Detector.getDacList">
 <code class="sig-name descname">getDacList</code><span class="sig-paren">(</span><em class="sig-param">self: _slsdet.CppDetectorApi</em><span class="sig-paren">)</span> &#x2192; List[_slsdet.slsDetectorDefs.dacIndex]<a class="headerlink" href="#slsdet.Detector.getDacList" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
+
+<dl class="method">
+<dt id="slsdet.Detector.getDataStream">
+<code class="sig-name descname">getDataStream</code><span class="sig-paren">(</span><em class="sig-param">self: _slsdet.CppDetectorApi</em>, <em class="sig-param">arg0: _slsdet.slsDetectorDefs.portPosition</em>, <em class="sig-param">arg1: List[int] = []</em><span class="sig-paren">)</span> &#x2192; List[bool]<a class="headerlink" href="#slsdet.Detector.getDataStream" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="slsdet.Detector.getDefaultDac">
+<code class="sig-name descname">getDefaultDac</code><span class="sig-paren">(</span><em class="sig-param">*args</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#slsdet.Detector.getDefaultDac" title="Permalink to this definition">¶</a></dt>
+<dd><p>Overloaded function.</p>
+<ol class="arabic simple">
+<li><p>getDefaultDac(self: _slsdet.CppDetectorApi, arg0: _slsdet.slsDetectorDefs.dacIndex, arg1: List[int] = []) -&gt; List[int]</p></li>
+<li><p>getDefaultDac(self: _slsdet.CppDetectorApi, arg0: _slsdet.slsDetectorDefs.dacIndex, arg1: _slsdet.slsDetectorDefs.detectorSettings, arg2: List[int] = []) -&gt; List[int]</p></li>
+</ol>
+</dd></dl>
 
 <dl class="method">
 <dt id="slsdet.Detector.getDelayAfterTrigger">
@@ -1144,13 +1249,23 @@ eg. file name: run_d0_f0_5.raw</p>
 <dd></dd></dl>
 
 <dl class="method">
-<dt id="slsdet.Detector.getFilter">
-<code class="sig-name descname">getFilter</code><span class="sig-paren">(</span><em class="sig-param">self: _slsdet.CppDetectorApi</em>, <em class="sig-param">arg0: List[int] = []</em><span class="sig-paren">)</span> &#x2192; List[int]<a class="headerlink" href="#slsdet.Detector.getFilter" title="Permalink to this definition">¶</a></dt>
+<dt id="slsdet.Detector.getFilterCell">
+<code class="sig-name descname">getFilterCell</code><span class="sig-paren">(</span><em class="sig-param">self: _slsdet.CppDetectorApi</em>, <em class="sig-param">arg0: List[int] = []</em><span class="sig-paren">)</span> &#x2192; List[int]<a class="headerlink" href="#slsdet.Detector.getFilterCell" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="slsdet.Detector.getFilterResistor">
+<code class="sig-name descname">getFilterResistor</code><span class="sig-paren">(</span><em class="sig-param">self: _slsdet.CppDetectorApi</em>, <em class="sig-param">arg0: List[int] = []</em><span class="sig-paren">)</span> &#x2192; List[int]<a class="headerlink" href="#slsdet.Detector.getFilterResistor" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="method">
 <dt id="slsdet.Detector.getFirmwareVersion">
 <code class="sig-name descname">getFirmwareVersion</code><span class="sig-paren">(</span><em class="sig-param">self: _slsdet.CppDetectorApi</em>, <em class="sig-param">arg0: List[int] = []</em><span class="sig-paren">)</span> &#x2192; List[int]<a class="headerlink" href="#slsdet.Detector.getFirmwareVersion" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="slsdet.Detector.getFlipRows">
+<code class="sig-name descname">getFlipRows</code><span class="sig-paren">(</span><em class="sig-param">self: _slsdet.CppDetectorApi</em>, <em class="sig-param">arg0: List[int] = []</em><span class="sig-paren">)</span> &#x2192; List[bool]<a class="headerlink" href="#slsdet.Detector.getFlipRows" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="method">
@@ -1161,6 +1276,21 @@ eg. file name: run_d0_f0_5.raw</p>
 <dl class="method">
 <dt id="slsdet.Detector.getFramesPerFile">
 <code class="sig-name descname">getFramesPerFile</code><span class="sig-paren">(</span><em class="sig-param">self: _slsdet.CppDetectorApi</em>, <em class="sig-param">arg0: List[int] = []</em><span class="sig-paren">)</span> &#x2192; List[int]<a class="headerlink" href="#slsdet.Detector.getFramesPerFile" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="slsdet.Detector.getGainCaps">
+<code class="sig-name descname">getGainCaps</code><span class="sig-paren">(</span><em class="sig-param">self: _slsdet.CppDetectorApi</em>, <em class="sig-param">arg0: List[int] = []</em><span class="sig-paren">)</span> &#x2192; List[int]<a class="headerlink" href="#slsdet.Detector.getGainCaps" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="slsdet.Detector.getGainMode">
+<code class="sig-name descname">getGainMode</code><span class="sig-paren">(</span><em class="sig-param">self: _slsdet.CppDetectorApi</em>, <em class="sig-param">arg0: List[int] = []</em><span class="sig-paren">)</span> &#x2192; List[_slsdet.slsDetectorDefs.gainMode]<a class="headerlink" href="#slsdet.Detector.getGainMode" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="slsdet.Detector.getGainModeList">
+<code class="sig-name descname">getGainModeList</code><span class="sig-paren">(</span><em class="sig-param">self: _slsdet.CppDetectorApi</em><span class="sig-paren">)</span> &#x2192; List[_slsdet.slsDetectorDefs.gainMode]<a class="headerlink" href="#slsdet.Detector.getGainModeList" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="method">
@@ -1274,6 +1404,11 @@ eg. file name: run_d0_f0_5.raw</p>
 <dd></dd></dl>
 
 <dl class="method">
+<dt id="slsdet.Detector.getModuleId">
+<code class="sig-name descname">getModuleId</code><span class="sig-paren">(</span><em class="sig-param">self: _slsdet.CppDetectorApi</em>, <em class="sig-param">arg0: List[int] = []</em><span class="sig-paren">)</span> &#x2192; List[int]<a class="headerlink" href="#slsdet.Detector.getModuleId" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
 <dt id="slsdet.Detector.getModuleSize">
 <code class="sig-name descname">getModuleSize</code><span class="sig-paren">(</span><em class="sig-param">self: _slsdet.CppDetectorApi</em>, <em class="sig-param">arg0: List[int] = []</em><span class="sig-paren">)</span> &#x2192; List[_slsdet.xy]<a class="headerlink" href="#slsdet.Detector.getModuleSize" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
@@ -1374,11 +1509,6 @@ eg. file name: run_d0_f0_5.raw</p>
 <dd></dd></dl>
 
 <dl class="method">
-<dt id="slsdet.Detector.getPartialReadout">
-<code class="sig-name descname">getPartialReadout</code><span class="sig-paren">(</span><em class="sig-param">self: _slsdet.CppDetectorApi</em>, <em class="sig-param">arg0: List[int] = []</em><span class="sig-paren">)</span> &#x2192; List[int]<a class="headerlink" href="#slsdet.Detector.getPartialReadout" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
 <dt id="slsdet.Detector.getPartialReset">
 <code class="sig-name descname">getPartialReset</code><span class="sig-paren">(</span><em class="sig-param">self: _slsdet.CppDetectorApi</em>, <em class="sig-param">arg0: List[int] = []</em><span class="sig-paren">)</span> &#x2192; List[bool]<a class="headerlink" href="#slsdet.Detector.getPartialReset" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
@@ -1456,6 +1586,11 @@ eg. file name: run_d0_f0_5.raw</p>
 <dl class="method">
 <dt id="slsdet.Detector.getRateCorrection">
 <code class="sig-name descname">getRateCorrection</code><span class="sig-paren">(</span><em class="sig-param">self: _slsdet.CppDetectorApi</em>, <em class="sig-param">arg0: List[int] = []</em><span class="sig-paren">)</span> &#x2192; List[datetime.timedelta]<a class="headerlink" href="#slsdet.Detector.getRateCorrection" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="slsdet.Detector.getReadNRows">
+<code class="sig-name descname">getReadNRows</code><span class="sig-paren">(</span><em class="sig-param">self: _slsdet.CppDetectorApi</em>, <em class="sig-param">arg0: List[int] = []</em><span class="sig-paren">)</span> &#x2192; List[int]<a class="headerlink" href="#slsdet.Detector.getReadNRows" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="method">
@@ -1774,8 +1909,18 @@ eg. file name: run_d0_f0_5.raw</p>
 <dd></dd></dl>
 
 <dl class="method">
+<dt id="slsdet.Detector.getVetoAlgorithm">
+<code class="sig-name descname">getVetoAlgorithm</code><span class="sig-paren">(</span><em class="sig-param">self: _slsdet.CppDetectorApi</em>, <em class="sig-param">arg0: _slsdet.slsDetectorDefs.streamingInterface</em>, <em class="sig-param">arg1: List[int] = []</em><span class="sig-paren">)</span> &#x2192; List[_slsdet.slsDetectorDefs.vetoAlgorithm]<a class="headerlink" href="#slsdet.Detector.getVetoAlgorithm" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
 <dt id="slsdet.Detector.getVetoPhoton">
 <code class="sig-name descname">getVetoPhoton</code><span class="sig-paren">(</span><em class="sig-param">self: _slsdet.CppDetectorApi</em>, <em class="sig-param">arg0: int</em>, <em class="sig-param">arg1: str</em>, <em class="sig-param">arg2: List[int] = []</em><span class="sig-paren">)</span> &#x2192; None<a class="headerlink" href="#slsdet.Detector.getVetoPhoton" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="slsdet.Detector.getVetoStream">
+<code class="sig-name descname">getVetoStream</code><span class="sig-paren">(</span><em class="sig-param">self: _slsdet.CppDetectorApi</em>, <em class="sig-param">arg0: List[int] = []</em><span class="sig-paren">)</span> &#x2192; List[_slsdet.slsDetectorDefs.streamingInterface]<a class="headerlink" href="#slsdet.Detector.getVetoStream" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="method">
@@ -2274,7 +2419,7 @@ Set up per measurement.</p>
 .. note:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">Moench</span><span class="p">]</span> <span class="n">Default</span> <span class="ow">is</span> <span class="n">disabled</span><span class="o">.</span>
 
-<span class="p">[</span><span class="n">Jungfrau</span><span class="p">]</span> <span class="n">Default</span> <span class="ow">is</span> <span class="n">disabled</span><span class="o">.</span> <span class="n">Get</span> <span class="n">will</span> <span class="k">return</span> <span class="n">power</span> <span class="n">status</span><span class="o">.</span> <span class="n">Can</span> <span class="n">be</span> <span class="n">off</span> <span class="k">if</span> <span class="n">temperature</span> <span class="n">event</span> <span class="n">occured</span> <span class="p">(</span><span class="n">temperature</span> <span class="n">over</span> <span class="n">temp_threshold</span> <span class="k">with</span> <span class="n">temp_control</span> <span class="n">enabled</span><span class="o">.</span>
+<span class="p">[</span><span class="n">Jungfrau</span><span class="p">]</span> <span class="n">Default</span> <span class="ow">is</span> <span class="n">disabled</span><span class="o">.</span> <span class="n">Get</span> <span class="n">will</span> <span class="k">return</span> <span class="n">power</span> <span class="n">status</span><span class="o">.</span> <span class="n">Can</span> <span class="n">be</span> <span class="n">off</span> <span class="k">if</span> <span class="n">temperature</span> <span class="n">event</span> <span class="n">occured</span> <span class="p">(</span><span class="n">temperature</span> <span class="n">over</span> <span class="n">temp_threshold</span> <span class="k">with</span> <span class="n">temp_control</span> <span class="n">enabled</span><span class="o">.</span> <span class="n">Will</span> <span class="n">configure</span> <span class="n">chip</span> <span class="p">(</span><span class="n">only</span> <span class="n">chip</span> <span class="n">v1</span><span class="o">.</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span>
 
 <span class="p">[</span><span class="n">Mythen3</span><span class="p">][</span><span class="n">Gotthard2</span><span class="p">]</span> <span class="n">Default</span> <span class="ow">is</span> <span class="mf">1.</span> <span class="n">If</span> <span class="n">module</span> <span class="ow">not</span> <span class="n">connected</span> <span class="ow">or</span> <span class="n">wrong</span> <span class="n">module</span><span class="p">,</span> <span class="n">powerchip</span> <span class="n">will</span> <span class="n">fail</span><span class="o">.</span>
 </pre></div>
@@ -2343,15 +2488,17 @@ Set up per measurement.</p>
 <dd></dd></dl>
 
 <dl class="method">
-<dt id="slsdet.Detector.readnlines">
-<em class="property">property </em><code class="sig-name descname">readnlines</code><a class="headerlink" href="#slsdet.Detector.readnlines" title="Permalink to this definition">¶</a></dt>
-<dd><p>[Eiger] Number of lines to read out per half module
+<dt id="slsdet.Detector.readnrows">
+<em class="property">property </em><code class="sig-name descname">readnrows</code><a class="headerlink" href="#slsdet.Detector.readnrows" title="Permalink to this definition">¶</a></dt>
+<dd><p>[Eiger] Number of rows to read out per half module starting from the centre.
+[Jungfrau] Number of rows to read per module starting from the centre.
 .. note:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Options</span><span class="p">:</span> <span class="mi">0</span> <span class="o">-</span> <span class="mf">256.</span> <span class="mi">256</span> <span class="ow">is</span> <span class="n">default</span><span class="o">.</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">Eiger</span><span class="p">]</span> <span class="n">Options</span><span class="p">:</span> <span class="mi">1</span> <span class="o">-</span> <span class="mf">256.</span> <span class="mi">256</span> <span class="ow">is</span> <span class="n">default</span><span class="o">.</span>
 
-<span class="n">The</span> <span class="n">permissible</span> <span class="n">values</span> <span class="n">depend</span> <span class="n">on</span> <span class="n">dynamic</span> <span class="nb">range</span> <span class="ow">and</span> <span class="mi">10</span><span class="n">Gbe</span> <span class="n">enabled</span><span class="o">.</span>
+<span class="p">[</span><span class="n">Eiger</span><span class="p">]</span><span class="n">The</span> <span class="n">permissible</span> <span class="n">values</span> <span class="n">depend</span> <span class="n">on</span> <span class="n">dynamic</span> <span class="nb">range</span> <span class="ow">and</span> <span class="mi">10</span><span class="n">Gbe</span> <span class="n">enabled</span><span class="o">.</span>
 </pre></div>
 </div>
+<p>[Jungfrau] Options: 8 - 512 (multiples of 8)</p>
 </dd></dl>
 
 <dl class="method">
@@ -2400,6 +2547,11 @@ Set up per measurement.</p>
 <dl class="method">
 <dt id="slsdet.Detector.resetTemperatureEvent">
 <code class="sig-name descname">resetTemperatureEvent</code><span class="sig-paren">(</span><em class="sig-param">self: _slsdet.CppDetectorApi</em>, <em class="sig-param">arg0: List[int] = []</em><span class="sig-paren">)</span> &#x2192; None<a class="headerlink" href="#slsdet.Detector.resetTemperatureEvent" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="slsdet.Detector.resetToDefaultDacs">
+<code class="sig-name descname">resetToDefaultDacs</code><span class="sig-paren">(</span><em class="sig-param">self: _slsdet.CppDetectorApi</em>, <em class="sig-param">arg0: bool</em>, <em class="sig-param">arg1: List[int] = []</em><span class="sig-paren">)</span> &#x2192; None<a class="headerlink" href="#slsdet.Detector.resetToDefaultDacs" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="method">
@@ -2820,7 +2972,7 @@ Default: ANALOG_ONLY</p>
 
 <dl class="method">
 <dt id="slsdet.Detector.sendSoftwareTrigger">
-<code class="sig-name descname">sendSoftwareTrigger</code><span class="sig-paren">(</span><em class="sig-param">self: _slsdet.CppDetectorApi</em>, <em class="sig-param">arg0: List[int] = []</em><span class="sig-paren">)</span> &#x2192; None<a class="headerlink" href="#slsdet.Detector.sendSoftwareTrigger" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">sendSoftwareTrigger</code><span class="sig-paren">(</span><em class="sig-param">self: _slsdet.CppDetectorApi</em>, <em class="sig-param">arg0: bool = False</em>, <em class="sig-param">arg1: List[int] = []</em><span class="sig-paren">)</span> &#x2192; None<a class="headerlink" href="#slsdet.Detector.sendSoftwareTrigger" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="method">
@@ -2884,8 +3036,8 @@ Default: ANALOG_ONLY</p>
 <dd></dd></dl>
 
 <dl class="method">
-<dt id="slsdet.Detector.setAutoCompDisable">
-<code class="sig-name descname">setAutoCompDisable</code><span class="sig-paren">(</span><em class="sig-param">self: _slsdet.CppDetectorApi</em>, <em class="sig-param">arg0: bool</em>, <em class="sig-param">arg1: List[int] = []</em><span class="sig-paren">)</span> &#x2192; None<a class="headerlink" href="#slsdet.Detector.setAutoCompDisable" title="Permalink to this definition">¶</a></dt>
+<dt id="slsdet.Detector.setAutoComparatorDisable">
+<code class="sig-name descname">setAutoComparatorDisable</code><span class="sig-paren">(</span><em class="sig-param">self: _slsdet.CppDetectorApi</em>, <em class="sig-param">arg0: bool</em>, <em class="sig-param">arg1: List[int] = []</em><span class="sig-paren">)</span> &#x2192; None<a class="headerlink" href="#slsdet.Detector.setAutoComparatorDisable" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="method">
@@ -2896,11 +3048,6 @@ Default: ANALOG_ONLY</p>
 <dl class="method">
 <dt id="slsdet.Detector.setBit">
 <code class="sig-name descname">setBit</code><span class="sig-paren">(</span><em class="sig-param">self: _slsdet.CppDetectorApi</em>, <em class="sig-param">arg0: int</em>, <em class="sig-param">arg1: int</em>, <em class="sig-param">arg2: List[int] = []</em><span class="sig-paren">)</span> &#x2192; None<a class="headerlink" href="#slsdet.Detector.setBit" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="slsdet.Detector.setBottom">
-<code class="sig-name descname">setBottom</code><span class="sig-paren">(</span><em class="sig-param">self: _slsdet.CppDetectorApi</em>, <em class="sig-param">arg0: bool</em>, <em class="sig-param">arg1: List[int] = []</em><span class="sig-paren">)</span> &#x2192; None<a class="headerlink" href="#slsdet.Detector.setBottom" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="method">
@@ -2949,6 +3096,11 @@ Default: ANALOG_ONLY</p>
 <dd></dd></dl>
 
 <dl class="method">
+<dt id="slsdet.Detector.setComparatorDisableTime">
+<code class="sig-name descname">setComparatorDisableTime</code><span class="sig-paren">(</span><em class="sig-param">self: _slsdet.CppDetectorApi</em>, <em class="sig-param">arg0: datetime.timedelta</em>, <em class="sig-param">arg1: List[int] = []</em><span class="sig-paren">)</span> &#x2192; None<a class="headerlink" href="#slsdet.Detector.setComparatorDisableTime" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
 <dt id="slsdet.Detector.setControlPort">
 <code class="sig-name descname">setControlPort</code><span class="sig-paren">(</span><em class="sig-param">self: _slsdet.CppDetectorApi</em>, <em class="sig-param">arg0: int</em>, <em class="sig-param">arg1: List[int] = []</em><span class="sig-paren">)</span> &#x2192; None<a class="headerlink" href="#slsdet.Detector.setControlPort" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
@@ -2989,9 +3141,19 @@ Default: ANALOG_ONLY</p>
 <dd></dd></dl>
 
 <dl class="method">
-<dt id="slsdet.Detector.setDefaultDacs">
-<code class="sig-name descname">setDefaultDacs</code><span class="sig-paren">(</span><em class="sig-param">self: _slsdet.CppDetectorApi</em>, <em class="sig-param">arg0: List[int] = []</em><span class="sig-paren">)</span> &#x2192; None<a class="headerlink" href="#slsdet.Detector.setDefaultDacs" title="Permalink to this definition">¶</a></dt>
+<dt id="slsdet.Detector.setDataStream">
+<code class="sig-name descname">setDataStream</code><span class="sig-paren">(</span><em class="sig-param">self: _slsdet.CppDetectorApi</em>, <em class="sig-param">arg0: _slsdet.slsDetectorDefs.portPosition</em>, <em class="sig-param">arg1: bool</em>, <em class="sig-param">arg2: List[int] = []</em><span class="sig-paren">)</span> &#x2192; None<a class="headerlink" href="#slsdet.Detector.setDataStream" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
+
+<dl class="method">
+<dt id="slsdet.Detector.setDefaultDac">
+<code class="sig-name descname">setDefaultDac</code><span class="sig-paren">(</span><em class="sig-param">*args</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#slsdet.Detector.setDefaultDac" title="Permalink to this definition">¶</a></dt>
+<dd><p>Overloaded function.</p>
+<ol class="arabic simple">
+<li><p>setDefaultDac(self: _slsdet.CppDetectorApi, arg0: _slsdet.slsDetectorDefs.dacIndex, arg1: int, arg2: List[int] = []) -&gt; None</p></li>
+<li><p>setDefaultDac(self: _slsdet.CppDetectorApi, arg0: _slsdet.slsDetectorDefs.dacIndex, arg1: int, arg2: _slsdet.slsDetectorDefs.detectorSettings, arg3: List[int] = []) -&gt; None</p></li>
+</ol>
+</dd></dl>
 
 <dl class="method">
 <dt id="slsdet.Detector.setDefaultRateCorrection">
@@ -3104,13 +3266,33 @@ Default: ANALOG_ONLY</p>
 <dd></dd></dl>
 
 <dl class="method">
-<dt id="slsdet.Detector.setFilter">
-<code class="sig-name descname">setFilter</code><span class="sig-paren">(</span><em class="sig-param">self: _slsdet.CppDetectorApi</em>, <em class="sig-param">arg0: int</em>, <em class="sig-param">arg1: List[int] = []</em><span class="sig-paren">)</span> &#x2192; None<a class="headerlink" href="#slsdet.Detector.setFilter" title="Permalink to this definition">¶</a></dt>
+<dt id="slsdet.Detector.setFilterCell">
+<code class="sig-name descname">setFilterCell</code><span class="sig-paren">(</span><em class="sig-param">self: _slsdet.CppDetectorApi</em>, <em class="sig-param">arg0: int</em>, <em class="sig-param">arg1: List[int] = []</em><span class="sig-paren">)</span> &#x2192; None<a class="headerlink" href="#slsdet.Detector.setFilterCell" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="slsdet.Detector.setFilterResistor">
+<code class="sig-name descname">setFilterResistor</code><span class="sig-paren">(</span><em class="sig-param">self: _slsdet.CppDetectorApi</em>, <em class="sig-param">arg0: int</em>, <em class="sig-param">arg1: List[int] = []</em><span class="sig-paren">)</span> &#x2192; None<a class="headerlink" href="#slsdet.Detector.setFilterResistor" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="slsdet.Detector.setFlipRows">
+<code class="sig-name descname">setFlipRows</code><span class="sig-paren">(</span><em class="sig-param">self: _slsdet.CppDetectorApi</em>, <em class="sig-param">arg0: bool</em>, <em class="sig-param">arg1: List[int] = []</em><span class="sig-paren">)</span> &#x2192; None<a class="headerlink" href="#slsdet.Detector.setFlipRows" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="method">
 <dt id="slsdet.Detector.setFramesPerFile">
 <code class="sig-name descname">setFramesPerFile</code><span class="sig-paren">(</span><em class="sig-param">self: _slsdet.CppDetectorApi</em>, <em class="sig-param">arg0: int</em>, <em class="sig-param">arg1: List[int] = []</em><span class="sig-paren">)</span> &#x2192; None<a class="headerlink" href="#slsdet.Detector.setFramesPerFile" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="slsdet.Detector.setGainCaps">
+<code class="sig-name descname">setGainCaps</code><span class="sig-paren">(</span><em class="sig-param">self: _slsdet.CppDetectorApi</em>, <em class="sig-param">arg0: int</em>, <em class="sig-param">arg1: List[int] = []</em><span class="sig-paren">)</span> &#x2192; None<a class="headerlink" href="#slsdet.Detector.setGainCaps" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="slsdet.Detector.setGainMode">
+<code class="sig-name descname">setGainMode</code><span class="sig-paren">(</span><em class="sig-param">self: _slsdet.CppDetectorApi</em>, <em class="sig-param">arg0: _slsdet.slsDetectorDefs.gainMode</em>, <em class="sig-param">arg1: List[int] = []</em><span class="sig-paren">)</span> &#x2192; None<a class="headerlink" href="#slsdet.Detector.setGainMode" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="method">
@@ -3229,11 +3411,6 @@ Default: ANALOG_ONLY</p>
 <dd></dd></dl>
 
 <dl class="method">
-<dt id="slsdet.Detector.setPartialReadout">
-<code class="sig-name descname">setPartialReadout</code><span class="sig-paren">(</span><em class="sig-param">self: _slsdet.CppDetectorApi</em>, <em class="sig-param">arg0: int</em>, <em class="sig-param">arg1: List[int] = []</em><span class="sig-paren">)</span> &#x2192; None<a class="headerlink" href="#slsdet.Detector.setPartialReadout" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
 <dt id="slsdet.Detector.setPartialReset">
 <code class="sig-name descname">setPartialReset</code><span class="sig-paren">(</span><em class="sig-param">self: _slsdet.CppDetectorApi</em>, <em class="sig-param">arg0: bool</em>, <em class="sig-param">arg1: List[int] = []</em><span class="sig-paren">)</span> &#x2192; None<a class="headerlink" href="#slsdet.Detector.setPartialReset" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
@@ -3316,6 +3493,11 @@ Default: ANALOG_ONLY</p>
 <dl class="method">
 <dt id="slsdet.Detector.setRateCorrection">
 <code class="sig-name descname">setRateCorrection</code><span class="sig-paren">(</span><em class="sig-param">self: _slsdet.CppDetectorApi</em>, <em class="sig-param">arg0: datetime.timedelta</em>, <em class="sig-param">arg1: List[int] = []</em><span class="sig-paren">)</span> &#x2192; None<a class="headerlink" href="#slsdet.Detector.setRateCorrection" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="slsdet.Detector.setReadNRows">
+<code class="sig-name descname">setReadNRows</code><span class="sig-paren">(</span><em class="sig-param">self: _slsdet.CppDetectorApi</em>, <em class="sig-param">arg0: int</em>, <em class="sig-param">arg1: List[int] = []</em><span class="sig-paren">)</span> &#x2192; None<a class="headerlink" href="#slsdet.Detector.setReadNRows" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="method">
@@ -3549,6 +3731,11 @@ Default: ANALOG_ONLY</p>
 <dd></dd></dl>
 
 <dl class="method">
+<dt id="slsdet.Detector.setVetoAlgorithm">
+<code class="sig-name descname">setVetoAlgorithm</code><span class="sig-paren">(</span><em class="sig-param">self: _slsdet.CppDetectorApi</em>, <em class="sig-param">arg0: _slsdet.slsDetectorDefs.vetoAlgorithm</em>, <em class="sig-param">arg1: _slsdet.slsDetectorDefs.streamingInterface</em>, <em class="sig-param">arg2: List[int] = []</em><span class="sig-paren">)</span> &#x2192; None<a class="headerlink" href="#slsdet.Detector.setVetoAlgorithm" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
 <dt id="slsdet.Detector.setVetoFile">
 <code class="sig-name descname">setVetoFile</code><span class="sig-paren">(</span><em class="sig-param">self: _slsdet.CppDetectorApi</em>, <em class="sig-param">arg0: int</em>, <em class="sig-param">arg1: str</em>, <em class="sig-param">arg2: List[int] = []</em><span class="sig-paren">)</span> &#x2192; None<a class="headerlink" href="#slsdet.Detector.setVetoFile" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
@@ -3561,6 +3748,11 @@ Default: ANALOG_ONLY</p>
 <dl class="method">
 <dt id="slsdet.Detector.setVetoReference">
 <code class="sig-name descname">setVetoReference</code><span class="sig-paren">(</span><em class="sig-param">self: _slsdet.CppDetectorApi</em>, <em class="sig-param">arg0: int</em>, <em class="sig-param">arg1: int</em>, <em class="sig-param">arg2: List[int] = []</em><span class="sig-paren">)</span> &#x2192; None<a class="headerlink" href="#slsdet.Detector.setVetoReference" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="slsdet.Detector.setVetoStream">
+<code class="sig-name descname">setVetoStream</code><span class="sig-paren">(</span><em class="sig-param">self: _slsdet.CppDetectorApi</em>, <em class="sig-param">arg0: _slsdet.slsDetectorDefs.streamingInterface</em>, <em class="sig-param">arg1: List[int] = []</em><span class="sig-paren">)</span> &#x2192; None<a class="headerlink" href="#slsdet.Detector.setVetoStream" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="method">
@@ -3579,7 +3771,7 @@ Default: ANALOG_ONLY</p>
 <dd><p>detectorSettings
 .. note:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">Eiger</span><span class="p">]</span> <span class="n">Use</span> <span class="n">threshold</span> <span class="n">command</span> <span class="n">to</span> <span class="n">load</span> <span class="n">settings</span>
-<span class="p">[</span><span class="n">Jungfrau</span><span class="p">]</span> <span class="n">DYNAMICGAIN</span><span class="p">,</span> <span class="n">DYNAMICHG0</span><span class="p">,</span> <span class="n">FIXGAIN1</span><span class="p">,</span> <span class="n">FIXGAIN2</span><span class="p">,</span> <span class="n">FORCESWITCHG1</span><span class="p">,</span> <span class="n">FORCESWITCHG2</span>
+<span class="p">[</span><span class="n">Jungfrau</span><span class="p">]</span> <span class="n">GAIN0</span><span class="p">,</span> <span class="n">HIGHGAIN0</span>
 
 <span class="p">[</span><span class="n">Gotthard</span><span class="p">]</span> <span class="n">DYNAMICGAIN</span><span class="p">,</span> <span class="n">HIGHGAIN</span><span class="p">,</span> <span class="n">LOWGAIN</span><span class="p">,</span> <span class="n">MEDIUMGAIN</span><span class="p">,</span> <span class="n">VERYHIGHGAIN</span>
 
@@ -3706,7 +3898,7 @@ Default: ANALOG_ONLY</p>
 
 <dl class="method">
 <dt id="slsdet.Detector.stopDetector">
-<code class="sig-name descname">stopDetector</code><span class="sig-paren">(</span><em class="sig-param">self: _slsdet.CppDetectorApi</em><span class="sig-paren">)</span> &#x2192; None<a class="headerlink" href="#slsdet.Detector.stopDetector" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">stopDetector</code><span class="sig-paren">(</span><em class="sig-param">self: _slsdet.CppDetectorApi</em>, <em class="sig-param">arg0: List[int] = []</em><span class="sig-paren">)</span> &#x2192; None<a class="headerlink" href="#slsdet.Detector.stopDetector" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="method">
@@ -3726,7 +3918,7 @@ Default: ANALOG_ONLY</p>
 <em class="property">property </em><code class="sig-name descname">storagecell_delay</code><a class="headerlink" href="#slsdet.Detector.storagecell_delay" title="Permalink to this definition">¶</a></dt>
 <dd><p>[Jungfrau] Additional time delay between 2 consecutive exposures in burst mode, accepts either a value in seconds or datetime.timedelta
 .. note:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">For</span> <span class="n">advanced</span> <span class="n">users</span> <span class="n">only</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Only</span> <span class="n">applicable</span> <span class="k">for</span> <span class="n">chipv1</span><span class="o">.</span><span class="mf">0.</span> <span class="n">For</span> <span class="n">advanced</span> <span class="n">users</span> <span class="n">only</span>
 
 <span class="n">Value</span><span class="p">:</span> <span class="mi">0</span><span class="o">-</span><span class="mi">1638375</span> <span class="n">ns</span> <span class="p">(</span><span class="n">resolution</span> <span class="n">of</span> <span class="mi">25</span><span class="n">ns</span><span class="p">)</span>
 
@@ -3751,7 +3943,7 @@ Default: ANALOG_ONLY</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>For advanced users only.
-Options 0-15. Default is 15.</p>
+Options 0-max. max is 15 (default) for chipv1.0 and 3 (default) for chipv1.1.</p>
 </div>
 </dd></dl>
 
@@ -3760,7 +3952,7 @@ Options 0-15. Default is 15.</p>
 <em class="property">property </em><code class="sig-name descname">storagecells</code><a class="headerlink" href="#slsdet.Detector.storagecells" title="Permalink to this definition">¶</a></dt>
 <dd><p>[Jungfrau] Number of additional storage cells.
 .. note:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">For</span> <span class="n">advanced</span> <span class="n">users</span> <span class="n">only</span><span class="o">.</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Only</span> <span class="k">for</span> <span class="n">chip</span> <span class="n">v1</span><span class="o">.</span><span class="mf">0.</span> <span class="n">For</span> <span class="n">advanced</span> <span class="n">users</span> <span class="n">only</span><span class="o">.</span>
 
 <span class="n">Options</span><span class="p">:</span> <span class="mi">0</span> <span class="o">-</span> <span class="mf">15.</span> <span class="n">Default</span> <span class="ow">is</span> <span class="mf">0.</span>
 <span class="n">The</span> <span class="c1">#images = #frames x #triggers x (#storagecells + 1)</span>
@@ -4281,8 +4473,29 @@ Options 0-15. Default is 15.</p>
 <dl class="method">
 <dt id="slsdet.Detector.veto">
 <em class="property">property </em><code class="sig-name descname">veto</code><a class="headerlink" href="#slsdet.Detector.veto" title="Permalink to this definition">¶</a></dt>
-<dd><p>[Gotthard2] Enable or disable veto data streaming from detector.
+<dd><p>[Gotthard2] Enable or disable veto data from chip.
 .. note:: Default is 0.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="slsdet.Detector.vetoalg">
+<em class="property">property </em><code class="sig-name descname">vetoalg</code><a class="headerlink" href="#slsdet.Detector.vetoalg" title="Permalink to this definition">¶</a></dt>
+<dd><p>vetoAlgorithm, streamingInterface
+.. note:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Options</span><span class="p">:</span>
+<span class="p">(</span><span class="n">vetoAlgorithm</span><span class="p">):</span> <span class="n">ALG_HITS</span> <span class="p">(</span><span class="n">default</span><span class="p">),</span> <span class="n">ALG_RAW</span>
+<span class="p">(</span><span class="n">streamingInterface</span><span class="p">):</span> <span class="n">ETHERNET_10GB</span><span class="p">,</span> <span class="n">LOW_LATENCY_LINK</span>
+</pre></div>
+</div>
+<p class="rubric">Example</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">d</span><span class="o">.</span><span class="n">vetoalg</span> <span class="o">=</span> <span class="n">defs</span><span class="o">.</span><span class="n">ALG_HITS</span><span class="p">,</span> <span class="n">defs</span><span class="o">.</span><span class="n">ETHERNET_10GB</span>
+</pre></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>[Gotthard2] Algorithm used for veto. Enum</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="method">
@@ -4322,6 +4535,18 @@ and #photons and energy in keV.
 </dd></dl>
 
 <dl class="method">
+<dt id="slsdet.Detector.vetostream">
+<em class="property">property </em><code class="sig-name descname">vetostream</code><a class="headerlink" href="#slsdet.Detector.vetostream" title="Permalink to this definition">¶</a></dt>
+<dd><p>[Gotthard2] Enabling/ disabling veto interface
+.. note:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Default</span><span class="p">:</span> <span class="n">both</span> <span class="n">off</span>
+<span class="n">Options</span><span class="p">:</span> <span class="n">NONE</span><span class="p">,</span> <span class="n">LOW_LATENCY_LINK</span><span class="p">,</span> <span class="mi">10</span><span class="n">GBE</span> <span class="p">(</span><span class="n">debugging</span><span class="p">)</span>
+<span class="n">Debugging</span> <span class="n">interface</span> <span class="n">also</span> <span class="n">enables</span> <span class="n">second</span> <span class="n">interface</span> <span class="ow">in</span> <span class="n">receiver</span> <span class="p">(</span><span class="n">separate</span> <span class="n">file</span><span class="p">),</span> <span class="n">which</span> <span class="n">also</span> <span class="n">restarts</span> <span class="n">zmq</span> <span class="n">streaming</span> <span class="k">if</span> <span class="n">enabled</span><span class="o">.</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
 <dt id="slsdet.Detector.virtual">
 <em class="property">property </em><code class="sig-name descname">virtual</code><a class="headerlink" href="#slsdet.Detector.virtual" title="Permalink to this definition">¶</a></dt>
 <dd><p>Setup with n virtual servers running on localhost starting with control port p
@@ -4339,7 +4564,7 @@ and #photons and energy in keV.
 .. note:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">Eiger</span><span class="p">]</span> <span class="n">Sets</span> <span class="n">vcmp_ll</span><span class="p">,</span> <span class="n">vcmp_lr</span><span class="p">,</span> <span class="n">vcmp_rl</span><span class="p">,</span> <span class="n">vcmp_rr</span> <span class="ow">and</span> <span class="n">vcp</span> <span class="n">to</span> <span class="n">the</span> <span class="n">same</span> <span class="n">value</span><span class="o">.</span>
 
-<span class="p">[</span><span class="n">Mythen3</span><span class="p">]</span> <span class="n">Sets</span> <span class="n">vth1</span><span class="p">,</span> <span class="n">vth2</span> <span class="ow">and</span> <span class="n">vth3</span> <span class="n">to</span> <span class="n">the</span> <span class="n">same</span> <span class="n">value</span><span class="o">.</span>
+<span class="p">[</span><span class="n">Mythen3</span><span class="p">]</span> <span class="n">Sets</span> <span class="n">vth1</span><span class="p">,</span> <span class="n">vth2</span> <span class="ow">and</span> <span class="n">vth3</span> <span class="n">to</span> <span class="n">the</span> <span class="n">same</span> <span class="n">value</span> <span class="k">for</span> <span class="n">enabled</span> <span class="n">counters</span><span class="o">.</span>
 </pre></div>
 </div>
 </dd></dl>

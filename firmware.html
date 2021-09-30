@@ -156,7 +156,7 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#firmware-troubleshooting-with-blackfin">Firmware Troubleshooting with blackfin</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#how-to-get-back-mtd3-drive-remotely">How to get back mtd3 drive remotely</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#how-to-get-back-mtd3-drive-remotely-copying-new-kernel">How to get back mtd3 drive remotely (copying new kernel)</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#last-resort-using-usb-blaster">Last Resort using USB Blaster</a></li>
 </ul>
 </li>
@@ -407,6 +407,7 @@ jungfrauDetectorServervxxx --stop-server <span class="m">1953</span>
 <div class="section" id="upgrade-from-v5-0-0">
 <h3>Upgrade (from v5.0.0)<a class="headerlink" href="#upgrade-from-v5-0-0" title="Permalink to this headline">¶</a></h3>
 <p>Check <a class="reference internal" href="#blackfin-firmware-troubleshooting"><span class="std std-ref">firmware troubleshooting</span></a> if you run into issues while programming firmware.</p>
+<p>Always ensure that the client and server software are of the same release.</p>
 <ol class="arabic">
 <li><dl>
 <dt>Program from console</dt><dd><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># copies server from tftp folder of pc, programs fpga,</span>
@@ -469,6 +470,7 @@ sls_detector_put programfpga xxx.pof
 </div>
 <div class="section" id="id5">
 <h3>Upgrade (from v5.0.0)<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
+<p>Always ensure that the client and server software are of the same release.</p>
 <ol class="arabic">
 <li><dl>
 <dt>Program from console</dt><dd><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># copies server from tftp folder of pc, programs fpga,</span>
@@ -500,6 +502,7 @@ sls_detector_put programfpga xxx.rbf
 </div>
 <div class="section" id="id7">
 <h3>Upgrade (from v5.0.0)<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h3>
+<p>Always ensure that the client and server software are of the same release.</p>
 <ol class="arabic">
 <li><dl>
 <dt>Program from console</dt><dd><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># copies server from tftp folder of pc, programs fpga,</span>
@@ -528,6 +531,7 @@ sls_detector_put programfpga xxx.rbf
 <div class="section" id="id9">
 <h3>Upgrade (from v5.0.0)<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h3>
 <p>Check <a class="reference internal" href="#blackfin-firmware-troubleshooting"><span class="std std-ref">firmware troubleshooting</span></a> if you run into issues while programming firmware.</p>
+<p>Always ensure that the client and server software are of the same release.</p>
 <ol class="arabic">
 <li><dl>
 <dt>Program from console</dt><dd><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># copies server from tftp folder of pc, programs fpga,</span>
@@ -557,6 +561,7 @@ sls_detector_put programfpga xxx.pof
 <div class="section" id="id11">
 <h3>Upgrade (from v5.0.0)<a class="headerlink" href="#id11" title="Permalink to this headline">¶</a></h3>
 <p>Check <a class="reference internal" href="#blackfin-firmware-troubleshooting"><span class="std std-ref">firmware troubleshooting</span></a> if you run into issues while programming firmware.</p>
+<p>Always ensure that the client and server software are of the same release.</p>
 <ol class="arabic">
 <li><dl>
 <dt>Program from console</dt><dd><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># copies server from tftp folder of pc, programs fpga,</span>
@@ -599,23 +604,40 @@ mtd3: <span class="m">01000000</span> <span class="m">00010000</span> <span clas
 <li><p>If one can see the mtd3 drive, one can already try to flash again using the <strong>programfpga</strong> command (without rebooting blackfin or detector).</p></li>
 <li><p>If one can’t list it, read the next section to try to get the blackfin to list it.</p></li>
 </ol>
-<div class="section" id="how-to-get-back-mtd3-drive-remotely">
-<h3>How to get back mtd3 drive remotely<a class="headerlink" href="#how-to-get-back-mtd3-drive-remotely" title="Permalink to this headline">¶</a></h3>
-<p>This might take a few reruns (maybe even 10) until the mtd drive is accessed by the blackfin upon linux startup.</p>
+<div class="section" id="how-to-get-back-mtd3-drive-remotely-copying-new-kernel">
+<h3>How to get back mtd3 drive remotely (copying new kernel)<a class="headerlink" href="#how-to-get-back-mtd3-drive-remotely-copying-new-kernel" title="Permalink to this headline">¶</a></h3>
 <blockquote>
-<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># step 1: connect to the board</span>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># step 1: get the kernel image (uImage.lzma) from slsdetectorgroup</span>
+<span class="c1"># and copy it to pc&#39;s tftp folder</span>
+
+<span class="c1"># step 2: connect to the board</span>
 telnet bchipxxx
 
-<span class="c1"># step 2: check if mtd3 drive listed</span>
-more /proc/mtd
+<span class="c1">#step 3: go to directory for space</span>
+<span class="nb">cd</span> /var/tmp/
 
-<span class="c1"># step 3: tell fpga not to touch flash and reboot</span>
-<span class="nb">echo</span> <span class="m">9</span> &gt; /sys/class/gpio/export<span class="p">;</span>
-<span class="nb">echo</span> out &gt; /sys/class/gpio/gpio9/direction<span class="p">;</span>
-<span class="nb">echo</span> <span class="m">0</span> &gt; /sys/class/gpio/gpio9/value<span class="p">;</span>
+<span class="c1"># step 3: copy kernel to board</span>
+tftp pcxxx -r uImage.lzma -g
+
+<span class="c1"># step 4: verify kernel copied properly</span>
+ls -lrt
+
+<span class="c1"># step 5: erase flash</span>
+flash_eraseall /dev/mtd1
+
+<span class="c1"># step 6: copy new image to kernel drive</span>
+cat uImage.lzma &gt; /dev/mtd1
+
+<span class="c1"># step 7:</span>
+sync
+
+<span class="c1"># step 8:</span>
 reboot
 
-<span class="c1"># step 4: repeat steps 1 - 3 until you see the mtd3 drive</span>
+<span class="c1"># step 9: verification</span>
+telnet bchipxxx
+uname -a <span class="c1"># verify kernel date</span>
+more /proc/mtd <span class="c1"># verify mtd3 is listed</span>
 </pre></div>
 </div>
 </div></blockquote>
