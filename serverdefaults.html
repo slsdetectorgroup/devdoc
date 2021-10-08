@@ -1,39 +1,39 @@
 
 
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8">
+  <meta charset="utf-8" />
   
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
   <title>Default Values &mdash; slsDetectorPackage  documentation</title>
   
 
   
-  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/css/extra.css" type="text/css" />
+
   
   
 
   
-  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+
+  
+
+  
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
-        <script type="text/javascript" src="_static/jquery.js"></script>
-        <script type="text/javascript" src="_static/underscore.js"></script>
-        <script type="text/javascript" src="_static/doctools.js"></script>
-        <script type="text/javascript" src="_static/language_data.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
     
     <script type="text/javascript" src="_static/js/theme.js"></script>
 
     
-
-  
-  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="_static/css/extra.css" type="text/css" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Receivers" href="receivers.html" />
@@ -78,6 +78,7 @@
           
         </div>
 
+        
         <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
           
             
@@ -167,6 +168,7 @@
             
           
         </div>
+        
       </div>
     </nav>
 
@@ -201,18 +203,20 @@
 
 
 
+
+
 <div role="navigation" aria-label="breadcrumbs navigation">
 
   <ul class="wy-breadcrumbs">
     
-      <li><a href="index.html">Docs</a> &raquo;</li>
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
         
       <li>Default Values</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
-            
+          
             <a href="_sources/serverdefaults.rst.txt" rel="nofollow"> View page source</a>
           
         
@@ -666,115 +670,136 @@
 <tr class="row-even"><td><p>DEFAULT_SYSTEM_C3</p></td>
 <td><p>5</p></td>
 </tr>
-<tr class="row-odd"><td><p>FIXED_PLL_FREQUENCY</p></td>
-<td><p>20000000</p></td>
+<tr class="row-odd"><td><p>DEFAULT_READOUT_SPEED</p></td>
+<td><p>G2_108MHZ</p></td>
 </tr>
-<tr class="row-even"><td><p>INT_SYSTEM_C0_FREQUENCY</p></td>
-<td><p>144000000</p></td>
-</tr>
-<tr class="row-odd"><td><p>READOUT_PLL_VCO_FREQ_HZ</p></td>
-<td><p>866666688</p></td>
-</tr>
-<tr class="row-even"><td><p>SYSTEM_PLL_VCO_FREQ_HZ</p></td>
-<td><p>722222224</p></td>
-</tr>
-<tr class="row-odd"><td><p>DEFAULT_CLK1_PHASE_DEG</p></td>
-<td><p>270</p></td>
-</tr>
-<tr class="row-even"><td><p>DEFAULT_DBIT_PIPELINE</p></td>
-<td><p>1</p></td>
-</tr>
-<tr class="row-odd"><td><p>DEFAULT_ASIC_DOUT_RDY_SRC</p></td>
-<td><p>0x5</p></td>
-</tr>
-<tr class="row-even"><td><p>DEFAULT_ASIC_DOUT_RDY_DLY</p></td>
-<td><p>0x3</p></td>
-</tr>
-<tr class="row-odd"><td><p>VETO_DATA_SIZE</p></td>
-<td><p>160</p></td>
-</tr>
-<tr class="row-even"><td><p>BIT16_MASK</p></td>
-<td><p>0xFFFF</p></td>
-</tr>
-<tr class="row-odd"><td><p>ASIC_ADDR_MAX_BITS</p></td>
-<td><p>4</p></td>
-</tr>
-<tr class="row-even"><td><p>ASIC_CURRENT_INJECT_ADDR</p></td>
-<td><p>0x9</p></td>
-</tr>
-<tr class="row-odd"><td><p>ASIC_VETO_REF_ADDR</p></td>
-<td><p>0xA</p></td>
-</tr>
-<tr class="row-even"><td><p>ASIC_CONF_ADC_ADDR</p></td>
-<td><p>0xB</p></td>
-</tr>
-<tr class="row-odd"><td><p>ASIC_CONF_GLOBAL_SETT</p></td>
-<td><p>0xC</p></td>
-</tr>
-<tr class="row-even"><td><p>ASIC_GAIN_MAX_BITS</p></td>
-<td><p>2</p></td>
-</tr>
-<tr class="row-odd"><td><p>ASIC_GAIN_MSK</p></td>
-<td><p>0x3</p></td>
-</tr>
-<tr class="row-even"><td><p>ASIC_G0_VAL</p></td>
-<td><p>0x0 &amp; ASIC_GAIN_MSK) &lt;&lt; ADU_MAX_BITS</p></td>
-</tr>
-<tr class="row-odd"><td><p>ASIC_G1_VAL</p></td>
-<td><p>0x1 &amp; ASIC_GAIN_MSK) &lt;&lt; ADU_MAX_BITS</p></td>
-</tr>
-<tr class="row-even"><td><p>ASIC_G2_VAL</p></td>
-<td><p>0x3 &amp; ASIC_GAIN_MSK) &lt;&lt; ADU_MAX_BITS</p></td>
-</tr>
-<tr class="row-odd"><td><p>ASIC_CONTINUOUS_MODE_MSK</p></td>
-<td><p>0x7</p></td>
-</tr>
-<tr class="row-even"><td><p>ASIC_ADC_MAX_BITS</p></td>
-<td><p>7</p></td>
-</tr>
-<tr class="row-odd"><td><p>ASIC_ADC_MAX_VAL</p></td>
-<td><p>0x7F</p></td>
-</tr>
-<tr class="row-even"><td><p>ASIC_GLOBAL_SETT_MAX_BITS</p></td>
+<tr class="row-even"><td><p>SPEED_144_CLKDIV_0</p></td>
 <td><p>6</p></td>
 </tr>
-<tr class="row-odd"><td><p>ASIC_EXT_MEMCTRL_OFST</p></td>
-<td><p>0</p></td>
+<tr class="row-odd"><td><p>SPEED_144_CLKDIV_1</p></td>
+<td><p>6</p></td>
 </tr>
-<tr class="row-even"><td><p>ASIC_EXT_MEMCTRL_MSK</p></td>
-<td><p>0x1 &lt;&lt; ASIC_EXT_MEMCTRL_OFST</p></td>
+<tr class="row-even"><td><p>SPEED_144_CLKPHASE_DEG_1</p></td>
+<td><p>122</p></td>
 </tr>
-<tr class="row-odd"><td><p>ASIC_EXT_TIMING_OFST</p></td>
+<tr class="row-odd"><td><p>SPEED_108_CLKDIV_0</p></td>
+<td><p>8</p></td>
+</tr>
+<tr class="row-even"><td><p>SPEED_108_CLKDIV_1</p></td>
+<td><p>8</p></td>
+</tr>
+<tr class="row-odd"><td><p>SPEED_108_CLKPHASE_DEG_1</p></td>
+<td><p>268</p></td>
+</tr>
+<tr class="row-even"><td><p>FIXED_PLL_FREQUENCY</p></td>
+<td><p>20000000</p></td>
+</tr>
+<tr class="row-odd"><td><p>INT_SYSTEM_C0_FREQUENCY</p></td>
+<td><p>144000000</p></td>
+</tr>
+<tr class="row-even"><td><p>READOUT_PLL_VCO_FREQ_HZ</p></td>
+<td><p>866666688</p></td>
+</tr>
+<tr class="row-odd"><td><p>SYSTEM_PLL_VCO_FREQ_HZ</p></td>
+<td><p>722222224</p></td>
+</tr>
+<tr class="row-even"><td><p>DEFAULT_CLK1_PHASE_DEG</p></td>
+<td><p>270</p></td>
+</tr>
+<tr class="row-odd"><td><p>DEFAULT_DBIT_PIPELINE</p></td>
 <td><p>1</p></td>
 </tr>
-<tr class="row-even"><td><p>ASIC_EXT_TIMING_MSK</p></td>
-<td><p>0x1 &lt;&lt; ASIC_EXT_TIMING_OFST</p></td>
+<tr class="row-even"><td><p>DEFAULT_ASIC_DOUT_RDY_SRC</p></td>
+<td><p>0x5</p></td>
 </tr>
-<tr class="row-odd"><td><p>ASIC_CONT_MODE_OFST</p></td>
+<tr class="row-odd"><td><p>DEFAULT_ASIC_DOUT_RDY_DLY</p></td>
+<td><p>0x3</p></td>
+</tr>
+<tr class="row-even"><td><p>VETO_DATA_SIZE</p></td>
+<td><p>160</p></td>
+</tr>
+<tr class="row-odd"><td><p>BIT16_MASK</p></td>
+<td><p>0xFFFF</p></td>
+</tr>
+<tr class="row-even"><td><p>ASIC_ADDR_MAX_BITS</p></td>
+<td><p>4</p></td>
+</tr>
+<tr class="row-odd"><td><p>ASIC_CURRENT_INJECT_ADDR</p></td>
+<td><p>0x9</p></td>
+</tr>
+<tr class="row-even"><td><p>ASIC_VETO_REF_ADDR</p></td>
+<td><p>0xA</p></td>
+</tr>
+<tr class="row-odd"><td><p>ASIC_CONF_ADC_ADDR</p></td>
+<td><p>0xB</p></td>
+</tr>
+<tr class="row-even"><td><p>ASIC_CONF_GLOBAL_SETT</p></td>
+<td><p>0xC</p></td>
+</tr>
+<tr class="row-odd"><td><p>ASIC_GAIN_MAX_BITS</p></td>
 <td><p>2</p></td>
 </tr>
-<tr class="row-even"><td><p>ASIC_CONT_MODE_MSK</p></td>
+<tr class="row-even"><td><p>ASIC_GAIN_MSK</p></td>
+<td><p>0x3</p></td>
+</tr>
+<tr class="row-odd"><td><p>ASIC_G0_VAL</p></td>
+<td><p>0x0 &amp; ASIC_GAIN_MSK) &lt;&lt; ADU_MAX_BITS</p></td>
+</tr>
+<tr class="row-even"><td><p>ASIC_G1_VAL</p></td>
+<td><p>0x1 &amp; ASIC_GAIN_MSK) &lt;&lt; ADU_MAX_BITS</p></td>
+</tr>
+<tr class="row-odd"><td><p>ASIC_G2_VAL</p></td>
+<td><p>0x3 &amp; ASIC_GAIN_MSK) &lt;&lt; ADU_MAX_BITS</p></td>
+</tr>
+<tr class="row-even"><td><p>ASIC_CONTINUOUS_MODE_MSK</p></td>
+<td><p>0x7</p></td>
+</tr>
+<tr class="row-odd"><td><p>ASIC_ADC_MAX_BITS</p></td>
+<td><p>7</p></td>
+</tr>
+<tr class="row-even"><td><p>ASIC_ADC_MAX_VAL</p></td>
+<td><p>0x7F</p></td>
+</tr>
+<tr class="row-odd"><td><p>ASIC_GLOBAL_SETT_MAX_BITS</p></td>
+<td><p>6</p></td>
+</tr>
+<tr class="row-even"><td><p>ASIC_EXT_MEMCTRL_OFST</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-odd"><td><p>ASIC_EXT_MEMCTRL_MSK</p></td>
+<td><p>0x1 &lt;&lt; ASIC_EXT_MEMCTRL_OFST</p></td>
+</tr>
+<tr class="row-even"><td><p>ASIC_EXT_TIMING_OFST</p></td>
+<td><p>1</p></td>
+</tr>
+<tr class="row-odd"><td><p>ASIC_EXT_TIMING_MSK</p></td>
+<td><p>0x1 &lt;&lt; ASIC_EXT_TIMING_OFST</p></td>
+</tr>
+<tr class="row-even"><td><p>ASIC_CONT_MODE_OFST</p></td>
+<td><p>2</p></td>
+</tr>
+<tr class="row-odd"><td><p>ASIC_CONT_MODE_MSK</p></td>
 <td><p>0x1 &lt;&lt; ASIC_CONT_MODE_OFST</p></td>
 </tr>
-<tr class="row-odd"><td><p>ASIC_FILTER_OFST</p></td>
+<tr class="row-even"><td><p>ASIC_FILTER_OFST</p></td>
 <td><p>3</p></td>
 </tr>
-<tr class="row-even"><td><p>ASIC_FILTER_MSK</p></td>
+<tr class="row-odd"><td><p>ASIC_FILTER_MSK</p></td>
 <td><p>0x3 &lt;&lt; ASIC_FILTER_OFST</p></td>
 </tr>
-<tr class="row-odd"><td><p>ASIC_FILTER_MAX_RES_VALUE</p></td>
+<tr class="row-even"><td><p>ASIC_FILTER_MAX_RES_VALUE</p></td>
 <td><p>3</p></td>
 </tr>
-<tr class="row-even"><td><p>ASIC_CDS_GAIN_OFST</p></td>
+<tr class="row-odd"><td><p>ASIC_CDS_GAIN_OFST</p></td>
 <td><p>5</p></td>
 </tr>
-<tr class="row-odd"><td><p>ASIC_CDS_GAIN_MSK</p></td>
+<tr class="row-even"><td><p>ASIC_CDS_GAIN_MSK</p></td>
 <td><p>0x1 &lt;&lt; ASIC_CDS_GAIN_OFST</p></td>
 </tr>
-<tr class="row-even"><td><p>IP_HEADER_SIZE</p></td>
+<tr class="row-odd"><td><p>IP_HEADER_SIZE</p></td>
 <td><p>20</p></td>
 </tr>
-<tr class="row-odd"><td><p>UDP_IP_HEADER_LENGTH_BYTES</p></td>
+<tr class="row-even"><td><p>UDP_IP_HEADER_LENGTH_BYTES</p></td>
 <td><p>28</p></td>
 </tr>
 </tbody>
@@ -1304,7 +1329,7 @@
 </thead>
 <tbody>
 <tr class="row-even"><td><p>REQUIRED_FIRMWARE_VERSION</p></td>
-<td><p>27</p></td>
+<td><p>29</p></td>
 </tr>
 <tr class="row-odd"><td><p>ID_FILE</p></td>
 <td><p>detid_eiger.txt</p></td>
@@ -1569,7 +1594,7 @@
 <td><p>0x210831</p></td>
 </tr>
 <tr class="row-even"><td><p>REQRD_FRMWRE_VRSN</p></td>
-<td><p>0x210910</p></td>
+<td><p>0x211008</p></td>
 </tr>
 <tr class="row-odd"><td><p>CTRL_SRVR_INIT_TIME_US</p></td>
 <td><p>300 * 1000</p></td>
@@ -1739,35 +1764,47 @@
 <tr class="row-even"><td><p>BIT16_MASK</p></td>
 <td><p>0xFFFF</p></td>
 </tr>
-<tr class="row-odd"><td><p>ADC_OFST_FULL_SPEED_VAL</p></td>
-<td><p>0x10</p></td>
-</tr>
-<tr class="row-even"><td><p>ADC_OFST_HALF_SPEED_VAL</p></td>
-<td><p>0x08</p></td>
-</tr>
-<tr class="row-odd"><td><p>ADC_OFST_QUARTER_SPEED_VAL</p></td>
-<td><p>0x04</p></td>
-</tr>
-<tr class="row-even"><td><p>ADC_OFST_HALF_SPEED_BOARD2_VAL</p></td>
-<td><p>0x10</p></td>
-</tr>
-<tr class="row-odd"><td><p>ADC_OFST_QUARTER_SPEED_BOARD2_VAL</p></td>
-<td><p>0x08</p></td>
-</tr>
-<tr class="row-even"><td><p>ADC_PORT_INVERT_VAL</p></td>
+<tr class="row-odd"><td><p>ADC_PORT_INVERT_VAL</p></td>
 <td><p>0x5A5A5A5A</p></td>
 </tr>
-<tr class="row-odd"><td><p>ADC_PORT_INVERT_BOARD2_VAL</p></td>
+<tr class="row-even"><td><p>ADC_PORT_INVERT_BOARD2_VAL</p></td>
 <td><p>0x453b2a9c</p></td>
 </tr>
-<tr class="row-even"><td><p>SAMPLE_ADC_FULL_SPEED</p></td>
+<tr class="row-odd"><td><p>SAMPLE_ADC_FULL_SPEED_CHIP11</p></td>
 <td><p>SAMPLE_ADC_SAMPLE_0_VAL + SAMPLE_ADC_DECMT_FACTOR_0_VAL + SAMPLE_DGTL_SAMPLE_0_VAL + SAMPLE_DECMT_FACTOR_FULL_VAL</p></td>
 </tr>
-<tr class="row-odd"><td><p>SAMPLE_ADC_HALF_SPEED</p></td>
+<tr class="row-even"><td><p>SAMPLE_ADC_HALF_SPEED_CHIP11</p></td>
 <td><p>SAMPLE_ADC_SAMPLE_0_VAL + SAMPLE_ADC_DECMT_FACTOR_1_VAL + SAMPLE_DGTL_SAMPLE_1_VAL + SAMPLE_DECMT_FACTOR_HALF_VAL</p></td>
 </tr>
-<tr class="row-even"><td><p>SAMPLE_ADC_QUARTER_SPEED</p></td>
+<tr class="row-odd"><td><p>SAMPLE_ADC_QUARTER_SPEED_CHIP11</p></td>
 <td><p>SAMPLE_ADC_SAMPLE_0_VAL + SAMPLE_ADC_DECMT_FACTOR_3_VAL + SAMPLE_DGTL_SAMPLE_2_VAL + SAMPLE_DECMT_FACTOR_QUARTER_VAL</p></td>
+</tr>
+<tr class="row-even"><td><p>ADC_PHASE_FULL_SPEED_CHIP11</p></td>
+<td><p>160</p></td>
+</tr>
+<tr class="row-odd"><td><p>ADC_PHASE_HALF_SPEED_CHIP11</p></td>
+<td><p>160</p></td>
+</tr>
+<tr class="row-even"><td><p>ADC_PHASE_QUARTER_SPEED_CHIP11</p></td>
+<td><p>160</p></td>
+</tr>
+<tr class="row-odd"><td><p>DBIT_PHASE_FULL_SPEED_CHIP11</p></td>
+<td><p>75</p></td>
+</tr>
+<tr class="row-even"><td><p>DBIT_PHASE_HALF_SPEED_CHIP11</p></td>
+<td><p>135</p></td>
+</tr>
+<tr class="row-odd"><td><p>DBIT_PHASE_QUARTER_SPEED_CHIP11</p></td>
+<td><p>135</p></td>
+</tr>
+<tr class="row-even"><td><p>ADC_OFST_FULL_SPEED_VAL_CHIP11</p></td>
+<td><p>0x10</p></td>
+</tr>
+<tr class="row-odd"><td><p>ADC_OFST_HALF_SPEED_VAL_CHIP11</p></td>
+<td><p>0x08</p></td>
+</tr>
+<tr class="row-even"><td><p>ADC_OFST_QUARTER_SPEED_VAL_CHIP11</p></td>
+<td><p>0x04</p></td>
 </tr>
 <tr class="row-odd"><td><p>SAMPLE_ADC_FULL_SPEED_CHIP10</p></td>
 <td><p>SAMPLE_ADC_SAMPLE_0_VAL + SAMPLE_ADC_DECMT_FACTOR_0_VAL + SAMPLE_DGTL_SAMPLE_1_VAL + SAMPLE_DECMT_FACTOR_FULL_VAL</p></td>
@@ -1778,20 +1815,38 @@
 <tr class="row-odd"><td><p>SAMPLE_ADC_QUARTER_SPEED_CHIP10</p></td>
 <td><p>SAMPLE_ADC_SAMPLE_0_VAL + SAMPLE_ADC_DECMT_FACTOR_3_VAL + SAMPLE_DGTL_SAMPLE_6_VAL + SAMPLE_DECMT_FACTOR_QUARTER_VAL</p></td>
 </tr>
-<tr class="row-even"><td><p>SAMPLE_ADC_HALF_SPEED_BOARD2</p></td>
+<tr class="row-even"><td><p>ADC_PHASE_FULL_SPEED_CHIP10</p></td>
+<td><p>160</p></td>
+</tr>
+<tr class="row-odd"><td><p>ADC_PHASE_HALF_SPEED_CHIP10</p></td>
+<td><p>160</p></td>
+</tr>
+<tr class="row-even"><td><p>ADC_PHASE_QUARTER_SPEED_CHIP10</p></td>
+<td><p>160</p></td>
+</tr>
+<tr class="row-odd"><td><p>DBIT_PHASE_FULL_SPEED_CHIP10</p></td>
+<td><p>100</p></td>
+</tr>
+<tr class="row-even"><td><p>DBIT_PHASE_HALF_SPEED_CHIP10</p></td>
+<td><p>150</p></td>
+</tr>
+<tr class="row-odd"><td><p>DBIT_PHASE_QUARTER_SPEED_CHIP10</p></td>
+<td><p>150</p></td>
+</tr>
+<tr class="row-even"><td><p>ADC_OFST_FULL_SPEED_VAL_CHIP10</p></td>
+<td><p>0x10</p></td>
+</tr>
+<tr class="row-odd"><td><p>ADC_OFST_HALF_SPEED_VAL_CHIP10</p></td>
+<td><p>0x08</p></td>
+</tr>
+<tr class="row-even"><td><p>ADC_OFST_QUARTER_SPEED_VAL_CHIP10</p></td>
+<td><p>0x04</p></td>
+</tr>
+<tr class="row-odd"><td><p>SAMPLE_ADC_HALF_SPEED_BOARD2</p></td>
 <td><p>SAMPLE_ADC_SAMPLE_0_VAL + SAMPLE_ADC_DECMT_FACTOR_0_VAL + SAMPLE_DGTL_SAMPLE_3_VAL + SAMPLE_DECMT_FACTOR_HALF_VAL</p></td>
 </tr>
-<tr class="row-odd"><td><p>SAMPLE_ADC_QUARTER_SPEED_BOARD2</p></td>
+<tr class="row-even"><td><p>SAMPLE_ADC_QUARTER_SPEED_BOARD2</p></td>
 <td><p>SAMPLE_ADC_SAMPLE_0_VAL + SAMPLE_ADC_DECMT_FACTOR_1_VAL + SAMPLE_DGTL_SAMPLE_6_VAL + SAMPLE_DECMT_FACTOR_QUARTER_VAL</p></td>
-</tr>
-<tr class="row-even"><td><p>ADC_PHASE_FULL_SPEED</p></td>
-<td><p>175</p></td>
-</tr>
-<tr class="row-odd"><td><p>ADC_PHASE_HALF_SPEED</p></td>
-<td><p>175</p></td>
-</tr>
-<tr class="row-even"><td><p>ADC_PHASE_QUARTER_SPEED</p></td>
-<td><p>175</p></td>
 </tr>
 <tr class="row-odd"><td><p>ADC_PHASE_HALF_SPEED_BOARD2</p></td>
 <td><p>110</p></td>
@@ -1799,20 +1854,17 @@
 <tr class="row-even"><td><p>ADC_PHASE_QUARTER_SPEED_BOARD2</p></td>
 <td><p>220</p></td>
 </tr>
-<tr class="row-odd"><td><p>DBIT_PHASE_FULL_SPEED</p></td>
-<td><p>100</p></td>
-</tr>
-<tr class="row-even"><td><p>DBIT_PHASE_HALF_SPEED</p></td>
+<tr class="row-odd"><td><p>DBIT_PHASE_HALF_SPEED_BOARD2</p></td>
 <td><p>150</p></td>
 </tr>
-<tr class="row-odd"><td><p>DBIT_PHASE_QUARTER_SPEED</p></td>
+<tr class="row-even"><td><p>DBIT_PHASE_QUARTER_SPEED_BOARD2</p></td>
 <td><p>150</p></td>
 </tr>
-<tr class="row-even"><td><p>DBIT_PHASE_HALF_SPEED_BOARD2</p></td>
-<td><p>150</p></td>
+<tr class="row-odd"><td><p>ADC_OFST_HALF_SPEED_BOARD2_VAL</p></td>
+<td><p>0x10</p></td>
 </tr>
-<tr class="row-odd"><td><p>DBIT_PHASE_QUARTER_SPEED_BOARD2</p></td>
-<td><p>150</p></td>
+<tr class="row-even"><td><p>ADC_OFST_QUARTER_SPEED_BOARD2_VAL</p></td>
+<td><p>0x08</p></td>
 </tr>
 </tbody>
 </table>
@@ -2007,29 +2059,29 @@
            
           </div>
           <footer>
-  
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-      
-        <a href="receivers.html" class="btn btn-neutral float-right" title="Receivers" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
-      
-      
-        <a href="virtualserver.html" class="btn btn-neutral float-left" title="Detector Simulators" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
-      
+        <a href="receivers.html" class="btn btn-neutral float-right" title="Receivers" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="virtualserver.html" class="btn btn-neutral float-left" title="Detector Simulators" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
     </div>
-  
 
   <hr/>
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2020, PSD Detector Group
+        &#169; Copyright 2020, PSD Detector Group.
 
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
-
         </div>
       </div>
 
@@ -2037,7 +2089,6 @@
 
   </div>
   
-
 
   <script type="text/javascript">
       jQuery(function () {
