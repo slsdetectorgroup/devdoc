@@ -61,7 +61,7 @@
             
             
               <div class="version">
-                5.1.0
+                6.0.0
               </div>
             
           
@@ -287,8 +287,8 @@
 <div class="line">[CTB][Moench] Number of analog samples expected.</div>
 </div>
 </dd>
-<dt id="term-auto_comp_disable-0-1">auto_comp_disable [0, 1]</dt><dd><div class="line-block">
-<div class="line">[Jungfrau] Auto comparator disable mode. By default, the on-chip gain switching is active during the entire exposure.This mode disables the on - chip gain switching comparator automatically after 93.75% (only for chipv1.0) of exposure time (only for longer than 100us). It is possible to set the duration for chipv1.1 using comp_disable_time command.</div>
+<dt id="term-autocompdisable-0-1">autocompdisable [0, 1]</dt><dd><div class="line-block">
+<div class="line">[Jungfrau] Auto comparator disable mode. By default, the on-chip gain switching is active during the entire exposure.This mode disables the on - chip gain switching comparator automatically after 93.75% (only for chipv1.0) of exposure time (only for longer than 100us). It is possible to set the duration for chipv1.1 using compdisabletime command.</div>
 <div class="line">Default is 0 or this mode disabled(comparator enabled throughout). 1 enables mode. 0 disables mode.</div>
 </div>
 </dd>
@@ -357,7 +357,7 @@
 <div class="line">[Gotthard2][Mythen3] Phase of clock n_clock. If deg, then phase shift in degrees, else absolute phase shift values.</div>
 </div>
 </dd>
-<dt id="term-comp_disable_time-duration-optional-unit-ns-us-ms-s">comp_disable_time [duration] [(optional unit) ns|us|ms|s]</dt><dd><div class="line-block">
+<dt id="term-compdisabletime-duration-optional-unit-ns-us-ms-s">compdisabletime [duration] [(optional unit) ns|us|ms|s]</dt><dd><div class="line-block">
 <div class="line">[Jungfrau] Time before end of exposure when comparator is disabled. It is only possible for chipv1.1.</div>
 </div>
 </dd>
@@ -369,9 +369,9 @@
 <div class="line">Frees shared memory before loading configuration file. Set up once.</div>
 </div>
 </dd>
-<dt id="term-copydetectorserver-server_name-pc_host_name">copydetectorserver [server_name] [pc_host_name]</dt><dd><div class="line-block">
-<div class="line">[Jungfrau][Ctb][Moench][Mythen3][Gotthard2] Copies detector server via tftp from pc.</div>
-<div class="line">[Jungfrau][Ctb][Moench]Also changes respawn server, which is effective after a reboot.</div>
+<dt id="term-copydetectorserver-server_name-in-tftp-folder-pc_host_name">copydetectorserver [server_name (in tftp folder)] [pc_host_name]</dt><dd><div class="line-block">
+<div class="line">[Jungfrau][Eiger][Ctb][Moench][Mythen3][Gotthard2] Copies detector server via tftp from pc. Ensure that server is in the pc’s tftp folder. Makes a symbolic link with a shorter name (without vx.x.x). Then, detector reboots (except Eiger).</div>
+<div class="line">[Jungfrau][Ctb][Moench]Also changes respawn server to the link, which is effective after a reboot.</div>
 </div>
 </dd>
 <dt id="term-counters-i0-i1-i2-...">counters [i0] [i1] [i2]…</dt><dd><div class="line-block">
@@ -491,6 +491,11 @@
 <div class="line">[Gotthard] Exposure time left for current frame.</div>
 </div>
 </dd>
+<dt id="term-extrastoragecells-0-15">extrastoragecells [0-15]</dt><dd><div class="line-block">
+<div class="line">[Jungfrau] Only for chipv1.0. Number of additional storage cells. Default is 0. For advanced users only.</div>
+<div class="line">The #images = #frames x #triggers x (#extrastoragecells + 1).</div>
+</div>
+</dd>
 <dt id="term-extsampling-0-1">extsampling [0, 1]</dt><dd><div class="line-block">
 <div class="line">[Ctb] Enable for external sampling signal for digital data to signal by extsampling src command. For advanced users only.</div>
 </div>
@@ -511,7 +516,7 @@
 <div class="line">File format of data file. For HDF5, package must be compiled with HDF5 flags. Default is binary.</div>
 </div>
 </dd>
-<dt id="term-filtercell-0-12">filtercell [0-12]</dt><dd><div class="line-block">
+<dt id="term-filtercells-0-12">filtercells [0-12]</dt><dd><div class="line-block">
 <div class="line">[Jungfrau] Set Filter Cell. Only for chipv1.1. Advanced user Command</div>
 </div>
 </dd>
@@ -849,9 +854,9 @@
 <div class="line">[Mythen3][Gotthard2] Default is 1. If module not connected or wrong module, powerchip will fail.</div>
 </div>
 </dd>
-<dt id="term-programfpga-fname.pof-fname.rbf">programfpga [fname.pof | fname.rbf]</dt><dd><div class="line-block">
-<div class="line">[Jungfrau][Ctb][Moench] Programs FPGA from pof file. Rebooting controller is recommended.</div>
-<div class="line">[Mythen3][Gotthard2] Programs FPGA from rbf file. Power cycling the detector is recommended.</div>
+<dt id="term-programfpga-fname.pof-fname.rbf-full-path">programfpga [fname.pof | fname.rbf (full path)]</dt><dd><div class="line-block">
+<div class="line">[Jungfrau][Ctb][Moench] Programs FPGA from pof file (full path). Then, detector controller is rebooted</div>
+<div class="line">[Mythen3][Gotthard2] Programs FPGA from rbf file (full path). Then, detector controller is rebooted.</div>
 </div>
 </dd>
 <dt id="term-pulse-n_times-x-y">pulse [n_times] [x] [y]</dt><dd><div class="line-block">
@@ -1156,11 +1161,6 @@
 <div class="line">[Jungfrau] Storage cell that stores the first acquisition of the series. max is 15 (default) for chipv1.0 and 3 (default) for chipv1.1. For advanced users only.</div>
 </div>
 </dd>
-<dt id="term-storagecells-0-15">storagecells [0-15]</dt><dd><div class="line-block">
-<div class="line">[Jungfrau] Only for chipv1.0. Number of additional storage cells. Default is 0. For advanced users only.</div>
-<div class="line">The #images = #frames x #triggers x (#storagecells + 1).</div>
-</div>
-</dd>
 <dt id="term-subdeadtime-duration-optional-unit-ns-us-ms-s">subdeadtime [duration] [(optional unit) ns|us|ms|s]</dt><dd><div class="line-block">
 <div class="line">[Eiger] Dead time of EIGER subframes in 32 bit mode. Subperiod = subexptime + subdeadtime.</div>
 </div>
@@ -1403,9 +1403,9 @@
 <div class="line">Validates that UDP configuration in the detector is valid. If not configured, it will throw with error message requesting missing udp information.</div>
 </div>
 </dd>
-<dt>update [server_name] [pc_host_name] [fname.pof]</dt><dd><div class="line-block">
-<div class="line">[Jungfrau][Gotthard][CTB][Moench] Updates the firmware, detector server and then reboots detector controller blackfin.</div>
-<div class="line">[Mythen3][Gotthard2] Will still have old server starting up as the new server is not respawned</div>
+<dt>update [server_name (in tftp folder)] [pc_host_name] [fname.pof (incl full path)]</dt><dd><div class="line-block">
+<div class="line">[Jungfrau][Gotthard][CTB][Moench] Updates the firmware, detector server, creates the symbolic link and then reboots detector controller.</div>
+<div class="line">[Mythen3][Gotthard2] will require a script to start up the shorter named server link at start up.</div>
 <div class="line">sname is name of detector server binary found on tftp folder of host pc</div>
 <div class="line">hostname is name of pc to tftp from</div>
 <div class="line">fname is programming file name</div>
@@ -1574,11 +1574,17 @@
 <tr class="row-odd"><td><p>adcvpp</p></td>
 <td><p>dac</p></td>
 </tr>
-<tr class="row-even"><td><p>busy</p></td>
+<tr class="row-even"><td><p>auto_comp_disable</p></td>
+<td><p>autocompdisable</p></td>
+</tr>
+<tr class="row-odd"><td><p>busy</p></td>
 <td><p>clearbusy</p></td>
 </tr>
-<tr class="row-odd"><td><p>clkdivider</p></td>
+<tr class="row-even"><td><p>clkdivider</p></td>
 <td><p>readoutspeed</p></td>
+</tr>
+<tr class="row-odd"><td><p>comp_disable_time</p></td>
+<td><p>compdisabletime</p></td>
 </tr>
 <tr class="row-even"><td><p>cycles</p></td>
 <td><p>triggers</p></td>
@@ -1754,220 +1760,223 @@
 <tr class="row-odd"><td><p>startingfnum</p></td>
 <td><p>nextframenumber</p></td>
 </tr>
-<tr class="row-even"><td><p>thisversion</p></td>
+<tr class="row-even"><td><p>storagecells</p></td>
+<td><p>extrastoragecells</p></td>
+</tr>
+<tr class="row-odd"><td><p>thisversion</p></td>
 <td><p>clientversion</p></td>
 </tr>
-<tr class="row-odd"><td><p>timestamp</p></td>
+<tr class="row-even"><td><p>timestamp</p></td>
 <td><p>frametime</p></td>
 </tr>
-<tr class="row-even"><td><p>trimdir</p></td>
+<tr class="row-odd"><td><p>trimdir</p></td>
 <td><p>settingspath</p></td>
 </tr>
-<tr class="row-odd"><td><p>vb_comp</p></td>
+<tr class="row-even"><td><p>vb_comp</p></td>
 <td><p>dac</p></td>
 </tr>
-<tr class="row-even"><td><p>vb_comp_adc</p></td>
+<tr class="row-odd"><td><p>vb_comp_adc</p></td>
 <td><p>dac</p></td>
 </tr>
-<tr class="row-odd"><td><p>vb_comp_fe</p></td>
+<tr class="row-even"><td><p>vb_comp_fe</p></td>
 <td><p>dac</p></td>
 </tr>
-<tr class="row-even"><td><p>vb_cs</p></td>
+<tr class="row-odd"><td><p>vb_cs</p></td>
 <td><p>dac</p></td>
 </tr>
-<tr class="row-odd"><td><p>vb_ds</p></td>
+<tr class="row-even"><td><p>vb_ds</p></td>
 <td><p>dac</p></td>
 </tr>
-<tr class="row-even"><td><p>vb_opa_1st</p></td>
+<tr class="row-odd"><td><p>vb_opa_1st</p></td>
 <td><p>dac</p></td>
 </tr>
-<tr class="row-odd"><td><p>vb_opa_fd</p></td>
+<tr class="row-even"><td><p>vb_opa_fd</p></td>
 <td><p>dac</p></td>
 </tr>
-<tr class="row-even"><td><p>vb_pixbuf</p></td>
+<tr class="row-odd"><td><p>vb_pixbuf</p></td>
 <td><p>dac</p></td>
 </tr>
-<tr class="row-odd"><td><p>vb_sda</p></td>
+<tr class="row-even"><td><p>vb_sda</p></td>
 <td><p>dac</p></td>
 </tr>
-<tr class="row-even"><td><p>vbp_colbuf</p></td>
+<tr class="row-odd"><td><p>vbp_colbuf</p></td>
 <td><p>dac</p></td>
 </tr>
-<tr class="row-odd"><td><p>vcal</p></td>
+<tr class="row-even"><td><p>vcal</p></td>
 <td><p>dac</p></td>
 </tr>
-<tr class="row-even"><td><p>vcal_n</p></td>
+<tr class="row-odd"><td><p>vcal_n</p></td>
 <td><p>dac</p></td>
 </tr>
-<tr class="row-odd"><td><p>vcal_p</p></td>
+<tr class="row-even"><td><p>vcal_p</p></td>
 <td><p>dac</p></td>
 </tr>
-<tr class="row-even"><td><p>vcall</p></td>
+<tr class="row-odd"><td><p>vcall</p></td>
 <td><p>vcal</p></td>
 </tr>
-<tr class="row-odd"><td><p>vcas</p></td>
+<tr class="row-even"><td><p>vcas</p></td>
 <td><p>dac</p></td>
 </tr>
-<tr class="row-even"><td><p>vcasc_out</p></td>
+<tr class="row-odd"><td><p>vcasc_out</p></td>
 <td><p>dac</p></td>
 </tr>
-<tr class="row-odd"><td><p>vcasc_sfp</p></td>
+<tr class="row-even"><td><p>vcasc_sfp</p></td>
 <td><p>dac</p></td>
 </tr>
-<tr class="row-even"><td><p>vcascn_pb</p></td>
+<tr class="row-odd"><td><p>vcascn_pb</p></td>
 <td><p>dac</p></td>
 </tr>
-<tr class="row-odd"><td><p>vcascp_pb</p></td>
+<tr class="row-even"><td><p>vcascp_pb</p></td>
 <td><p>dac</p></td>
 </tr>
-<tr class="row-even"><td><p>vcassh</p></td>
+<tr class="row-odd"><td><p>vcassh</p></td>
 <td><p>dac</p></td>
 </tr>
-<tr class="row-odd"><td><p>vcmp_ll</p></td>
+<tr class="row-even"><td><p>vcmp_ll</p></td>
 <td><p>dac</p></td>
 </tr>
-<tr class="row-even"><td><p>vcmp_lr</p></td>
+<tr class="row-odd"><td><p>vcmp_lr</p></td>
 <td><p>dac</p></td>
 </tr>
-<tr class="row-odd"><td><p>vcmp_rl</p></td>
+<tr class="row-even"><td><p>vcmp_rl</p></td>
 <td><p>dac</p></td>
 </tr>
-<tr class="row-even"><td><p>vcmp_rr</p></td>
+<tr class="row-odd"><td><p>vcmp_rr</p></td>
 <td><p>dac</p></td>
 </tr>
-<tr class="row-odd"><td><p>vcn</p></td>
+<tr class="row-even"><td><p>vcn</p></td>
 <td><p>dac</p></td>
 </tr>
-<tr class="row-even"><td><p>vcom_adc1</p></td>
+<tr class="row-odd"><td><p>vcom_adc1</p></td>
 <td><p>dac</p></td>
 </tr>
-<tr class="row-odd"><td><p>vcom_adc2</p></td>
+<tr class="row-even"><td><p>vcom_adc2</p></td>
 <td><p>dac</p></td>
 </tr>
-<tr class="row-even"><td><p>vcom_cds</p></td>
+<tr class="row-odd"><td><p>vcom_cds</p></td>
 <td><p>dac</p></td>
 </tr>
-<tr class="row-odd"><td><p>vcp</p></td>
+<tr class="row-even"><td><p>vcp</p></td>
 <td><p>dac</p></td>
 </tr>
-<tr class="row-even"><td><p>vdcsh</p></td>
+<tr class="row-odd"><td><p>vdcsh</p></td>
 <td><p>dac</p></td>
 </tr>
-<tr class="row-odd"><td><p>vdd_prot</p></td>
+<tr class="row-even"><td><p>vdd_prot</p></td>
 <td><p>dac</p></td>
 </tr>
-<tr class="row-even"><td><p>vhighvoltage</p></td>
+<tr class="row-odd"><td><p>vhighvoltage</p></td>
 <td><p>highvoltage</p></td>
 </tr>
-<tr class="row-odd"><td><p>vicin</p></td>
+<tr class="row-even"><td><p>vicin</p></td>
 <td><p>dac</p></td>
 </tr>
-<tr class="row-even"><td><p>viinsh</p></td>
+<tr class="row-odd"><td><p>viinsh</p></td>
 <td><p>vishaper</p></td>
 </tr>
-<tr class="row-odd"><td><p>vin_cm</p></td>
+<tr class="row-even"><td><p>vin_cm</p></td>
 <td><p>dac</p></td>
 </tr>
-<tr class="row-even"><td><p>vin_com</p></td>
+<tr class="row-odd"><td><p>vin_com</p></td>
 <td><p>dac</p></td>
 </tr>
-<tr class="row-odd"><td><p>vipre</p></td>
+<tr class="row-even"><td><p>vipre</p></td>
 <td><p>dac</p></td>
 </tr>
-<tr class="row-even"><td><p>vipre_cds</p></td>
+<tr class="row-odd"><td><p>vipre_cds</p></td>
 <td><p>dac</p></td>
 </tr>
-<tr class="row-odd"><td><p>vipre_out</p></td>
+<tr class="row-even"><td><p>vipre_out</p></td>
 <td><p>dac</p></td>
 </tr>
-<tr class="row-even"><td><p>vis</p></td>
+<tr class="row-odd"><td><p>vis</p></td>
 <td><p>vishaper</p></td>
 </tr>
-<tr class="row-odd"><td><p>vishaper</p></td>
+<tr class="row-even"><td><p>vishaper</p></td>
 <td><p>dac</p></td>
 </tr>
-<tr class="row-even"><td><p>vout_cm</p></td>
+<tr class="row-odd"><td><p>vout_cm</p></td>
 <td><p>dac</p></td>
 </tr>
-<tr class="row-odd"><td><p>vph</p></td>
+<tr class="row-even"><td><p>vph</p></td>
 <td><p>vcal_p</p></td>
 </tr>
-<tr class="row-even"><td><p>vpl</p></td>
+<tr class="row-odd"><td><p>vpl</p></td>
 <td><p>vcal_n</p></td>
 </tr>
-<tr class="row-odd"><td><p>vpreamp</p></td>
+<tr class="row-even"><td><p>vpreamp</p></td>
 <td><p>vrpreamp</p></td>
 </tr>
-<tr class="row-even"><td><p>vref_cds</p></td>
+<tr class="row-odd"><td><p>vref_cds</p></td>
 <td><p>dac</p></td>
 </tr>
-<tr class="row-odd"><td><p>vref_comp</p></td>
+<tr class="row-even"><td><p>vref_comp</p></td>
 <td><p>dac</p></td>
 </tr>
-<tr class="row-even"><td><p>vref_comp_fe</p></td>
+<tr class="row-odd"><td><p>vref_comp_fe</p></td>
 <td><p>dac</p></td>
 </tr>
-<tr class="row-odd"><td><p>vref_ds</p></td>
+<tr class="row-even"><td><p>vref_ds</p></td>
 <td><p>dac</p></td>
 </tr>
-<tr class="row-even"><td><p>vref_h_adc</p></td>
+<tr class="row-odd"><td><p>vref_h_adc</p></td>
 <td><p>dac</p></td>
 </tr>
-<tr class="row-odd"><td><p>vref_l_adc</p></td>
+<tr class="row-even"><td><p>vref_l_adc</p></td>
 <td><p>dac</p></td>
 </tr>
-<tr class="row-even"><td><p>vref_prech</p></td>
+<tr class="row-odd"><td><p>vref_prech</p></td>
 <td><p>dac</p></td>
 </tr>
-<tr class="row-odd"><td><p>vref_rstore</p></td>
+<tr class="row-even"><td><p>vref_rstore</p></td>
 <td><p>dac</p></td>
 </tr>
-<tr class="row-even"><td><p>vrf</p></td>
+<tr class="row-odd"><td><p>vrf</p></td>
 <td><p>vrpreamp</p></td>
 </tr>
-<tr class="row-odd"><td><p>vrpreamp</p></td>
+<tr class="row-even"><td><p>vrpreamp</p></td>
 <td><p>dac</p></td>
 </tr>
-<tr class="row-even"><td><p>vrs</p></td>
+<tr class="row-odd"><td><p>vrs</p></td>
 <td><p>vrshaper</p></td>
 </tr>
-<tr class="row-odd"><td><p>vrshaper</p></td>
+<tr class="row-even"><td><p>vrshaper</p></td>
 <td><p>dac</p></td>
 </tr>
-<tr class="row-even"><td><p>vrshaper_n</p></td>
+<tr class="row-odd"><td><p>vrshaper_n</p></td>
 <td><p>dac</p></td>
 </tr>
-<tr class="row-odd"><td><p>vshaper</p></td>
+<tr class="row-even"><td><p>vshaper</p></td>
 <td><p>vrshaper</p></td>
 </tr>
-<tr class="row-even"><td><p>vshaperneg</p></td>
+<tr class="row-odd"><td><p>vshaperneg</p></td>
 <td><p>vrshaper_n</p></td>
 </tr>
-<tr class="row-odd"><td><p>vsvn</p></td>
+<tr class="row-even"><td><p>vsvn</p></td>
 <td><p>dac</p></td>
 </tr>
-<tr class="row-even"><td><p>vsvp</p></td>
+<tr class="row-odd"><td><p>vsvp</p></td>
 <td><p>dac</p></td>
 </tr>
-<tr class="row-odd"><td><p>vtgstv</p></td>
+<tr class="row-even"><td><p>vtgstv</p></td>
 <td><p>dac</p></td>
 </tr>
-<tr class="row-even"><td><p>vth1</p></td>
+<tr class="row-odd"><td><p>vth1</p></td>
 <td><p>dac</p></td>
 </tr>
-<tr class="row-odd"><td><p>vth2</p></td>
+<tr class="row-even"><td><p>vth2</p></td>
 <td><p>dac</p></td>
 </tr>
-<tr class="row-even"><td><p>vth3</p></td>
+<tr class="row-odd"><td><p>vth3</p></td>
 <td><p>dac</p></td>
 </tr>
-<tr class="row-odd"><td><p>vthreshold</p></td>
+<tr class="row-even"><td><p>vthreshold</p></td>
 <td><p>dac</p></td>
 </tr>
-<tr class="row-even"><td><p>vtr</p></td>
+<tr class="row-odd"><td><p>vtr</p></td>
 <td><p>vtrim</p></td>
 </tr>
-<tr class="row-odd"><td><p>vtrim</p></td>
+<tr class="row-even"><td><p>vtrim</p></td>
 <td><p>dac</p></td>
 </tr>
 </tbody>

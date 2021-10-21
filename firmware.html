@@ -61,7 +61,7 @@
             
             
               <div class="version">
-                5.1.0
+                6.0.0
               </div>
             
           
@@ -127,33 +127,32 @@
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#jungfrau">Jungfrau</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#id1">Download</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#upgrade-from-v4-x-x">Upgrade (from v4.x.x)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#upgrade-from-v5-0-0">Upgrade (from v5.0.0)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id2">Upgrade</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#gotthard">Gotthard</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#id2">Download</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#gotthard-i">Gotthard I</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id3">Download</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#firmware-upgrade-using-blaster-for-blackfin">Upgrade</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#mythen3">Mythen3</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#id4">Download</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id5">Upgrade (from v5.0.0)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#mythen-iii">Mythen III</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id5">Download</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id6">Upgrade</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#gotthard2">Gotthard2</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#id6">Download</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id7">Upgrade (from v5.0.0)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#gotthard-ii">Gotthard II</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id7">Download</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id8">Upgrade</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#moench">Moench</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#id8">Download</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id9">Upgrade (from v5.0.0)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id9">Download</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id10">Upgrade</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#ctb">Ctb</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#id10">Download</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id11">Upgrade (from v5.0.0)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id11">Download</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id12">Upgrade</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#firmware-troubleshooting-with-blackfin">Firmware Troubleshooting with blackfin</a><ul>
@@ -262,29 +261,10 @@
 <h3>Upgrade<a class="headerlink" href="#upgrade" title="Permalink to this headline">¶</a></h3>
 <ol class="arabic">
 <li><p>Tftp must be already installed on your pc to use the bcp script.</p></li>
-<li><p>Kill the on-board servers and copy new servers to the board.</p>
+<li><p>Copy new servers to the board. See <a class="reference internal" href="serverupgrade.html#detector-server-upgrade"><span class="std std-ref">how to upgrade detector servers</span></a> for more detals. A reboot should have started the new linked servers automatically. For Eiger, do not reboot yet as we need to program the firmware via bit files.</p>
 <blockquote>
-<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Option 1: from detector console</span>
-<span class="c1"># kill old server</span>
-ssh root@bebxxx
-killall eigerDetectorServer
-
-<span class="c1"># copy new server</span>
-<span class="nb">cd</span> executables
-scp user@pc:/path/eigerDetectorServerxxx .
-chmod <span class="m">777</span> eigerDetectorServerxxx
-ln -sf eigerDetectorServerxxx eigerDetectorServer
-sync
-
-<span class="c1"># Options 2: from client console for multiple modules</span>
-<span class="k">for</span> i <span class="k">in</span> bebxxx bebyyy<span class="p">;</span>
-<span class="k">do</span> ssh root@<span class="nv">$i</span> killall eigerDetectorServer<span class="p">;</span>
-scp eigerDetectorServerxxx root@<span class="nv">$i</span>:~/executables/eigerDetectorServer<span class="p">;</span>
-ssh root@<span class="nv">$i</span> sync<span class="p">;</span> <span class="k">done</span>
-</pre></div>
-</div>
-<ul class="simple">
-<li><p>This is crucial when registers between firmwares change. Failure to do so will result in linux on boards to crash and boards can’t be pinged anymore.</p></li>
+<div><ul class="simple">
+<li><p>This step is crucial when registers between firmwares change. Failure to do so will result in linux on boards to crash and boards can’t be pinged anymore.</p></li>
 </ul>
 </div></blockquote>
 </li>
@@ -296,14 +276,18 @@ ssh root@<span class="nv">$i</span> sync<span class="p">;</span> <span class="k"
 <div><p>Do a hard reset for each half module on back panel boards, between the LEDs, closer to each of the 1G ethernet connectors. Push until all LEDs start to blink.</p>
 </div></blockquote>
 </li>
-<li><dl>
-<dt>Software:</dt><dd><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ssh root@bebxxx
+<li><p>Software:</p>
+<blockquote>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Option 1: if the old server is still running:</span>
+sls_detector_put execcommand <span class="s2">&quot;./boot_recovery&quot;</span>
+
+<span class="c1"># Option 2:</span>
+ssh root@bebxxx
 <span class="nb">cd</span> executables
 ./boot_recovery
 </pre></div>
 </div>
-</dd>
-</dl>
+</div></blockquote>
 </li>
 </ul>
 </div></blockquote>
@@ -329,14 +313,29 @@ bcp download.bit bebxxx:/febl
 <span class="c1">#update front right fpga</span>
 bcp download.bit bebxxx:/febr
 
-<span class="c1">#update kernel (only if required by the SLS Detector Group)</span>
+<span class="c1">#update kernel (only if required by us)</span>
 bcp download.bit bebxxx:/kernel
 </pre></div>
 </div>
 </div></blockquote>
 </li>
-<li><p>Reboot the detector.</p></li>
+<li><p>Reboot the detector.</p>
+<blockquote>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># In the first terminal where we saw &quot;Succeess&quot;</span>
+<span class="c1"># reconfig febX is necessary only if you have flashed a new feb firmware</span>
+reconfig febl
+reconfig febr
+<span class="c1"># will reboot controller</span>
+reconfig fw0
+</pre></div>
+</div>
+</div></blockquote>
+</li>
 </ol>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If the detector servers did not start up automatically after reboot, you need to add scripts to do that. See <a class="reference internal" href="servers.html#automatic-start-servers"><span class="std std-ref">Automatic start</span></a> for more details.</p>
+</div>
 </div>
 </div>
 <div class="section" id="jungfrau">
@@ -348,75 +347,19 @@ bcp download.bit bebxxx:/kernel
 <li><p><a class="reference external" href="https://github.com/slsdetectorgroup/slsDetectorFirmware">pof files</a></p></li>
 </ul>
 </div>
-<div class="section" id="upgrade-from-v4-x-x">
-<h3>Upgrade (from v4.x.x)<a class="headerlink" href="#upgrade-from-v4-x-x" title="Permalink to this headline">¶</a></h3>
-<p>Check <a class="reference internal" href="#blackfin-firmware-troubleshooting"><span class="std std-ref">firmware troubleshooting</span></a> if you run into issues while programming firmware.</p>
-<ol class="arabic">
-<li><p>Tftp must be installed on pc.</p></li>
-<li><p>Update client package to the latest (5.x.x).</p></li>
-<li><dl>
-<dt>Disable server respawning or kill old server</dt><dd><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Option 1: if respawning enabled</span>
-telnet bchipxxx
-<span class="c1"># edit /etc/inittab</span>
-<span class="c1"># comment out line #ttyS0::respawn:/jungfrauDetectorServervxxx</span>
-reboot
-<span class="c1"># ensure servers did not start up after reboot</span>
-telnet bchipxxx
-ps
-
-<span class="c1">#  Option 2: if respawning already disabled</span>
-telnet bchipxxx
-killall jungfrauDetectorServerv*
-</pre></div>
+<div class="section" id="id2">
+<h3>Upgrade<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>These instructions are for upgrades from v5.0.0. For earlier versions, contact us.</p>
 </div>
-</dd>
-</dl>
-</li>
-<li><dl>
-<dt>Copy new server and start in update mode</dt><dd><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>tftp pcxxx -r jungfrauDetectorServervxxx -g
-chmod <span class="m">777</span> jungfrauDetectorServervxxx
-./jungfrauDetectorServervxxx -u
-</pre></div>
-</div>
-</dd>
-</dl>
-</li>
-<li><dl>
-<dt>Program fpga from the client console</dt><dd><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sls_detector_get free
-<span class="c1"># Crucial that the next command executes without any errors</span>
-sls_detector_put hostname bchipxxx
-sls_detector_put programfpga xxx.pof
-</pre></div>
-</div>
-</dd>
-</dl>
-</li>
-<li><p>After programming, kill ‘update server’ using Ctrl + C in server console.</p></li>
-<li><dl>
-<dt>Enable server respawning if needed</dt><dd><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>telnet bchipxxx
-<span class="c1"># edit /etc/inittab</span>
-<span class="c1"># uncomment out line #ttyS0::respawn:/jungfrauDetectorServervxxx</span>
-<span class="c1"># ensure the line has the new server name</span>
-reboot
-<span class="c1"># ensure both servers are running using ps</span>
-jungfrauDetectorServervxxx
-jungfrauDetectorServervxxx --stop-server <span class="m">1953</span>
-</pre></div>
-</div>
-</dd>
-</dl>
-</li>
-</ol>
-</div>
-<div class="section" id="upgrade-from-v5-0-0">
-<h3>Upgrade (from v5.0.0)<a class="headerlink" href="#upgrade-from-v5-0-0" title="Permalink to this headline">¶</a></h3>
 <p>Check <a class="reference internal" href="#blackfin-firmware-troubleshooting"><span class="std std-ref">firmware troubleshooting</span></a> if you run into issues while programming firmware.</p>
 <p>Always ensure that the client and server software are of the same release.</p>
-<ol class="arabic">
-<li><dl>
-<dt>Program from console</dt><dd><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># copies server from tftp folder of pc, programs fpga,</span>
-<span class="c1"># removes old server from respawn, sets up new server to respawn</span>
-<span class="c1"># and reboots</span>
+<dl>
+<dt>Program from console</dt><dd><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># copies server from tftp folder of pc, links new server to jungfrauDetectorServer,</span>
+<span class="c1"># removes old server from respawn, sets up new lnked server to respawn</span>
+<span class="c1"># programs fpga,</span>
+<span class="c1"># reboots</span>
 sls_detector_put update jungfrauDetectorServervxxx pcxxx xx.pof
 
 <span class="c1"># Or only program firmware</span>
@@ -425,26 +368,24 @@ sls_detector_put programfpga xxx.pof
 </div>
 </dd>
 </dl>
-</li>
-</ol>
 </div>
 </div>
-<div class="section" id="gotthard">
-<h2>Gotthard<a class="headerlink" href="#gotthard" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="id2">
-<h3>Download<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="gotthard-i">
+<h2>Gotthard I<a class="headerlink" href="#gotthard-i" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id3">
+<h3>Download<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p>detector server corresponding to package in slsDetectorPackage/serverBin</p></li>
 <li><p><a class="reference external" href="https://github.com/slsdetectorgroup/slsDetectorFirmware">pof files</a></p></li>
 </ul>
 </div>
 <div class="section" id="firmware-upgrade-using-blaster-for-blackfin">
-<span id="id3"></span><h3>Upgrade<a class="headerlink" href="#firmware-upgrade-using-blaster-for-blackfin" title="Permalink to this headline">¶</a></h3>
+<span id="id4"></span><h3>Upgrade<a class="headerlink" href="#firmware-upgrade-using-blaster-for-blackfin" title="Permalink to this headline">¶</a></h3>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <div class="line-block">
 <div class="line">Gotthard firmware cannot be upgraded remotely and requires the use of USB-Blaster.</div>
-<div class="line">It is generally updated by the SLS Detector group.</div>
+<div class="line">It is generally updated by us.</div>
 </div>
 </div>
 <ol class="arabic simple">
@@ -452,33 +393,33 @@ sls_detector_put programfpga xxx.pof
 <li><p>Start Quartus programmer, click on Hardware Setup. In the “Currently selected hardware” window, select USB-Blaster.</p></li>
 <li><p>In the Mode combo box, select “Active Serial Programming”.</p></li>
 <li><p>Plug the end of your USB-Blaster with the adaptor provided to the connector ‘AS config’ on the Gotthard board.</p></li>
-<li><p>Click on ‘Add file’. Select programming (pof) file provided by the SLS Detector group.</p></li>
+<li><p>Click on ‘Add file’. Select programming (pof) file provided by us.</p></li>
 <li><p>Check “Program/Configure” and “Verify”. Push the start button. Wait until the programming process is finished.</p></li>
 <li><p>In case of error messages, check the polarity of cable (that pin1 corresponds) and that the correct programming connector is selected.</p></li>
 <li><p>Reboot the detector.</p></li>
 </ol>
 </div>
 </div>
-<div class="section" id="mythen3">
-<h2>Mythen3<a class="headerlink" href="#mythen3" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="mythen-iii">
+<h2>Mythen III<a class="headerlink" href="#mythen-iii" title="Permalink to this headline">¶</a></h2>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>As it is still in developement, the rbf files must be picked up from the SLS Detector Group.</p>
-</div>
-<div class="section" id="id4">
-<h3>Download<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
-<ul class="simple">
-<li><p>detector server corresponding to package in slsDetectorPackage/serverBin</p></li>
-<li><p>rbf files (in developement)</p></li>
-</ul>
+<p>As it is still in development, the rbf files must be picked up from us.</p>
 </div>
 <div class="section" id="id5">
-<h3>Upgrade (from v5.0.0)<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
+<h3>Download<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>detector server corresponding to package in slsDetectorPackage/serverBin</p></li>
+<li><p><a class="reference external" href="https://github.com/slsdetectorgroup/slsDetectorFirmware">rbf files</a></p></li>
+</ul>
+</div>
+<div class="section" id="id6">
+<h3>Upgrade<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h3>
 <p>Always ensure that the client and server software are of the same release.</p>
-<ol class="arabic">
-<li><dl>
-<dt>Program from console</dt><dd><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># copies server from tftp folder of pc, programs fpga,</span>
-<span class="c1"># and reboots (new server not respawned currently)</span>
+<dl>
+<dt>Program from console</dt><dd><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># copies server from tftp folder of pc, links new server to mythen3DetectorServer,</span>
+<span class="c1"># programs fpga,</span>
+<span class="c1"># reboots</span>
 sls_detector_put update mythen3DetectorServervxxx pcxxx xxx.rbf
 
 <span class="c1"># Or only program firmware</span>
@@ -487,30 +428,28 @@ sls_detector_put programfpga xxx.rbf
 </div>
 </dd>
 </dl>
-</li>
-</ol>
-</div>
-</div>
-<div class="section" id="gotthard2">
-<h2>Gotthard2<a class="headerlink" href="#gotthard2" title="Permalink to this headline">¶</a></h2>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>As it is still in developement, the rbf files must be picked up from the SLS Detector Group.</p>
+<p>If the detector servers did not start up automatically after reboot, you need to add scripts to do that. See <a class="reference internal" href="servers.html#automatic-start-servers"><span class="std std-ref">Automatic start</span></a> for more details.</p>
 </div>
-<div class="section" id="id6">
-<h3>Download<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h3>
+</div>
+</div>
+<div class="section" id="gotthard-ii">
+<h2>Gotthard II<a class="headerlink" href="#gotthard-ii" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id7">
+<h3>Download<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p>detector server corresponding to package in slsDetectorPackage/serverBin</p></li>
-<li><p>rbf files (in development)</p></li>
+<li><p><a class="reference external" href="https://github.com/slsdetectorgroup/slsDetectorFirmware">rbf files</a></p></li>
 </ul>
 </div>
-<div class="section" id="id7">
-<h3>Upgrade (from v5.0.0)<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id8">
+<h3>Upgrade<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h3>
 <p>Always ensure that the client and server software are of the same release.</p>
-<ol class="arabic">
-<li><dl>
-<dt>Program from console</dt><dd><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># copies server from tftp folder of pc, programs fpga,</span>
-<span class="c1"># and reboots (new server not respawned currently)</span>
+<dl>
+<dt>Program from console</dt><dd><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># copies server from tftp folder of pc, links new server to gotthard2DetectorServer,</span>
+<span class="c1"># programs fpga,</span>
+<span class="c1"># reboots</span>
 sls_detector_put update gotthard2DetectorServervxxx pcxxx xxx.rbf
 
 <span class="c1"># Or only program firmware</span>
@@ -519,28 +458,30 @@ sls_detector_put programfpga xxx.rbf
 </div>
 </dd>
 </dl>
-</li>
-</ol>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If the detector servers did not start up automatically after reboot, you need to add scripts to do that. See <a class="reference internal" href="servers.html#automatic-start-servers"><span class="std std-ref">Automatic start</span></a> for more details.</p>
+</div>
 </div>
 </div>
 <div class="section" id="moench">
 <h2>Moench<a class="headerlink" href="#moench" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="id8">
-<h3>Download<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id9">
+<h3>Download<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p>detector server corresponding to package in slsDetectorPackage/serverBin</p></li>
 <li><p><a class="reference external" href="https://github.com/slsdetectorgroup/slsDetectorFirmware">pof files</a></p></li>
 </ul>
 </div>
-<div class="section" id="id9">
-<h3>Upgrade (from v5.0.0)<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id10">
+<h3>Upgrade<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h3>
 <p>Check <a class="reference internal" href="#blackfin-firmware-troubleshooting"><span class="std std-ref">firmware troubleshooting</span></a> if you run into issues while programming firmware.</p>
 <p>Always ensure that the client and server software are of the same release.</p>
-<ol class="arabic">
-<li><dl>
-<dt>Program from console</dt><dd><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># copies server from tftp folder of pc, programs fpga,</span>
-<span class="c1"># removes old server from respawn, sets up new server to respawn</span>
-<span class="c1"># and reboots</span>
+<dl>
+<dt>Program from console</dt><dd><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># copies server from tftp folder of pc, links new server to moenchDetectorServer,</span>
+<span class="c1"># removes old server from respawn, sets up new lnked server to respawn</span>
+<span class="c1"># programs fpga,</span>
+<span class="c1"># reboots</span>
 sls_detector_put update moenchDetectorServervxxx pcxxx xx.pof
 
 <span class="c1"># Or only program firmware</span>
@@ -549,28 +490,26 @@ sls_detector_put programfpga xxx.pof
 </div>
 </dd>
 </dl>
-</li>
-</ol>
 </div>
 </div>
 <div class="section" id="ctb">
 <h2>Ctb<a class="headerlink" href="#ctb" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="id10">
-<h3>Download<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id11">
+<h3>Download<a class="headerlink" href="#id11" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p>detector server corresponding to package in slsDetectorPackage/serverBin</p></li>
 <li><p><a class="reference external" href="https://github.com/slsdetectorgroup/slsDetectorFirmware">pof files</a></p></li>
 </ul>
 </div>
-<div class="section" id="id11">
-<h3>Upgrade (from v5.0.0)<a class="headerlink" href="#id11" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id12">
+<h3>Upgrade<a class="headerlink" href="#id12" title="Permalink to this headline">¶</a></h3>
 <p>Check <a class="reference internal" href="#blackfin-firmware-troubleshooting"><span class="std std-ref">firmware troubleshooting</span></a> if you run into issues while programming firmware.</p>
 <p>Always ensure that the client and server software are of the same release.</p>
-<ol class="arabic">
-<li><dl>
-<dt>Program from console</dt><dd><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># copies server from tftp folder of pc, programs fpga,</span>
-<span class="c1"># removes old server from respawn, sets up new server to respawn</span>
-<span class="c1"># and reboots</span>
+<dl>
+<dt>Program from console</dt><dd><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># copies server from tftp folder of pc, links new server to ctbDetectorServer,</span>
+<span class="c1"># removes old server from respawn, sets up new lnked server to respawn</span>
+<span class="c1"># programs fpga,</span>
+<span class="c1"># reboots</span>
 sls_detector_put update ctbDetectorServervxxx pcxxx xx.pof
 
 <span class="c1"># Or only program firmware</span>
@@ -579,8 +518,6 @@ sls_detector_put programfpga xxx.pof
 </div>
 </dd>
 </dl>
-</li>
-</ol>
 </div>
 </div>
 <div class="section" id="firmware-troubleshooting-with-blackfin">

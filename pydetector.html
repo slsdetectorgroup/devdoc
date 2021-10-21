@@ -61,7 +61,7 @@
             
             
               <div class="version">
-                5.1.0
+                6.0.0
               </div>
             
           
@@ -216,18 +216,19 @@ C++ API directly and the simplified exptime property.</p>
 <dl class="py method">
 <dt id="slsdet.Detector.acquire">
 <code class="sig-name descname">acquire</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#slsdet.Detector.acquire" title="Permalink to this definition">¶</a></dt>
-<dd><p>Run the configured measurement
-.. note:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Blocking</span> <span class="n">command</span><span class="p">,</span> <span class="n">where</span> <span class="n">control</span> <span class="n">server</span> <span class="ow">is</span> <span class="n">blocked</span> <span class="ow">and</span> <span class="n">cannot</span> <span class="n">accept</span> <span class="n">other</span> <span class="n">commands</span> <span class="n">until</span> <span class="n">acquisition</span> <span class="ow">is</span> <span class="n">done</span><span class="o">.</span>
-
-<span class="o">-</span> <span class="n">sets</span> <span class="n">acquiring</span> <span class="n">flag</span>
-<span class="o">-</span> <span class="n">starts</span> <span class="n">the</span> <span class="n">receiver</span> <span class="n">listener</span> <span class="p">(</span><span class="k">if</span> <span class="n">enabled</span><span class="p">)</span>
-<span class="o">-</span> <span class="n">starts</span> <span class="n">detector</span> <span class="n">acquisition</span> <span class="k">for</span> <span class="n">number</span> <span class="n">of</span> <span class="n">frames</span> <span class="nb">set</span>
-<span class="o">-</span> <span class="n">monitors</span> <span class="n">detector</span> <span class="n">status</span> <span class="kn">from</span> <span class="nn">running</span> <span class="n">to</span> <span class="n">idle</span>
-<span class="o">-</span> <span class="n">stops</span> <span class="n">the</span> <span class="n">receiver</span> <span class="n">listener</span> <span class="p">(</span><span class="k">if</span> <span class="n">enabled</span><span class="p">)</span>
-<span class="o">-</span> <span class="n">increments</span> <span class="n">file</span> <span class="n">index</span> <span class="k">if</span> <span class="n">file</span> <span class="n">write</span> <span class="n">enabled</span>
-<span class="o">-</span> <span class="n">resets</span> <span class="n">acquiring</span> <span class="n">flag</span>
-</pre></div>
+<dd><p>Run the configured measurement</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Blocking command, where control server is blocked and cannot accept other commands until acquisition is done.</p>
+<ul class="simple">
+<li><p>sets acquiring flag</p></li>
+<li><p>starts the receiver listener (if enabled)</p></li>
+<li><p>starts detector acquisition for number of frames set</p></li>
+<li><p>monitors detector status from running to idle</p></li>
+<li><p>stops the receiver listener (if enabled)</p></li>
+<li><p>increments file index if file write enabled</p></li>
+<li><p>resets acquiring flag</p></li>
+</ul>
 </div>
 </dd></dl>
 
@@ -246,15 +247,21 @@ C++ API directly and the simplified exptime property.</p>
 <dl class="py method">
 <dt id="slsdet.Detector.adcenable10g">
 <em class="property">property </em><code class="sig-name descname">adcenable10g</code><a class="headerlink" href="#slsdet.Detector.adcenable10g" title="Permalink to this definition">¶</a></dt>
-<dd><p>[Ctb][Moench] ADC Enable Mask for 10Gb mode for each 32 ADC channel.
-.. note:: If any of a consecutive 4 bits are enabled, the complete 4 bits are enabled.</p>
+<dd><p>[Ctb][Moench] ADC Enable Mask for 10Gb mode for each 32 ADC channel.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If any of a consecutive 4 bits are enabled, the complete 4 bits are enabled.</p>
+</div>
 </dd></dl>
 
 <dl class="py method">
 <dt id="slsdet.Detector.adcinvert">
 <em class="property">property </em><code class="sig-name descname">adcinvert</code><a class="headerlink" href="#slsdet.Detector.adcinvert" title="Permalink to this definition">¶</a></dt>
-<dd><p>[Ctb][Moench][Jungfrau] ADC Inversion Mask.
-.. note:: [Jungfrau][Moench] Inversions on top of the default mask.</p>
+<dd><p>[Ctb][Moench][Jungfrau] ADC Inversion Mask.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>[Jungfrau][Moench] Inversions on top of the default mask.</p>
+</div>
 </dd></dl>
 
 <dl class="py method">
@@ -302,8 +309,8 @@ C++ API directly and the simplified exptime property.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="slsdet.Detector.auto_comp_disable">
-<em class="property">property </em><code class="sig-name descname">auto_comp_disable</code><a class="headerlink" href="#slsdet.Detector.auto_comp_disable" title="Permalink to this definition">¶</a></dt>
+<dt id="slsdet.Detector.autocompdisable">
+<em class="property">property </em><code class="sig-name descname">autocompdisable</code><a class="headerlink" href="#slsdet.Detector.autocompdisable" title="Permalink to this definition">¶</a></dt>
 <dd><p>[Jungfrau] Enable or disable auto comparator disable mode.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -315,8 +322,11 @@ C++ API directly and the simplified exptime property.</p>
 <dl class="py method">
 <dt id="slsdet.Detector.burstmode">
 <em class="property">property </em><code class="sig-name descname">burstmode</code><a class="headerlink" href="#slsdet.Detector.burstmode" title="Permalink to this definition">¶</a></dt>
-<dd><p>burstMode
-.. note:: BURST_INTERNAL (default), BURST_EXTERNAL, CONTINUOUS_INTERNAL, CONTINUOUS_EXTERNAL</p>
+<dd><p>burstMode</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>BURST_INTERNAL (default), BURST_EXTERNAL, CONTINUOUS_INTERNAL, CONTINUOUS_EXTERNAL</p>
+</div>
 <dl class="field-list simple">
 <dt class="field-odd">Type</dt>
 <dd class="field-odd"><p>[Gotthard2] Burst mode of detector. Enum</p>
@@ -327,8 +337,7 @@ C++ API directly and the simplified exptime property.</p>
 <dl class="py method">
 <dt id="slsdet.Detector.burstperiod">
 <em class="property">property </em><code class="sig-name descname">burstperiod</code><a class="headerlink" href="#slsdet.Detector.burstperiod" title="Permalink to this definition">¶</a></dt>
-<dd><p>[Gotthard2] Period between 2 bursts. Only in burst mode and auto timing mode.
-.. note:: :getter: always returns in seconds. To get in datetime.delta, use getBurstPeriod</p>
+<dd><p>[Gotthard2] Period between 2 bursts. Only in burst mode and auto timing mode.</p>
 <p class="rubric">Example</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">d</span><span class="o">.</span><span class="n">burstperiod</span> <span class="o">=</span> <span class="mf">1.05</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">d</span><span class="o">.</span><span class="n">burstperiod</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">timedelta</span><span class="p">(</span><span class="n">minutes</span> <span class="o">=</span> <span class="mi">3</span><span class="p">,</span> <span class="n">seconds</span> <span class="o">=</span> <span class="mf">1.23</span><span class="p">)</span>
@@ -352,8 +361,12 @@ C++ API directly and the simplified exptime property.</p>
 <dd><p>[Gotthard2] Number of bursts left in acquisition.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Only in burst auto mode.
-:setter: Not Implemented</p>
+<p>Only in burst auto mode.</p>
+<dl class="field-list simple">
+<dt class="field-odd">setter</dt>
+<dd class="field-odd"><p>Not Implemented</p>
+</dd>
+</dl>
 </div>
 </dd></dl>
 
@@ -397,8 +410,8 @@ C++ API directly and the simplified exptime property.</p>
 <dl class="py method">
 <dt id="slsdet.Detector.clientversion">
 <em class="property">property </em><code class="sig-name descname">clientversion</code><a class="headerlink" href="#slsdet.Detector.clientversion" title="Permalink to this definition">¶</a></dt>
-<dd><p>Client software version in format [YYMMDD]
-.. rubric:: Example</p>
+<dd><p>Client software version in format [YYMMDD]</p>
+<p class="rubric">Example</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">d</span><span class="o">.</span><span class="n">clientversion</span>
 <span class="go">&#39;0x200810&#39;</span>
 </pre></div>
@@ -408,8 +421,8 @@ C++ API directly and the simplified exptime property.</p>
 <dl class="py method">
 <dt id="slsdet.Detector.clkdiv">
 <em class="property">property </em><code class="sig-name descname">clkdiv</code><a class="headerlink" href="#slsdet.Detector.clkdiv" title="Permalink to this definition">¶</a></dt>
-<dd><p>[Gotthard2][Mythen3] Clock Divider of all clocks. Must be greater than 1.
-.. rubric:: Example</p>
+<dd><p>[Gotthard2][Mythen3] Clock Divider of all clocks. Must be greater than 1.</p>
+<p class="rubric">Example</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">d</span><span class="o">.</span><span class="n">clkdiv</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mi">20</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">d</span><span class="o">.</span><span class="n">clkdiv</span>
 <span class="go">0: 20</span>
@@ -425,8 +438,7 @@ C++ API directly and the simplified exptime property.</p>
 <dl class="py method">
 <dt id="slsdet.Detector.clkfreq">
 <em class="property">property </em><code class="sig-name descname">clkfreq</code><a class="headerlink" href="#slsdet.Detector.clkfreq" title="Permalink to this definition">¶</a></dt>
-<dd><p>[Gotthard2][Mythen3] Frequency of clock in Hz.
-.. note:: :setter: Not implemented. Use clkdiv to set frequency</p>
+<dd><p>[Gotthard2][Mythen3] Frequency of clock in Hz.</p>
 <p class="rubric">Example</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">d</span><span class="o">.</span><span class="n">clkfreq</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
 <span class="go">50000000</span>
@@ -435,18 +447,22 @@ C++ API directly and the simplified exptime property.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="slsdet.Detector.comp_disable_time">
-<em class="property">property </em><code class="sig-name descname">comp_disable_time</code><a class="headerlink" href="#slsdet.Detector.comp_disable_time" title="Permalink to this definition">¶</a></dt>
+<dt id="slsdet.Detector.compdisabletime">
+<em class="property">property </em><code class="sig-name descname">compdisabletime</code><a class="headerlink" href="#slsdet.Detector.compdisabletime" title="Permalink to this definition">¶</a></dt>
 <dd><p>[Jungfrau] Time before end of exposure when comparator is disabled.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>It is only possible for chipv1.1.
-:getter: always returns in seconds. To get in datetime.delta, use getComparatorDisableTime</p>
+<p>It is only possible for chipv1.1.</p>
+<dl class="field-list simple">
+<dt class="field-odd">getter</dt>
+<dd class="field-odd"><p>always returns in seconds. To get in datetime.delta, use getComparatorDisableTime</p>
+</dd>
+</dl>
 </div>
 <p class="rubric">Example</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">d</span><span class="o">.</span><span class="n">comp_disable_time</span> <span class="o">=</span> <span class="mf">1.05</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">d</span><span class="o">.</span><span class="n">comp_disable_time</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">timedelta</span><span class="p">(</span><span class="n">minutes</span> <span class="o">=</span> <span class="mi">3</span><span class="p">,</span> <span class="n">seconds</span> <span class="o">=</span> <span class="mf">1.23</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">d</span><span class="o">.</span><span class="n">comp_disable_time</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">d</span><span class="o">.</span><span class="n">compdisabletime</span> <span class="o">=</span> <span class="mf">1.05</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">d</span><span class="o">.</span><span class="n">compdisabletime</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">timedelta</span><span class="p">(</span><span class="n">minutes</span> <span class="o">=</span> <span class="mi">3</span><span class="p">,</span> <span class="n">seconds</span> <span class="o">=</span> <span class="mf">1.23</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">d</span><span class="o">.</span><span class="n">compdisabletime</span>
 <span class="go">181.23</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">d</span><span class="o">.</span><span class="n">getComparatorDisableTime</span><span class="p">()</span>
 <span class="go">[datetime.timedelta(seconds=181, microseconds=230000)]</span>
@@ -542,11 +558,11 @@ see python/examples/use_currentsource.py</p>
 <dl class="py method">
 <dt id="slsdet.Detector.dbitpipeline">
 <em class="property">property </em><code class="sig-name descname">dbitpipeline</code><a class="headerlink" href="#slsdet.Detector.dbitpipeline" title="Permalink to this definition">¶</a></dt>
-<dd><p>[Ctb][Gotthard2] Pipeline of the clock for latching digital bits.
-.. note:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">CTB</span><span class="p">]</span> <span class="n">Options</span><span class="p">:</span> <span class="mi">0</span> <span class="o">-</span> <span class="mi">255</span>
-<span class="p">[</span><span class="n">Gotthard2</span><span class="p">]</span> <span class="n">Options</span><span class="p">:</span> <span class="mi">0</span> <span class="o">-</span> <span class="mi">7</span>
-</pre></div>
+<dd><p>[Ctb][Gotthard2] Pipeline of the clock for latching digital bits.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>[CTB] Options: 0 - 255
+[Gotthard2] Options: 0 - 7</p>
 </div>
 </dd></dl>
 
@@ -571,9 +587,15 @@ see python/examples/use_currentsource.py</p>
 <dd><p>[Gotthard][Jungfrau][CTB][Moench][Mythen3][Gotthard2] Delay left after trigger during acquisition, accepts either a value in seconds or datetime.timedelta</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>[Gotthard2] only in continuous mdoe.
-:getter: always returns in seconds. To get in datetime.delta, use getDelayAfterTriggerLeft
-:setter: Not Implemented</p>
+<p>[Gotthard2] only in continuous mdoe.</p>
+<dl class="field-list simple">
+<dt class="field-odd">getter</dt>
+<dd class="field-odd"><p>always returns in seconds. To get in datetime.delta, use getDelayAfterTriggerLeft</p>
+</dd>
+<dt class="field-even">setter</dt>
+<dd class="field-even"><p>Not Implemented</p>
+</dd>
+</dl>
 </div>
 <p class="rubric">Example</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">d</span><span class="o">.</span><span class="n">delayl</span>
@@ -587,8 +609,8 @@ see python/examples/use_currentsource.py</p>
 <dl class="py method">
 <dt id="slsdet.Detector.detectorserverversion">
 <em class="property">property </em><code class="sig-name descname">detectorserverversion</code><a class="headerlink" href="#slsdet.Detector.detectorserverversion" title="Permalink to this definition">¶</a></dt>
-<dd><p>On-board detector server software version in format [0xYYMMDD]
-.. rubric:: Example</p>
+<dd><p>On-board detector server software version in format [0xYYMMDD]</p>
+<p class="rubric">Example</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">d</span><span class="o">.</span><span class="n">detectorserverversion</span>
 <span class="go">&#39;0x200910&#39;</span>
 </pre></div>
@@ -598,12 +620,11 @@ see python/examples/use_currentsource.py</p>
 <dl class="py method">
 <dt id="slsdet.Detector.detsize">
 <em class="property">property </em><code class="sig-name descname">detsize</code><a class="headerlink" href="#slsdet.Detector.detsize" title="Permalink to this definition">¶</a></dt>
-<dd><p>Sets the detector size in both dimensions (number of channels).
-.. note:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">This</span> <span class="n">value</span> <span class="ow">is</span> <span class="n">used</span> <span class="n">to</span> <span class="n">calculate</span> <span class="n">row</span> <span class="ow">and</span> <span class="n">column</span> <span class="n">positions</span> <span class="k">for</span> <span class="n">each</span> <span class="n">module</span> <span class="ow">and</span> <span class="n">included</span> <span class="n">into</span> <span class="n">udp</span> <span class="n">data</span> <span class="n">packet</span> <span class="n">header</span><span class="o">.</span>
-
-<span class="n">By</span> <span class="n">default</span><span class="p">,</span> <span class="n">it</span> <span class="n">adds</span> <span class="n">modules</span> <span class="ow">in</span> <span class="n">y</span> <span class="n">dimension</span> <span class="k">for</span> <span class="mi">2</span><span class="n">d</span> <span class="n">detectors</span> <span class="ow">and</span> <span class="ow">in</span> <span class="n">x</span> <span class="n">dimension</span> <span class="k">for</span> <span class="mi">1</span><span class="n">d</span> <span class="n">detectors</span><span class="o">.</span>
-</pre></div>
+<dd><p>Sets the detector size in both dimensions (number of channels).</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This value is used to calculate row and column positions for each module and included into udp data packet header.</p>
+<p>By default, it adds modules in y dimension for 2d detectors and in x dimension for 1d detectors.</p>
 </div>
 <p class="rubric">Example</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">d</span><span class="o">.</span><span class="n">detsize</span>
@@ -685,11 +706,17 @@ see python/examples/use_currentsource.py</p>
 <dl class="py method">
 <dt id="slsdet.Detector.exptimel">
 <em class="property">property </em><code class="sig-name descname">exptimel</code><a class="headerlink" href="#slsdet.Detector.exptimel" title="Permalink to this definition">¶</a></dt>
-<dd><p>[Gotthard] Exposure time left for current frame.
-.. note:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">:</span><span class="n">getter</span><span class="p">:</span> <span class="n">always</span> <span class="n">returns</span> <span class="ow">in</span> <span class="n">seconds</span><span class="o">.</span> <span class="n">To</span> <span class="n">get</span> <span class="ow">in</span> <span class="n">datetime</span><span class="o">.</span><span class="n">delta</span><span class="p">,</span> <span class="n">use</span> <span class="n">getExptimeLeft</span>
-<span class="p">:</span><span class="n">setter</span><span class="p">:</span> <span class="n">Not</span> <span class="n">Implemented</span>
-</pre></div>
+<dd><p>[Gotthard] Exposure time left for current frame.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<dl class="field-list simple">
+<dt class="field-odd">getter</dt>
+<dd class="field-odd"><p>always returns in seconds. To get in datetime.delta, use getExptimeLeft</p>
+</dd>
+<dt class="field-even">setter</dt>
+<dd class="field-even"><p>Not Implemented</p>
+</dd>
+</dl>
 </div>
 <p class="rubric">Example</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">d</span><span class="o">.</span><span class="n">exptimel</span>
@@ -697,6 +724,18 @@ see python/examples/use_currentsource.py</p>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">d</span><span class="o">.</span><span class="n">getExptimeLeft</span><span class="p">()</span>
 <span class="go">[datetime.timedelta(seconds=181, microseconds=230000)]</span>
 </pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt id="slsdet.Detector.extrastoragecells">
+<em class="property">property </em><code class="sig-name descname">extrastoragecells</code><a class="headerlink" href="#slsdet.Detector.extrastoragecells" title="Permalink to this definition">¶</a></dt>
+<dd><p>[Jungfrau] Number of additional storage cells.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Only for chip v1.0. For advanced users only.</p>
+<p>Options: 0 - 15. Default is 0.
+The #images = #frames x #triggers x (#extrastoragecells + 1)</p>
 </div>
 </dd></dl>
 
@@ -720,37 +759,43 @@ For HDF5, package must be compiled with HDF5 flags. Default is binary.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="slsdet.Detector.filtercell">
-<em class="property">property </em><code class="sig-name descname">filtercell</code><a class="headerlink" href="#slsdet.Detector.filtercell" title="Permalink to this definition">¶</a></dt>
-<dd><p>[Jungfrau] Set filter capacitor.
-.. note:: [Jungfrau] Options: 0-12. Default: 0. Advanced user command. Only for chipv1.1.</p>
+<dt id="slsdet.Detector.filtercells">
+<em class="property">property </em><code class="sig-name descname">filtercells</code><a class="headerlink" href="#slsdet.Detector.filtercells" title="Permalink to this definition">¶</a></dt>
+<dd><p>[Jungfrau] Set filter capacitor.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>[Jungfrau] Options: 0-12. Default: 0. Advanced user command. Only for chipv1.1.</p>
+</div>
 </dd></dl>
 
 <dl class="py method">
 <dt id="slsdet.Detector.filterresistor">
 <em class="property">property </em><code class="sig-name descname">filterresistor</code><a class="headerlink" href="#slsdet.Detector.filterresistor" title="Permalink to this definition">¶</a></dt>
 <dd><p>[Gotthard2][Jungfrau] Set filter resistor. Increasing values for increasing ”
-“resistance.
-.. note:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Advanced</span> <span class="n">user</span> <span class="n">command</span><span class="o">.</span>
-<span class="p">[</span><span class="n">Gotthard2</span><span class="p">]</span> <span class="n">Default</span> <span class="ow">is</span> <span class="mf">0.</span> <span class="n">Options</span><span class="p">:</span> <span class="mi">0</span><span class="o">-</span><span class="mf">3.</span>
-<span class="p">[</span><span class="n">Jungfrau</span><span class="p">]</span> <span class="n">Default</span> <span class="ow">is</span> <span class="mf">1.</span> <span class="n">Options</span><span class="p">:</span> <span class="mi">0</span><span class="o">-</span><span class="mf">1.</span>
-</pre></div>
+“resistance.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Advanced user command.
+[Gotthard2] Default is 0. Options: 0-3.
+[Jungfrau] Default is 1. Options: 0-1.</p>
 </div>
 </dd></dl>
 
 <dl class="py method">
 <dt id="slsdet.Detector.findex">
 <em class="property">property </em><code class="sig-name descname">findex</code><a class="headerlink" href="#slsdet.Detector.findex" title="Permalink to this definition">¶</a></dt>
-<dd><p>File or Acquisition index in receiver.
-.. note:: File name: [file name prefix]_d[detector index]_f[sub file index]_[acquisition/file index].[raw/h5].</p>
+<dd><p>File or Acquisition index in receiver.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>File name: [file name prefix]_d[detector index]_f[sub file index]_[acquisition/file index].[raw/h5].</p>
+</div>
 </dd></dl>
 
 <dl class="py method">
 <dt id="slsdet.Detector.firmwareversion">
 <em class="property">property </em><code class="sig-name descname">firmwareversion</code><a class="headerlink" href="#slsdet.Detector.firmwareversion" title="Permalink to this definition">¶</a></dt>
-<dd><p>Fimware version of detector in format [0xYYMMDD] or an increasing 2 digit number for Eiger.
-.. rubric:: Example</p>
+<dd><p>Fimware version of detector in format [0xYYMMDD] or an increasing 2 digit number for Eiger.</p>
+<p class="rubric">Example</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">d</span><span class="o">.</span><span class="n">firmwareversion</span>
 <span class="go">&#39;0x200910&#39;</span>
 </pre></div>
@@ -791,8 +836,11 @@ eg. file name: run_d0_f0_5.raw</p>
 <dl class="py method">
 <dt id="slsdet.Detector.fpath">
 <em class="property">property </em><code class="sig-name descname">fpath</code><a class="headerlink" href="#slsdet.Detector.fpath" title="Permalink to this definition">¶</a></dt>
-<dd><p>Directory where output data files are written in receiver. Default is “/”.
-.. note:: If path does not exist, it will try to create it.</p>
+<dd><p>Directory where output data files are written in receiver. Default is “/”.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If path does not exist, it will try to create it.</p>
+</div>
 <p class="rubric">Example</p>
 <p>d.fpath = ‘/tmp/run_20201705’</p>
 </dd></dl>
@@ -800,11 +848,15 @@ eg. file name: run_d0_f0_5.raw</p>
 <dl class="py method">
 <dt id="slsdet.Detector.framecounter">
 <em class="property">property </em><code class="sig-name descname">framecounter</code><a class="headerlink" href="#slsdet.Detector.framecounter" title="Permalink to this definition">¶</a></dt>
-<dd><p>[Jungfrau][Mythen3][Gotthard2][Moench][CTB] Number of frames from start run control.
-.. note:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">Gotthard2</span><span class="p">]</span> <span class="n">only</span> <span class="ow">in</span> <span class="n">continuous</span> <span class="n">mode</span><span class="o">.</span>
-<span class="p">:</span><span class="n">setter</span><span class="p">:</span> <span class="n">Not</span> <span class="n">Implemented</span>
-</pre></div>
+<dd><p>[Jungfrau][Mythen3][Gotthard2][Moench][CTB] Number of frames from start run control.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>[Gotthard2] only in continuous mode.</p>
+<dl class="field-list simple">
+<dt class="field-odd">setter</dt>
+<dd class="field-odd"><p>Not Implemented</p>
+</dd>
+</dl>
 </div>
 </dd></dl>
 
@@ -824,15 +876,22 @@ eg. file name: run_d0_f0_5.raw</p>
 <dt id="slsdet.Detector.framesl">
 <em class="property">property </em><code class="sig-name descname">framesl</code><a class="headerlink" href="#slsdet.Detector.framesl" title="Permalink to this definition">¶</a></dt>
 <dd><p>[Gotthard][Jungfrau][Mythen3][Gotthard2][CTB][Moench] Number of frames left in acquisition.</p>
-<p>[Gotthard2] only in continuous auto mode.
-:setter: Not Implemented</p>
+<p>[Gotthard2] only in continuous auto mode.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Setter</dt>
+<dd class="field-odd"><p>Not Implemented</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="py method">
 <dt id="slsdet.Detector.frametime">
 <em class="property">property </em><code class="sig-name descname">frametime</code><a class="headerlink" href="#slsdet.Detector.frametime" title="Permalink to this definition">¶</a></dt>
-<dd><p>[Jungfrau][Mythen3][Gotthard2][Moench][CTB] Timestamp at a frame start.
-.. note:: [Gotthard2] not in burst and auto mode.</p>
+<dd><p>[Jungfrau][Mythen3][Gotthard2][Moench][CTB] Timestamp at a frame start.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>[Gotthard2] not in burst and auto mode.</p>
+</div>
 </dd></dl>
 
 <dl class="py method">
@@ -855,12 +914,11 @@ eg. file name: run_d0_f0_5.raw</p>
 <dl class="py method">
 <dt id="slsdet.Detector.gainmode">
 <em class="property">property </em><code class="sig-name descname">gainmode</code><a class="headerlink" href="#slsdet.Detector.gainmode" title="Permalink to this definition">¶</a></dt>
-<dd><p>gainMode
-.. note:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>[Jungfrau] DYNAMIC, FORCE_SWITCH_G1, FORCE_SWITCH_G2, FIX_G1, FIX_G2, FIX_G0
-
-CAUTION: Do not use FIX_G0 without caution, you can damage the detector!!!
-</pre></div>
+<dd><p>gainMode</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>[Jungfrau] DYNAMIC, FORCE_SWITCH_G1, FORCE_SWITCH_G2, FIX_G1, FIX_G2, FIX_G0</p>
+<p>CAUTION: Do not use FIX_G0 without caution, you can damage the detector!!!</p>
 </div>
 <dl class="field-list simple">
 <dt class="field-odd">Type</dt>
@@ -1270,11 +1328,6 @@ CAUTION: Do not use FIX_G0 without caution, you can damage the detector!!!
 <dd></dd></dl>
 
 <dl class="py method">
-<dt id="slsdet.Detector.getFilterCell">
-<code class="sig-name descname">getFilterCell</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">self</span><span class="p">:</span> <span class="n">_slsdet.CppDetectorApi</span></em>, <em class="sig-param"><span class="n">arg0</span><span class="p">:</span> <span class="n">List<span class="p">[</span>int<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">[]</span></em><span class="sig-paren">)</span> &#x2192; List<span class="p">[</span>int<span class="p">]</span><a class="headerlink" href="#slsdet.Detector.getFilterCell" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="py method">
 <dt id="slsdet.Detector.getFilterResistor">
 <code class="sig-name descname">getFilterResistor</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">self</span><span class="p">:</span> <span class="n">_slsdet.CppDetectorApi</span></em>, <em class="sig-param"><span class="n">arg0</span><span class="p">:</span> <span class="n">List<span class="p">[</span>int<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">[]</span></em><span class="sig-paren">)</span> &#x2192; List<span class="p">[</span>int<span class="p">]</span><a class="headerlink" href="#slsdet.Detector.getFilterResistor" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
@@ -1472,6 +1525,11 @@ CAUTION: Do not use FIX_G0 without caution, you can damage the detector!!!
 <dl class="py method">
 <dt id="slsdet.Detector.getNumberOfDigitalSamples">
 <code class="sig-name descname">getNumberOfDigitalSamples</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">self</span><span class="p">:</span> <span class="n">_slsdet.CppDetectorApi</span></em>, <em class="sig-param"><span class="n">arg0</span><span class="p">:</span> <span class="n">List<span class="p">[</span>int<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">[]</span></em><span class="sig-paren">)</span> &#x2192; List<span class="p">[</span>int<span class="p">]</span><a class="headerlink" href="#slsdet.Detector.getNumberOfDigitalSamples" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="slsdet.Detector.getNumberOfFilterCells">
+<code class="sig-name descname">getNumberOfFilterCells</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">self</span><span class="p">:</span> <span class="n">_slsdet.CppDetectorApi</span></em>, <em class="sig-param"><span class="n">arg0</span><span class="p">:</span> <span class="n">List<span class="p">[</span>int<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">[]</span></em><span class="sig-paren">)</span> &#x2192; List<span class="p">[</span>int<span class="p">]</span><a class="headerlink" href="#slsdet.Detector.getNumberOfFilterCells" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
@@ -1975,8 +2033,8 @@ CAUTION: Do not use FIX_G0 without caution, you can damage the detector!!!
 <dt id="slsdet.Detector.hostname">
 <em class="property">property </em><code class="sig-name descname">hostname</code><a class="headerlink" href="#slsdet.Detector.hostname" title="Permalink to this definition">¶</a></dt>
 <dd><p>Frees shared memory and sets hostname (or IP address) of all modules concatenated by +
-Virtual servers can already use the port in hostname separated by ‘:’ and ports incremented by 2 to accomodate the stop server as well.
-.. rubric:: Example</p>
+Virtual servers can already use the port in hostname separated by ‘:’ and ports incremented by 2 to accomodate the stop server as well.</p>
+<p class="rubric">Example</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">d</span><span class="o">.</span><span class="n">hostname</span> <span class="o">=</span> <span class="s1">&#39;beb031+beb032+&#39;</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">d</span><span class="o">.</span><span class="n">hostname</span> <span class="o">=</span> <span class="s1">&#39;localhost:1912+localhost:1914+&#39;</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">d</span><span class="o">.</span><span class="n">hostname</span>
@@ -2018,14 +2076,12 @@ Virtual servers can already use the port in hostname separated by ‘:’ and po
 <dl class="py method">
 <dt id="slsdet.Detector.initialchecks">
 <em class="property">property </em><code class="sig-name descname">initialchecks</code><a class="headerlink" href="#slsdet.Detector.initialchecks" title="Permalink to this definition">¶</a></dt>
-<dd><p>Enable or disable intial compatibility and other checks at detector start up.
-.. note:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>It is enabled by default. Must come before &#39;hostname&#39; command to take effect.
-
-Can be used to reprogram fpga when current firmware is incompatible.
-
-Advanced user function!
-</pre></div>
+<dd><p>Enable or disable intial compatibility and other checks at detector start up.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>It is enabled by default. Must come before ‘hostname’ command to take effect.</p>
+<p>Can be used to reprogram fpga when current firmware is incompatible.</p>
+<p>Advanced user function!</p>
 </div>
 </dd></dl>
 
@@ -2086,15 +2142,13 @@ Advanced user function!
 <dl class="py method">
 <dt id="slsdet.Detector.maxadcphaseshift">
 <em class="property">property </em><code class="sig-name descname">maxadcphaseshift</code><a class="headerlink" href="#slsdet.Detector.maxadcphaseshift" title="Permalink to this definition">¶</a></dt>
-<dd><p>[Jungfrau][CTB][Moench] Absolute maximum Phase shift of ADC clock.
-.. note:: :setter: Not Implemented</p>
+<dd><p>[Jungfrau][CTB][Moench] Absolute maximum Phase shift of ADC clock.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt id="slsdet.Detector.maxclkphaseshift">
 <em class="property">property </em><code class="sig-name descname">maxclkphaseshift</code><a class="headerlink" href="#slsdet.Detector.maxclkphaseshift" title="Permalink to this definition">¶</a></dt>
-<dd><p>[Gotthard2][Mythen3] Absolute maximum Phase shift of  clocks.
-.. note:: :setter: Not Implemented</p>
+<dd><p>[Gotthard2][Mythen3] Absolute maximum Phase shift of  clocks.</p>
 <p class="rubric">Example</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">d</span><span class="o">.</span><span class="n">maxclkphaseshift</span>
 <span class="go">0: 80</span>
@@ -2109,8 +2163,7 @@ Advanced user function!
 <dl class="py method">
 <dt id="slsdet.Detector.maxdbitphaseshift">
 <em class="property">property </em><code class="sig-name descname">maxdbitphaseshift</code><a class="headerlink" href="#slsdet.Detector.maxdbitphaseshift" title="Permalink to this definition">¶</a></dt>
-<dd><p>[CTB][Jungfrau] Absolute maximum Phase shift of of the clock to latch digital bits.
-.. note:: :setter: Not Implemented</p>
+<dd><p>[CTB][Jungfrau] Absolute maximum Phase shift of of the clock to latch digital bits.</p>
 </dd></dl>
 
 <dl class="py method">
@@ -2119,16 +2172,19 @@ Advanced user function!
 <dd><p>[Eiger] Measured frame period between last frame and previous one.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Can be measured with minimum 2 frames in an acquisition.
-:setter: Not implemented</p>
+<p>Can be measured with minimum 2 frames in an acquisition.</p>
+<dl class="field-list simple">
+<dt class="field-odd">setter</dt>
+<dd class="field-odd"><p>Not implemented</p>
+</dd>
+</dl>
 </div>
 </dd></dl>
 
 <dl class="py method">
 <dt id="slsdet.Detector.measuredsubperiod">
 <em class="property">property </em><code class="sig-name descname">measuredsubperiod</code><a class="headerlink" href="#slsdet.Detector.measuredsubperiod" title="Permalink to this definition">¶</a></dt>
-<dd><p>[Eiger] Measured sub frame period between last sub frame and previous one.
-.. note:: :setter: Not implemented</p>
+<dd><p>[Eiger] Measured sub frame period between last sub frame and previous one.</p>
 </dd></dl>
 
 <dl class="py method">
@@ -2156,14 +2212,12 @@ Advanced user function!
 <dl class="py method">
 <dt id="slsdet.Detector.numinterfaces">
 <em class="property">property </em><code class="sig-name descname">numinterfaces</code><a class="headerlink" href="#slsdet.Detector.numinterfaces" title="Permalink to this definition">¶</a></dt>
-<dd><p>[Jungfrau][Gotthard2] Number of udp interfaces to stream data from detector. Default is 1.
-.. note:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Also</span> <span class="n">enables</span> <span class="n">second</span> <span class="n">interface</span> <span class="ow">in</span> <span class="n">receiver</span> <span class="k">for</span> <span class="n">listening</span> <span class="p">(</span><span class="n">Writes</span> <span class="n">a</span> <span class="n">file</span> <span class="n">per</span> <span class="n">interface</span> <span class="k">if</span> <span class="n">writing</span> <span class="n">enabled</span><span class="p">)</span><span class="o">.</span>
-
-<span class="n">Also</span> <span class="n">restarts</span> <span class="n">client</span> <span class="ow">and</span> <span class="n">receiver</span> <span class="n">zmq</span> <span class="n">sockets</span> <span class="k">if</span> <span class="n">zmq</span> <span class="n">streaming</span> <span class="n">enabled</span><span class="o">.</span>
-
-<span class="p">[</span><span class="n">Gotthard2</span><span class="p">]</span> <span class="n">second</span> <span class="n">interface</span> <span class="n">enabled</span> <span class="n">to</span> <span class="n">send</span> <span class="n">veto</span> <span class="n">information</span> <span class="n">via</span> <span class="mi">10</span><span class="n">Gbps</span> <span class="k">for</span> <span class="n">debugging</span><span class="o">.</span> <span class="n">By</span> <span class="n">default</span><span class="p">,</span> <span class="k">if</span> <span class="n">veto</span> <span class="n">enabled</span><span class="p">,</span> <span class="n">it</span> <span class="ow">is</span> <span class="n">sent</span> <span class="n">via</span> <span class="mf">2.5</span> <span class="n">gbps</span> <span class="n">interface</span><span class="o">.</span>
-</pre></div>
+<dd><p>[Jungfrau][Gotthard2] Number of udp interfaces to stream data from detector. Default is 1.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Also enables second interface in receiver for listening (Writes a file per interface if writing enabled).</p>
+<p>Also restarts client and receiver zmq sockets if zmq streaming enabled.</p>
+<p>[Gotthard2] second interface enabled to send veto information via 10Gbps for debugging. By default, if veto enabled, it is sent via 2.5 gbps interface.</p>
 </div>
 </dd></dl>
 
@@ -2182,8 +2236,11 @@ Advanced user function!
 <dl class="py method">
 <dt id="slsdet.Detector.parallel">
 <em class="property">property </em><code class="sig-name descname">parallel</code><a class="headerlink" href="#slsdet.Detector.parallel" title="Permalink to this definition">¶</a></dt>
-<dd><p>[Eiger][Mythen3] Enable or disable the parallel readout mode of detector.
-.. note:: [Mythen3] If exposure time is too short, acquisition will return with an ERROR and take fewer frames than expected.</p>
+<dd><p>[Eiger][Mythen3] Enable or disable the parallel readout mode of detector.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>[Mythen3] If exposure time is too short, acquisition will return with an ERROR and take fewer frames than expected.</p>
+</div>
 </dd></dl>
 
 <dl class="py method">
@@ -2194,15 +2251,15 @@ Set up per measurement.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Equivalent to config, but does not free shared memory.</p>
-</div>
 <dl class="field-list simple">
-<dt class="field-odd">Getter</dt>
+<dt class="field-odd">getter</dt>
 <dd class="field-odd"><p>Not implemented</p>
 </dd>
-<dt class="field-even">Setter</dt>
+<dt class="field-even">setter</dt>
 <dd class="field-even"><p>loads parameters file</p>
 </dd>
 </dl>
+</div>
 <p class="rubric">Example</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">d</span><span class="o">.</span><span class="n">parameters</span> <span class="o">=</span> <span class="s1">&#39;path/to/file.par&#39;</span>
 </pre></div>
@@ -2212,8 +2269,11 @@ Set up per measurement.</p>
 <dl class="py method">
 <dt id="slsdet.Detector.partialreset">
 <em class="property">property </em><code class="sig-name descname">partialreset</code><a class="headerlink" href="#slsdet.Detector.partialreset" title="Permalink to this definition">¶</a></dt>
-<dd><p>[Eiger] Sets up detector to do partial or complete reset at start of acquisition. 0 complete reset, 1 partial reset. Default is complete reset.
-.. note:: Advanced Function!</p>
+<dd><p>[Eiger] Sets up detector to do partial or complete reset at start of acquisition. 0 complete reset, 1 partial reset. Default is complete reset.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Advanced Function!</p>
+</div>
 </dd></dl>
 
 <dl class="py method">
@@ -2329,8 +2389,7 @@ Set up per measurement.</p>
 <dl class="py method">
 <dt id="slsdet.Detector.pattern">
 <em class="property">property </em><code class="sig-name descname">pattern</code><a class="headerlink" href="#slsdet.Detector.pattern" title="Permalink to this definition">¶</a></dt>
-<dd><p>[Mythen3][Moench][Ctb] Loads ASCII pattern file directly to server (instead of executing line by line).
-.. note:: :getter: Not Implemented</p>
+<dd><p>[Mythen3][Moench][Ctb] Loads ASCII pattern file directly to server (instead of executing line by line).</p>
 <p class="rubric">Example</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">d</span><span class="o">.</span><span class="n">pattern</span> <span class="o">=</span> <span class="s1">&#39;/tmp/pat.txt&#39;</span>
 </pre></div>
@@ -2415,12 +2474,18 @@ Set up per measurement.</p>
 <dl class="py method">
 <dt id="slsdet.Detector.periodl">
 <em class="property">property </em><code class="sig-name descname">periodl</code><a class="headerlink" href="#slsdet.Detector.periodl" title="Permalink to this definition">¶</a></dt>
-<dd><p>[Gotthard][Jungfrau][CTB][Moench][Mythen3][Gotthard2] Period left for current frame.
-.. note:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">Gotthard2</span><span class="p">]</span> <span class="n">only</span> <span class="ow">in</span> <span class="n">continuous</span> <span class="n">mode</span><span class="o">.</span>
-<span class="p">:</span><span class="n">getter</span><span class="p">:</span> <span class="n">always</span> <span class="n">returns</span> <span class="ow">in</span> <span class="n">seconds</span><span class="o">.</span> <span class="n">To</span> <span class="n">get</span> <span class="ow">in</span> <span class="n">datetime</span><span class="o">.</span><span class="n">delta</span><span class="p">,</span> <span class="n">use</span> <span class="n">getPeriodLeft</span>
-<span class="p">:</span><span class="n">setter</span><span class="p">:</span> <span class="n">Not</span> <span class="n">Implemented</span>
-</pre></div>
+<dd><p>[Gotthard][Jungfrau][CTB][Moench][Mythen3][Gotthard2] Period left for current frame.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>[Gotthard2] only in continuous mode.</p>
+<dl class="field-list simple">
+<dt class="field-odd">getter</dt>
+<dd class="field-odd"><p>always returns in seconds. To get in datetime.delta, use getPeriodLeft</p>
+</dd>
+<dt class="field-even">setter</dt>
+<dd class="field-even"><p>Not Implemented</p>
+</dd>
+</dl>
 </div>
 <p class="rubric">Example</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">d</span><span class="o">.</span><span class="n">periodl</span>
@@ -2434,26 +2499,23 @@ Set up per measurement.</p>
 <dl class="py method">
 <dt id="slsdet.Detector.port">
 <em class="property">property </em><code class="sig-name descname">port</code><a class="headerlink" href="#slsdet.Detector.port" title="Permalink to this definition">¶</a></dt>
-<dd><p>Port number of the control server on detector for detector-client tcp interface.
-.. note:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Default</span> <span class="ow">is</span> <span class="mf">1952.</span> <span class="n">Normally</span> <span class="n">unchanged</span><span class="o">.</span>
-
-<span class="n">Set</span> <span class="n">different</span> <span class="n">ports</span> <span class="k">for</span> <span class="n">virtual</span> <span class="n">servers</span> <span class="n">on</span> <span class="n">same</span> <span class="n">pc</span><span class="o">.</span>
-</pre></div>
+<dd><p>Port number of the control server on detector for detector-client tcp interface.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Default is 1952. Normally unchanged.</p>
+<p>Set different ports for virtual servers on same pc.</p>
 </div>
 </dd></dl>
 
 <dl class="py method">
 <dt id="slsdet.Detector.powerchip">
 <em class="property">property </em><code class="sig-name descname">powerchip</code><a class="headerlink" href="#slsdet.Detector.powerchip" title="Permalink to this definition">¶</a></dt>
-<dd><p>[Jungfrau][Mythen3][Gotthard2][Moench] Power the chip.
-.. note:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">Moench</span><span class="p">]</span> <span class="n">Default</span> <span class="ow">is</span> <span class="n">disabled</span><span class="o">.</span>
-
-<span class="p">[</span><span class="n">Jungfrau</span><span class="p">]</span> <span class="n">Default</span> <span class="ow">is</span> <span class="n">disabled</span><span class="o">.</span> <span class="n">Get</span> <span class="n">will</span> <span class="k">return</span> <span class="n">power</span> <span class="n">status</span><span class="o">.</span> <span class="n">Can</span> <span class="n">be</span> <span class="n">off</span> <span class="k">if</span> <span class="n">temperature</span> <span class="n">event</span> <span class="n">occured</span> <span class="p">(</span><span class="n">temperature</span> <span class="n">over</span> <span class="n">temp_threshold</span> <span class="k">with</span> <span class="n">temp_control</span> <span class="n">enabled</span><span class="o">.</span> <span class="n">Will</span> <span class="n">configure</span> <span class="n">chip</span> <span class="p">(</span><span class="n">only</span> <span class="n">chip</span> <span class="n">v1</span><span class="o">.</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span>
-
-<span class="p">[</span><span class="n">Mythen3</span><span class="p">][</span><span class="n">Gotthard2</span><span class="p">]</span> <span class="n">Default</span> <span class="ow">is</span> <span class="mf">1.</span> <span class="n">If</span> <span class="n">module</span> <span class="ow">not</span> <span class="n">connected</span> <span class="ow">or</span> <span class="n">wrong</span> <span class="n">module</span><span class="p">,</span> <span class="n">powerchip</span> <span class="n">will</span> <span class="n">fail</span><span class="o">.</span>
-</pre></div>
+<dd><p>[Jungfrau][Mythen3][Gotthard2][Moench] Power the chip.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>[Moench] Default is disabled.</p>
+<p>[Jungfrau] Default is disabled. Get will return power status. Can be off if temperature event occured (temperature over temp_threshold with temp_control enabled. Will configure chip (only chip v1.1).</p>
+<p>[Mythen3][Gotthard2] Default is 1. If module not connected or wrong module, powerchip will fail.</p>
 </div>
 </dd></dl>
 
@@ -2522,12 +2584,11 @@ Set up per measurement.</p>
 <dt id="slsdet.Detector.readnrows">
 <em class="property">property </em><code class="sig-name descname">readnrows</code><a class="headerlink" href="#slsdet.Detector.readnrows" title="Permalink to this definition">¶</a></dt>
 <dd><p>[Eiger] Number of rows to read out per half module starting from the centre.
-[Jungfrau] Number of rows to read per module starting from the centre.
-.. note:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">Eiger</span><span class="p">]</span> <span class="n">Options</span><span class="p">:</span> <span class="mi">1</span> <span class="o">-</span> <span class="mf">256.</span> <span class="mi">256</span> <span class="ow">is</span> <span class="n">default</span><span class="o">.</span>
-
-<span class="p">[</span><span class="n">Eiger</span><span class="p">]</span><span class="n">The</span> <span class="n">permissible</span> <span class="n">values</span> <span class="n">depend</span> <span class="n">on</span> <span class="n">dynamic</span> <span class="nb">range</span> <span class="ow">and</span> <span class="mi">10</span><span class="n">Gbe</span> <span class="n">enabled</span><span class="o">.</span>
-</pre></div>
+[Jungfrau] Number of rows to read per module starting from the centre.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>[Eiger] Options: 1 - 256. 256 is default.</p>
+<p>[Eiger]The permissible values depend on dynamic range and 10Gbe enabled.</p>
 </div>
 <p>[Jungfrau] Options: 8 - 512 (multiples of 8)</p>
 </dd></dl>
@@ -2541,15 +2602,14 @@ Set up per measurement.</p>
 <dl class="py method">
 <dt id="slsdet.Detector.readoutspeed">
 <em class="property">property </em><code class="sig-name descname">readoutspeed</code><a class="headerlink" href="#slsdet.Detector.readoutspeed" title="Permalink to this definition">¶</a></dt>
-<dd><p>speedLevel
-.. note:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">Jungfrau</span><span class="p">]</span> <span class="n">FULL_SPEED</span><span class="p">,</span> <span class="n">HALF_SPEED</span> <span class="p">(</span><span class="n">Default</span><span class="p">),</span> <span class="n">QUARTER_SPEED</span>
-<span class="p">[</span><span class="n">Eiger</span><span class="p">]</span> <span class="n">FULL_SPEED</span> <span class="p">(</span><span class="n">Default</span><span class="p">),</span> <span class="n">HALF_SPEED</span><span class="p">,</span> <span class="n">QUARTER_SPEED</span>
-<span class="p">[</span><span class="n">Gottthard2</span><span class="p">]</span> <span class="n">G2_108MHZ</span> <span class="p">(</span><span class="n">Default</span><span class="p">),</span> <span class="n">G2_144MHZ</span>
-<span class="p">[</span><span class="n">Jungfrau</span><span class="p">]</span> <span class="n">FULL_SPEED</span> <span class="n">option</span> <span class="n">only</span> <span class="n">available</span> <span class="kn">from</span> <span class="nn">v2.</span><span class="mi">0</span> <span class="n">boards</span> <span class="ow">and</span> <span class="ow">is</span> <span class="n">recommended</span> <span class="n">to</span> <span class="nb">set</span> <span class="n">number</span> <span class="n">of</span> <span class="n">interfaces</span> <span class="n">to</span> <span class="mf">2.</span>
-
-<span class="n">Also</span> <span class="n">overwrites</span> <span class="n">adcphase</span> <span class="n">to</span> <span class="n">recommended</span> <span class="n">default</span><span class="o">.</span>
-</pre></div>
+<dd><p>speedLevel</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>[Jungfrau] FULL_SPEED, HALF_SPEED (Default), QUARTER_SPEED
+[Eiger] FULL_SPEED (Default), HALF_SPEED, QUARTER_SPEED
+[Gottthard2] G2_108MHZ (Default), G2_144MHZ
+[Jungfrau] FULL_SPEED option only available from v2.0 boards and is recommended to set number of interfaces to 2.</p>
+<p>Also overwrites adcphase to recommended default.</p>
 </div>
 <dl class="field-list simple">
 <dt class="field-odd">Type</dt>
@@ -2636,8 +2696,11 @@ Default: ANALOG_ONLY</p>
 <dl class="py method">
 <dt id="slsdet.Detector.runtime">
 <em class="property">property </em><code class="sig-name descname">runtime</code><a class="headerlink" href="#slsdet.Detector.runtime" title="Permalink to this definition">¶</a></dt>
-<dd><p>[Jungfrau][Mythen3][Gotthard2][Moench][CTB] Time from detector start up.
-.. note:: [Gotthard2] not in burst and auto mode.</p>
+<dd><p>[Jungfrau][Mythen3][Gotthard2][Moench][CTB] Time from detector start up.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>[Gotthard2] not in burst and auto mode.</p>
+</div>
 </dd></dl>
 
 <dl class="py method">
@@ -2668,14 +2731,12 @@ Default: ANALOG_ONLY</p>
 <dl class="py method">
 <dt id="slsdet.Detector.rx_discardpolicy">
 <em class="property">property </em><code class="sig-name descname">rx_discardpolicy</code><a class="headerlink" href="#slsdet.Detector.rx_discardpolicy" title="Permalink to this definition">¶</a></dt>
-<dd><p>frameDiscardPolicy
-.. note:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Options</span><span class="p">:</span> <span class="n">NO_DISCARD</span><span class="p">,</span> <span class="n">DISCARD_EMPTY_FRAMES</span><span class="p">,</span> <span class="n">DISCARD_PARTIAL_FRAMES</span>
-
-<span class="n">Default</span><span class="p">:</span> <span class="n">NO_DISCARD</span>
-
-<span class="n">DISCARD_PARTIAL_FRAMES</span> <span class="ow">is</span> <span class="n">the</span> <span class="n">fastest</span><span class="o">.</span>
-</pre></div>
+<dd><p>frameDiscardPolicy</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Options: NO_DISCARD, DISCARD_EMPTY_FRAMES, DISCARD_PARTIAL_FRAMES</p>
+<p>Default: NO_DISCARD</p>
+<p>DISCARD_PARTIAL_FRAMES is the fastest.</p>
 </div>
 <p class="rubric">Example</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">d</span><span class="o">.</span><span class="n">rx_discardpolicy</span> <span class="o">=</span> <span class="n">frameDiscardPolicy</span><span class="o">.</span><span class="n">NO_DISCARD</span>
@@ -2722,14 +2783,12 @@ Default: ANALOG_ONLY</p>
 <dl class="py method">
 <dt id="slsdet.Detector.rx_hostname">
 <em class="property">property </em><code class="sig-name descname">rx_hostname</code><a class="headerlink" href="#slsdet.Detector.rx_hostname" title="Permalink to this definition">¶</a></dt>
-<dd><p>Sets receiver hostname or IP address. Used for TCP control communication between client and receiver to configure receiver. Also updates receiver with detector parameters.
-.. note:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Also</span> <span class="n">resets</span> <span class="nb">any</span> <span class="n">prior</span> <span class="n">receiver</span> <span class="nb">property</span> <span class="p">(</span><span class="ow">not</span> <span class="n">on</span> <span class="n">detector</span><span class="p">)</span><span class="o">.</span>
-
-<span class="n">Can</span> <span class="n">concatenate</span> <span class="n">receiver</span> <span class="n">hostnames</span> <span class="k">for</span> <span class="n">every</span> <span class="n">module</span><span class="o">.</span>
-
-<span class="n">If</span> <span class="n">port</span> <span class="n">included</span><span class="p">,</span> <span class="n">then</span> <span class="n">its</span> <span class="n">the</span> <span class="n">receiver</span> <span class="n">tcp</span> <span class="n">port</span> <span class="k">for</span> <span class="n">every</span> <span class="n">receiver</span> <span class="n">hostname</span><span class="o">.</span>
-</pre></div>
+<dd><p>Sets receiver hostname or IP address. Used for TCP control communication between client and receiver to configure receiver. Also updates receiver with detector parameters.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Also resets any prior receiver property (not on detector).</p>
+<p>Can concatenate receiver hostnames for every module.</p>
+<p>If port included, then its the receiver tcp port for every receiver hostname.</p>
 </div>
 <p class="rubric">Example</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">d</span><span class="o">.</span><span class="n">rx_hostname</span>
@@ -2748,14 +2807,12 @@ Default: ANALOG_ONLY</p>
 <dl class="py method">
 <dt id="slsdet.Detector.rx_jsonaddheader">
 <em class="property">property </em><code class="sig-name descname">rx_jsonaddheader</code><a class="headerlink" href="#slsdet.Detector.rx_jsonaddheader" title="Permalink to this definition">¶</a></dt>
-<dd><p>Additional json header to be streamed out from receiver via zmq.
-.. note:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Default</span> <span class="ow">is</span> <span class="n">empty</span><span class="o">.</span> <span class="n">Max</span> <span class="mi">20</span> <span class="n">characters</span> <span class="k">for</span> <span class="n">each</span> <span class="n">key</span><span class="o">/</span><span class="n">value</span>
-
-<span class="n">Use</span> <span class="n">only</span> <span class="k">if</span> <span class="n">to</span> <span class="n">be</span> <span class="n">processed</span> <span class="n">by</span> <span class="n">an</span> <span class="n">intermediate</span> <span class="n">user</span> <span class="n">process</span> <span class="n">listening</span> <span class="n">to</span> <span class="n">receiver</span> <span class="n">zmq</span> <span class="n">packets</span><span class="p">,</span> <span class="n">such</span> <span class="k">as</span> <span class="n">Moench</span>
-
-<span class="n">Empty</span> <span class="n">value</span> <span class="n">deletes</span> <span class="n">header</span><span class="o">.</span>
-</pre></div>
+<dd><p>Additional json header to be streamed out from receiver via zmq.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Default is empty. Max 20 characters for each key/value</p>
+<p>Use only if to be processed by an intermediate user process listening to receiver zmq packets, such as Moench</p>
+<p>Empty value deletes header.</p>
 </div>
 <p class="rubric">Example</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">d</span><span class="o">.</span><span class="n">rx_jsonaddheader</span>
@@ -2770,14 +2827,12 @@ Default: ANALOG_ONLY</p>
 <dl class="py method">
 <dt id="slsdet.Detector.rx_jsonpara">
 <em class="property">property </em><code class="sig-name descname">rx_jsonpara</code><a class="headerlink" href="#slsdet.Detector.rx_jsonpara" title="Permalink to this definition">¶</a></dt>
-<dd><p>Set the receiver additional json parameter.
-.. note:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Use</span> <span class="n">only</span> <span class="k">if</span> <span class="n">to</span> <span class="n">be</span> <span class="n">processed</span> <span class="n">by</span> <span class="n">an</span> <span class="n">intermediate</span> <span class="n">user</span> <span class="n">process</span> <span class="n">listening</span> <span class="n">to</span> <span class="n">receiver</span> <span class="n">zmq</span> <span class="n">packets</span><span class="p">,</span> <span class="n">such</span> <span class="k">as</span> <span class="n">Moench</span>
-
-<span class="n">If</span> <span class="ow">not</span> <span class="n">found</span><span class="p">,</span> <span class="n">the</span> <span class="n">pair</span> <span class="ow">is</span> <span class="n">appended</span><span class="o">.</span> <span class="n">Empty</span> <span class="n">value</span> <span class="n">deletes</span> <span class="n">parameter</span><span class="o">.</span> <span class="n">Max</span> <span class="mi">20</span> <span class="n">characters</span> <span class="k">for</span> <span class="n">each</span> <span class="n">key</span><span class="o">/</span><span class="n">value</span><span class="o">.</span>
-
-<span class="n">On</span> <span class="n">setting</span> <span class="n">the</span> <span class="n">value</span> <span class="ow">is</span> <span class="n">automatically</span><span class="p">,</span> <span class="n">it</span> <span class="ow">is</span> <span class="n">converted</span> <span class="n">to</span> <span class="n">a</span> <span class="n">string</span><span class="o">.</span>
-</pre></div>
+<dd><p>Set the receiver additional json parameter.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Use only if to be processed by an intermediate user process listening to receiver zmq packets, such as Moench</p>
+<p>If not found, the pair is appended. Empty value deletes parameter. Max 20 characters for each key/value.</p>
+<p>On setting the value is automatically, it is converted to a string.</p>
 </div>
 <p class="rubric">Example</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">d</span><span class="o">.</span><span class="n">rx_jsonpara</span><span class="p">[</span><span class="s1">&#39;emin&#39;</span><span class="p">]</span>
@@ -2811,12 +2866,11 @@ Default: ANALOG_ONLY</p>
 <dl class="py method">
 <dt id="slsdet.Detector.rx_padding">
 <em class="property">property </em><code class="sig-name descname">rx_padding</code><a class="headerlink" href="#slsdet.Detector.rx_padding" title="Permalink to this definition">¶</a></dt>
-<dd><p>Partial frames padding enable in the receiver.
-.. note:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Default</span><span class="p">:</span> <span class="n">enabled</span>
-
-<span class="n">Disabling</span> <span class="ow">is</span> <span class="n">fastest</span><span class="o">.</span>
-</pre></div>
+<dd><p>Partial frames padding enable in the receiver.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Default: enabled</p>
+<p>Disabling is fastest.</p>
 </div>
 </dd></dl>
 
@@ -2841,12 +2895,12 @@ Default: ANALOG_ONLY</p>
 <dl class="py method">
 <dt id="slsdet.Detector.rx_status">
 <em class="property">property </em><code class="sig-name descname">rx_status</code><a class="headerlink" href="#slsdet.Detector.rx_status" title="Permalink to this definition">¶</a></dt>
-<dd><p>runStatus
-.. note:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Options</span><span class="p">:</span> <span class="n">IDLE</span><span class="p">,</span> <span class="n">TRANSMITTING</span><span class="p">,</span> <span class="n">RUNNING</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">d</span><span class="o">.</span><span class="n">rx_status</span>
-<span class="n">runStatus</span><span class="o">.</span><span class="n">IDLE</span>
-</pre></div>
+<dd><p>runStatus</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Options: IDLE, TRANSMITTING, RUNNING
+&gt;&gt;&gt; d.rx_status
+runStatus.IDLE</p>
 </div>
 <dl class="field-list simple">
 <dt class="field-odd">Type</dt>
@@ -2864,16 +2918,13 @@ Default: ANALOG_ONLY</p>
 <dl class="py method">
 <dt id="slsdet.Detector.rx_tcpport">
 <em class="property">property </em><code class="sig-name descname">rx_tcpport</code><a class="headerlink" href="#slsdet.Detector.rx_tcpport" title="Permalink to this definition">¶</a></dt>
-<dd><p>TCP port for client-receiver communication.
-.. note:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Default</span> <span class="ow">is</span> <span class="mf">1954.</span>
-
-<span class="n">Must</span> <span class="n">be</span> <span class="n">different</span> <span class="k">if</span> <span class="n">multiple</span> <span class="n">receivers</span> <span class="n">on</span> <span class="n">same</span> <span class="n">pc</span><span class="o">.</span>
-
-<span class="n">Must</span> <span class="n">be</span> <span class="n">first</span> <span class="n">command</span> <span class="n">to</span> <span class="nb">set</span> <span class="n">a</span> <span class="n">receiver</span> <span class="n">parameter</span> <span class="n">to</span> <span class="n">be</span> <span class="n">able</span> <span class="n">to</span> <span class="n">communicate</span><span class="o">.</span>
-
-<span class="n">Multi</span> <span class="n">command</span> <span class="n">will</span> <span class="n">automatically</span> <span class="n">increment</span> <span class="n">port</span> <span class="k">for</span> <span class="n">individual</span> <span class="n">modules</span><span class="p">,</span> <span class="n">which</span> <span class="n">must</span> <span class="n">be</span> <span class="nb">set</span> <span class="n">via</span> <span class="n">setRxPort</span><span class="o">.</span>
-</pre></div>
+<dd><p>TCP port for client-receiver communication.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Default is 1954.</p>
+<p>Must be different if multiple receivers on same pc.</p>
+<p>Must be first command to set a receiver parameter to be able to communicate.</p>
+<p>Multi command will automatically increment port for individual modules, which must be set via setRxPort.</p>
 </div>
 <p class="rubric">Example</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">d</span><span class="o">.</span><span class="n">rx_tcpport</span>
@@ -2887,11 +2938,15 @@ Default: ANALOG_ONLY</p>
 <dl class="py method">
 <dt id="slsdet.Detector.rx_threads">
 <em class="property">property </em><code class="sig-name descname">rx_threads</code><a class="headerlink" href="#slsdet.Detector.rx_threads" title="Permalink to this definition">¶</a></dt>
-<dd><p>Get thread ids from the receiver in order of [parent, tcp, listener 0, processor 0, streamer 0, listener 1, processor 1, streamer 1].
-.. note:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">If</span> <span class="n">no</span> <span class="n">streamer</span> <span class="n">yet</span> <span class="ow">or</span> <span class="n">there</span> <span class="ow">is</span> <span class="n">no</span> <span class="n">second</span> <span class="n">interface</span><span class="p">,</span> <span class="n">it</span> <span class="n">gives</span> <span class="mi">0</span> <span class="ow">in</span> <span class="n">its</span> <span class="n">place</span><span class="o">.</span>
-<span class="p">:</span><span class="n">setter</span><span class="p">:</span> <span class="n">Not</span> <span class="n">Implemented</span>
-</pre></div>
+<dd><p>Get thread ids from the receiver in order of [parent, tcp, listener 0, processor 0, streamer 0, listener 1, processor 1, streamer 1].</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If no streamer yet or there is no second interface, it gives 0 in its place.</p>
+<dl class="field-list simple">
+<dt class="field-odd">setter</dt>
+<dd class="field-odd"><p>Not Implemented</p>
+</dd>
+</dl>
 </div>
 </dd></dl>
 
@@ -2915,14 +2970,12 @@ Default: ANALOG_ONLY</p>
 <dl class="py method">
 <dt id="slsdet.Detector.rx_zmqfreq">
 <em class="property">property </em><code class="sig-name descname">rx_zmqfreq</code><a class="headerlink" href="#slsdet.Detector.rx_zmqfreq" title="Permalink to this definition">¶</a></dt>
-<dd><p>Frequency of frames streamed out from receiver via zmq.
-.. note:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Default</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="n">Means</span> <span class="n">every</span> <span class="n">frame</span> <span class="ow">is</span> <span class="n">streamed</span> <span class="n">out</span><span class="o">.</span>
-
-<span class="n">If</span> <span class="mi">2</span><span class="p">,</span> <span class="n">every</span> <span class="n">second</span> <span class="n">frame</span> <span class="ow">is</span> <span class="n">streamed</span> <span class="n">out</span><span class="o">.</span>
-
-<span class="n">If</span> <span class="mi">0</span><span class="p">,</span> <span class="n">streaming</span> <span class="n">timer</span> <span class="ow">is</span> <span class="n">the</span> <span class="n">timeout</span><span class="p">,</span> <span class="n">after</span> <span class="n">which</span> <span class="n">current</span> <span class="n">frame</span> <span class="ow">is</span> <span class="n">sent</span> <span class="n">out</span><span class="o">.</span> <span class="p">(</span><span class="n">default</span> <span class="n">timeout</span> <span class="ow">is</span> <span class="mi">200</span> <span class="n">ms</span><span class="p">)</span><span class="o">.</span> <span class="n">Usually</span> <span class="n">used</span> <span class="k">for</span> <span class="n">gui</span> <span class="n">purposes</span><span class="o">.</span>
-</pre></div>
+<dd><p>Frequency of frames streamed out from receiver via zmq.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Default: 1, Means every frame is streamed out.</p>
+<p>If 2, every second frame is streamed out.</p>
+<p>If 0, streaming timer is the timeout, after which current frame is sent out. (default timeout is 200 ms). Usually used for gui purposes.</p>
 </div>
 </dd></dl>
 
@@ -2935,14 +2988,12 @@ Default: ANALOG_ONLY</p>
 <dl class="py method">
 <dt id="slsdet.Detector.rx_zmqip">
 <em class="property">property </em><code class="sig-name descname">rx_zmqip</code><a class="headerlink" href="#slsdet.Detector.rx_zmqip" title="Permalink to this definition">¶</a></dt>
-<dd><p>Zmq Ip Address from which data is to be streamed out of the receiver.
-.. note:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Also</span> <span class="n">restarts</span> <span class="n">receiver</span> <span class="n">zmq</span> <span class="n">streaming</span> <span class="k">if</span> <span class="n">enabled</span><span class="o">.</span>
-
-<span class="n">Default</span> <span class="ow">is</span> <span class="kn">from</span> <span class="nn">rx_hostname.</span>
-
-<span class="n">Modified</span> <span class="n">only</span> <span class="n">when</span> <span class="n">using</span> <span class="n">an</span> <span class="n">intermediate</span> <span class="n">process</span> <span class="n">after</span> <span class="n">receiver</span><span class="o">.</span>
-</pre></div>
+<dd><p>Zmq Ip Address from which data is to be streamed out of the receiver.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Also restarts receiver zmq streaming if enabled.</p>
+<p>Default is from rx_hostname.</p>
+<p>Modified only when using an intermediate process after receiver.</p>
 </div>
 <p class="rubric">Example</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">d</span><span class="o">.</span><span class="n">rx_zmqip</span>
@@ -2955,16 +3006,13 @@ Default: ANALOG_ONLY</p>
 <dl class="py method">
 <dt id="slsdet.Detector.rx_zmqport">
 <em class="property">property </em><code class="sig-name descname">rx_zmqport</code><a class="headerlink" href="#slsdet.Detector.rx_zmqport" title="Permalink to this definition">¶</a></dt>
-<dd><p>Zmq port for data to be streamed out of the receiver.
-.. note:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Also</span> <span class="n">restarts</span> <span class="n">receiver</span> <span class="n">zmq</span> <span class="n">streaming</span> <span class="k">if</span> <span class="n">enabled</span><span class="o">.</span>
-
-<span class="n">Default</span> <span class="ow">is</span> <span class="mf">30001.</span>
-
-<span class="n">Must</span> <span class="n">be</span> <span class="n">different</span> <span class="k">for</span> <span class="n">every</span> <span class="n">detector</span> <span class="p">(</span><span class="ow">and</span> <span class="n">udp</span> <span class="n">port</span><span class="p">)</span><span class="o">.</span>
-
-<span class="n">Multi</span> <span class="n">command</span> <span class="n">will</span> <span class="n">automatically</span> <span class="n">increment</span> <span class="k">for</span> <span class="n">individual</span> <span class="n">modules</span><span class="p">,</span> <span class="n">use</span> <span class="n">setRxZmqPort</span><span class="o">.</span>
-</pre></div>
+<dd><p>Zmq port for data to be streamed out of the receiver.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Also restarts receiver zmq streaming if enabled.</p>
+<p>Default is 30001.</p>
+<p>Must be different for every detector (and udp port).</p>
+<p>Multi command will automatically increment for individual modules, use setRxZmqPort.</p>
 </div>
 <p class="rubric">Example</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">d</span><span class="o">.</span><span class="n">rx_zmqport</span>
@@ -2978,8 +3026,11 @@ Default: ANALOG_ONLY</p>
 <dl class="py method">
 <dt id="slsdet.Detector.rx_zmqstartfnum">
 <em class="property">property </em><code class="sig-name descname">rx_zmqstartfnum</code><a class="headerlink" href="#slsdet.Detector.rx_zmqstartfnum" title="Permalink to this definition">¶</a></dt>
-<dd><p>The starting frame index to stream out.
-.. note:: 0 by default, which streams the first frame in an acquisition, and then depending on the rx zmq frequency/ timer.</p>
+<dd><p>The starting frame index to stream out.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>0 by default, which streams the first frame in an acquisition, and then depending on the rx zmq frequency/ timer.</p>
+</div>
 </dd></dl>
 
 <dl class="py method">
@@ -3024,8 +3075,11 @@ see python/examples/use_scan.py</p>
 <dl class="py method">
 <dt id="slsdet.Detector.selinterface">
 <em class="property">property </em><code class="sig-name descname">selinterface</code><a class="headerlink" href="#slsdet.Detector.selinterface" title="Permalink to this definition">¶</a></dt>
-<dd><p>[Jungfrau] The udp interface to stream data from detector.
-.. note:: Effective only when number of interfaces is 1. Default: 0 (outer). Inner is 1.</p>
+<dd><p>[Jungfrau] The udp interface to stream data from detector.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Effective only when number of interfaces is 1. Default: 0 (outer). Inner is 1.</p>
+</div>
 </dd></dl>
 
 <dl class="py method">
@@ -3329,11 +3383,6 @@ see python/examples/use_scan.py</p>
 <dd></dd></dl>
 
 <dl class="py method">
-<dt id="slsdet.Detector.setFilterCell">
-<code class="sig-name descname">setFilterCell</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">self</span><span class="p">:</span> <span class="n">_slsdet.CppDetectorApi</span></em>, <em class="sig-param"><span class="n">arg0</span><span class="p">:</span> <span class="n">int</span></em>, <em class="sig-param"><span class="n">arg1</span><span class="p">:</span> <span class="n">List<span class="p">[</span>int<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">[]</span></em><span class="sig-paren">)</span> &#x2192; None<a class="headerlink" href="#slsdet.Detector.setFilterCell" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="py method">
 <dt id="slsdet.Detector.setFilterResistor">
 <code class="sig-name descname">setFilterResistor</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">self</span><span class="p">:</span> <span class="n">_slsdet.CppDetectorApi</span></em>, <em class="sig-param"><span class="n">arg0</span><span class="p">:</span> <span class="n">int</span></em>, <em class="sig-param"><span class="n">arg1</span><span class="p">:</span> <span class="n">List<span class="p">[</span>int<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">[]</span></em><span class="sig-paren">)</span> &#x2192; None<a class="headerlink" href="#slsdet.Detector.setFilterResistor" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
@@ -3436,6 +3485,11 @@ see python/examples/use_scan.py</p>
 <dl class="py method">
 <dt id="slsdet.Detector.setNumberOfDigitalSamples">
 <code class="sig-name descname">setNumberOfDigitalSamples</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">self</span><span class="p">:</span> <span class="n">_slsdet.CppDetectorApi</span></em>, <em class="sig-param"><span class="n">arg0</span><span class="p">:</span> <span class="n">int</span></em>, <em class="sig-param"><span class="n">arg1</span><span class="p">:</span> <span class="n">List<span class="p">[</span>int<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">[]</span></em><span class="sig-paren">)</span> &#x2192; None<a class="headerlink" href="#slsdet.Detector.setNumberOfDigitalSamples" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="slsdet.Detector.setNumberOfFilterCells">
+<code class="sig-name descname">setNumberOfFilterCells</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">self</span><span class="p">:</span> <span class="n">_slsdet.CppDetectorApi</span></em>, <em class="sig-param"><span class="n">arg0</span><span class="p">:</span> <span class="n">int</span></em>, <em class="sig-param"><span class="n">arg1</span><span class="p">:</span> <span class="n">List<span class="p">[</span>int<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">[]</span></em><span class="sig-paren">)</span> &#x2192; None<a class="headerlink" href="#slsdet.Detector.setNumberOfFilterCells" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
@@ -3831,19 +3885,15 @@ see python/examples/use_scan.py</p>
 <dl class="py method">
 <dt id="slsdet.Detector.settings">
 <em class="property">property </em><code class="sig-name descname">settings</code><a class="headerlink" href="#slsdet.Detector.settings" title="Permalink to this definition">¶</a></dt>
-<dd><p>detectorSettings
-.. note:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">Eiger</span><span class="p">]</span> <span class="n">Use</span> <span class="n">threshold</span> <span class="n">command</span> <span class="n">to</span> <span class="n">load</span> <span class="n">settings</span>
-<span class="p">[</span><span class="n">Jungfrau</span><span class="p">]</span> <span class="n">GAIN0</span><span class="p">,</span> <span class="n">HIGHGAIN0</span>
-
-<span class="p">[</span><span class="n">Gotthard</span><span class="p">]</span> <span class="n">DYNAMICGAIN</span><span class="p">,</span> <span class="n">HIGHGAIN</span><span class="p">,</span> <span class="n">LOWGAIN</span><span class="p">,</span> <span class="n">MEDIUMGAIN</span><span class="p">,</span> <span class="n">VERYHIGHGAIN</span>
-
-<span class="p">[</span><span class="n">Gotthard2</span><span class="p">]</span> <span class="n">DYNAMICGAIN</span><span class="p">,</span> <span class="n">FIXGAIN1</span><span class="p">,</span> <span class="n">FIXGAIN2</span>
-
-<span class="p">[</span><span class="n">Moench</span><span class="p">]</span> <span class="n">G1_HIGHGAIN</span><span class="p">,</span> <span class="n">G1_LOWGAIN</span><span class="p">,</span> <span class="n">G2_HIGHCAP_HIGHGAIN</span><span class="p">,</span> <span class="n">G2_HIGHCAP_LOWGAIN</span><span class="p">,</span> <span class="n">G2_LOWCAP_HIGHGAIN</span><span class="p">,</span> <span class="n">G2_LOWCAP_LOWGAIN</span><span class="p">,</span> <span class="n">G4_HIGHGAIN</span><span class="p">,</span> <span class="n">G4_LOWGAIN</span>
-
-<span class="p">[</span><span class="n">Eiger</span><span class="p">]</span> <span class="n">settings</span> <span class="n">loaded</span> <span class="kn">from</span> <span class="nn">file</span> <span class="n">found</span> <span class="ow">in</span> <span class="n">settingspath</span>
-</pre></div>
+<dd><p>detectorSettings</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>[Eiger] Use threshold command to load settings
+[Jungfrau] GAIN0, HIGHGAIN0</p>
+<p>[Gotthard] DYNAMICGAIN, HIGHGAIN, LOWGAIN, MEDIUMGAIN, VERYHIGHGAIN</p>
+<p>[Gotthard2] DYNAMICGAIN, FIXGAIN1, FIXGAIN2</p>
+<p>[Moench] G1_HIGHGAIN, G1_LOWGAIN, G2_HIGHCAP_HIGHGAIN, G2_HIGHCAP_LOWGAIN, G2_LOWCAP_HIGHGAIN, G2_LOWCAP_LOWGAIN, G4_HIGHGAIN, G4_LOWGAIN</p>
+<p>[Eiger] settings loaded from file found in settingspath</p>
 </div>
 <dl class="field-list simple">
 <dt class="field-odd">Type</dt>
@@ -3872,8 +3922,8 @@ see python/examples/use_scan.py</p>
 <dl class="py method">
 <dt id="slsdet.Detector.slowadc">
 <em class="property">property </em><code class="sig-name descname">slowadc</code><a class="headerlink" href="#slsdet.Detector.slowadc" title="Permalink to this definition">¶</a></dt>
-<dd><p>[Ctb] Slow ADC channel in uV of all channels or specific ones from 0-7.
-.. rubric:: Example</p>
+<dd><p>[Ctb] Slow ADC channel in uV of all channels or specific ones from 0-7.</p>
+<p class="rubric">Example</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">d</span><span class="o">.</span><span class="n">slowadc</span>
 <span class="go">0: 0 uV</span>
 <span class="go">1: 0 uV</span>
@@ -3918,14 +3968,13 @@ see python/examples/use_scan.py</p>
 <dl class="py method">
 <dt id="slsdet.Detector.status">
 <em class="property">property </em><code class="sig-name descname">status</code><a class="headerlink" href="#slsdet.Detector.status" title="Permalink to this definition">¶</a></dt>
-<dd><p>runStatus
-.. note:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Options</span><span class="p">:</span> <span class="n">IDLE</span><span class="p">,</span> <span class="n">ERROR</span><span class="p">,</span> <span class="n">WAITING</span><span class="p">,</span> <span class="n">RUN_FINISHED</span><span class="p">,</span> <span class="n">TRANSMITTING</span><span class="p">,</span> <span class="n">RUNNING</span><span class="p">,</span> <span class="n">STOPPED</span>
-
-<span class="n">Goes</span> <span class="n">to</span> <span class="n">stop</span> <span class="n">server</span><span class="o">.</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">d</span><span class="o">.</span><span class="n">status</span>
-<span class="n">runStatus</span><span class="o">.</span><span class="n">IDLE</span>
-</pre></div>
+<dd><p>runStatus</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Options: IDLE, ERROR, WAITING, RUN_FINISHED, TRANSMITTING, RUNNING, STOPPED</p>
+<p>Goes to stop server.
+&gt;&gt;&gt; d.status
+runStatus.IDLE</p>
 </div>
 <dl class="field-list simple">
 <dt class="field-odd">Type</dt>
@@ -3953,21 +4002,26 @@ see python/examples/use_scan.py</p>
 <dl class="py method">
 <dt id="slsdet.Detector.stopport">
 <em class="property">property </em><code class="sig-name descname">stopport</code><a class="headerlink" href="#slsdet.Detector.stopport" title="Permalink to this definition">¶</a></dt>
-<dd><p>Port number of the stop server on detector for detector-client tcp interface.
-.. note:: Default is 1953. Normally unchanged.</p>
+<dd><p>Port number of the stop server on detector for detector-client tcp interface.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Default is 1953. Normally unchanged.</p>
+</div>
 </dd></dl>
 
 <dl class="py method">
 <dt id="slsdet.Detector.storagecell_delay">
 <em class="property">property </em><code class="sig-name descname">storagecell_delay</code><a class="headerlink" href="#slsdet.Detector.storagecell_delay" title="Permalink to this definition">¶</a></dt>
-<dd><p>[Jungfrau] Additional time delay between 2 consecutive exposures in burst mode, accepts either a value in seconds or datetime.timedelta
-.. note:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Only</span> <span class="n">applicable</span> <span class="k">for</span> <span class="n">chipv1</span><span class="o">.</span><span class="mf">0.</span> <span class="n">For</span> <span class="n">advanced</span> <span class="n">users</span> <span class="n">only</span>
-
-<span class="n">Value</span><span class="p">:</span> <span class="mi">0</span><span class="o">-</span><span class="mi">1638375</span> <span class="n">ns</span> <span class="p">(</span><span class="n">resolution</span> <span class="n">of</span> <span class="mi">25</span><span class="n">ns</span><span class="p">)</span>
-
-<span class="p">:</span><span class="n">getter</span><span class="p">:</span> <span class="n">always</span> <span class="n">returns</span> <span class="ow">in</span> <span class="n">seconds</span><span class="o">.</span> <span class="n">To</span> <span class="n">get</span> <span class="ow">in</span> <span class="n">datetime</span><span class="o">.</span><span class="n">delta</span><span class="p">,</span> <span class="n">use</span> <span class="n">getStorageCellDelay</span>
-</pre></div>
+<dd><p>[Jungfrau] Additional time delay between 2 consecutive exposures in burst mode, accepts either a value in seconds or datetime.timedelta</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Only applicable for chipv1.0. For advanced users only</p>
+<p>Value: 0-1638375 ns (resolution of 25ns)</p>
+<dl class="field-list simple">
+<dt class="field-odd">getter</dt>
+<dd class="field-odd"><p>always returns in seconds. To get in datetime.delta, use getStorageCellDelay</p>
+</dd>
+</dl>
 </div>
 <p class="rubric">Example</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">d</span><span class="o">.</span><span class="n">storagecell_delay</span> <span class="o">=</span> <span class="mf">0.00056</span>
@@ -3992,26 +4046,17 @@ Options 0-max. max is 15 (default) for chipv1.0 and 3 (default) for chipv1.1.</p
 </dd></dl>
 
 <dl class="py method">
-<dt id="slsdet.Detector.storagecells">
-<em class="property">property </em><code class="sig-name descname">storagecells</code><a class="headerlink" href="#slsdet.Detector.storagecells" title="Permalink to this definition">¶</a></dt>
-<dd><p>[Jungfrau] Number of additional storage cells.
-.. note:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Only</span> <span class="k">for</span> <span class="n">chip</span> <span class="n">v1</span><span class="o">.</span><span class="mf">0.</span> <span class="n">For</span> <span class="n">advanced</span> <span class="n">users</span> <span class="n">only</span><span class="o">.</span>
-
-<span class="n">Options</span><span class="p">:</span> <span class="mi">0</span> <span class="o">-</span> <span class="mf">15.</span> <span class="n">Default</span> <span class="ow">is</span> <span class="mf">0.</span>
-<span class="n">The</span> <span class="c1">#images = #frames x #triggers x (#storagecells + 1)</span>
-</pre></div>
-</div>
-</dd></dl>
-
-<dl class="py method">
 <dt id="slsdet.Detector.subdeadtime">
 <em class="property">property </em><code class="sig-name descname">subdeadtime</code><a class="headerlink" href="#slsdet.Detector.subdeadtime" title="Permalink to this definition">¶</a></dt>
-<dd><p>[Eiger] Dead time of EIGER subframes in 32 bit mode, accepts either a value in seconds or datetime.timedelta
-.. note:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Subperiod</span> <span class="o">=</span> <span class="n">subexptime</span> <span class="o">+</span> <span class="n">subdeadtime</span><span class="o">.</span>
-<span class="p">:</span><span class="n">getter</span><span class="p">:</span> <span class="n">always</span> <span class="n">returns</span> <span class="ow">in</span> <span class="n">seconds</span><span class="o">.</span> <span class="n">To</span> <span class="n">get</span> <span class="ow">in</span> <span class="n">datetime</span><span class="o">.</span><span class="n">delta</span><span class="p">,</span> <span class="n">use</span> <span class="n">getSubDeadTime</span>
-</pre></div>
+<dd><p>[Eiger] Dead time of EIGER subframes in 32 bit mode, accepts either a value in seconds or datetime.timedelta</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Subperiod = subexptime + subdeadtime.</p>
+<dl class="field-list simple">
+<dt class="field-odd">getter</dt>
+<dd class="field-odd"><p>always returns in seconds. To get in datetime.delta, use getSubDeadTime</p>
+</dd>
+</dl>
 </div>
 <p class="rubric">Example</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">d</span><span class="o">.</span><span class="n">subdeadtime</span> <span class="o">=</span> <span class="mf">1.230203</span>
@@ -4027,11 +4072,15 @@ Options 0-max. max is 15 (default) for chipv1.0 and 3 (default) for chipv1.1.</p
 <dl class="py method">
 <dt id="slsdet.Detector.subexptime">
 <em class="property">property </em><code class="sig-name descname">subexptime</code><a class="headerlink" href="#slsdet.Detector.subexptime" title="Permalink to this definition">¶</a></dt>
-<dd><p>[Eiger] Exposure time of EIGER subframes in 32 bit mode.
-.. note:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Subperiod</span> <span class="o">=</span> <span class="n">subexptime</span> <span class="o">+</span> <span class="n">subdeadtime</span><span class="o">.</span>
-<span class="p">:</span><span class="n">getter</span><span class="p">:</span> <span class="n">always</span> <span class="n">returns</span> <span class="ow">in</span> <span class="n">seconds</span><span class="o">.</span> <span class="n">To</span> <span class="n">get</span> <span class="ow">in</span> <span class="n">datetime</span><span class="o">.</span><span class="n">delta</span><span class="p">,</span> <span class="n">use</span> <span class="n">getSubExptime</span>
-</pre></div>
+<dd><p>[Eiger] Exposure time of EIGER subframes in 32 bit mode.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Subperiod = subexptime + subdeadtime.</p>
+<dl class="field-list simple">
+<dt class="field-odd">getter</dt>
+<dd class="field-odd"><p>always returns in seconds. To get in datetime.delta, use getSubExptime</p>
+</dd>
+</dl>
 </div>
 <p class="rubric">Example</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">d</span><span class="o">.</span><span class="n">subexptime</span> <span class="o">=</span> <span class="mf">1.230203</span>
@@ -4047,21 +4096,18 @@ Options 0-max. max is 15 (default) for chipv1.0 and 3 (default) for chipv1.1.</p
 <dl class="py method">
 <dt id="slsdet.Detector.syncclk">
 <em class="property">property </em><code class="sig-name descname">syncclk</code><a class="headerlink" href="#slsdet.Detector.syncclk" title="Permalink to this definition">¶</a></dt>
-<dd><p>[Ctb][Moench] Sync clock in MHz.
-.. note:: :setter: Not implemented</p>
+<dd><p>[Ctb][Moench] Sync clock in MHz.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt id="slsdet.Detector.temp_control">
 <em class="property">property </em><code class="sig-name descname">temp_control</code><a class="headerlink" href="#slsdet.Detector.temp_control" title="Permalink to this definition">¶</a></dt>
-<dd><p>[Jungfrau] Temperature control enable.
-.. note:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Default</span> <span class="ow">is</span> <span class="mi">0</span> <span class="p">(</span><span class="n">disabled</span><span class="p">)</span><span class="o">.</span>
-
-<span class="n">If</span> <span class="n">temperature</span> <span class="n">crosses</span> <span class="n">threshold</span> <span class="n">temperature</span> <span class="ow">and</span> <span class="n">temperature</span> <span class="n">control</span> <span class="ow">is</span> <span class="n">enabled</span><span class="p">,</span> <span class="n">power</span> <span class="n">to</span> <span class="n">chip</span> <span class="n">will</span> <span class="n">be</span> <span class="n">switched</span> <span class="n">off</span> <span class="ow">and</span> <span class="n">temperature</span> <span class="n">event</span> <span class="n">occurs</span><span class="o">.</span>
-
-<span class="n">To</span> <span class="n">power</span> <span class="n">on</span> <span class="n">chip</span> <span class="n">again</span><span class="p">,</span> <span class="n">temperature</span> <span class="n">has</span> <span class="n">to</span> <span class="n">be</span> <span class="n">less</span> <span class="n">than</span> <span class="n">threshold</span> <span class="n">temperature</span> <span class="ow">and</span> <span class="n">temperature</span> <span class="n">event</span> <span class="n">has</span> <span class="n">to</span> <span class="n">be</span> <span class="n">cleared</span><span class="o">/</span><span class="n">reset</span><span class="o">.</span>
-</pre></div>
+<dd><p>[Jungfrau] Temperature control enable.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Default is 0 (disabled).</p>
+<p>If temperature crosses threshold temperature and temperature control is enabled, power to chip will be switched off and temperature event occurs.</p>
+<p>To power on chip again, temperature has to be less than threshold temperature and temperature event has to be cleared/reset.</p>
 </div>
 </dd></dl>
 
@@ -4072,20 +4118,23 @@ Options 0-max. max is 15 (default) for chipv1.0 and 3 (default) for chipv1.1.</p
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>If temperature crosses threshold temperature and temperature control is enabled, power to chip will be switched off and temperature event occurs.</p>
-<p>To power on chip again, temperature has to be less than threshold temperature and temperature event has to be cleared/reset.
-:setter: To clear the event, set it to 0.</p>
+<p>To power on chip again, temperature has to be less than threshold temperature and temperature event has to be cleared/reset.</p>
+<dl class="field-list simple">
+<dt class="field-odd">setter</dt>
+<dd class="field-odd"><p>To clear the event, set it to 0.</p>
+</dd>
+</dl>
 </div>
 </dd></dl>
 
 <dl class="py method">
 <dt id="slsdet.Detector.temp_threshold">
 <em class="property">property </em><code class="sig-name descname">temp_threshold</code><a class="headerlink" href="#slsdet.Detector.temp_threshold" title="Permalink to this definition">¶</a></dt>
-<dd><p>[Jungfrau] Threshold temperature in degrees.
-.. note:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">If</span> <span class="n">temperature</span> <span class="n">crosses</span> <span class="n">threshold</span> <span class="n">temperature</span> <span class="ow">and</span> <span class="n">temperature</span> <span class="n">control</span> <span class="ow">is</span> <span class="n">enabled</span><span class="p">,</span> <span class="n">power</span> <span class="n">to</span> <span class="n">chip</span> <span class="n">will</span> <span class="n">be</span> <span class="n">switched</span> <span class="n">off</span> <span class="ow">and</span> <span class="n">temperature</span> <span class="n">event</span> <span class="n">occurs</span><span class="o">.</span>
-
-<span class="n">To</span> <span class="n">power</span> <span class="n">on</span> <span class="n">chip</span> <span class="n">again</span><span class="p">,</span> <span class="n">temperature</span> <span class="n">has</span> <span class="n">to</span> <span class="n">be</span> <span class="n">less</span> <span class="n">than</span> <span class="n">threshold</span> <span class="n">temperature</span> <span class="ow">and</span> <span class="n">temperature</span> <span class="n">event</span> <span class="n">has</span> <span class="n">to</span> <span class="n">be</span> <span class="n">cleared</span><span class="o">/</span><span class="n">reset</span><span class="o">.</span>
-</pre></div>
+<dd><p>[Jungfrau] Threshold temperature in degrees.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If temperature crosses threshold temperature and temperature control is enabled, power to chip will be switched off and temperature event occurs.</p>
+<p>To power on chip again, temperature has to be less than threshold temperature and temperature event has to be cleared/reset.</p>
 </div>
 </dd></dl>
 
@@ -4110,27 +4159,28 @@ Options 0-max. max is 15 (default) for chipv1.0 and 3 (default) for chipv1.1.</p
 <dl class="py method">
 <dt id="slsdet.Detector.threshold">
 <em class="property">property </em><code class="sig-name descname">threshold</code><a class="headerlink" href="#slsdet.Detector.threshold" title="Permalink to this definition">¶</a></dt>
-<dd><p>[Eiger] Threshold in eV
-.. note:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">To</span> <span class="n">change</span> <span class="n">settings</span> <span class="k">as</span> <span class="n">well</span> <span class="ow">or</span> <span class="nb">set</span> <span class="n">threshold</span> <span class="n">without</span> <span class="n">trimbits</span><span class="p">,</span> <span class="n">use</span> <span class="n">setThresholdEnergy</span><span class="o">.</span>
-<span class="p">:</span><span class="n">setter</span><span class="p">:</span> <span class="n">It</span> <span class="n">loads</span> <span class="n">trim</span> <span class="n">files</span> <span class="kn">from</span> <span class="nn">settingspath.</span>
-</pre></div>
+<dd><p>[Eiger] Threshold in eV</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>To change settings as well or set threshold without trimbits, use setThresholdEnergy.</p>
+<dl class="field-list simple">
+<dt class="field-odd">setter</dt>
+<dd class="field-odd"><p>It loads trim files from settingspath.</p>
+</dd>
+</dl>
 </div>
 </dd></dl>
 
 <dl class="py method">
 <dt id="slsdet.Detector.timing">
 <em class="property">property </em><code class="sig-name descname">timing</code><a class="headerlink" href="#slsdet.Detector.timing" title="Permalink to this definition">¶</a></dt>
-<dd><p>timingMode
-.. note:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Default</span><span class="p">:</span> <span class="n">AUTO_TIMING</span>
-
-<span class="p">[</span><span class="n">Jungfrau</span><span class="p">][</span><span class="n">Gotthard</span><span class="p">][</span><span class="n">Ctb</span><span class="p">][</span><span class="n">Moench</span><span class="p">][</span><span class="n">Gotthard2</span><span class="p">]</span> <span class="n">AUTO_TIMING</span><span class="p">,</span> <span class="n">TRIGGER_EXPOSURE</span>
-
-<span class="p">[</span><span class="n">Mythen3</span><span class="p">]</span> <span class="n">AUTO_TIMING</span><span class="p">,</span> <span class="n">TRIGGER_EXPOSURE</span><span class="p">,</span> <span class="n">GATED</span><span class="p">,</span> <span class="n">TRIGGER_GATED</span>
-
-<span class="p">[</span><span class="n">Eiger</span><span class="p">]</span> <span class="n">AUTO_TIMING</span><span class="p">,</span> <span class="n">TRIGGER_EXPOSURE</span><span class="p">,</span> <span class="n">GATED</span><span class="p">,</span> <span class="n">BURST_TRIGGER</span>
-</pre></div>
+<dd><p>timingMode</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Default: AUTO_TIMING</p>
+<p>[Jungfrau][Gotthard][Ctb][Moench][Gotthard2] AUTO_TIMING, TRIGGER_EXPOSURE</p>
+<p>[Mythen3] AUTO_TIMING, TRIGGER_EXPOSURE, GATED, TRIGGER_GATED</p>
+<p>[Eiger] AUTO_TIMING, TRIGGER_EXPOSURE, GATED, BURST_TRIGGER</p>
 </div>
 <dl class="field-list simple">
 <dt class="field-odd">Type</dt>
@@ -4148,12 +4198,11 @@ Options 0-max. max is 15 (default) for chipv1.0 and 3 (default) for chipv1.1.</p
 <dl class="py method">
 <dt id="slsdet.Detector.timingsource">
 <em class="property">property </em><code class="sig-name descname">timingsource</code><a class="headerlink" href="#slsdet.Detector.timingsource" title="Permalink to this definition">¶</a></dt>
-<dd><p>timingSourceType
-.. note:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Options</span><span class="p">:</span> <span class="n">TIMING_INTERNAL</span><span class="p">,</span> <span class="n">TIMING_EXTERNAL</span>
-
-<span class="n">Internal</span> <span class="ow">is</span> <span class="n">crystaland</span> <span class="n">external</span> <span class="ow">is</span> <span class="n">system</span> <span class="n">timing</span><span class="o">.</span> <span class="n">Default</span> <span class="ow">is</span> <span class="n">internal</span><span class="o">.</span>
-</pre></div>
+<dd><p>timingSourceType</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Options: TIMING_INTERNAL, TIMING_EXTERNAL</p>
+<p>Internal is crystaland external is system timing. Default is internal.</p>
 </div>
 <dl class="field-list simple">
 <dt class="field-odd">Type</dt>
@@ -4174,19 +4223,27 @@ Options 0-max. max is 15 (default) for chipv1.0 and 3 (default) for chipv1.1.</p
 <dd><p>[Gotthard][Jungfrau][Mythen3][Gotthard2][CTB][Moench] Number of triggers left in acquisition.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Only when external trigger used.
-:setter: Not Implemented</p>
+<p>Only when external trigger used.</p>
+<dl class="field-list simple">
+<dt class="field-odd">setter</dt>
+<dd class="field-odd"><p>Not Implemented</p>
+</dd>
+</dl>
 </div>
 </dd></dl>
 
 <dl class="py method">
 <dt id="slsdet.Detector.trimbits">
 <em class="property">property </em><code class="sig-name descname">trimbits</code><a class="headerlink" href="#slsdet.Detector.trimbits" title="Permalink to this definition">¶</a></dt>
-<dd><p>[Eiger][Mythen3] Loads custom trimbit file to detector.
-.. note:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">If</span> <span class="n">no</span> <span class="n">extension</span> <span class="n">specified</span><span class="p">,</span> <span class="n">serial</span> <span class="n">number</span> <span class="n">of</span> <span class="n">each</span> <span class="n">module</span> <span class="ow">is</span> <span class="n">attached</span><span class="o">.</span>
-<span class="p">:</span><span class="n">getter</span><span class="p">:</span> <span class="n">Not</span> <span class="n">implemented</span>
-</pre></div>
+<dd><p>[Eiger][Mythen3] Loads custom trimbit file to detector.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If no extension specified, serial number of each module is attached.</p>
+<dl class="field-list simple">
+<dt class="field-odd">getter</dt>
+<dd class="field-odd"><p>Not implemented</p>
+</dd>
+</dl>
 </div>
 <p class="rubric">Example</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">d</span><span class="o">.</span><span class="n">trimbits</span> <span class="o">=</span> <span class="s1">&#39;/path_to_file/noise&#39;</span>
@@ -4198,8 +4255,8 @@ Options 0-max. max is 15 (default) for chipv1.0 and 3 (default) for chipv1.1.</p
 <dl class="py method">
 <dt id="slsdet.Detector.trimen">
 <em class="property">property </em><code class="sig-name descname">trimen</code><a class="headerlink" href="#slsdet.Detector.trimen" title="Permalink to this definition">¶</a></dt>
-<dd><p>[Eiger] List of trim energies, where corresponding default trim files exist in corresponding trim folders.
-.. rubric:: Example</p>
+<dd><p>[Eiger] List of trim energies, where corresponding default trim files exist in corresponding trim folders.</p>
+<p class="rubric">Example</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">d</span><span class="o">.</span><span class="n">trimen</span>
 <span class="go">[]</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">d</span><span class="o">.</span><span class="n">trimen</span> <span class="o">=</span> <span class="p">[</span><span class="mi">4500</span><span class="p">,</span> <span class="mi">5400</span><span class="p">,</span> <span class="mi">6400</span><span class="p">]</span>
@@ -4230,25 +4287,35 @@ Options 0-max. max is 15 (default) for chipv1.0 and 3 (default) for chipv1.1.</p
 <dl class="py method">
 <dt id="slsdet.Detector.txndelay_left">
 <em class="property">property </em><code class="sig-name descname">txndelay_left</code><a class="headerlink" href="#slsdet.Detector.txndelay_left" title="Permalink to this definition">¶</a></dt>
-<dd><p>[Eiger] Transmission delay of first packet in an image being streamed out of the module’s left UDP port.
-.. note:: Each value represents 10ns. Typical value is 50000.</p>
+<dd><p>[Eiger] Transmission delay of first packet in an image being streamed out of the module’s left UDP port.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Each value represents 10ns. Typical value is 50000.</p>
+</div>
 </dd></dl>
 
 <dl class="py method">
 <dt id="slsdet.Detector.txndelay_right">
 <em class="property">property </em><code class="sig-name descname">txndelay_right</code><a class="headerlink" href="#slsdet.Detector.txndelay_right" title="Permalink to this definition">¶</a></dt>
-<dd><p>[Eiger] Transmission delay of first packet in an image being streamed out of the module’s right UDP port.
-.. note:: Each value represents 10ns. Typical value is 50000.</p>
+<dd><p>[Eiger] Transmission delay of first packet in an image being streamed out of the module’s right UDP port.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Each value represents 10ns. Typical value is 50000.</p>
+</div>
 </dd></dl>
 
 <dl class="py method">
 <dt id="slsdet.Detector.type">
 <em class="property">property </em><code class="sig-name descname">type</code><a class="headerlink" href="#slsdet.Detector.type" title="Permalink to this definition">¶</a></dt>
-<dd><p>detectorType
-.. note:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">:</span><span class="n">setter</span><span class="p">:</span> <span class="n">Not</span> <span class="n">implemented</span>
-<span class="n">Values</span><span class="p">:</span> <span class="n">EIGER</span><span class="p">,</span> <span class="n">JUNGFRAU</span><span class="p">,</span> <span class="n">GOTTHARD</span><span class="p">,</span> <span class="n">MOENCH</span><span class="p">,</span> <span class="n">MYTHEN3</span><span class="p">,</span> <span class="n">GOTTHARD2</span><span class="p">,</span> <span class="n">CHIPTESTBOARD</span>
-</pre></div>
+<dd><p>detectorType</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<dl class="field-list simple">
+<dt class="field-odd">setter</dt>
+<dd class="field-odd"><p>Not implemented</p>
+</dd>
+</dl>
+<p>Values: EIGER, JUNGFRAU, GOTTHARD, MOENCH, MYTHEN3, GOTTHARD2, CHIPTESTBOARD</p>
 </div>
 <dl class="field-list simple">
 <dt class="field-odd">Type</dt>
@@ -4260,12 +4327,11 @@ Options 0-max. max is 15 (default) for chipv1.0 and 3 (default) for chipv1.1.</p
 <dl class="py method">
 <dt id="slsdet.Detector.udp_dstip">
 <em class="property">property </em><code class="sig-name descname">udp_dstip</code><a class="headerlink" href="#slsdet.Detector.udp_dstip" title="Permalink to this definition">¶</a></dt>
-<dd><p>Ip address of the receiver (destination) udp interface.
-.. note:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">If</span> <span class="s1">&#39;auto&#39;</span> <span class="n">used</span><span class="p">,</span> <span class="n">then</span> <span class="n">ip</span> <span class="ow">is</span> <span class="nb">set</span> <span class="n">to</span> <span class="n">ip</span> <span class="n">of</span> <span class="n">rx_hostname</span><span class="o">.</span>
-
-<span class="n">To</span> <span class="nb">set</span> <span class="n">IPs</span> <span class="k">for</span> <span class="n">individual</span> <span class="n">modules</span><span class="p">,</span> <span class="n">use</span> <span class="n">setDestinationUDPIP</span><span class="o">.</span>
-</pre></div>
+<dd><p>Ip address of the receiver (destination) udp interface.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If ‘auto’ used, then ip is set to ip of rx_hostname.</p>
+<p>To set IPs for individual modules, use setDestinationUDPIP.</p>
 </div>
 <p class="rubric">Example</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">d</span><span class="o">.</span><span class="n">udp_dstip</span> <span class="o">=</span> <span class="s1">&#39;192.168.1.110&#39;</span>
@@ -4278,16 +4344,13 @@ Options 0-max. max is 15 (default) for chipv1.0 and 3 (default) for chipv1.1.</p
 <dl class="py method">
 <dt id="slsdet.Detector.udp_dstip2">
 <em class="property">property </em><code class="sig-name descname">udp_dstip2</code><a class="headerlink" href="#slsdet.Detector.udp_dstip2" title="Permalink to this definition">¶</a></dt>
-<dd><p>[Jungfrau][Gotthard2] Ip address of the receiver (destination) udp interface 2.
-.. note:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">Jungfrau</span><span class="p">]</span> <span class="n">bottom</span> <span class="n">half</span>
-
-<span class="p">[</span><span class="n">Gotthard2</span><span class="p">]</span> <span class="n">veto</span> <span class="n">debugging</span>
-
-<span class="n">If</span> <span class="s1">&#39;auto&#39;</span> <span class="n">used</span><span class="p">,</span> <span class="n">then</span> <span class="n">ip</span> <span class="ow">is</span> <span class="nb">set</span> <span class="n">to</span> <span class="n">ip</span> <span class="n">of</span> <span class="n">rx_hostname</span><span class="o">.</span>
-
-<span class="n">To</span> <span class="nb">set</span> <span class="n">IPs</span> <span class="k">for</span> <span class="n">individual</span> <span class="n">modules</span><span class="p">,</span> <span class="n">use</span> <span class="n">setDestinationUDPIP2</span><span class="o">.</span>
-</pre></div>
+<dd><p>[Jungfrau][Gotthard2] Ip address of the receiver (destination) udp interface 2.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>[Jungfrau] bottom half</p>
+<p>[Gotthard2] veto debugging</p>
+<p>If ‘auto’ used, then ip is set to ip of rx_hostname.</p>
+<p>To set IPs for individual modules, use setDestinationUDPIP2.</p>
 </div>
 <p class="rubric">Example</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">d</span><span class="o">.</span><span class="n">udp_dstip2</span> <span class="o">=</span> <span class="s1">&#39;10.1.1.185&#39;</span>
@@ -4300,12 +4363,11 @@ Options 0-max. max is 15 (default) for chipv1.0 and 3 (default) for chipv1.1.</p
 <dl class="py method">
 <dt id="slsdet.Detector.udp_dstmac">
 <em class="property">property </em><code class="sig-name descname">udp_dstmac</code><a class="headerlink" href="#slsdet.Detector.udp_dstmac" title="Permalink to this definition">¶</a></dt>
-<dd><p>Mac address of the receiver (destination) udp interface.
-.. note:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Not</span> <span class="n">mandatory</span> <span class="n">to</span> <span class="nb">set</span> <span class="k">as</span> <span class="n">udp_dstip</span> <span class="n">retrieves</span> <span class="n">it</span> <span class="kn">from</span> <span class="nn">slsReceiver</span> <span class="n">process</span> <span class="n">but</span> <span class="n">must</span> <span class="n">be</span> <span class="nb">set</span> <span class="k">if</span> <span class="n">you</span> <span class="n">use</span> <span class="n">a</span> <span class="n">custom</span> <span class="n">receiver</span> <span class="p">(</span><span class="ow">not</span> <span class="n">slsReceiver</span><span class="p">)</span><span class="o">.</span>
-
-<span class="n">To</span> <span class="nb">set</span> <span class="n">MACs</span> <span class="k">for</span> <span class="n">individual</span> <span class="n">modules</span><span class="p">,</span> <span class="n">use</span> <span class="n">setDestinationUDPMAC</span><span class="o">.</span>
-</pre></div>
+<dd><p>Mac address of the receiver (destination) udp interface.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Not mandatory to set as udp_dstip retrieves it from slsReceiver process but must be set if you use a custom receiver (not slsReceiver).</p>
+<p>To set MACs for individual modules, use setDestinationUDPMAC.</p>
 </div>
 <p class="rubric">Example</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">d</span><span class="o">.</span><span class="n">udp_dstmac</span> <span class="o">=</span> <span class="s1">&#39;00:1b:31:01:8a:de&#39;</span>
@@ -4318,16 +4380,13 @@ Options 0-max. max is 15 (default) for chipv1.0 and 3 (default) for chipv1.1.</p
 <dl class="py method">
 <dt id="slsdet.Detector.udp_dstmac2">
 <em class="property">property </em><code class="sig-name descname">udp_dstmac2</code><a class="headerlink" href="#slsdet.Detector.udp_dstmac2" title="Permalink to this definition">¶</a></dt>
-<dd><p>[Jungfrau][Gotthard2] Mac address of the receiver (destination) udp interface 2.
-.. note:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Not</span> <span class="n">mandatory</span> <span class="n">to</span> <span class="nb">set</span> <span class="k">as</span> <span class="n">udp_dstip2</span> <span class="n">retrieves</span> <span class="n">it</span> <span class="kn">from</span> <span class="nn">slsReceiver</span> <span class="n">process</span> <span class="n">but</span> <span class="n">must</span> <span class="n">be</span> <span class="nb">set</span> <span class="k">if</span> <span class="n">you</span> <span class="n">use</span> <span class="n">a</span> <span class="n">custom</span> <span class="n">receiver</span> <span class="p">(</span><span class="ow">not</span> <span class="n">slsReceiver</span><span class="p">)</span><span class="o">.</span>
-
-<span class="n">To</span> <span class="nb">set</span> <span class="n">MACs</span> <span class="k">for</span> <span class="n">individual</span> <span class="n">modules</span><span class="p">,</span> <span class="n">use</span> <span class="n">setDestinationUDPMAC2</span><span class="o">.</span>
-
-<span class="p">[</span><span class="n">Jungfrau</span><span class="p">]</span> <span class="n">bottom</span> <span class="n">half</span>
-
-<span class="p">[</span><span class="n">Gotthard2</span><span class="p">]</span> <span class="n">veto</span> <span class="n">debugging</span>
-</pre></div>
+<dd><p>[Jungfrau][Gotthard2] Mac address of the receiver (destination) udp interface 2.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Not mandatory to set as udp_dstip2 retrieves it from slsReceiver process but must be set if you use a custom receiver (not slsReceiver).</p>
+<p>To set MACs for individual modules, use setDestinationUDPMAC2.</p>
+<p>[Jungfrau] bottom half</p>
+<p>[Gotthard2] veto debugging</p>
 </div>
 <p class="rubric">Example</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">d</span><span class="o">.</span><span class="n">udp_dstmac2</span> <span class="o">=</span> <span class="s1">&#39;00:1b:31:01:8a:de&#39;</span>
@@ -4340,48 +4399,39 @@ Options 0-max. max is 15 (default) for chipv1.0 and 3 (default) for chipv1.1.</p
 <dl class="py method">
 <dt id="slsdet.Detector.udp_dstport">
 <em class="property">property </em><code class="sig-name descname">udp_dstport</code><a class="headerlink" href="#slsdet.Detector.udp_dstport" title="Permalink to this definition">¶</a></dt>
-<dd><p>Port number of the receiver (destination) udp interface.
-.. note:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Default</span> <span class="ow">is</span> <span class="mf">50001.</span>
-
-<span class="n">Ports</span> <span class="k">for</span> <span class="n">each</span> <span class="n">module</span> <span class="ow">is</span> <span class="n">calculated</span> <span class="p">(</span><span class="n">incremented</span> <span class="n">by</span> <span class="mi">1</span> <span class="k">if</span> <span class="n">no</span> <span class="mi">2</span><span class="n">nd</span> <span class="n">interface</span><span class="p">)</span>
-
-<span class="n">To</span> <span class="nb">set</span> <span class="n">ports</span> <span class="k">for</span> <span class="n">individual</span> <span class="n">modules</span><span class="p">,</span> <span class="n">use</span> <span class="n">setDestinationUDPPort</span><span class="o">.</span>
-</pre></div>
+<dd><p>Port number of the receiver (destination) udp interface.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Default is 50001.</p>
+<p>Ports for each module is calculated (incremented by 1 if no 2nd interface)</p>
+<p>To set ports for individual modules, use setDestinationUDPPort.</p>
 </div>
 </dd></dl>
 
 <dl class="py method">
 <dt id="slsdet.Detector.udp_dstport2">
 <em class="property">property </em><code class="sig-name descname">udp_dstport2</code><a class="headerlink" href="#slsdet.Detector.udp_dstport2" title="Permalink to this definition">¶</a></dt>
-<dd><p>Port number of the receiver (destination) udp interface.
-.. note:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Default</span> <span class="ow">is</span> <span class="mf">50002.</span>
-
-<span class="p">[</span><span class="n">Eiger</span><span class="p">]</span> <span class="n">right</span> <span class="n">half</span>
-
-<span class="p">[</span><span class="n">Jungfrau</span><span class="p">]</span> <span class="n">bottom</span> <span class="n">half</span>
-
-<span class="p">[</span><span class="n">Gotthard2</span><span class="p">]</span> <span class="n">veto</span> <span class="n">debugging</span>
-
-<span class="n">Ports</span> <span class="k">for</span> <span class="n">each</span> <span class="n">module</span> <span class="ow">is</span> <span class="n">calculated</span> <span class="p">(</span><span class="n">incremented</span> <span class="n">by</span> <span class="mi">2</span><span class="p">)</span>
-
-<span class="n">To</span> <span class="nb">set</span> <span class="n">ports</span> <span class="k">for</span> <span class="n">individual</span> <span class="n">modules</span><span class="p">,</span> <span class="n">use</span> <span class="n">setDestinationUDPPort2</span><span class="o">.</span>
-</pre></div>
+<dd><p>Port number of the receiver (destination) udp interface.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Default is 50002.</p>
+<p>[Eiger] right half</p>
+<p>[Jungfrau] bottom half</p>
+<p>[Gotthard2] veto debugging</p>
+<p>Ports for each module is calculated (incremented by 2)</p>
+<p>To set ports for individual modules, use setDestinationUDPPort2.</p>
 </div>
 </dd></dl>
 
 <dl class="py method">
 <dt id="slsdet.Detector.udp_srcip">
 <em class="property">property </em><code class="sig-name descname">udp_srcip</code><a class="headerlink" href="#slsdet.Detector.udp_srcip" title="Permalink to this definition">¶</a></dt>
-<dd><p>Ip address of the detector (source) udp interface.
-.. note:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Must</span> <span class="n">be</span> <span class="n">same</span> <span class="n">subnet</span> <span class="k">as</span> <span class="n">destination</span> <span class="n">udp</span> <span class="n">ip</span><span class="o">.</span>
-
-<span class="p">[</span><span class="n">Eiger</span><span class="p">]</span> <span class="n">Set</span> <span class="n">only</span> <span class="k">for</span> <span class="mi">10</span><span class="n">G</span><span class="o">.</span> <span class="n">For</span> <span class="mi">1</span><span class="n">G</span><span class="p">,</span> <span class="n">detector</span> <span class="n">will</span> <span class="n">replace</span> <span class="k">with</span> <span class="n">its</span> <span class="n">own</span> <span class="n">DHCP</span> <span class="n">IP</span> <span class="n">address</span><span class="o">.</span>
-
-<span class="n">To</span> <span class="nb">set</span> <span class="n">IPs</span> <span class="k">for</span> <span class="n">individual</span> <span class="n">modules</span><span class="p">,</span> <span class="n">use</span> <span class="n">setSourceUDPIP</span><span class="o">.</span>
-</pre></div>
+<dd><p>Ip address of the detector (source) udp interface.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Must be same subnet as destination udp ip.</p>
+<p>[Eiger] Set only for 10G. For 1G, detector will replace with its own DHCP IP address.</p>
+<p>To set IPs for individual modules, use setSourceUDPIP.</p>
 </div>
 <p class="rubric">Example</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">d</span><span class="o">.</span><span class="n">udp_srcip</span> <span class="o">=</span> <span class="s1">&#39;192.168.1.127&#39;</span>
@@ -4394,16 +4444,13 @@ Options 0-max. max is 15 (default) for chipv1.0 and 3 (default) for chipv1.1.</p
 <dl class="py method">
 <dt id="slsdet.Detector.udp_srcip2">
 <em class="property">property </em><code class="sig-name descname">udp_srcip2</code><a class="headerlink" href="#slsdet.Detector.udp_srcip2" title="Permalink to this definition">¶</a></dt>
-<dd><p>[Jungfrau][Gotthard2] Ip address of the detector (source) udp interface 2.
-.. note:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">Jungfrau</span><span class="p">]</span> <span class="n">bottom</span> <span class="n">half</span>
-
-<span class="p">[</span><span class="n">Gotthard2</span><span class="p">]</span> <span class="n">veto</span> <span class="n">debugging</span>
-
-<span class="n">Must</span> <span class="n">be</span> <span class="n">same</span> <span class="n">subnet</span> <span class="k">as</span> <span class="n">destination</span> <span class="n">udp</span> <span class="n">ip2</span><span class="o">.</span>
-
-<span class="n">To</span> <span class="nb">set</span> <span class="n">IPs</span> <span class="k">for</span> <span class="n">individual</span> <span class="n">modules</span><span class="p">,</span> <span class="n">use</span> <span class="n">setSourceUDPIP2</span><span class="o">.</span>
-</pre></div>
+<dd><p>[Jungfrau][Gotthard2] Ip address of the detector (source) udp interface 2.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>[Jungfrau] bottom half</p>
+<p>[Gotthard2] veto debugging</p>
+<p>Must be same subnet as destination udp ip2.</p>
+<p>To set IPs for individual modules, use setSourceUDPIP2.</p>
 </div>
 <p class="rubric">Example</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">d</span><span class="o">.</span><span class="n">udp_srcip2</span> <span class="o">=</span> <span class="s1">&#39;192.168.1.127&#39;</span>
@@ -4416,12 +4463,11 @@ Options 0-max. max is 15 (default) for chipv1.0 and 3 (default) for chipv1.1.</p
 <dl class="py method">
 <dt id="slsdet.Detector.udp_srcmac">
 <em class="property">property </em><code class="sig-name descname">udp_srcmac</code><a class="headerlink" href="#slsdet.Detector.udp_srcmac" title="Permalink to this definition">¶</a></dt>
-<dd><p>Mac address of the receiver (source) udp interface.
-.. note:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">Eiger</span><span class="p">]</span> <span class="n">Do</span> <span class="ow">not</span> <span class="nb">set</span> <span class="k">as</span> <span class="n">detector</span> <span class="n">will</span> <span class="n">replace</span> <span class="k">with</span> <span class="n">its</span> <span class="n">own</span> <span class="n">DHCP</span> <span class="n">Mac</span> <span class="p">(</span><span class="mi">1</span><span class="n">G</span><span class="p">)</span> <span class="ow">or</span> <span class="n">DHCP</span> <span class="n">Mac</span> <span class="o">+</span> <span class="mi">1</span> <span class="p">(</span><span class="mi">10</span><span class="n">G</span><span class="p">)</span><span class="o">.</span>
-
-<span class="n">To</span> <span class="nb">set</span> <span class="n">MACs</span> <span class="k">for</span> <span class="n">individual</span> <span class="n">modules</span><span class="p">,</span> <span class="n">use</span> <span class="n">setSourceUDPMAC</span><span class="o">.</span>
-</pre></div>
+<dd><p>Mac address of the receiver (source) udp interface.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>[Eiger] Do not set as detector will replace with its own DHCP Mac (1G) or DHCP Mac + 1 (10G).</p>
+<p>To set MACs for individual modules, use setSourceUDPMAC.</p>
 </div>
 <p class="rubric">Example</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">d</span><span class="o">.</span><span class="n">udp_srcmac</span> <span class="o">=</span> <span class="s1">&#39;00:1b:31:01:8a:de&#39;</span>
@@ -4434,14 +4480,12 @@ Options 0-max. max is 15 (default) for chipv1.0 and 3 (default) for chipv1.1.</p
 <dl class="py method">
 <dt id="slsdet.Detector.udp_srcmac2">
 <em class="property">property </em><code class="sig-name descname">udp_srcmac2</code><a class="headerlink" href="#slsdet.Detector.udp_srcmac2" title="Permalink to this definition">¶</a></dt>
-<dd><p>[Jungfrau][Gotthard2] Mac address of the receiver (source) udp interface 2.
-.. note:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">Jungfrau</span><span class="p">]</span> <span class="n">bottom</span> <span class="n">half</span>
-
-<span class="p">[</span><span class="n">Gotthard2</span><span class="p">]</span> <span class="n">veto</span> <span class="n">debugging</span>
-
-<span class="n">To</span> <span class="nb">set</span> <span class="n">MACs</span> <span class="k">for</span> <span class="n">individual</span> <span class="n">modules</span><span class="p">,</span> <span class="n">use</span> <span class="n">setSourceUDPMAC2</span><span class="o">.</span>
-</pre></div>
+<dd><p>[Jungfrau][Gotthard2] Mac address of the receiver (source) udp interface 2.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>[Jungfrau] bottom half</p>
+<p>[Gotthard2] veto debugging</p>
+<p>To set MACs for individual modules, use setSourceUDPMAC2.</p>
 </div>
 <p class="rubric">Example</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">d</span><span class="o">.</span><span class="n">udp_srcmac2</span> <span class="o">=</span> <span class="s1">&#39;00:1b:31:01:8a:de&#39;</span>
@@ -4494,8 +4538,11 @@ Options 0-max. max is 15 (default) for chipv1.0 and 3 (default) for chipv1.1.</p
 <dl class="py method">
 <dt id="slsdet.Detector.v_io">
 <em class="property">property </em><code class="sig-name descname">v_io</code><a class="headerlink" href="#slsdet.Detector.v_io" title="Permalink to this definition">¶</a></dt>
-<dd><p>[Ctb] Voltage supply io in mV. Minimum 1200 mV.
-.. note:: Must be the first power regulator to be set after fpga reset (on-board detector server start up).</p>
+<dd><p>[Ctb] Voltage supply io in mV. Minimum 1200 mV.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Must be the first power regulator to be set after fpga reset (on-board detector server start up).</p>
+</div>
 </dd></dl>
 
 <dl class="py method">
@@ -4517,19 +4564,22 @@ Options 0-max. max is 15 (default) for chipv1.0 and 3 (default) for chipv1.1.</p
 <dl class="py method">
 <dt id="slsdet.Detector.veto">
 <em class="property">property </em><code class="sig-name descname">veto</code><a class="headerlink" href="#slsdet.Detector.veto" title="Permalink to this definition">¶</a></dt>
-<dd><p>[Gotthard2] Enable or disable veto data from chip.
-.. note:: Default is 0.</p>
+<dd><p>[Gotthard2] Enable or disable veto data from chip.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Default is 0.</p>
+</div>
 </dd></dl>
 
 <dl class="py method">
 <dt id="slsdet.Detector.vetoalg">
 <em class="property">property </em><code class="sig-name descname">vetoalg</code><a class="headerlink" href="#slsdet.Detector.vetoalg" title="Permalink to this definition">¶</a></dt>
-<dd><p>vetoAlgorithm, streamingInterface
-.. note:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Options</span><span class="p">:</span>
-<span class="p">(</span><span class="n">vetoAlgorithm</span><span class="p">):</span> <span class="n">ALG_HITS</span> <span class="p">(</span><span class="n">default</span><span class="p">),</span> <span class="n">ALG_RAW</span>
-<span class="p">(</span><span class="n">streamingInterface</span><span class="p">):</span> <span class="n">ETHERNET_10GB</span><span class="p">,</span> <span class="n">LOW_LATENCY_LINK</span>
-</pre></div>
+<dd><p>vetoAlgorithm, streamingInterface</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Options:
+(vetoAlgorithm): ALG_HITS (default), ALG_RAW
+(streamingInterface): ETHERNET_10GB, LOW_LATENCY_LINK</p>
 </div>
 <p class="rubric">Example</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">d</span><span class="o">.</span><span class="n">vetoalg</span> <span class="o">=</span> <span class="n">defs</span><span class="o">.</span><span class="n">ALG_HITS</span><span class="p">,</span> <span class="n">defs</span><span class="o">.</span><span class="n">ETHERNET_10GB</span>
@@ -4556,11 +4606,15 @@ d.vetofile = 3, ‘/path/to/file.txt’ # set for chip 3</p>
 <dt id="slsdet.Detector.vetophoton">
 <em class="property">property </em><code class="sig-name descname">vetophoton</code><a class="headerlink" href="#slsdet.Detector.vetophoton" title="Permalink to this definition">¶</a></dt>
 <dd><p>[Gotthard2] Set veto reference for 128 channels for chip ichip according to reference file
-and #photons and energy in keV.
-.. note:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Arguments</span><span class="p">:</span> <span class="p">(</span><span class="n">chip_index</span><span class="p">,</span> <span class="n">n_photons</span><span class="p">,</span> <span class="n">photon_energy</span><span class="p">,</span> <span class="n">fname</span><span class="p">)</span>
-<span class="p">:</span><span class="n">getter</span><span class="p">:</span> <span class="n">Not</span> <span class="n">Implemented</span>
-</pre></div>
+and #photons and energy in keV.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Arguments: (chip_index, n_photons, photon_energy, fname)</p>
+<dl class="field-list simple">
+<dt class="field-odd">getter</dt>
+<dd class="field-odd"><p>Not Implemented</p>
+</dd>
+</dl>
 </div>
 <p class="rubric">Example</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">d</span><span class="o">.</span><span class="n">vetophoton</span> <span class="o">=</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">24</span><span class="p">,</span> <span class="mi">2560</span><span class="p">,</span> <span class="s1">&#39;/tmp/bla.txt&#39;</span><span class="p">)</span>
@@ -4571,8 +4625,8 @@ and #photons and energy in keV.
 <dl class="py method">
 <dt id="slsdet.Detector.vetoref">
 <em class="property">property </em><code class="sig-name descname">vetoref</code><a class="headerlink" href="#slsdet.Detector.vetoref" title="Permalink to this definition">¶</a></dt>
-<dd><p>[Gotthard2] Set veto reference for all 128 channels for all chips.
-.. rubric:: Example</p>
+<dd><p>[Gotthard2] Set veto reference for all 128 channels for all chips.</p>
+<p class="rubric">Example</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">d</span><span class="o">.</span><span class="n">vetoref</span> <span class="o">=</span> <span class="n">chip</span><span class="p">,</span> <span class="n">value</span>
 </pre></div>
 </div>
@@ -4581,20 +4635,23 @@ and #photons and energy in keV.
 <dl class="py method">
 <dt id="slsdet.Detector.vetostream">
 <em class="property">property </em><code class="sig-name descname">vetostream</code><a class="headerlink" href="#slsdet.Detector.vetostream" title="Permalink to this definition">¶</a></dt>
-<dd><p>[Gotthard2] Enabling/ disabling veto interface
-.. note:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Default</span><span class="p">:</span> <span class="n">both</span> <span class="n">off</span>
-<span class="n">Options</span><span class="p">:</span> <span class="n">NONE</span><span class="p">,</span> <span class="n">LOW_LATENCY_LINK</span><span class="p">,</span> <span class="mi">10</span><span class="n">GBE</span> <span class="p">(</span><span class="n">debugging</span><span class="p">)</span>
-<span class="n">Debugging</span> <span class="n">interface</span> <span class="n">also</span> <span class="n">enables</span> <span class="n">second</span> <span class="n">interface</span> <span class="ow">in</span> <span class="n">receiver</span> <span class="p">(</span><span class="n">separate</span> <span class="n">file</span><span class="p">),</span> <span class="n">which</span> <span class="n">also</span> <span class="n">restarts</span> <span class="n">zmq</span> <span class="n">streaming</span> <span class="k">if</span> <span class="n">enabled</span><span class="o">.</span>
-</pre></div>
+<dd><p>[Gotthard2] Enabling/ disabling veto interface</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Default: both off
+Options: NONE, LOW_LATENCY_LINK, 10GBE (debugging)
+Debugging interface also enables second interface in receiver (separate file), which also restarts zmq streaming if enabled.</p>
 </div>
 </dd></dl>
 
 <dl class="py method">
 <dt id="slsdet.Detector.virtual">
 <em class="property">property </em><code class="sig-name descname">virtual</code><a class="headerlink" href="#slsdet.Detector.virtual" title="Permalink to this definition">¶</a></dt>
-<dd><p>Setup with n virtual servers running on localhost starting with control port p
-.. note:: Every virtual server will have a stop port (control port + 1)</p>
+<dd><p>Setup with n virtual servers running on localhost starting with control port p</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Every virtual server will have a stop port (control port + 1)</p>
+</div>
 <p class="rubric">Example</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">d</span><span class="o">.</span><span class="n">virtual</span> <span class="o">=</span> <span class="n">n</span><span class="p">,</span> <span class="n">p</span>
 </pre></div>
@@ -4604,12 +4661,11 @@ and #photons and energy in keV.
 <dl class="py method">
 <dt id="slsdet.Detector.vthreshold">
 <em class="property">property </em><code class="sig-name descname">vthreshold</code><a class="headerlink" href="#slsdet.Detector.vthreshold" title="Permalink to this definition">¶</a></dt>
-<dd><p>[Eiger][Mythen3] Detector threshold voltage for single photon counters in dac units.
-.. note:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">Eiger</span><span class="p">]</span> <span class="n">Sets</span> <span class="n">vcmp_ll</span><span class="p">,</span> <span class="n">vcmp_lr</span><span class="p">,</span> <span class="n">vcmp_rl</span><span class="p">,</span> <span class="n">vcmp_rr</span> <span class="ow">and</span> <span class="n">vcp</span> <span class="n">to</span> <span class="n">the</span> <span class="n">same</span> <span class="n">value</span><span class="o">.</span>
-
-<span class="p">[</span><span class="n">Mythen3</span><span class="p">]</span> <span class="n">Sets</span> <span class="n">vth1</span><span class="p">,</span> <span class="n">vth2</span> <span class="ow">and</span> <span class="n">vth3</span> <span class="n">to</span> <span class="n">the</span> <span class="n">same</span> <span class="n">value</span> <span class="k">for</span> <span class="n">enabled</span> <span class="n">counters</span><span class="o">.</span>
-</pre></div>
+<dd><p>[Eiger][Mythen3] Detector threshold voltage for single photon counters in dac units.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>[Eiger] Sets vcmp_ll, vcmp_lr, vcmp_rl, vcmp_rr and vcp to the same value.</p>
+<p>[Mythen3] Sets vth1, vth2 and vth3 to the same value for enabled counters.</p>
 </div>
 </dd></dl>
 
@@ -4637,14 +4693,12 @@ One must also set the receiver’s send high water mark to similar value. Final 
 <dl class="py method">
 <dt id="slsdet.Detector.zmqip">
 <em class="property">property </em><code class="sig-name descname">zmqip</code><a class="headerlink" href="#slsdet.Detector.zmqip" title="Permalink to this definition">¶</a></dt>
-<dd><p>Ip Address to listen to zmq data streamed out from receiver or intermediate process.
-.. note:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Also</span> <span class="n">restarts</span> <span class="n">client</span> <span class="n">zmq</span> <span class="n">streaming</span> <span class="k">if</span> <span class="n">enabled</span><span class="o">.</span>
-
-<span class="n">Default</span> <span class="ow">is</span> <span class="kn">from</span> <span class="nn">rx_hostname.</span>
-
-<span class="n">Modified</span> <span class="n">only</span> <span class="n">when</span> <span class="n">using</span> <span class="n">an</span> <span class="n">intermediate</span> <span class="n">process</span> <span class="n">after</span> <span class="n">receiver</span><span class="o">.</span>
-</pre></div>
+<dd><p>Ip Address to listen to zmq data streamed out from receiver or intermediate process.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Also restarts client zmq streaming if enabled.</p>
+<p>Default is from rx_hostname.</p>
+<p>Modified only when using an intermediate process after receiver.</p>
 </div>
 <p class="rubric">Example</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">d</span><span class="o">.</span><span class="n">zmqip</span>
@@ -4657,16 +4711,13 @@ One must also set the receiver’s send high water mark to similar value. Final 
 <dl class="py method">
 <dt id="slsdet.Detector.zmqport">
 <em class="property">property </em><code class="sig-name descname">zmqport</code><a class="headerlink" href="#slsdet.Detector.zmqport" title="Permalink to this definition">¶</a></dt>
-<dd><p>Port number to listen to zmq data streamed out from receiver or intermediate process.
-.. note:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Also</span> <span class="n">restarts</span> <span class="n">client</span> <span class="n">zmq</span> <span class="n">streaming</span> <span class="k">if</span> <span class="n">enabled</span><span class="o">.</span>
-
-<span class="n">Default</span> <span class="n">connects</span> <span class="n">to</span> <span class="n">receiver</span> <span class="n">zmq</span> <span class="n">streaming</span> <span class="n">out</span> <span class="n">port</span> <span class="p">(</span><span class="mi">30001</span><span class="p">)</span><span class="o">.</span>
-
-<span class="n">Must</span> <span class="n">be</span> <span class="n">different</span> <span class="k">for</span> <span class="n">every</span> <span class="n">detector</span> <span class="p">(</span><span class="ow">and</span> <span class="n">udp</span> <span class="n">port</span><span class="p">)</span><span class="o">.</span>
-
-<span class="n">Multi</span> <span class="n">command</span> <span class="n">will</span> <span class="n">automatically</span> <span class="n">increment</span> <span class="k">for</span> <span class="n">individual</span> <span class="n">modules</span><span class="p">,</span> <span class="n">use</span> <span class="n">setClientZmqPort</span><span class="o">.</span>
-</pre></div>
+<dd><p>Port number to listen to zmq data streamed out from receiver or intermediate process.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Also restarts client zmq streaming if enabled.</p>
+<p>Default connects to receiver zmq streaming out port (30001).</p>
+<p>Must be different for every detector (and udp port).</p>
+<p>Multi command will automatically increment for individual modules, use setClientZmqPort.</p>
 </div>
 <p class="rubric">Example</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">d</span><span class="o">.</span><span class="n">zmqport</span>

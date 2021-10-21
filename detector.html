@@ -61,7 +61,7 @@
             
             
               <div class="version">
-                5.1.0
+                6.0.0
               </div>
             
           
@@ -218,6 +218,23 @@ containing results from all modules. (Result&lt;T&gt;)</p>
 <span id="_CPPv3N3sls8DetectorE"></span><span id="_CPPv2N3sls8DetectorE"></span><span id="sls::Detector"></span><span class="target" id="classsls_1_1Detector"></span><em class="property">class </em><code class="sig-prename descclassname"><a class="reference internal" href="ToString.html#_CPPv43sls" title="sls">sls</a><code class="sig-prename descclassname">::</code></code><code class="sig-name descname">Detector</code><a class="headerlink" href="#_CPPv4N3sls8DetectorE" title="Permalink to this definition">¶</a><br /></dt>
 <dd><div class="breathe-sectiondef docutils container">
 <p class="breathe-sectiondef-title rubric">Configuration</p>
+<dl class="cpp function">
+<dt id="_CPPv4N3sls8Detector8DetectorEi">
+<span id="_CPPv3N3sls8Detector8DetectorEi"></span><span id="_CPPv2N3sls8Detector8DetectorEi"></span><span id="sls::Detector::Detector__i"></span><span class="target" id="classsls_1_1Detector_1a58f6fb7ec3a7501ea3ceedf5398f79a7"></span><code class="sig-name descname">Detector</code><span class="sig-paren">(</span>int <em>shm_id</em> = 0<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3sls8Detector8DetectorEi" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p><dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">shm_id</span></code>: detector shared memory id Default value is 0. Can be set to more values for multiple detectors.It is important only if you are controlling multiple detectors from the same pc. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4N3sls8DetectorD0Ev">
+<span id="_CPPv3N3sls8DetectorD0Ev"></span><span id="_CPPv2N3sls8DetectorD0Ev"></span><span id="sls::Detector::~Detector"></span><span class="target" id="classsls_1_1Detector_1a4769ebdbf9cfeda0022133815d66f077"></span><code class="sig-name descname">~Detector</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3sls8DetectorD0Ev" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
 <dl class="cpp function">
 <dt id="_CPPv4N3sls8Detector16freeSharedMemoryEv">
 <span id="_CPPv3N3sls8Detector16freeSharedMemoryEv"></span><span id="_CPPv2N3sls8Detector16freeSharedMemoryEv"></span><span id="sls::Detector::freeSharedMemory"></span><span class="target" id="classsls_1_1Detector_1a4489f3635a5722451ded5f7a2e423297"></span>void <code class="sig-name descname">freeSharedMemory</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3sls8Detector16freeSharedMemoryEv" title="Permalink to this definition">¶</a><br /></dt>
@@ -771,7 +788,7 @@ containing results from all modules. (Result&lt;T&gt;)</p>
 <span id="_CPPv3N3sls8Detector12setPowerChipEb9Positions"></span><span id="_CPPv2N3sls8Detector12setPowerChipEb9Positions"></span><span id="sls::Detector::setPowerChip__b.Positions"></span><span class="target" id="classsls_1_1Detector_1a87b547e62b3681d1d114471c67e90091"></span>void <code class="sig-name descname">setPowerChip</code><span class="sig-paren">(</span>bool <em>on</em>, Positions <em>pos</em> = {}<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3sls8Detector12setPowerChipEb9Positions" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>[Jungfrau][Mythen3][Gotthard2][Moench] Power the chip. <p>[Moench] Default is disabled. </p>
 <p>[Jungfrau] Default is disabled. Get will return power status. Can be off if temperature event occured (temperature over temp_threshold with temp_control enabled. Will configure chip (only chip v1.1)</p>
-<p> [Mythen3][Gotthard2] Default is 1. If module not connected or wrong module, powerchip will fail. </p>
+<p>[Mythen3][Gotthard2] Default is 1. If module not connected or wrong module, powerchip will fail. </p>
 </p>
 </dd></dl>
 
@@ -1958,14 +1975,14 @@ containing results from all modules. (Result&lt;T&gt;)</p>
 </dd></dl>
 
 <dl class="cpp function">
-<dt id="_CPPv4NK3sls8Detector13getFilterCellE9Positions">
-<span id="_CPPv3NK3sls8Detector13getFilterCellE9Positions"></span><span id="_CPPv2NK3sls8Detector13getFilterCellE9Positions"></span><span id="sls::Detector::getFilterCell__PositionsC"></span><span class="target" id="classsls_1_1Detector_1a1ed4e81bdd39ea28694efd7fddfd5457"></span><a class="reference internal" href="result.html#_CPPv4I00EN3sls6ResultE" title="sls::Result">Result</a>&lt;int&gt; <code class="sig-name descname">getFilterCell</code><span class="sig-paren">(</span>Positions <em>pos</em> = {}<span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv4NK3sls8Detector13getFilterCellE9Positions" title="Permalink to this definition">¶</a><br /></dt>
+<dt id="_CPPv4NK3sls8Detector22getNumberOfFilterCellsE9Positions">
+<span id="_CPPv3NK3sls8Detector22getNumberOfFilterCellsE9Positions"></span><span id="_CPPv2NK3sls8Detector22getNumberOfFilterCellsE9Positions"></span><span id="sls::Detector::getNumberOfFilterCells__PositionsC"></span><span class="target" id="classsls_1_1Detector_1a6eee866e9178e471de27fee1dc4a7571"></span><a class="reference internal" href="result.html#_CPPv4I00EN3sls6ResultE" title="sls::Result">Result</a>&lt;int&gt; <code class="sig-name descname">getNumberOfFilterCells</code><span class="sig-paren">(</span>Positions <em>pos</em> = {}<span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv4NK3sls8Detector22getNumberOfFilterCellsE9Positions" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>[Jungfrau] Advanced </p>
 </dd></dl>
 
 <dl class="cpp function">
-<dt id="_CPPv4N3sls8Detector13setFilterCellEi9Positions">
-<span id="_CPPv3N3sls8Detector13setFilterCellEi9Positions"></span><span id="_CPPv2N3sls8Detector13setFilterCellEi9Positions"></span><span id="sls::Detector::setFilterCell__i.Positions"></span><span class="target" id="classsls_1_1Detector_1ab3d47213fbfc5534a9584c849180c59a"></span>void <code class="sig-name descname">setFilterCell</code><span class="sig-paren">(</span>int <em>cell</em>, Positions <em>pos</em> = {}<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3sls8Detector13setFilterCellEi9Positions" title="Permalink to this definition">¶</a><br /></dt>
+<dt id="_CPPv4N3sls8Detector22setNumberOfFilterCellsEi9Positions">
+<span id="_CPPv3N3sls8Detector22setNumberOfFilterCellsEi9Positions"></span><span id="_CPPv2N3sls8Detector22setNumberOfFilterCellsEi9Positions"></span><span id="sls::Detector::setNumberOfFilterCells__i.Positions"></span><span class="target" id="classsls_1_1Detector_1a4b1ba499c9fec2ee95eecf095dc00ef9"></span>void <code class="sig-name descname">setNumberOfFilterCells</code><span class="sig-paren">(</span>int <em>cell</em>, Positions <em>pos</em> = {}<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3sls8Detector22setNumberOfFilterCellsEi9Positions" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>[Jungfrau] Advanced Options[0-12], only for chip v1.1 </p>
 </dd></dl>
 
@@ -2635,7 +2652,7 @@ ROI per module <p>Either all channels or a single adc or 2 chips (256 channels).
 <dl class="cpp function">
 <dt id="_CPPv4N3sls8Detector11programFPGAERKNSt6stringE9Positions">
 <span id="_CPPv3N3sls8Detector11programFPGAERKNSt6stringE9Positions"></span><span id="_CPPv2N3sls8Detector11programFPGAERKNSt6stringE9Positions"></span><span id="sls::Detector::programFPGA__ssCR.Positions"></span><span class="target" id="classsls_1_1Detector_1a11696046feeb0854bc6b1c31ece6ab30"></span>void <code class="sig-name descname">programFPGA</code><span class="sig-paren">(</span><em class="property">const</em> std::string &amp;<em>fname</em>, Positions <em>pos</em> = {}<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3sls8Detector11programFPGAERKNSt6stringE9Positions" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Advanced user Function! [Jungfrau][CTB][Moench] fname is a pof file, rebooting the controller is recommended <p> [Mythen3][Gotthard2] fname is an rbf file, power cycling the detector is recommended </p>
+<dd><p>[Jungfrau][Gotthard][CTB][Moench][Mythen3][Gotthard2] Advanced user Function! Program firmware from command line, after which detector controller is rebooted. [Jungfrau][CTB][Moench] fname is a pof file (full path) <p>[Mythen3][Gotthard2] fname is an rbf file (full path) </p>
 </p>
 </dd></dl>
 
@@ -2648,8 +2665,8 @@ ROI per module <p>Either all channels or a single adc or 2 chips (256 channels).
 <dl class="cpp function">
 <dt id="_CPPv4N3sls8Detector18copyDetectorServerERKNSt6stringERKNSt6stringE9Positions">
 <span id="_CPPv3N3sls8Detector18copyDetectorServerERKNSt6stringERKNSt6stringE9Positions"></span><span id="_CPPv2N3sls8Detector18copyDetectorServerERKNSt6stringERKNSt6stringE9Positions"></span><span id="sls::Detector::copyDetectorServer__ssCR.ssCR.Positions"></span><span class="target" id="classsls_1_1Detector_1a378fefaea2797dd825ca463e2999e985"></span>void <code class="sig-name descname">copyDetectorServer</code><span class="sig-paren">(</span><em class="property">const</em> std::string &amp;<em>fname</em>, <em class="property">const</em> std::string &amp;<em>hostname</em>, Positions <em>pos</em> = {}<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3sls8Detector18copyDetectorServerERKNSt6stringERKNSt6stringE9Positions" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>[Jungfrau][Gotthard][CTB][Moench][Mythen3][Gotthard2] Advanced user Function! <p>Copy detector server fname from tftp folder of hostname to detector </p>
-<p>[Jungfrau][Gotthard][CTB][Moench] Also changes respawn server, which is effective after a reboot. </p>
+<dd><p>[Jungfrau][Eiger][Gotthard][CTB][Moench][Mythen3][Gotthard2] Advanced user Function! <p>Copy detector server fname from tftp folder of hostname to detector. Also creates a symbolic link to a shorter name (without vx.x.x). Then the detector controller reboots (except eiger) </p>
+<p>[Jungfrau][Gotthard][CTB][Moench] Also changes respawn server (to the link), which is effective after a reboot. </p>
 </p>
 </dd></dl>
 
@@ -2662,11 +2679,11 @@ ROI per module <p>Either all channels or a single adc or 2 chips (256 channels).
 <dl class="cpp function">
 <dt id="_CPPv4N3sls8Detector23updateFirmwareAndServerERKNSt6stringERKNSt6stringERKNSt6stringE9Positions">
 <span id="_CPPv3N3sls8Detector23updateFirmwareAndServerERKNSt6stringERKNSt6stringERKNSt6stringE9Positions"></span><span id="_CPPv2N3sls8Detector23updateFirmwareAndServerERKNSt6stringERKNSt6stringERKNSt6stringE9Positions"></span><span id="sls::Detector::updateFirmwareAndServer__ssCR.ssCR.ssCR.Positions"></span><span class="target" id="classsls_1_1Detector_1a043ff398a66280c916fb0127a6364907"></span>void <code class="sig-name descname">updateFirmwareAndServer</code><span class="sig-paren">(</span><em class="property">const</em> std::string &amp;<em>sname</em>, <em class="property">const</em> std::string &amp;<em>hostname</em>, <em class="property">const</em> std::string &amp;<em>fname</em>, Positions <em>pos</em> = {}<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3sls8Detector23updateFirmwareAndServerERKNSt6stringERKNSt6stringERKNSt6stringE9Positions" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Advanced user Function!<p> [Jungfrau][Gotthard][CTB][Moench] Updates the firmware, detector server and then reboots detector controller blackfin. </p>
-<p> [Mythen3][Gotthard2] Will still have old server starting up as the new server is not respawned </p>
+<dd><p>Advanced user Function!<p> [Jungfrau][Gotthard][CTB][Moench] Updates the firmware, detector server, make a soft link and then reboots detector controller. </p>
+<p> [Mythen3][Gotthard2] Will require a script to start up the shorter named server link at start up </p>
 <p> sname is name of detector server binary found on tftp folder of host pc </p>
 <p> hostname is name of pc to tftp from </p>
-<p> fname is programming file name </p>
+<p> fname is programming file name with full path to it </p>
 </p>
 </dd></dl>
 
@@ -2825,26 +2842,6 @@ ROI per module <p>Either all channels or a single adc or 2 chips (256 channels).
 <dl class="cpp function">
 <dt id="_CPPv4NK3sls8Detector22getRxCurrentFrameIndexE9Positions">
 <span id="_CPPv3NK3sls8Detector22getRxCurrentFrameIndexE9Positions"></span><span id="_CPPv2NK3sls8Detector22getRxCurrentFrameIndexE9Positions"></span><span id="sls::Detector::getRxCurrentFrameIndex__PositionsC"></span><span class="target" id="classsls_1_1Detector_1aea2d696c1b789d150048ffdb9925dcd5"></span><a class="reference internal" href="result.html#_CPPv4I00EN3sls6ResultE" title="sls::Result">Result</a>&lt;uint64_t&gt; <code class="sig-name descname">getRxCurrentFrameIndex</code><span class="sig-paren">(</span>Positions <em>pos</em> = {}<span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv4NK3sls8Detector22getRxCurrentFrameIndexE9Positions" title="Permalink to this definition">¶</a><br /></dt>
-<dd></dd></dl>
-
-</div>
-<div class="breathe-sectiondef docutils container">
-<p class="breathe-sectiondef-title rubric">Public Functions</p>
-<dl class="cpp function">
-<dt id="_CPPv4N3sls8Detector8DetectorEi">
-<span id="_CPPv3N3sls8Detector8DetectorEi"></span><span id="_CPPv2N3sls8Detector8DetectorEi"></span><span id="sls::Detector::Detector__i"></span><span class="target" id="classsls_1_1Detector_1a58f6fb7ec3a7501ea3ceedf5398f79a7"></span><code class="sig-name descname">Detector</code><span class="sig-paren">(</span>int <em>shm_id</em> = 0<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3sls8Detector8DetectorEi" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p><dl class="simple">
-<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">shm_id</span></code>: detector shared memory id Default value is 0. Can be set to more values for multiple detectors.It is important only if you are controlling multiple detectors from the same pc. </p></li>
-</ul>
-</dd>
-</dl>
-</p>
-</dd></dl>
-
-<dl class="cpp function">
-<dt id="_CPPv4N3sls8DetectorD0Ev">
-<span id="_CPPv3N3sls8DetectorD0Ev"></span><span id="_CPPv2N3sls8DetectorD0Ev"></span><span id="sls::Detector::~Detector"></span><span class="target" id="classsls_1_1Detector_1a4769ebdbf9cfeda0022133815d66f077"></span><code class="sig-name descname">~Detector</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3sls8DetectorD0Ev" title="Permalink to this definition">¶</a><br /></dt>
 <dd></dd></dl>
 
 </div>
