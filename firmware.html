@@ -156,7 +156,7 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#firmware-troubleshooting-with-blackfin">Firmware Troubleshooting with blackfin</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#how-to-get-back-mtd3-drive-remotely-copying-new-kernel">How to get back mtd3 drive remotely (copying new kernel)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#how-to-get-back-mtd3-drive-remotely-udpating-kernel">How to get back mtd3 drive remotely (udpating kernel)</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#last-resort-using-usb-blaster">Last Resort using USB Blaster</a></li>
 </ul>
 </li>
@@ -545,42 +545,41 @@ mtd3: <span class="m">01000000</span> <span class="m">00010000</span> <span clas
 <li><p>If one can see the mtd3 drive, one can already try to flash again using the <strong>programfpga</strong> command (without rebooting blackfin or detector).</p></li>
 <li><p>If one can’t list it, read the next section to try to get the blackfin to list it.</p></li>
 </ol>
-<div class="section" id="how-to-get-back-mtd3-drive-remotely-copying-new-kernel">
-<h3>How to get back mtd3 drive remotely (copying new kernel)<a class="headerlink" href="#how-to-get-back-mtd3-drive-remotely-copying-new-kernel" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="how-to-get-back-mtd3-drive-remotely-udpating-kernel">
+<h3>How to get back mtd3 drive remotely (udpating kernel)<a class="headerlink" href="#how-to-get-back-mtd3-drive-remotely-udpating-kernel" title="Permalink to this headline">¶</a></h3>
 <blockquote>
-<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># step 1: get the kernel image (uImage.lzma) from slsdetectorgroup</span>
-<span class="c1"># and copy it to pc&#39;s tftp folder</span>
-
-<span class="c1"># step 2: connect to the board</span>
+<div><p>You have 2 alternatives to update the kernel.</p>
+<p>1. Commands via software (&gt;= v6.0.0)
+.. code-block:: bash</p>
+<blockquote>
+<div><p>sls_detector_put updatekernel /home/…path-to-kernel-image</p>
+</div></blockquote>
+<p>2. or command line instructions
+.. code-block:: bash</p>
+<blockquote>
+<div><p># step 1: get the kernel image (uImage.lzma) from slsdetectorgroup
+# and copy it to pc’s tftp folder</p>
+<p># step 2: connect to the board
+telnet bchipxxx</p>
+<p>#step 3: go to directory for space
+cd /var/tmp/</p>
+<p># step 3: copy kernel to board
+tftp pcxxx -r uImage.lzma -g</p>
+<p># step 4: verify kernel copied properly
+ls -lrt</p>
+<p># step 5: erase flash
+flash_eraseall /dev/mtd1</p>
+<p># step 6: copy new image to kernel drive
+cat uImage.lzma &gt; /dev/mtd1</p>
+<p># step 7:
+sync</p>
+<p># step 8:
+reboot</p>
+<p># step 9: verification
 telnet bchipxxx
-
-<span class="c1">#step 3: go to directory for space</span>
-<span class="nb">cd</span> /var/tmp/
-
-<span class="c1"># step 3: copy kernel to board</span>
-tftp pcxxx -r uImage.lzma -g
-
-<span class="c1"># step 4: verify kernel copied properly</span>
-ls -lrt
-
-<span class="c1"># step 5: erase flash</span>
-flash_eraseall /dev/mtd1
-
-<span class="c1"># step 6: copy new image to kernel drive</span>
-cat uImage.lzma &gt; /dev/mtd1
-
-<span class="c1"># step 7:</span>
-sync
-
-<span class="c1"># step 8:</span>
-reboot
-
-<span class="c1"># step 9: verification</span>
-telnet bchipxxx
-uname -a <span class="c1"># verify kernel date</span>
-more /proc/mtd <span class="c1"># verify mtd3 is listed</span>
-</pre></div>
-</div>
+uname -a # verify kernel date
+more /proc/mtd # verify mtd3 is listed</p>
+</div></blockquote>
 </div></blockquote>
 </div>
 <div class="section" id="last-resort-using-usb-blaster">

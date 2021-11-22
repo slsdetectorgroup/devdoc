@@ -303,6 +303,11 @@ containing results from all modules. (Result&lt;T&gt;)</p>
 <dd></dd></dl>
 
 <dl class="cpp function">
+<dt id="_CPPv4NK3sls8Detector16getKernelVersionE9Positions">
+<span id="_CPPv3NK3sls8Detector16getKernelVersionE9Positions"></span><span id="_CPPv2NK3sls8Detector16getKernelVersionE9Positions"></span><span id="sls::Detector::getKernelVersion__PositionsC"></span><span class="target" id="classsls_1_1Detector_1a8a8ffcfd1621a598a9b419a181350891"></span><a class="reference internal" href="result.html#_CPPv4I00EN3sls6ResultE" title="sls::Result">Result</a>&lt;std::string&gt; <code class="sig-name descname">getKernelVersion</code><span class="sig-paren">(</span>Positions <em>pos</em> = {}<span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv4NK3sls8Detector16getKernelVersionE9Positions" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
 <dt id="_CPPv4NK3sls8Detector15getSerialNumberE9Positions">
 <span id="_CPPv3NK3sls8Detector15getSerialNumberE9Positions"></span><span id="_CPPv2NK3sls8Detector15getSerialNumberE9Positions"></span><span id="sls::Detector::getSerialNumber__PositionsC"></span><span class="target" id="classsls_1_1Detector_1a64c85897ad4b97e3b70336f4e20b59cc"></span><a class="reference internal" href="result.html#_CPPv4I00EN3sls6ResultE" title="sls::Result">Result</a>&lt;int64_t&gt; <code class="sig-name descname">getSerialNumber</code><span class="sig-paren">(</span>Positions <em>pos</em> = {}<span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv4NK3sls8Detector15getSerialNumberE9Positions" title="Permalink to this definition">¶</a><br /></dt>
 <dd></dd></dl>
@@ -2665,8 +2670,24 @@ ROI per module <p>Either all channels or a single adc or 2 chips (256 channels).
 <dl class="cpp function">
 <dt id="_CPPv4N3sls8Detector18copyDetectorServerERKNSt6stringERKNSt6stringE9Positions">
 <span id="_CPPv3N3sls8Detector18copyDetectorServerERKNSt6stringERKNSt6stringE9Positions"></span><span id="_CPPv2N3sls8Detector18copyDetectorServerERKNSt6stringERKNSt6stringE9Positions"></span><span id="sls::Detector::copyDetectorServer__ssCR.ssCR.Positions"></span><span class="target" id="classsls_1_1Detector_1a378fefaea2797dd825ca463e2999e985"></span>void <code class="sig-name descname">copyDetectorServer</code><span class="sig-paren">(</span><em class="property">const</em> std::string &amp;<em>fname</em>, <em class="property">const</em> std::string &amp;<em>hostname</em>, Positions <em>pos</em> = {}<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3sls8Detector18copyDetectorServerERKNSt6stringERKNSt6stringE9Positions" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>[Jungfrau][Eiger][Gotthard][CTB][Moench][Mythen3][Gotthard2] Advanced user Function! <p>Copy detector server fname from tftp folder of hostname to detector. Also creates a symbolic link to a shorter name (without vx.x.x). Then the detector controller reboots (except eiger) </p>
+<dd><p><p>[[deprecated (“Replaced by updateDetectorServer, which does not require</p>
+<p>tftp”)]] [Jungfrau][Eiger][Gotthard][CTB][Moench][Mythen3][Gotthard2] Advanced user Function! </p>
+<p>Copy detector server fname from tftp folder of hostname to detector. Also creates a symbolic link to a shorter name (without vx.x.x). Then the detector controller reboots (except eiger) </p>
 <p>[Jungfrau][Gotthard][CTB][Moench] Also changes respawn server (to the link), which is effective after a reboot. </p>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4N3sls8Detector20updateDetectorServerERKNSt6stringE9Positions">
+<span id="_CPPv3N3sls8Detector20updateDetectorServerERKNSt6stringE9Positions"></span><span id="_CPPv2N3sls8Detector20updateDetectorServerERKNSt6stringE9Positions"></span><span id="sls::Detector::updateDetectorServer__ssCR.Positions"></span><span class="target" id="classsls_1_1Detector_1acd6bdf75e868b3cdf0ae2585a1eb8df8"></span>void <code class="sig-name descname">updateDetectorServer</code><span class="sig-paren">(</span><em class="property">const</em> std::string &amp;<em>fname</em>, Positions <em>pos</em> = {}<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3sls8Detector20updateDetectorServerERKNSt6stringE9Positions" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>[Jungfrau][Eiger][Ctb][Moench][Mythen3][Gotthard2] Copies detector server via TCP (without tftp).\nMakes a symbolic link with a shorter name (without vx.x.x).\nThen, detector controller reboots (except Eiger).<p>[Jungfrau][Ctb][Moench]Also changes respawn server to the link, which is effective after a reboot. </p>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4N3sls8Detector12updateKernelERKNSt6stringE9Positions">
+<span id="_CPPv3N3sls8Detector12updateKernelERKNSt6stringE9Positions"></span><span id="_CPPv2N3sls8Detector12updateKernelERKNSt6stringE9Positions"></span><span id="sls::Detector::updateKernel__ssCR.Positions"></span><span class="target" id="classsls_1_1Detector_1abbfd9fbe8398b50fa5d44edc0a36faa8"></span>void <code class="sig-name descname">updateKernel</code><span class="sig-paren">(</span><em class="property">const</em> std::string &amp;<em>fname</em>, Positions <em>pos</em> = {}<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3sls8Detector12updateKernelERKNSt6stringE9Positions" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>[Jungfrau][Ctb][Moench][Mythen3][Gotthard2] <p>Advanced Command!! You could damage the detector. Please use with caution.\nUpdates the kernel image. Then, detector controller reboots with new kernel </p>
 </p>
 </dd></dl>
 
@@ -2679,12 +2700,35 @@ ROI per module <p>Either all channels or a single adc or 2 chips (256 channels).
 <dl class="cpp function">
 <dt id="_CPPv4N3sls8Detector23updateFirmwareAndServerERKNSt6stringERKNSt6stringERKNSt6stringE9Positions">
 <span id="_CPPv3N3sls8Detector23updateFirmwareAndServerERKNSt6stringERKNSt6stringERKNSt6stringE9Positions"></span><span id="_CPPv2N3sls8Detector23updateFirmwareAndServerERKNSt6stringERKNSt6stringERKNSt6stringE9Positions"></span><span id="sls::Detector::updateFirmwareAndServer__ssCR.ssCR.ssCR.Positions"></span><span class="target" id="classsls_1_1Detector_1a043ff398a66280c916fb0127a6364907"></span>void <code class="sig-name descname">updateFirmwareAndServer</code><span class="sig-paren">(</span><em class="property">const</em> std::string &amp;<em>sname</em>, <em class="property">const</em> std::string &amp;<em>hostname</em>, <em class="property">const</em> std::string &amp;<em>fname</em>, Positions <em>pos</em> = {}<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3sls8Detector23updateFirmwareAndServerERKNSt6stringERKNSt6stringERKNSt6stringE9Positions" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Advanced user Function!<p> [Jungfrau][Gotthard][CTB][Moench] Updates the firmware, detector server, make a soft link and then reboots detector controller. </p>
-<p> [Mythen3][Gotthard2] Will require a script to start up the shorter named server link at start up </p>
+<dd><p><p>[[deprecated (“Replaced by overloaded updateDetectorServer, which does</p>
+<p>not require tftp and has one less argument”)]] Advanced user Function!</p>
+<p>[Jungfrau][Gotthard][CTB][Moench] Updates the firmware, detector server, make a soft link and then reboots detector controller. </p>
+<p>[Mythen3][Gotthard2] Will require a script to start up the shorter named server link at start up </p>
 <p> sname is name of detector server binary found on tftp folder of host pc </p>
 <p> hostname is name of pc to tftp from </p>
 <p> fname is programming file name with full path to it </p>
 </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4N3sls8Detector23updateFirmwareAndServerERKNSt6stringERKNSt6stringE9Positions">
+<span id="_CPPv3N3sls8Detector23updateFirmwareAndServerERKNSt6stringERKNSt6stringE9Positions"></span><span id="_CPPv2N3sls8Detector23updateFirmwareAndServerERKNSt6stringERKNSt6stringE9Positions"></span><span id="sls::Detector::updateFirmwareAndServer__ssCR.ssCR.Positions"></span><span class="target" id="classsls_1_1Detector_1ae641445227b1c291a9a03a9dc1e01456"></span>void <code class="sig-name descname">updateFirmwareAndServer</code><span class="sig-paren">(</span><em class="property">const</em> std::string &amp;<em>sname</em>, <em class="property">const</em> std::string &amp;<em>fname</em>, Positions <em>pos</em> = {}<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3sls8Detector23updateFirmwareAndServerERKNSt6stringERKNSt6stringE9Positions" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Advanced user Function!<p> [Jungfrau][Gotthard][CTB][Moench] Updates the firmware, detector server, make a soft link and then reboots detector controller. </p>
+<p> [Mythen3][Gotthard2] Will require a script to start up the shorter named server link at start up </p>
+<p> sname is full path name of detector server </p>
+<p> fname is programming file name with full path to it </p>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4N3sls8Detector13getUpdateModeE9Positions">
+<span id="_CPPv3N3sls8Detector13getUpdateModeE9Positions"></span><span id="_CPPv2N3sls8Detector13getUpdateModeE9Positions"></span><span id="sls::Detector::getUpdateMode__Positions"></span><span class="target" id="classsls_1_1Detector_1ab01b7df57568b2ae8fb8cf59d4980a41"></span><a class="reference internal" href="result.html#_CPPv4I00EN3sls6ResultE" title="sls::Result">Result</a>&lt;bool&gt; <code class="sig-name descname">getUpdateMode</code><span class="sig-paren">(</span>Positions <em>pos</em> = {}<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3sls8Detector13getUpdateModeE9Positions" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4N3sls8Detector13setUpdateModeEKb9Positions">
+<span id="_CPPv3N3sls8Detector13setUpdateModeEKb9Positions"></span><span id="_CPPv2N3sls8Detector13setUpdateModeEKb9Positions"></span><span id="sls::Detector::setUpdateMode__bC.Positions"></span><span class="target" id="classsls_1_1Detector_1a46e00ffae7aecf233a16ef6ac4f0d1bc"></span>void <code class="sig-name descname">setUpdateMode</code><span class="sig-paren">(</span><em class="property">const</em> bool <em>updatemode</em>, Positions <em>pos</em> = {}<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3sls8Detector13setUpdateModeEKb9Positions" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Restarts detector server in update mode. This is useful when server-firmware compatibility is at its worst and server cannot start up normally </p>
 </dd></dl>
 
 <dl class="cpp function">

@@ -1418,6 +1418,11 @@ eg. file name: run_d0_f0_5.raw</p>
 <dd></dd></dl>
 
 <dl class="py method">
+<dt id="slsdet.Detector.getKernelVersion">
+<code class="sig-name descname">getKernelVersion</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">self</span><span class="p">:</span> <span class="n">_slsdet.CppDetectorApi</span></em>, <em class="sig-param"><span class="n">arg0</span><span class="p">:</span> <span class="n">List<span class="p">[</span>int<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">[]</span></em><span class="sig-paren">)</span> &#x2192; List<span class="p">[</span>str<span class="p">]</span><a class="headerlink" href="#slsdet.Detector.getKernelVersion" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
 <dt id="slsdet.Detector.getLEDEnable">
 <code class="sig-name descname">getLEDEnable</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">self</span><span class="p">:</span> <span class="n">_slsdet.CppDetectorApi</span></em>, <em class="sig-param"><span class="n">arg0</span><span class="p">:</span> <span class="n">List<span class="p">[</span>int<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">[]</span></em><span class="sig-paren">)</span> &#x2192; List<span class="p">[</span>bool<span class="p">]</span><a class="headerlink" href="#slsdet.Detector.getLEDEnable" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
@@ -1983,6 +1988,11 @@ eg. file name: run_d0_f0_5.raw</p>
 <dd></dd></dl>
 
 <dl class="py method">
+<dt id="slsdet.Detector.getUpdateMode">
+<code class="sig-name descname">getUpdateMode</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">self</span><span class="p">:</span> <span class="n">_slsdet.CppDetectorApi</span></em>, <em class="sig-param"><span class="n">arg0</span><span class="p">:</span> <span class="n">List<span class="p">[</span>int<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">[]</span></em><span class="sig-paren">)</span> &#x2192; List<span class="p">[</span>bool<span class="p">]</span><a class="headerlink" href="#slsdet.Detector.getUpdateMode" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
 <dt id="slsdet.Detector.getUseReceiverFlag">
 <code class="sig-name descname">getUseReceiverFlag</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">self</span><span class="p">:</span> <span class="n">_slsdet.CppDetectorApi</span></em>, <em class="sig-param"><span class="n">arg0</span><span class="p">:</span> <span class="n">List<span class="p">[</span>int<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">[]</span></em><span class="sig-paren">)</span> &#x2192; List<span class="p">[</span>bool<span class="p">]</span><a class="headerlink" href="#slsdet.Detector.getUseReceiverFlag" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
@@ -2095,6 +2105,17 @@ Virtual servers can already use the port in hostname separated by ‘:’ and po
 <dt id="slsdet.Detector.isVirtualDetectorServer">
 <code class="sig-name descname">isVirtualDetectorServer</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">self</span><span class="p">:</span> <span class="n">_slsdet.CppDetectorApi</span></em>, <em class="sig-param"><span class="n">arg0</span><span class="p">:</span> <span class="n">List<span class="p">[</span>int<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">[]</span></em><span class="sig-paren">)</span> &#x2192; List<span class="p">[</span>bool<span class="p">]</span><a class="headerlink" href="#slsdet.Detector.isVirtualDetectorServer" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
+
+<dl class="py method">
+<dt id="slsdet.Detector.kernelversion">
+<em class="property">property </em><code class="sig-name descname">kernelversion</code><a class="headerlink" href="#slsdet.Detector.kernelversion" title="Permalink to this definition">¶</a></dt>
+<dd><p>Kernel version on the detector including time and date</p>
+<p class="rubric">Example</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">d</span><span class="o">.</span><span class="n">kernelversion</span>
+<span class="go">&#39;#37 PREEMPT Thu Oct 13 14:51:04 CEST 2016&#39;</span>
+</pre></div>
+</div>
+</dd></dl>
 
 <dl class="py method">
 <dt id="slsdet.Detector.lastclient">
@@ -3843,6 +3864,11 @@ see python/examples/use_scan.py</p>
 <dd></dd></dl>
 
 <dl class="py method">
+<dt id="slsdet.Detector.setUpdateMode">
+<code class="sig-name descname">setUpdateMode</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">self</span><span class="p">:</span> <span class="n">_slsdet.CppDetectorApi</span></em>, <em class="sig-param"><span class="n">arg0</span><span class="p">:</span> <span class="n">bool</span></em>, <em class="sig-param"><span class="n">arg1</span><span class="p">:</span> <span class="n">List<span class="p">[</span>int<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">[]</span></em><span class="sig-paren">)</span> &#x2192; None<a class="headerlink" href="#slsdet.Detector.setUpdateMode" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
 <dt id="slsdet.Detector.setVeto">
 <code class="sig-name descname">setVeto</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">self</span><span class="p">:</span> <span class="n">_slsdet.CppDetectorApi</span></em>, <em class="sig-param"><span class="n">arg0</span><span class="p">:</span> <span class="n">bool</span></em>, <em class="sig-param"><span class="n">arg1</span><span class="p">:</span> <span class="n">List<span class="p">[</span>int<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">[]</span></em><span class="sig-paren">)</span> &#x2192; None<a class="headerlink" href="#slsdet.Detector.setVeto" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
@@ -4496,8 +4522,23 @@ Options 0-max. max is 15 (default) for chipv1.0 and 3 (default) for chipv1.1.</p
 </dd></dl>
 
 <dl class="py method">
+<dt id="slsdet.Detector.updateDetectorServer">
+<code class="sig-name descname">updateDetectorServer</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">self</span><span class="p">:</span> <span class="n">_slsdet.CppDetectorApi</span></em>, <em class="sig-param"><span class="n">arg0</span><span class="p">:</span> <span class="n">str</span></em>, <em class="sig-param"><span class="n">arg1</span><span class="p">:</span> <span class="n">List<span class="p">[</span>int<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">[]</span></em><span class="sig-paren">)</span> &#x2192; None<a class="headerlink" href="#slsdet.Detector.updateDetectorServer" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
 <dt id="slsdet.Detector.updateFirmwareAndServer">
-<code class="sig-name descname">updateFirmwareAndServer</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">self</span><span class="p">:</span> <span class="n">_slsdet.CppDetectorApi</span></em>, <em class="sig-param"><span class="n">arg0</span><span class="p">:</span> <span class="n">str</span></em>, <em class="sig-param"><span class="n">arg1</span><span class="p">:</span> <span class="n">str</span></em>, <em class="sig-param"><span class="n">arg2</span><span class="p">:</span> <span class="n">str</span></em>, <em class="sig-param"><span class="n">arg3</span><span class="p">:</span> <span class="n">List<span class="p">[</span>int<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">[]</span></em><span class="sig-paren">)</span> &#x2192; None<a class="headerlink" href="#slsdet.Detector.updateFirmwareAndServer" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">updateFirmwareAndServer</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">args</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#slsdet.Detector.updateFirmwareAndServer" title="Permalink to this definition">¶</a></dt>
+<dd><p>Overloaded function.</p>
+<ol class="arabic simple">
+<li><p>updateFirmwareAndServer(self: _slsdet.CppDetectorApi, arg0: str, arg1: str, arg2: str, arg3: List[int] = []) -&gt; None</p></li>
+<li><p>updateFirmwareAndServer(self: _slsdet.CppDetectorApi, arg0: str, arg1: str, arg2: List[int] = []) -&gt; None</p></li>
+</ol>
+</dd></dl>
+
+<dl class="py method">
+<dt id="slsdet.Detector.updateKernel">
+<code class="sig-name descname">updateKernel</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">self</span><span class="p">:</span> <span class="n">_slsdet.CppDetectorApi</span></em>, <em class="sig-param"><span class="n">arg0</span><span class="p">:</span> <span class="n">str</span></em>, <em class="sig-param"><span class="n">arg1</span><span class="p">:</span> <span class="n">List<span class="p">[</span>int<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">[]</span></em><span class="sig-paren">)</span> &#x2192; None<a class="headerlink" href="#slsdet.Detector.updateKernel" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">

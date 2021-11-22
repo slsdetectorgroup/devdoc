@@ -250,7 +250,7 @@
 <td><p>0x210910</p></td>
 </tr>
 <tr class="row-odd"><td><p>KERNEL_DATE_VRSN</p></td>
-<td><p>Wed May 20 13:58:38 CEST 2020</p></td>
+<td><p>Mon May 10 18:00:21 CEST 2021</p></td>
 </tr>
 <tr class="row-even"><td><p>ID_FILE</p></td>
 <td><p>detid_mythen3.txt</p></td>
@@ -524,7 +524,7 @@
 <td><p>0x210527</p></td>
 </tr>
 <tr class="row-odd"><td><p>KERNEL_DATE_VRSN</p></td>
-<td><p>Wed May 20 13:58:38 CEST 2020</p></td>
+<td><p>Mon May 10 18:00:21 CEST 2021</p></td>
 </tr>
 <tr class="row-even"><td><p>ID_FILE</p></td>
 <td><p>detid_gotthard2.txt</p></td>
@@ -1945,88 +1945,91 @@
 <tr class="row-even"><td><p>LINKED_SERVER_NAME</p></td>
 <td><p>gotthardDetectorServer</p></td>
 </tr>
-<tr class="row-odd"><td><p>CONFIG_FILE</p></td>
+<tr class="row-odd"><td><p>CTRL_SRVR_INIT_TIME_US</p></td>
+<td><p>300 * 1000</p></td>
+</tr>
+<tr class="row-even"><td><p>CONFIG_FILE</p></td>
 <td><p>config_gotthard.txt</p></td>
 </tr>
-<tr class="row-even"><td><p>NCHAN</p></td>
+<tr class="row-odd"><td><p>NCHAN</p></td>
 <td><p>128</p></td>
 </tr>
-<tr class="row-odd"><td><p>NCHIP</p></td>
+<tr class="row-even"><td><p>NCHIP</p></td>
 <td><p>10</p></td>
 </tr>
-<tr class="row-even"><td><p>NDAC</p></td>
+<tr class="row-odd"><td><p>NDAC</p></td>
 <td><p>8</p></td>
 </tr>
-<tr class="row-odd"><td><p>NCHIPS_PER_ADC</p></td>
+<tr class="row-even"><td><p>NCHIPS_PER_ADC</p></td>
 <td><p>2</p></td>
 </tr>
-<tr class="row-even"><td><p>NCHAN_PER_ADC</p></td>
+<tr class="row-odd"><td><p>NCHAN_PER_ADC</p></td>
 <td><p>256</p></td>
 </tr>
-<tr class="row-odd"><td><p>DYNAMIC_RANGE</p></td>
+<tr class="row-even"><td><p>DYNAMIC_RANGE</p></td>
 <td><p>16</p></td>
 </tr>
-<tr class="row-even"><td><p>NUM_BITS_PER_PIXEL</p></td>
+<tr class="row-odd"><td><p>NUM_BITS_PER_PIXEL</p></td>
 <td><p>DYNAMIC_RANGE / 8</p></td>
 </tr>
-<tr class="row-odd"><td><p>DATA_BYTES</p></td>
+<tr class="row-even"><td><p>DATA_BYTES</p></td>
 <td><p>NCHIP * NCHAN * NUM_BITS_PER_PIXEL</p></td>
 </tr>
-<tr class="row-even"><td><p>CLK_FREQ</p></td>
+<tr class="row-odd"><td><p>CLK_FREQ</p></td>
 <td><p>32007729</p></td>
 </tr>
-<tr class="row-odd"><td><p>MAX_EXT_SIGNALS</p></td>
+<tr class="row-even"><td><p>MAX_EXT_SIGNALS</p></td>
 <td><p>1</p></td>
 </tr>
-<tr class="row-even"><td><p>IP_PACKET_SIZE_NO_ROI</p></td>
+<tr class="row-odd"><td><p>IP_PACKET_SIZE_NO_ROI</p></td>
 <td><p>NCHIP * (NCHAN / 2) * 2 + 14 + 20</p></td>
 </tr>
-<tr class="row-odd"><td><p>IP_PACKET_SIZE_ROI</p></td>
+<tr class="row-even"><td><p>IP_PACKET_SIZE_ROI</p></td>
 <td><p>NCHIPS_PER_ADC * NCHAN * 2 + 14 + 20</p></td>
 </tr>
-<tr class="row-even"><td><p>UDP_PACKETSIZE_NO_ROI</p></td>
+<tr class="row-odd"><td><p>UDP_PACKETSIZE_NO_ROI</p></td>
 <td><p>NCHIP * (NCHAN / 2) * 2 + 4 + 8 + 2</p></td>
 </tr>
-<tr class="row-odd"><td><p>UDP_PACKETSIZE_ROI</p></td>
+<tr class="row-even"><td><p>UDP_PACKETSIZE_ROI</p></td>
 <td><p>NCHIPS_PER_ADC * NCHAN * 2 + 4 + 8 + 2</p></td>
 </tr>
-<tr class="row-even"><td><p>DEFAULT_NUM_FRAMES</p></td>
+<tr class="row-odd"><td><p>DEFAULT_NUM_FRAMES</p></td>
 <td><p>1</p></td>
 </tr>
-<tr class="row-odd"><td><p>DEFAULT_NUM_CYCLES</p></td>
+<tr class="row-even"><td><p>DEFAULT_NUM_CYCLES</p></td>
 <td><p>1</p></td>
 </tr>
-<tr class="row-even"><td><p>DEFAULT_EXPTIME</p></td>
+<tr class="row-odd"><td><p>DEFAULT_EXPTIME</p></td>
 <td><p>1 * 1000 * 1000</p></td>
 </tr>
-<tr class="row-odd"><td><p>DEFAULT_PERIOD</p></td>
+<tr class="row-even"><td><p>DEFAULT_PERIOD</p></td>
 <td><p>1 * 1000 * 1000 * 1000</p></td>
 </tr>
-<tr class="row-even"><td><p>DEFAULT_DELAY</p></td>
+<tr class="row-odd"><td><p>DEFAULT_DELAY</p></td>
 <td><p>0</p></td>
 </tr>
-<tr class="row-odd"><td><p>DEFAULT_SETTINGS</p></td>
+<tr class="row-even"><td><p>DEFAULT_SETTINGS</p></td>
 <td><p>DYNAMICGAIN</p></td>
 </tr>
-<tr class="row-even"><td><p>DEFAULT_TIMING_MODE</p></td>
+<tr class="row-odd"><td><p>DEFAULT_TIMING_MODE</p></td>
 <td><p>AUTO_TIMING</p></td>
 </tr>
-<tr class="row-odd"><td><p>DEFAULT_TRIGGER_MODE</p></td>
+<tr class="row-even"><td><p>DEFAULT_TRIGGER_MODE</p></td>
 <td><p>TRIGGER_IN_RISING_EDGE</p></td>
 </tr>
-<tr class="row-even"><td><p>DEFAULT_HIGH_VOLTAGE</p></td>
+<tr class="row-odd"><td><p>DEFAULT_HIGH_VOLTAGE</p></td>
 <td><p>0</p></td>
 </tr>
-<tr class="row-odd"><td><p>DEFAULT_PHASE_SHIFT</p></td>
+<tr class="row-even"><td><p>DEFAULT_PHASE_SHIFT</p></td>
 <td><p>120</p></td>
 </tr>
-<tr class="row-even"><td><p>DEFAULT_TX_UDP_PORT</p></td>
+<tr class="row-odd"><td><p>DEFAULT_TX_UDP_PORT</p></td>
 <td><p>0xE185</p></td>
 </tr>
-<tr class="row-odd"><td><p>DAC_MIN_MV</p></td>
+<tr class="row-even"><td><p>DAC_MIN_MV</p></td>
 <td><p>0</p></td>
 </tr>
-<tr class="row-even"><td><p>DAC_MAX_MV</p></td>
+<tr class="row-odd"><td><p>DAC_MAX_MV</p></td>
 <td><p>2500</p></td>
 </tr>
 </tbody>

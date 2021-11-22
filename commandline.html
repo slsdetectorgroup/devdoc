@@ -370,7 +370,7 @@
 </div>
 </dd>
 <dt id="term-copydetectorserver-server_name-in-tftp-folder-pc_host_name">copydetectorserver [server_name (in tftp folder)] [pc_host_name]</dt><dd><div class="line-block">
-<div class="line">[Jungfrau][Eiger][Ctb][Moench][Mythen3][Gotthard2] Copies detector server via tftp from pc. Ensure that server is in the pc’s tftp folder. Makes a symbolic link with a shorter name (without vx.x.x). Then, detector reboots (except Eiger).</div>
+<div class="line">[Jungfrau][Eiger][Ctb][Moench][Mythen3][Gotthard2] Copies detector server via TFTP from pc. Ensure that server is in the pc’s tftp folder. Makes a symbolic link with a shorter name (without vx.x.x). Then, detector controller reboots (except Eiger).</div>
 <div class="line">[Jungfrau][Ctb][Moench]Also changes respawn server to the link, which is effective after a reboot.</div>
 </div>
 </dd>
@@ -680,6 +680,10 @@
 </dd>
 <dt id="term-interruptsubframe-0-1">interruptsubframe [0, 1]</dt><dd><div class="line-block">
 <div class="line">[Eiger] 1 interrupts last subframe at required exposure time. 0 will wait for last sub frame to finish exposing. 0 is default.</div>
+</div>
+</dd>
+<dt id="term-kernelversion">kernelversion</dt><dd><div class="line-block">
+<div class="line">Get kernel version on the detector including time and date.</div>
 </div>
 </dd>
 <dt id="term-lastclient">lastclient</dt><dd><div class="line-block">
@@ -1403,12 +1407,29 @@
 <div class="line">Validates that UDP configuration in the detector is valid. If not configured, it will throw with error message requesting missing udp information.</div>
 </div>
 </dd>
-<dt>update [server_name (in tftp folder)] [pc_host_name] [fname.pof (incl full path)]</dt><dd><div class="line-block">
+<dt>update</dt><dd><div class="line-block">
+<div class="line">Using tftp: Deprecated!! [server_name (in tftp folder)] [pc_host_name] [fname.pof (incl full path)]</div>
+<div class="line">Without tftp: Recommended [server_name (incl fullpath)] [fname.pof (incl full path)] This does not use tftp.</div>
+<div class="line-block">
 <div class="line">[Jungfrau][Gotthard][CTB][Moench] Updates the firmware, detector server, creates the symbolic link and then reboots detector controller.</div>
 <div class="line">[Mythen3][Gotthard2] will require a script to start up the shorter named server link at start up.</div>
-<div class="line">sname is name of detector server binary found on tftp folder of host pc</div>
-<div class="line">hostname is name of pc to tftp from</div>
-<div class="line">fname is programming file name</div>
+<div class="line">sname is full path name of detector server binary</div>
+<div class="line">fname is full path of programming file</div>
+</div>
+</div>
+</dd>
+<dt>updatedetectorserver [server_name  with full path]</dt><dd><div class="line-block">
+<div class="line">[Jungfrau][Eiger][Ctb][Moench][Mythen3][Gotthard2] Copies detector server via TCP (without tftp). Makes a symbolic link with a shorter name (without vx.x.x). Then, detector controller reboots (except Eiger).</div>
+<div class="line">[Jungfrau][Ctb][Moench]Also changes respawn server to the link, which is effective after a reboot.</div>
+</div>
+</dd>
+<dt>updatekernel [kernel_name with full path]</dt><dd><div class="line-block">
+<div class="line">[Jungfrau][Ctb][Moench][Mythen3][Gotthard2] Advanced Command!! You could damage the detector. Please use with caution.</div>
+<div class="line">Updates the kernel image. Then, detector controller reboots with new kernel.</div>
+</div>
+</dd>
+<dt>updatemode [0|1]</dt><dd><div class="line-block">
+<div class="line">Restart the detector server in update mode or not. This is useful when server-firmware compatibility is at its worst and server cannot start up normally</div>
 </div>
 </dd>
 <dt>user</dt><dd><div class="line-block">
