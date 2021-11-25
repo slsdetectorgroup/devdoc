@@ -338,6 +338,17 @@ C++ API directly and the simplified exptime property.</p>
 <dt id="slsdet.Detector.burstperiod">
 <em class="property">property </em><code class="sig-name descname">burstperiod</code><a class="headerlink" href="#slsdet.Detector.burstperiod" title="Permalink to this definition">¶</a></dt>
 <dd><p>[Gotthard2] Period between 2 bursts. Only in burst mode and auto timing mode.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<dl class="field-list simple">
+<dt class="field-odd">getter</dt>
+<dd class="field-odd"><p>always returns in seconds. To get in datetime.delta, use getBurstPeriod</p>
+</dd>
+<dt class="field-even">setter</dt>
+<dd class="field-even"><p>Not Implemented</p>
+</dd>
+</dl>
+</div>
 <p class="rubric">Example</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">d</span><span class="o">.</span><span class="n">burstperiod</span> <span class="o">=</span> <span class="mf">1.05</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">d</span><span class="o">.</span><span class="n">burstperiod</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">timedelta</span><span class="p">(</span><span class="n">minutes</span> <span class="o">=</span> <span class="mi">3</span><span class="p">,</span> <span class="n">seconds</span> <span class="o">=</span> <span class="mf">1.23</span><span class="p">)</span>
