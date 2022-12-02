@@ -13,6 +13,8 @@
   
   <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="_static/css/extra.css" type="text/css" />
 
   
@@ -24,12 +26,18 @@
   
 
   
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
         <script src="_static/jquery.js"></script>
         <script src="_static/underscore.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="_static/doctools.js"></script>
+        <script src="_static/sphinx_highlight.js"></script>
     
     <script type="text/javascript" src="_static/js/theme.js"></script>
 
@@ -60,7 +68,7 @@
             
             
               <div class="version">
-                6.1.1
+                7.0.0
               </div>
             
           
@@ -85,54 +93,60 @@
               
             
             
-              <p class="caption"><span class="caption-text">Installation:</span></p>
+              <p class="caption" role="heading"><span class="caption-text">Installation:</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="dependencies.html">Dependencies</a></li>
 <li class="toctree-l1"><a class="reference internal" href="consuming.html">Consuming slsDetectorPackage</a></li>
 </ul>
-<p class="caption"><span class="caption-text">C++ API</span></p>
+<p class="caption" role="heading"><span class="caption-text">C++ API</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="detector.html">Detector</a></li>
 <li class="toctree-l1"><a class="reference internal" href="result.html">Result</a></li>
 <li class="toctree-l1"><a class="reference internal" href="receiver_api.html">Receiver</a></li>
 <li class="toctree-l1"><a class="reference internal" href="examples.html">Examples</a></li>
 </ul>
-<p class="caption"><span class="caption-text">Python API</span></p>
+<p class="caption" role="heading"><span class="caption-text">Python API</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="pygettingstarted.html">Getting Started</a></li>
 <li class="toctree-l1"><a class="reference internal" href="pydetector.html">Detector</a></li>
 <li class="toctree-l1"><a class="reference internal" href="pyenums.html">Enums</a></li>
 <li class="toctree-l1"><a class="reference internal" href="pyexamples.html">Examples</a></li>
 </ul>
-<p class="caption"><span class="caption-text">Command line</span></p>
+<p class="caption" role="heading"><span class="caption-text">Command line</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="commandline.html">Command line interface</a></li>
 <li class="toctree-l1"><a class="reference internal" href="quick_start_guide.html">Quick Start Guide</a></li>
 </ul>
-<p class="caption"><span class="caption-text">Developer</span></p>
+<p class="caption" role="heading"><span class="caption-text">Developer</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="container_utils.html">ContainerUtils</a></li>
 <li class="toctree-l1"><a class="reference internal" href="type_traits.html">TypeTraits</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ToString.html">ToString</a></li>
 </ul>
-<p class="caption"><span class="caption-text">Firmware</span></p>
+<p class="caption" role="heading"><span class="caption-text">Firmware</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="firmware.html">Firmware Upgrade</a></li>
 </ul>
-<p class="caption"><span class="caption-text">Detector Server</span></p>
+<p class="caption" role="heading"><span class="caption-text">Detector Server</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="servers.html">Detector Servers</a></li>
-<li class="toctree-l1"><a class="reference internal" href="serverupgrade.html">Detector Server Upgrade</a></li>
-<li class="toctree-l1"><a class="reference internal" href="virtualserver.html">Detector Simulators</a></li>
+<li class="toctree-l1"><a class="reference internal" href="servers.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="serverupgrade.html">Upgrade</a></li>
+<li class="toctree-l1"><a class="reference internal" href="virtualserver.html">Simulators</a></li>
 <li class="toctree-l1"><a class="reference internal" href="serverdefaults.html">Default Values</a></li>
 </ul>
-<p class="caption"><span class="caption-text">Receiver</span></p>
+<p class="caption" role="heading"><span class="caption-text">Detector UDP Header</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="udpheader.html">Format</a></li>
+<li class="toctree-l1"><a class="reference internal" href="udpconfig.html">Config file</a></li>
+<li class="toctree-l1"><a class="reference internal" href="udpdetspec.html">Detector Specific Fields</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Receiver</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="receivers.html">Receivers</a></li>
 <li class="toctree-l1"><a class="reference internal" href="slsreceiver.html">slsReceiver/ slsMultiReceiver</a></li>
 </ul>
-<p class="caption"><span class="caption-text">Troubleshooting</span></p>
+<p class="caption" role="heading"><span class="caption-text">Troubleshooting</span></p>
 <ul class="current">
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Troubleshooting</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#common">Common</a><ul>
@@ -230,13 +244,13 @@
            <div itemprop="articleBody">
             
   <div class="section" id="troubleshooting">
-<h1>Troubleshooting<a class="headerlink" href="#troubleshooting" title="Permalink to this headline">¶</a></h1>
+<h1>Troubleshooting<a class="headerlink" href="#troubleshooting" title="Permalink to this heading">¶</a></h1>
 <p>If something is missing, don’t hesitate to
 open an issue at our  <a class="reference external" href="https://github.com/slsdetectorgroup/slsDetectorPackage/issues">github repo issues</a>.</p>
 <div class="section" id="common">
-<h2>Common<a class="headerlink" href="#common" title="Permalink to this headline">¶</a></h2>
+<h2>Common<a class="headerlink" href="#common" title="Permalink to this heading">¶</a></h2>
 <div class="section" id="missing-packets">
-<h3>Missing Packets<a class="headerlink" href="#missing-packets" title="Permalink to this headline">¶</a></h3>
+<h3>Missing Packets<a class="headerlink" href="#missing-packets" title="Permalink to this heading">¶</a></h3>
 <p>Possible causes could be the following:</p>
 <ol class="arabic">
 <li><dl class="simple">
@@ -347,7 +361,7 @@ sls_detector_get framesl
 </ol>
 </div>
 <div class="section" id="receiver-pc-tuning-options">
-<span id="receiver-pc-tuning"></span><h3>Receiver PC Tuning Options<a class="headerlink" href="#receiver-pc-tuning-options" title="Permalink to this headline">¶</a></h3>
+<span id="receiver-pc-tuning"></span><h3>Receiver PC Tuning Options<a class="headerlink" href="#receiver-pc-tuning-options" title="Permalink to this heading">¶</a></h3>
 <ol class="arabic">
 <li><dl>
 <dt>Increase maximum receive socket buffer size and socket input packet queue.</dt><dd><ul>
@@ -452,6 +466,40 @@ ethtool -A xth1 rx on
 </dl>
 </li>
 <li><dl>
+<dt>Disable CPU frequency scaling and set system to performance</dt><dd><ul>
+<li><dl>
+<dt>Check current policy (default might be powersave or schedutil)</dt><dd><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># check current active governor and range of cpu freq policy</span>
+cpupower frequency-info --policy
+<span class="c1"># list all available governors for this kernel</span>
+cpupower frequency-info --governors
+</pre></div>
+</div>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt>Temporarily (until shut down)</dt><dd><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># set to performance</span>
+sudo cpupower frequency-set -g performance
+</pre></div>
+</div>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt>Permanently</dt><dd><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># edit /etc/sysconfig/cpupower to preference</span>
+
+<span class="c1"># enable or disable permanently</span>
+sudo systemctl <span class="nb">enable</span> cpupower
+</pre></div>
+</div>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl>
 <dt>Give user speicific user scheduling privileges.</dt><dd><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># edit /etc/security/limits.conf</span>
 <span class="c1"># add following line or similar depending on your distribution</span>
 username rtprio <span class="m">99</span>
@@ -480,7 +528,7 @@ cpufreq-info
 </ol>
 </div>
 <div class="section" id="slsreceiver-tuning">
-<h3>slsReceiver Tuning<a class="headerlink" href="#slsreceiver-tuning" title="Permalink to this headline">¶</a></h3>
+<h3>slsReceiver Tuning<a class="headerlink" href="#slsreceiver-tuning" title="Permalink to this heading">¶</a></h3>
 <ol class="arabic">
 <li><p>Starting receiver as root to have scheduling privileges.</p></li>
 <li><dl>
@@ -512,7 +560,7 @@ sls_detector_put rx_framesperfile <span class="m">0</span>
 </ol>
 </div>
 <div class="section" id="shared-memory-error">
-<h3>Shared memory error<a class="headerlink" href="#shared-memory-error" title="Permalink to this headline">¶</a></h3>
+<h3>Shared memory error<a class="headerlink" href="#shared-memory-error" title="Permalink to this heading">¶</a></h3>
 <div class="line-block">
 <div class="line">For errors due to access or size, delete shared memory files nd try again.</div>
 </div>
@@ -527,7 +575,7 @@ sls_detector_put rx_framesperfile <span class="m">0</span>
 </dl>
 </div>
 <div class="section" id="cannot-connect-to-detector">
-<h3>Cannot connect to detector<a class="headerlink" href="#cannot-connect-to-detector" title="Permalink to this headline">¶</a></h3>
+<h3>Cannot connect to detector<a class="headerlink" href="#cannot-connect-to-detector" title="Permalink to this heading">¶</a></h3>
 <dl>
 <dt>Ensure both control and stop servers are running on the detector.</dt><dd><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ps -ef <span class="p">|</span> grep jungfrauDetectorServer*
 </pre></div>
@@ -536,11 +584,11 @@ sls_detector_put rx_framesperfile <span class="m">0</span>
 </dl>
 </div>
 <div class="section" id="cannot-connect-to-receiver">
-<h3>Cannot connect to receiver<a class="headerlink" href="#cannot-connect-to-receiver" title="Permalink to this headline">¶</a></h3>
+<h3>Cannot connect to receiver<a class="headerlink" href="#cannot-connect-to-receiver" title="Permalink to this heading">¶</a></h3>
 <p>Start receiver before running a client command that needs to communicate with receiver.</p>
 </div>
 <div class="section" id="receiver-cannot-bind-socket">
-<h3>Receiver: cannot bind socket<a class="headerlink" href="#receiver-cannot-bind-socket" title="Permalink to this headline">¶</a></h3>
+<h3>Receiver: cannot bind socket<a class="headerlink" href="#receiver-cannot-bind-socket" title="Permalink to this heading">¶</a></h3>
 <ol class="arabic">
 <li><dl class="simple">
 <dt>slsReceiver or slsMultiReceiver is already open somewhere.</dt><dd><ul class="simple">
@@ -569,7 +617,7 @@ rx_hostname pcxxxx:1980
 </ol>
 </div>
 <div class="section" id="cannot-get-multi-module-data">
-<span id="common-troubleshooting-multi-module-data"></span><h3>Cannot get multi module data<a class="headerlink" href="#cannot-get-multi-module-data" title="Permalink to this headline">¶</a></h3>
+<span id="common-troubleshooting-multi-module-data"></span><h3>Cannot get multi module data<a class="headerlink" href="#cannot-get-multi-module-data" title="Permalink to this heading">¶</a></h3>
 <p>Possible causes could be the following:</p>
 <ol class="arabic simple">
 <li><dl class="simple">
@@ -590,28 +638,28 @@ rx_hostname pcxxxx:1980
 </ol>
 </div>
 <div class="section" id="cannot-ping-module-nios">
-<h3>Cannot ping module (Nios)<a class="headerlink" href="#cannot-ping-module-nios" title="Permalink to this headline">¶</a></h3>
+<h3>Cannot ping module (Nios)<a class="headerlink" href="#cannot-ping-module-nios" title="Permalink to this heading">¶</a></h3>
 <p>If you executed “reboot” command on the board, you cannot ping it anymore unless you power cycle. To reboot the controller, please use the software command (“rebootcontroller”), which talks to the microcontroller.</p>
 </div>
 </div>
 <div class="section" id="gotthard2">
-<h2>Gotthard2<a class="headerlink" href="#gotthard2" title="Permalink to this headline">¶</a></h2>
+<h2>Gotthard2<a class="headerlink" href="#gotthard2" title="Permalink to this heading">¶</a></h2>
 <div class="section" id="cannot-get-data-without-a-module-attached">
-<h3>Cannot get data without a module attached<a class="headerlink" href="#cannot-get-data-without-a-module-attached" title="Permalink to this headline">¶</a></h3>
+<h3>Cannot get data without a module attached<a class="headerlink" href="#cannot-get-data-without-a-module-attached" title="Permalink to this heading">¶</a></h3>
 <p>You cannot get data without a module attached as a specific pin is floating. Attach module to get data.</p>
 </div>
 </div>
 <div class="section" id="gotthard">
-<h2>Gotthard<a class="headerlink" href="#gotthard" title="Permalink to this headline">¶</a></h2>
+<h2>Gotthard<a class="headerlink" href="#gotthard" title="Permalink to this heading">¶</a></h2>
 <div class="section" id="missing-first-frame-or-next-frame-after-a-delay">
-<h3>Missing first frame or next frame after a delay<a class="headerlink" href="#missing-first-frame-or-next-frame-after-a-delay" title="Permalink to this headline">¶</a></h3>
+<h3>Missing first frame or next frame after a delay<a class="headerlink" href="#missing-first-frame-or-next-frame-after-a-delay" title="Permalink to this heading">¶</a></h3>
 <p>Connect the data link from the Module directly to receiver pc or to a private network.</p>
 </div>
 </div>
 <div class="section" id="jungfrau">
-<h2>Jungfrau<a class="headerlink" href="#jungfrau" title="Permalink to this headline">¶</a></h2>
+<h2>Jungfrau<a class="headerlink" href="#jungfrau" title="Permalink to this heading">¶</a></h2>
 <div class="section" id="temperature-event-occured">
-<h3>Temperature event occured<a class="headerlink" href="#temperature-event-occured" title="Permalink to this headline">¶</a></h3>
+<h3>Temperature event occured<a class="headerlink" href="#temperature-event-occured" title="Permalink to this heading">¶</a></h3>
 <p>This will occur only if:
 * temp_threshold (threshold temperature) has been set to a value
 * temp_control (temperature control) set to 1
@@ -639,7 +687,7 @@ sls_detector_put powerchip <span class="m">1</span>
 </ul>
 </div>
 <div class="section" id="jungfrau-troubleshooting-power-supply">
-<span id="id1"></span><h3>Cannot get multi module data<a class="headerlink" href="#jungfrau-troubleshooting-power-supply" title="Permalink to this headline">¶</a></h3>
+<span id="id1"></span><h3>Cannot get multi module data<a class="headerlink" href="#jungfrau-troubleshooting-power-supply" title="Permalink to this heading">¶</a></h3>
 <ol class="arabic simple">
 <li><p>Check <a class="reference internal" href="#common-troubleshooting-multi-module-data"><span class="std std-ref">Common Multi Module Troubleshooting</span></a></p></li>
 <li><dl class="simple">

@@ -13,6 +13,8 @@
   
   <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="_static/css/extra.css" type="text/css" />
 
   
@@ -24,12 +26,18 @@
   
 
   
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
         <script src="_static/jquery.js"></script>
         <script src="_static/underscore.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="_static/doctools.js"></script>
+        <script src="_static/sphinx_highlight.js"></script>
     
     <script type="text/javascript" src="_static/js/theme.js"></script>
 
@@ -60,7 +68,7 @@
             
             
               <div class="version">
-                6.1.1
+                7.0.0
               </div>
             
           
@@ -85,54 +93,60 @@
               
             
             
-              <p class="caption"><span class="caption-text">Installation:</span></p>
+              <p class="caption" role="heading"><span class="caption-text">Installation:</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="dependencies.html">Dependencies</a></li>
 <li class="toctree-l1"><a class="reference internal" href="consuming.html">Consuming slsDetectorPackage</a></li>
 </ul>
-<p class="caption"><span class="caption-text">C++ API</span></p>
+<p class="caption" role="heading"><span class="caption-text">C++ API</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="detector.html">Detector</a></li>
 <li class="toctree-l1"><a class="reference internal" href="result.html">Result</a></li>
 <li class="toctree-l1"><a class="reference internal" href="receiver_api.html">Receiver</a></li>
 <li class="toctree-l1"><a class="reference internal" href="examples.html">Examples</a></li>
 </ul>
-<p class="caption"><span class="caption-text">Python API</span></p>
+<p class="caption" role="heading"><span class="caption-text">Python API</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="pygettingstarted.html">Getting Started</a></li>
 <li class="toctree-l1"><a class="reference internal" href="pydetector.html">Detector</a></li>
 <li class="toctree-l1"><a class="reference internal" href="pyenums.html">Enums</a></li>
 <li class="toctree-l1"><a class="reference internal" href="pyexamples.html">Examples</a></li>
 </ul>
-<p class="caption"><span class="caption-text">Command line</span></p>
+<p class="caption" role="heading"><span class="caption-text">Command line</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="commandline.html">Command line interface</a></li>
 <li class="toctree-l1"><a class="reference internal" href="quick_start_guide.html">Quick Start Guide</a></li>
 </ul>
-<p class="caption"><span class="caption-text">Developer</span></p>
+<p class="caption" role="heading"><span class="caption-text">Developer</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="container_utils.html">ContainerUtils</a></li>
 <li class="toctree-l1"><a class="reference internal" href="type_traits.html">TypeTraits</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ToString.html">ToString</a></li>
 </ul>
-<p class="caption"><span class="caption-text">Firmware</span></p>
+<p class="caption" role="heading"><span class="caption-text">Firmware</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="firmware.html">Firmware Upgrade</a></li>
 </ul>
-<p class="caption"><span class="caption-text">Detector Server</span></p>
+<p class="caption" role="heading"><span class="caption-text">Detector Server</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="servers.html">Detector Servers</a></li>
-<li class="toctree-l1"><a class="reference internal" href="serverupgrade.html">Detector Server Upgrade</a></li>
-<li class="toctree-l1"><a class="reference internal" href="virtualserver.html">Detector Simulators</a></li>
+<li class="toctree-l1"><a class="reference internal" href="servers.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="serverupgrade.html">Upgrade</a></li>
+<li class="toctree-l1"><a class="reference internal" href="virtualserver.html">Simulators</a></li>
 <li class="toctree-l1"><a class="reference internal" href="serverdefaults.html">Default Values</a></li>
 </ul>
-<p class="caption"><span class="caption-text">Receiver</span></p>
+<p class="caption" role="heading"><span class="caption-text">Detector UDP Header</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="udpheader.html">Format</a></li>
+<li class="toctree-l1"><a class="reference internal" href="udpconfig.html">Config file</a></li>
+<li class="toctree-l1"><a class="reference internal" href="udpdetspec.html">Detector Specific Fields</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Receiver</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="receivers.html">Receivers</a></li>
 <li class="toctree-l1"><a class="reference internal" href="slsreceiver.html">slsReceiver/ slsMultiReceiver</a></li>
 </ul>
-<p class="caption"><span class="caption-text">Troubleshooting</span></p>
+<p class="caption" role="heading"><span class="caption-text">Troubleshooting</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="troubleshooting.html">Troubleshooting</a></li>
 </ul>
@@ -203,14 +217,14 @@
            <div itemprop="articleBody">
             
   <div class="section" id="welcome-to-slsdetectorpackage-s-documentation">
-<h1>Welcome to slsDetectorPackage’s documentation!<a class="headerlink" href="#welcome-to-slsdetectorpackage-s-documentation" title="Permalink to this headline">¶</a></h1>
+<h1>Welcome to slsDetectorPackage’s documentation!<a class="headerlink" href="#welcome-to-slsdetectorpackage-s-documentation" title="Permalink to this heading">¶</a></h1>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>This is the documentation for the latest development version of slsDetectorPackage
 For documentation on current and previous releases visit the official page: <a class="reference external" href="https://www.psi.ch/en/detectors/documentation">https://www.psi.ch/en/detectors/documentation</a></p>
 </div>
 <div class="toctree-wrapper compound">
-<p class="caption"><span class="caption-text">Installation:</span></p>
+<p class="caption" role="heading"><span class="caption-text">Installation:</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="dependencies.html">Dependencies</a></li>
@@ -218,7 +232,7 @@ For documentation on current and previous releases visit the official page: <a c
 </ul>
 </div>
 <div class="toctree-wrapper compound">
-<p class="caption"><span class="caption-text">C++ API</span></p>
+<p class="caption" role="heading"><span class="caption-text">C++ API</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="detector.html">Detector</a></li>
 <li class="toctree-l1"><a class="reference internal" href="result.html">Result</a></li>
@@ -234,7 +248,7 @@ For documentation on current and previous releases visit the official page: <a c
 </ul>
 </div>
 <div class="toctree-wrapper compound">
-<p class="caption"><span class="caption-text">Python API</span></p>
+<p class="caption" role="heading"><span class="caption-text">Python API</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="pygettingstarted.html">Getting Started</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="pygettingstarted.html#which-python">Which Python?</a></li>
@@ -246,8 +260,32 @@ For documentation on current and previous releases visit the official page: <a c
 <li class="toctree-l2"><a class="reference internal" href="pygettingstarted.html#where-are-the-enums">Where are the ENUMs?</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="pydetector.html">Detector</a></li>
-<li class="toctree-l1"><a class="reference internal" href="pyenums.html">Enums</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pydetector.html">Detector</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="pydetector.html#slsdet.Detector"><code class="docutils literal notranslate"><span class="pre">Detector</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="pyenums.html">Enums</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="pyenums.html#slsdet.runStatus"><code class="docutils literal notranslate"><span class="pre">runStatus</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyenums.html#slsdet.detectorType"><code class="docutils literal notranslate"><span class="pre">detectorType</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyenums.html#slsdet.frameDiscardPolicy"><code class="docutils literal notranslate"><span class="pre">frameDiscardPolicy</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyenums.html#slsdet.fileFormat"><code class="docutils literal notranslate"><span class="pre">fileFormat</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyenums.html#slsdet.dimension"><code class="docutils literal notranslate"><span class="pre">dimension</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyenums.html#slsdet.externalSignalFlag"><code class="docutils literal notranslate"><span class="pre">externalSignalFlag</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyenums.html#slsdet.timingMode"><code class="docutils literal notranslate"><span class="pre">timingMode</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyenums.html#slsdet.dacIndex"><code class="docutils literal notranslate"><span class="pre">dacIndex</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyenums.html#slsdet.detectorSettings"><code class="docutils literal notranslate"><span class="pre">detectorSettings</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyenums.html#slsdet.clockIndex"><code class="docutils literal notranslate"><span class="pre">clockIndex</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyenums.html#slsdet.speedLevel"><code class="docutils literal notranslate"><span class="pre">speedLevel</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyenums.html#slsdet.readoutMode"><code class="docutils literal notranslate"><span class="pre">readoutMode</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyenums.html#slsdet.burstMode"><code class="docutils literal notranslate"><span class="pre">burstMode</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyenums.html#slsdet.timingSourceType"><code class="docutils literal notranslate"><span class="pre">timingSourceType</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyenums.html#slsdet.M3_GainCaps"><code class="docutils literal notranslate"><span class="pre">M3_GainCaps</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyenums.html#slsdet.portPosition"><code class="docutils literal notranslate"><span class="pre">portPosition</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyenums.html#slsdet.streamingInterface"><code class="docutils literal notranslate"><span class="pre">streamingInterface</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyenums.html#slsdet.vetoAlgorithm"><code class="docutils literal notranslate"><span class="pre">vetoAlgorithm</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyenums.html#slsdet.gainMode"><code class="docutils literal notranslate"><span class="pre">gainMode</span></code></a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="pyexamples.html">Examples</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="pyexamples.html#setting-exposure-time">Setting exposure time</a></li>
 <li class="toctree-l2"><a class="reference internal" href="pyexamples.html#converting-numbers-to-hex">Converting numbers to hex</a></li>
@@ -261,7 +299,7 @@ For documentation on current and previous releases visit the official page: <a c
 </ul>
 </div>
 <div class="toctree-wrapper compound">
-<p class="caption"><span class="caption-text">Command line</span></p>
+<p class="caption" role="heading"><span class="caption-text">Command line</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="commandline.html">Command line interface</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="commandline.html#usage">Usage</a></li>
@@ -280,7 +318,7 @@ For documentation on current and previous releases visit the official page: <a c
 </ul>
 </div>
 <div class="toctree-wrapper compound">
-<p class="caption"><span class="caption-text">Developer</span></p>
+<p class="caption" role="heading"><span class="caption-text">Developer</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="container_utils.html">ContainerUtils</a></li>
 <li class="toctree-l1"><a class="reference internal" href="type_traits.html">TypeTraits</a></li>
@@ -288,7 +326,7 @@ For documentation on current and previous releases visit the official page: <a c
 </ul>
 </div>
 <div class="toctree-wrapper compound">
-<p class="caption"><span class="caption-text">Firmware</span></p>
+<p class="caption" role="heading"><span class="caption-text">Firmware</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="firmware.html">Firmware Upgrade</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="firmware.html#eiger">Eiger</a></li>
@@ -304,20 +342,21 @@ For documentation on current and previous releases visit the official page: <a c
 </ul>
 </div>
 <div class="toctree-wrapper compound">
-<p class="caption"><span class="caption-text">Detector Server</span></p>
+<p class="caption" role="heading"><span class="caption-text">Detector Server</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="servers.html">Detector Servers</a><ul>
+<li class="toctree-l1"><a class="reference internal" href="servers.html">Getting Started</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="servers.html#location">Location</a></li>
 <li class="toctree-l2"><a class="reference internal" href="servers.html#arguments">Arguments</a></li>
-<li class="toctree-l2"><a class="reference internal" href="servers.html#basics">Basics</a></li>
 <li class="toctree-l2"><a class="reference internal" href="servers.html#automatic-start">Automatic start</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="serverupgrade.html">Detector Server Upgrade</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="serverupgrade.html#errors">Errors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="serverupgrade.html">Upgrade</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="serverupgrade.html#no-tftp-required">6.1.1+ (no tftp required)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="serverupgrade.html#id1">5.0.0 - 6.1.1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="serverupgrade.html#id2">&lt; 5.0.0</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="virtualserver.html">Detector Simulators</a><ul>
+<li class="toctree-l1"><a class="reference internal" href="virtualserver.html">Simulators</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="virtualserver.html#compilation">Compilation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="virtualserver.html#arguments">Arguments</a></li>
 <li class="toctree-l2"><a class="reference internal" href="virtualserver.html#client">Client</a></li>
@@ -339,11 +378,35 @@ For documentation on current and previous releases visit the official page: <a c
 </ul>
 </div>
 <div class="toctree-wrapper compound">
-<p class="caption"><span class="caption-text">Receiver</span></p>
+<p class="caption" role="heading"><span class="caption-text">Detector UDP Header</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="udpheader.html">Format</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="udpheader.html#current-version">Current Version</a></li>
+<li class="toctree-l2"><a class="reference internal" href="udpheader.html#previous-versions">Previous Versions</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="udpconfig.html">Config file</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="udpconfig.html#source-port">Source Port</a></li>
+<li class="toctree-l2"><a class="reference internal" href="udpconfig.html#udp-srcip-source-ip">udp_srcip - Source IP</a></li>
+<li class="toctree-l2"><a class="reference internal" href="udpconfig.html#udp-srcmac-source-mac">udp_srcmac - Source MAC</a></li>
+<li class="toctree-l2"><a class="reference internal" href="udpconfig.html#udp-dstport-desintation-port">udp_dstport - Desintation Port</a></li>
+<li class="toctree-l2"><a class="reference internal" href="udpconfig.html#udp-dstip-destination-ip">udp_dstip - Destination IP</a></li>
+<li class="toctree-l2"><a class="reference internal" href="udpconfig.html#udp-dstmac-destination-mac">udp_dstmac - Destination MAC</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="udpdetspec.html">Detector Specific Fields</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="udpdetspec.html#eiger">Eiger</a></li>
+<li class="toctree-l2"><a class="reference internal" href="udpdetspec.html#jungfrau">Jungfrau</a></li>
+<li class="toctree-l2"><a class="reference internal" href="udpdetspec.html#gotthard2">Gotthard2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="udpdetspec.html#mythen3">Mythen3</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<p class="caption" role="heading"><span class="caption-text">Receiver</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="receivers.html">Receivers</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="receivers.html#detector-udp-header">Detector UDP Header</a></li>
-<li class="toctree-l2"><a class="reference internal" href="receivers.html#udp-configuration-in-config-file">UDP configuration in Config file</a></li>
 <li class="toctree-l2"><a class="reference internal" href="receivers.html#custom-receiver">Custom Receiver</a></li>
 </ul>
 </li>
@@ -357,7 +420,7 @@ For documentation on current and previous releases visit the official page: <a c
 </ul>
 </div>
 <div class="toctree-wrapper compound">
-<p class="caption"><span class="caption-text">Troubleshooting</span></p>
+<p class="caption" role="heading"><span class="caption-text">Troubleshooting</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="troubleshooting.html">Troubleshooting</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="troubleshooting.html#common">Common</a><ul>

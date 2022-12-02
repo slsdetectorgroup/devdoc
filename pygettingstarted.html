@@ -13,6 +13,8 @@
   
   <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="_static/css/extra.css" type="text/css" />
 
   
@@ -24,12 +26,18 @@
   
 
   
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
         <script src="_static/jquery.js"></script>
         <script src="_static/underscore.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="_static/doctools.js"></script>
+        <script src="_static/sphinx_highlight.js"></script>
     
     <script type="text/javascript" src="_static/js/theme.js"></script>
 
@@ -61,7 +69,7 @@
             
             
               <div class="version">
-                6.1.1
+                7.0.0
               </div>
             
           
@@ -86,20 +94,20 @@
               
             
             
-              <p class="caption"><span class="caption-text">Installation:</span></p>
+              <p class="caption" role="heading"><span class="caption-text">Installation:</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="dependencies.html">Dependencies</a></li>
 <li class="toctree-l1"><a class="reference internal" href="consuming.html">Consuming slsDetectorPackage</a></li>
 </ul>
-<p class="caption"><span class="caption-text">C++ API</span></p>
+<p class="caption" role="heading"><span class="caption-text">C++ API</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="detector.html">Detector</a></li>
 <li class="toctree-l1"><a class="reference internal" href="result.html">Result</a></li>
 <li class="toctree-l1"><a class="reference internal" href="receiver_api.html">Receiver</a></li>
 <li class="toctree-l1"><a class="reference internal" href="examples.html">Examples</a></li>
 </ul>
-<p class="caption"><span class="caption-text">Python API</span></p>
+<p class="caption" role="heading"><span class="caption-text">Python API</span></p>
 <ul class="current">
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Getting Started</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#which-python">Which Python?</a></li>
@@ -115,34 +123,40 @@
 <li class="toctree-l1"><a class="reference internal" href="pyenums.html">Enums</a></li>
 <li class="toctree-l1"><a class="reference internal" href="pyexamples.html">Examples</a></li>
 </ul>
-<p class="caption"><span class="caption-text">Command line</span></p>
+<p class="caption" role="heading"><span class="caption-text">Command line</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="commandline.html">Command line interface</a></li>
 <li class="toctree-l1"><a class="reference internal" href="quick_start_guide.html">Quick Start Guide</a></li>
 </ul>
-<p class="caption"><span class="caption-text">Developer</span></p>
+<p class="caption" role="heading"><span class="caption-text">Developer</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="container_utils.html">ContainerUtils</a></li>
 <li class="toctree-l1"><a class="reference internal" href="type_traits.html">TypeTraits</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ToString.html">ToString</a></li>
 </ul>
-<p class="caption"><span class="caption-text">Firmware</span></p>
+<p class="caption" role="heading"><span class="caption-text">Firmware</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="firmware.html">Firmware Upgrade</a></li>
 </ul>
-<p class="caption"><span class="caption-text">Detector Server</span></p>
+<p class="caption" role="heading"><span class="caption-text">Detector Server</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="servers.html">Detector Servers</a></li>
-<li class="toctree-l1"><a class="reference internal" href="serverupgrade.html">Detector Server Upgrade</a></li>
-<li class="toctree-l1"><a class="reference internal" href="virtualserver.html">Detector Simulators</a></li>
+<li class="toctree-l1"><a class="reference internal" href="servers.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="serverupgrade.html">Upgrade</a></li>
+<li class="toctree-l1"><a class="reference internal" href="virtualserver.html">Simulators</a></li>
 <li class="toctree-l1"><a class="reference internal" href="serverdefaults.html">Default Values</a></li>
 </ul>
-<p class="caption"><span class="caption-text">Receiver</span></p>
+<p class="caption" role="heading"><span class="caption-text">Detector UDP Header</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="udpheader.html">Format</a></li>
+<li class="toctree-l1"><a class="reference internal" href="udpconfig.html">Config file</a></li>
+<li class="toctree-l1"><a class="reference internal" href="udpdetspec.html">Detector Specific Fields</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Receiver</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="receivers.html">Receivers</a></li>
 <li class="toctree-l1"><a class="reference internal" href="slsreceiver.html">slsReceiver/ slsMultiReceiver</a></li>
 </ul>
-<p class="caption"><span class="caption-text">Troubleshooting</span></p>
+<p class="caption" role="heading"><span class="caption-text">Troubleshooting</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="troubleshooting.html">Troubleshooting</a></li>
 </ul>
@@ -213,21 +227,22 @@
            <div itemprop="articleBody">
             
   <div class="section" id="getting-started">
-<h1>Getting Started<a class="headerlink" href="#getting-started" title="Permalink to this headline">¶</a></h1>
+<h1>Getting Started<a class="headerlink" href="#getting-started" title="Permalink to this heading">¶</a></h1>
 <div class="section" id="which-python">
-<h2>Which Python?<a class="headerlink" href="#which-python" title="Permalink to this headline">¶</a></h2>
+<h2>Which Python?<a class="headerlink" href="#which-python" title="Permalink to this heading">¶</a></h2>
 <p>We require at lest Python 3.6 and strongly recommended that you don’t use the system
 Python installation. The examples in this documentation uses <a class="reference external" href="https://docs.conda.io/en/latest/miniconda.html">conda</a> since it provides good support
 also for non Python packages but there are also other alternatives like, pyenv.</p>
 <p>Using something like conda also allows you to quickly switch beteen different Python
 environments.</p>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>If you use conda avoid also installing packages with pip.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Ensure that the python lib compiled is for the expected python version.
+For example, build/bin/_slsdet.cpython-39-x86_64-linux-gnu.so for Python v3.9.x</p>
 </div>
 </div>
 <div class="section" id="pythonpath">
-<h2>PYTHONPATH<a class="headerlink" href="#pythonpath" title="Permalink to this headline">¶</a></h2>
+<h2>PYTHONPATH<a class="headerlink" href="#pythonpath" title="Permalink to this heading">¶</a></h2>
 <p>If you install slsdet using conda everything is set up and you can
 directly start using the Python bindings. However, if you build
 from source you need to tell Python where to find slsdet. This
@@ -242,7 +257,7 @@ the Python bindings or if you use the cmk.sh script -p.</p>
 </div>
 </div>
 <div class="section" id="which-detector-class-should-i-use">
-<h2>Which detector class should I use?<a class="headerlink" href="#which-detector-class-should-i-use" title="Permalink to this headline">¶</a></h2>
+<h2>Which detector class should I use?<a class="headerlink" href="#which-detector-class-should-i-use" title="Permalink to this heading">¶</a></h2>
 <p>We provide a generic class called Detector and detector specific
 versions like, Eiger, Jungfrau etc. The most or all functionality
 is there in the base class except the convenient access to dacs
@@ -285,7 +300,7 @@ functionality to the specialized classes.</p>
 </div>
 </div>
 <div class="section" id="hey-there-seems-to-be-two-apis">
-<h2>Hey, there seems to be two APIs?<a class="headerlink" href="#hey-there-seems-to-be-two-apis" title="Permalink to this headline">¶</a></h2>
+<h2>Hey, there seems to be two APIs?<a class="headerlink" href="#hey-there-seems-to-be-two-apis" title="Permalink to this heading">¶</a></h2>
 <p>To make the Python API approachable, both if you come from the command line
 or are using the C++ API, we provide two interfaces to the detector.
 One is property based and tries to stay as close to the command line syntax
@@ -311,7 +326,7 @@ in a large detector.</p>
 </div>
 </div>
 <div class="section" id="finding-functions">
-<h2>Finding functions<a class="headerlink" href="#finding-functions" title="Permalink to this headline">¶</a></h2>
+<h2>Finding functions<a class="headerlink" href="#finding-functions" title="Permalink to this heading">¶</a></h2>
 <p>To find out which properties and methods that a Python object have you
 can use dir()</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">slsdet</span> <span class="kn">import</span> <span class="n">Detector</span>
@@ -325,7 +340,7 @@ can use dir()</p>
 <span class="go">&#39;__str__&#39;, &#39;__subclasshook__&#39;, &#39;_adc_register&#39;, &#39;_frozen&#39;,</span>
 <span class="go">&#39;_register&#39;, &#39;acquire&#39;, &#39;adcclk&#39;, &#39;adcphase&#39;, &#39;adcpipeline&#39;,</span>
 <span class="go">&#39;adcreg&#39;, &#39;asamples&#39;, &#39;auto_comp_disable&#39;, &#39;clearAcquiringFlag&#39;,</span>
-<span class="go">&#39;clearBit&#39;, &#39;clearROI&#39;, &#39;client_version&#39;, &#39;config&#39;, &#39;copyDetectorServer&#39;,</span>
+<span class="go">&#39;clearBit&#39;, &#39;clearROI&#39;, &#39;client_version&#39;, &#39;config&#39;,</span>
 <span class="go">&#39;counters&#39;, &#39;daclist&#39;, &#39;dacvalues&#39;, &#39;dbitclk&#39;, &#39;dbitphase&#39; ...</span>
 </pre></div>
 </div>
@@ -360,7 +375,7 @@ while find returns a list of names.</p>
 </div>
 </div>
 <div class="section" id="finding-out-what-the-function-does">
-<h2>Finding out what the function does<a class="headerlink" href="#finding-out-what-the-function-does" title="Permalink to this headline">¶</a></h2>
+<h2>Finding out what the function does<a class="headerlink" href="#finding-out-what-the-function-does" title="Permalink to this heading">¶</a></h2>
 <p>To access the documentation of a function directly from the Python prompt use help().</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">help</span><span class="p">(</span><span class="n">Detector</span><span class="o">.</span><span class="n">period</span><span class="p">)</span>
 <span class="go">Help on property:</span>
@@ -383,7 +398,7 @@ while find returns a list of names.</p>
 </div>
 </div>
 <div class="section" id="where-are-the-enums">
-<h2>Where are the ENUMs?<a class="headerlink" href="#where-are-the-enums" title="Permalink to this headline">¶</a></h2>
+<h2>Where are the ENUMs?<a class="headerlink" href="#where-are-the-enums" title="Permalink to this heading">¶</a></h2>
 <p>To set some of the detector settings like file format you have
 to pass in an enum.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">d</span><span class="o">.</span><span class="n">setFileFormat</span><span class="p">(</span><span class="n">fileFormat</span><span class="o">.</span><span class="n">BINARY</span><span class="p">)</span>

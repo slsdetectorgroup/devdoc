@@ -13,6 +13,8 @@
   
   <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="_static/css/extra.css" type="text/css" />
 
   
@@ -24,12 +26,18 @@
   
 
   
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
         <script src="_static/jquery.js"></script>
         <script src="_static/underscore.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="_static/doctools.js"></script>
+        <script src="_static/sphinx_highlight.js"></script>
     
     <script type="text/javascript" src="_static/js/theme.js"></script>
 
@@ -61,7 +69,7 @@
             
             
               <div class="version">
-                6.1.1
+                7.0.0
               </div>
             
           
@@ -86,61 +94,72 @@
               
             
             
-              <p class="caption"><span class="caption-text">Installation:</span></p>
+              <p class="caption" role="heading"><span class="caption-text">Installation:</span></p>
 <ul class="current">
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Installation</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#build-from-source-using-cmake">Build from source using CMake</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#build-using-cmk-sh-script">Build using cmk.sh script</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#install-binaries-using-conda">Install binaries using conda</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#build-from-source-on-old-distributions">Build from source on old distributions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#build-from-source">Build from source</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#download-source-code-from-github">1. Download Source Code from github</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#build-from-source-using-cmake">2. Build from Source</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#build-using-cmake">Build using CMake</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#build-using-in-build-cmk-sh-script">Build using in-build cmk.sh script</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#build-on-old-distributions">Build on old distributions</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="#build-this-documentation">Build this documentation</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="dependencies.html">Dependencies</a></li>
 <li class="toctree-l1"><a class="reference internal" href="consuming.html">Consuming slsDetectorPackage</a></li>
 </ul>
-<p class="caption"><span class="caption-text">C++ API</span></p>
+<p class="caption" role="heading"><span class="caption-text">C++ API</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="detector.html">Detector</a></li>
 <li class="toctree-l1"><a class="reference internal" href="result.html">Result</a></li>
 <li class="toctree-l1"><a class="reference internal" href="receiver_api.html">Receiver</a></li>
 <li class="toctree-l1"><a class="reference internal" href="examples.html">Examples</a></li>
 </ul>
-<p class="caption"><span class="caption-text">Python API</span></p>
+<p class="caption" role="heading"><span class="caption-text">Python API</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="pygettingstarted.html">Getting Started</a></li>
 <li class="toctree-l1"><a class="reference internal" href="pydetector.html">Detector</a></li>
 <li class="toctree-l1"><a class="reference internal" href="pyenums.html">Enums</a></li>
 <li class="toctree-l1"><a class="reference internal" href="pyexamples.html">Examples</a></li>
 </ul>
-<p class="caption"><span class="caption-text">Command line</span></p>
+<p class="caption" role="heading"><span class="caption-text">Command line</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="commandline.html">Command line interface</a></li>
 <li class="toctree-l1"><a class="reference internal" href="quick_start_guide.html">Quick Start Guide</a></li>
 </ul>
-<p class="caption"><span class="caption-text">Developer</span></p>
+<p class="caption" role="heading"><span class="caption-text">Developer</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="container_utils.html">ContainerUtils</a></li>
 <li class="toctree-l1"><a class="reference internal" href="type_traits.html">TypeTraits</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ToString.html">ToString</a></li>
 </ul>
-<p class="caption"><span class="caption-text">Firmware</span></p>
+<p class="caption" role="heading"><span class="caption-text">Firmware</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="firmware.html">Firmware Upgrade</a></li>
 </ul>
-<p class="caption"><span class="caption-text">Detector Server</span></p>
+<p class="caption" role="heading"><span class="caption-text">Detector Server</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="servers.html">Detector Servers</a></li>
-<li class="toctree-l1"><a class="reference internal" href="serverupgrade.html">Detector Server Upgrade</a></li>
-<li class="toctree-l1"><a class="reference internal" href="virtualserver.html">Detector Simulators</a></li>
+<li class="toctree-l1"><a class="reference internal" href="servers.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="serverupgrade.html">Upgrade</a></li>
+<li class="toctree-l1"><a class="reference internal" href="virtualserver.html">Simulators</a></li>
 <li class="toctree-l1"><a class="reference internal" href="serverdefaults.html">Default Values</a></li>
 </ul>
-<p class="caption"><span class="caption-text">Receiver</span></p>
+<p class="caption" role="heading"><span class="caption-text">Detector UDP Header</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="udpheader.html">Format</a></li>
+<li class="toctree-l1"><a class="reference internal" href="udpconfig.html">Config file</a></li>
+<li class="toctree-l1"><a class="reference internal" href="udpdetspec.html">Detector Specific Fields</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Receiver</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="receivers.html">Receivers</a></li>
 <li class="toctree-l1"><a class="reference internal" href="slsreceiver.html">slsReceiver/ slsMultiReceiver</a></li>
 </ul>
-<p class="caption"><span class="caption-text">Troubleshooting</span></p>
+<p class="caption" role="heading"><span class="caption-text">Troubleshooting</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="troubleshooting.html">Troubleshooting</a></li>
 </ul>
@@ -222,72 +241,21 @@ use one of the release versions.</p>
 <p class="admonition-title">Warning</p>
 <p>Before building from source make sure that you have the
 <a class="reference internal" href="dependencies.html"><span class="doc">dependencies</span></a> installed. If installing using conda, conda will
-manage the dependencies.</p>
+manage the dependencies. Avoid also installing packages with pip.</p>
 </div>
 <div class="section" id="installation">
-<span id="id1"></span><h1>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="build-from-source-using-cmake">
-<span id="id2"></span><h2>Build from source using CMake<a class="headerlink" href="#build-from-source-using-cmake" title="Permalink to this headline">¶</a></h2>
-<p>Note that on some systems, for example RH7,  cmake v3+ is available under the cmake3 alias.
-It is also required to clone with the option –recursive to get the git submodules used
-in the package.</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git clone --recursive https://github.com/slsdetectorgroup/slsDetectorPackage.git
-mkdir build <span class="o">&amp;&amp;</span> <span class="nb">cd</span> build
-cmake ../slsDetectorPackage -DCMAKE_INSTALL_PREFIX<span class="o">=</span>/your/install/path
-make -j12 <span class="c1">#or whatever number of cores you are using to build</span>
-make install
-</pre></div>
-</div>
-<p>The easiest way to configure options is to use the ccmake utility.</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1">#from the build directory</span>
-ccmake .
-</pre></div>
-</div>
-</div>
-<div class="section" id="build-using-cmk-sh-script">
-<h2>Build using cmk.sh script<a class="headerlink" href="#build-using-cmk-sh-script" title="Permalink to this headline">¶</a></h2>
-<p>These are mainly aimed at those not familiar with using ccmake and cmake.</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>The binaries are generated <span class="k">in</span> slsDetectorPackage/build/bin directory.
-
-Usage: <span class="nv">$0</span> <span class="o">[</span>-c<span class="o">]</span> <span class="o">[</span>-b<span class="o">]</span> <span class="o">[</span>-p<span class="o">]</span> <span class="o">[</span>e<span class="o">]</span> <span class="o">[</span>t<span class="o">]</span> <span class="o">[</span>r<span class="o">]</span> <span class="o">[</span>g<span class="o">]</span> <span class="o">[</span>s<span class="o">]</span> <span class="o">[</span>u<span class="o">]</span> <span class="o">[</span>i<span class="o">]</span> <span class="o">[</span>m<span class="o">]</span> <span class="o">[</span>n<span class="o">]</span> <span class="o">[</span>-h<span class="o">]</span> <span class="o">[</span>z<span class="o">]</span> <span class="o">[</span>-d &lt;HDF5 directory&gt;<span class="o">]</span> <span class="o">[</span>-l Install directory<span class="o">]</span> <span class="o">[</span>-k &lt;CMake command&gt;<span class="o">]</span> <span class="o">[</span>-j &lt;Number of threads&gt;<span class="o">]</span>
--<span class="o">[</span>no option<span class="o">]</span>: only make
--c: Clean
--b: Builds/Rebuilds CMake files normal mode
--p: Builds/Rebuilds Python API
--h: Builds/Rebuilds Cmake files with HDF5 package
--d: HDF5 Custom Directory
--k: CMake <span class="nb">command</span>
--l: Install directory
--t: Build/Rebuilds only text client
--r: Build/Rebuilds only receiver
--g: Build/Rebuilds only gui
--s: Simulator
--u: Chip Test Gui
--j: Number of threads to compile through
--e: Debug mode
--i: Builds tests
--m: Manuals
--n: Manuals without compiling doxygen <span class="o">(</span>only rst<span class="o">)</span>
--z: Moench zmq processor
-
-<span class="c1"># get all options</span>
-./cmk.sh -?
-
-<span class="c1"># new build  and compile in parallel:</span>
-./cmk.sh -bj5
-</pre></div>
-</div>
-</div>
+<span id="id1"></span><h1>Installation<a class="headerlink" href="#installation" title="Permalink to this heading">¶</a></h1>
 <div class="section" id="install-binaries-using-conda">
-<h2>Install binaries using conda<a class="headerlink" href="#install-binaries-using-conda" title="Permalink to this headline">¶</a></h2>
+<h2>Install binaries using conda<a class="headerlink" href="#install-binaries-using-conda" title="Permalink to this heading">¶</a></h2>
 <p>Conda is not only useful to manage python environments but can also
-be used as a user space package manager.</p>
+be used as a user space package manager. Dates in the tag (for eg. 2020.07.23.dev0)
+are from the developer branch. Please use released tags for stability.</p>
 <p>We have three different packages available:</p>
 <blockquote>
 <div><ul class="simple">
-<li><p><strong>slsdetlib</strong>, shared libraries and command line utilities</p></li>
-<li><p><strong>slsdetgui</strong>, GUI</p></li>
-<li><p><strong>slsdet</strong>, Python bindings</p></li>
+<li><p><strong>slsdetlib</strong> shared libraries and command line utilities</p></li>
+<li><p><strong>slsdetgui</strong> GUI</p></li>
+<li><p><strong>slsdet</strong> Python bindings</p></li>
 </ul>
 </div></blockquote>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1">#Add channels for dependencies and our library</span>
@@ -295,9 +263,9 @@ conda config --add channels conda-forge
 conda config --add channels slsdetectorgroup
 conda config --set channel_priority strict
 
-<span class="c1">#cerate an environment with our library, then activate</span>
-<span class="c1">#replace 2020.07.20.dev0 with the required tag</span>
-conda create -n myenv <span class="nv">slsdetlib</span><span class="o">=</span><span class="m">2020</span>.07.23.dev0
+<span class="c1">#create and activate an environment with our library</span>
+<span class="c1">#replace 6.1.1 with the required tag</span>
+conda create -n myenv <span class="nv">slsdetlib</span><span class="o">=</span><span class="m">6</span>.1.1
 conda activate myenv
 
 <span class="c1">#ready to use</span>
@@ -310,21 +278,151 @@ conda search slsdet
 </pre></div>
 </div>
 </div>
-<div class="section" id="build-from-source-on-old-distributions">
-<h2>Build from source on old distributions<a class="headerlink" href="#build-from-source-on-old-distributions" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="build-from-source">
+<h2>Build from source<a class="headerlink" href="#build-from-source" title="Permalink to this heading">¶</a></h2>
+<div class="section" id="download-source-code-from-github">
+<h3>1. Download Source Code from github<a class="headerlink" href="#download-source-code-from-github" title="Permalink to this heading">¶</a></h3>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git clone https://github.com/slsdetectorgroup/slsDetectorPackage.git --branch <span class="m">6</span>.1.1
+</pre></div>
+</div>
+<div class="line-block">
+<div class="line"><strong>Pybind</strong></div>
+<div class="line">v7.0.0+:</div>
+<div class="line-block">
+<div class="line">pybind11 packaged into ‘libs/pybind’. No longer a submodule. No need for “recursive” or “submodule update”.</div>
+<div class="line"><br /></div>
+</div>
+<div class="line">Older versions:</div>
+<div class="line-block">
+<div class="line">pybind11 is a submodule&gt; Must be cloned using “recursive” and updated when switching between versions using the following commands.</div>
+</div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># clone using recursive to get pybind11 submodule</span>
+git clone --recursive https://github.com/slsdetectorgroup/slsDetectorPackage.git
+
+<span class="c1"># update submodule when switching between releases</span>
+<span class="nb">cd</span> slsDetectorPackage
+git submodule update --init
+</pre></div>
+</div>
+</div>
+<div class="section" id="build-from-source-using-cmake">
+<span id="id2"></span><h3>2. Build from Source<a class="headerlink" href="#build-from-source-using-cmake" title="Permalink to this heading">¶</a></h3>
+</div>
+<div class="section" id="build-using-cmake">
+<h3>Build using CMake<a class="headerlink" href="#build-using-cmake" title="Permalink to this heading">¶</a></h3>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># outside slsDetecorPackage folder</span>
+mkdir build <span class="o">&amp;&amp;</span> <span class="nb">cd</span> build
+
+<span class="c1"># configure &amp; generate Makefiles using cmake</span>
+<span class="c1"># by listing all your options (alternately use ccmake described below)</span>
+<span class="c1"># cmake3 for some systems</span>
+cmake ../slsDetectorPackage -DCMAKE_INSTALL_PREFIX<span class="o">=</span>/your/install/path
+
+<span class="c1"># compiled to the build/bin directory</span>
+make -j12 <span class="c1">#or whatever number of cores you are using to build</span>
+
+<span class="c1"># install headers and libs in /your/install/path directory</span>
+make install
+</pre></div>
+</div>
+<p>Instead of the cmake command, one can use ccmake to get a list of options to configure and generate Makefiles at ease.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># ccmake3 for some systems</span>
+ccmake ..
+
+<span class="c1"># choose the options</span>
+<span class="c1"># first press [c] - configure</span>
+<span class="c1"># then press [g] - generate</span>
+</pre></div>
+</div>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 42%" />
+<col style="width: 58%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Example cmake options</p></th>
+<th class="head"><p>Comment</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>-DSLS_USE_PYTHON=ON</p></td>
+<td><p>Python</p></td>
+</tr>
+<tr class="row-odd"><td><p>-DPython_FIND_VIRTUALENV=ONLY</p></td>
+<td><p>Python from only the conda environment</p></td>
+</tr>
+<tr class="row-even"><td><p>-DZeroMQ_HINT=/usr/lib64</p></td>
+<td><p>System zmq instead of conda</p></td>
+</tr>
+<tr class="row-odd"><td><p>-DSLS_USE_GUI=ON</p></td>
+<td><p>GUI</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="build-using-in-build-cmk-sh-script">
+<h3>Build using in-build cmk.sh script<a class="headerlink" href="#build-using-in-build-cmk-sh-script" title="Permalink to this heading">¶</a></h3>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>The binaries are generated <span class="k">in</span> slsDetectorPackage/build/bin directory.
+
+Usage: ./cmk.sh <span class="o">[</span>-b<span class="o">]</span> <span class="o">[</span>-c<span class="o">]</span> <span class="o">[</span>-d &lt;HDF5 directory&gt;<span class="o">]</span> <span class="o">[</span>e<span class="o">]</span> <span class="o">[</span>g<span class="o">]</span> <span class="o">[</span>-h<span class="o">]</span> <span class="o">[</span>i<span class="o">]</span> <span class="o">[</span>-j &lt;Number of threads&gt;<span class="o">]</span>
+<span class="o">[</span>-k &lt;CMake command&gt;<span class="o">]</span> <span class="o">[</span>-l &lt;Install directory&gt;<span class="o">]</span> <span class="o">[</span>m<span class="o">]</span> <span class="o">[</span>n<span class="o">]</span> <span class="o">[</span>-p<span class="o">]</span> <span class="o">[</span>-q &lt;Zmq hint directory&gt;<span class="o">]</span>
+<span class="o">[</span>r<span class="o">]</span> <span class="o">[</span>s<span class="o">]</span> <span class="o">[</span>t<span class="o">]</span> <span class="o">[</span>u<span class="o">]</span> <span class="o">[</span>z<span class="o">]</span>
+-<span class="o">[</span>no option<span class="o">]</span>: only make
+-b: Builds/Rebuilds CMake files normal mode
+-c: Clean
+-d: HDF5 Custom Directory
+-e: Debug mode
+-g: Build/Rebuilds only gui
+-h: Builds/Rebuilds Cmake files with HDF5 package
+-i: Builds tests
+-j: Number of threads to compile through
+-k: CMake <span class="nb">command</span>
+-l: Install directory
+-m: Manuals
+-n: Manuals without compiling doxygen <span class="o">(</span>only rst<span class="o">)</span>
+-p: Builds/Rebuilds Python API
+-q: Zmq hint directory
+-r: Build/Rebuilds only receiver
+-s: Simulator
+-t: Build/Rebuilds only text client
+-u: Chip Test Gui
+-z: Moench zmq processor
+
+
+<span class="c1"># get all options</span>
+./cmk.sh -?
+
+<span class="c1"># new build and compile in parallel:</span>
+./cmk.sh -bj5
+
+<span class="c1"># new build, python and compile in parallel:</span>
+./cmk.sh -bpj5
+
+<span class="c1">#To use the system zmq (/usr/lib64) instead of conda</span>
+./cmk.sh -bj5 -q /usr/lib64
+</pre></div>
+</div>
+</div>
+<div class="section" id="build-on-old-distributions">
+<h3>Build on old distributions<a class="headerlink" href="#build-on-old-distributions" title="Permalink to this heading">¶</a></h3>
 <p>If your linux distribution doesn’t come with a C++11 compiler (gcc&gt;4.8) then
 it’s possible to install a newer gcc using conda and build the slsDetectorPackage
 using this compiler</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1">#Create an environment with the dependencies</span>
 conda create -n myenv gxx_linux-64 cmake zmq
 conda activate myenv
+
+<span class="c1"># outside slsDetecorPackage folder</span>
+mkdir build <span class="o">&amp;&amp;</span> <span class="nb">cd</span> build
 cmake ../slsDetectorPackage -DCMAKE_PREFIX_PATH<span class="o">=</span><span class="nv">$CONDA_PREFIX</span>
 make -j12
 </pre></div>
 </div>
 </div>
+</div>
 <div class="section" id="build-this-documentation">
-<h2>Build this documentation<a class="headerlink" href="#build-this-documentation" title="Permalink to this headline">¶</a></h2>
+<h2>Build this documentation<a class="headerlink" href="#build-this-documentation" title="Permalink to this heading">¶</a></h2>
 <p>The documentation for the slsDetectorPackage is build using a combination
 of Doxygen, Sphinx and Breathe. The easiest way to install the dependencies
 is to use conda</p>

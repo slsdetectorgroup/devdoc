@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>Dependencies &mdash; slsDetectorPackage  documentation</title>
+  <title>Format &mdash; slsDetectorPackage  documentation</title>
   
 
   
@@ -44,8 +44,8 @@
     
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Consuming slsDetectorPackage" href="consuming.html" />
-    <link rel="prev" title="Installation" href="installation.html" /> 
+    <link rel="next" title="Config file" href="udpconfig.html" />
+    <link rel="prev" title="Default Values" href="serverdefaults.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -95,17 +95,9 @@
             
             
               <p class="caption" role="heading"><span class="caption-text">Installation:</span></p>
-<ul class="current">
+<ul>
 <li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Dependencies</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#core">Core</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#gui">GUI</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#python-bindings">Python bindings</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#moench-executables">Moench executables</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#documentation">Documentation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#packaged-in-libs">Packaged in libs/</a></li>
-</ul>
-</li>
+<li class="toctree-l1"><a class="reference internal" href="dependencies.html">Dependencies</a></li>
 <li class="toctree-l1"><a class="reference internal" href="consuming.html">Consuming slsDetectorPackage</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">C++ API</span></p>
@@ -145,8 +137,12 @@
 <li class="toctree-l1"><a class="reference internal" href="serverdefaults.html">Default Values</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Detector UDP Header</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="udpheader.html">Format</a></li>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Format</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#current-version">Current Version</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#previous-versions">Previous Versions</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="udpconfig.html">Config file</a></li>
 <li class="toctree-l1"><a class="reference internal" href="udpdetspec.html">Detector Specific Fields</a></li>
 </ul>
@@ -206,13 +202,13 @@
     
       <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
         
-      <li>Dependencies</li>
+      <li>Format</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
           
-            <a href="_sources/dependencies.rst.txt" rel="nofollow"> View page source</a>
+            <a href="_sources/udpheader.rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -225,72 +221,162 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="dependencies">
-<h1>Dependencies<a class="headerlink" href="#dependencies" title="Permalink to this heading">¶</a></h1>
-<p>While we value few dependencies some libraries are required in
-order to not have to reinvent the wheel. Due to the state of package
-management in C++ we decided to bundle some of them with our source
-code. These are found in the libs/ directory.</p>
-<div class="section" id="core">
-<h2>Core<a class="headerlink" href="#core" title="Permalink to this heading">¶</a></h2>
-<p>To use the basic building blocks, meaning sls_detector_get/put and
-the shared libraries these are needed:</p>
+  <div class="section" id="format">
+<span id="detector-udp-header"></span><h1>Format<a class="headerlink" href="#format" title="Permalink to this heading">¶</a></h1>
+<p>The UDP data format for the packets consist of a common header for all detectors, followed by the data for that one packet.</p>
+<div class="section" id="current-version">
+<h2>Current Version<a class="headerlink" href="#current-version" title="Permalink to this heading">¶</a></h2>
+<p><strong>v3.0 (slsDetectorPackage v7.0.0+)</strong></p>
+<table class="colwidths-given docutils align-center" id="id1">
+<caption><span class="caption-text">&lt;—————————————————- 8 bytes —————————————————-&gt;</span><a class="headerlink" href="#id1" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 13%" />
+<col style="width: 13%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td colspan="5"><p>frameNumber</p></td>
+</tr>
+<tr class="row-even"><td colspan="2"><p>expLength</p></td>
+<td colspan="3"><p>packetNumber</p></td>
+</tr>
+<tr class="row-odd"><td colspan="5"><p><strong>detSpec1</strong></p></td>
+</tr>
+<tr class="row-even"><td colspan="5"><p>timestamp</p></td>
+</tr>
+<tr class="row-odd"><td><p>modId</p></td>
+<td><p>row</p></td>
+<td><p>column</p></td>
+<td colspan="2"><p><strong>detSpec2</strong></p></td>
+</tr>
+<tr class="row-even"><td colspan="2"><p><strong>detSpec3</strong></p></td>
+<td><p><strong>detSpec4</strong></p></td>
+<td><p>detType</p></td>
+<td><p>version</p></td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><p><strong>Detector specific field</strong> descriptions are found <a class="reference internal" href="udpdetspec.html#detector-specific-fields"><span class="std std-ref">here</span></a>.</p></li>
+<li><p><strong>frameNumber</strong>: framenumber to which the current packet belongs to.</p></li>
+<li><p><strong>expLength</strong>: measured exposure time of the frame in tenths of microsecond. It is instead the sub frame number for Eiger.</p></li>
+<li><p><strong>packetNumber</strong>: packet number of the frame to which the current data belongs to.</p></li>
+<li><p><strong>timestamp</strong>: time measured at the start of frame exposure since the start of the current measurement. It is expressed in tenths of microsecond.</p></li>
+<li><p><strong>modId</strong>: module ID picked up from det_id_[detector type].txt on the detector cpu.</p></li>
+<li><p><strong>row</strong>: row position of the module in the detector system. It is calculated by the order of the module in hostname command, as well as the detsize command.</p></li>
+<li><p><strong>column</strong>: column position of the module in the detector system.  It is calculated by the order of the module in hostname command, as well as the detsize command.</p></li>
+<li><p><strong>detType</strong>: detector type from enum of detectorType in the package.</p>
 <blockquote>
-<div><ul class="simple">
-<li><p>Linux, preferably recent kernel (currently no cross platform support)</p></li>
-<li><p>CMake &gt; 3.12</p></li>
-<li><p>C++11 compatible compiler. (We test with gcc and clang)</p></li>
-<li><p>ZeroMQ version 4</p></li>
-</ul>
+<div><table class="docutils align-default">
+<colgroup>
+<col style="width: 67%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Detector Type</p></th>
+<th class="head"><p>Value</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>GENERIC</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-odd"><td><p>EIGER</p></td>
+<td><p>1</p></td>
+</tr>
+<tr class="row-even"><td><p>GOTTHARD</p></td>
+<td><p>2</p></td>
+</tr>
+<tr class="row-odd"><td><p>JUNGFRAU</p></td>
+<td><p>3</p></td>
+</tr>
+<tr class="row-even"><td><p>CHIPTESTBOARD</p></td>
+<td><p>4</p></td>
+</tr>
+<tr class="row-odd"><td><p>MOENCH</p></td>
+<td><p>5</p></td>
+</tr>
+<tr class="row-even"><td><p>MYTHEN3</p></td>
+<td><p>6</p></td>
+</tr>
+<tr class="row-odd"><td><p>GOTTHARD2</p></td>
+<td><p>7</p></td>
+</tr>
+</tbody>
+</table>
 </div></blockquote>
+</li>
+<li><p><strong>version</strong>: current version of the detector header. It is at 0x3.</p></li>
+</ul>
 </div>
-<div class="section" id="gui">
-<h2>GUI<a class="headerlink" href="#gui" title="Permalink to this heading">¶</a></h2>
-<p>The GUI is currently using Qt4 but watch out for an upgrade to 5.</p>
-<blockquote>
-<div><ul class="simple">
-<li><p>Qt 4.8</p></li>
-<li><p>Qwt 6.1</p></li>
-</ul>
-</div></blockquote>
-</div>
-<div class="section" id="python-bindings">
-<h2>Python bindings<a class="headerlink" href="#python-bindings" title="Permalink to this heading">¶</a></h2>
-<blockquote>
-<div><ul class="simple">
-<li><p>Python &gt; 3.6</p></li>
-<li><p>pybind11 (packaged in libs/)</p></li>
-</ul>
-</div></blockquote>
-</div>
-<div class="section" id="moench-executables">
-<h2>Moench executables<a class="headerlink" href="#moench-executables" title="Permalink to this heading">¶</a></h2>
-<blockquote>
-<div><ul class="simple">
-<li><p>libtiff</p></li>
-</ul>
-</div></blockquote>
-</div>
-<div class="section" id="documentation">
-<h2>Documentation<a class="headerlink" href="#documentation" title="Permalink to this heading">¶</a></h2>
-<p>The documentation that you are reading now is built with</p>
-<blockquote>
-<div><ul class="simple">
-<li><p>Doxygen (to extract C++ classes etc.)</p></li>
-<li><p>Breathe (Sphinx plugin to handle doxygen xml)</p></li>
-<li><p>Sphinx with sphinx_rtd_theme</p></li>
-</ul>
-</div></blockquote>
-</div>
-<div class="section" id="packaged-in-libs">
-<h2>Packaged in libs/<a class="headerlink" href="#packaged-in-libs" title="Permalink to this heading">¶</a></h2>
-<blockquote>
-<div><ul class="simple">
-<li><p>catch2 (unit testing)</p></li>
-<li><p>rapidjson (streaming from receiver)</p></li>
-<li><p>pybind11 (python bindings)</p></li>
-</ul>
-</div></blockquote>
+<div class="section" id="previous-versions">
+<h2>Previous Versions<a class="headerlink" href="#previous-versions" title="Permalink to this heading">¶</a></h2>
+<p><strong>v2.0 (Package v4.0.0 -  6.x.x)</strong></p>
+<table class="colwidths-given docutils align-center" id="id2">
+<caption><span class="caption-text">&lt;—————————————————- 8 bytes —————————————————-&gt;</span><a class="headerlink" href="#id2" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 13%" />
+<col style="width: 13%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td colspan="5"><p>frameNumber</p></td>
+</tr>
+<tr class="row-even"><td colspan="2"><p>expLength</p></td>
+<td colspan="3"><p>packetNumber</p></td>
+</tr>
+<tr class="row-odd"><td colspan="5"><p>bunchid</p></td>
+</tr>
+<tr class="row-even"><td colspan="5"><p>timestamp</p></td>
+</tr>
+<tr class="row-odd"><td><p>modId</p></td>
+<td><p><strong>row</strong></p></td>
+<td><p><strong>column</strong></p></td>
+<td colspan="2"><p><strong>reserved</strong></p></td>
+</tr>
+<tr class="row-even"><td colspan="2"><p>debug</p></td>
+<td><p>roundRNumber</p></td>
+<td><p>detType</p></td>
+<td><p>version</p></td>
+</tr>
+</tbody>
+</table>
+<p><strong>v1.0 (Package v3.0.0 -  3.1.5)</strong></p>
+<table class="colwidths-given docutils align-center" id="id3">
+<caption><span class="caption-text">&lt;—————————————————- 8 bytes —————————————————-&gt;</span><a class="headerlink" href="#id3" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 13%" />
+<col style="width: 13%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td colspan="5"><p>frameNumber</p></td>
+</tr>
+<tr class="row-even"><td colspan="2"><p>expLength</p></td>
+<td colspan="3"><p>packetNumber</p></td>
+</tr>
+<tr class="row-odd"><td colspan="5"><p>bunchid</p></td>
+</tr>
+<tr class="row-even"><td colspan="5"><p>timestamp</p></td>
+</tr>
+<tr class="row-odd"><td><p>modId</p></td>
+<td><p>xCoord</p></td>
+<td><p>yCoord</p></td>
+<td colspan="2"><p>zCoord</p></td>
+</tr>
+<tr class="row-even"><td colspan="2"><p>debug</p></td>
+<td><p>roundRNumber</p></td>
+<td><p>detType</p></td>
+<td><p>version</p></td>
+</tr>
+</tbody>
+</table>
 </div>
 </div>
 
@@ -300,8 +386,8 @@ the shared libraries these are needed:</p>
           </div>
           <footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-        <a href="consuming.html" class="btn btn-neutral float-right" title="Consuming slsDetectorPackage" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
-        <a href="installation.html" class="btn btn-neutral float-left" title="Installation" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="udpconfig.html" class="btn btn-neutral float-right" title="Config file" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="serverdefaults.html" class="btn btn-neutral float-left" title="Default Values" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
     </div>
 
   <hr/>

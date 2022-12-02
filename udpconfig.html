@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>Dependencies &mdash; slsDetectorPackage  documentation</title>
+  <title>Config file &mdash; slsDetectorPackage  documentation</title>
   
 
   
@@ -44,8 +44,8 @@
     
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Consuming slsDetectorPackage" href="consuming.html" />
-    <link rel="prev" title="Installation" href="installation.html" /> 
+    <link rel="next" title="Detector Specific Fields" href="udpdetspec.html" />
+    <link rel="prev" title="Format" href="udpheader.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -95,17 +95,9 @@
             
             
               <p class="caption" role="heading"><span class="caption-text">Installation:</span></p>
-<ul class="current">
+<ul>
 <li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Dependencies</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#core">Core</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#gui">GUI</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#python-bindings">Python bindings</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#moench-executables">Moench executables</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#documentation">Documentation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#packaged-in-libs">Packaged in libs/</a></li>
-</ul>
-</li>
+<li class="toctree-l1"><a class="reference internal" href="dependencies.html">Dependencies</a></li>
 <li class="toctree-l1"><a class="reference internal" href="consuming.html">Consuming slsDetectorPackage</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">C++ API</span></p>
@@ -145,9 +137,17 @@
 <li class="toctree-l1"><a class="reference internal" href="serverdefaults.html">Default Values</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Detector UDP Header</span></p>
-<ul>
+<ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="udpheader.html">Format</a></li>
-<li class="toctree-l1"><a class="reference internal" href="udpconfig.html">Config file</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Config file</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#source-port">Source Port</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#udp-srcip-source-ip">udp_srcip - Source IP</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#udp-srcmac-source-mac">udp_srcmac - Source MAC</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#udp-dstport-desintation-port">udp_dstport - Desintation Port</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#udp-dstip-destination-ip">udp_dstip - Destination IP</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#udp-dstmac-destination-mac">udp_dstmac - Destination MAC</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="udpdetspec.html">Detector Specific Fields</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Receiver</span></p>
@@ -206,13 +206,13 @@
     
       <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
         
-      <li>Dependencies</li>
+      <li>Config file</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
           
-            <a href="_sources/dependencies.rst.txt" rel="nofollow"> View page source</a>
+            <a href="_sources/udpconfig.rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -225,71 +225,43 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="dependencies">
-<h1>Dependencies<a class="headerlink" href="#dependencies" title="Permalink to this heading">¶</a></h1>
-<p>While we value few dependencies some libraries are required in
-order to not have to reinvent the wheel. Due to the state of package
-management in C++ we decided to bundle some of them with our source
-code. These are found in the libs/ directory.</p>
-<div class="section" id="core">
-<h2>Core<a class="headerlink" href="#core" title="Permalink to this heading">¶</a></h2>
-<p>To use the basic building blocks, meaning sls_detector_get/put and
-the shared libraries these are needed:</p>
+  <div class="section" id="config-file">
+<span id="detector-udp-header"></span><h1>Config file<a class="headerlink" href="#config-file" title="Permalink to this heading">¶</a></h1>
+<p>Commands to configure the UDP in the config file:</p>
+<div class="section" id="source-port">
+<h2>Source Port<a class="headerlink" href="#source-port" title="Permalink to this heading">¶</a></h2>
 <blockquote>
-<div><ul class="simple">
-<li><p>Linux, preferably recent kernel (currently no cross platform support)</p></li>
-<li><p>CMake &gt; 3.12</p></li>
-<li><p>C++11 compatible compiler. (We test with gcc and clang)</p></li>
-<li><p>ZeroMQ version 4</p></li>
-</ul>
+<div><p>Hardcoded in detector server, starting at 32410.</p>
 </div></blockquote>
 </div>
-<div class="section" id="gui">
-<h2>GUI<a class="headerlink" href="#gui" title="Permalink to this heading">¶</a></h2>
-<p>The GUI is currently using Qt4 but watch out for an upgrade to 5.</p>
+<div class="section" id="udp-srcip-source-ip">
+<h2>udp_srcip - Source IP<a class="headerlink" href="#udp-srcip-source-ip" title="Permalink to this heading">¶</a></h2>
 <blockquote>
-<div><ul class="simple">
-<li><p>Qt 4.8</p></li>
-<li><p>Qwt 6.1</p></li>
-</ul>
+<div><p>IP address of detector UDP interface to send packets from. Do not use for Eiger 1Gb interface (uses its hardware IP). For others, must be in the same subnet as <strong>udp_dstip</strong>.</p>
 </div></blockquote>
 </div>
-<div class="section" id="python-bindings">
-<h2>Python bindings<a class="headerlink" href="#python-bindings" title="Permalink to this heading">¶</a></h2>
+<div class="section" id="udp-srcmac-source-mac">
+<h2>udp_srcmac - Source MAC<a class="headerlink" href="#udp-srcmac-source-mac" title="Permalink to this heading">¶</a></h2>
 <blockquote>
-<div><ul class="simple">
-<li><p>Python &gt; 3.6</p></li>
-<li><p>pybind11 (packaged in libs/)</p></li>
-</ul>
+<div><p>MAC address of detector UDP interface to send packets from. Do not use for Eiger (uses hardware mac). For others, it is not necessary, but can help for switch and debugging to put unique values for each module.</p>
 </div></blockquote>
 </div>
-<div class="section" id="moench-executables">
-<h2>Moench executables<a class="headerlink" href="#moench-executables" title="Permalink to this heading">¶</a></h2>
+<div class="section" id="udp-dstport-desintation-port">
+<h2>udp_dstport - Desintation Port<a class="headerlink" href="#udp-dstport-desintation-port" title="Permalink to this heading">¶</a></h2>
 <blockquote>
-<div><ul class="simple">
-<li><p>libtiff</p></li>
-</ul>
+<div><p>Port in receiver pc to listen to packets from the detector.</p>
 </div></blockquote>
 </div>
-<div class="section" id="documentation">
-<h2>Documentation<a class="headerlink" href="#documentation" title="Permalink to this heading">¶</a></h2>
-<p>The documentation that you are reading now is built with</p>
+<div class="section" id="udp-dstip-destination-ip">
+<h2>udp_dstip - Destination IP<a class="headerlink" href="#udp-dstip-destination-ip" title="Permalink to this heading">¶</a></h2>
 <blockquote>
-<div><ul class="simple">
-<li><p>Doxygen (to extract C++ classes etc.)</p></li>
-<li><p>Breathe (Sphinx plugin to handle doxygen xml)</p></li>
-<li><p>Sphinx with sphinx_rtd_theme</p></li>
-</ul>
+<div><p>IP address of interface in receiver pc to listen to packets from detector. If <strong>auto</strong> is used (only when using slsReceiver/ slsMultiReceiver), the IP of <strong>rx_hostname</strong> is picked up.</p>
 </div></blockquote>
 </div>
-<div class="section" id="packaged-in-libs">
-<h2>Packaged in libs/<a class="headerlink" href="#packaged-in-libs" title="Permalink to this heading">¶</a></h2>
+<div class="section" id="udp-dstmac-destination-mac">
+<h2>udp_dstmac - Destination MAC<a class="headerlink" href="#udp-dstmac-destination-mac" title="Permalink to this heading">¶</a></h2>
 <blockquote>
-<div><ul class="simple">
-<li><p>catch2 (unit testing)</p></li>
-<li><p>rapidjson (streaming from receiver)</p></li>
-<li><p>pybind11 (python bindings)</p></li>
-</ul>
+<div><p>MAC address of interface in receiver pc to list to packets from detector. Only required when using custom receiver, else slsReceiver/slsMultiReceiver picks it up from <strong>udp_dstip</strong>.</p>
 </div></blockquote>
 </div>
 </div>
@@ -300,8 +272,8 @@ the shared libraries these are needed:</p>
           </div>
           <footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-        <a href="consuming.html" class="btn btn-neutral float-right" title="Consuming slsDetectorPackage" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
-        <a href="installation.html" class="btn btn-neutral float-left" title="Installation" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="udpdetspec.html" class="btn btn-neutral float-right" title="Detector Specific Fields" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="udpheader.html" class="btn btn-neutral float-left" title="Format" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
     </div>
 
   <hr/>

@@ -13,6 +13,8 @@
   
   <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="_static/css/extra.css" type="text/css" />
 
   
@@ -24,12 +26,18 @@
   
 
   
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
         <script src="_static/jquery.js"></script>
         <script src="_static/underscore.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="_static/doctools.js"></script>
+        <script src="_static/sphinx_highlight.js"></script>
     
     <script type="text/javascript" src="_static/js/theme.js"></script>
 
@@ -61,7 +69,7 @@
             
             
               <div class="version">
-                6.1.1
+                7.0.0
               </div>
             
           
@@ -86,13 +94,13 @@
               
             
             
-              <p class="caption"><span class="caption-text">Installation:</span></p>
+              <p class="caption" role="heading"><span class="caption-text">Installation:</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="dependencies.html">Dependencies</a></li>
 <li class="toctree-l1"><a class="reference internal" href="consuming.html">Consuming slsDetectorPackage</a></li>
 </ul>
-<p class="caption"><span class="caption-text">C++ API</span></p>
+<p class="caption" role="heading"><span class="caption-text">C++ API</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="detector.html">Detector</a></li>
 <li class="toctree-l1"><a class="reference internal" href="result.html">Result</a></li>
@@ -106,41 +114,47 @@
 </ul>
 </li>
 </ul>
-<p class="caption"><span class="caption-text">Python API</span></p>
+<p class="caption" role="heading"><span class="caption-text">Python API</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="pygettingstarted.html">Getting Started</a></li>
 <li class="toctree-l1"><a class="reference internal" href="pydetector.html">Detector</a></li>
 <li class="toctree-l1"><a class="reference internal" href="pyenums.html">Enums</a></li>
 <li class="toctree-l1"><a class="reference internal" href="pyexamples.html">Examples</a></li>
 </ul>
-<p class="caption"><span class="caption-text">Command line</span></p>
+<p class="caption" role="heading"><span class="caption-text">Command line</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="commandline.html">Command line interface</a></li>
 <li class="toctree-l1"><a class="reference internal" href="quick_start_guide.html">Quick Start Guide</a></li>
 </ul>
-<p class="caption"><span class="caption-text">Developer</span></p>
+<p class="caption" role="heading"><span class="caption-text">Developer</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="container_utils.html">ContainerUtils</a></li>
 <li class="toctree-l1"><a class="reference internal" href="type_traits.html">TypeTraits</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ToString.html">ToString</a></li>
 </ul>
-<p class="caption"><span class="caption-text">Firmware</span></p>
+<p class="caption" role="heading"><span class="caption-text">Firmware</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="firmware.html">Firmware Upgrade</a></li>
 </ul>
-<p class="caption"><span class="caption-text">Detector Server</span></p>
+<p class="caption" role="heading"><span class="caption-text">Detector Server</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="servers.html">Detector Servers</a></li>
-<li class="toctree-l1"><a class="reference internal" href="serverupgrade.html">Detector Server Upgrade</a></li>
-<li class="toctree-l1"><a class="reference internal" href="virtualserver.html">Detector Simulators</a></li>
+<li class="toctree-l1"><a class="reference internal" href="servers.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="serverupgrade.html">Upgrade</a></li>
+<li class="toctree-l1"><a class="reference internal" href="virtualserver.html">Simulators</a></li>
 <li class="toctree-l1"><a class="reference internal" href="serverdefaults.html">Default Values</a></li>
 </ul>
-<p class="caption"><span class="caption-text">Receiver</span></p>
+<p class="caption" role="heading"><span class="caption-text">Detector UDP Header</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="udpheader.html">Format</a></li>
+<li class="toctree-l1"><a class="reference internal" href="udpconfig.html">Config file</a></li>
+<li class="toctree-l1"><a class="reference internal" href="udpdetspec.html">Detector Specific Fields</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Receiver</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="receivers.html">Receivers</a></li>
 <li class="toctree-l1"><a class="reference internal" href="slsreceiver.html">slsReceiver/ slsMultiReceiver</a></li>
 </ul>
-<p class="caption"><span class="caption-text">Troubleshooting</span></p>
+<p class="caption" role="heading"><span class="caption-text">Troubleshooting</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="troubleshooting.html">Troubleshooting</a></li>
 </ul>
@@ -211,16 +225,16 @@
            <div itemprop="articleBody">
             
   <div class="section" id="examples">
-<h1>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h1>
+<h1>Examples<a class="headerlink" href="#examples" title="Permalink to this heading">¶</a></h1>
 <div class="section" id="setup">
-<h2>Setup<a class="headerlink" href="#setup" title="Permalink to this headline">¶</a></h2>
+<h2>Setup<a class="headerlink" href="#setup" title="Permalink to this heading">¶</a></h2>
 <p>The examples here assume that you have compiled and installed slsDetectorPackage
 to ~/sls/install and that the option for SLS_USE_SIMULATOR was enabled. This also builds
 the virtual detector servers that we will be using for testing.</p>
 <p>We also add ~/sls/detector/install/bin to the path for convenience.</p>
 </div>
 <div class="section" id="compile-examples">
-<h2>Compile examples<a class="headerlink" href="#compile-examples" title="Permalink to this headline">¶</a></h2>
+<h2>Compile examples<a class="headerlink" href="#compile-examples" title="Permalink to this heading">¶</a></h2>
 <p>The source code of the examples is available at:
 <a class="reference external" href="https://github.com/slsdetectorgroup/api-examples">https://github.com/slsdetectorgroup/api-examples</a></p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git clone https://github.com/slsdetectorgroup/api-examples.git
@@ -232,11 +246,11 @@ make
 <p>Below follows a short description of what is included in the examples.</p>
 </div>
 <div class="section" id="running-a-config-file-e1">
-<h2>Running a config file [e1]<a class="headerlink" href="#running-a-config-file-e1" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="cpf">&quot;sls/Detector.h&quot;</span><span class="cp"></span>
-<span class="p">...</span>
-<span class="n">sls</span><span class="o">::</span><span class="n">Detector</span> <span class="n">det</span><span class="p">;</span>
-<span class="n">det</span><span class="p">.</span><span class="n">loadConfig</span><span class="p">(</span><span class="s">&quot;path/to/config/file.config&quot;</span><span class="p">);</span>
+<h2>Running a config file [e1]<a class="headerlink" href="#running-a-config-file-e1" title="Permalink to this heading">¶</a></h2>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;sls/Detector.h&quot;</span><span class="cp"></span>
+<span class="p">...</span><span class="w"></span>
+<span class="n">sls</span><span class="o">::</span><span class="n">Detector</span><span class="w"> </span><span class="n">det</span><span class="p">;</span><span class="w"></span>
+<span class="n">det</span><span class="p">.</span><span class="n">loadConfig</span><span class="p">(</span><span class="s">&quot;path/to/config/file.config&quot;</span><span class="p">);</span><span class="w"></span>
 </pre></div>
 </div>
 <p>To configure the connection between PC and detector the easiest
@@ -266,30 +280,30 @@ Jungfrau detector with <span class="m">1</span> modules configured
 </div>
 </div>
 <div class="section" id="using-the-return-type-sls-result-e2">
-<h2>Using the return type sls::Result [e2]<a class="headerlink" href="#using-the-return-type-sls-result-e2" title="Permalink to this headline">¶</a></h2>
+<h2>Using the return type sls::Result [e2]<a class="headerlink" href="#using-the-return-type-sls-result-e2" title="Permalink to this heading">¶</a></h2>
 <p>Since many our detectors have multiple modules we cannot return
 a single value when reading from the Detector. Hostname, Ip and also
 for example exposure time can differ between modules.</p>
 <p>Therefore we return Result&lt;T&gt; which is a thin wrapper around
 std::vector.</p>
-<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">sls</span><span class="o">::</span><span class="n">Result</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">res1</span><span class="p">{</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">};</span>
-<span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;res1: &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">res1</span> <span class="o">&lt;&lt;</span> <span class="sc">&#39;\n&#39;</span><span class="p">;</span>
-<span class="n">res1</span><span class="p">.</span><span class="n">squash</span><span class="p">();</span>
-<span class="n">res1</span><span class="p">.</span><span class="n">squash</span><span class="p">(</span><span class="mi">-1</span><span class="p">);</span>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">sls</span><span class="o">::</span><span class="n">Result</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="w"> </span><span class="n">res1</span><span class="p">{</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">};</span><span class="w"></span>
+<span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;res1: &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">res1</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="sc">&#39;\n&#39;</span><span class="p">;</span><span class="w"></span>
+<span class="n">res1</span><span class="p">.</span><span class="n">squash</span><span class="p">();</span><span class="w"></span>
+<span class="n">res1</span><span class="p">.</span><span class="n">squash</span><span class="p">(</span><span class="mi">-1</span><span class="p">);</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="setting-exposure-time-e3">
-<h2>Setting exposure time [e3]<a class="headerlink" href="#setting-exposure-time-e3" title="Permalink to this headline">¶</a></h2>
+<h2>Setting exposure time [e3]<a class="headerlink" href="#setting-exposure-time-e3" title="Permalink to this heading">¶</a></h2>
 <p>For setting times, like exposure time, period, delay etc.
 we use std::chrono::duration.</p>
 <p>Example 3 shows how to set and read exposure time as well
 as converting to floating point.</p>
-<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="cpf">&quot;sls/Detector.h&quot;</span><span class="cp"></span>
-<span class="cp">#include</span> <span class="cpf">&lt;chrono&gt;</span><span class="cp"></span>
-<span class="p">...</span>
-<span class="n">std</span><span class="o">::</span><span class="n">chrono</span><span class="o">::</span><span class="n">microseconds</span> <span class="n">t0</span><span class="p">{</span><span class="mi">500</span><span class="p">};</span>
-<span class="n">det</span><span class="p">.</span><span class="n">setExptime</span><span class="p">(</span><span class="n">t0</span><span class="p">);</span>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;sls/Detector.h&quot;</span><span class="cp"></span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;chrono&gt;</span><span class="cp"></span>
+<span class="p">...</span><span class="w"></span>
+<span class="n">std</span><span class="o">::</span><span class="n">chrono</span><span class="o">::</span><span class="n">microseconds</span><span class="w"> </span><span class="n">t0</span><span class="p">{</span><span class="mi">500</span><span class="p">};</span><span class="w"></span>
+<span class="n">det</span><span class="p">.</span><span class="n">setExptime</span><span class="p">(</span><span class="n">t0</span><span class="p">);</span><span class="w"></span>
 </pre></div>
 </div>
 </div>

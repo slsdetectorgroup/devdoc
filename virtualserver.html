@@ -7,12 +7,14 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>Detector Simulators &mdash; slsDetectorPackage  documentation</title>
+  <title>Simulators &mdash; slsDetectorPackage  documentation</title>
   
 
   
   <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="_static/css/extra.css" type="text/css" />
 
   
@@ -24,12 +26,18 @@
   
 
   
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
         <script src="_static/jquery.js"></script>
         <script src="_static/underscore.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="_static/doctools.js"></script>
+        <script src="_static/sphinx_highlight.js"></script>
     
     <script type="text/javascript" src="_static/js/theme.js"></script>
 
@@ -37,7 +45,7 @@
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Default Values" href="serverdefaults.html" />
-    <link rel="prev" title="Detector Server Upgrade" href="serverupgrade.html" /> 
+    <link rel="prev" title="Upgrade" href="serverupgrade.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -61,7 +69,7 @@
             
             
               <div class="version">
-                6.1.1
+                7.0.0
               </div>
             
           
@@ -86,46 +94,46 @@
               
             
             
-              <p class="caption"><span class="caption-text">Installation:</span></p>
+              <p class="caption" role="heading"><span class="caption-text">Installation:</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="dependencies.html">Dependencies</a></li>
 <li class="toctree-l1"><a class="reference internal" href="consuming.html">Consuming slsDetectorPackage</a></li>
 </ul>
-<p class="caption"><span class="caption-text">C++ API</span></p>
+<p class="caption" role="heading"><span class="caption-text">C++ API</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="detector.html">Detector</a></li>
 <li class="toctree-l1"><a class="reference internal" href="result.html">Result</a></li>
 <li class="toctree-l1"><a class="reference internal" href="receiver_api.html">Receiver</a></li>
 <li class="toctree-l1"><a class="reference internal" href="examples.html">Examples</a></li>
 </ul>
-<p class="caption"><span class="caption-text">Python API</span></p>
+<p class="caption" role="heading"><span class="caption-text">Python API</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="pygettingstarted.html">Getting Started</a></li>
 <li class="toctree-l1"><a class="reference internal" href="pydetector.html">Detector</a></li>
 <li class="toctree-l1"><a class="reference internal" href="pyenums.html">Enums</a></li>
 <li class="toctree-l1"><a class="reference internal" href="pyexamples.html">Examples</a></li>
 </ul>
-<p class="caption"><span class="caption-text">Command line</span></p>
+<p class="caption" role="heading"><span class="caption-text">Command line</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="commandline.html">Command line interface</a></li>
 <li class="toctree-l1"><a class="reference internal" href="quick_start_guide.html">Quick Start Guide</a></li>
 </ul>
-<p class="caption"><span class="caption-text">Developer</span></p>
+<p class="caption" role="heading"><span class="caption-text">Developer</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="container_utils.html">ContainerUtils</a></li>
 <li class="toctree-l1"><a class="reference internal" href="type_traits.html">TypeTraits</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ToString.html">ToString</a></li>
 </ul>
-<p class="caption"><span class="caption-text">Firmware</span></p>
+<p class="caption" role="heading"><span class="caption-text">Firmware</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="firmware.html">Firmware Upgrade</a></li>
 </ul>
-<p class="caption"><span class="caption-text">Detector Server</span></p>
+<p class="caption" role="heading"><span class="caption-text">Detector Server</span></p>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="servers.html">Detector Servers</a></li>
-<li class="toctree-l1"><a class="reference internal" href="serverupgrade.html">Detector Server Upgrade</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Detector Simulators</a><ul>
+<li class="toctree-l1"><a class="reference internal" href="servers.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="serverupgrade.html">Upgrade</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Simulators</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#compilation">Compilation</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#binaries">Binaries</a></li>
 </ul>
@@ -142,12 +150,18 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="serverdefaults.html">Default Values</a></li>
 </ul>
-<p class="caption"><span class="caption-text">Receiver</span></p>
+<p class="caption" role="heading"><span class="caption-text">Detector UDP Header</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="udpheader.html">Format</a></li>
+<li class="toctree-l1"><a class="reference internal" href="udpconfig.html">Config file</a></li>
+<li class="toctree-l1"><a class="reference internal" href="udpdetspec.html">Detector Specific Fields</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Receiver</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="receivers.html">Receivers</a></li>
 <li class="toctree-l1"><a class="reference internal" href="slsreceiver.html">slsReceiver/ slsMultiReceiver</a></li>
 </ul>
-<p class="caption"><span class="caption-text">Troubleshooting</span></p>
+<p class="caption" role="heading"><span class="caption-text">Troubleshooting</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="troubleshooting.html">Troubleshooting</a></li>
 </ul>
@@ -198,7 +212,7 @@
     
       <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
         
-      <li>Detector Simulators</li>
+      <li>Simulators</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -217,10 +231,10 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="detector-simulators">
-<h1>Detector Simulators<a class="headerlink" href="#detector-simulators" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="simulators">
+<h1>Simulators<a class="headerlink" href="#simulators" title="Permalink to this heading">¶</a></h1>
 <div class="section" id="compilation">
-<h2>Compilation<a class="headerlink" href="#compilation" title="Permalink to this headline">¶</a></h2>
+<h2>Compilation<a class="headerlink" href="#compilation" title="Permalink to this heading">¶</a></h2>
 <ul>
 <li><dl>
 <dt>Using CMake, turn on the option</dt><dd><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nv">SLS_USE_SIMULATOR</span><span class="o">=</span>ON
@@ -238,7 +252,7 @@
 </li>
 </ul>
 <div class="section" id="binaries">
-<h3>Binaries<a class="headerlink" href="#binaries" title="Permalink to this headline">¶</a></h3>
+<h3>Binaries<a class="headerlink" href="#binaries" title="Permalink to this heading">¶</a></h3>
 <blockquote>
 <div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>eigerDetectorServerMaster_virtual
 eigerDetectorServerSlaveTop_virtual
@@ -255,7 +269,7 @@ ctbDetectorServer_virtual
 </div>
 </div>
 <div class="section" id="arguments">
-<h2>Arguments<a class="headerlink" href="#arguments" title="Permalink to this headline">¶</a></h2>
+<h2>Arguments<a class="headerlink" href="#arguments" title="Permalink to this heading">¶</a></h2>
 <p>The arguments are the same as the <a class="reference internal" href="servers.html#detector-server-arguments"><span class="std std-ref">normal server arguments</span></a>.</p>
 <dl>
 <dt>When using multiple modules, use different ports for each virtual server.</dt><dd><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># will start control server at port 1912 and stop server at port 1913</span>
@@ -269,7 +283,7 @@ jungfrauDetectorServer --port <span class="m">1914</span> <span class="p">&amp;<
 </dl>
 </div>
 <div class="section" id="client">
-<h2>Client<a class="headerlink" href="#client" title="Permalink to this headline">¶</a></h2>
+<h2>Client<a class="headerlink" href="#client" title="Permalink to this heading">¶</a></h2>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># hostname should include the port (if not default)</span>
 sls_detector_put hostname localhost:1912+localhost:1914+
 
@@ -282,7 +296,7 @@ sls_detector_put virtual <span class="m">2</span> <span class="m">1912</span>
 <p>Use the same in the config file.
 Detector API has a method ‘isVirtualDetectorServer’ to check if on-board detector server is virtual.</p>
 <div class="section" id="sample-config-file">
-<h3>Sample Config file<a class="headerlink" href="#sample-config-file" title="Permalink to this headline">¶</a></h3>
+<h3>Sample Config file<a class="headerlink" href="#sample-config-file" title="Permalink to this heading">¶</a></h3>
 <p>There are sample config files for each detector in slsDetectorPackage/examples folder.</p>
 <dl>
 <dt>For a Single Module</dt><dd><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># connects to control port 1912</span>
@@ -332,7 +346,7 @@ fpath /tmp
 </div>
 </div>
 <div class="section" id="receivers">
-<h2>Receivers<a class="headerlink" href="#receivers" title="Permalink to this headline">¶</a></h2>
+<h2>Receivers<a class="headerlink" href="#receivers" title="Permalink to this heading">¶</a></h2>
 <p>Same as if you would use an actual detector</p>
 <dl>
 <dt>For a Single Module</dt><dd><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>slsReceiver -t2012
@@ -347,7 +361,7 @@ slsMultiReceiver <span class="m">2012</span> <span class="m">2</span> <span clas
 </dl>
 </div>
 <div class="section" id="gui">
-<h2>Gui<a class="headerlink" href="#gui" title="Permalink to this headline">¶</a></h2>
+<h2>Gui<a class="headerlink" href="#gui" title="Permalink to this heading">¶</a></h2>
 <div class="line-block">
 <div class="line">Same as if you would use an actual detector.</div>
 <div class="line">Compile with SLS_USE_GUI=ON in cmake or -g option in cmk.sh script.</div>
@@ -357,7 +371,7 @@ slsMultiReceiver <span class="m">2012</span> <span class="m">2</span> <span clas
 </div>
 </div>
 <div class="section" id="limitations">
-<h2>Limitations<a class="headerlink" href="#limitations" title="Permalink to this headline">¶</a></h2>
+<h2>Limitations<a class="headerlink" href="#limitations" title="Permalink to this heading">¶</a></h2>
 <ol class="arabic simple">
 <li><p>Data coming out of virtual server is fake. Value at each pixel/ channel is incremented by 1.</p></li>
 <li><p>A stop will stop the virtual acquisition only at the start of every new frame.</p></li>
@@ -374,7 +388,7 @@ slsMultiReceiver <span class="m">2012</span> <span class="m">2</span> <span clas
           <footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
         <a href="serverdefaults.html" class="btn btn-neutral float-right" title="Default Values" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
-        <a href="serverupgrade.html" class="btn btn-neutral float-left" title="Detector Server Upgrade" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="serverupgrade.html" class="btn btn-neutral float-left" title="Upgrade" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
     </div>
 
   <hr/>
