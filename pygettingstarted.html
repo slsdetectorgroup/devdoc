@@ -111,6 +111,7 @@
 <ul class="current">
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Getting Started</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#which-python">Which Python?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#building-from-source">Building from Source</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#pythonpath">PYTHONPATH</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#which-detector-class-should-i-use">Which detector class should I use?</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#hey-there-seems-to-be-two-apis">Hey, there seems to be two APIs?</a></li>
@@ -230,30 +231,32 @@
 <h1>Getting Started<a class="headerlink" href="#getting-started" title="Permalink to this heading">¶</a></h1>
 <div class="section" id="which-python">
 <h2>Which Python?<a class="headerlink" href="#which-python" title="Permalink to this heading">¶</a></h2>
-<p>We require at lest Python 3.6 and strongly recommended that you don’t use the system
+<p>We require at least Python 3.6 and strongly recommended that you don’t use the system
 Python installation. The examples in this documentation uses <a class="reference external" href="https://docs.conda.io/en/latest/miniconda.html">conda</a> since it provides good support
 also for non Python packages but there are also other alternatives like, pyenv.</p>
 <p>Using something like conda also allows you to quickly switch beteen different Python
 environments.</p>
+</div>
+<div class="section" id="building-from-source">
+<h2>Building from Source<a class="headerlink" href="#building-from-source" title="Permalink to this heading">¶</a></h2>
+<p>If you are not installing slsdet binaries from conda, but instead building from
+source, please refer to  <a class="reference internal" href="installation.html#installation"><span class="std std-ref">the installation section</span></a> for details.</p>
+<p>Don’t forget to compile with the option SLS_USE_PYTHON=ON to enable the Python
+bindings or if you use the cmk.sh script -p.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Ensure that the python lib compiled is for the expected python version.
+<p>Ensure that the sls det python lib compiled is for the expected python version.
 For example, build/bin/_slsdet.cpython-39-x86_64-linux-gnu.so for Python v3.9.x</p>
 </div>
 </div>
 <div class="section" id="pythonpath">
 <h2>PYTHONPATH<a class="headerlink" href="#pythonpath" title="Permalink to this heading">¶</a></h2>
-<p>If you install slsdet using conda everything is set up and you can
+<p>If you install slsdet binaries using conda everything is set up and you can
 directly start using the Python bindings. However, if you build
-from source you need to tell Python where to find slsdet. This
-is be done by adding your build/bin directory to PYTHONPATH.</p>
+from source you need to tell Python where to find slsdet to use it. This
+can be done by adding your build/bin directory to PYTHONPATH.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">export</span> <span class="nv">PYTHONPATH</span> <span class="o">=</span> /path/to/your/build/bin:<span class="nv">$PYTHONPATH</span>
 </pre></div>
-</div>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>Don’t forget to compile with the option SLS_USE_PYTHON=ON to enable
-the Python bindings or if you use the cmk.sh script -p.</p>
 </div>
 </div>
 <div class="section" id="which-detector-class-should-i-use">
@@ -348,9 +351,10 @@ can use dir()</p>
 The following example gives you properties and methods containing time in
 their name.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="p">[</span><span class="n">item</span> <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="nb">dir</span><span class="p">(</span><span class="n">d</span><span class="p">)</span> <span class="k">if</span> <span class="s1">&#39;time&#39;</span> <span class="ow">in</span> <span class="n">item</span><span class="p">]</span>
-<span class="go">[&#39;exptime&#39;, &#39;getExptime&#39;, &#39;getExptimeForAllGates&#39;, &#39;getExptimeLeft&#39;,</span>
-<span class="go">&#39;getSubExptime&#39;, &#39;patwaittime0&#39;, &#39;patwaittime1&#39;, &#39;patwaittime2&#39;,</span>
-<span class="go">&#39;setExptime&#39;, &#39;setSubExptime&#39;, &#39;subdeadtime&#39;, &#39;subexptime&#39;]</span>
+<span class="go">[&#39;compdisabletime&#39;, &#39;exptime&#39;, &#39;exptimel&#39;, &#39;frametime&#39;, &#39;getExptime&#39;,</span>
+<span class="go">&#39;getExptimeForAllGates&#39;, &#39;getExptimeLeft&#39;, &#39;getSubExptime&#39;, &#39;patwaittime&#39;,</span>
+<span class="go">&#39;patwaittime0&#39;, &#39;patwaittime1&#39;, &#39;patwaittime2&#39;, &#39;runtime&#39;, &#39;setExptime&#39;,</span>
+<span class="go">&#39;setSubExptime&#39;, &#39;subdeadtime&#39;, &#39;subexptime&#39;]</span>
 </pre></div>
 </div>
 <p>The above method works on any Python object but for convenience we also
@@ -360,6 +364,7 @@ while find returns a list of names.</p>
 
 <span class="o">&gt;&gt;&gt;</span> <span class="n">view</span><span class="p">(</span><span class="s1">&#39;exptime&#39;</span><span class="p">)</span>
 <span class="n">exptime</span>
+<span class="n">exptimel</span>
 <span class="n">getExptime</span>
 <span class="n">getExptimeForAllGates</span>
 <span class="n">getExptimeLeft</span>
@@ -367,6 +372,7 @@ while find returns a list of names.</p>
 <span class="n">setExptime</span>
 <span class="n">setSubExptime</span>
 <span class="n">subexptime</span>
+
 
 <span class="o">&gt;&gt;&gt;</span> <span class="n">find</span><span class="p">(</span><span class="s1">&#39;exptime&#39;</span><span class="p">)</span>
 <span class="p">[</span><span class="s1">&#39;exptime&#39;</span><span class="p">,</span> <span class="s1">&#39;getExptime&#39;</span><span class="p">,</span> <span class="s1">&#39;getExptimeForAllGates&#39;</span><span class="p">,</span> <span class="s1">&#39;getExptimeLeft&#39;</span><span class="p">,</span>
@@ -384,16 +390,35 @@ while find returns a list of names.</p>
 
 <span class="go">    Note</span>
 <span class="go">    -----</span>
-<span class="go">    :getter: always returns in seconds. To get in datetime.delta, use getPeriod</span>
+<span class="go">    :getter: always returns in seconds. To get in DurationWrapper, use getPeriod</span>
 
-<span class="go">    Examples</span>
+<span class="go">    Example</span>
 <span class="go">    -----------</span>
+<span class="go">    &gt;&gt;&gt; # setting directly in seconds</span>
 <span class="go">    &gt;&gt;&gt; d.period = 1.05</span>
-<span class="go">    &gt;&gt;&gt; d.period = datetime.timedelta(minutes = 3, seconds = 1.23)</span>
+<span class="go">    &gt;&gt;&gt;</span>
+<span class="go">    &gt;&gt;&gt; # setting directly in seconds</span>
+<span class="go">    &gt;&gt;&gt; d.period = 5e-07</span>
+<span class="go">    &gt;&gt;&gt;</span>
+<span class="go">    &gt;&gt;&gt; # using timedelta (up to microseconds precision)</span>
+<span class="go">    &gt;&gt;&gt; from datatime import timedelta</span>
+<span class="go">    &gt;&gt;&gt; d.period = timedelta(seconds = 1, microseconds = 3)</span>
+<span class="go">    &gt;&gt;&gt;</span>
+<span class="go">    &gt;&gt;&gt; # using DurationWrapper to set in seconds</span>
+<span class="go">    &gt;&gt;&gt; from slsdet import DurationWrapper</span>
+<span class="go">    &gt;&gt;&gt; d.period = DurationWrapper(1.2)</span>
+<span class="go">    &gt;&gt;&gt;</span>
+<span class="go">    &gt;&gt;&gt; # using DurationWrapper to set in ns</span>
+<span class="go">    &gt;&gt;&gt; t = DurationWrapper()</span>
+<span class="go">    &gt;&gt;&gt; t.set_count(500)</span>
+<span class="go">    &gt;&gt;&gt; d.period = t</span>
+<span class="go">    &gt;&gt;&gt;</span>
+<span class="go">    &gt;&gt;&gt; # to get in seconds</span>
 <span class="go">    &gt;&gt;&gt; d.period</span>
 <span class="go">    181.23</span>
-<span class="go">    &gt;&gt;&gt; d.getPeriod()</span>
-<span class="go">    [datetime.timedelta(seconds=181, microseconds=230000)]</span>
+<span class="go">    &gt;&gt;&gt;</span>
+<span class="go">    &gt;&gt;&gt; d.getExptime()</span>
+<span class="go">    [sls::DurationWrapper(total_seconds: 181.23 count: 181230000000)]</span>
 </pre></div>
 </div>
 </div>
@@ -407,11 +432,12 @@ to pass in an enum.</p>
 <p>The enums can be found in slsdet.enums</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">slsdet</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="p">[</span><span class="n">e</span> <span class="k">for</span> <span class="n">e</span> <span class="ow">in</span> <span class="nb">dir</span><span class="p">(</span><span class="n">slsdet</span><span class="o">.</span><span class="n">enums</span><span class="p">)</span> <span class="k">if</span> <span class="ow">not</span> <span class="n">e</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">&#39;_&#39;</span><span class="p">)]</span>
-<span class="p">[</span><span class="s1">&#39;burstMode&#39;</span><span class="p">,</span> <span class="s1">&#39;clockIndex&#39;</span><span class="p">,</span> <span class="s1">&#39;dacIndex&#39;</span><span class="p">,</span>
-<span class="s1">&#39;detectorSettings&#39;</span><span class="p">,</span> <span class="s1">&#39;detectorType&#39;</span><span class="p">,</span> <span class="s1">&#39;dimension&#39;</span><span class="p">,</span> <span class="s1">&#39;externalSignalFlag&#39;</span><span class="p">,</span>
-<span class="s1">&#39;fileFormat&#39;</span><span class="p">,</span> <span class="s1">&#39;frameDiscardPolicy&#39;</span><span class="p">,</span>
-<span class="s1">&#39;readoutMode&#39;</span><span class="p">,</span> <span class="s1">&#39;runStatus&#39;</span><span class="p">,</span> <span class="s1">&#39;speedLevel&#39;</span><span class="p">,</span> <span class="s1">&#39;timingMode&#39;</span><span class="p">,</span>
-<span class="s1">&#39;timingSourceType&#39;</span><span class="p">]</span>
+<span class="p">[</span><span class="s1">&#39;M3_GainCaps&#39;</span><span class="p">,</span> <span class="s1">&#39;burstMode&#39;</span><span class="p">,</span> <span class="s1">&#39;clockIndex&#39;</span><span class="p">,</span> <span class="s1">&#39;cls&#39;</span><span class="p">,</span> <span class="s1">&#39;dacIndex&#39;</span><span class="p">,</span> <span class="s1">&#39;detectorSettings&#39;</span><span class="p">,</span>
+<span class="s1">&#39;detectorType&#39;</span><span class="p">,</span> <span class="s1">&#39;dimension&#39;</span><span class="p">,</span> <span class="s1">&#39;externalSignalFlag&#39;</span><span class="p">,</span> <span class="s1">&#39;fileFormat&#39;</span><span class="p">,</span>
+<span class="s1">&#39;frameDiscardPolicy&#39;</span><span class="p">,</span> <span class="s1">&#39;gainMode&#39;</span><span class="p">,</span> <span class="s1">&#39;name&#39;</span><span class="p">,</span> <span class="s1">&#39;polarity&#39;</span><span class="p">,</span> <span class="s1">&#39;portPosition&#39;</span><span class="p">,</span>
+<span class="s1">&#39;readoutMode&#39;</span><span class="p">,</span> <span class="s1">&#39;runStatus&#39;</span><span class="p">,</span> <span class="s1">&#39;speedLevel&#39;</span><span class="p">,</span> <span class="s1">&#39;streamingInterface&#39;</span><span class="p">,</span> <span class="s1">&#39;timingMode&#39;</span><span class="p">,</span>
+<span class="s1">&#39;timingSourceType&#39;</span><span class="p">,</span> <span class="s1">&#39;vetoAlgorithm&#39;</span><span class="p">]</span>
+
 
 <span class="c1"># Even though importing using * is not recommended one could</span>
 <span class="c1"># get all the enums like this:</span>

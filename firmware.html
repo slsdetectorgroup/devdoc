@@ -363,14 +363,22 @@ reconfig fw0
 </div>
 <div class="section" id="id2">
 <h3>Upgrade<a class="headerlink" href="#id2" title="Permalink to this heading">¶</a></h3>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>These instructions are for upgrades from v5.0.0. For earlier versions, contact us.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>In case you have had issues in the past with programming via software:</p>
+<ul class="simple">
+<li><p>6.1.2 server has a fix for seamless fpga programming</p></li>
+<li><p>We recommend first updating the on-board detector server to 6.1.2 (with client 6.1.x) using command ‘updatedetectorserver’ or ‘copydetectorserver’.</p></li>
+<li><p>Then use command ‘programfpga’ to only update firmware or use command ‘update’ to update firmware and server to the latest release.</p></li>
+</ul>
 </div>
 <p>Check <a class="reference internal" href="#blackfin-firmware-troubleshooting"><span class="std std-ref">firmware troubleshooting</span></a> if you run into issues while programming firmware.</p>
-<p>Always ensure that the client and server software are of the same release.</p>
 <dl>
-<dt>Program from console</dt><dd><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># copies server from tftp folder of pc, links new server to jungfrauDetectorServer,</span>
+<dt>Program from console</dt><dd><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># These instructions are for upgrades from v5.0.0. For earlier versions, please contact us.</span>
+
+<span class="c1"># Always ensure that the client and server software are of the same release.</span>
+
+<span class="c1"># copies server from tftp folder of pc, links new server to jungfrauDetectorServer,</span>
 <span class="c1"># removes old server from respawn, sets up new lnked server to respawn</span>
 <span class="c1"># programs fpga,</span>
 <span class="c1"># reboots</span>
@@ -416,10 +424,6 @@ sls_detector_put programfpga xxx.pof
 </div>
 <div class="section" id="mythen-iii">
 <h2>Mythen III<a class="headerlink" href="#mythen-iii" title="Permalink to this heading">¶</a></h2>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>As it is still in development, the rbf files must be picked up from us.</p>
-</div>
 <div class="section" id="id5">
 <h3>Download<a class="headerlink" href="#id5" title="Permalink to this heading">¶</a></h3>
 <ul class="simple">
@@ -429,9 +433,10 @@ sls_detector_put programfpga xxx.pof
 </div>
 <div class="section" id="id6">
 <h3>Upgrade<a class="headerlink" href="#id6" title="Permalink to this heading">¶</a></h3>
-<p>Always ensure that the client and server software are of the same release.</p>
 <dl>
-<dt>Program from console</dt><dd><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># copies server from tftp folder of pc, links new server to mythen3DetectorServer,</span>
+<dt>Program from console</dt><dd><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Always ensure that the client and server software are of the same release.</span>
+
+<span class="c1"># copies server from tftp folder of pc, links new server to mythen3DetectorServer,</span>
 <span class="c1"># programs fpga,</span>
 <span class="c1"># reboots</span>
 sls_detector_put update mythen3DetectorServervxxx pcxxx xxx.rbf
@@ -459,9 +464,10 @@ sls_detector_put programfpga xxx.rbf
 </div>
 <div class="section" id="id8">
 <h3>Upgrade<a class="headerlink" href="#id8" title="Permalink to this heading">¶</a></h3>
-<p>Always ensure that the client and server software are of the same release.</p>
 <dl>
-<dt>Program from console</dt><dd><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># copies server from tftp folder of pc, links new server to gotthard2DetectorServer,</span>
+<dt>Program from console</dt><dd><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Always ensure that the client and server software are of the same release.</span>
+
+<span class="c1"># copies server from tftp folder of pc, links new server to gotthard2DetectorServer,</span>
 <span class="c1"># programs fpga,</span>
 <span class="c1"># reboots</span>
 sls_detector_put update gotthard2DetectorServervxxx pcxxx xxx.rbf
@@ -489,10 +495,20 @@ sls_detector_put programfpga xxx.rbf
 </div>
 <div class="section" id="id10">
 <h3>Upgrade<a class="headerlink" href="#id10" title="Permalink to this heading">¶</a></h3>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>In case you have had issues in the past with programming via software:</p>
+<ul class="simple">
+<li><p>6.1.2 server has a fix for seamless fpga programming</p></li>
+<li><p>We recommend first updating the on-board detector server to 6.1.2 (with client 6.1.x) using command ‘updatedetectorserver’ or ‘copydetectorserver’.</p></li>
+<li><p>Then use command ‘programfpga’ to only update firmware or use command ‘update’ to update firmware and server to the latest release.</p></li>
+</ul>
+</div>
 <p>Check <a class="reference internal" href="#blackfin-firmware-troubleshooting"><span class="std std-ref">firmware troubleshooting</span></a> if you run into issues while programming firmware.</p>
-<p>Always ensure that the client and server software are of the same release.</p>
 <dl>
-<dt>Program from console</dt><dd><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># copies server from tftp folder of pc, links new server to moenchDetectorServer,</span>
+<dt>Program from console</dt><dd><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Always ensure that the client and server software are of the same release.</span>
+
+<span class="c1"># copies server from tftp folder of pc, links new server to moenchDetectorServer,</span>
 <span class="c1"># removes old server from respawn, sets up new lnked server to respawn</span>
 <span class="c1"># programs fpga,</span>
 <span class="c1"># reboots</span>
@@ -518,9 +534,10 @@ sls_detector_put programfpga xxx.pof
 <div class="section" id="id12">
 <h3>Upgrade<a class="headerlink" href="#id12" title="Permalink to this heading">¶</a></h3>
 <p>Check <a class="reference internal" href="#blackfin-firmware-troubleshooting"><span class="std std-ref">firmware troubleshooting</span></a> if you run into issues while programming firmware.</p>
-<p>Always ensure that the client and server software are of the same release.</p>
 <dl>
-<dt>Program from console</dt><dd><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># copies server from tftp folder of pc, links new server to ctbDetectorServer,</span>
+<dt>Program from console</dt><dd><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Always ensure that the client and server software are of the same release.</span>
+
+<span class="c1"># copies server from tftp folder of pc, links new server to ctbDetectorServer,</span>
 <span class="c1"># removes old server from respawn, sets up new lnked server to respawn</span>
 <span class="c1"># programs fpga,</span>
 <span class="c1"># reboots</span>

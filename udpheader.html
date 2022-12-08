@@ -140,6 +140,8 @@
 <ul class="current">
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Format</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#current-version">Current Version</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#description">Description</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#detector-enum">Detector Enum</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#previous-versions">Previous Versions</a></li>
 </ul>
 </li>
@@ -226,7 +228,7 @@
 <p>The UDP data format for the packets consist of a common header for all detectors, followed by the data for that one packet.</p>
 <div class="section" id="current-version">
 <h2>Current Version<a class="headerlink" href="#current-version" title="Permalink to this heading">¶</a></h2>
-<p><strong>v3.0 (slsDetectorPackage v7.0.0+)</strong></p>
+<p><strong>v2.0 (slsDetectorPackage v7.0.0+)</strong></p>
 <table class="colwidths-given docutils align-center" id="id1">
 <caption><span class="caption-text">&lt;—————————————————- 8 bytes —————————————————-&gt;</span><a class="headerlink" href="#id1" title="Permalink to this table">¶</a></caption>
 <colgroup>
@@ -258,7 +260,16 @@
 </tr>
 </tbody>
 </table>
-<ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Since there is no difference in the format of the UDP header from the detector
+from the previous version (v2.0), the version number stays the same.</p>
+<p>Only the struture member names have changed in sls_detector_defs.h</p>
+</div>
+</div>
+<div class="section" id="description">
+<h2>Description<a class="headerlink" href="#description" title="Permalink to this heading">¶</a></h2>
+<ul class="simple">
 <li><p><strong>Detector specific field</strong> descriptions are found <a class="reference internal" href="udpdetspec.html#detector-specific-fields"><span class="std std-ref">here</span></a>.</p></li>
 <li><p><strong>frameNumber</strong>: framenumber to which the current packet belongs to.</p></li>
 <li><p><strong>expLength</strong>: measured exposure time of the frame in tenths of microsecond. It is instead the sub frame number for Eiger.</p></li>
@@ -267,7 +278,12 @@
 <li><p><strong>modId</strong>: module ID picked up from det_id_[detector type].txt on the detector cpu.</p></li>
 <li><p><strong>row</strong>: row position of the module in the detector system. It is calculated by the order of the module in hostname command, as well as the detsize command.</p></li>
 <li><p><strong>column</strong>: column position of the module in the detector system.  It is calculated by the order of the module in hostname command, as well as the detsize command.</p></li>
-<li><p><strong>detType</strong>: detector type from enum of detectorType in the package.</p>
+<li><p><strong>detType</strong>: detector type from enum of detectorType in the package.</p></li>
+<li><p><strong>version</strong>: current version of the detector header (0x2).</p></li>
+</ul>
+</div>
+<div class="section" id="detector-enum">
+<h2>Detector Enum<a class="headerlink" href="#detector-enum" title="Permalink to this heading">¶</a></h2>
 <blockquote>
 <div><table class="docutils align-default">
 <colgroup>
@@ -307,9 +323,6 @@
 </tbody>
 </table>
 </div></blockquote>
-</li>
-<li><p><strong>version</strong>: current version of the detector header. It is at 0x3.</p></li>
-</ul>
 </div>
 <div class="section" id="previous-versions">
 <h2>Previous Versions<a class="headerlink" href="#previous-versions" title="Permalink to this heading">¶</a></h2>

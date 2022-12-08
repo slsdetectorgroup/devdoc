@@ -254,14 +254,19 @@
 <span id="detector-server-arguments"></span><h2>Arguments<a class="headerlink" href="#arguments" title="Permalink to this heading">¶</a></h2>
 <blockquote>
 <div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>Possible arguments are:
--v, --version            : Software version
--p, --port &lt;port&gt;        : TCP communication port with client.
--g, --nomodule           : <span class="o">[</span>Mythen3<span class="o">][</span>Gotthard2<span class="o">]</span> Generic or No Module mode.
-                           Skips detector <span class="nb">type</span> checks.
--f, --phaseshift &lt;value&gt; : <span class="o">[</span>Gotthard<span class="o">]</span> only. Sets phase shift.
--d, --devel              : Developer mode. Skips firmware checks.
--u, --update             : Update mode. Skips firmware checks and initial detector setup.
--s, --stopserver         : Stop server. Do not use as it is created by control server
+   -v, --version            : Software version
+   -p, --port &lt;port&gt;        : TCP communication port with client.
+   -g, --nomodule           : <span class="o">[</span>Mythen3<span class="o">][</span>Gotthard2<span class="o">]</span>
+                              Generic or No Module mode. Skips detector <span class="nb">type</span> checks.
+   -f, --phaseshift &lt;value&gt; : <span class="o">[</span>Gotthard<span class="o">]</span> only. Sets phase shift.
+   -d, --devel              : Developer mode. Skips firmware checks.
+   -u, --update             : Update mode. Skips firmware checks and initial detector setup.
+   -i, --ignore-config      : <span class="o">[</span>Eiger<span class="o">][</span>Jungfrau<span class="o">][</span>Gotthard<span class="o">][</span>Gotthard2<span class="o">][</span>Moench<span class="o">]</span>
+                              Ignore config file.
+   -m, --master &lt;master&gt;    : <span class="o">[</span>Eiger<span class="o">][</span>Mythen3<span class="o">][</span>Gotthard<span class="o">][</span>Gotthard2<span class="o">]</span>
+                              Set Master to <span class="m">0</span> or <span class="m">1</span>. Precedence over config file. Only <span class="k">for</span> virtual servers except Eiger.
+   -t, --top &lt;top&gt;          : <span class="o">[</span>Eiger<span class="o">]</span> Set Top to <span class="m">0</span> or <span class="m">1</span>. Precedence over config file.
+   -s, --stopserver         : Stop server. Do not use as it is created by control server
 </pre></div>
 </div>
 </div></blockquote>
@@ -314,6 +319,8 @@ vi /etc/init.d/S99detServer.sh
 :</p>
 <blockquote>
 <div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sync
+
+<span class="c1"># physically reboot for Gotthard II or Mythen III</span>
 reboot
 
 <span class="c1"># verify</span>

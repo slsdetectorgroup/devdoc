@@ -1034,7 +1034,7 @@ Also changes clkdiv 2, 3, 4</p>
 <p class="admonition-title">Note</p>
 <dl class="field-list simple">
 <dt class="field-odd">getter</dt>
-<dd class="field-odd"><p>always returns in seconds. To get in datetime.delta, use getBurstPeriod</p>
+<dd class="field-odd"><p>always returns in seconds. To get in DurationWrapper, use getBurstPeriod</p>
 </dd>
 <dt class="field-even">setter</dt>
 <dd class="field-even"><p>Not Implemented</p>
@@ -1042,12 +1042,31 @@ Also changes clkdiv 2, 3, 4</p>
 </dl>
 </div>
 <p class="rubric">Example</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">d</span><span class="o">.</span><span class="n">burstperiod</span> <span class="o">=</span> <span class="mf">1.05</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">d</span><span class="o">.</span><span class="n">burstperiod</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">timedelta</span><span class="p">(</span><span class="n">minutes</span> <span class="o">=</span> <span class="mi">3</span><span class="p">,</span> <span class="n">seconds</span> <span class="o">=</span> <span class="mf">1.23</span><span class="p">)</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="c1"># setting directly in seconds</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">d</span><span class="o">.</span><span class="n">burstperiod</span> <span class="o">=</span> <span class="mf">1.05</span>
+<span class="go">&gt;&gt;&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># setting directly in seconds</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">d</span><span class="o">.</span><span class="n">burstperiod</span> <span class="o">=</span> <span class="mf">5e-07</span>
+<span class="go">&gt;&gt;&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># using timedelta (up to microseconds precision)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">datatime</span> <span class="kn">import</span> <span class="n">timedelta</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">d</span><span class="o">.</span><span class="n">burstperiod</span> <span class="o">=</span> <span class="n">timedelta</span><span class="p">(</span><span class="n">seconds</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">microseconds</span> <span class="o">=</span> <span class="mi">3</span><span class="p">)</span>
+<span class="go">&gt;&gt;&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># using DurationWrapper to set in seconds</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">slsdet</span> <span class="kn">import</span> <span class="n">DurationWrapper</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">d</span><span class="o">.</span><span class="n">burstperiod</span> <span class="o">=</span> <span class="n">DurationWrapper</span><span class="p">(</span><span class="mf">1.2</span><span class="p">)</span>
+<span class="go">&gt;&gt;&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># using DurationWrapper to set in ns</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span> <span class="o">=</span> <span class="n">DurationWrapper</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span><span class="o">.</span><span class="n">set_count</span><span class="p">(</span><span class="mi">500</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">d</span><span class="o">.</span><span class="n">burstperiod</span> <span class="o">=</span> <span class="n">t</span>
+<span class="go">&gt;&gt;&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># to get in seconds</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">d</span><span class="o">.</span><span class="n">burstperiod</span>
 <span class="go">181.23</span>
+<span class="go">&gt;&gt;&gt;</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">d</span><span class="o">.</span><span class="n">getBurstPeriod</span><span class="p">()</span>
-<span class="go">[datetime.timedelta(seconds=181, microseconds=230000)]</span>
+<span class="go">sls::DurationWrapper(total_seconds: 181.23 count: 181230000000)</span>
 </pre></div>
 </div>
 </dd></dl>
@@ -1163,17 +1182,36 @@ Also changes clkdiv 2, 3, 4</p>
 <p>It is only possible for chipv1.1.</p>
 <dl class="field-list simple">
 <dt class="field-odd">getter</dt>
-<dd class="field-odd"><p>always returns in seconds. To get in datetime.delta, use getComparatorDisableTime</p>
+<dd class="field-odd"><p>always returns in seconds. To get in DurationWrapper, use getComparatorDisableTime</p>
 </dd>
 </dl>
 </div>
 <p class="rubric">Example</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">d</span><span class="o">.</span><span class="n">compdisabletime</span> <span class="o">=</span> <span class="mf">1.05</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">d</span><span class="o">.</span><span class="n">compdisabletime</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">timedelta</span><span class="p">(</span><span class="n">minutes</span> <span class="o">=</span> <span class="mi">3</span><span class="p">,</span> <span class="n">seconds</span> <span class="o">=</span> <span class="mf">1.23</span><span class="p">)</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="c1"># setting directly in seconds</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">d</span><span class="o">.</span><span class="n">compdisabletime</span> <span class="o">=</span> <span class="mf">1.05</span>
+<span class="go">&gt;&gt;&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># setting directly in seconds</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">d</span><span class="o">.</span><span class="n">compdisabletime</span> <span class="o">=</span> <span class="mf">5e-07</span>
+<span class="go">&gt;&gt;&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># using timedelta (up to microseconds precision)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">datatime</span> <span class="kn">import</span> <span class="n">timedelta</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">d</span><span class="o">.</span><span class="n">compdisabletime</span> <span class="o">=</span> <span class="n">timedelta</span><span class="p">(</span><span class="n">seconds</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">microseconds</span> <span class="o">=</span> <span class="mi">3</span><span class="p">)</span>
+<span class="go">&gt;&gt;&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># using DurationWrapper to set in seconds</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">slsdet</span> <span class="kn">import</span> <span class="n">DurationWrapper</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">d</span><span class="o">.</span><span class="n">compdisabletime</span> <span class="o">=</span> <span class="n">DurationWrapper</span><span class="p">(</span><span class="mf">1.2</span><span class="p">)</span>
+<span class="go">&gt;&gt;&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># using DurationWrapper to set in ns</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span> <span class="o">=</span> <span class="n">DurationWrapper</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span><span class="o">.</span><span class="n">set_count</span><span class="p">(</span><span class="mi">500</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">d</span><span class="o">.</span><span class="n">compdisabletime</span> <span class="o">=</span> <span class="n">t</span>
+<span class="go">&gt;&gt;&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># to get in seconds</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">d</span><span class="o">.</span><span class="n">compdisabletime</span>
 <span class="go">181.23</span>
+<span class="go">&gt;&gt;&gt;</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">d</span><span class="o">.</span><span class="n">getComparatorDisableTime</span><span class="p">()</span>
-<span class="go">[datetime.timedelta(seconds=181, microseconds=230000)]</span>
+<span class="go">sls::DurationWrapper(total_seconds: 181.23 count: 181230000000)</span>
 </pre></div>
 </div>
 </dd></dl>
@@ -1273,14 +1311,33 @@ see python/examples/use_currentsource.py</p>
 <dl class="py property">
 <dt class="sig sig-object py" id="slsdet.Detector.delay">
 <em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">delay</span></span><a class="headerlink" href="#slsdet.Detector.delay" title="Permalink to this definition">¶</a></dt>
-<dd><p>[Gotthard][Jungfrau][CTB][Moench][Mythen3][Gotthard2] Delay after trigger, accepts either a value in seconds or datetime.timedelta</p>
+<dd><p>[Gotthard][Jungfrau][CTB][Moench][Mythen3][Gotthard2] Delay after trigger, accepts either a value in seconds, DurationWrapper or datetime.timedelta</p>
 <p class="rubric">Example</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">d</span><span class="o">.</span><span class="n">delay</span> <span class="o">=</span> <span class="mf">1.05</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">d</span><span class="o">.</span><span class="n">delay</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">timedelta</span><span class="p">(</span><span class="n">minutes</span> <span class="o">=</span> <span class="mi">3</span><span class="p">,</span> <span class="n">seconds</span> <span class="o">=</span> <span class="mf">1.23</span><span class="p">)</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="c1"># setting directly in seconds</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">d</span><span class="o">.</span><span class="n">delay</span> <span class="o">=</span> <span class="mf">1.05</span>
+<span class="go">&gt;&gt;&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># setting directly in seconds</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">d</span><span class="o">.</span><span class="n">delay</span> <span class="o">=</span> <span class="mf">5e-07</span>
+<span class="go">&gt;&gt;&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># using timedelta (up to microseconds precision)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">datatime</span> <span class="kn">import</span> <span class="n">timedelta</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">d</span><span class="o">.</span><span class="n">delay</span> <span class="o">=</span> <span class="n">timedelta</span><span class="p">(</span><span class="n">seconds</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">microseconds</span> <span class="o">=</span> <span class="mi">3</span><span class="p">)</span>
+<span class="go">&gt;&gt;&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># using DurationWrapper to set in seconds</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">slsdet</span> <span class="kn">import</span> <span class="n">DurationWrapper</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">d</span><span class="o">.</span><span class="n">delay</span> <span class="o">=</span> <span class="n">DurationWrapper</span><span class="p">(</span><span class="mf">1.2</span><span class="p">)</span>
+<span class="go">&gt;&gt;&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># using DurationWrapper to set in ns</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span> <span class="o">=</span> <span class="n">DurationWrapper</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span><span class="o">.</span><span class="n">set_count</span><span class="p">(</span><span class="mi">500</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">d</span><span class="o">.</span><span class="n">delay</span> <span class="o">=</span> <span class="n">t</span>
+<span class="go">&gt;&gt;&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># to get in seconds</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">d</span><span class="o">.</span><span class="n">delay</span>
 <span class="go">181.23</span>
+<span class="go">&gt;&gt;&gt;</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">d</span><span class="o">.</span><span class="n">getDelayAfterTrigger</span><span class="p">()</span>
-<span class="go">[datetime.timedelta(seconds=181, microseconds=230000)]</span>
+<span class="go">sls::DurationWrapper(total_seconds: 181.23 count: 181230000000)</span>
 </pre></div>
 </div>
 </dd></dl>
@@ -1288,13 +1345,13 @@ see python/examples/use_currentsource.py</p>
 <dl class="py property">
 <dt class="sig sig-object py" id="slsdet.Detector.delayl">
 <em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">delayl</span></span><a class="headerlink" href="#slsdet.Detector.delayl" title="Permalink to this definition">¶</a></dt>
-<dd><p>[Gotthard][Jungfrau][CTB][Moench][Mythen3][Gotthard2] Delay left after trigger during acquisition, accepts either a value in seconds or datetime.timedelta</p>
+<dd><p>[Gotthard][Jungfrau][CTB][Moench][Mythen3][Gotthard2] Delay left after trigger during acquisition, accepts either a value in seconds, datetime.timedelta or DurationWrapper</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>[Gotthard2] only in continuous mdoe.</p>
 <dl class="field-list simple">
 <dt class="field-odd">getter</dt>
-<dd class="field-odd"><p>always returns in seconds. To get in datetime.delta, use getDelayAfterTriggerLeft</p>
+<dd class="field-odd"><p>always returns in seconds. To get in DurationWrapper, use getDelayAfterTriggerLeft</p>
 </dd>
 <dt class="field-even">setter</dt>
 <dd class="field-even"><p>Not Implemented</p>
@@ -1305,7 +1362,7 @@ see python/examples/use_currentsource.py</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">d</span><span class="o">.</span><span class="n">delayl</span>
 <span class="go">181.23</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">d</span><span class="o">.</span><span class="n">getDelayAfterTriggerLeft</span><span class="p">()</span>
-<span class="go">[datetime.timedelta(seconds=181, microseconds=230000)]</span>
+<span class="go">[sls::DurationWrapper(total_seconds: 181.23 count: 181230000000)]</span>
 </pre></div>
 </div>
 </dd></dl>
@@ -1406,6 +1463,9 @@ see python/examples/use_currentsource.py</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="c1"># setting directly in seconds</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">d</span><span class="o">.</span><span class="n">exptime</span> <span class="o">=</span> <span class="mf">1.05</span>
 <span class="go">&gt;&gt;&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># setting directly in seconds</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">d</span><span class="o">.</span><span class="n">exptime</span> <span class="o">=</span> <span class="mf">5e-07</span>
+<span class="go">&gt;&gt;&gt;</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="c1"># using timedelta (up to microseconds precision)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">datatime</span> <span class="kn">import</span> <span class="n">timedelta</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">d</span><span class="o">.</span><span class="n">exptime</span> <span class="o">=</span> <span class="n">timedelta</span><span class="p">(</span><span class="n">seconds</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">microseconds</span> <span class="o">=</span> <span class="mi">3</span><span class="p">)</span>
@@ -1437,7 +1497,7 @@ see python/examples/use_currentsource.py</p>
 <p class="admonition-title">Note</p>
 <dl class="field-list simple">
 <dt class="field-odd">getter</dt>
-<dd class="field-odd"><p>always returns in seconds. To get in datetime.delta, use getExptimeLeft</p>
+<dd class="field-odd"><p>always returns in seconds. To get in DurationWrapper, use getExptimeLeft</p>
 </dd>
 <dt class="field-even">setter</dt>
 <dd class="field-even"><p>Not Implemented</p>
@@ -1448,7 +1508,7 @@ see python/examples/use_currentsource.py</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">d</span><span class="o">.</span><span class="n">exptimel</span>
 <span class="go">181.23</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">d</span><span class="o">.</span><span class="n">getExptimeLeft</span><span class="p">()</span>
-<span class="go">[datetime.timedelta(seconds=181, microseconds=230000)]</span>
+<span class="go">[sls::DurationWrapper(total_seconds: 181.23 count: 181230000000)]</span>
 </pre></div>
 </div>
 </dd></dl>
@@ -1668,26 +1728,42 @@ eg. file name: run_d0_f0_5.raw</p>
 <dl class="py property">
 <dt class="sig sig-object py" id="slsdet.Detector.gatedelay">
 <em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">gatedelay</span></span><a class="headerlink" href="#slsdet.Detector.gatedelay" title="Permalink to this definition">¶</a></dt>
-<dd><p>[Mythen3] Gate Delay of all gate signals in auto and trigger mode (internal gating), accepts either a value in seconds or datetime.timedelta</p>
+<dd><p>[Mythen3] Gate Delay of all gate signals in auto and trigger mode (internal gating), accepts either a value in seconds, datetime.timedelta or DurationWrapper</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>To specify gateIndex, use getGateDelay or setGateDelay.</p>
 <dl class="field-list simple">
 <dt class="field-odd">getter</dt>
-<dd class="field-odd"><p>always returns in seconds. To get in datetime.delta, use getGateDelayForAllGates or getGateDelay(gateIndex)</p>
+<dd class="field-odd"><p>always returns in seconds. To get in DurationWrapper, use getGateDelayForAllGates or getGateDelay(gateIndex)</p>
 </dd>
 </dl>
 </div>
 <p class="rubric">Example</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">d</span><span class="o">.</span><span class="n">gatedelay</span> <span class="o">=</span> <span class="mf">1.05</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">d</span><span class="o">.</span><span class="n">gatedelay</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">timedelta</span><span class="p">(</span><span class="n">minutes</span> <span class="o">=</span> <span class="mi">3</span><span class="p">,</span> <span class="n">seconds</span> <span class="o">=</span> <span class="mf">1.23</span><span class="p">)</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="c1"># setting directly in seconds</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">d</span><span class="o">.</span><span class="n">gatedelay</span> <span class="o">=</span> <span class="mf">1.05</span>
+<span class="go">&gt;&gt;&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># setting directly in seconds</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">d</span><span class="o">.</span><span class="n">gatedelay</span> <span class="o">=</span> <span class="mf">5e-07</span>
+<span class="go">&gt;&gt;&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># using timedelta (up to microseconds precision)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">datatime</span> <span class="kn">import</span> <span class="n">timedelta</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">d</span><span class="o">.</span><span class="n">gatedelay</span> <span class="o">=</span> <span class="n">timedelta</span><span class="p">(</span><span class="n">seconds</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">microseconds</span> <span class="o">=</span> <span class="mi">3</span><span class="p">)</span>
+<span class="go">&gt;&gt;&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># using DurationWrapper to set in seconds</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">slsdet</span> <span class="kn">import</span> <span class="n">DurationWrapper</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">d</span><span class="o">.</span><span class="n">gatedelay</span> <span class="o">=</span> <span class="n">DurationWrapper</span><span class="p">(</span><span class="mf">1.2</span><span class="p">)</span>
+<span class="go">&gt;&gt;&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># using DurationWrapper to set in ns</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span> <span class="o">=</span> <span class="n">DurationWrapper</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span><span class="o">.</span><span class="n">set_count</span><span class="p">(</span><span class="mi">500</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">d</span><span class="o">.</span><span class="n">gatedelay</span> <span class="o">=</span> <span class="n">t</span>
+<span class="go">&gt;&gt;&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># to get in seconds</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">d</span><span class="o">.</span><span class="n">gatedelay</span>
 <span class="go">181.23</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">d</span><span class="o">.</span><span class="n">setGateDelay</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">datetime</span><span class="o">.</span><span class="n">timedelta</span><span class="p">(</span><span class="n">seconds</span> <span class="o">=</span> <span class="mi">2</span><span class="p">))</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">d</span><span class="o">.</span><span class="n">gatedelay</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="p">[</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">2.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">]</span>
+<span class="go">&gt;&gt;&gt;</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">d</span><span class="o">.</span><span class="n">getExptimeForAllGates</span><span class="p">()</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="p">[[</span><span class="n">datetime</span><span class="o">.</span><span class="n">timedelta</span><span class="p">(</span><span class="n">seconds</span><span class="o">=</span><span class="mi">181</span><span class="p">,</span> <span class="n">microseconds</span><span class="o">=</span><span class="mi">230000</span><span class="p">),</span> <span class="n">datetime</span><span class="o">.</span><span class="n">timedelta</span><span class="p">(</span><span class="n">seconds</span><span class="o">=</span><span class="mi">181</span><span class="p">,</span> <span class="n">microseconds</span><span class="o">=</span><span class="mi">230000</span><span class="p">),</span> <span class="n">datetime</span><span class="o">.</span><span class="n">timedelta</span><span class="p">(</span><span class="n">seconds</span><span class="o">=</span><span class="mi">181</span><span class="p">,</span> <span class="n">microseconds</span><span class="o">=</span><span class="mi">230000</span><span class="p">)]]</span>
+<span class="go">sls::DurationWrapper(total_seconds: 181.23 count: 181230000000)</span>
 </pre></div>
 </div>
 </dd></dl>
@@ -3373,12 +3449,31 @@ Set up per measurement.</p>
 <em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">period</span></span><a class="headerlink" href="#slsdet.Detector.period" title="Permalink to this definition">¶</a></dt>
 <dd><p>Period between frames, accepts either a value in seconds or datetime.timedelta</p>
 <p class="rubric">Example</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">d</span><span class="o">.</span><span class="n">period</span> <span class="o">=</span> <span class="mf">1.05</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">d</span><span class="o">.</span><span class="n">period</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">timedelta</span><span class="p">(</span><span class="n">minutes</span> <span class="o">=</span> <span class="mi">3</span><span class="p">,</span> <span class="n">seconds</span> <span class="o">=</span> <span class="mf">1.23</span><span class="p">)</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="c1"># setting directly in seconds</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">d</span><span class="o">.</span><span class="n">period</span> <span class="o">=</span> <span class="mf">1.05</span>
+<span class="go">&gt;&gt;&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># setting directly in seconds</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">d</span><span class="o">.</span><span class="n">period</span> <span class="o">=</span> <span class="mf">5e-07</span>
+<span class="go">&gt;&gt;&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># using timedelta (up to microseconds precision)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">datatime</span> <span class="kn">import</span> <span class="n">timedelta</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">d</span><span class="o">.</span><span class="n">period</span> <span class="o">=</span> <span class="n">timedelta</span><span class="p">(</span><span class="n">seconds</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">microseconds</span> <span class="o">=</span> <span class="mi">3</span><span class="p">)</span>
+<span class="go">&gt;&gt;&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># using DurationWrapper to set in seconds</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">slsdet</span> <span class="kn">import</span> <span class="n">DurationWrapper</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">d</span><span class="o">.</span><span class="n">period</span> <span class="o">=</span> <span class="n">DurationWrapper</span><span class="p">(</span><span class="mf">1.2</span><span class="p">)</span>
+<span class="go">&gt;&gt;&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># using DurationWrapper to set in ns</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span> <span class="o">=</span> <span class="n">DurationWrapper</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span><span class="o">.</span><span class="n">set_count</span><span class="p">(</span><span class="mi">500</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">d</span><span class="o">.</span><span class="n">period</span> <span class="o">=</span> <span class="n">t</span>
+<span class="go">&gt;&gt;&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># to get in seconds</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">d</span><span class="o">.</span><span class="n">period</span>
 <span class="go">181.23</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">d</span><span class="o">.</span><span class="n">getPeriod</span><span class="p">()</span>
-<span class="go">[datetime.timedelta(seconds=181, microseconds=230000)]</span>
+<span class="go">&gt;&gt;&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">d</span><span class="o">.</span><span class="n">getExptime</span><span class="p">()</span>
+<span class="go">sls::DurationWrapper(total_seconds: 181.23 count: 181230000000)</span>
 </pre></div>
 </div>
 </dd></dl>
@@ -3392,7 +3487,7 @@ Set up per measurement.</p>
 <p>[Gotthard2] only in continuous mode.</p>
 <dl class="field-list simple">
 <dt class="field-odd">getter</dt>
-<dd class="field-odd"><p>always returns in seconds. To get in datetime.delta, use getPeriodLeft</p>
+<dd class="field-odd"><p>always returns in seconds. To get in DurationWrapper, use getPeriodLeft</p>
 </dd>
 <dt class="field-even">setter</dt>
 <dd class="field-even"><p>Not Implemented</p>
@@ -3403,7 +3498,7 @@ Set up per measurement.</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">d</span><span class="o">.</span><span class="n">periodl</span>
 <span class="go">181.23</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">d</span><span class="o">.</span><span class="n">getPeriodLeft</span><span class="p">()</span>
-<span class="go">[datetime.timedelta(seconds=181, microseconds=230000)]</span>
+<span class="go">[sls::DurationWrapper(total_seconds: 181.23 count: 181230000000)]</span>
 </pre></div>
 </div>
 </dd></dl>
@@ -5022,24 +5117,43 @@ runStatus.IDLE</p>
 <dl class="py property">
 <dt class="sig sig-object py" id="slsdet.Detector.storagecell_delay">
 <em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">storagecell_delay</span></span><a class="headerlink" href="#slsdet.Detector.storagecell_delay" title="Permalink to this definition">¶</a></dt>
-<dd><p>[Jungfrau] Additional time delay between 2 consecutive exposures in burst mode, accepts either a value in seconds or datetime.timedelta</p>
+<dd><p>[Jungfrau] Additional time delay between 2 consecutive exposures in burst mode, accepts either a value in seconds, datetime.timedelta or DurationWrapper</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Only applicable for chipv1.0. For advanced users only</p>
 <p>Value: 0-1638375 ns (resolution of 25ns)</p>
 <dl class="field-list simple">
 <dt class="field-odd">getter</dt>
-<dd class="field-odd"><p>always returns in seconds. To get in datetime.delta, use getStorageCellDelay</p>
+<dd class="field-odd"><p>always returns in seconds. To get in DurationWrapper, use getStorageCellDelay</p>
 </dd>
 </dl>
 </div>
 <p class="rubric">Example</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">d</span><span class="o">.</span><span class="n">storagecell_delay</span> <span class="o">=</span> <span class="mf">0.00056</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">d</span><span class="o">.</span><span class="n">storagecell_delay</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">timedelta</span><span class="p">(</span><span class="n">microseconds</span> <span class="o">=</span> <span class="mi">45</span><span class="p">)</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="c1"># setting directly in seconds</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">d</span><span class="o">.</span><span class="n">storagecell_delay</span> <span class="o">=</span> <span class="mf">1.05</span>
+<span class="go">&gt;&gt;&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># setting directly in seconds</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">d</span><span class="o">.</span><span class="n">storagecell_delay</span> <span class="o">=</span> <span class="mf">5e-07</span>
+<span class="go">&gt;&gt;&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># using timedelta (up to microseconds precision)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">datatime</span> <span class="kn">import</span> <span class="n">timedelta</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">d</span><span class="o">.</span><span class="n">storagecell_delay</span> <span class="o">=</span> <span class="n">timedelta</span><span class="p">(</span><span class="n">seconds</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">microseconds</span> <span class="o">=</span> <span class="mi">3</span><span class="p">)</span>
+<span class="go">&gt;&gt;&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># using DurationWrapper to set in seconds</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">slsdet</span> <span class="kn">import</span> <span class="n">DurationWrapper</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">d</span><span class="o">.</span><span class="n">storagecell_delay</span> <span class="o">=</span> <span class="n">DurationWrapper</span><span class="p">(</span><span class="mf">1.2</span><span class="p">)</span>
+<span class="go">&gt;&gt;&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># using DurationWrapper to set in ns</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span> <span class="o">=</span> <span class="n">DurationWrapper</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span><span class="o">.</span><span class="n">set_count</span><span class="p">(</span><span class="mi">500</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">d</span><span class="o">.</span><span class="n">storagecell_delay</span> <span class="o">=</span> <span class="n">t</span>
+<span class="go">&gt;&gt;&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># to get in seconds</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">d</span><span class="o">.</span><span class="n">storagecell_delay</span>
-<span class="go">4.5e-05</span>
+<span class="go">181.23</span>
+<span class="go">&gt;&gt;&gt;</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">d</span><span class="o">.</span><span class="n">getStorageCellDelay</span><span class="p">()</span>
-<span class="go">[datetime.timedelta(microseconds=45)]</span>
+<span class="go">sls::DurationWrapper(total_seconds: 181.23 count: 181230000000)</span>
 </pre></div>
 </div>
 </dd></dl>
@@ -5058,23 +5172,42 @@ Options 0-max. max is 15 (default) for chipv1.0 and 3 (default) for chipv1.1.</p
 <dl class="py property">
 <dt class="sig sig-object py" id="slsdet.Detector.subdeadtime">
 <em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">subdeadtime</span></span><a class="headerlink" href="#slsdet.Detector.subdeadtime" title="Permalink to this definition">¶</a></dt>
-<dd><p>[Eiger] Dead time of EIGER subframes in 32 bit mode, accepts either a value in seconds or datetime.timedelta</p>
+<dd><p>[Eiger] Dead time of EIGER subframes in 32 bit mode, accepts either a value in seconds, datetime.timedelta or DurationWrapper</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Subperiod = subexptime + subdeadtime.</p>
 <dl class="field-list simple">
 <dt class="field-odd">getter</dt>
-<dd class="field-odd"><p>always returns in seconds. To get in datetime.delta, use getSubDeadTime</p>
+<dd class="field-odd"><p>always returns in seconds. To get in DurationWrapper, use getSubDeadTime</p>
 </dd>
 </dl>
 </div>
 <p class="rubric">Example</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">d</span><span class="o">.</span><span class="n">subdeadtime</span> <span class="o">=</span> <span class="mf">1.230203</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">d</span><span class="o">.</span><span class="n">subdeadtime</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">timedelta</span><span class="p">(</span><span class="n">seconds</span> <span class="o">=</span> <span class="mf">1.23</span><span class="p">,</span> <span class="n">microseconds</span> <span class="o">=</span> <span class="mi">203</span><span class="p">)</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="c1"># setting directly in seconds</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">d</span><span class="o">.</span><span class="n">subdeadtime</span> <span class="o">=</span> <span class="mf">1.230203</span>
+<span class="go">&gt;&gt;&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># setting directly in seconds</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">d</span><span class="o">.</span><span class="n">subdeadtime</span> <span class="o">=</span> <span class="mf">5e-07</span>
+<span class="go">&gt;&gt;&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># using timedelta (up to microseconds precision)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">datatime</span> <span class="kn">import</span> <span class="n">timedelta</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">d</span><span class="o">.</span><span class="n">subdeadtime</span> <span class="o">=</span> <span class="n">timedelta</span><span class="p">(</span><span class="n">seconds</span> <span class="o">=</span> <span class="mf">1.23</span><span class="p">,</span> <span class="n">microseconds</span> <span class="o">=</span> <span class="mi">203</span><span class="p">)</span>
+<span class="go">&gt;&gt;&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># using DurationWrapper to set in seconds</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">slsdet</span> <span class="kn">import</span> <span class="n">DurationWrapper</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">d</span><span class="o">.</span><span class="n">subdeadtime</span> <span class="o">=</span> <span class="n">DurationWrapper</span><span class="p">(</span><span class="mf">1.2</span><span class="p">)</span>
+<span class="go">&gt;&gt;&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># using DurationWrapper to set in ns</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span> <span class="o">=</span> <span class="n">DurationWrapper</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span><span class="o">.</span><span class="n">set_count</span><span class="p">(</span><span class="mi">500</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">d</span><span class="o">.</span><span class="n">subdeadtime</span> <span class="o">=</span> <span class="n">t</span>
+<span class="go">&gt;&gt;&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># to get in seconds</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">d</span><span class="o">.</span><span class="n">subdeadtime</span>
-<span class="go">1.230203</span>
+<span class="go">181.23</span>
+<span class="go">&gt;&gt;&gt;</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">d</span><span class="o">.</span><span class="n">getSubDeadTime</span><span class="p">()</span>
-<span class="go">[datetime.timedelta(seconds = 1, microseconds = 203)]</span>
+<span class="go">sls::DurationWrapper(total_seconds: 181.23 count: 181230000000)</span>
 </pre></div>
 </div>
 </dd></dl>
@@ -5088,17 +5221,36 @@ Options 0-max. max is 15 (default) for chipv1.0 and 3 (default) for chipv1.1.</p
 <p>Subperiod = subexptime + subdeadtime.</p>
 <dl class="field-list simple">
 <dt class="field-odd">getter</dt>
-<dd class="field-odd"><p>always returns in seconds. To get in datetime.delta, use getSubExptime</p>
+<dd class="field-odd"><p>always returns in seconds. To get in DurationWrapper, use getSubExptime</p>
 </dd>
 </dl>
 </div>
 <p class="rubric">Example</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">d</span><span class="o">.</span><span class="n">subexptime</span> <span class="o">=</span> <span class="mf">1.230203</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">d</span><span class="o">.</span><span class="n">subexptime</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">timedelta</span><span class="p">(</span><span class="n">seconds</span> <span class="o">=</span> <span class="mf">1.23</span><span class="p">,</span> <span class="n">microseconds</span> <span class="o">=</span> <span class="mi">203</span><span class="p">)</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="c1"># setting directly in seconds</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">d</span><span class="o">.</span><span class="n">subexptime</span> <span class="o">=</span> <span class="mf">1.230203</span>
+<span class="go">&gt;&gt;&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># setting directly in seconds</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">d</span><span class="o">.</span><span class="n">subexptime</span> <span class="o">=</span> <span class="mf">5e-07</span>
+<span class="go">&gt;&gt;&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># using timedelta (up to microseconds precision)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">datatime</span> <span class="kn">import</span> <span class="n">timedelta</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">d</span><span class="o">.</span><span class="n">subexptime</span> <span class="o">=</span> <span class="n">timedelta</span><span class="p">(</span><span class="n">seconds</span> <span class="o">=</span> <span class="mf">1.23</span><span class="p">,</span> <span class="n">microseconds</span> <span class="o">=</span> <span class="mi">203</span><span class="p">)</span>
+<span class="go">&gt;&gt;&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># using DurationWrapper to set in seconds</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">slsdet</span> <span class="kn">import</span> <span class="n">DurationWrapper</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">d</span><span class="o">.</span><span class="n">subexptime</span> <span class="o">=</span> <span class="n">DurationWrapper</span><span class="p">(</span><span class="mf">1.2</span><span class="p">)</span>
+<span class="go">&gt;&gt;&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># using DurationWrapper to set in ns</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span> <span class="o">=</span> <span class="n">DurationWrapper</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span><span class="o">.</span><span class="n">set_count</span><span class="p">(</span><span class="mi">500</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">d</span><span class="o">.</span><span class="n">subexptime</span> <span class="o">=</span> <span class="n">t</span>
+<span class="go">&gt;&gt;&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># to get in seconds</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">d</span><span class="o">.</span><span class="n">subexptime</span>
-<span class="go">1.230203</span>
+<span class="go">181.23</span>
+<span class="go">&gt;&gt;&gt;</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">d</span><span class="o">.</span><span class="n">getSubExptime</span><span class="p">()</span>
-<span class="go">[datetime.timedelta(seconds = 1, microseconds = 203)]</span>
+<span class="go">sls::DurationWrapper(total_seconds: 181.23 count: 181230000000)</span>
 </pre></div>
 </div>
 </dd></dl>

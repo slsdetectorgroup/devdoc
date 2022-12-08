@@ -102,11 +102,11 @@
 <li class="toctree-l3"><a class="reference internal" href="#download-source-code-from-github">1. Download Source Code from github</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#build-from-source-using-cmake">2. Build from Source</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#build-using-cmake">Build using CMake</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#build-using-in-build-cmk-sh-script">Build using in-build cmk.sh script</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#build-using-in-built-cmk-sh-script">Build using in-built cmk.sh script</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#build-on-old-distributions">Build on old distributions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#build-this-documentation">Build this documentation</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#build-this-documentation">Build this documentation</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="dependencies.html">Dependencies</a></li>
@@ -286,7 +286,7 @@ conda search slsdet
 </pre></div>
 </div>
 <div class="line-block">
-<div class="line"><strong>Pybind</strong></div>
+<div class="line"><strong>Pybind for Python</strong></div>
 <div class="line">v7.0.0+:</div>
 <div class="line-block">
 <div class="line">pybind11 packaged into ‘libs/pybind’. No longer a submodule. No need for “recursive” or “submodule update”.</div>
@@ -294,7 +294,7 @@ conda search slsdet
 </div>
 <div class="line">Older versions:</div>
 <div class="line-block">
-<div class="line">pybind11 is a submodule&gt; Must be cloned using “recursive” and updated when switching between versions using the following commands.</div>
+<div class="line">pybind11 is a submodule. Must be cloned using “recursive” and updated when switching between versions using the following commands.</div>
 </div>
 </div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># clone using recursive to get pybind11 submodule</span>
@@ -361,8 +361,8 @@ ccmake ..
 </tbody>
 </table>
 </div>
-<div class="section" id="build-using-in-build-cmk-sh-script">
-<h3>Build using in-build cmk.sh script<a class="headerlink" href="#build-using-in-build-cmk-sh-script" title="Permalink to this heading">¶</a></h3>
+<div class="section" id="build-using-in-built-cmk-sh-script">
+<h3>Build using in-built cmk.sh script<a class="headerlink" href="#build-using-in-built-cmk-sh-script" title="Permalink to this heading">¶</a></h3>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>The binaries are generated <span class="k">in</span> slsDetectorPackage/build/bin directory.
 
 Usage: ./cmk.sh <span class="o">[</span>-b<span class="o">]</span> <span class="o">[</span>-c<span class="o">]</span> <span class="o">[</span>-d &lt;HDF5 directory&gt;<span class="o">]</span> <span class="o">[</span>e<span class="o">]</span> <span class="o">[</span>g<span class="o">]</span> <span class="o">[</span>-h<span class="o">]</span> <span class="o">[</span>i<span class="o">]</span> <span class="o">[</span>-j &lt;Number of threads&gt;<span class="o">]</span>
@@ -420,19 +420,23 @@ make -j12
 </pre></div>
 </div>
 </div>
-</div>
 <div class="section" id="build-this-documentation">
-<h2>Build this documentation<a class="headerlink" href="#build-this-documentation" title="Permalink to this heading">¶</a></h2>
+<h3>Build this documentation<a class="headerlink" href="#build-this-documentation" title="Permalink to this heading">¶</a></h3>
 <p>The documentation for the slsDetectorPackage is build using a combination
 of Doxygen, Sphinx and Breathe. The easiest way to install the dependencies
 is to use conda</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda create -n myenv python sphinx sphinx_rtd_theme
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda create -n myenv python sphinx_rtd_theme breathe
 </pre></div>
 </div>
-<p>Then enable the option SLS_BUILD_DOCS to create the targets</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>make docs <span class="c1"># generate API docs and build Sphinx RST</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># using cmake or ccmake to enable DSLS_BUILD_DOCS</span>
+<span class="c1"># outside slsDetecorPackage folder</span>
+mkdir build <span class="o">&amp;&amp;</span> <span class="nb">cd</span> build
+cmake ../slsDetectorPackage -DSLS_BUILD_DOCS<span class="o">=</span>ON
+
+make docs <span class="c1"># generate API docs and build Sphinx RST</span>
 make rst <span class="c1"># rst only, saves time in case the API did not change</span>
 </pre></div>
+</div>
 </div>
 </div>
 </div>

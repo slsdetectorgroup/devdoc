@@ -232,23 +232,42 @@
 open an issue in our our  <a class="reference external" href="https://github.com/slsdetectorgroup/slsDetectorPackage">github repo</a>.</p>
 <div class="section" id="setting-exposure-time">
 <h2>Setting exposure time<a class="headerlink" href="#setting-exposure-time" title="Permalink to this heading">¶</a></h2>
-<p>Setting and reading back exposure time can be done either using a Python datetime.timedelta
-or by setting the time in seconds.</p>
+<p>Setting and reading back exposure time can be done either using a Python
+datetime.timedelta, DurationWrapper or by setting the time in seconds.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Set exposure time to 1.2 seconds</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">d</span><span class="o">.</span><span class="n">exptime</span> <span class="o">=</span> <span class="mf">1.2</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">d</span><span class="o">.</span><span class="n">exptime</span> <span class="o">=</span> <span class="mf">5e-07</span>
 
-<span class="c1"># Setting exposure time using timedelta</span>
+<span class="c1"># Setting exposure time using timedelta (upto microseconds precision)</span>
 <span class="kn">import</span> <span class="nn">datetime</span> <span class="k">as</span> <span class="nn">dt</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">d</span><span class="o">.</span><span class="n">exptime</span> <span class="o">=</span> <span class="n">dt</span><span class="o">.</span><span class="n">timedelta</span><span class="p">(</span><span class="n">seconds</span> <span class="o">=</span> <span class="mf">1.2</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">d</span><span class="o">.</span><span class="n">exptime</span> <span class="o">=</span> <span class="n">dt</span><span class="o">.</span><span class="n">timedelta</span><span class="p">(</span><span class="n">seconds</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">microseconds</span> <span class="o">=</span> <span class="mi">3</span><span class="p">)</span>
 
 <span class="c1"># With timedelta any arbitrary combination of units can be used</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">t</span> <span class="o">=</span> <span class="n">dt</span><span class="o">.</span><span class="n">timedelta</span><span class="p">(</span><span class="n">microseconds</span> <span class="o">=</span> <span class="mi">100</span><span class="p">,</span> <span class="n">seconds</span> <span class="o">=</span> <span class="mf">5.3</span><span class="p">,</span> <span class="n">minutes</span> <span class="o">=</span> <span class="mf">.3</span><span class="p">)</span>
+
+<span class="c1"># using DurationWrapper to set in seconds</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="kn">from</span> <span class="nn">slsdet</span> <span class="kn">import</span> <span class="n">DurationWrapper</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">d</span><span class="o">.</span><span class="n">exptime</span> <span class="o">=</span> <span class="n">DurationWrapper</span><span class="p">(</span><span class="mf">1.2</span><span class="p">)</span>
+
+<span class="c1"># using DurationWrapper to set in ns</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">t</span> <span class="o">=</span> <span class="n">DurationWrapper</span><span class="p">()</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">t</span><span class="o">.</span><span class="n">set_count</span><span class="p">(</span><span class="mi">500</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">d</span><span class="o">.</span><span class="n">exptime</span> <span class="o">=</span> <span class="n">t</span>
 
 <span class="c1"># To set exposure time for individual detector one have to resort</span>
 <span class="c1"># to the C++ style API.</span>
 <span class="c1"># Sets exposure time to 1.2 seconds for module 0, 6 and 12</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">d</span><span class="o">.</span><span class="n">setExptime</span><span class="p">(</span><span class="mf">1.2</span><span class="p">,</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">12</span><span class="p">])</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">d</span><span class="o">.</span><span class="n">setExptime</span><span class="p">(</span><span class="n">dt</span><span class="o">.</span><span class="n">timedelta</span><span class="p">(</span><span class="n">seconds</span> <span class="o">=</span> <span class="mf">1.2</span><span class="p">),</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">12</span><span class="p">])</span>
+
+<span class="c1"># to get in seconds</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">d</span><span class="o">.</span><span class="n">period</span>
+<span class="mf">181.23</span>
+
+<span class="c1"># to get in DurationWrapper</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">d</span><span class="o">.</span><span class="n">getExptime</span><span class="p">()</span>
+<span class="p">[</span><span class="n">sls</span><span class="p">::</span><span class="n">DurationWrapper</span><span class="p">(</span><span class="n">total_seconds</span><span class="p">:</span> <span class="mf">181.23</span> <span class="n">count</span><span class="p">:</span> <span class="mi">181230000000</span><span class="p">)]</span>
 </pre></div>
 </div>
 </div>
@@ -408,8 +427,7 @@ hang around until the main process exits.</p>
 <span class="c1"># This sets the exposure time for all modules</span>
 <span class="n">d</span><span class="o">.</span><span class="n">exptime</span> <span class="o">=</span> <span class="mf">0.5</span>
 
-<span class="c1"># exptime also accepts a python datetime.timedelta</span>
-<span class="c1"># which can be used to set the time in almost any unit</span>
+<span class="c1"># exptime also accepts a python datetime.timedelta (upto microseconds resolution)</span>
 <span class="n">t</span> <span class="o">=</span> <span class="n">dt</span><span class="o">.</span><span class="n">timedelta</span><span class="p">(</span><span class="n">milliseconds</span> <span class="o">=</span> <span class="mf">2.3</span><span class="p">)</span>
 <span class="n">d</span><span class="o">.</span><span class="n">exptime</span> <span class="o">=</span> <span class="n">t</span>
 
@@ -417,16 +435,25 @@ hang around until the main process exits.</p>
 <span class="n">t</span> <span class="o">=</span> <span class="n">dt</span><span class="o">.</span><span class="n">timedelta</span><span class="p">(</span><span class="n">minutes</span> <span class="o">=</span> <span class="mi">3</span><span class="p">,</span> <span class="n">seconds</span> <span class="o">=</span> <span class="mf">1.23</span><span class="p">)</span>
 <span class="n">d</span><span class="o">.</span><span class="n">exptime</span> <span class="o">=</span> <span class="n">t</span>
 
+<span class="c1"># using DurationWrapper to set in seconds</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="kn">from</span> <span class="nn">slsdet</span> <span class="kn">import</span> <span class="n">DurationWrapper</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">d</span><span class="o">.</span><span class="n">exptime</span> <span class="o">=</span> <span class="n">DurationWrapper</span><span class="p">(</span><span class="mf">1.2</span><span class="p">)</span>
+
+<span class="c1"># using DurationWrapper to set in ns</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">t</span> <span class="o">=</span> <span class="n">DurationWrapper</span><span class="p">()</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">t</span><span class="o">.</span><span class="n">set_count</span><span class="p">(</span><span class="mi">500</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">d</span><span class="o">.</span><span class="n">exptime</span> <span class="o">=</span> <span class="n">t</span>
+
 <span class="c1"># exptime however always returns the time in seconds</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">d</span><span class="o">.</span><span class="n">exptime</span>
 <span class="mf">181.23</span>
 
 <span class="c1"># To get back the exposure time for each module</span>
 <span class="c1"># it&#39;s possible to use getExptime, this also returns</span>
-<span class="c1"># the values as datetime.timedelta</span>
+<span class="c1"># the values as  DurationWrapper</span>
 
 <span class="o">&gt;&gt;&gt;</span> <span class="n">d</span><span class="o">.</span><span class="n">getExptime</span><span class="p">()</span>
-<span class="p">[</span><span class="n">datetime</span><span class="o">.</span><span class="n">timedelta</span><span class="p">(</span><span class="n">seconds</span><span class="o">=</span><span class="mi">181</span><span class="p">,</span> <span class="n">microseconds</span><span class="o">=</span><span class="mi">230000</span><span class="p">),</span> <span class="n">datetime</span><span class="o">.</span><span class="n">timedelta</span><span class="p">(</span><span class="n">seconds</span><span class="o">=</span><span class="mi">181</span><span class="p">,</span> <span class="n">microseconds</span><span class="o">=</span><span class="mi">230000</span><span class="p">)]</span>
+<span class="p">[</span><span class="n">sls</span><span class="p">::</span><span class="n">DurationWrapper</span><span class="p">(</span><span class="n">total_seconds</span><span class="p">:</span> <span class="mf">181.23</span> <span class="n">count</span><span class="p">:</span> <span class="mi">181230000000</span><span class="p">)]</span>
 
 <span class="c1"># In case the values are the same it&#39;s possible to use the</span>
 <span class="c1"># element_if_equal function to reduce the values to a single</span>
@@ -434,7 +461,7 @@ hang around until the main process exits.</p>
 
 <span class="o">&gt;&gt;&gt;</span> <span class="n">t</span> <span class="o">=</span> <span class="n">d</span><span class="o">.</span><span class="n">getExptime</span><span class="p">()</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">element_if_equal</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
-<span class="n">datetime</span><span class="o">.</span><span class="n">timedelta</span><span class="p">(</span><span class="n">seconds</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">sls</span><span class="p">::</span><span class="n">DurationWrapper</span><span class="p">(</span><span class="n">total_seconds</span><span class="p">:</span> <span class="mf">1.2</span> <span class="n">count</span><span class="p">:</span> <span class="mi">1200000000</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
