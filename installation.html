@@ -104,6 +104,7 @@
 <li class="toctree-l3"><a class="reference internal" href="#build-using-cmake">Build using CMake</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#build-using-in-built-cmk-sh-script">Build using in-built cmk.sh script</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#build-on-old-distributions">Build on old distributions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#build-slsdetectorgui-qt5">Build slsDetectorGui (Qt5)</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#build-this-documentation">Build this documentation</a></li>
 </ul>
 </li>
@@ -274,7 +275,12 @@ etc ...
 </pre></div>
 </div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1">#List available versions</span>
+<span class="c1"># lib and binaries</span>
+conda search slsdetlib
+<span class="c1"># python</span>
 conda search slsdet
+<span class="c1"># gui</span>
+conda search slsdetgui
 </pre></div>
 </div>
 </div>
@@ -353,7 +359,7 @@ ccmake ..
 <td><p>Python from only the conda environment</p></td>
 </tr>
 <tr class="row-even"><td><p>-DZeroMQ_HINT=/usr/lib64</p></td>
-<td><p>System zmq instead of conda</p></td>
+<td><p>Use system zmq instead</p></td>
 </tr>
 <tr class="row-odd"><td><p>-DSLS_USE_GUI=ON</p></td>
 <td><p>GUI</p></td>
@@ -399,7 +405,7 @@ Usage: ./cmk.sh <span class="o">[</span>-b<span class="o">]</span> <span class="
 <span class="c1"># new build, python and compile in parallel:</span>
 ./cmk.sh -bpj5
 
-<span class="c1">#To use the system zmq (/usr/lib64) instead of conda</span>
+<span class="c1">#To use the system zmq (/usr/lib64) instead</span>
 ./cmk.sh -bj5 -q /usr/lib64
 </pre></div>
 </div>
@@ -419,6 +425,57 @@ cmake ../slsDetectorPackage -DCMAKE_PREFIX_PATH<span class="o">=</span><span cla
 make -j12
 </pre></div>
 </div>
+</div>
+<div class="section" id="build-slsdetectorgui-qt5">
+<h3>Build slsDetectorGui (Qt5)<a class="headerlink" href="#build-slsdetectorgui-qt5" title="Permalink to this heading">¶</a></h3>
+<ol class="arabic">
+<li><dl>
+<dt>Using pre-built binary on conda</dt><dd><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda create -n myenv <span class="nv">slsdetgui</span><span class="o">=</span><span class="m">7</span>.0.0
+conda activate myenv
+</pre></div>
+</div>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt>Using system installation on RHEL7</dt><dd><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>yum install qt5-qtbase-devel.x86_64
+yum install qt5-qtsvg-devel.x86_64
+</pre></div>
+</div>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt>Using conda</dt><dd><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1">#Add channels for dependencies and our library</span>
+conda config --add channels conda-forge
+conda config --add channels slsdetectorgroup
+conda config --set channel_priority strict
+
+<span class="c1"># create environment to compile</span>
+<span class="c1"># on rhel7</span>
+conda create -n slsgui zeromq gxx_linux-64 gxx_linux-64 mesa-libgl-devel-cos6-x86_64 qt
+<span class="c1"># on fedora or newer systems</span>
+conda create -n slsgui zeromq qt
+
+<span class="c1"># when using conda compilers, would also need libgl, but no need for it on fedora unless maybe using it with ROOT</span>
+
+<span class="c1"># activate environment</span>
+conda activate slsgui
+
+<span class="c1"># compile with cmake outside slsDetecorPackage folder</span>
+mkdir build <span class="o">&amp;&amp;</span> <span class="nb">cd</span> build
+cmake ../slsDetectorPackage -DSLS_USE_GUI<span class="o">=</span>ON
+make -j12
+
+<span class="c1"># or compile with cmk.sh</span>
+<span class="nb">cd</span> slsDetectorPackage
+./cmk.sh -cbgj9
+</pre></div>
+</div>
+</dd>
+</dl>
+</li>
+</ol>
 </div>
 <div class="section" id="build-this-documentation">
 <h3>Build this documentation<a class="headerlink" href="#build-this-documentation" title="Permalink to this heading">¶</a></h3>

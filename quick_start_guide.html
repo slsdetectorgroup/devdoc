@@ -282,11 +282,15 @@ rx_hostname mpc1922
 <span class="c1"># sets destination udp ports (not needed, default is 50001)</span>
 udp_dstport <span class="m">50012</span>
 
+<span class="c1"># 1g data out</span>
 <span class="c1"># source udp ips must be same subnet at destintaion udp ips</span>
-udp_srcip <span class="m">192</span>.168.1.112
-
+<span class="c1"># udp_srcip 192.168.1.112</span>
 <span class="c1"># destination udp ip picked up from rx_hostname (if auto)</span>
-udp_dstip auto
+<span class="c1"># udp_dstip auto</span>
+
+<span class="c1"># 10g data out</span>
+udp_srcip <span class="m">10</span>.30.20.200
+udp_dstip <span class="m">10</span>.30.20.6
 
 <span class="c1"># set file path</span>
 fpath /tmp
