@@ -1,80 +1,40 @@
-
-
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" />
-  
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  
   <title>slsReceiver/ slsMultiReceiver &mdash; slsDetectorPackage  documentation</title>
-  
-
-  
-  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="_static/css/extra.css" type="text/css" />
-
-  
-  
-
-  
-  
-
-  
-
-  
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/extra.css" type="text/css" />
   <!--[if lt IE 9]>
     <script src="_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-    
-      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
         <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
         <script src="_static/jquery.js"></script>
         <script src="_static/underscore.js"></script>
         <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="_static/doctools.js"></script>
         <script src="_static/sphinx_highlight.js"></script>
-    
-    <script type="text/javascript" src="_static/js/theme.js"></script>
-
-    
+    <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Troubleshooting" href="troubleshooting.html" />
     <link rel="prev" title="Receivers" href="receivers.html" /> 
 </head>
 
-<body class="wy-body-for-nav">
-
-   
+<body class="wy-body-for-nav"> 
   <div class="wy-grid-for-nav">
-    
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-          
-
-          
             <a href="index.html" class="icon icon-home"> slsDetectorPackage
-          
-
-          
           </a>
-
-          
-            
-            
               <div class="version">
                 7.0.0
               </div>
-            
-          
-
-          
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" />
@@ -82,18 +42,7 @@
     <input type="hidden" name="area" value="default" />
   </form>
 </div>
-
-          
-        </div>
-
-        
-        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
-          
-            
-            
-              
-            
-            
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <p class="caption" role="heading"><span class="caption-text">Installation:</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
@@ -147,6 +96,7 @@
 <li class="toctree-l1"><a class="reference internal" href="receivers.html">Receivers</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">slsReceiver/ slsMultiReceiver</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#client-commands">Client Commands</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#zmq-json-header-format">ZMQ: Json Header Format</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#file-format">File format</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#performance">Performance</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#using-callbacks">Using Callbacks</a></li>
@@ -158,73 +108,32 @@
 <li class="toctree-l1"><a class="reference internal" href="troubleshooting.html">Troubleshooting</a></li>
 </ul>
 
-            
-          
         </div>
-        
       </div>
     </nav>
 
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
-
-      
-      <nav class="wy-nav-top" aria-label="top navigation">
-        
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="index.html">slsDetectorPackage</a>
-        
       </nav>
 
-
       <div class="wy-nav-content">
-        
         <div class="rst-content">
-        
-          
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div role="navigation" aria-label="breadcrumbs navigation">
-
+          <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-    
-      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
-        
-      <li>slsReceiver/ slsMultiReceiver</li>
-    
-    
+      <li><a href="index.html" class="icon icon-home"></a></li>
+      <li class="breadcrumb-item active">slsReceiver/ slsMultiReceiver</li>
       <li class="wy-breadcrumbs-aside">
-        
-          
             <a href="_sources/slsreceiver.rst.txt" rel="nofollow"> View page source</a>
-          
-        
       </li>
-    
   </ul>
-
-  
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
-            
-  <div class="section" id="slsreceiver-slsmultireceiver">
-<h1>slsReceiver/ slsMultiReceiver<a class="headerlink" href="#slsreceiver-slsmultireceiver" title="Permalink to this heading">¶</a></h1>
+             
+  <section id="slsreceiver-slsmultireceiver">
+<h1>slsReceiver/ slsMultiReceiver<a class="headerlink" href="#slsreceiver-slsmultireceiver" title="Permalink to this heading"></a></h1>
 <div class="line-block">
 <div class="line">One has to start the slsReceiver before loading config file or using any receiver commands (prefix: <strong>rx_</strong> )</div>
 </div>
@@ -252,8 +161,8 @@ slsMultiReceiver <span class="m">2012</span> <span class="m">2</span> <span clas
 </div>
 </dd>
 </dl>
-<div class="section" id="client-commands">
-<h2>Client Commands<a class="headerlink" href="#client-commands" title="Permalink to this heading">¶</a></h2>
+<section id="client-commands">
+<h2>Client Commands<a class="headerlink" href="#client-commands" title="Permalink to this heading"></a></h2>
 <div class="line-block">
 <div class="line">One can remove <strong>udp_dstmac</strong> from the config file, as the slsReceiver fetches this from the <strong>udp_ip</strong>.</div>
 </div>
@@ -312,9 +221,182 @@ sls_detector_get -h rx_framescaught
 </pre></div>
 </div>
 </div></blockquote>
+</section>
+<section id="zmq-json-header-format">
+<h2>ZMQ: Json Header Format<a class="headerlink" href="#zmq-json-header-format" title="Permalink to this heading"></a></h2>
+<p><strong>Change in field names from slsDetectorPackage v6.x.x to v7.0.0</strong></p>
+<ul class="simple">
+<li><p>detSpec1 &lt;- bunchId</p></li>
+<li><p>detSpec2 &lt;- reserved</p></li>
+<li><p>detSpec3 &lt;- debug</p></li>
+<li><p>detSpec4 &lt;- roundRNumber</p></li>
+</ul>
+<p><strong>Format</strong></p>
+<blockquote>
+<div><blockquote>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">{</span>
+    <span class="s2">&quot;jsonversion&quot;</span>: unsigned int,
+    <span class="s2">&quot;bitmode&quot;</span>: unsigned int,
+    <span class="s2">&quot;fileIndex&quot;</span>: unsigned long int,
+    <span class="s2">&quot;detshape&quot;</span>: <span class="o">[</span>
+        unsigned int,
+        unsigned int
+    <span class="o">]</span>,
+    <span class="s2">&quot;shape&quot;</span>: <span class="o">[</span>
+        unsigned int,
+        unsigned int
+    <span class="o">]</span>,
+    <span class="s2">&quot;size&quot;</span>: unsigned int,
+    <span class="s2">&quot;acqIndex&quot;</span>: unsigned long int,
+    <span class="s2">&quot;frameIndex&quot;</span>: unsigned long int,
+    <span class="s2">&quot;progress&quot;</span>: double,
+    <span class="s2">&quot;fname&quot;</span>: string,
+    <span class="s2">&quot;data&quot;</span>: unsigned int,
+    <span class="s2">&quot;completeImage&quot;</span>: unsigned int,
+
+    <span class="s2">&quot;frameNumber&quot;</span>: unsigned long long int,
+    <span class="s2">&quot;expLength&quot;</span>: unsigned int,
+    <span class="s2">&quot;packetNumber&quot;</span>: unsigned int,
+    <span class="s2">&quot;detSpec1&quot;</span>: unsigned long int,
+    <span class="s2">&quot;timestamp&quot;</span>: unsigned long int,
+    <span class="s2">&quot;modId&quot;</span>: unsigned int,
+    <span class="s2">&quot;row&quot;</span>: unsigned int,
+    <span class="s2">&quot;column&quot;</span>: unsigned int,
+    <span class="s2">&quot;detSpec2&quot;</span>: unsigned int,
+    <span class="s2">&quot;detSpec3&quot;</span>: unsigned int,
+    <span class="s2">&quot;detSpec4&quot;</span>: unsigned int,
+    <span class="s2">&quot;detType&quot;</span>: unsigned int,
+    <span class="s2">&quot;version&quot;</span>: unsigned int,
+
+    <span class="s2">&quot;flipRows&quot;</span>: unsigned int,
+    <span class="s2">&quot;quad&quot;</span>: unsigned int,
+    <span class="s2">&quot;addJsonHeader&quot;</span>: <span class="o">{</span>
+        string : string
+    <span class="o">}</span>
+<span class="o">}</span>
+</pre></div>
 </div>
-<div class="section" id="file-format">
-<h2>File format<a class="headerlink" href="#file-format" title="Permalink to this heading">¶</a></h2>
+</div></blockquote>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 23%" />
+<col style="width: 77%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>Field</p></td>
+<td><p>Description</p></td>
+</tr>
+<tr class="row-even"><td><p>jsonversion</p></td>
+<td><p>Version of the json header.
+Value at 4 for v6.x.x and v7.x.x</p></td>
+</tr>
+<tr class="row-odd"><td><p>bitmode</p></td>
+<td><p>Bits per pixel [4|8|16|32]</p></td>
+</tr>
+<tr class="row-even"><td><p>fileIndex</p></td>
+<td><p>Current file acquisition index</p></td>
+</tr>
+<tr class="row-odd"><td><p>detshape</p></td>
+<td><p>Geometry of the entire detector</p></td>
+</tr>
+<tr class="row-even"><td><p>shape</p></td>
+<td><p>Geometry of the current port streamed out</p></td>
+</tr>
+<tr class="row-odd"><td><p>size</p></td>
+<td><p>Size of image of current port in bytesout</p></td>
+</tr>
+<tr class="row-even"><td><p>acqIndex</p></td>
+<td><p>Frame number from the detector (redundant)</p></td>
+</tr>
+<tr class="row-odd"><td><p>frameIndex</p></td>
+<td><p>Frame number of current acquisition
+(Starting at 0)</p></td>
+</tr>
+<tr class="row-even"><td><p>progress</p></td>
+<td><p>Progress of current acquisition in %</p></td>
+</tr>
+<tr class="row-odd"><td><p>fname</p></td>
+<td><p>Current file name</p></td>
+</tr>
+<tr class="row-even"><td><p>data</p></td>
+<td><p>1 if there is data following
+0 if dummy header</p></td>
+</tr>
+<tr class="row-odd"><td><p>completeImage</p></td>
+<td><p>1 if no missing packets for this frame
+in this port, else 0</p></td>
+</tr>
+<tr class="row-even"><td><p>frameNumber</p></td>
+<td><p>Frame number
+[From detector udp header]</p></td>
+</tr>
+<tr class="row-odd"><td><p>expLength</p></td>
+<td><p>subframe number (32 bit eiger)
+or real time exposure time in 100ns (others)
+[From detector udp header]</p></td>
+</tr>
+<tr class="row-even"><td><p>packetNumber</p></td>
+<td><p>Number of packets caught for that frame</p></td>
+</tr>
+<tr class="row-odd"><td><p>detSpec1</p></td>
+<td><p>See <a class="reference internal" href="udpdetspec.html#detector-specific-fields"><span class="std std-ref">here</span></a>
+[From detector udp header]</p></td>
+</tr>
+<tr class="row-even"><td><p>timestamp</p></td>
+<td><p>Timestamp with 10 MHz clock
+[From detector udp header]</p></td>
+</tr>
+<tr class="row-odd"><td><p>modId</p></td>
+<td><p>Module Id
+[From detector udp header]</p></td>
+</tr>
+<tr class="row-even"><td><p>row</p></td>
+<td><p>Row number in detector
+[From detector udp header]</p></td>
+</tr>
+<tr class="row-odd"><td><p>column</p></td>
+<td><p>Column number in detector
+[From detector udp header]</p></td>
+</tr>
+<tr class="row-even"><td><p>detSpec2</p></td>
+<td><p>See <a class="reference internal" href="udpdetspec.html#detector-specific-fields"><span class="std std-ref">here</span></a>
+[From detector udp header]</p></td>
+</tr>
+<tr class="row-odd"><td><p>detSpec3</p></td>
+<td><p>See <a class="reference internal" href="udpdetspec.html#detector-specific-fields"><span class="std std-ref">here</span></a>
+[From detector udp header]</p></td>
+</tr>
+<tr class="row-even"><td><p>detSpec4</p></td>
+<td><p>See <a class="reference internal" href="udpdetspec.html#detector-specific-fields"><span class="std std-ref">here</span></a>
+[From detector udp header]</p></td>
+</tr>
+<tr class="row-odd"><td><p>detType
+detSpec3</p></td>
+<td><p>Detector type enum
+See <span class="xref std std-ref">Detector enum</span>
+[From detector udp header]</p></td>
+</tr>
+<tr class="row-even"><td><p>version</p></td>
+<td><p>Detector header version. At 2
+[From detector udp header]</p></td>
+</tr>
+<tr class="row-odd"><td><p>flipRows</p></td>
+<td><p>1 if rows should be flipped.
+Usually for Eiger bottom.</p></td>
+</tr>
+<tr class="row-even"><td><p>quad</p></td>
+<td><p>1 if its an Eiger quad.</p></td>
+</tr>
+<tr class="row-odd"><td><p>addJsonHeader</p></td>
+<td><p>Optional custom parameters that is required
+for processing code.</p></td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+</section>
+<section id="file-format">
+<h2>File format<a class="headerlink" href="#file-format" title="Permalink to this heading"></a></h2>
 <p>Master file is in json format.</p>
 <p>The file name format is [fpath]/[fname]_dx_fy_[findex].raw, where x is module index and y is file index. <strong>fname</strong> is file name prefix and by default “run”. <strong>fpath</strong> is ‘/’ by default.</p>
 <p>Each acquisition will have an increasing acquisition index or findex (if file write enabled). This can be retrieved by using <strong>findex</strong> command.</p>
@@ -361,13 +443,13 @@ path-to-file/run_d0_f0_1.raw
 <div class="line-block">
 <div class="line">For multiple, modules, a virtual file linking all the modules is created. Both the data files and virtual files are linked in the master file.</div>
 </div>
-</div>
-<div class="section" id="performance">
-<h2>Performance<a class="headerlink" href="#performance" title="Permalink to this heading">¶</a></h2>
+</section>
+<section id="performance">
+<h2>Performance<a class="headerlink" href="#performance" title="Permalink to this heading"></a></h2>
 <p>Please refer to Receiver PC Tuning options and slsReceiver Tuning under <a class="reference external" href="https://slsdetectorgroup.github.io/devdoc/troubleshooting.html">Troubleshooting</a>.</p>
-</div>
-<div class="section" id="using-callbacks">
-<h2>Using Callbacks<a class="headerlink" href="#using-callbacks" title="Permalink to this heading">¶</a></h2>
+</section>
+<section id="using-callbacks">
+<h2>Using Callbacks<a class="headerlink" href="#using-callbacks" title="Permalink to this heading"></a></h2>
 <dl class="simple">
 <dt>One can get a callback in the receiver for each frame to:</dt><dd><ul class="simple">
 <li><p>manipulate the data that will be written to file, or</p></li>
@@ -392,55 +474,38 @@ make
 </ul>
 </dd>
 </dl>
-</div>
-</div>
+</section>
+</section>
 
 
            </div>
-           
           </div>
-          <footer>
-    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-        <a href="troubleshooting.html" class="btn btn-neutral float-right" title="Troubleshooting" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
         <a href="receivers.html" class="btn btn-neutral float-left" title="Receivers" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="troubleshooting.html" class="btn btn-neutral float-right" title="Troubleshooting" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
 
   <div role="contentinfo">
-    <p>
-        &#169; Copyright 2020, PSD Detector Group.
-
-    </p>
+    <p>&#169; Copyright 2020, PSD Detector Group.</p>
   </div>
-    
-    
-    
-    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
-    
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
     <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
-    
-    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
 
 </footer>
         </div>
       </div>
-
     </section>
-
   </div>
-  
-
-  <script type="text/javascript">
+  <script>
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
-  </script>
-
-  
-  
-    
-   
+  </script> 
 
 </body>
 </html>

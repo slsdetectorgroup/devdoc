@@ -1,80 +1,40 @@
-
-
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" />
-  
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  
   <title>Format &mdash; slsDetectorPackage  documentation</title>
-  
-
-  
-  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="_static/css/extra.css" type="text/css" />
-
-  
-  
-
-  
-  
-
-  
-
-  
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/extra.css" type="text/css" />
   <!--[if lt IE 9]>
     <script src="_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-    
-      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
         <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
         <script src="_static/jquery.js"></script>
         <script src="_static/underscore.js"></script>
         <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="_static/doctools.js"></script>
         <script src="_static/sphinx_highlight.js"></script>
-    
-    <script type="text/javascript" src="_static/js/theme.js"></script>
-
-    
+    <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Config file" href="udpconfig.html" />
     <link rel="prev" title="Default Values" href="serverdefaults.html" /> 
 </head>
 
-<body class="wy-body-for-nav">
-
-   
+<body class="wy-body-for-nav"> 
   <div class="wy-grid-for-nav">
-    
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-          
-
-          
             <a href="index.html" class="icon icon-home"> slsDetectorPackage
-          
-
-          
           </a>
-
-          
-            
-            
               <div class="version">
                 7.0.0
               </div>
-            
-          
-
-          
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" />
@@ -82,18 +42,7 @@
     <input type="hidden" name="area" value="default" />
   </form>
 </div>
-
-          
-        </div>
-
-        
-        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
-          
-            
-            
-              
-            
-            
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <p class="caption" role="heading"><span class="caption-text">Installation:</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
@@ -158,79 +107,38 @@
 <li class="toctree-l1"><a class="reference internal" href="troubleshooting.html">Troubleshooting</a></li>
 </ul>
 
-            
-          
         </div>
-        
       </div>
     </nav>
 
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
-
-      
-      <nav class="wy-nav-top" aria-label="top navigation">
-        
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="index.html">slsDetectorPackage</a>
-        
       </nav>
 
-
       <div class="wy-nav-content">
-        
         <div class="rst-content">
-        
-          
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div role="navigation" aria-label="breadcrumbs navigation">
-
+          <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-    
-      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
-        
-      <li>Format</li>
-    
-    
+      <li><a href="index.html" class="icon icon-home"></a></li>
+      <li class="breadcrumb-item active">Format</li>
       <li class="wy-breadcrumbs-aside">
-        
-          
             <a href="_sources/udpheader.rst.txt" rel="nofollow"> View page source</a>
-          
-        
       </li>
-    
   </ul>
-
-  
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
-            
-  <div class="section" id="format">
-<span id="detector-udp-header"></span><h1>Format<a class="headerlink" href="#format" title="Permalink to this heading">¶</a></h1>
+             
+  <section id="format">
+<span id="detector-udp-header"></span><h1>Format<a class="headerlink" href="#format" title="Permalink to this heading"></a></h1>
 <p>The UDP data format for the packets consist of a common header for all detectors, followed by the data for that one packet.</p>
-<div class="section" id="current-version">
-<h2>Current Version<a class="headerlink" href="#current-version" title="Permalink to this heading">¶</a></h2>
+<section id="current-version">
+<h2>Current Version<a class="headerlink" href="#current-version" title="Permalink to this heading"></a></h2>
 <p><strong>v2.0 (slsDetectorPackage v7.0.0+)</strong></p>
 <table class="colwidths-given docutils align-center" id="id1">
-<caption><span class="caption-text">&lt;—————————————————- 8 bytes —————————————————-&gt;</span><a class="headerlink" href="#id1" title="Permalink to this table">¶</a></caption>
+<caption><span class="caption-text">&lt;—————————————————- 8 bytes —————————————————-&gt;</span><a class="headerlink" href="#id1" title="Permalink to this table"></a></caption>
 <colgroup>
 <col style="width: 25%" />
 <col style="width: 25%" />
@@ -266,9 +174,9 @@
 from the previous version (v2.0), the version number stays the same.</p>
 <p>Only the struture member names have changed in sls_detector_defs.h</p>
 </div>
-</div>
-<div class="section" id="description">
-<h2>Description<a class="headerlink" href="#description" title="Permalink to this heading">¶</a></h2>
+</section>
+<section id="description">
+<h2>Description<a class="headerlink" href="#description" title="Permalink to this heading"></a></h2>
 <ul class="simple">
 <li><p><strong>Detector specific field</strong> descriptions are found <a class="reference internal" href="udpdetspec.html#detector-specific-fields"><span class="std std-ref">here</span></a>.</p></li>
 <li><p><strong>frameNumber</strong>: framenumber to which the current packet belongs to.</p></li>
@@ -281,9 +189,9 @@ from the previous version (v2.0), the version number stays the same.</p>
 <li><p><strong>detType</strong>: detector type from enum of detectorType in the package.</p></li>
 <li><p><strong>version</strong>: current version of the detector header (0x2).</p></li>
 </ul>
-</div>
-<div class="section" id="detector-enum">
-<h2>Detector Enum<a class="headerlink" href="#detector-enum" title="Permalink to this heading">¶</a></h2>
+</section>
+<section id="detector-enum">
+<h2>Detector Enum<a class="headerlink" href="#detector-enum" title="Permalink to this heading"></a></h2>
 <blockquote>
 <div><table class="docutils align-default">
 <colgroup>
@@ -323,12 +231,12 @@ from the previous version (v2.0), the version number stays the same.</p>
 </tbody>
 </table>
 </div></blockquote>
-</div>
-<div class="section" id="previous-versions">
-<h2>Previous Versions<a class="headerlink" href="#previous-versions" title="Permalink to this heading">¶</a></h2>
+</section>
+<section id="previous-versions">
+<h2>Previous Versions<a class="headerlink" href="#previous-versions" title="Permalink to this heading"></a></h2>
 <p><strong>v2.0 (Package v4.0.0 -  6.x.x)</strong></p>
 <table class="colwidths-given docutils align-center" id="id2">
-<caption><span class="caption-text">&lt;—————————————————- 8 bytes —————————————————-&gt;</span><a class="headerlink" href="#id2" title="Permalink to this table">¶</a></caption>
+<caption><span class="caption-text">&lt;—————————————————- 8 bytes —————————————————-&gt;</span><a class="headerlink" href="#id2" title="Permalink to this table"></a></caption>
 <colgroup>
 <col style="width: 25%" />
 <col style="width: 25%" />
@@ -360,7 +268,7 @@ from the previous version (v2.0), the version number stays the same.</p>
 </table>
 <p><strong>v1.0 (Package v3.0.0 -  3.1.5)</strong></p>
 <table class="colwidths-given docutils align-center" id="id3">
-<caption><span class="caption-text">&lt;—————————————————- 8 bytes —————————————————-&gt;</span><a class="headerlink" href="#id3" title="Permalink to this table">¶</a></caption>
+<caption><span class="caption-text">&lt;—————————————————- 8 bytes —————————————————-&gt;</span><a class="headerlink" href="#id3" title="Permalink to this table"></a></caption>
 <colgroup>
 <col style="width: 25%" />
 <col style="width: 25%" />
@@ -390,55 +298,38 @@ from the previous version (v2.0), the version number stays the same.</p>
 </tr>
 </tbody>
 </table>
-</div>
-</div>
+</section>
+</section>
 
 
            </div>
-           
           </div>
-          <footer>
-    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-        <a href="udpconfig.html" class="btn btn-neutral float-right" title="Config file" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
         <a href="serverdefaults.html" class="btn btn-neutral float-left" title="Default Values" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="udpconfig.html" class="btn btn-neutral float-right" title="Config file" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
 
   <div role="contentinfo">
-    <p>
-        &#169; Copyright 2020, PSD Detector Group.
-
-    </p>
+    <p>&#169; Copyright 2020, PSD Detector Group.</p>
   </div>
-    
-    
-    
-    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
-    
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
     <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
-    
-    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
 
 </footer>
         </div>
       </div>
-
     </section>
-
   </div>
-  
-
-  <script type="text/javascript">
+  <script>
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
-  </script>
-
-  
-  
-    
-   
+  </script> 
 
 </body>
 </html>
