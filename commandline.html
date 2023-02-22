@@ -1362,15 +1362,17 @@
 </dd>
 <dt>udp_srcip [x.x.x.x] or auto</dt><dd><div class="line-block">
 <div class="line">Ip address of the detector (source) udp interface. Must be same subnet as destination udp ip.</div>
-<div class="line">[Eiger] Set only for 10G. For 1G, detector will replace with its own DHCP IP address. If ‘auto’ used, then ip is set to ip of rx_hostname.</div>
+<div class="line">[Eiger] Set only for 10G. For 1G, detector will replace with its own DHCP IP address.</div>
+<div class="line">One can also set this to ‘auto’ for 1 GbE data and virtual detectors. It will set to IP of detector. Not available for GotthardI</div>
 </div>
 </dd>
 <dt>udp_srcip2 [x.x.x.x] or auto</dt><dd><div class="line-block">
 <div class="line">[Jungfrau][Gotthard2] Ip address of the detector (source) udp interface 2. Must be same subnet as destination udp ip2.</div>
 <div class="line-block">
 <div class="line">[Jungfrau] top half or inner interface</div>
-<div class="line">[Gotthard2] veto debugging. If ‘auto’ used, then ip is set to ip of rx_hostname.</div>
+<div class="line">[Gotthard2] veto debugging.</div>
 </div>
+<div class="line">One can also set this to ‘auto’ for 1 GbE data and virtual detectors. It will set to IP of detector.</div>
 </div>
 </dd>
 <dt>udp_srcmac [x:x:x:x:x:x]</dt><dd><div class="line-block">
