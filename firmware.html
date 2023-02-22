@@ -286,11 +286,15 @@ reconfig fw0
 
 <span class="c1"># Always ensure that the client and server software are of the same release.</span>
 
-<span class="c1"># copies server from tftp folder of pc, links new server to jungfrauDetectorServer,</span>
+<span class="c1"># copies server, links new server to jungfrauDetectorServer,</span>
 <span class="c1"># removes old server from respawn, sets up new lnked server to respawn</span>
-<span class="c1"># programs fpga,</span>
-<span class="c1"># reboots</span>
+<span class="c1"># programs fpga, reboots</span>
+
+<span class="c1"># v5.0.0 - 6.0.0 (copies server from tftp folder of the pc)</span>
 sls_detector_put update jungfrauDetectorServervxxx pcxxx xx.pof
+
+<span class="c1"># v6.1.1 - present (copies server from the full path provided)</span>
+sls_detector_put update jungfrauDetectorServervxxx xx.pof
 
 <span class="c1"># Or only program firmware</span>
 sls_detector_put programfpga xxx.pof
@@ -344,10 +348,15 @@ sls_detector_put programfpga xxx.pof
 <dl>
 <dt>Program from console</dt><dd><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Always ensure that the client and server software are of the same release.</span>
 
-<span class="c1"># copies server from tftp folder of pc, links new server to mythen3DetectorServer,</span>
-<span class="c1"># programs fpga,</span>
-<span class="c1"># reboots</span>
+<span class="c1"># copies server, links new server to mythen3DetectorServer,</span>
+<span class="c1"># removes old server from respawn, sets up new lnked server to respawn</span>
+<span class="c1"># programs fpga, reboots</span>
+
+<span class="c1"># v5.0.0 - 6.0.0 (copies server from tftp folder of the pc)</span>
 sls_detector_put update mythen3DetectorServervxxx pcxxx xxx.rbf
+
+<span class="c1"># v6.1.1 - present (copies server from the full path provided)</span>
+sls_detector_put update mythen3DetectorServervxxx xxx.rbf
 
 <span class="c1"># Or only program firmware</span>
 sls_detector_put programfpga xxx.rbf
@@ -375,10 +384,15 @@ sls_detector_put programfpga xxx.rbf
 <dl>
 <dt>Program from console</dt><dd><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Always ensure that the client and server software are of the same release.</span>
 
-<span class="c1"># copies server from tftp folder of pc, links new server to gotthard2DetectorServer,</span>
-<span class="c1"># programs fpga,</span>
-<span class="c1"># reboots</span>
+<span class="c1"># copies server, links new server to gotthard2DetectorServer,</span>
+<span class="c1"># removes old server from respawn, sets up new lnked server to respawn</span>
+<span class="c1"># programs fpga, reboots</span>
+
+<span class="c1"># v5.0.0 - 6.0.0 (copies server from tftp folder of the pc)</span>
 sls_detector_put update gotthard2DetectorServervxxx pcxxx xxx.rbf
+
+<span class="c1"># v6.1.1 - present (copies server from the full path provided)</span>
+sls_detector_put update gotthard2DetectorServervxxx xxx.rbf
 
 <span class="c1"># Or only program firmware</span>
 sls_detector_put programfpga xxx.rbf
@@ -416,11 +430,15 @@ sls_detector_put programfpga xxx.rbf
 <dl>
 <dt>Program from console</dt><dd><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Always ensure that the client and server software are of the same release.</span>
 
-<span class="c1"># copies server from tftp folder of pc, links new server to moenchDetectorServer,</span>
+<span class="c1"># copies server, links new server to moenchDetectorServer,</span>
 <span class="c1"># removes old server from respawn, sets up new lnked server to respawn</span>
-<span class="c1"># programs fpga,</span>
-<span class="c1"># reboots</span>
+<span class="c1"># programs fpga, reboots</span>
+
+<span class="c1"># v5.0.0 - 6.0.0 (copies server from tftp folder of the pc)</span>
 sls_detector_put update moenchDetectorServervxxx pcxxx xx.pof
+
+<span class="c1"># v6.1.1 - present (copies server from the full path provided)</span>
+sls_detector_put update moenchDetectorServervxxx xx.pof
 
 <span class="c1"># Or only program firmware</span>
 sls_detector_put programfpga xxx.pof
@@ -445,11 +463,15 @@ sls_detector_put programfpga xxx.pof
 <dl>
 <dt>Program from console</dt><dd><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Always ensure that the client and server software are of the same release.</span>
 
-<span class="c1"># copies server from tftp folder of pc, links new server to ctbDetectorServer,</span>
+<span class="c1"># copies server, links new server to ctbDetectorServer,</span>
 <span class="c1"># removes old server from respawn, sets up new lnked server to respawn</span>
-<span class="c1"># programs fpga,</span>
-<span class="c1"># reboots</span>
+<span class="c1"># programs fpga, reboots</span>
+
+<span class="c1"># v5.0.0 - 6.0.0 (copies server from tftp folder of the pc)</span>
 sls_detector_put update ctbDetectorServervxxx pcxxx xx.pof
+
+<span class="c1"># v6.1.1 - present (copies server from the full path provided)</span>
+sls_detector_put update ctbDetectorServervxxx xx.pof
 
 <span class="c1"># Or only program firmware</span>
 sls_detector_put programfpga xxx.pof

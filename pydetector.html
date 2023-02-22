@@ -72,6 +72,7 @@
 <li class="toctree-l3"><a class="reference internal" href="#slsdet.Detector.apulse"><code class="docutils literal notranslate"><span class="pre">Detector.apulse</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#slsdet.Detector.asamples"><code class="docutils literal notranslate"><span class="pre">Detector.asamples</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#slsdet.Detector.autocompdisable"><code class="docutils literal notranslate"><span class="pre">Detector.autocompdisable</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#slsdet.Detector.badchannels"><code class="docutils literal notranslate"><span class="pre">Detector.badchannels</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#slsdet.Detector.burstmode"><code class="docutils literal notranslate"><span class="pre">Detector.burstmode</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#slsdet.Detector.burstperiod"><code class="docutils literal notranslate"><span class="pre">Detector.burstperiod</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#slsdet.Detector.bursts"><code class="docutils literal notranslate"><span class="pre">Detector.bursts</span></code></a></li>
@@ -917,6 +918,14 @@ C++ API directly and the simplified exptime property.</p>
 <p>By default, the on-chip gain switching is active during the entire exposure. This mode disables the on-chip gain switching comparator automatically after 93.75% of exposure time (only for longer than 100us). The % is only for chipv1.0, the duration can be set for chipv1.1.</p>
 <p>Default is 0 or this mode disabled (comparator enabled throughout). 1 enables mode. 0 disables mode.</p>
 </div>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="slsdet.Detector.badchannels">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">badchannels</span></span><a class="headerlink" href="#slsdet.Detector.badchannels" title="Permalink to this definition"></a></dt>
+<dd><p>[fname|none|0]
+[Gotthard2][Mythen3] Sets the bad channels (from file of bad channel numbers) to be masked out. None or 0 unsets all the badchannels.</p>
+<p>[Mythen3] Also does trimming</p>
 </dd></dl>
 
 <dl class="py property">
@@ -1777,8 +1786,13 @@ eg. file name: run_d0_f0_5.raw</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="slsdet.Detector.getBadChannels">
-<span class="sig-name descname"><span class="pre">getBadChannels</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">_slsdet.CppDetectorApi</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg0</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg1</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">[]</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#slsdet.Detector.getBadChannels" title="Permalink to this definition"></a></dt>
-<dd></dd></dl>
+<span class="sig-name descname"><span class="pre">getBadChannels</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#slsdet.Detector.getBadChannels" title="Permalink to this definition"></a></dt>
+<dd><p>Overloaded function.</p>
+<ol class="arabic simple">
+<li><p>getBadChannels(self: _slsdet.CppDetectorApi, arg0: str, arg1: List[int] = []) -&gt; None</p></li>
+<li><p>getBadChannels(self: _slsdet.CppDetectorApi, arg0: List[int] = []) -&gt; List[List[int]]</p></li>
+</ol>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="slsdet.Detector.getBit">
@@ -3884,7 +3898,7 @@ runStatus.IDLE</p>
 <dl class="py property">
 <dt class="sig sig-object py" id="slsdet.Detector.rx_threads">
 <em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">rx_threads</span></span><a class="headerlink" href="#slsdet.Detector.rx_threads" title="Permalink to this definition"></a></dt>
-<dd><p>Get thread ids from the receiver in order of [parent, tcp, listener 0, processor 0, streamer 0, listener 1, processor 1, streamer 1, arping].</p>
+<dd><p>Get kernel thread ids from the receiver in order of [parent, tcp, listener 0, processor 0, streamer 0, listener 1, processor 1, streamer 1, arping].</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>If no streamer yet or there is no second interface, it gives 0 in its place.</p>
@@ -4115,8 +4129,14 @@ see python/examples/use_scan.py</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="slsdet.Detector.setBadChannels">
-<span class="sig-name descname"><span class="pre">setBadChannels</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">_slsdet.CppDetectorApi</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg0</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg1</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">[]</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#slsdet.Detector.setBadChannels" title="Permalink to this definition"></a></dt>
-<dd></dd></dl>
+<span class="sig-name descname"><span class="pre">setBadChannels</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#slsdet.Detector.setBadChannels" title="Permalink to this definition"></a></dt>
+<dd><p>Overloaded function.</p>
+<ol class="arabic simple">
+<li><p>setBadChannels(self: _slsdet.CppDetectorApi, arg0: str, arg1: List[int] = []) -&gt; None</p></li>
+<li><p>setBadChannels(self: _slsdet.CppDetectorApi, arg0: List[int], arg1: List[int] = []) -&gt; None</p></li>
+<li><p>setBadChannels(self: _slsdet.CppDetectorApi, arg0: List[List[int]]) -&gt; None</p></li>
+</ol>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="slsdet.Detector.setBit">

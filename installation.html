@@ -304,17 +304,17 @@ Usage: ./cmk.sh <span class="o">[</span>-b<span class="o">]</span> <span class="
 -z: Moench zmq processor
 
 
-<span class="c1"># get all options</span>
+<span class="c1"># display all options</span>
 ./cmk.sh -?
 
-<span class="c1"># new build and compile in parallel:</span>
-./cmk.sh -bj5
+<span class="c1"># new build and compile in parallel (recommended basic option):</span>
+./cmk.sh -cbj5
 
 <span class="c1"># new build, python and compile in parallel:</span>
-./cmk.sh -bpj5
+./cmk.sh -cbpj5
 
 <span class="c1">#To use the system zmq (/usr/lib64) instead</span>
-./cmk.sh -bj5 -q /usr/lib64
+./cmk.sh -cbj5 -q /usr/lib64
 </pre></div>
 </div>
 </section>

@@ -226,8 +226,8 @@
 <div class="line">Default is 0 or this mode disabled(comparator enabled throughout). 1 enables mode. 0 disables mode.</div>
 </div>
 </dd>
-<dt id="term-badchannels-fname">badchannels [fname]<a class="headerlink" href="#term-badchannels-fname" title="Permalink to this term"></a></dt><dd><div class="line-block">
-<div class="line">[Gotthard2][Mythen3] Sets the bad channels (from file of bad channel numbers) to be masked out.</div>
+<dt id="term-badchannels-fname-none-0">badchannels [fname|none|0]<a class="headerlink" href="#term-badchannels-fname-none-0" title="Permalink to this term"></a></dt><dd><div class="line-block">
+<div class="line">[Gotthard2][Mythen3] Sets the bad channels (from file of bad channel numbers) to be masked out. None or 0 unsets all the badchannels.</div>
 <div class="line">[Mythen3] Also does trimming</div>
 </div>
 </dd>
@@ -984,7 +984,7 @@
 </div>
 </dd>
 <dt id="term-rx_threads">rx_threads<a class="headerlink" href="#term-rx_threads" title="Permalink to this term"></a></dt><dd><div class="line-block">
-<div class="line">Get thread ids from the receiver in order of [parent, tcp, listener 0, processor 0, streamer 0, listener 1, processor 1, streamer 1, arping]. If no streamer yet or there is no second interface, it gives 0 in its place.</div>
+<div class="line">Get kernel thread ids from the receiver in order of [parent, tcp, listener 0, processor 0, streamer 0, listener 1, processor 1, streamer 1, arping]. If no streamer yet or there is no second interface, it gives 0 in its place.</div>
 </div>
 </dd>
 <dt id="term-rx_udpsocksize-n_size">rx_udpsocksize [n_size]<a class="headerlink" href="#term-rx_udpsocksize-n_size" title="Permalink to this term"></a></dt><dd><div class="line-block">

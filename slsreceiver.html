@@ -97,6 +97,7 @@
 <li class="toctree-l1 current"><a class="current reference internal" href="#">slsReceiver/ slsMultiReceiver</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#client-commands">Client Commands</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#zmq-json-header-format">ZMQ: Json Header Format</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#sls-receiver-header-format">SLS Receiver Header Format</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#file-format">File format</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#performance">Performance</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#using-callbacks">Using Callbacks</a></li>
@@ -395,6 +396,47 @@ for processing code.</p></td>
 </table>
 </div></blockquote>
 </section>
+<section id="sls-receiver-header-format">
+<h2>SLS Receiver Header Format<a class="headerlink" href="#sls-receiver-header-format" title="Permalink to this heading"></a></h2>
+<dl class="simple">
+<dt>It is 112 bytes and consists of:</dt><dd><ul class="simple">
+<li><p>48 bytes of the SLS Detector Header (described in <a class="reference internal" href="udpheader.html#detector-udp-header"><span class="std std-ref">the current detector header</span></a>)</p></li>
+<li><p>64 bytes of packet mask</p></li>
+</ul>
+</dd>
+</dl>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">typedef</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="kt">uint64_t</span><span class="w"> </span><span class="n">frameNumber</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="kt">uint32_t</span><span class="w"> </span><span class="n">expLength</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="kt">uint32_t</span><span class="w"> </span><span class="n">packetNumber</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="kt">uint64_t</span><span class="w"> </span><span class="n">detSpec1</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="kt">uint64_t</span><span class="w"> </span><span class="n">timestamp</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="kt">uint16_t</span><span class="w"> </span><span class="n">modId</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="kt">uint16_t</span><span class="w"> </span><span class="n">row</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="kt">uint16_t</span><span class="w"> </span><span class="n">column</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="kt">uint16_t</span><span class="w"> </span><span class="n">detSpec2</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="kt">uint32_t</span><span class="w"> </span><span class="n">detSpec3</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="kt">uint16_t</span><span class="w"> </span><span class="n">detSpec4</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="kt">uint8_t</span><span class="w"> </span><span class="n">detType</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="kt">uint8_t</span><span class="w"> </span><span class="n">version</span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"> </span><span class="n">sls_detector_header</span><span class="p">;</span><span class="w"></span>
+
+<span class="k">struct</span><span class="w"> </span><span class="nc">sls_receiver_header</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="n">sls_detector_header</span><span class="w"> </span><span class="n">detHeader</span><span class="p">;</span><span class="w"> </span><span class="cm">/**&lt; is the detector header */</span><span class="w"></span>
+<span class="w">    </span><span class="n">sls_bitset</span><span class="w"> </span><span class="n">packetsMask</span><span class="p">;</span><span class="w">        </span><span class="cm">/**&lt; is the packets caught bit mask */</span><span class="w"></span>
+<span class="p">};</span><span class="w"></span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<div class="line-block">
+<div class="line">The packetNumber in the SLS Receiver Header will be modified to number of packets caught by receiver for that frame. For eg. Jungfrau will have 128 packets per frame. If it is less, then this is a partial frame due to missing packets.</div>
+</div>
+<div class="line-block">
+<div class="line">Furthermore, the bit mask will specify which packets have been received.</div>
+</div>
+</div>
+</section>
 <section id="file-format">
 <h2>File format<a class="headerlink" href="#file-format" title="Permalink to this heading"></a></h2>
 <p>Master file is in json format.</p>
@@ -415,7 +457,6 @@ path-to-file/run_d0_f0_1.raw
 </div>
 </div></blockquote>
 <p>Each acquisition will create a master file that can be enabled/disabled using <strong>fmaster</strong>. This should have parameters relevant to the acquisition.</p>
-<p>SLS Receiver Header consist of SLS Detector Header + 64 bytes of bitmask, altogether 112 bytes. The packetNumber in the sls detector header part, will be updated to number of packets caught by receiver for that frame. Furthermore, the bit mask will specify which packets have been received.</p>
 <p><strong>Binary file format</strong></p>
 <p>This is the default file format.</p>
 <p>Each data file will consist of frames, each consisting of slsReceiver Header followed by data for 1 frame.</p>
