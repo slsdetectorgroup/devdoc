@@ -120,10 +120,12 @@
 <li class="toctree-l3"><a class="reference internal" href="#slsdet.Detector.adcphase"><code class="docutils literal notranslate"><span class="pre">Detector.adcphase</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#slsdet.Detector.adcpipeline"><code class="docutils literal notranslate"><span class="pre">Detector.adcpipeline</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#slsdet.Detector.adcreg"><code class="docutils literal notranslate"><span class="pre">Detector.adcreg</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#slsdet.Detector.adcvpp"><code class="docutils literal notranslate"><span class="pre">Detector.adcvpp</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#slsdet.Detector.apulse"><code class="docutils literal notranslate"><span class="pre">Detector.apulse</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#slsdet.Detector.asamples"><code class="docutils literal notranslate"><span class="pre">Detector.asamples</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#slsdet.Detector.autocompdisable"><code class="docutils literal notranslate"><span class="pre">Detector.autocompdisable</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#slsdet.Detector.badchannels"><code class="docutils literal notranslate"><span class="pre">Detector.badchannels</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#slsdet.Detector.blockingtrigger"><code class="docutils literal notranslate"><span class="pre">Detector.blockingtrigger()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#slsdet.Detector.burstmode"><code class="docutils literal notranslate"><span class="pre">Detector.burstmode</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#slsdet.Detector.burstperiod"><code class="docutils literal notranslate"><span class="pre">Detector.burstperiod</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#slsdet.Detector.bursts"><code class="docutils literal notranslate"><span class="pre">Detector.bursts</span></code></a></li>
@@ -135,9 +137,11 @@
 <li class="toctree-l3"><a class="reference internal" href="#slsdet.Detector.clearROI"><code class="docutils literal notranslate"><span class="pre">Detector.clearROI()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#slsdet.Detector.clearRxROI"><code class="docutils literal notranslate"><span class="pre">Detector.clearRxROI()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#slsdet.Detector.clearUDPDestinations"><code class="docutils literal notranslate"><span class="pre">Detector.clearUDPDestinations()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#slsdet.Detector.clearbusy"><code class="docutils literal notranslate"><span class="pre">Detector.clearbusy()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#slsdet.Detector.clientversion"><code class="docutils literal notranslate"><span class="pre">Detector.clientversion</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#slsdet.Detector.clkdiv"><code class="docutils literal notranslate"><span class="pre">Detector.clkdiv</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#slsdet.Detector.clkfreq"><code class="docutils literal notranslate"><span class="pre">Detector.clkfreq</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#slsdet.Detector.clkphase"><code class="docutils literal notranslate"><span class="pre">Detector.clkphase</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#slsdet.Detector.compdisabletime"><code class="docutils literal notranslate"><span class="pre">Detector.compdisabletime</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#slsdet.Detector.config"><code class="docutils literal notranslate"><span class="pre">Detector.config</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#slsdet.Detector.counters"><code class="docutils literal notranslate"><span class="pre">Detector.counters</span></code></a></li>
@@ -181,6 +185,7 @@
 <li class="toctree-l3"><a class="reference internal" href="#slsdet.Detector.free"><code class="docutils literal notranslate"><span class="pre">Detector.free()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#slsdet.Detector.freeSharedMemory"><code class="docutils literal notranslate"><span class="pre">Detector.freeSharedMemory()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#slsdet.Detector.fwrite"><code class="docutils literal notranslate"><span class="pre">Detector.fwrite</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#slsdet.Detector.gaincaps"><code class="docutils literal notranslate"><span class="pre">Detector.gaincaps</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#slsdet.Detector.gainmode"><code class="docutils literal notranslate"><span class="pre">Detector.gainmode</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#slsdet.Detector.gainmodelist"><code class="docutils literal notranslate"><span class="pre">Detector.gainmodelist</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#slsdet.Detector.gappixels"><code class="docutils literal notranslate"><span class="pre">Detector.gappixels</span></code></a></li>
@@ -485,6 +490,7 @@
 <li class="toctree-l3"><a class="reference internal" href="#slsdet.Detector.readnrows"><code class="docutils literal notranslate"><span class="pre">Detector.readnrows</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#slsdet.Detector.readout"><code class="docutils literal notranslate"><span class="pre">Detector.readout()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#slsdet.Detector.readoutspeed"><code class="docutils literal notranslate"><span class="pre">Detector.readoutspeed</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#slsdet.Detector.readoutspeedlist"><code class="docutils literal notranslate"><span class="pre">Detector.readoutspeedlist</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#slsdet.Detector.rebootController"><code class="docutils literal notranslate"><span class="pre">Detector.rebootController()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#slsdet.Detector.reconfigureUDPDestination"><code class="docutils literal notranslate"><span class="pre">Detector.reconfigureUDPDestination()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#slsdet.Detector.reg"><code class="docutils literal notranslate"><span class="pre">Detector.reg</span></code></a></li>
@@ -493,6 +499,7 @@
 <li class="toctree-l3"><a class="reference internal" href="#slsdet.Detector.resetFPGA"><code class="docutils literal notranslate"><span class="pre">Detector.resetFPGA()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#slsdet.Detector.resetTemperatureEvent"><code class="docutils literal notranslate"><span class="pre">Detector.resetTemperatureEvent()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#slsdet.Detector.resetToDefaultDacs"><code class="docutils literal notranslate"><span class="pre">Detector.resetToDefaultDacs()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#slsdet.Detector.resetdacs"><code class="docutils literal notranslate"><span class="pre">Detector.resetdacs()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#slsdet.Detector.romode"><code class="docutils literal notranslate"><span class="pre">Detector.romode</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#slsdet.Detector.runclk"><code class="docutils literal notranslate"><span class="pre">Detector.runclk</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#slsdet.Detector.runtime"><code class="docutils literal notranslate"><span class="pre">Detector.runtime</span></code></a></li>
@@ -534,6 +541,7 @@
 <li class="toctree-l3"><a class="reference internal" href="#slsdet.Detector.selectUDPInterface"><code class="docutils literal notranslate"><span class="pre">Detector.selectUDPInterface()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#slsdet.Detector.selinterface"><code class="docutils literal notranslate"><span class="pre">Detector.selinterface</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#slsdet.Detector.sendSoftwareTrigger"><code class="docutils literal notranslate"><span class="pre">Detector.sendSoftwareTrigger()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#slsdet.Detector.serialnumber"><code class="docutils literal notranslate"><span class="pre">Detector.serialnumber</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#slsdet.Detector.setADCClock"><code class="docutils literal notranslate"><span class="pre">Detector.setADCClock()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#slsdet.Detector.setADCConfiguration"><code class="docutils literal notranslate"><span class="pre">Detector.setADCConfiguration()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#slsdet.Detector.setADCEnableMask"><code class="docutils literal notranslate"><span class="pre">Detector.setADCEnableMask()</span></code></a></li>
@@ -734,6 +742,7 @@
 <li class="toctree-l3"><a class="reference internal" href="#slsdet.Detector.timinglist"><code class="docutils literal notranslate"><span class="pre">Detector.timinglist</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#slsdet.Detector.timingsource"><code class="docutils literal notranslate"><span class="pre">Detector.timingsource</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#slsdet.Detector.top"><code class="docutils literal notranslate"><span class="pre">Detector.top</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#slsdet.Detector.trigger"><code class="docutils literal notranslate"><span class="pre">Detector.trigger()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#slsdet.Detector.triggers"><code class="docutils literal notranslate"><span class="pre">Detector.triggers</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#slsdet.Detector.triggersl"><code class="docutils literal notranslate"><span class="pre">Detector.triggersl</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#slsdet.Detector.trimbits"><code class="docutils literal notranslate"><span class="pre">Detector.trimbits</span></code></a></li>
@@ -990,6 +999,13 @@ C++ API directly and the simplified exptime property.</p>
 </dd></dl>
 
 <dl class="py property">
+<dt class="sig sig-object py" id="slsdet.Detector.adcvpp">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">adcvpp</span></span><a class="headerlink" href="#slsdet.Detector.adcvpp" title="Permalink to this definition">¶</a></dt>
+<dd><p>[Ctb][Moench] Vpp of ADC. [0 -&gt; 1V | 1 -&gt; 1.14V | 2 -&gt; 1.33V | 3 -&gt; 1.6V | 4 -&gt; 2V]</p>
+<p>Advanced User function!</p>
+</dd></dl>
+
+<dl class="py property">
 <dt class="sig sig-object py" id="slsdet.Detector.apulse">
 <em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">apulse</span></span><a class="headerlink" href="#slsdet.Detector.apulse" title="Permalink to this definition">¶</a></dt>
 <dd><p>[Mythen3] Enable or disable analog pulsing.</p>
@@ -1019,6 +1035,11 @@ C++ API directly and the simplified exptime property.</p>
 [Gotthard2][Mythen3] Sets the bad channels (from file of bad channel numbers) to be masked out. None or 0 unsets all the badchannels.</p>
 <p>[Mythen3] Also does trimming</p>
 </dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="slsdet.Detector.blockingtrigger">
+<span class="sig-name descname"><span class="pre">blockingtrigger</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#slsdet.Detector.blockingtrigger" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
 
 <dl class="py property">
 <dt class="sig sig-object py" id="slsdet.Detector.burstmode">
@@ -1144,6 +1165,12 @@ Also changes clkdiv 2, 3, 4</p>
 <span class="sig-name descname"><span class="pre">clearUDPDestinations</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">_slsdet.CppDetectorApi</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg0</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">[]</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#slsdet.Detector.clearUDPDestinations" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
+<dl class="py method">
+<dt class="sig sig-object py" id="slsdet.Detector.clearbusy">
+<span class="sig-name descname"><span class="pre">clearbusy</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#slsdet.Detector.clearbusy" title="Permalink to this definition">¶</a></dt>
+<dd><p>If acquisition aborted during acquire command, use this to clear acquiring flag in shared memory before starting next acquisition</p>
+</dd></dl>
+
 <dl class="py property">
 <dt class="sig sig-object py" id="slsdet.Detector.clientversion">
 <em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">clientversion</span></span><a class="headerlink" href="#slsdet.Detector.clientversion" title="Permalink to this definition">¶</a></dt>
@@ -1179,6 +1206,23 @@ Also changes clkdiv 2, 3, 4</p>
 <p class="rubric">Example</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">d</span><span class="o">.</span><span class="n">clkfreq</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
 <span class="go">50000000</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="slsdet.Detector.clkphase">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">clkphase</span></span><a class="headerlink" href="#slsdet.Detector.clkphase" title="Permalink to this definition">¶</a></dt>
+<dd><p>[Gotthard2][Mythen3] Phase shift of all clocks.</p>
+<p class="rubric">Example</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">d</span><span class="o">.</span><span class="n">clkphase</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mi">20</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">d</span><span class="o">.</span><span class="n">clkphase</span>
+<span class="go">0: 20</span>
+<span class="go">1: 10</span>
+<span class="go">2: 20</span>
+<span class="go">3: 10</span>
+<span class="go">4: 10</span>
+<span class="go">5: 5</span>
 </pre></div>
 </div>
 </dd></dl>
@@ -1712,6 +1756,32 @@ eg. file name: run_d0_f0_5.raw</p>
 <dt class="sig sig-object py" id="slsdet.Detector.fwrite">
 <em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">fwrite</span></span><a class="headerlink" href="#slsdet.Detector.fwrite" title="Permalink to this definition">¶</a></dt>
 <dd><p>Enable or disable receiver file write. Default is enabled.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="slsdet.Detector.gaincaps">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">gaincaps</span></span><a class="headerlink" href="#slsdet.Detector.gaincaps" title="Permalink to this definition">¶</a></dt>
+<dd><p>M3_GainCaps</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Options: M3_GainCaps, M3_C15sh, M3_C30sh, M3_C50sh, M3_C225ACsh, M3_C15pre</p>
+</div>
+<p class="rubric">Example</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">d</span><span class="o">.</span><span class="n">gaincaps</span>
+<span class="go">C15pre, C30sh</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">d</span><span class="o">.</span><span class="n">gaincaps</span> <span class="o">=</span> <span class="n">M3_GainCaps</span><span class="o">.</span><span class="n">M3_C30sh</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">d</span><span class="o">.</span><span class="n">gaincaps</span>
+<span class="go">C30sh</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">d</span><span class="o">.</span><span class="n">gaincaps</span> <span class="o">=</span> <span class="n">M3_GainCaps</span><span class="o">.</span><span class="n">M3_C30sh</span> <span class="o">|</span> <span class="n">M3_GainCaps</span><span class="o">.</span><span class="n">M3_C15sh</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">d</span><span class="o">.</span><span class="n">gaincaps</span>
+<span class="go">C15sh, C30sh</span>
+</pre></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>[Mythen3] Gain caps. Enum</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="py property">
@@ -3664,6 +3734,12 @@ Set up per measurement.</p>
 </dl>
 </dd></dl>
 
+<dl class="py property">
+<dt class="sig sig-object py" id="slsdet.Detector.readoutspeedlist">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">readoutspeedlist</span></span><a class="headerlink" href="#slsdet.Detector.readoutspeedlist" title="Permalink to this definition">¶</a></dt>
+<dd><p>List of readout speed levels implemented for this detector.</p>
+</dd></dl>
+
 <dl class="py method">
 <dt class="sig sig-object py" id="slsdet.Detector.rebootController">
 <span class="sig-name descname"><span class="pre">rebootController</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">_slsdet.CppDetectorApi</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg0</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">[]</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#slsdet.Detector.rebootController" title="Permalink to this definition">¶</a></dt>
@@ -3709,6 +3785,11 @@ Set up per measurement.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="slsdet.Detector.resetToDefaultDacs">
 <span class="sig-name descname"><span class="pre">resetToDefaultDacs</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">_slsdet.CppDetectorApi</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg0</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg1</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">[]</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#slsdet.Detector.resetToDefaultDacs" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="slsdet.Detector.resetdacs">
+<span class="sig-name descname"><span class="pre">resetdacs</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">use_hardware_values</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#slsdet.Detector.resetdacs" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py property">
@@ -4143,6 +4224,12 @@ see python/examples/use_scan.py</p>
 <dt class="sig sig-object py" id="slsdet.Detector.sendSoftwareTrigger">
 <span class="sig-name descname"><span class="pre">sendSoftwareTrigger</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">_slsdet.CppDetectorApi</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg0</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg1</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">[]</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#slsdet.Detector.sendSoftwareTrigger" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="slsdet.Detector.serialnumber">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">serialnumber</span></span><a class="headerlink" href="#slsdet.Detector.serialnumber" title="Permalink to this definition">¶</a></dt>
+<dd><p>Jungfrau][Gotthard][Mythen3][Gotthard2][CTB][Moench] Serial number of detector</p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="slsdet.Detector.setADCClock">
@@ -5416,6 +5503,11 @@ Options 0-max. max is 15 (default) for chipv1.0 and 3 (default) for chipv1.1.</p
 <p>Advanced Function!</p>
 </div>
 </dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="slsdet.Detector.trigger">
+<span class="sig-name descname"><span class="pre">trigger</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#slsdet.Detector.trigger" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
 
 <dl class="py property">
 <dt class="sig sig-object py" id="slsdet.Detector.triggers">

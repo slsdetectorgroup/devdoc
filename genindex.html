@@ -281,6 +281,8 @@
 </li>
       <li><a href="commandline.html#term-adcreg-address-value"><strong>adcreg [address] [value]</strong></a>
 </li>
+      <li><a href="pydetector.html#slsdet.Detector.adcvpp">adcvpp (slsdet.Detector property)</a>
+</li>
       <li><a href="commandline.html#term-adcvpp-dac-or-mV-value-optional-unit-mV"><strong>adcvpp [dac or mV value][(optional unit) mV]</strong></a>
 </li>
       <li><a href="pydetector.html#slsdet.Detector.apulse">apulse (slsdet.Detector property)</a>
@@ -306,6 +308,8 @@
       <li><a href="commandline.html#term-badchannels-fname-none-0"><strong>badchannels [fname|none|0]</strong></a>
 </li>
       <li><a href="commandline.html#term-blockingtrigger"><strong>blockingtrigger</strong></a>
+</li>
+      <li><a href="pydetector.html#slsdet.Detector.blockingtrigger">blockingtrigger() (slsdet.Detector method)</a>
 </li>
       <li><a href="pyenums.html#slsdet.burstMode">burstMode (class in slsdet)</a>
 </li>
@@ -355,6 +359,8 @@
 </li>
       <li><a href="commandline.html#term-clearbusy"><strong>clearbusy</strong></a>
 </li>
+      <li><a href="pydetector.html#slsdet.Detector.clearbusy">clearbusy() (slsdet.Detector method)</a>
+</li>
       <li><a href="commandline.html#term-clearroi-Gotthard-Resets-Region-of-interest-in-detector.-All-channels-enabled.-Default-is-all-channels-enabled."><strong>clearroi [Gotthard] Resets Region of interest in detector. All channels enabled. Default is all channels enabled.</strong></a>
 </li>
       <li><a href="pydetector.html#slsdet.Detector.clearROI">clearROI() (slsdet.Detector method)</a>
@@ -379,6 +385,8 @@
 </li>
       <li><a href="commandline.html#term-clkfreq-n_clock-0-5-freq_in_Hz"><strong>clkfreq [n_clock (0-5)] [freq_in_Hz]</strong></a>
 </li>
+      <li><a href="pydetector.html#slsdet.Detector.clkphase">clkphase (slsdet.Detector property)</a>
+</li>
       <li><a href="commandline.html#term-clkphase-n_clock-0-5-phase-deg-optional"><strong>clkphase [n_clock (0-5)] [phase] [deg (optional)]</strong></a>
 </li>
       <li><a href="pyenums.html#slsdet.clockIndex">clockIndex (class in slsdet)</a>
@@ -387,7 +395,7 @@
 </li>
       <li><a href="commandline.html#term-compdisabletime-duration-optional-unit-ns-us-ms-s"><strong>compdisabletime [duration] [(optional unit) ns|us|ms|s]</strong></a>
 </li>
-      <li><a href="commandline.html#term-confadc-chip-index-0-9-setting-individual-chips-not-yet-implemented-1-for-all-adc-index-0-31-1-for-all-7-bit-configuration-value-in-hex"><strong>confadc [chip index 0-9 [setting individual chips not yet implemented], -1 for all] [adc index 0-31, -1 for all] [7 bit configuration value in hex]</strong></a>
+      <li><a href="commandline.html#term-confadc-chip-index-0-9-1-for-all-adc-index-0-31-1-for-all-7-bit-configuration-value-in-hex"><strong>confadc [chip index 0-9, -1 for all] [adc index 0-31, -1 for all] [7 bit configuration value in hex]</strong></a>
 </li>
       <li><a href="pydetector.html#slsdet.Detector.config">config (slsdet.Detector property)</a>
 </li>
@@ -633,6 +641,8 @@
 <h2 id="G">G</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="pydetector.html#slsdet.Detector.gaincaps">gaincaps (slsdet.Detector property)</a>
+</li>
       <li><a href="commandline.html#term-gaincaps-cap1-cap2-..."><strong>gaincaps [cap1, cap2, ...]</strong></a>
 </li>
       <li><a href="pyenums.html#slsdet.gainMode">gainMode (class in slsdet)</a>
@@ -871,10 +881,10 @@
 </li>
       <li><a href="pydetector.html#slsdet.Detector.getMaxDBITPhaseShift">getMaxDBITPhaseShift() (slsdet.Detector method)</a>
 </li>
-      <li><a href="pydetector.html#slsdet.Detector.getMeasuredCurrent">getMeasuredCurrent() (slsdet.Detector method)</a>
-</li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="pydetector.html#slsdet.Detector.getMeasuredCurrent">getMeasuredCurrent() (slsdet.Detector method)</a>
+</li>
       <li><a href="pydetector.html#slsdet.Detector.getMeasuredPeriod">getMeasuredPeriod() (slsdet.Detector method)</a>
 </li>
       <li><a href="pydetector.html#slsdet.Detector.getMeasuredSubFramePeriod">getMeasuredSubFramePeriod() (slsdet.Detector method)</a>
@@ -1518,7 +1528,11 @@
 </li>
       </ul></li>
       <li><a href="commandline.html#term-readoutspeedlist"><strong>readoutspeedlist</strong></a>
+
+      <ul>
+        <li><a href="pydetector.html#slsdet.Detector.readoutspeedlist">(slsdet.Detector property)</a>
 </li>
+      </ul></li>
       <li><a href="pydetector.html#slsdet.Detector.readRegister">readRegister() (slsdet.Detector method)</a>
 </li>
       <li><a href="commandline.html#term-rebootcontroller"><strong>rebootcontroller</strong></a>
@@ -1536,6 +1550,8 @@
       <li><a href="pydetector.html#slsdet.Detector.registerDataCallback">registerDataCallback() (slsdet.Detector method)</a>
 </li>
       <li><a href="commandline.html#term-resetdacs-optional-hard"><strong>resetdacs [(optional) hard]</strong></a>
+</li>
+      <li><a href="pydetector.html#slsdet.Detector.resetdacs">resetdacs() (slsdet.Detector method)</a>
 </li>
       <li><a href="commandline.html#term-resetfpga"><strong>resetfpga</strong></a>
 </li>
@@ -1595,10 +1611,10 @@
         <li><a href="pydetector.html#slsdet.Detector.rx_framescaught">(slsdet.Detector property)</a>
 </li>
       </ul></li>
-      <li><a href="pydetector.html#slsdet.Detector.rx_framesperfile">rx_framesperfile (slsdet.Detector property)</a>
-</li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="pydetector.html#slsdet.Detector.rx_framesperfile">rx_framesperfile (slsdet.Detector property)</a>
+</li>
       <li><a href="commandline.html#term-rx_framesperfile-n_frames"><strong>rx_framesperfile [n_frames]</strong></a>
 </li>
       <li><a href="pydetector.html#slsdet.Detector.rx_hostname">rx_hostname (slsdet.Detector property)</a>
@@ -1738,7 +1754,11 @@
       <li><a href="pydetector.html#slsdet.Detector.sendSoftwareTrigger">sendSoftwareTrigger() (slsdet.Detector method)</a>
 </li>
       <li><a href="commandline.html#term-serialnumber"><strong>serialnumber</strong></a>
+
+      <ul>
+        <li><a href="pydetector.html#slsdet.Detector.serialnumber">(slsdet.Detector property)</a>
 </li>
+      </ul></li>
       <li><a href="pydetector.html#slsdet.Detector.setAcquisitionIndex">setAcquisitionIndex() (slsdet.Detector method)</a>
 </li>
       <li><a href="pydetector.html#slsdet.Detector.setActive">setActive() (slsdet.Detector method)</a>
@@ -3236,6 +3256,8 @@
       <li><a href="pyenums.html#slsdet.timingSourceType">timingSourceType (class in slsdet)</a>
 </li>
       <li><a href="pydetector.html#slsdet.Detector.top">top (slsdet.Detector property)</a>
+</li>
+      <li><a href="pydetector.html#slsdet.Detector.trigger">trigger() (slsdet.Detector method)</a>
 </li>
       <li><a href="pydetector.html#slsdet.Detector.triggers">triggers (slsdet.Detector property)</a>
 </li>
