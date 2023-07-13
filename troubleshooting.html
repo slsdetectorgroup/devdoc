@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Troubleshooting &mdash; slsDetectorPackage  documentation</title>
@@ -29,14 +29,18 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-            <a href="index.html" class="icon icon-home"> slsDetectorPackage
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            slsDetectorPackage
           </a>
               <div class="version">
                 7.0.2
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
@@ -141,7 +145,7 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="index.html" class="icon icon-home"></a></li>
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
       <li class="breadcrumb-item active">Troubleshooting</li>
       <li class="wy-breadcrumbs-aside">
             <a href="_sources/troubleshooting.rst.txt" rel="nofollow"> View page source</a>
@@ -188,10 +192,10 @@ open an issue at our  <a class="reference external" href="https://github.com/sls
 <dt>Detector is not acquiring (Not Eiger)</dt><dd><ul>
 <li><p>Take an acquisition with many images and using the following steps instead of acquire:</p>
 <blockquote>
-<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sls_detector_put status start
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sls_detector_put<span class="w"> </span>status<span class="w"> </span>start
 <span class="c1"># keep executing this command to see if the number of frames left keeps decreasing,</span>
 <span class="c1"># which means the detector is acquiring.</span>
-sls_detector_get framesl
+sls_detector_get<span class="w"> </span>framesl
 
 <span class="c1"># If you are using multiple modules, the previous command can return -1 because each module will return different values. Then, check for a single module instead: sls_detector_get 0:framesl</span>
 </pre></div>
@@ -291,7 +295,7 @@ sls_detector_get framesl
 <li><p>Eg. if rx_udpip is 10.2.3.100, then ping constantly 10.2.3.xxx, where xxx is any ip other than 100.</p></li>
 <li><dl>
 <dt>Using slsReceiver, you can use a command that does this for you:</dt><dd><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># arping the interface in a separate thread every minute</span>
-sls_detector_put rx_arping <span class="m">1</span>
+sls_detector_put<span class="w"> </span>rx_arping<span class="w"> </span><span class="m">1</span>
 </pre></div>
 </div>
 </dd>
@@ -317,13 +321,13 @@ sls_detector_put rx_arping <span class="m">1</span>
 <dt>Increase maximum receive socket buffer size and socket input packet queue.</dt><dd><ul>
 <li><dl>
 <dt>Temporarily (until shut down)</dt><dd><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># check size</span>
-sysctl -a <span class="p">|</span> grep rmem
-sysctl -a <span class="p">|</span> grep backlog
+sysctl<span class="w"> </span>-a<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>rmem
+sysctl<span class="w"> </span>-a<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>backlog
 
 <span class="c1"># set max and default (use 1Gb for Jungfrau and 100Mb for others)</span>
-sysctl net.core.rmem_max<span class="o">=</span><span class="k">$((</span><span class="m">100</span><span class="o">*</span><span class="m">1024</span><span class="o">*</span><span class="m">1024</span><span class="k">))</span>
-sysctl net.core.rmem_default<span class="o">=</span><span class="k">$((</span><span class="m">100</span><span class="o">*</span><span class="m">1024</span><span class="o">*</span><span class="m">1024</span><span class="k">))</span>
-sysctl net.core.netdev_max_backlog<span class="o">=</span><span class="m">250000</span>
+sysctl<span class="w"> </span>net.core.rmem_max<span class="o">=</span><span class="k">$((</span><span class="m">100</span><span class="o">*</span><span class="m">1024</span><span class="o">*</span><span class="m">1024</span><span class="k">))</span>
+sysctl<span class="w"> </span>net.core.rmem_default<span class="o">=</span><span class="k">$((</span><span class="m">100</span><span class="o">*</span><span class="m">1024</span><span class="o">*</span><span class="m">1024</span><span class="k">))</span>
+sysctl<span class="w"> </span>net.core.netdev_max_backlog<span class="o">=</span><span class="m">250000</span>
 </pre></div>
 </div>
 </dd>
@@ -332,12 +336,12 @@ sysctl net.core.netdev_max_backlog<span class="o">=</span><span class="m">250000
 <li><dl>
 <dt>Permanently</dt><dd><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># edit /etc/sysctl.conf file</span>
 <span class="c1"># set max and default (use 1Gb for Jungfrau and 100Mb for others)</span>
-net.core.rmem_max <span class="o">=</span> <span class="m">104857600</span>
-net.core.rmem_default<span class="o">=</span> <span class="m">104857600</span>
-net.core.netdev_max_backlog <span class="o">=</span> <span class="m">250000</span>
+net.core.rmem_max<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">104857600</span>
+net.core.rmem_default<span class="o">=</span><span class="w"> </span><span class="m">104857600</span>
+net.core.netdev_max_backlog<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">250000</span>
 
 <span class="c1"># save file and run the following</span>
-sysctl -p
+sysctl<span class="w"> </span>-p
 </pre></div>
 </div>
 </dd>
@@ -360,9 +364,9 @@ sysctl -p
 </dl>
 </li>
 <li><dl>
-<dt>Write to memory if not a large disk and pc not fast enough.</dt><dd><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>mount -t tmpfs none /ramdisk_folder
+<dt>Write to memory if not a large disk and pc not fast enough.</dt><dd><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>mount<span class="w"> </span>-t<span class="w"> </span>tmpfs<span class="w"> </span>none<span class="w"> </span>/ramdisk_folder
 <span class="c1"># or</span>
-mount -t tmpfs none /mnt/ramdisk -o <span class="nv">size</span><span class="o">=</span>10G
+mount<span class="w"> </span>-t<span class="w"> </span>tmpfs<span class="w"> </span>none<span class="w"> </span>/mnt/ramdisk<span class="w"> </span>-o<span class="w"> </span><span class="nv">size</span><span class="o">=</span>10G
 <span class="c1"># check how many GB memory you can allocate, to avoid swapping otherwise</span>
 </pre></div>
 </div>
@@ -373,10 +377,10 @@ mount -t tmpfs none /mnt/ramdisk -o <span class="nv">size</span><span class="o">
 <dt>Modify ethtool settings.</dt><dd><ul>
 <li><dl>
 <dt>rx ring parameters</dt><dd><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># check</span>
-ethtool -g xth1
+ethtool<span class="w"> </span>-g<span class="w"> </span>xth1
 
 <span class="c1"># set to max value in your pc settings</span>
-ethtool -G xth1 rx <span class="m">4096</span>
+ethtool<span class="w"> </span>-G<span class="w"> </span>xth1<span class="w"> </span>rx<span class="w"> </span><span class="m">4096</span>
 </pre></div>
 </div>
 </dd>
@@ -384,13 +388,13 @@ ethtool -G xth1 rx <span class="m">4096</span>
 </li>
 <li><dl>
 <dt>coalesce settings (might not always work)</dt><dd><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># check</span>
-ethtool -c xth1
+ethtool<span class="w"> </span>-c<span class="w"> </span>xth1
 
 <span class="c1"># enable adaptive xoalescence parameters</span>
-ethtool -C xth1 adaptive-rx on
+ethtool<span class="w"> </span>-C<span class="w"> </span>xth1<span class="w"> </span>adaptive-rx<span class="w"> </span>on
 
 <span class="c1"># set to max value in your pc settings</span>
-ethtool -C xth1 rx-usecs <span class="m">100</span>
+ethtool<span class="w"> </span>-C<span class="w"> </span>xth1<span class="w"> </span>rx-usecs<span class="w"> </span><span class="m">100</span>
 </pre></div>
 </div>
 </dd>
@@ -398,10 +402,10 @@ ethtool -C xth1 rx-usecs <span class="m">100</span>
 </li>
 <li><dl>
 <dt>pause parameters</dt><dd><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># check</span>
-ethtool -a xth1
+ethtool<span class="w"> </span>-a<span class="w"> </span>xth1
 
 <span class="c1"># set to max value in your pc settings</span>
-ethtool -A xth1 rx on
+ethtool<span class="w"> </span>-A<span class="w"> </span>xth1<span class="w"> </span>rx<span class="w"> </span>on
 </pre></div>
 </div>
 </dd>
@@ -409,10 +413,10 @@ ethtool -A xth1 rx on
 </li>
 <li><dl>
 <dt>generic receiver offload (might not always work)</dt><dd><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># check</span>
-ethtool -k xth1
+ethtool<span class="w"> </span>-k<span class="w"> </span>xth1
 
 <span class="c1"># enable generic receiver offload</span>
-ethtool -K xth1 gro
+ethtool<span class="w"> </span>-K<span class="w"> </span>xth1<span class="w"> </span>gro
 </pre></div>
 </div>
 </dd>
@@ -426,9 +430,9 @@ ethtool -K xth1 gro
 <dt>Disable power saving in CPU frequency scaling and set system to performance</dt><dd><ul>
 <li><dl>
 <dt>Check current policy (default might be powersave or schedutil)</dt><dd><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># check current active governor and range of cpu freq policy</span>
-cpupower frequency-info --policy
+cpupower<span class="w"> </span>frequency-info<span class="w"> </span>--policy
 <span class="c1"># list all available governors for this kernel</span>
-cpupower frequency-info --governors
+cpupower<span class="w"> </span>frequency-info<span class="w"> </span>--governors
 </pre></div>
 </div>
 </dd>
@@ -436,11 +440,11 @@ cpupower frequency-info --governors
 </li>
 <li><dl>
 <dt>Temporarily (until shut down)</dt><dd><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># set to performance</span>
-sudo cpupower frequency-set -g performance
+sudo<span class="w"> </span>cpupower<span class="w"> </span>frequency-set<span class="w"> </span>-g<span class="w"> </span>performance
 
 <span class="c1"># or</span>
 cpufreq-info
-<span class="k">for</span> i <span class="k">in</span> ‘seq <span class="m">0</span> <span class="m">7</span>‘<span class="p">;</span> <span class="k">do</span> cpufreq-set -c <span class="nv">$i</span> -g performance<span class="p">;</span> <span class="k">done</span>
+<span class="k">for</span><span class="w"> </span>i<span class="w"> </span><span class="k">in</span><span class="w"> </span>‘seq<span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="m">7</span>‘<span class="p">;</span><span class="w"> </span><span class="k">do</span><span class="w"> </span>cpufreq-set<span class="w"> </span>-c<span class="w"> </span><span class="nv">$i</span><span class="w"> </span>-g<span class="w"> </span>performance<span class="p">;</span><span class="w"> </span><span class="k">done</span>
 </pre></div>
 </div>
 </dd>
@@ -450,7 +454,7 @@ cpufreq-info
 <dt>Permanently</dt><dd><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># edit /etc/sysconfig/cpupower to preference</span>
 
 <span class="c1"># enable or disable permanently</span>
-sudo systemctl <span class="nb">enable</span> cpupower
+sudo<span class="w"> </span>systemctl<span class="w"> </span><span class="nb">enable</span><span class="w"> </span>cpupower
 </pre></div>
 </div>
 </dd>
@@ -463,7 +467,7 @@ sudo systemctl <span class="nb">enable</span> cpupower
 <li><dl>
 <dt>Give user speicific user scheduling privileges.</dt><dd><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># edit /etc/security/limits.conf</span>
 <span class="c1"># add following line or similar depending on your distribution</span>
-username rtprio <span class="m">99</span>
+username<span class="w"> </span>rtprio<span class="w"> </span><span class="m">99</span>
 </pre></div>
 </div>
 <div class="admonition note">
@@ -490,14 +494,14 @@ username rtprio <span class="m">99</span>
 <div><ul>
 <li><p>One can use dd:</p>
 <blockquote>
-<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>dd <span class="k">if</span><span class="o">=</span>/dev/zero <span class="nv">of</span><span class="o">=</span>/testpath/testfile <span class="nv">bs</span><span class="o">=</span>1M <span class="nv">count</span><span class="o">=</span><span class="m">100000</span>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>dd<span class="w"> </span><span class="k">if</span><span class="o">=</span>/dev/zero<span class="w"> </span><span class="nv">of</span><span class="o">=</span>/testpath/testfile<span class="w"> </span><span class="nv">bs</span><span class="o">=</span>1M<span class="w"> </span><span class="nv">count</span><span class="o">=</span><span class="m">100000</span>
 </pre></div>
 </div>
 </div></blockquote>
 </li>
 <li><p>Or better fio (which needs to be installed)</p>
 <blockquote>
-<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>fio --name<span class="o">=</span>global –directory<span class="o">=</span>/testpath/ --rw<span class="o">=</span>write --ioengine<span class="o">=</span>libaio --direct<span class="o">=</span><span class="m">0</span> --size<span class="o">=</span>200G --  <span class="nv">numjobs</span><span class="o">=</span><span class="m">2</span> --iodepth<span class="o">=</span><span class="m">1</span> --bs<span class="o">=</span>1M –name<span class="o">=</span>job
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>fio<span class="w"> </span>--name<span class="o">=</span>global<span class="w"> </span>–directory<span class="o">=</span>/testpath/<span class="w"> </span>--rw<span class="o">=</span>write<span class="w"> </span>--ioengine<span class="o">=</span>libaio<span class="w"> </span>--direct<span class="o">=</span><span class="m">0</span><span class="w"> </span>--size<span class="o">=</span>200G<span class="w"> </span>--<span class="w">  </span><span class="nv">numjobs</span><span class="o">=</span><span class="m">2</span><span class="w"> </span>--iodepth<span class="o">=</span><span class="m">1</span><span class="w"> </span>--bs<span class="o">=</span>1M<span class="w"> </span>–name<span class="o">=</span>job
 </pre></div>
 </div>
 </div></blockquote>
@@ -517,7 +521,7 @@ username rtprio <span class="m">99</span>
 <li><p>Starting receiver as root to have scheduling privileges.</p></li>
 <li><p>For 10g, enable flow control</p>
 <blockquote>
-<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sls_detector_put flowcontrol10g <span class="m">1</span>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sls_detector_put<span class="w"> </span>flowcontrol10g<span class="w"> </span><span class="m">1</span>
 </pre></div>
 </div>
 </div></blockquote>
@@ -526,9 +530,9 @@ username rtprio <span class="m">99</span>
 <dt>Increase slsReceiver ring buffer depth</dt><dd><p>This can be tuned depending on the number of receivers (modules) and memory available.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># sugggested not to use more than half memory of CPU socket in case of NUMA systems) for this</span>
 
-sls_detector_get rx_fifodepth
+sls_detector_get<span class="w"> </span>rx_fifodepth
 <span class="c1"># sets number of frames in fifo to 1024 ~1GB per receiver. Default is 2500</span>
-sls_detector_put rx_fifodepth <span class="m">1024</span>
+sls_detector_put<span class="w"> </span>rx_fifodepth<span class="w"> </span><span class="m">1024</span>
 </pre></div>
 </div>
 </dd>
@@ -536,10 +540,10 @@ sls_detector_put rx_fifodepth <span class="m">1024</span>
 </li>
 <li><dl>
 <dt>Increase number of frames per file</dt><dd><p>This can reduce time taken to open and close files.</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sls_detector_get rx_framesperfile
-sls_detector_put rx_framesperfile <span class="m">20000</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sls_detector_get<span class="w"> </span>rx_framesperfile
+sls_detector_put<span class="w"> </span>rx_framesperfile<span class="w"> </span><span class="m">20000</span>
 <span class="c1"># writes all frames into a single file</span>
-sls_detector_put rx_framesperfile <span class="m">0</span>
+sls_detector_put<span class="w"> </span>rx_framesperfile<span class="w"> </span><span class="m">0</span>
 </pre></div>
 </div>
 </dd>
@@ -547,7 +551,7 @@ sls_detector_put rx_framesperfile <span class="m">0</span>
 </li>
 <li><dl>
 <dt>Disable file write</dt><dd><p>This can ensure it is not the file system performance hampering high date rate.</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sls_detector_put fwrite <span class="m">0</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sls_detector_put<span class="w"> </span>fwrite<span class="w"> </span><span class="m">0</span>
 </pre></div>
 </div>
 </dd>
@@ -563,15 +567,15 @@ sls_detector_put rx_framesperfile <span class="m">0</span>
 <li><p>Use environment variable to use a different shared memory ending in jfxx</p>
 <blockquote>
 <div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># shared memory ending in jfxx</span>
-<span class="nb">export</span> <span class="nv">SLSDETNAME</span><span class="o">=</span>jfxx
+<span class="nb">export</span><span class="w"> </span><span class="nv">SLSDETNAME</span><span class="o">=</span>jfxx
 </pre></div>
 </div>
 </div></blockquote>
 </li>
 <li><dl>
-<dt>USe a different multi shared memory ID</dt><dd><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sls_detector_put <span class="m">2</span>-config xxxx.config
+<dt>USe a different multi shared memory ID</dt><dd><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sls_detector_put<span class="w"> </span><span class="m">2</span>-config<span class="w"> </span>xxxx.config
 <span class="c1"># or</span>
-sls_detector_put <span class="m">2</span>-hostname bchipxxx
+sls_detector_put<span class="w"> </span><span class="m">2</span>-hostname<span class="w"> </span>bchipxxx
 </pre></div>
 </div>
 </dd>
@@ -579,10 +583,10 @@ sls_detector_put <span class="m">2</span>-hostname bchipxxx
 </li>
 </ol>
 </dd>
-<dt>To list all shared memory files of sls detector package.</dt><dd><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ll /dev/shm/slsDetectorPackage*
--rw-------. <span class="m">1</span> l_d l_d  <span class="m">136</span> Oct  <span class="m">1</span> <span class="m">11</span>:42 /dev/shm/slsDetectorPackage_multi_0
--rw-------. <span class="m">1</span> l_d l_d <span class="m">3476</span> Oct  <span class="m">1</span> <span class="m">11</span>:42 /dev/shm/slsDetectorPackage_multi_0_sls_0
--rw-------. <span class="m">1</span> l_d l_d <span class="m">3476</span> Oct  <span class="m">1</span> <span class="m">11</span>:42 /dev/shm/slsDetectorPackage_multi_0_sls_1
+<dt>To list all shared memory files of sls detector package.</dt><dd><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ll<span class="w"> </span>/dev/shm/slsDetectorPackage*
+-rw-------.<span class="w"> </span><span class="m">1</span><span class="w"> </span>l_d<span class="w"> </span>l_d<span class="w">  </span><span class="m">136</span><span class="w"> </span>Oct<span class="w">  </span><span class="m">1</span><span class="w"> </span><span class="m">11</span>:42<span class="w"> </span>/dev/shm/slsDetectorPackage_multi_0
+-rw-------.<span class="w"> </span><span class="m">1</span><span class="w"> </span>l_d<span class="w"> </span>l_d<span class="w"> </span><span class="m">3476</span><span class="w"> </span>Oct<span class="w">  </span><span class="m">1</span><span class="w"> </span><span class="m">11</span>:42<span class="w"> </span>/dev/shm/slsDetectorPackage_multi_0_sls_0
+-rw-------.<span class="w"> </span><span class="m">1</span><span class="w"> </span>l_d<span class="w"> </span>l_d<span class="w"> </span><span class="m">3476</span><span class="w"> </span>Oct<span class="w">  </span><span class="m">1</span><span class="w"> </span><span class="m">11</span>:42<span class="w"> </span>/dev/shm/slsDetectorPackage_multi_0_sls_1
 </pre></div>
 </div>
 </dd>
@@ -591,7 +595,7 @@ sls_detector_put <span class="m">2</span>-hostname bchipxxx
 <section id="cannot-connect-to-detector">
 <h3>Cannot connect to detector<a class="headerlink" href="#cannot-connect-to-detector" title="Permalink to this heading"></a></h3>
 <dl>
-<dt>Ensure both control and stop servers are running on the detector.</dt><dd><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ps -ef <span class="p">|</span> grep jungfrauDetectorServer*
+<dt>Ensure both control and stop servers are running on the detector.</dt><dd><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ps<span class="w"> </span>-ef<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>jungfrauDetectorServer*
 </pre></div>
 </div>
 </dd>
@@ -615,10 +619,10 @@ sls_detector_put <span class="m">2</span>-hostname bchipxxx
 <dt>Tcp port is in use by another application.</dt><dd><ul>
 <li><dl>
 <dt>Start Receiver with a different tcp port and adjust it config file</dt><dd><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># restart receiver with different port</span>
-slsReceiver -t1980
+slsReceiver<span class="w"> </span>-t1980
 
 <span class="c1"># adjust in config file</span>
-rx_hostname pcxxxx:1980
+rx_hostname<span class="w"> </span>pcxxxx:1980
 </pre></div>
 </div>
 </dd>
@@ -686,13 +690,13 @@ rx_hostname pcxxxx:1980
 <ul>
 <li><dl>
 <dt>Clear the temperature event</dt><dd><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># gives the current chip power status (zero currently as chip powered off)</span>
-sls_detector_get powerchip
+sls_detector_get<span class="w"> </span>powerchip
 
 <span class="c1"># clear temperature event</span>
-sls_detector_put temp_event <span class="m">0</span>
+sls_detector_put<span class="w"> </span>temp_event<span class="w"> </span><span class="m">0</span>
 
 <span class="c1"># power on the chip</span>
-sls_detector_put powerchip <span class="m">1</span>
+sls_detector_put<span class="w"> </span>powerchip<span class="w"> </span><span class="m">1</span>
 </pre></div>
 </div>
 </dd>

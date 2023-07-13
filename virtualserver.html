@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Simulators &mdash; slsDetectorPackage  documentation</title>
@@ -30,14 +30,18 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-            <a href="index.html" class="icon icon-home"> slsDetectorPackage
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            slsDetectorPackage
           </a>
               <div class="version">
                 7.0.2
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
@@ -128,7 +132,7 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="index.html" class="icon icon-home"></a></li>
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
       <li class="breadcrumb-item active">Simulators</li>
       <li class="wy-breadcrumbs-aside">
             <a href="_sources/virtualserver.rst.txt" rel="nofollow"> View page source</a>
@@ -140,7 +144,7 @@
            <div itemprop="articleBody">
              
   <section id="simulators">
-<h1>Simulators<a class="headerlink" href="#simulators" title="Permalink to this heading"></a></h1>
+<span id="virtual-detector-servers"></span><h1>Simulators<a class="headerlink" href="#simulators" title="Permalink to this heading"></a></h1>
 <section id="compilation">
 <h2>Compilation<a class="headerlink" href="#compilation" title="Permalink to this heading"></a></h2>
 <ul>
@@ -152,7 +156,7 @@
 </dl>
 </li>
 <li><dl>
-<dt>Using cmk.sh script,</dt><dd><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>./cmk.sh -bsj9 <span class="c1"># option -s is for simulator</span>
+<dt>Using cmk.sh script,</dt><dd><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>./cmk.sh<span class="w"> </span>-bsj9<span class="w"> </span><span class="c1"># option -s is for simulator</span>
 </pre></div>
 </div>
 </dd>
@@ -179,10 +183,10 @@ ctbDetectorServer_virtual
 <p>The arguments are the same as the <a class="reference internal" href="servers.html#detector-server-arguments"><span class="std std-ref">normal server arguments</span></a>.</p>
 <dl>
 <dt>When using multiple modules, use different ports for each virtual server.</dt><dd><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># will start control server at port 1912 and stop server at port 1913</span>
-jungfrauDetectorServer --port <span class="m">1912</span> <span class="p">&amp;</span>
+jungfrauDetectorServer<span class="w"> </span>--port<span class="w"> </span><span class="m">1912</span><span class="w"> </span><span class="p">&amp;</span>
 
 <span class="c1"># will start second control server at port 1914 and stop server at port 1915</span>
-jungfrauDetectorServer --port <span class="m">1914</span> <span class="p">&amp;</span>
+jungfrauDetectorServer<span class="w"> </span>--port<span class="w"> </span><span class="m">1914</span><span class="w"> </span><span class="p">&amp;</span>
 </pre></div>
 </div>
 </dd>
@@ -191,12 +195,12 @@ jungfrauDetectorServer --port <span class="m">1914</span> <span class="p">&amp;<
 <section id="client">
 <h2>Client<a class="headerlink" href="#client" title="Permalink to this heading"></a></h2>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># hostname should include the port (if not default)</span>
-sls_detector_put hostname localhost:1912+localhost:1914+
+sls_detector_put<span class="w"> </span>hostname<span class="w"> </span>localhost:1912+localhost:1914+
 
 <span class="c1"># or use virtual command, instead of hostname</span>
 <span class="c1"># connects to 2 servers at localhost</span>
 <span class="c1"># (control servers: 1912, 1914; stop servers: 1913, 1915)</span>
-sls_detector_put virtual <span class="m">2</span> <span class="m">1912</span>
+sls_detector_put<span class="w"> </span>virtual<span class="w"> </span><span class="m">2</span><span class="w"> </span><span class="m">1912</span>
 </pre></div>
 </div>
 <p>Use the same in the config file.
@@ -205,52 +209,52 @@ Detector API has a method ‘isVirtualDetectorServer’ to check if on-board det
 <h3>Sample Config file<a class="headerlink" href="#sample-config-file" title="Permalink to this heading"></a></h3>
 <p>There are sample config files for each detector in slsDetectorPackage/examples folder.</p>
 <dl>
-<dt>For a Single Module (Basic)</dt><dd><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>hostname localhost
-rx_hostname localhost
-udp_dstip auto
+<dt>For a Single Module (Basic)</dt><dd><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>hostname<span class="w"> </span>localhost
+rx_hostname<span class="w"> </span>localhost
+udp_dstip<span class="w"> </span>auto
 </pre></div>
 </div>
 </dd>
 <dt>For a Single Module (With Options)</dt><dd><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># connects to control port 1912</span>
-hostname localhost:1912+
+hostname<span class="w"> </span>localhost:1912+
 
 <span class="c1"># connects to receiver at ports 2012</span>
-rx_hostname mpc1922:2012+
+rx_hostname<span class="w"> </span>mpc1922:2012+
 
 <span class="c1"># sets destination udp ports (not needed, default is 50001)</span>
-udp_dstport <span class="m">50012</span>
+udp_dstport<span class="w"> </span><span class="m">50012</span>
 
 <span class="c1"># source udp ips must be same subnet at destintaion udp ips</span>
-udp_srcip <span class="m">192</span>.168.1.112
+udp_srcip<span class="w"> </span><span class="m">192</span>.168.1.112
 
 <span class="c1"># destination udp ip picked up from rx_hostname (if auto)</span>
-udp_dstip auto
+udp_dstip<span class="w"> </span>auto
 
 <span class="c1"># set file path</span>
-fpath /tmp
+fpath<span class="w"> </span>/tmp
 </pre></div>
 </div>
 </dd>
 <dt>For Multiple Modules</dt><dd><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># connects to control ports 1912, 1914 and stop ports 1913, 1915</span>
-virtual <span class="m">2</span> <span class="m">1912</span>
+virtual<span class="w"> </span><span class="m">2</span><span class="w"> </span><span class="m">1912</span>
 <span class="c1"># or hostname localhost:1912+localhost:1914+</span>
 
 <span class="c1"># connects to receivers at ports 2012 and 2014</span>
-rx_hostname mpc1922:2012+mpc1922:2013+
+rx_hostname<span class="w"> </span>mpc1922:2012+mpc1922:2013+
 
 <span class="c1"># sets differernt destination udp ports</span>
-<span class="m">0</span>:udp_dstport <span class="m">50012</span>
-<span class="m">1</span>:udp_dstport <span class="m">50014</span>
+<span class="m">0</span>:udp_dstport<span class="w"> </span><span class="m">50012</span>
+<span class="m">1</span>:udp_dstport<span class="w"> </span><span class="m">50014</span>
 
 <span class="c1"># source udp ips must be same subnet at destintaion udp ips</span>
-<span class="m">0</span>:udp_srcip <span class="m">192</span>.168.1.112
-<span class="m">1</span>:udp_srcip <span class="m">192</span>.168.1.114
+<span class="m">0</span>:udp_srcip<span class="w"> </span><span class="m">192</span>.168.1.112
+<span class="m">1</span>:udp_srcip<span class="w"> </span><span class="m">192</span>.168.1.114
 
 <span class="c1"># destination udp ip picked up from rx_hostname (if auto)</span>
-udp_dstip auto
+udp_dstip<span class="w"> </span>auto
 
 <span class="c1"># set file path</span>
-fpath /tmp
+fpath<span class="w"> </span>/tmp
 </pre></div>
 </div>
 </dd>
@@ -261,12 +265,12 @@ fpath /tmp
 <h2>Receivers<a class="headerlink" href="#receivers" title="Permalink to this heading"></a></h2>
 <p>Same as if you would use an actual detector</p>
 <dl>
-<dt>For a Single Module</dt><dd><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>slsReceiver -t2012
+<dt>For a Single Module</dt><dd><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>slsReceiver<span class="w"> </span>-t2012
 </pre></div>
 </div>
 </dd>
 <dt>For Multiple Modules</dt><dd><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># slsMultiReceiver [starting port] [number of receivers] [print each frame header for debugging]</span>
-slsMultiReceiver <span class="m">2012</span> <span class="m">2</span> <span class="m">0</span>
+slsMultiReceiver<span class="w"> </span><span class="m">2012</span><span class="w"> </span><span class="m">2</span><span class="w"> </span><span class="m">0</span>
 </pre></div>
 </div>
 </dd>

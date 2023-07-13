@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>slsReceiver/ slsMultiReceiver &mdash; slsDetectorPackage  documentation</title>
@@ -30,14 +30,18 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-            <a href="index.html" class="icon icon-home"> slsDetectorPackage
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            slsDetectorPackage
           </a>
               <div class="version">
                 7.0.2
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
@@ -122,7 +126,7 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="index.html" class="icon icon-home"></a></li>
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
       <li class="breadcrumb-item active">slsReceiver/ slsMultiReceiver</li>
       <li class="wy-breadcrumbs-aside">
             <a href="_sources/slsreceiver.rst.txt" rel="nofollow"> View page source</a>
@@ -143,7 +147,7 @@
 slsReceiver
 
 <span class="c1"># custom port 2012</span>
-slsReceiver -t2012
+slsReceiver<span class="w"> </span>-t2012
 </pre></div>
 </div>
 </dd>
@@ -151,13 +155,13 @@ slsReceiver -t2012
 
 <span class="c1"># using slsReceiver in multiple consoles</span>
 slsReceiver
-slsReceiver -t1955
+slsReceiver<span class="w"> </span>-t1955
 
 <span class="c1"># slsMultiReceiver [starting port] [number of receivers]</span>
-slsMultiReceiver <span class="m">2012</span> <span class="m">2</span>
+slsMultiReceiver<span class="w"> </span><span class="m">2012</span><span class="w"> </span><span class="m">2</span>
 
 <span class="c1"># slsMultiReceiver [starting port] [number of receivers] [print each frame header for debugging]</span>
-slsMultiReceiver <span class="m">2012</span> <span class="m">2</span> <span class="m">1</span>
+slsMultiReceiver<span class="w"> </span><span class="m">2012</span><span class="w"> </span><span class="m">2</span><span class="w"> </span><span class="m">1</span>
 </pre></div>
 </div>
 </dd>
@@ -175,29 +179,29 @@ slsMultiReceiver <span class="m">2012</span> <span class="m">2</span> <span clas
 </div>
 <blockquote>
 <div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># default receiver tcp port (1954)</span>
-rx_hostname xxx
+rx_hostname<span class="w"> </span>xxx
 
 <span class="c1"># custom receiver port</span>
-rx_hostname xxx:1957
+rx_hostname<span class="w"> </span>xxx:1957
 
 <span class="c1"># custom receiver port</span>
-rx_tcpport <span class="m">1954</span>
-rx_hostname xxx
+rx_tcpport<span class="w"> </span><span class="m">1954</span>
+rx_hostname<span class="w"> </span>xxx
 
 <span class="c1"># multi modules with custom ports</span>
-rx_hostname xxx:1955+xxx:1956+
+rx_hostname<span class="w"> </span>xxx:1955+xxx:1956+
 
 <span class="c1"># multi modules with custom ports on same rxr pc</span>
-<span class="m">0</span>:rx_tcpport <span class="m">1954</span>
-<span class="m">1</span>:rx_tcpport <span class="m">1955</span>
-<span class="m">2</span>:rx_tcpport <span class="m">1956</span>
-rx_hostname xxx
+<span class="m">0</span>:rx_tcpport<span class="w"> </span><span class="m">1954</span>
+<span class="m">1</span>:rx_tcpport<span class="w"> </span><span class="m">1955</span>
+<span class="m">2</span>:rx_tcpport<span class="w"> </span><span class="m">1956</span>
+rx_hostname<span class="w"> </span>xxx
 
 <span class="c1"># multi modules with custom ports on different rxr pc</span>
-<span class="m">0</span>:rx_tcpport <span class="m">1954</span>
-<span class="m">0</span>:rx_hostname xxx
-<span class="m">1</span>:rx_tcpport <span class="m">1955</span>
-<span class="m">1</span>:rx_hostname yyy
+<span class="m">0</span>:rx_tcpport<span class="w"> </span><span class="m">1954</span>
+<span class="m">0</span>:rx_hostname<span class="w"> </span>xxx
+<span class="m">1</span>:rx_tcpport<span class="w"> </span><span class="m">1955</span>
+<span class="m">1</span>:rx_hostname<span class="w"> </span>yyy
 </pre></div>
 </div>
 </div></blockquote>
@@ -206,7 +210,7 @@ rx_hostname xxx
 </div>
 <blockquote>
 <div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># to get a list of receiver commands (these dont include file commands)</span>
-sls_detector_get list <span class="p">|</span> grep rx_
+sls_detector_get<span class="w"> </span>list<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>rx_
 
 <span class="c1"># some file commands are:</span>
 fwrite
@@ -218,7 +222,7 @@ fmaster
 fformat
 
 <span class="c1"># to get help on a single commands</span>
-sls_detector_get -h rx_framescaught
+sls_detector_get<span class="w"> </span>-h<span class="w"> </span>rx_framescaught
 </pre></div>
 </div>
 </div></blockquote>
@@ -236,59 +240,55 @@ sls_detector_get -h rx_framescaught
 <blockquote>
 <div><blockquote>
 <div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">{</span>
-    <span class="s2">&quot;jsonversion&quot;</span>: unsigned int,
-    <span class="s2">&quot;bitmode&quot;</span>: unsigned int,
-    <span class="s2">&quot;fileIndex&quot;</span>: unsigned long int,
-    <span class="s2">&quot;detshape&quot;</span>: <span class="o">[</span>
-        unsigned int,
-        unsigned int
-    <span class="o">]</span>,
-    <span class="s2">&quot;shape&quot;</span>: <span class="o">[</span>
-        unsigned int,
-        unsigned int
-    <span class="o">]</span>,
-    <span class="s2">&quot;size&quot;</span>: unsigned int,
-    <span class="s2">&quot;acqIndex&quot;</span>: unsigned long int,
-    <span class="s2">&quot;frameIndex&quot;</span>: unsigned long int,
-    <span class="s2">&quot;progress&quot;</span>: double,
-    <span class="s2">&quot;fname&quot;</span>: string,
-    <span class="s2">&quot;data&quot;</span>: unsigned int,
-    <span class="s2">&quot;completeImage&quot;</span>: unsigned int,
+<span class="w">    </span><span class="s2">&quot;jsonversion&quot;</span>:<span class="w"> </span>unsigned<span class="w"> </span>int,
+<span class="w">    </span><span class="s2">&quot;bitmode&quot;</span>:<span class="w"> </span>unsigned<span class="w"> </span>int,
+<span class="w">    </span><span class="s2">&quot;fileIndex&quot;</span>:<span class="w"> </span>unsigned<span class="w"> </span>long<span class="w"> </span>int,
+<span class="w">    </span><span class="s2">&quot;detshape&quot;</span>:<span class="w"> </span><span class="o">[</span>
+<span class="w">        </span>unsigned<span class="w"> </span>int,
+<span class="w">        </span>unsigned<span class="w"> </span>int
+<span class="w">    </span><span class="o">]</span>,
+<span class="w">    </span><span class="s2">&quot;shape&quot;</span>:<span class="w"> </span><span class="o">[</span>
+<span class="w">        </span>unsigned<span class="w"> </span>int,
+<span class="w">        </span>unsigned<span class="w"> </span>int
+<span class="w">    </span><span class="o">]</span>,
+<span class="w">    </span><span class="s2">&quot;size&quot;</span>:<span class="w"> </span>unsigned<span class="w"> </span>int,
+<span class="w">    </span><span class="s2">&quot;acqIndex&quot;</span>:<span class="w"> </span>unsigned<span class="w"> </span>long<span class="w"> </span>int,
+<span class="w">    </span><span class="s2">&quot;frameIndex&quot;</span>:<span class="w"> </span>unsigned<span class="w"> </span>long<span class="w"> </span>int,
+<span class="w">    </span><span class="s2">&quot;progress&quot;</span>:<span class="w"> </span>double,
+<span class="w">    </span><span class="s2">&quot;fname&quot;</span>:<span class="w"> </span>string,
+<span class="w">    </span><span class="s2">&quot;data&quot;</span>:<span class="w"> </span>unsigned<span class="w"> </span>int,
+<span class="w">    </span><span class="s2">&quot;completeImage&quot;</span>:<span class="w"> </span>unsigned<span class="w"> </span>int,
 
-    <span class="s2">&quot;frameNumber&quot;</span>: unsigned long long int,
-    <span class="s2">&quot;expLength&quot;</span>: unsigned int,
-    <span class="s2">&quot;packetNumber&quot;</span>: unsigned int,
-    <span class="s2">&quot;detSpec1&quot;</span>: unsigned long int,
-    <span class="s2">&quot;timestamp&quot;</span>: unsigned long int,
-    <span class="s2">&quot;modId&quot;</span>: unsigned int,
-    <span class="s2">&quot;row&quot;</span>: unsigned int,
-    <span class="s2">&quot;column&quot;</span>: unsigned int,
-    <span class="s2">&quot;detSpec2&quot;</span>: unsigned int,
-    <span class="s2">&quot;detSpec3&quot;</span>: unsigned int,
-    <span class="s2">&quot;detSpec4&quot;</span>: unsigned int,
-    <span class="s2">&quot;detType&quot;</span>: unsigned int,
-    <span class="s2">&quot;version&quot;</span>: unsigned int,
+<span class="w">    </span><span class="s2">&quot;frameNumber&quot;</span>:<span class="w"> </span>unsigned<span class="w"> </span>long<span class="w"> </span>long<span class="w"> </span>int,
+<span class="w">    </span><span class="s2">&quot;expLength&quot;</span>:<span class="w"> </span>unsigned<span class="w"> </span>int,
+<span class="w">    </span><span class="s2">&quot;packetNumber&quot;</span>:<span class="w"> </span>unsigned<span class="w"> </span>int,
+<span class="w">    </span><span class="s2">&quot;detSpec1&quot;</span>:<span class="w"> </span>unsigned<span class="w"> </span>long<span class="w"> </span>int,
+<span class="w">    </span><span class="s2">&quot;timestamp&quot;</span>:<span class="w"> </span>unsigned<span class="w"> </span>long<span class="w"> </span>int,
+<span class="w">    </span><span class="s2">&quot;modId&quot;</span>:<span class="w"> </span>unsigned<span class="w"> </span>int,
+<span class="w">    </span><span class="s2">&quot;row&quot;</span>:<span class="w"> </span>unsigned<span class="w"> </span>int,
+<span class="w">    </span><span class="s2">&quot;column&quot;</span>:<span class="w"> </span>unsigned<span class="w"> </span>int,
+<span class="w">    </span><span class="s2">&quot;detSpec2&quot;</span>:<span class="w"> </span>unsigned<span class="w"> </span>int,
+<span class="w">    </span><span class="s2">&quot;detSpec3&quot;</span>:<span class="w"> </span>unsigned<span class="w"> </span>int,
+<span class="w">    </span><span class="s2">&quot;detSpec4&quot;</span>:<span class="w"> </span>unsigned<span class="w"> </span>int,
+<span class="w">    </span><span class="s2">&quot;detType&quot;</span>:<span class="w"> </span>unsigned<span class="w"> </span>int,
+<span class="w">    </span><span class="s2">&quot;version&quot;</span>:<span class="w"> </span>unsigned<span class="w"> </span>int,
 
-    <span class="s2">&quot;flipRows&quot;</span>: unsigned int,
-    <span class="s2">&quot;quad&quot;</span>: unsigned int,
-    <span class="s2">&quot;addJsonHeader&quot;</span>: <span class="o">{</span>
-        string : string
-    <span class="o">}</span>,
-    <span class="s2">&quot;rx_roi&quot;</span>: <span class="o">[</span>
-        unsigned int,
-        unsigned int,
-        unsigned int,
-        unsigned int
-    <span class="o">]</span>
+<span class="w">    </span><span class="s2">&quot;flipRows&quot;</span>:<span class="w"> </span>unsigned<span class="w"> </span>int,
+<span class="w">    </span><span class="s2">&quot;quad&quot;</span>:<span class="w"> </span>unsigned<span class="w"> </span>int,
+<span class="w">    </span><span class="s2">&quot;addJsonHeader&quot;</span>:<span class="w"> </span><span class="o">{</span>
+<span class="w">        </span>string<span class="w"> </span>:<span class="w"> </span>string
+<span class="w">    </span><span class="o">}</span>,
+<span class="w">    </span><span class="s2">&quot;rx_roi&quot;</span>:<span class="w"> </span><span class="o">[</span>
+<span class="w">        </span>unsigned<span class="w"> </span>int,
+<span class="w">        </span>unsigned<span class="w"> </span>int,
+<span class="w">        </span>unsigned<span class="w"> </span>int,
+<span class="w">        </span>unsigned<span class="w"> </span>int
+<span class="w">    </span><span class="o">]</span>
 <span class="o">}</span>
 </pre></div>
 </div>
 </div></blockquote>
 <table class="docutils align-default">
-<colgroup>
-<col style="width: 23%" />
-<col style="width: 77%" />
-</colgroup>
 <tbody>
 <tr class="row-odd"><td><p>Field</p></td>
 <td><p>Description</p></td>
@@ -417,26 +417,26 @@ what is saved</p></td>
 </ul>
 </dd>
 </dl>
-<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">typedef</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="kt">uint64_t</span><span class="w"> </span><span class="n">frameNumber</span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="kt">uint32_t</span><span class="w"> </span><span class="n">expLength</span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="kt">uint32_t</span><span class="w"> </span><span class="n">packetNumber</span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="kt">uint64_t</span><span class="w"> </span><span class="n">detSpec1</span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="kt">uint64_t</span><span class="w"> </span><span class="n">timestamp</span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="kt">uint16_t</span><span class="w"> </span><span class="n">modId</span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="kt">uint16_t</span><span class="w"> </span><span class="n">row</span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="kt">uint16_t</span><span class="w"> </span><span class="n">column</span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="kt">uint16_t</span><span class="w"> </span><span class="n">detSpec2</span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="kt">uint32_t</span><span class="w"> </span><span class="n">detSpec3</span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="kt">uint16_t</span><span class="w"> </span><span class="n">detSpec4</span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="kt">uint8_t</span><span class="w"> </span><span class="n">detType</span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="kt">uint8_t</span><span class="w"> </span><span class="n">version</span><span class="p">;</span><span class="w"></span>
-<span class="p">}</span><span class="w"> </span><span class="n">sls_detector_header</span><span class="p">;</span><span class="w"></span>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">typedef</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kt">uint64_t</span><span class="w"> </span><span class="n">frameNumber</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">uint32_t</span><span class="w"> </span><span class="n">expLength</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">uint32_t</span><span class="w"> </span><span class="n">packetNumber</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">uint64_t</span><span class="w"> </span><span class="n">detSpec1</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">uint64_t</span><span class="w"> </span><span class="n">timestamp</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">uint16_t</span><span class="w"> </span><span class="n">modId</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">uint16_t</span><span class="w"> </span><span class="n">row</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">uint16_t</span><span class="w"> </span><span class="n">column</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">uint16_t</span><span class="w"> </span><span class="n">detSpec2</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">uint32_t</span><span class="w"> </span><span class="n">detSpec3</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">uint16_t</span><span class="w"> </span><span class="n">detSpec4</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">uint8_t</span><span class="w"> </span><span class="n">detType</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">uint8_t</span><span class="w"> </span><span class="n">version</span><span class="p">;</span>
+<span class="p">}</span><span class="w"> </span><span class="n">sls_detector_header</span><span class="p">;</span>
 
-<span class="k">struct</span><span class="w"> </span><span class="nc">sls_receiver_header</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="n">sls_detector_header</span><span class="w"> </span><span class="n">detHeader</span><span class="p">;</span><span class="w"> </span><span class="cm">/**&lt; is the detector header */</span><span class="w"></span>
-<span class="w">    </span><span class="n">sls_bitset</span><span class="w"> </span><span class="n">packetsMask</span><span class="p">;</span><span class="w">        </span><span class="cm">/**&lt; is the packets caught bit mask */</span><span class="w"></span>
-<span class="p">};</span><span class="w"></span>
+<span class="k">struct</span><span class="w"> </span><span class="nc">sls_receiver_header</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">sls_detector_header</span><span class="w"> </span><span class="n">detHeader</span><span class="p">;</span><span class="w"> </span><span class="cm">/**&lt; is the detector header */</span>
+<span class="w">    </span><span class="n">sls_bitset</span><span class="w"> </span><span class="n">packetsMask</span><span class="p">;</span><span class="w">        </span><span class="cm">/**&lt; is the packets caught bit mask */</span>
+<span class="p">};</span>
 </pre></div>
 </div>
 <div class="admonition note">
@@ -486,7 +486,7 @@ path-to-file/run_d0_f0_1.raw
 <li><p>Start Receiver process</p></li>
 <li><p>Load config file</p></li>
 <li><dl>
-<dt>Set file format from client or in config file</dt><dd><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sls_detector_put fformat hdf5
+<dt>Set file format from client or in config file</dt><dd><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sls_detector_put<span class="w"> </span>fformat<span class="w"> </span>hdf5
 </pre></div>
 </div>
 </dd>
@@ -518,7 +518,7 @@ path-to-file/run_d0_f0_1.raw
 <li><p>how to install the slsDetectorPackage with cmake is provided <a class="reference internal" href="installation.html#build-from-source-using-cmake"><span class="std std-ref">here</span></a>.</p></li>
 <li><p>compile the example <strong>e4-rxr</strong> by:</p>
 <blockquote>
-<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>cmake ../path/to/your/source -DCMAKE_PREFIX_PATH<span class="o">=</span>/path/to/sls/install
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>cmake<span class="w"> </span>../path/to/your/source<span class="w"> </span>-DCMAKE_PREFIX_PATH<span class="o">=</span>/path/to/sls/install
 make
 </pre></div>
 </div>

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Receivers &mdash; slsDetectorPackage  documentation</title>
@@ -30,14 +30,18 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-            <a href="index.html" class="icon icon-home"> slsDetectorPackage
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            slsDetectorPackage
           </a>
               <div class="version">
                 7.0.2
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
@@ -117,7 +121,7 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="index.html" class="icon icon-home"></a></li>
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
       <li class="breadcrumb-item active">Receivers</li>
       <li class="wy-breadcrumbs-aside">
             <a href="_sources/receivers.rst.txt" rel="nofollow"> View page source</a>
@@ -149,19 +153,19 @@ When using the slsReceiver/ slsMultiReceiver, they can be further configured by 
 <li><p>The main difference is the lack of <strong>rx_</strong> commands or file commands (eg. fwrite, fpath) and the udp_dstmac is required in config file.</p></li>
 </ul>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># detector hostname</span>
-hostname bchip052
+hostname<span class="w"> </span>bchip052
 
 <span class="c1"># udp destination port (receiver)</span>
-udp_dstport <span class="m">50004</span>
+udp_dstport<span class="w"> </span><span class="m">50004</span>
 
 <span class="c1"># udp destination ip (receiver)</span>
-udp_dstip <span class="m">10</span>.0.1.100
+udp_dstip<span class="w"> </span><span class="m">10</span>.0.1.100
 
 <span class="c1"># udp source ip (same subnet as udp_dstip)</span>
-udp_srcip <span class="m">10</span>.0.1.184
+udp_srcip<span class="w"> </span><span class="m">10</span>.0.1.184
 
 <span class="c1"># udp destination mac</span>
-udp_dstmac <span class="m">22</span>:47:d5:48:ad:ef
+udp_dstmac<span class="w"> </span><span class="m">22</span>:47:d5:48:ad:ef
 </pre></div>
 </div>
 </section>

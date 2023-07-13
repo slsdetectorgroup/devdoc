@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Firmware Upgrade &mdash; slsDetectorPackage  documentation</title>
@@ -30,14 +30,18 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-            <a href="index.html" class="icon icon-home"> slsDetectorPackage
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            slsDetectorPackage
           </a>
               <div class="version">
                 7.0.2
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
@@ -156,7 +160,7 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="index.html" class="icon icon-home"></a></li>
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
       <li class="breadcrumb-item active">Firmware Upgrade</li>
       <li class="wy-breadcrumbs-aside">
             <a href="_sources/firmware.rst.txt" rel="nofollow"> View page source</a>
@@ -201,11 +205,11 @@
 <li><p>Software:</p>
 <blockquote>
 <div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Option 1: if the old server is still running:</span>
-sls_detector_put execcommand <span class="s2">&quot;./boot_recovery&quot;</span>
+sls_detector_put<span class="w"> </span>execcommand<span class="w"> </span><span class="s2">&quot;./boot_recovery&quot;</span>
 
 <span class="c1"># Option 2:</span>
-ssh root@bebxxx
-<span class="nb">cd</span> executables
+ssh<span class="w"> </span>root@bebxxx
+<span class="nb">cd</span><span class="w"> </span>executables
 ./boot_recovery
 </pre></div>
 </div>
@@ -216,9 +220,9 @@ ssh root@bebxxx
 </li>
 <li><p>Start a terminal for each half module and run the following to see progress.</p>
 <blockquote>
-<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>nc -p <span class="m">3000</span> -u bebxxx <span class="m">3000</span>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>nc<span class="w"> </span>-p<span class="w"> </span><span class="m">3000</span><span class="w"> </span>-u<span class="w"> </span>bebxxx<span class="w"> </span><span class="m">3000</span>
 <span class="c1"># Press enter twice to see prompt with board name.</span>
-&gt; bebxxx
+&gt;<span class="w"> </span>bebxxx
 <span class="c1"># After each bcp command, wait for this terminal to print &quot;Success&quot;.</span>
 </pre></div>
 </div>
@@ -227,16 +231,16 @@ ssh root@bebxxx
 <li><p>In another terminal, run the following to update firmware. Please update bit files with great caution as it could make your board inaccessible, if done incorrectly.</p>
 <blockquote>
 <div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1">#update back end fpga</span>
-bcp download.bit bebxxx:/fw0
+bcp<span class="w"> </span>download.bit<span class="w"> </span>bebxxx:/fw0
 
 <span class="c1">#update front left fpga</span>
-bcp download.bit bebxxx:/febl
+bcp<span class="w"> </span>download.bit<span class="w"> </span>bebxxx:/febl
 
 <span class="c1">#update front right fpga</span>
-bcp download.bit bebxxx:/febr
+bcp<span class="w"> </span>download.bit<span class="w"> </span>bebxxx:/febr
 
 <span class="c1">#update kernel (only if required by us)</span>
-bcp download.bit bebxxx:/kernel
+bcp<span class="w"> </span>download.bit<span class="w"> </span>bebxxx:/kernel
 </pre></div>
 </div>
 </div></blockquote>
@@ -245,10 +249,10 @@ bcp download.bit bebxxx:/kernel
 <blockquote>
 <div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># In the first terminal where we saw &quot;Succeess&quot;</span>
 <span class="c1"># reconfig febX is necessary only if you have flashed a new feb firmware</span>
-reconfig febl
-reconfig febr
+reconfig<span class="w"> </span>febl
+reconfig<span class="w"> </span>febr
 <span class="c1"># will reboot controller</span>
-reconfig fw0
+reconfig<span class="w"> </span>fw0
 </pre></div>
 </div>
 </div></blockquote>
@@ -291,13 +295,13 @@ reconfig fw0
 <span class="c1"># programs fpga, reboots</span>
 
 <span class="c1"># v5.0.0 - 6.0.0 (copies server from tftp folder of the pc)</span>
-sls_detector_put update jungfrauDetectorServervxxx pcxxx xx.pof
+sls_detector_put<span class="w"> </span>update<span class="w"> </span>jungfrauDetectorServervxxx<span class="w"> </span>pcxxx<span class="w"> </span>xx.pof
 
 <span class="c1"># v6.1.1 - present (copies server from the full path provided)</span>
-sls_detector_put update jungfrauDetectorServervxxx xx.pof
+sls_detector_put<span class="w"> </span>update<span class="w"> </span>jungfrauDetectorServervxxx<span class="w"> </span>xx.pof
 
 <span class="c1"># Or only program firmware</span>
-sls_detector_put programfpga xxx.pof
+sls_detector_put<span class="w"> </span>programfpga<span class="w"> </span>xxx.pof
 </pre></div>
 </div>
 </dd>
@@ -353,13 +357,13 @@ sls_detector_put programfpga xxx.pof
 <span class="c1"># programs fpga, reboots</span>
 
 <span class="c1"># v5.0.0 - 6.0.0 (copies server from tftp folder of the pc)</span>
-sls_detector_put update mythen3DetectorServervxxx pcxxx xxx.rbf
+sls_detector_put<span class="w"> </span>update<span class="w"> </span>mythen3DetectorServervxxx<span class="w"> </span>pcxxx<span class="w"> </span>xxx.rbf
 
 <span class="c1"># v6.1.1 - present (copies server from the full path provided)</span>
-sls_detector_put update mythen3DetectorServervxxx xxx.rbf
+sls_detector_put<span class="w"> </span>update<span class="w"> </span>mythen3DetectorServervxxx<span class="w"> </span>xxx.rbf
 
 <span class="c1"># Or only program firmware</span>
-sls_detector_put programfpga xxx.rbf
+sls_detector_put<span class="w"> </span>programfpga<span class="w"> </span>xxx.rbf
 </pre></div>
 </div>
 </dd>
@@ -389,13 +393,13 @@ sls_detector_put programfpga xxx.rbf
 <span class="c1"># programs fpga, reboots</span>
 
 <span class="c1"># v5.0.0 - 6.0.0 (copies server from tftp folder of the pc)</span>
-sls_detector_put update gotthard2DetectorServervxxx pcxxx xxx.rbf
+sls_detector_put<span class="w"> </span>update<span class="w"> </span>gotthard2DetectorServervxxx<span class="w"> </span>pcxxx<span class="w"> </span>xxx.rbf
 
 <span class="c1"># v6.1.1 - present (copies server from the full path provided)</span>
-sls_detector_put update gotthard2DetectorServervxxx xxx.rbf
+sls_detector_put<span class="w"> </span>update<span class="w"> </span>gotthard2DetectorServervxxx<span class="w"> </span>xxx.rbf
 
 <span class="c1"># Or only program firmware</span>
-sls_detector_put programfpga xxx.rbf
+sls_detector_put<span class="w"> </span>programfpga<span class="w"> </span>xxx.rbf
 </pre></div>
 </div>
 </dd>
@@ -435,13 +439,13 @@ sls_detector_put programfpga xxx.rbf
 <span class="c1"># programs fpga, reboots</span>
 
 <span class="c1"># v5.0.0 - 6.0.0 (copies server from tftp folder of the pc)</span>
-sls_detector_put update moenchDetectorServervxxx pcxxx xx.pof
+sls_detector_put<span class="w"> </span>update<span class="w"> </span>moenchDetectorServervxxx<span class="w"> </span>pcxxx<span class="w"> </span>xx.pof
 
 <span class="c1"># v6.1.1 - present (copies server from the full path provided)</span>
-sls_detector_put update moenchDetectorServervxxx xx.pof
+sls_detector_put<span class="w"> </span>update<span class="w"> </span>moenchDetectorServervxxx<span class="w"> </span>xx.pof
 
 <span class="c1"># Or only program firmware</span>
-sls_detector_put programfpga xxx.pof
+sls_detector_put<span class="w"> </span>programfpga<span class="w"> </span>xxx.pof
 </pre></div>
 </div>
 </dd>
@@ -468,13 +472,13 @@ sls_detector_put programfpga xxx.pof
 <span class="c1"># programs fpga, reboots</span>
 
 <span class="c1"># v5.0.0 - 6.0.0 (copies server from tftp folder of the pc)</span>
-sls_detector_put update ctbDetectorServervxxx pcxxx xx.pof
+sls_detector_put<span class="w"> </span>update<span class="w"> </span>ctbDetectorServervxxx<span class="w"> </span>pcxxx<span class="w"> </span>xx.pof
 
 <span class="c1"># v6.1.1 - present (copies server from the full path provided)</span>
-sls_detector_put update ctbDetectorServervxxx xx.pof
+sls_detector_put<span class="w"> </span>update<span class="w"> </span>ctbDetectorServervxxx<span class="w"> </span>xx.pof
 
 <span class="c1"># Or only program firmware</span>
-sls_detector_put programfpga xxx.pof
+sls_detector_put<span class="w"> </span>programfpga<span class="w"> </span>xxx.pof
 </pre></div>
 </div>
 </dd>
@@ -490,15 +494,15 @@ sls_detector_put programfpga xxx.pof
 </ol>
 <blockquote>
 <div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># connect to the board</span>
-telnet bchipxxx
+telnet<span class="w"> </span>bchipxxx
 
 <span class="c1"># view of mtd3 existing</span>
-root:/&gt; more /proc/mtd
-dev:    size   erasesize  name
-mtd0: <span class="m">00040000</span> <span class="m">00020000</span> <span class="s2">&quot;bootloader(nor)&quot;</span>
-mtd1: <span class="m">00100000</span> <span class="m">00020000</span> <span class="s2">&quot;linux kernel(nor)&quot;</span>
-mtd2: 002c0000 <span class="m">00020000</span> <span class="s2">&quot;file system(nor)&quot;</span>
-mtd3: <span class="m">01000000</span> <span class="m">00010000</span> <span class="s2">&quot;bitfile(spi)&quot;</span>
+root:/&gt;<span class="w"> </span>more<span class="w"> </span>/proc/mtd
+dev:<span class="w">    </span>size<span class="w">   </span>erasesize<span class="w">  </span>name
+mtd0:<span class="w"> </span><span class="m">00040000</span><span class="w"> </span><span class="m">00020000</span><span class="w"> </span><span class="s2">&quot;bootloader(nor)&quot;</span>
+mtd1:<span class="w"> </span><span class="m">00100000</span><span class="w"> </span><span class="m">00020000</span><span class="w"> </span><span class="s2">&quot;linux kernel(nor)&quot;</span>
+mtd2:<span class="w"> </span>002c0000<span class="w"> </span><span class="m">00020000</span><span class="w"> </span><span class="s2">&quot;file system(nor)&quot;</span>
+mtd3:<span class="w"> </span><span class="m">01000000</span><span class="w"> </span><span class="m">00010000</span><span class="w"> </span><span class="s2">&quot;bitfile(spi)&quot;</span>
 </pre></div>
 </div>
 </div></blockquote>
@@ -513,7 +517,7 @@ mtd3: <span class="m">01000000</span> <span class="m">00010000</span> <span clas
 <ol class="arabic">
 <li><p>Commands via software (&gt;= v6.0.0)</p>
 <blockquote>
-<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sls_detector_put updatekernel /home/...path-to-kernel-image
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sls_detector_put<span class="w"> </span>updatekernel<span class="w"> </span>/home/...path-to-kernel-image
 </pre></div>
 </div>
 </div></blockquote>
@@ -524,22 +528,22 @@ mtd3: <span class="m">01000000</span> <span class="m">00010000</span> <span clas
 <span class="c1"># and copy it to pc&#39;s tftp folder</span>
 
 <span class="c1"># step 2: connect to the board</span>
-telnet bchipxxx
+telnet<span class="w"> </span>bchipxxx
 
 <span class="c1">#step 3: go to directory for space</span>
-<span class="nb">cd</span> /var/tmp/
+<span class="nb">cd</span><span class="w"> </span>/var/tmp/
 
 <span class="c1"># step 3: copy kernel to board</span>
-tftp pcxxx -r uImage.lzma -g
+tftp<span class="w"> </span>pcxxx<span class="w"> </span>-r<span class="w"> </span>uImage.lzma<span class="w"> </span>-g
 
 <span class="c1"># step 4: verify kernel copied properly</span>
-ls -lrt
+ls<span class="w"> </span>-lrt
 
 <span class="c1"># step 5: erase flash</span>
-flash_eraseall /dev/mtd1
+flash_eraseall<span class="w"> </span>/dev/mtd1
 
 <span class="c1"># step 6: copy new image to kernel drive</span>
-cat uImage.lzma &gt; /dev/mtd1
+cat<span class="w"> </span>uImage.lzma<span class="w"> </span>&gt;<span class="w"> </span>/dev/mtd1
 
 <span class="c1"># step 7:</span>
 sync
@@ -548,9 +552,9 @@ sync
 reboot
 
 <span class="c1"># step 9: verification</span>
-telnet bchipxxx
-uname -a <span class="c1"># verify kernel date</span>
-more /proc/mtd <span class="c1"># verify mtd3 is listed</span>
+telnet<span class="w"> </span>bchipxxx
+uname<span class="w"> </span>-a<span class="w"> </span><span class="c1"># verify kernel date</span>
+more<span class="w"> </span>/proc/mtd<span class="w"> </span><span class="c1"># verify mtd3 is listed</span>
 </pre></div>
 </div>
 </div></blockquote>

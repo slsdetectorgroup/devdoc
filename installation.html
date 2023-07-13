@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Installation &mdash; slsDetectorPackage  documentation</title>
@@ -30,14 +30,18 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-            <a href="index.html" class="icon icon-home"> slsDetectorPackage
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            slsDetectorPackage
           </a>
               <div class="version">
                 7.0.2
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
@@ -127,7 +131,7 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="index.html" class="icon icon-home"></a></li>
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
       <li class="breadcrumb-item active">Installation</li>
       <li class="wy-breadcrumbs-aside">
             <a href="_sources/installation.rst.txt" rel="nofollow"> View page source</a>
@@ -160,27 +164,27 @@ are from the developer branch. Please use released tags for stability.</p>
 </ul>
 </div></blockquote>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1">#Add channels for dependencies and our library</span>
-conda config --add channels conda-forge
-conda config --add channels slsdetectorgroup
-conda config --set channel_priority strict
+conda<span class="w"> </span>config<span class="w"> </span>--add<span class="w"> </span>channels<span class="w"> </span>conda-forge
+conda<span class="w"> </span>config<span class="w"> </span>--add<span class="w"> </span>channels<span class="w"> </span>slsdetectorgroup
+conda<span class="w"> </span>config<span class="w"> </span>--set<span class="w"> </span>channel_priority<span class="w"> </span>strict
 
 <span class="c1">#create and activate an environment with our library</span>
 <span class="c1">#replace 6.1.1 with the required tag</span>
-conda create -n myenv <span class="nv">slsdetlib</span><span class="o">=</span><span class="m">6</span>.1.1
-conda activate myenv
+conda<span class="w"> </span>create<span class="w"> </span>-n<span class="w"> </span>myenv<span class="w"> </span><span class="nv">slsdetlib</span><span class="o">=</span><span class="m">6</span>.1.1
+conda<span class="w"> </span>activate<span class="w"> </span>myenv
 
 <span class="c1">#ready to use</span>
-sls_detector_get exptime
-etc ...
+sls_detector_get<span class="w"> </span>exptime
+etc<span class="w"> </span>...
 </pre></div>
 </div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1">#List available versions</span>
 <span class="c1"># lib and binaries</span>
-conda search slsdetlib
+conda<span class="w"> </span>search<span class="w"> </span>slsdetlib
 <span class="c1"># python</span>
-conda search slsdet
+conda<span class="w"> </span>search<span class="w"> </span>slsdet
 <span class="c1"># gui</span>
-conda search slsdetgui
+conda<span class="w"> </span>search<span class="w"> </span>slsdetgui
 </pre></div>
 </div>
 </section>
@@ -188,7 +192,7 @@ conda search slsdetgui
 <h2>Build from source<a class="headerlink" href="#build-from-source" title="Permalink to this heading"></a></h2>
 <section id="download-source-code-from-github">
 <h3>1. Download Source Code from github<a class="headerlink" href="#download-source-code-from-github" title="Permalink to this heading"></a></h3>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git clone https://github.com/slsdetectorgroup/slsDetectorPackage.git --branch <span class="m">6</span>.1.1
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/slsdetectorgroup/slsDetectorPackage.git<span class="w"> </span>--branch<span class="w"> </span><span class="m">6</span>.1.1
 </pre></div>
 </div>
 <div class="line-block">
@@ -204,11 +208,11 @@ conda search slsdetgui
 </div>
 </div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># clone using recursive to get pybind11 submodule</span>
-git clone --recursive https://github.com/slsdetectorgroup/slsDetectorPackage.git
+git<span class="w"> </span>clone<span class="w"> </span>--recursive<span class="w"> </span>https://github.com/slsdetectorgroup/slsDetectorPackage.git
 
 <span class="c1"># update submodule when switching between releases</span>
-<span class="nb">cd</span> slsDetectorPackage
-git submodule update --init
+<span class="nb">cd</span><span class="w"> </span>slsDetectorPackage
+git<span class="w"> </span>submodule<span class="w"> </span>update<span class="w"> </span>--init
 </pre></div>
 </div>
 </section>
@@ -218,23 +222,23 @@ git submodule update --init
 <section id="build-using-cmake">
 <h3>Build using CMake<a class="headerlink" href="#build-using-cmake" title="Permalink to this heading"></a></h3>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># outside slsDetecorPackage folder</span>
-mkdir build <span class="o">&amp;&amp;</span> <span class="nb">cd</span> build
+mkdir<span class="w"> </span>build<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="nb">cd</span><span class="w"> </span>build
 
 <span class="c1"># configure &amp; generate Makefiles using cmake</span>
 <span class="c1"># by listing all your options (alternately use ccmake described below)</span>
 <span class="c1"># cmake3 for some systems</span>
-cmake ../slsDetectorPackage -DCMAKE_INSTALL_PREFIX<span class="o">=</span>/your/install/path
+cmake<span class="w"> </span>../slsDetectorPackage<span class="w"> </span>-DCMAKE_INSTALL_PREFIX<span class="o">=</span>/your/install/path
 
 <span class="c1"># compiled to the build/bin directory</span>
-make -j12 <span class="c1">#or whatever number of cores you are using to build</span>
+make<span class="w"> </span>-j12<span class="w"> </span><span class="c1">#or whatever number of cores you are using to build</span>
 
 <span class="c1"># install headers and libs in /your/install/path directory</span>
-make install
+make<span class="w"> </span>install
 </pre></div>
 </div>
 <p>Instead of the cmake command, one can use ccmake to get a list of options to configure and generate Makefiles at ease.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># ccmake3 for some systems</span>
-ccmake ..
+ccmake<span class="w"> </span>..
 
 <span class="c1"># choose the options</span>
 <span class="c1"># first press [c] - configure</span>
@@ -242,10 +246,6 @@ ccmake ..
 </pre></div>
 </div>
 <table class="docutils align-default">
-<colgroup>
-<col style="width: 42%" />
-<col style="width: 58%" />
-</colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>Example cmake options</p></th>
 <th class="head"><p>Comment</p></th>
@@ -269,44 +269,44 @@ ccmake ..
 </section>
 <section id="build-using-in-built-cmk-sh-script">
 <h3>Build using in-built cmk.sh script<a class="headerlink" href="#build-using-in-built-cmk-sh-script" title="Permalink to this heading"></a></h3>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>The binaries are generated <span class="k">in</span> slsDetectorPackage/build/bin directory.
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>The<span class="w"> </span>binaries<span class="w"> </span>are<span class="w"> </span>generated<span class="w"> </span><span class="k">in</span><span class="w"> </span>slsDetectorPackage/build/bin<span class="w"> </span>directory.
 
-Usage: ./cmk.sh <span class="o">[</span>-b<span class="o">]</span> <span class="o">[</span>-c<span class="o">]</span> <span class="o">[</span>-d &lt;HDF5 directory&gt;<span class="o">]</span> <span class="o">[</span>e<span class="o">]</span> <span class="o">[</span>g<span class="o">]</span> <span class="o">[</span>-h<span class="o">]</span> <span class="o">[</span>i<span class="o">]</span> <span class="o">[</span>-j &lt;Number of threads&gt;<span class="o">]</span>
-<span class="o">[</span>-k &lt;CMake command&gt;<span class="o">]</span> <span class="o">[</span>-l &lt;Install directory&gt;<span class="o">]</span> <span class="o">[</span>m<span class="o">]</span> <span class="o">[</span>n<span class="o">]</span> <span class="o">[</span>-p<span class="o">]</span> <span class="o">[</span>-q &lt;Zmq hint directory&gt;<span class="o">]</span>
-<span class="o">[</span>r<span class="o">]</span> <span class="o">[</span>s<span class="o">]</span> <span class="o">[</span>t<span class="o">]</span> <span class="o">[</span>u<span class="o">]</span> <span class="o">[</span>z<span class="o">]</span>
--<span class="o">[</span>no option<span class="o">]</span>: only make
--b: Builds/Rebuilds CMake files normal mode
--c: Clean
--d: HDF5 Custom Directory
--e: Debug mode
--g: Build/Rebuilds gui
--h: Builds/Rebuilds Cmake files with HDF5 package
--i: Builds tests
--j: Number of threads to compile through
--k: CMake <span class="nb">command</span>
--l: Install directory
--m: Manuals
--n: Manuals without compiling doxygen <span class="o">(</span>only rst<span class="o">)</span>
--p: Builds/Rebuilds Python API
--q: Zmq hint directory
--r: Build/Rebuilds only receiver
--s: Simulator
--t: Build/Rebuilds only text client
--u: Chip Test Gui
--z: Moench zmq processor
+Usage:<span class="w"> </span>./cmk.sh<span class="w"> </span><span class="o">[</span>-b<span class="o">]</span><span class="w"> </span><span class="o">[</span>-c<span class="o">]</span><span class="w"> </span><span class="o">[</span>-d<span class="w"> </span>&lt;HDF5<span class="w"> </span>directory&gt;<span class="o">]</span><span class="w"> </span><span class="o">[</span>e<span class="o">]</span><span class="w"> </span><span class="o">[</span>g<span class="o">]</span><span class="w"> </span><span class="o">[</span>-h<span class="o">]</span><span class="w"> </span><span class="o">[</span>i<span class="o">]</span><span class="w"> </span><span class="o">[</span>-j<span class="w"> </span>&lt;Number<span class="w"> </span>of<span class="w"> </span>threads&gt;<span class="o">]</span>
+<span class="o">[</span>-k<span class="w"> </span>&lt;CMake<span class="w"> </span>command&gt;<span class="o">]</span><span class="w"> </span><span class="o">[</span>-l<span class="w"> </span>&lt;Install<span class="w"> </span>directory&gt;<span class="o">]</span><span class="w"> </span><span class="o">[</span>m<span class="o">]</span><span class="w"> </span><span class="o">[</span>n<span class="o">]</span><span class="w"> </span><span class="o">[</span>-p<span class="o">]</span><span class="w"> </span><span class="o">[</span>-q<span class="w"> </span>&lt;Zmq<span class="w"> </span>hint<span class="w"> </span>directory&gt;<span class="o">]</span>
+<span class="o">[</span>r<span class="o">]</span><span class="w"> </span><span class="o">[</span>s<span class="o">]</span><span class="w"> </span><span class="o">[</span>t<span class="o">]</span><span class="w"> </span><span class="o">[</span>u<span class="o">]</span><span class="w"> </span><span class="o">[</span>z<span class="o">]</span>
+-<span class="o">[</span>no<span class="w"> </span>option<span class="o">]</span>:<span class="w"> </span>only<span class="w"> </span>make
+-b:<span class="w"> </span>Builds/Rebuilds<span class="w"> </span>CMake<span class="w"> </span>files<span class="w"> </span>normal<span class="w"> </span>mode
+-c:<span class="w"> </span>Clean
+-d:<span class="w"> </span>HDF5<span class="w"> </span>Custom<span class="w"> </span>Directory
+-e:<span class="w"> </span>Debug<span class="w"> </span>mode
+-g:<span class="w"> </span>Build/Rebuilds<span class="w"> </span>gui
+-h:<span class="w"> </span>Builds/Rebuilds<span class="w"> </span>Cmake<span class="w"> </span>files<span class="w"> </span>with<span class="w"> </span>HDF5<span class="w"> </span>package
+-i:<span class="w"> </span>Builds<span class="w"> </span>tests
+-j:<span class="w"> </span>Number<span class="w"> </span>of<span class="w"> </span>threads<span class="w"> </span>to<span class="w"> </span>compile<span class="w"> </span>through
+-k:<span class="w"> </span>CMake<span class="w"> </span><span class="nb">command</span>
+-l:<span class="w"> </span>Install<span class="w"> </span>directory
+-m:<span class="w"> </span>Manuals
+-n:<span class="w"> </span>Manuals<span class="w"> </span>without<span class="w"> </span>compiling<span class="w"> </span>doxygen<span class="w"> </span><span class="o">(</span>only<span class="w"> </span>rst<span class="o">)</span>
+-p:<span class="w"> </span>Builds/Rebuilds<span class="w"> </span>Python<span class="w"> </span>API
+-q:<span class="w"> </span>Zmq<span class="w"> </span>hint<span class="w"> </span>directory
+-r:<span class="w"> </span>Build/Rebuilds<span class="w"> </span>only<span class="w"> </span>receiver
+-s:<span class="w"> </span>Simulator
+-t:<span class="w"> </span>Build/Rebuilds<span class="w"> </span>only<span class="w"> </span>text<span class="w"> </span>client
+-u:<span class="w"> </span>Chip<span class="w"> </span>Test<span class="w"> </span>Gui
+-z:<span class="w"> </span>Moench<span class="w"> </span>zmq<span class="w"> </span>processor
 
 
 <span class="c1"># display all options</span>
-./cmk.sh -?
+./cmk.sh<span class="w"> </span>-?
 
 <span class="c1"># new build and compile in parallel (recommended basic option):</span>
-./cmk.sh -cbj5
+./cmk.sh<span class="w"> </span>-cbj5
 
 <span class="c1"># new build, python and compile in parallel:</span>
-./cmk.sh -cbpj5
+./cmk.sh<span class="w"> </span>-cbpj5
 
 <span class="c1">#To use the system zmq (/usr/lib64) instead</span>
-./cmk.sh -cbj5 -q /usr/lib64
+./cmk.sh<span class="w"> </span>-cbj5<span class="w"> </span>-q<span class="w"> </span>/usr/lib64
 </pre></div>
 </div>
 </section>
@@ -316,13 +316,13 @@ Usage: ./cmk.sh <span class="o">[</span>-b<span class="o">]</span> <span class="
 it’s possible to install a newer gcc using conda and build the slsDetectorPackage
 using this compiler</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1">#Create an environment with the dependencies</span>
-conda create -n myenv gxx_linux-64 cmake zmq
-conda activate myenv
+conda<span class="w"> </span>create<span class="w"> </span>-n<span class="w"> </span>myenv<span class="w"> </span>gxx_linux-64<span class="w"> </span>cmake<span class="w"> </span>zmq
+conda<span class="w"> </span>activate<span class="w"> </span>myenv
 
 <span class="c1"># outside slsDetecorPackage folder</span>
-mkdir build <span class="o">&amp;&amp;</span> <span class="nb">cd</span> build
-cmake ../slsDetectorPackage -DCMAKE_PREFIX_PATH<span class="o">=</span><span class="nv">$CONDA_PREFIX</span>
-make -j12
+mkdir<span class="w"> </span>build<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="nb">cd</span><span class="w"> </span>build
+cmake<span class="w"> </span>../slsDetectorPackage<span class="w"> </span>-DCMAKE_PREFIX_PATH<span class="o">=</span><span class="nv">$CONDA_PREFIX</span>
+make<span class="w"> </span>-j12
 </pre></div>
 </div>
 </section>
@@ -330,16 +330,16 @@ make -j12
 <h3>Build slsDetectorGui (Qt5)<a class="headerlink" href="#build-slsdetectorgui-qt5" title="Permalink to this heading"></a></h3>
 <ol class="arabic">
 <li><dl>
-<dt>Using pre-built binary on conda</dt><dd><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda create -n myenv <span class="nv">slsdetgui</span><span class="o">=</span><span class="m">7</span>.0.0
-conda activate myenv
+<dt>Using pre-built binary on conda</dt><dd><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda<span class="w"> </span>create<span class="w"> </span>-n<span class="w"> </span>myenv<span class="w"> </span><span class="nv">slsdetgui</span><span class="o">=</span><span class="m">7</span>.0.0
+conda<span class="w"> </span>activate<span class="w"> </span>myenv
 </pre></div>
 </div>
 </dd>
 </dl>
 </li>
 <li><dl>
-<dt>Using system installation on RHEL7</dt><dd><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>yum install qt5-qtbase-devel.x86_64
-yum install qt5-qtsvg-devel.x86_64
+<dt>Using system installation on RHEL7</dt><dd><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>yum<span class="w"> </span>install<span class="w"> </span>qt5-qtbase-devel.x86_64
+yum<span class="w"> </span>install<span class="w"> </span>qt5-qtsvg-devel.x86_64
 </pre></div>
 </div>
 </dd>
@@ -347,29 +347,29 @@ yum install qt5-qtsvg-devel.x86_64
 </li>
 <li><dl>
 <dt>Using conda</dt><dd><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1">#Add channels for dependencies and our library</span>
-conda config --add channels conda-forge
-conda config --add channels slsdetectorgroup
-conda config --set channel_priority strict
+conda<span class="w"> </span>config<span class="w"> </span>--add<span class="w"> </span>channels<span class="w"> </span>conda-forge
+conda<span class="w"> </span>config<span class="w"> </span>--add<span class="w"> </span>channels<span class="w"> </span>slsdetectorgroup
+conda<span class="w"> </span>config<span class="w"> </span>--set<span class="w"> </span>channel_priority<span class="w"> </span>strict
 
 <span class="c1"># create environment to compile</span>
 <span class="c1"># on rhel7</span>
-conda create -n slsgui zeromq gxx_linux-64 gxx_linux-64 mesa-libgl-devel-cos6-x86_64 qt
+conda<span class="w"> </span>create<span class="w"> </span>-n<span class="w"> </span>slsgui<span class="w"> </span>zeromq<span class="w"> </span>gxx_linux-64<span class="w"> </span>gxx_linux-64<span class="w"> </span>mesa-libgl-devel-cos6-x86_64<span class="w"> </span>qt
 <span class="c1"># on fedora or newer systems</span>
-conda create -n slsgui zeromq qt
+conda<span class="w"> </span>create<span class="w"> </span>-n<span class="w"> </span>slsgui<span class="w"> </span>zeromq<span class="w"> </span>qt
 
 <span class="c1"># when using conda compilers, would also need libgl, but no need for it on fedora unless maybe using it with ROOT</span>
 
 <span class="c1"># activate environment</span>
-conda activate slsgui
+conda<span class="w"> </span>activate<span class="w"> </span>slsgui
 
 <span class="c1"># compile with cmake outside slsDetecorPackage folder</span>
-mkdir build <span class="o">&amp;&amp;</span> <span class="nb">cd</span> build
-cmake ../slsDetectorPackage -DSLS_USE_GUI<span class="o">=</span>ON
-make -j12
+mkdir<span class="w"> </span>build<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="nb">cd</span><span class="w"> </span>build
+cmake<span class="w"> </span>../slsDetectorPackage<span class="w"> </span>-DSLS_USE_GUI<span class="o">=</span>ON
+make<span class="w"> </span>-j12
 
 <span class="c1"># or compile with cmk.sh</span>
-<span class="nb">cd</span> slsDetectorPackage
-./cmk.sh -cbgj9
+<span class="nb">cd</span><span class="w"> </span>slsDetectorPackage
+./cmk.sh<span class="w"> </span>-cbgj9
 </pre></div>
 </div>
 </dd>
@@ -382,16 +382,16 @@ make -j12
 <p>The documentation for the slsDetectorPackage is build using a combination
 of Doxygen, Sphinx and Breathe. The easiest way to install the dependencies
 is to use conda</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda create -n myenv python sphinx_rtd_theme breathe
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda<span class="w"> </span>create<span class="w"> </span>-n<span class="w"> </span>myenv<span class="w"> </span>python<span class="w"> </span>sphinx_rtd_theme<span class="w"> </span>breathe
 </pre></div>
 </div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># using cmake or ccmake to enable DSLS_BUILD_DOCS</span>
 <span class="c1"># outside slsDetecorPackage folder</span>
-mkdir build <span class="o">&amp;&amp;</span> <span class="nb">cd</span> build
-cmake ../slsDetectorPackage -DSLS_BUILD_DOCS<span class="o">=</span>ON
+mkdir<span class="w"> </span>build<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="nb">cd</span><span class="w"> </span>build
+cmake<span class="w"> </span>../slsDetectorPackage<span class="w"> </span>-DSLS_BUILD_DOCS<span class="o">=</span>ON
 
-make docs <span class="c1"># generate API docs and build Sphinx RST</span>
-make rst <span class="c1"># rst only, saves time in case the API did not change</span>
+make<span class="w"> </span>docs<span class="w"> </span><span class="c1"># generate API docs and build Sphinx RST</span>
+make<span class="w"> </span>rst<span class="w"> </span><span class="c1"># rst only, saves time in case the API did not change</span>
 </pre></div>
 </div>
 </section>

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Quick Start Guide &mdash; slsDetectorPackage  documentation</title>
@@ -30,14 +30,18 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-            <a href="index.html" class="icon icon-home"> slsDetectorPackage
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            slsDetectorPackage
           </a>
               <div class="version">
                 7.0.2
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
@@ -123,7 +127,7 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="index.html" class="icon icon-home"></a></li>
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
       <li class="breadcrumb-item active">Quick Start Guide</li>
       <li class="wy-breadcrumbs-aside">
             <a href="_sources/quick_start_guide.rst.txt" rel="nofollow"> View page source</a>
@@ -151,12 +155,12 @@
 slsReceiver
 
 <span class="c1"># custom port 2012</span>
-slsReceiver -t2012
+slsReceiver<span class="w"> </span>-t2012
 </pre></div>
 </div>
 </dd>
 <dt>For Multiple Modules</dt><dd><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># slsMultiReceiver [starting port] [number of receivers] [print each frame header for debugging]</span>
-slsMultiReceiver <span class="m">2012</span> <span class="m">2</span> <span class="m">0</span>
+slsMultiReceiver<span class="w"> </span><span class="m">2012</span><span class="w"> </span><span class="m">2</span><span class="w"> </span><span class="m">0</span>
 </pre></div>
 </div>
 </dd>
@@ -166,10 +170,10 @@ slsMultiReceiver <span class="m">2012</span> <span class="m">2</span> <span clas
 <h2>Client<a class="headerlink" href="#client" title="Permalink to this heading"></a></h2>
 <p>Refer <a class="reference internal" href="#sample-config-file"><span class="std std-ref">Sample Config file</span></a> to create config file.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># load config file</span>
-sls_detector_put config /path/sample.config
+sls_detector_put<span class="w"> </span>config<span class="w"> </span>/path/sample.config
 
 <span class="c1"># set number of frames</span>
-sls_detector_put frames <span class="m">5</span>
+sls_detector_put<span class="w"> </span>frames<span class="w"> </span><span class="m">5</span>
 
 <span class="c1"># acquire</span>
 sls_detector_acquire
@@ -180,15 +184,15 @@ sls_detector_acquire
 <p>There are sample config files for each detector in slsDetectorPackage/examples folder.</p>
 <dl>
 <dt>For a Single Module</dt><dd><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># connects to module</span>
-hostname bchipxxx
+hostname<span class="w"> </span>bchipxxx
 
 <span class="c1"># connects to receiver at default port</span>
-rx_hostname mpc1922
+rx_hostname<span class="w"> </span>mpc1922
 <span class="c1"># or to connect to specific port</span>
 <span class="c1"># rx_hostname mpc1922:2012</span>
 
 <span class="c1"># sets destination udp ports (not needed, default is 50001)</span>
-udp_dstport <span class="m">50012</span>
+udp_dstport<span class="w"> </span><span class="m">50012</span>
 
 <span class="c1"># 1g data out</span>
 <span class="c1"># source udp ips must be same subnet at destintaion udp ips</span>
@@ -197,56 +201,56 @@ udp_dstport <span class="m">50012</span>
 <span class="c1"># udp_dstip auto</span>
 
 <span class="c1"># 10g data out</span>
-udp_srcip <span class="m">10</span>.30.20.200
-udp_dstip <span class="m">10</span>.30.20.6
+udp_srcip<span class="w"> </span><span class="m">10</span>.30.20.200
+udp_dstip<span class="w"> </span><span class="m">10</span>.30.20.6
 
 <span class="c1"># set file path</span>
-fpath /tmp
+fpath<span class="w"> </span>/tmp
 </pre></div>
 </div>
 </dd>
 <dt>For a Single Module with custom Receiver (not slsReceiver)</dt><dd><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># connects to module</span>
-hostname bchipxxx
+hostname<span class="w"> </span>bchipxxx
 
 <span class="c1"># sets destination udp ports (not needed, default is 50001)</span>
-udp_dstport <span class="m">50012</span>
+udp_dstport<span class="w"> </span><span class="m">50012</span>
 
 <span class="c1"># source udp ips must be same subnet at destintaion udp ips</span>
-udp_srcip <span class="m">192</span>.168.1.112
+udp_srcip<span class="w"> </span><span class="m">192</span>.168.1.112
 
 <span class="c1"># destination udp ip</span>
-udp_dstip <span class="m">192</span>.168.1.100
+udp_dstip<span class="w"> </span><span class="m">192</span>.168.1.100
 
 <span class="c1"># source udp mac</span>
-udp_srcmac aa:bb:cc:dd:ee:ff
+udp_srcmac<span class="w"> </span>aa:bb:cc:dd:ee:ff
 
 <span class="c1"># destination udp mac</span>
-udp_dstmac 3c:ab:98:bf:50:60
+udp_dstmac<span class="w"> </span>3c:ab:98:bf:50:60
 
 <span class="c1"># set file path</span>
-fpath /tmp
+fpath<span class="w"> </span>/tmp
 </pre></div>
 </div>
 </dd>
 <dt>For Multiple Modules</dt><dd><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># connects to mulitple modules</span>
-hostname bchipxxx+bchipyyy+
+hostname<span class="w"> </span>bchipxxx+bchipyyy+
 
 <span class="c1"># connects to receivers at ports 2012 and 2014</span>
-rx_hostname mpc1922:2012+mpc1922:2013+
+rx_hostname<span class="w"> </span>mpc1922:2012+mpc1922:2013+
 
 <span class="c1"># sets differernt destination udp ports</span>
-<span class="m">0</span>:udp_dstport <span class="m">50012</span>
-<span class="m">1</span>:udp_dstport <span class="m">50014</span>
+<span class="m">0</span>:udp_dstport<span class="w"> </span><span class="m">50012</span>
+<span class="m">1</span>:udp_dstport<span class="w"> </span><span class="m">50014</span>
 
 <span class="c1"># source udp ips must be same subnet at destintaion udp ips</span>
-<span class="m">0</span>:udp_srcip <span class="m">192</span>.168.1.112
-<span class="m">1</span>:udp_srcip <span class="m">192</span>.168.1.114
+<span class="m">0</span>:udp_srcip<span class="w"> </span><span class="m">192</span>.168.1.112
+<span class="m">1</span>:udp_srcip<span class="w"> </span><span class="m">192</span>.168.1.114
 
 <span class="c1"># destination udp ip picked up from rx_hostname (if auto)</span>
-udp_dstip auto
+udp_dstip<span class="w"> </span>auto
 
 <span class="c1"># set file path</span>
-fpath /tmp
+fpath<span class="w"> </span>/tmp
 </pre></div>
 </div>
 </dd>
