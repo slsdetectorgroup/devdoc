@@ -52,8 +52,9 @@
 <li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Dependencies</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#core">Core</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#gui">GUI</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#python-bindings">Python bindings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#zeromq">ZeroMQ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#gui">GUI</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#moench-executables">Moench executables</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#documentation">Documentation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#packaged-in-libs">Packaged in libs/</a></li>
@@ -150,18 +151,8 @@ the shared libraries these are needed:</p>
 <blockquote>
 <div><ul class="simple">
 <li><p>Linux, preferably recent kernel (currently no cross platform support)</p></li>
-<li><p>CMake &gt; 3.12</p></li>
+<li><p>CMake &gt; 3.14</p></li>
 <li><p>C++11 compatible compiler. (We test with gcc and clang)</p></li>
-<li><p>ZeroMQ version 4</p></li>
-</ul>
-</div></blockquote>
-</section>
-<section id="gui">
-<h2>GUI<a class="headerlink" href="#gui" title="Permalink to this heading"></a></h2>
-<blockquote>
-<div><ul class="simple">
-<li><p>Qt 5.9</p></li>
-<li><p>Qwt 6.1.5 (packaged in libs/)</p></li>
 </ul>
 </div></blockquote>
 </section>
@@ -170,7 +161,32 @@ the shared libraries these are needed:</p>
 <blockquote>
 <div><ul class="simple">
 <li><p>Python &gt; 3.6</p></li>
-<li><p>pybind11 (packaged in libs/)</p></li>
+<li><p>pybind11 2.11.0 (packaged in libs)</p></li>
+</ul>
+</div></blockquote>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Refer <a class="reference internal" href="installation.html#pybind-for-different-slsdetectorpackage-versions"><span class="std std-ref">pybind11 notes.</span></a></p>
+</div>
+</section>
+<section id="zeromq">
+<h2>ZeroMQ<a class="headerlink" href="#zeromq" title="Permalink to this heading"></a></h2>
+<blockquote>
+<div><ul class="simple">
+<li><p>Zeromq 4.3.4 (packaged in libs)</p></li>
+</ul>
+</div></blockquote>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Refer <a class="reference internal" href="installation.html#zeromq-for-different-slsdetectorpackage-versions"><span class="std std-ref">zeromq notes.</span></a></p>
+</div>
+</section>
+<section id="gui">
+<h2>GUI<a class="headerlink" href="#gui" title="Permalink to this heading"></a></h2>
+<blockquote>
+<div><ul class="simple">
+<li><p>Qt 5.9</p></li>
+<li><p>Qwt 6.1.5 (packaged in libs)</p></li>
 </ul>
 </div></blockquote>
 </section>
@@ -200,6 +216,8 @@ the shared libraries these are needed:</p>
 <li><p>catch2 (unit testing)</p></li>
 <li><p>rapidjson (streaming from receiver)</p></li>
 <li><p>pybind11 (python bindings)</p></li>
+<li><p>qwt (gui plotting)</p></li>
+<li><p>libzmq (streaming to/from receiver)</p></li>
 </ul>
 </div></blockquote>
 </section>

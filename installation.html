@@ -59,6 +59,7 @@
 <li class="toctree-l3"><a class="reference internal" href="#build-on-old-distributions">Build on old distributions</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#build-slsdetectorgui-qt5">Build slsDetectorGui (Qt5)</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#build-this-documentation">Build this documentation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#pybind-and-zeromq">Pybind and Zeromq</a></li>
 </ul>
 </li>
 </ul>
@@ -195,25 +196,9 @@ conda<span class="w"> </span>search<span class="w"> </span>slsdetgui
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/slsdetectorgroup/slsDetectorPackage.git<span class="w"> </span>--branch<span class="w"> </span><span class="m">6</span>.1.1
 </pre></div>
 </div>
-<div class="line-block">
-<div class="line"><strong>Pybind for Python</strong></div>
-<div class="line">v7.0.0+:</div>
-<div class="line-block">
-<div class="line">pybind11 packaged into ‘libs/pybind’. No longer a submodule. No need for “recursive” or “submodule update”.</div>
-<div class="line"><br /></div>
-</div>
-<div class="line">Older versions:</div>
-<div class="line-block">
-<div class="line">pybind11 is a submodule. Must be cloned using “recursive” and updated when switching between versions using the following commands.</div>
-</div>
-</div>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># clone using recursive to get pybind11 submodule</span>
-git<span class="w"> </span>clone<span class="w"> </span>--recursive<span class="w"> </span>https://github.com/slsdetectorgroup/slsDetectorPackage.git
-
-<span class="c1"># update submodule when switching between releases</span>
-<span class="nb">cd</span><span class="w"> </span>slsDetectorPackage
-git<span class="w"> </span>submodule<span class="w"> </span>update<span class="w"> </span>--init
-</pre></div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>For v6.x.x of slsDetectorPackage and older, refer <a class="reference internal" href="#pybind-for-different-slsdetectorpackage-versions"><span class="std std-ref">pybind11 notes on cloning.</span></a></p>
 </div>
 </section>
 <section id="build-from-source-using-cmake">
@@ -241,14 +226,14 @@ make<span class="w"> </span>install
 ccmake<span class="w"> </span>..
 
 <span class="c1"># choose the options</span>
-<span class="c1"># first press [c] - configure</span>
+<span class="c1"># first press [c] - configure (maybe multiple times till you see [g])</span>
 <span class="c1"># then press [g] - generate</span>
 </pre></div>
 </div>
 <table class="docutils align-default">
 <colgroup>
-<col style="width: 42%" />
-<col style="width: 58%" />
+<col style="width: 50%" />
+<col style="width: 50%" />
 </colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>Example cmake options</p></th>
@@ -260,24 +245,25 @@ ccmake<span class="w"> </span>..
 <td><p>Python</p></td>
 </tr>
 <tr class="row-odd"><td><p>-DPython_FIND_VIRTUALENV=ONLY</p></td>
-<td><p>Python from only the conda environment</p></td>
+<td><p>Python from the conda env</p></td>
 </tr>
-<tr class="row-even"><td><p>-DZeroMQ_HINT=/usr/lib64</p></td>
-<td><p>Use system zmq instead</p></td>
-</tr>
-<tr class="row-odd"><td><p>-DSLS_USE_GUI=ON</p></td>
+<tr class="row-even"><td><p>-DSLS_USE_GUI=ON</p></td>
 <td><p>GUI</p></td>
 </tr>
 </tbody>
 </table>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>For v7.x.x of slsDetectorPackage and older, refer <a class="reference internal" href="#zeromq-for-different-slsdetectorpackage-versions"><span class="std std-ref">zeromq notes for cmake option to hint library location.</span></a></p>
+</div>
 </section>
 <section id="build-using-in-built-cmk-sh-script">
 <h3>Build using in-built cmk.sh script<a class="headerlink" href="#build-using-in-built-cmk-sh-script" title="Permalink to this heading"></a></h3>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>The<span class="w"> </span>binaries<span class="w"> </span>are<span class="w"> </span>generated<span class="w"> </span><span class="k">in</span><span class="w"> </span>slsDetectorPackage/build/bin<span class="w"> </span>directory.
 
-Usage:<span class="w"> </span>./cmk.sh<span class="w"> </span><span class="o">[</span>-b<span class="o">]</span><span class="w"> </span><span class="o">[</span>-c<span class="o">]</span><span class="w"> </span><span class="o">[</span>-d<span class="w"> </span>&lt;HDF5<span class="w"> </span>directory&gt;<span class="o">]</span><span class="w"> </span><span class="o">[</span>e<span class="o">]</span><span class="w"> </span><span class="o">[</span>g<span class="o">]</span><span class="w"> </span><span class="o">[</span>-h<span class="o">]</span><span class="w"> </span><span class="o">[</span>i<span class="o">]</span><span class="w"> </span><span class="o">[</span>-j<span class="w"> </span>&lt;Number<span class="w"> </span>of<span class="w"> </span>threads&gt;<span class="o">]</span>
-<span class="o">[</span>-k<span class="w"> </span>&lt;CMake<span class="w"> </span>command&gt;<span class="o">]</span><span class="w"> </span><span class="o">[</span>-l<span class="w"> </span>&lt;Install<span class="w"> </span>directory&gt;<span class="o">]</span><span class="w"> </span><span class="o">[</span>m<span class="o">]</span><span class="w"> </span><span class="o">[</span>n<span class="o">]</span><span class="w"> </span><span class="o">[</span>-p<span class="o">]</span><span class="w"> </span><span class="o">[</span>-q<span class="w"> </span>&lt;Zmq<span class="w"> </span>hint<span class="w"> </span>directory&gt;<span class="o">]</span>
-<span class="o">[</span>r<span class="o">]</span><span class="w"> </span><span class="o">[</span>s<span class="o">]</span><span class="w"> </span><span class="o">[</span>t<span class="o">]</span><span class="w"> </span><span class="o">[</span>u<span class="o">]</span><span class="w"> </span><span class="o">[</span>z<span class="o">]</span>
+Usage:<span class="w"> </span><span class="nv">$0</span><span class="w"> </span><span class="o">[</span>-b<span class="o">]</span><span class="w"> </span><span class="o">[</span>-c<span class="o">]</span><span class="w"> </span><span class="o">[</span>-d<span class="w"> </span>&lt;HDF5<span class="w"> </span>directory&gt;<span class="o">]</span><span class="w"> </span><span class="o">[</span>-e<span class="o">]</span><span class="w"> </span><span class="o">[</span>-g<span class="o">]</span><span class="w"> </span><span class="o">[</span>-h<span class="o">]</span><span class="w"> </span><span class="o">[</span>-i<span class="o">]</span>
+<span class="o">[</span>-j<span class="w"> </span>&lt;Number<span class="w"> </span>of<span class="w"> </span>threads&gt;<span class="o">]</span><span class="w"> </span><span class="o">[</span>-k<span class="w"> </span>&lt;CMake<span class="w"> </span>command&gt;<span class="o">]</span><span class="w"> </span><span class="o">[</span>-l<span class="w"> </span>&lt;Install<span class="w"> </span>directory&gt;<span class="o">]</span>
+<span class="o">[</span>-m<span class="o">]</span><span class="w"> </span><span class="o">[</span>-n<span class="o">]</span><span class="w"> </span><span class="o">[</span>-p<span class="o">]</span><span class="w"> </span><span class="o">[</span>-r<span class="o">]</span><span class="w"> </span><span class="o">[</span>-s<span class="o">]</span><span class="w"> </span><span class="o">[</span>-t<span class="o">]</span><span class="w"> </span><span class="o">[</span>-u<span class="o">]</span><span class="w"> </span><span class="o">[</span>-z<span class="o">]</span>
 -<span class="o">[</span>no<span class="w"> </span>option<span class="o">]</span>:<span class="w"> </span>only<span class="w"> </span>make
 -b:<span class="w"> </span>Builds/Rebuilds<span class="w"> </span>CMake<span class="w"> </span>files<span class="w"> </span>normal<span class="w"> </span>mode
 -c:<span class="w"> </span>Clean
@@ -292,7 +278,6 @@ Usage:<span class="w"> </span>./cmk.sh<span class="w"> </span><span class="o">[<
 -m:<span class="w"> </span>Manuals
 -n:<span class="w"> </span>Manuals<span class="w"> </span>without<span class="w"> </span>compiling<span class="w"> </span>doxygen<span class="w"> </span><span class="o">(</span>only<span class="w"> </span>rst<span class="o">)</span>
 -p:<span class="w"> </span>Builds/Rebuilds<span class="w"> </span>Python<span class="w"> </span>API
--q:<span class="w"> </span>Zmq<span class="w"> </span>hint<span class="w"> </span>directory
 -r:<span class="w"> </span>Build/Rebuilds<span class="w"> </span>only<span class="w"> </span>receiver
 -s:<span class="w"> </span>Simulator
 -t:<span class="w"> </span>Build/Rebuilds<span class="w"> </span>only<span class="w"> </span>text<span class="w"> </span>client
@@ -309,9 +294,14 @@ Usage:<span class="w"> </span>./cmk.sh<span class="w"> </span><span class="o">[<
 <span class="c1"># new build, python and compile in parallel:</span>
 ./cmk.sh<span class="w"> </span>-cbpj5
 
-<span class="c1">#To use the system zmq (/usr/lib64) instead</span>
-./cmk.sh<span class="w"> </span>-cbj5<span class="w"> </span>-q<span class="w"> </span>/usr/lib64
+<span class="c1">#For rebuilding only certain sections</span>
+./cmk.sh<span class="w"> </span>-tg<span class="w"> </span><span class="c1">#only text client and gui</span>
+./cmk.sh<span class="w"> </span>-r<span class="w"> </span><span class="c1">#only receiver</span>
 </pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>For v7.x.x of slsDetectorPackage and older, refer <a class="reference internal" href="#zeromq-for-different-slsdetectorpackage-versions"><span class="std std-ref">zeromq notes for cmk script option to hint library location.</span></a></p>
 </div>
 </section>
 <section id="build-on-old-distributions">
@@ -320,7 +310,7 @@ Usage:<span class="w"> </span>./cmk.sh<span class="w"> </span><span class="o">[<
 it’s possible to install a newer gcc using conda and build the slsDetectorPackage
 using this compiler</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1">#Create an environment with the dependencies</span>
-conda<span class="w"> </span>create<span class="w"> </span>-n<span class="w"> </span>myenv<span class="w"> </span>gxx_linux-64<span class="w"> </span>cmake<span class="w"> </span>zmq
+conda<span class="w"> </span>create<span class="w"> </span>-n<span class="w"> </span>myenv<span class="w"> </span>gxx_linux-64<span class="w"> </span>cmake
 conda<span class="w"> </span>activate<span class="w"> </span>myenv
 
 <span class="c1"># outside slsDetecorPackage folder</span>
@@ -328,6 +318,10 @@ mkdir<span class="w"> </span>build<span class="w"> </span><span class="o">&amp;&
 cmake<span class="w"> </span>../slsDetectorPackage<span class="w"> </span>-DCMAKE_PREFIX_PATH<span class="o">=</span><span class="nv">$CONDA_PREFIX</span>
 make<span class="w"> </span>-j12
 </pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>For v7.x.x of slsDetectorPackage and older, refer <a class="reference internal" href="#zeromq-for-different-slsdetectorpackage-versions"><span class="std std-ref">zeromq notes for dependencies for conda.</span></a></p>
 </div>
 </section>
 <section id="build-slsdetectorgui-qt5">
@@ -357,9 +351,9 @@ conda<span class="w"> </span>config<span class="w"> </span>--set<span class="w">
 
 <span class="c1"># create environment to compile</span>
 <span class="c1"># on rhel7</span>
-conda<span class="w"> </span>create<span class="w"> </span>-n<span class="w"> </span>slsgui<span class="w"> </span>zeromq<span class="w"> </span>gxx_linux-64<span class="w"> </span>gxx_linux-64<span class="w"> </span>mesa-libgl-devel-cos6-x86_64<span class="w"> </span>qt
+conda<span class="w"> </span>create<span class="w"> </span>-n<span class="w"> </span>slsgui<span class="w"> </span>gxx_linux-64<span class="w"> </span>gxx_linux-64<span class="w"> </span>mesa-libgl-devel-cos6-x86_64<span class="w"> </span>qt
 <span class="c1"># on fedora or newer systems</span>
-conda<span class="w"> </span>create<span class="w"> </span>-n<span class="w"> </span>slsgui<span class="w"> </span>zeromq<span class="w"> </span>qt
+conda<span class="w"> </span>create<span class="w"> </span>-n<span class="w"> </span>slsgui<span class="w"> </span>qt
 
 <span class="c1"># when using conda compilers, would also need libgl, but no need for it on fedora unless maybe using it with ROOT</span>
 
@@ -380,6 +374,10 @@ make<span class="w"> </span>-j12
 </dl>
 </li>
 </ol>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>For v7.x.x of slsDetectorPackage and older, refer <a class="reference internal" href="#zeromq-for-different-slsdetectorpackage-versions"><span class="std std-ref">zeromq notes for dependencies for conda.</span></a></p>
+</div>
 </section>
 <section id="build-this-documentation">
 <h3>Build this documentation<a class="headerlink" href="#build-this-documentation" title="Permalink to this heading"></a></h3>
@@ -397,6 +395,55 @@ cmake<span class="w"> </span>../slsDetectorPackage<span class="w"> </span>-DSLS_
 make<span class="w"> </span>docs<span class="w"> </span><span class="c1"># generate API docs and build Sphinx RST</span>
 make<span class="w"> </span>rst<span class="w"> </span><span class="c1"># rst only, saves time in case the API did not change</span>
 </pre></div>
+</div>
+</section>
+<section id="pybind-and-zeromq">
+<h3>Pybind and Zeromq<a class="headerlink" href="#pybind-and-zeromq" title="Permalink to this heading"></a></h3>
+<div class="line-block" id="pybind-for-different-slsdetectorpackage-versions">
+<div class="line"><strong>Pybind for Python</strong></div>
+<div class="line">v8.0.0+:</div>
+<div class="line-block">
+<div class="line">pybind11 (v2.11.0) is built</div>
+<div class="line">* by default from tar file in repo (libs/pybind/v2.11.0.tar.gz)</div>
+<div class="line">* or use option SLS_FETCH_PYBIND11_FROM_GITHUB <a class="reference external" href="https://github.com/pybind/pybind11">[link]</a>.</div>
+<div class="line"><br /></div>
+</div>
+<div class="line">v7.x.x:</div>
+<div class="line-block">
+<div class="line">pybind11 packaged into ‘libs/pybind’. No longer a submodule. No need for “recursive” or “submodule update”.</div>
+<div class="line"><br /></div>
+</div>
+<div class="line">Older versions:</div>
+<div class="line-block">
+<div class="line">pybind11 is a submodule. Must be cloned using “recursive” and updated when switching between versions using the following commands.</div>
+</div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Note: Only for v6.x.x versions and older</span>
+
+<span class="c1"># clone using recursive to get pybind11 submodule</span>
+git<span class="w"> </span>clone<span class="w"> </span>--recursive<span class="w"> </span>https://github.com/slsdetectorgroup/slsDetectorPackage.git
+
+<span class="c1"># update submodule when switching between releases</span>
+<span class="nb">cd</span><span class="w"> </span>slsDetectorPackage
+git<span class="w"> </span>submodule<span class="w"> </span>update<span class="w"> </span>--init
+</pre></div>
+</div>
+<div class="line-block" id="zeromq-for-different-slsdetectorpackage-versions">
+<div class="line"><strong>Zeromq</strong></div>
+<div class="line">v8.0.0+:</div>
+<div class="line-block">
+<div class="line">zeromq (v4.3.4) is built</div>
+<div class="line">* by default from tar file in repo (libs/libzmq/libzmq-4.3.4.tar.gz)</div>
+<div class="line">* or use option SLS_FETCH_ZMQ_FROM_GITHUB <a class="reference external" href="https://github.com/zeromq/libzmq.git">[link]</a>.</div>
+<div class="line"><br /></div>
+</div>
+<div class="line">v7.x.x and older:</div>
+<div class="line-block">
+<div class="line">zeromq must be installed and one can hint its location using</div>
+<div class="line">* cmake option:’-DZeroMQ_HINT=/usr/lib64’ or</div>
+<div class="line">* option ‘-q’ in cmk.sh script: : ./cmk.sh -cbj5 -q /usr/lib64</div>
+<div class="line">* ‘zeromq’ dependencies when installing using conda</div>
+</div>
 </div>
 </section>
 </section>
