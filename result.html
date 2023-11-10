@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Result &mdash; slsDetectorPackage  documentation</title>
@@ -37,7 +37,7 @@
             slsDetectorPackage
           </a>
               <div class="version">
-                7.0.2
+                8.0.0
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
@@ -144,7 +144,7 @@
 <p>constructs the fifo structure</p>
 <p>creates &amp; manages a data streamer thread each</p>
 <p>creates &amp; manages a data processor thread each</p>
-<p>creates/destroys an ARPing child process to arping the interfaces slsReceiver is listening to.</p>
+<p>creates/destroys an ARPing child process to arping the interfaces slsReceiver is listening to. </p>
 <div class="breathe-sectiondef docutils container">
 <p class="breathe-sectiondef-title rubric" id="breathe-section-title-functions">Functions</p>
 <dl class="cpp function">
@@ -152,7 +152,7 @@
 <span id="_CPPv3I0EN3slslsERNSt7ostreamERK6ResultI1TE"></span><span id="_CPPv2I0EN3slslsERNSt7ostreamERK6ResultI1TE"></span><span class="k"><span class="pre">template</span></span><span class="p"><span class="pre">&lt;</span></span><span class="k"><span class="pre">typename</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">T</span></span></span><span class="p"><span class="pre">&gt;</span></span><br /><span class="target" id="namespacesls_1ace400442f39e9f9c75095824bf99aa04"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">ostream</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="k"><span class="pre">operator</span></span><span class="o"><span class="pre">&lt;&lt;</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">ostream</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">os</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4I00EN3sls6ResultE" title="sls::Result"><span class="n"><span class="pre">Result</span></span></a><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="#_CPPv4I0EN3slslsERNSt7ostreamERNSt7ostreamERK6ResultI1TE" title="sls::operator&lt;&lt;::T"><span class="n"><span class="pre">T</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">res</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4I0EN3slslsERNSt7ostreamERNSt7ostreamERK6ResultI1TE" title="Permalink to this definition"></a><br /></dt>
 <dd><p>operator &lt;&lt; overload to print <a class="reference internal" href="#classsls_1_1Result"><span class="std std-ref">Result</span></a>, uses ToString for the conversion </p>
 <dl class="field-list simple">
-<dt class="field-odd">Template Parameters<span class="colon">:</span></dt>
+<dt class="field-odd">Template Parameters</dt>
 <dd class="field-odd"><p><strong>T</strong> – type stored in the <a class="reference internal" href="#classsls_1_1Result"><span class="std std-ref">Result</span></a></p>
 </dd>
 </dl>
@@ -165,7 +165,7 @@
 <dd><div class="docutils container">
 <em>#include &lt;Result.h&gt;</em></div>
 <dl class="field-list simple">
-<dt class="field-odd">Template Parameters<span class="colon">:</span></dt>
+<dt class="field-odd">Template Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>T</strong> – type to store in the result </p></li>
 <li><p><strong>Allocator</strong> – for the underlying vector, default </p></li>
@@ -240,7 +240,7 @@
 <span id="_CPPv3IDpEN3sls6Result6ResultEDpRR4Args"></span><span id="_CPPv2IDpEN3sls6Result6ResultEDpRR4Args"></span><span class="k"><span class="pre">template</span></span><span class="p"><span class="pre">&lt;</span></span><span class="k"><span class="pre">typename</span></span><span class="w"> </span><span class="p"><span class="pre">...</span></span><span class="sig-name descname"><span class="n"><span class="pre">Args</span></span></span><span class="p"><span class="pre">&gt;</span></span><br /><span class="target" id="classsls_1_1Result_1a07326e694b5424c3206d2e75beccc024"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">Result</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4IDpEN3sls6Result6ResultEDpRR4Args" title="sls::Result::Result::Args"><span class="n"><span class="pre">Args</span></span></a><span class="p"><span class="pre">&amp;</span></span><span class="p"><span class="pre">&amp;</span></span><span class="p"><span class="pre">...</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">args</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4IDpEN3sls6Result6ResultEDpRR4Args" title="Permalink to this definition"></a><br /></dt>
 <dd><p>Forward arguments to the constructor of std::vector </p>
 <dl class="field-list simple">
-<dt class="field-odd">Template Parameters<span class="colon">:</span></dt>
+<dt class="field-odd">Template Parameters</dt>
 <dd class="field-odd"><p><strong>Args</strong> – template paramter pack to forward </p>
 </dd>
 </dl>
@@ -341,8 +341,19 @@
 </dd></dl>
 
 <dl class="cpp function">
-<dt class="sig sig-object cpp" id="_CPPv4N3sls6ResultcvNSt6vectorEEv">
-<span id="_CPPv3N3sls6ResultcvNSt6vectorEEv"></span><span id="_CPPv2N3sls6ResultcvNSt6vectorEEv"></span><span id="sls::Result::castto-v-operator"></span><span class="target" id="classsls_1_1Result_1a2e5703770dbe47092609d2ae8ab428ab"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="sig-name descname"><span class="k"><span class="pre">operator</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3sls6ResultcvNSt6vectorEEv" title="Permalink to this definition"></a><br /></dt>
+<dt class="sig sig-object cpp" id="_CPPv4NK3sls6Result3anyERK1T">
+<span id="_CPPv3NK3sls6Result3anyERK1T"></span><span id="_CPPv2NK3sls6Result3anyERK1T"></span><span id="sls::Result::any__TCRC"></span><span class="target" id="classsls_1_1Result_1ad644b513e0d8ae5acad68bda854c76bd"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">any</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4I00EN3sls6ResultE" title="sls::Result::T"><span class="n"><span class="pre">T</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">value</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="k"><span class="pre">noexcept</span></span><a class="headerlink" href="#_CPPv4NK3sls6Result3anyERK1T" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Test whether any element of the result are equal to a value </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4I0Dp0ENK3sls6Result13contains_onlyENSt9enable_ifINSt7is_sameI1V1TE5valueEbE4typeERK1VDpRK4Args">
+<span id="_CPPv3I0Dp0ENK3sls6Result13contains_onlyERK1VDpRK4Args"></span><span id="_CPPv2I0Dp0ENK3sls6Result13contains_onlyERK1VDpRK4Args"></span><span class="k"><span class="pre">template</span></span><span class="p"><span class="pre">&lt;</span></span><span class="k"><span class="pre">typename</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">V</span></span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="k"><span class="pre">typename</span></span><span class="w"> </span><span class="p"><span class="pre">...</span></span><span class="sig-name descname"><span class="n"><span class="pre">Args</span></span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="k"><span class="pre">typename</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><a class="reference internal" href="type_traits.html#_CPPv4I0DpEN3sls7AllSameE" title="sls::AllSame"><span class="n"><span class="pre">AllSame</span></span></a><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="#_CPPv4I0Dp0ENK3sls6Result13contains_onlyENSt9enable_ifINSt7is_sameI1V1TE5valueEbE4typeERK1VDpRK4Args" title="sls::Result::contains_only::V"><span class="n"><span class="pre">V</span></span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4I0Dp0ENK3sls6Result13contains_onlyENSt9enable_ifINSt7is_sameI1V1TE5valueEbE4typeERK1VDpRK4Args" title="sls::Result::contains_only::Args"><span class="n"><span class="pre">Args</span></span></a><span class="p"><span class="pre">...</span></span><span class="p"><span class="pre">&gt;</span></span><span class="p"><span class="pre">&gt;</span></span><br /><span class="target" id="classsls_1_1Result_1a935e095cd12e2ad32e775679ba6d1281"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">enable_if</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">is_same</span></span><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="#_CPPv4I0Dp0ENK3sls6Result13contains_onlyENSt9enable_ifINSt7is_sameI1V1TE5valueEbE4typeERK1VDpRK4Args" title="sls::Result::contains_only::V"><span class="n"><span class="pre">V</span></span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4I00EN3sls6ResultE" title="sls::Result::T"><span class="n"><span class="pre">T</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">value</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="kt"><span class="pre">bool</span></span><span class="p"><span class="pre">&gt;</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">type</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">contains_only</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4I0Dp0ENK3sls6Result13contains_onlyENSt9enable_ifINSt7is_sameI1V1TE5valueEbE4typeERK1VDpRK4Args" title="sls::Result::contains_only::V"><span class="n"><span class="pre">V</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">a</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4I0Dp0ENK3sls6Result13contains_onlyENSt9enable_ifINSt7is_sameI1V1TE5valueEbE4typeERK1VDpRK4Args" title="sls::Result::contains_only::Args"><span class="n"><span class="pre">Args</span></span></a><span class="p"><span class="pre">&amp;</span></span><span class="p"><span class="pre">...</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">args</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="k"><span class="pre">noexcept</span></span><a class="headerlink" href="#_CPPv4I0Dp0ENK3sls6Result13contains_onlyENSt9enable_ifINSt7is_sameI1V1TE5valueEbE4typeERK1VDpRK4Args" title="Permalink to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N3sls6ResultcvNSt6vectorI1TEEEv">
+<span id="_CPPv3N3sls6ResultcvNSt6vectorI1TEEEv"></span><span id="_CPPv2N3sls6ResultcvNSt6vectorI1TEEEv"></span><span id="sls::Result::castto-std::vector:T:-operator"></span><span class="target" id="classsls_1_1Result_1a91f37d2815718cb838369716525966ee"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="sig-name descname"><span class="k"><span class="pre">operator</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="#_CPPv4I00EN3sls6ResultE" title="sls::Result::T"><span class="n"><span class="pre">T</span></span></a><span class="p"><span class="pre">&gt;</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3sls6ResultcvNSt6vectorI1TEEEv" title="Permalink to this definition"></a><br /></dt>
 <dd><p>Convert Result&lt;T&gt; to std::vector&lt;T&gt; </p>
 </dd></dl>
 

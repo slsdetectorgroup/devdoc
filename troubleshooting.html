@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Troubleshooting &mdash; slsDetectorPackage  documentation</title>
@@ -36,7 +36,7 @@
             slsDetectorPackage
           </a>
               <div class="version">
-                7.0.2
+                8.0.0
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
@@ -126,6 +126,7 @@
 <li class="toctree-l2"><a class="reference internal" href="#jungfrau">Jungfrau</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#temperature-event-occured">Temperature event occured</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#jungfrau-troubleshooting-power-supply">Cannot get multi module data</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#cannot-stop-slaves-in-sync-mode">Cannot stop slaves in sync mode</a></li>
 </ul>
 </li>
 </ul>
@@ -301,6 +302,14 @@ sls_detector_put<span class="w"> </span>rx_arping<span class="w"> </span><span c
 </dd>
 </dl>
 </li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>Only the slaves get no data</dt><dd><ul class="simple">
+<li><p>Check trigger cabling and trigger configuration</p></li>
+<li><p>When you cannot stop Jungfrau slaves in sync mode, refer to <a class="reference internal" href="#jungfrau-troubleshooting-sync-slaves-cannot-stop"><span class="std std-ref">Cannot stop slaves</span></a>.</p></li>
 </ul>
 </dd>
 </dl>
@@ -716,6 +725,23 @@ sls_detector_put<span class="w"> </span>powerchip<span class="w"> </span><span c
 </ul>
 </dd>
 </dl>
+</li>
+</ol>
+</section>
+<section id="cannot-stop-slaves-in-sync-mode">
+<span id="jungfrau-troubleshooting-sync-slaves-cannot-stop"></span><h3>Cannot stop slaves in sync mode<a class="headerlink" href="#cannot-stop-slaves-in-sync-mode" title="Permalink to this heading"></a></h3>
+<ol class="arabic">
+<li><p>If cabling is accessible, ensure termination board and flatband cable between the masters and the slaves are connnected properly. Then try to stop.</p></li>
+<li><p>If cabling is inaccessible, unsync first so that the slaves can get the stop directly from the client using the command. Then, don’t use sync mode until the cabling is fixed.</p>
+<blockquote>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># unsync, slaves command will fail as it is still in waiting state</span>
+sls_detector_put<span class="w"> </span>sync<span class="w"> </span><span class="m">0</span>
+
+<span class="c1"># stop should now be successful as master does not determine the stop anymore</span>
+sls_detector_put<span class="w"> </span>stop
+</pre></div>
+</div>
+</div></blockquote>
 </li>
 </ol>
 </section>

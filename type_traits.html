@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>TypeTraits &mdash; slsDetectorPackage  documentation</title>
@@ -37,7 +37,7 @@
             slsDetectorPackage
           </a>
               <div class="version">
-                7.0.2
+                8.0.0
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
@@ -186,7 +186,36 @@ from the standard library.</p>
 <p>constructs the fifo structure</p>
 <p>creates &amp; manages a data streamer thread each</p>
 <p>creates &amp; manages a data processor thread each</p>
-<p>creates/destroys an ARPing child process to arping the interfaces slsReceiver is listening to.</p>
+<p>creates/destroys an ARPing child process to arping the interfaces slsReceiver is listening to. </p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-typedefs">Typedefs</p>
+<dl class="cpp type">
+<dt class="sig sig-object cpp" id="_CPPv4I0DpEN3sls7AllSameE">
+<span id="_CPPv3I0DpEN3sls7AllSameE"></span><span id="_CPPv2I0DpEN3sls7AllSameE"></span><span class="k"><span class="pre">template</span></span><span class="p"><span class="pre">&lt;</span></span><span class="k"><span class="pre">typename</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">T</span></span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="k"><span class="pre">typename</span></span><span class="w"> </span><span class="p"><span class="pre">...</span></span><span class="sig-name descname"><span class="n"><span class="pre">Ts</span></span></span><span class="p"><span class="pre">&gt;</span></span><br /><span class="target" id="namespacesls_1a9ae886b8bd04facfb8bc4ccad5c4443d"></span><span class="k"><span class="pre">using</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">AllSame</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="k"><span class="pre">typename</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">enable_if</span></span><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="#_CPPv4IDpEN3sls11ConjunctionE" title="sls::Conjunction"><span class="n"><span class="pre">Conjunction</span></span></a><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">is_same</span></span><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="#_CPPv4I0DpEN3sls7AllSameE" title="sls::AllSame::T"><span class="n"><span class="pre">T</span></span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4I0DpEN3sls7AllSameE" title="sls::AllSame::Ts"><span class="n"><span class="pre">Ts</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="p"><span class="pre">...</span></span><span class="p"><span class="pre">&gt;</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">value</span></span><span class="p"><span class="pre">&gt;</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">type</span></span><a class="headerlink" href="#_CPPv4I0DpEN3sls7AllSameE" title="Permalink to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+</div>
+<dl class="cpp struct">
+<dt class="sig sig-object cpp" id="_CPPv4IDpEN3sls11ConjunctionE">
+<span id="_CPPv3IDpEN3sls11ConjunctionE"></span><span id="_CPPv2IDpEN3sls11ConjunctionE"></span><span class="k"><span class="pre">template</span></span><span class="p"><span class="pre">&lt;</span></span><span class="k"><span class="pre">class</span></span><span class="p"><span class="pre">...</span></span><span class="p"><span class="pre">&gt;</span></span><br /><span class="target" id="structsls_1_1Conjunction"></span><span class="k"><span class="pre">struct</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">Conjunction</span></span></span><span class="w"> </span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="k"><span class="pre">public</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">true_type</span></span><a class="headerlink" href="#_CPPv4IDpEN3sls11ConjunctionE" title="Permalink to this definition"></a><br /></dt>
+<dd><div class="docutils container">
+<em>#include &lt;TypeTraits.h&gt;</em></div>
+</dd></dl>
+
+<dl class="cpp struct">
+<dt class="sig sig-object cpp" id="_CPPv4I0EN3sls11ConjunctionE">
+<span id="_CPPv3I0EN3sls11ConjunctionE"></span><span id="_CPPv2I0EN3sls11ConjunctionE"></span><span class="k"><span class="pre">template</span></span><span class="p"><span class="pre">&lt;</span></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">B1</span></span></span><span class="p"><span class="pre">&gt;</span></span><br /><span class="target" id="structsls_1_1Conjunction_3_01B1_01_4"></span><span class="k"><span class="pre">struct</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">Conjunction</span></span></span><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="#_CPPv4I0EN3sls11ConjunctionE" title="sls::Conjunction::B1"><span class="n"><span class="pre">B1</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="k"><span class="pre">public</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4I0EN3sls11ConjunctionE" title="sls::Conjunction::B1"><span class="n"><span class="pre">B1</span></span></a><a class="headerlink" href="#_CPPv4I0EN3sls11ConjunctionE" title="Permalink to this definition"></a><br /></dt>
+<dd><div class="docutils container">
+<em>#include &lt;TypeTraits.h&gt;</em></div>
+</dd></dl>
+
+<dl class="cpp struct">
+<dt class="sig sig-object cpp" id="_CPPv4I0DpEN3sls11ConjunctionE">
+<span id="_CPPv3I0DpEN3sls11ConjunctionE"></span><span id="_CPPv2I0DpEN3sls11ConjunctionE"></span><span class="k"><span class="pre">template</span></span><span class="p"><span class="pre">&lt;</span></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">B1</span></span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="p"><span class="pre">...</span></span><span class="sig-name descname"><span class="n"><span class="pre">Bn</span></span></span><span class="p"><span class="pre">&gt;</span></span><br /><span class="target" id="structsls_1_1Conjunction_3_01B1_00_01Bn_8_8_8_01_4"></span><span class="k"><span class="pre">struct</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">Conjunction</span></span></span><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="#_CPPv4I0DpEN3sls11ConjunctionE" title="sls::Conjunction::B1"><span class="n"><span class="pre">B1</span></span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4I0DpEN3sls11ConjunctionE" title="sls::Conjunction::Bn"><span class="n"><span class="pre">Bn</span></span></a><span class="p"><span class="pre">...</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="k"><span class="pre">public</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">conditional</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">type</span></span><a class="headerlink" href="#_CPPv4I0DpEN3sls11ConjunctionE" title="Permalink to this definition"></a><br /></dt>
+<dd><div class="docutils container">
+<em>#include &lt;TypeTraits.h&gt;</em></div>
+</dd></dl>
+
 <dl class="cpp struct">
 <dt class="sig sig-object cpp" id="_CPPv4I00EN3sls16has_emplace_backE">
 <span id="_CPPv3I00EN3sls16has_emplace_backE"></span><span id="_CPPv2I00EN3sls16has_emplace_backE"></span><span class="k"><span class="pre">template</span></span><span class="p"><span class="pre">&lt;</span></span><span class="k"><span class="pre">typename</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">T</span></span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="k"><span class="pre">typename</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">_</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="p"><span class="pre">&gt;</span></span><br /><span class="target" id="structsls_1_1has__emplace__back"></span><span class="k"><span class="pre">struct</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">has_emplace_back</span></span></span><span class="w"> </span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="k"><span class="pre">public</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">false_type</span></span><a class="headerlink" href="#_CPPv4I00EN3sls16has_emplace_backE" title="Permalink to this definition"></a><br /></dt>

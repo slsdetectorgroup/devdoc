@@ -34,7 +34,7 @@
             slsDetectorPackage
           </a>
               <div class="version">
-                7.0.2
+                8.0.0
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
@@ -175,14 +175,22 @@
 </li>
       <li><a href="commandline.html#term-adcenable10g-bitmask"><strong>adcenable10g [bitmask]</strong></a>
 </li>
+      <li><a href="commandline.html#term-adcindex-name"><strong>adcindex [name]</strong></a>
+</li>
       <li><a href="pydetector.html#slsdet.Detector.adcinvert">adcinvert (slsdet.Detector property)</a>
 </li>
       <li><a href="commandline.html#term-adcinvert-bitmask"><strong>adcinvert [bitmask]</strong></a>
 </li>
-      <li><a href="pydetector.html#slsdet.Detector.adcphase">adcphase (slsdet.Detector property)</a>
+      <li><a href="pydetector.html#slsdet.Detector.adclist">adclist (slsdet.Detector property)</a>
+</li>
+      <li><a href="commandline.html#term-adclist-adcname1-adcname2-..-adcname32"><strong>adclist [adcname1 adcname2 .. adcname32]</strong></a>
 </li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="commandline.html#term-adcname-0-31-name"><strong>adcname [0-31][name]</strong></a>
+</li>
+      <li><a href="pydetector.html#slsdet.Detector.adcphase">adcphase (slsdet.Detector property)</a>
+</li>
       <li><a href="commandline.html#term-adcphase-n_value-optional-deg"><strong>adcphase [n_value] [(optional)deg]</strong></a>
 </li>
       <li><a href="pydetector.html#slsdet.Detector.adcpipeline">adcpipeline (slsdet.Detector property)</a>
@@ -287,10 +295,10 @@
         <li><a href="pydetector.html#slsdet.Detector.clientversion">(slsdet.Detector property)</a>
 </li>
       </ul></li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="pydetector.html#slsdet.Detector.clkdiv">clkdiv (slsdet.Detector property)</a>
 </li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="commandline.html#term-clkdiv-n_clock-0-5-n_divider"><strong>clkdiv [n_clock (0-5)] [n_divider]</strong></a>
 </li>
       <li><a href="pydetector.html#slsdet.Detector.clkfreq">clkfreq (slsdet.Detector property)</a>
@@ -302,6 +310,10 @@
       <li><a href="commandline.html#term-clkphase-n_clock-0-5-phase-deg-optional"><strong>clkphase [n_clock (0-5)] [phase] [deg (optional)]</strong></a>
 </li>
       <li><a href="pyenums.html#slsdet.clockIndex">clockIndex (class in slsdet)</a>
+</li>
+      <li><a href="pydetector.html#slsdet.Detector.column">column (slsdet.Detector property)</a>
+</li>
+      <li><a href="commandline.html#term-column-value"><strong>column [value]</strong></a>
 </li>
       <li><a href="pydetector.html#slsdet.Detector.compdisabletime">compdisabletime (slsdet.Detector property)</a>
 </li>
@@ -331,14 +343,16 @@
   <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="commandline.html#term-dac-dac-name-dac-or-mV-value-optional-unit-mV"><strong>dac [dac name] [dac or mV value] [(optional unit) mV]</strong></a>
 </li>
+      <li><a href="commandline.html#term-dacindex"><strong>dacindex</strong></a>
+</li>
       <li><a href="pyenums.html#slsdet.dacIndex">dacIndex (class in slsdet)</a>
 </li>
-      <li><a href="commandline.html#term-daclist"><strong>daclist</strong></a>
-
-      <ul>
-        <li><a href="pydetector.html#slsdet.Detector.daclist">(slsdet.Detector property)</a>
+      <li><a href="pydetector.html#slsdet.Detector.daclist">daclist (slsdet.Detector property)</a>
 </li>
-      </ul></li>
+      <li><a href="commandline.html#term-daclist-dacname1-dacname2-..-dacname18"><strong>daclist [dacname1 dacname2 .. dacname18]</strong></a>
+</li>
+      <li><a href="commandline.html#term-dacname"><strong>dacname</strong></a>
+</li>
       <li><a href="pydetector.html#slsdet.Detector.dacvalues">dacvalues (slsdet.Detector property)</a>
 </li>
       <li><a href="commandline.html#term-dacvalues-optional-unit-mV"><strong>dacvalues [(optional unit) mV]</strong></a>
@@ -365,10 +379,10 @@
 </li>
       <li><a href="pydetector.html#slsdet.Detector.delay">delay (slsdet.Detector property)</a>
 </li>
-      <li><a href="commandline.html#term-delay-duration-optional-unit-ns-us-ms-s"><strong>delay [duration] [(optional unit) ns|us|ms|s]</strong></a>
-</li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="commandline.html#term-delay-duration-optional-unit-ns-us-ms-s"><strong>delay [duration] [(optional unit) ns|us|ms|s]</strong></a>
+</li>
       <li><a href="commandline.html#term-delayl"><strong>delayl</strong></a>
 
       <ul>
@@ -595,7 +609,13 @@
 </li>
       <li><a href="pydetector.html#slsdet.Detector.getADCEnableMask">getADCEnableMask() (slsdet.Detector method)</a>
 </li>
+      <li><a href="pydetector.html#slsdet.Detector.getAdcIndex">getAdcIndex() (slsdet.Detector method)</a>
+</li>
       <li><a href="pydetector.html#slsdet.Detector.getADCInvert">getADCInvert() (slsdet.Detector method)</a>
+</li>
+      <li><a href="pydetector.html#slsdet.Detector.getAdcName">getAdcName() (slsdet.Detector method)</a>
+</li>
+      <li><a href="pydetector.html#slsdet.Detector.getAdcNames">getAdcNames() (slsdet.Detector method)</a>
 </li>
       <li><a href="pydetector.html#slsdet.Detector.getADCPhase">getADCPhase() (slsdet.Detector method)</a>
 </li>
@@ -648,6 +668,8 @@
       <li><a href="pydetector.html#slsdet.Detector.getClockPhase">getClockPhase() (slsdet.Detector method)</a>
 </li>
       <li><a href="pydetector.html#slsdet.Detector.getClockPhaseinDegrees">getClockPhaseinDegrees() (slsdet.Detector method)</a>
+</li>
+      <li><a href="pydetector.html#slsdet.Detector.getColumn">getColumn() (slsdet.Detector method)</a>
 </li>
       <li><a href="pydetector.html#slsdet.Detector.getComparatorDisableTime">getComparatorDisableTime() (slsdet.Detector method)</a>
 </li>
@@ -747,6 +769,8 @@
 </li>
       <li><a href="pydetector.html#slsdet.Detector.getFramesPerFile">getFramesPerFile() (slsdet.Detector method)</a>
 </li>
+      <li><a href="pydetector.html#slsdet.Detector.getFrontEndFirmwareVersion">getFrontEndFirmwareVersion() (slsdet.Detector method)</a>
+</li>
       <li><a href="pydetector.html#slsdet.Detector.getGainCaps">getGainCaps() (slsdet.Detector method)</a>
 </li>
       <li><a href="pydetector.html#slsdet.Detector.getGainMode">getGainMode() (slsdet.Detector method)</a>
@@ -793,20 +817,20 @@
 </li>
       <li><a href="pydetector.html#slsdet.Detector.getMaxDBITPhaseShift">getMaxDBITPhaseShift() (slsdet.Detector method)</a>
 </li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="pydetector.html#slsdet.Detector.getMeasuredCurrent">getMeasuredCurrent() (slsdet.Detector method)</a>
 </li>
       <li><a href="pydetector.html#slsdet.Detector.getMeasuredPeriod">getMeasuredPeriod() (slsdet.Detector method)</a>
 </li>
-      <li><a href="pydetector.html#slsdet.Detector.getMeasuredSubFramePeriod">getMeasuredSubFramePeriod() (slsdet.Detector method)</a>
+      <li><a href="pydetector.html#slsdet.Detector.getMeasuredPower">getMeasuredPower() (slsdet.Detector method)</a>
 </li>
-      <li><a href="pydetector.html#slsdet.Detector.getMeasuredVoltage">getMeasuredVoltage() (slsdet.Detector method)</a>
+      <li><a href="pydetector.html#slsdet.Detector.getMeasuredSubFramePeriod">getMeasuredSubFramePeriod() (slsdet.Detector method)</a>
 </li>
       <li><a href="pydetector.html#slsdet.Detector.getMeasurementTime">getMeasurementTime() (slsdet.Detector method)</a>
 </li>
       <li><a href="pydetector.html#slsdet.Detector.getModuleGeometry">getModuleGeometry() (slsdet.Detector method)</a>
 </li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="pydetector.html#slsdet.Detector.getModuleId">getModuleId() (slsdet.Detector method)</a>
 </li>
       <li><a href="pydetector.html#slsdet.Detector.getModuleSize">getModuleSize() (slsdet.Detector method)</a>
@@ -833,6 +857,8 @@
 </li>
       <li><a href="pydetector.html#slsdet.Detector.getNumberOfGates">getNumberOfGates() (slsdet.Detector method)</a>
 </li>
+      <li><a href="pydetector.html#slsdet.Detector.getNumberOfTransceiverSamples">getNumberOfTransceiverSamples() (slsdet.Detector method)</a>
+</li>
       <li><a href="pydetector.html#slsdet.Detector.getNumberOfTriggers">getNumberOfTriggers() (slsdet.Detector method)</a>
 </li>
       <li><a href="pydetector.html#slsdet.Detector.getNumberOfTriggersLeft">getNumberOfTriggersLeft() (slsdet.Detector method)</a>
@@ -855,6 +881,8 @@
 </li>
       <li><a href="pydetector.html#slsdet.Detector.getPartialReset">getPartialReset() (slsdet.Detector method)</a>
 </li>
+      <li><a href="pydetector.html#slsdet.Detector.getPatterFileName">getPatterFileName() (slsdet.Detector method)</a>
+</li>
       <li><a href="pydetector.html#slsdet.Detector.getPatternBitMask">getPatternBitMask() (slsdet.Detector method)</a>
 </li>
       <li><a href="pydetector.html#slsdet.Detector.getPatternIOControl">getPatternIOControl() (slsdet.Detector method)</a>
@@ -871,13 +899,25 @@
 </li>
       <li><a href="pydetector.html#slsdet.Detector.getPatternWord">getPatternWord() (slsdet.Detector method)</a>
 </li>
+      <li><a href="pydetector.html#slsdet.Detector.getPedestalMode">getPedestalMode() (slsdet.Detector method)</a>
+</li>
       <li><a href="pydetector.html#slsdet.Detector.getPeriod">getPeriod() (slsdet.Detector method)</a>
 </li>
       <li><a href="pydetector.html#slsdet.Detector.getPeriodLeft">getPeriodLeft() (slsdet.Detector method)</a>
 </li>
       <li><a href="pydetector.html#slsdet.Detector.getPolarity">getPolarity() (slsdet.Detector method)</a>
 </li>
+      <li><a href="pydetector.html#slsdet.Detector.getPower">getPower() (slsdet.Detector method)</a>
+</li>
       <li><a href="pydetector.html#slsdet.Detector.getPowerChip">getPowerChip() (slsdet.Detector method)</a>
+</li>
+      <li><a href="pydetector.html#slsdet.Detector.getPowerIndex">getPowerIndex() (slsdet.Detector method)</a>
+</li>
+      <li><a href="pydetector.html#slsdet.Detector.getPowerList">getPowerList() (slsdet.Detector method)</a>
+</li>
+      <li><a href="pydetector.html#slsdet.Detector.getPowerName">getPowerName() (slsdet.Detector method)</a>
+</li>
+      <li><a href="pydetector.html#slsdet.Detector.getPowerNames">getPowerNames() (slsdet.Detector method)</a>
 </li>
       <li><a href="pydetector.html#slsdet.Detector.getPumpProbe">getPumpProbe() (slsdet.Detector method)</a>
 </li>
@@ -898,6 +938,8 @@
       <li><a href="pydetector.html#slsdet.Detector.getReceiverVersion">getReceiverVersion() (slsdet.Detector method)</a>
 </li>
       <li><a href="pydetector.html#slsdet.Detector.getROI">getROI() (slsdet.Detector method)</a>
+</li>
+      <li><a href="pydetector.html#slsdet.Detector.getRow">getRow() (slsdet.Detector method)</a>
 </li>
       <li><a href="pydetector.html#slsdet.Detector.getRUNClock">getRUNClock() (slsdet.Detector method)</a>
 </li>
@@ -961,7 +1003,21 @@
 </li>
       <li><a href="pydetector.html#slsdet.Detector.getShmId">getShmId() (slsdet.Detector method)</a>
 </li>
+      <li><a href="pydetector.html#slsdet.Detector.getSignalIndex">getSignalIndex() (slsdet.Detector method)</a>
+</li>
+      <li><a href="pydetector.html#slsdet.Detector.getSignalName">getSignalName() (slsdet.Detector method)</a>
+</li>
+      <li><a href="pydetector.html#slsdet.Detector.getSignalNames">getSignalNames() (slsdet.Detector method)</a>
+</li>
       <li><a href="pydetector.html#slsdet.Detector.getSlowADC">getSlowADC() (slsdet.Detector method)</a>
+</li>
+      <li><a href="pydetector.html#slsdet.Detector.getSlowADCIndex">getSlowADCIndex() (slsdet.Detector method)</a>
+</li>
+      <li><a href="pydetector.html#slsdet.Detector.getSlowADCList">getSlowADCList() (slsdet.Detector method)</a>
+</li>
+      <li><a href="pydetector.html#slsdet.Detector.getSlowADCName">getSlowADCName() (slsdet.Detector method)</a>
+</li>
+      <li><a href="pydetector.html#slsdet.Detector.getSlowADCNames">getSlowADCNames() (slsdet.Detector method)</a>
 </li>
       <li><a href="pydetector.html#slsdet.Detector.getSourceUDPIP">getSourceUDPIP() (slsdet.Detector method)</a>
 </li>
@@ -1011,6 +1067,8 @@
 </li>
       <li><a href="pydetector.html#slsdet.Detector.getTop">getTop() (slsdet.Detector method)</a>
 </li>
+      <li><a href="pydetector.html#slsdet.Detector.getTransceiverEnableMask">getTransceiverEnableMask() (slsdet.Detector method)</a>
+</li>
       <li><a href="pydetector.html#slsdet.Detector.getTransmissionDelay">getTransmissionDelay() (slsdet.Detector method)</a>
 </li>
       <li><a href="pydetector.html#slsdet.Detector.getTransmissionDelayFrame">getTransmissionDelayFrame() (slsdet.Detector method)</a>
@@ -1034,8 +1092,6 @@
       <li><a href="pydetector.html#slsdet.Detector.getVetoPhoton">getVetoPhoton() (slsdet.Detector method)</a>
 </li>
       <li><a href="pydetector.html#slsdet.Detector.getVetoStream">getVetoStream() (slsdet.Detector method)</a>
-</li>
-      <li><a href="pydetector.html#slsdet.Detector.getVoltage">getVoltage() (slsdet.Detector method)</a>
 </li>
   </ul></td>
 </tr></table>
@@ -1263,6 +1319,12 @@
 </li>
       <li><a href="commandline.html#term-partialreset-0-1"><strong>partialreset [0, 1]</strong></a>
 </li>
+      <li><a href="commandline.html#term-patfname"><strong>patfname</strong></a>
+
+      <ul>
+        <li><a href="pydetector.html#slsdet.Detector.patfname">(slsdet.Detector property)</a>
+</li>
+      </ul></li>
       <li><a href="pydetector.html#slsdet.Detector.patioctrl">patioctrl (slsdet.Detector property)</a>
 </li>
       <li><a href="commandline.html#term-patioctrl-64-bit-mask"><strong>patioctrl [64 bit mask]</strong></a>
@@ -1313,6 +1375,8 @@
 </li>
       <li><a href="pydetector.html#slsdet.Detector.pattern">pattern (slsdet.Detector property)</a>
 </li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="commandline.html#term-pattern-fname"><strong>pattern [fname]</strong></a>
 </li>
       <li><a href="commandline.html#term-patternstart"><strong>patternstart</strong></a>
@@ -1321,8 +1385,6 @@
 </li>
       <li><a href="commandline.html#term-patwait-0-6-addr"><strong>patwait [0-6] [addr]</strong></a>
 </li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="pydetector.html#slsdet.Detector.patwait0">patwait0 (slsdet.Detector property)</a>
 </li>
       <li><a href="commandline.html#term-patwait0-Depreciated-command.-Use-patwait."><strong>patwait0 Depreciated command. Use patwait.</strong></a>
@@ -1353,51 +1415,37 @@
 </li>
       <li><a href="commandline.html#term-patword-step-or-address-64-bit-mask"><strong>patword [step or address] [64 bit mask]</strong></a>
 </li>
+      <li><a href="commandline.html#term-pedestalmode-frames-uint8_t-loops-uint16_t"><strong>pedestalmode  [frames&lt;uint8_t&gt;] [loops&lt;uint16_t&gt;]</strong></a>
+</li>
+      <li><a href="pydetector.html#slsdet.Detector.pedestalmode">pedestalmode (slsdet.Detector property)</a>
+</li>
       <li><a href="pydetector.html#slsdet.Detector.period">period (slsdet.Detector property)</a>
 </li>
-      <li><a href="commandline.html#term-period-duration-optional-unit-ns-us-ms-s"><strong>period [duration] [(optional unit) ns|us|ms|s]</strong></a>
+      <li><a href="pydetector.html#slsdet.Detector.periodl">periodl (slsdet.Detector property)</a>
 </li>
-      <li><a href="commandline.html#term-periodl"><strong>periodl</strong></a>
-
-      <ul>
-        <li><a href="pydetector.html#slsdet.Detector.periodl">(slsdet.Detector property)</a>
-</li>
-      </ul></li>
       <li><a href="pydetector.html#slsdet.Detector.polarity">polarity (slsdet.Detector property)</a>
 </li>
-      <li><a href="commandline.html#term-polarity-pos-neg"><strong>polarity [pos|neg]</strong></a>
-</li>
       <li><a href="pydetector.html#slsdet.Detector.port">port (slsdet.Detector property)</a>
-</li>
-      <li><a href="commandline.html#term-port-n"><strong>port [n]</strong></a>
 </li>
       <li><a href="pyenums.html#slsdet.portPosition">portPosition (class in slsdet)</a>
 </li>
       <li><a href="pydetector.html#slsdet.Detector.powerchip">powerchip (slsdet.Detector property)</a>
 </li>
-      <li><a href="commandline.html#term-powerchip-0-1"><strong>powerchip [0, 1]</strong></a>
+      <li><a href="pydetector.html#slsdet.Detector.powerlist">powerlist (slsdet.Detector property)</a>
+</li>
+      <li><a href="pydetector.html#slsdet.Detector.powervalues">powervalues (slsdet.Detector property)</a>
 </li>
       <li><a href="pydetector.html#slsdet.Detector.printRxConfiguration">printRxConfiguration() (slsdet.Detector method)</a>
 </li>
-      <li><a href="commandline.html#term-programfpga-fname.pof-fname.rbf-full-path-opitonal-force-delete-normal-file"><strong>programfpga [fname.pof | fname.rbf (full path)][(opitonal)--force-delete-normal-file]</strong></a>
-</li>
       <li><a href="pydetector.html#slsdet.Detector.programFPGA">programFPGA() (slsdet.Detector method)</a>
 </li>
-      <li><a href="commandline.html#term-pulse-n_times-x-y"><strong>pulse [n_times] [x] [y]</strong></a>
-</li>
-      <li><a href="commandline.html#term-pulsechip-n_times"><strong>pulsechip [n_times]</strong></a>
-</li>
       <li><a href="pydetector.html#slsdet.Detector.pulseChip">pulseChip() (slsdet.Detector method)</a>
-</li>
-      <li><a href="commandline.html#term-pulsenmove-n_times-x-y"><strong>pulsenmove [n_times] [x] [y]</strong></a>
 </li>
       <li><a href="pydetector.html#slsdet.Detector.pulsePixel">pulsePixel() (slsdet.Detector method)</a>
 </li>
       <li><a href="pydetector.html#slsdet.Detector.pulsePixelNMove">pulsePixelNMove() (slsdet.Detector method)</a>
 </li>
       <li><a href="pydetector.html#slsdet.Detector.pumpprobe">pumpprobe (slsdet.Detector property)</a>
-</li>
-      <li><a href="commandline.html#term-pumpprobe-0-1"><strong>pumpprobe [0, 1]</strong></a>
 </li>
   </ul></td>
 </tr></table>
@@ -1408,10 +1456,6 @@
       <li><a href="pydetector.html#slsdet.Detector.quad">quad (slsdet.Detector property)</a>
 </li>
   </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="commandline.html#term-quad-0-1"><strong>quad [0, 1]</strong></a>
-</li>
-  </ul></td>
 </tr></table>
 
 <h2 id="R">R</h2>
@@ -1419,35 +1463,17 @@
   <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="pydetector.html#slsdet.Detector.ratecorr">ratecorr (slsdet.Detector property)</a>
 </li>
-      <li><a href="commandline.html#term-ratecorr-n_rate-in-ns"><strong>ratecorr [n_rate (in ns)]</strong></a>
-</li>
-      <li><a href="commandline.html#term-readnrows"><strong>readnrows</strong></a>
-
-      <ul>
-        <li><a href="pydetector.html#slsdet.Detector.readnrows">(slsdet.Detector property)</a>
-</li>
-      </ul></li>
-      <li><a href="commandline.html#term-readout"><strong>readout</strong></a>
+      <li><a href="pydetector.html#slsdet.Detector.readnrows">readnrows (slsdet.Detector property)</a>
 </li>
       <li><a href="pydetector.html#slsdet.Detector.readout">readout() (slsdet.Detector method)</a>
 </li>
       <li><a href="pyenums.html#slsdet.readoutMode">readoutMode (class in slsdet)</a>
 </li>
-      <li><a href="commandline.html#term-readoutspeed"><strong>readoutspeed</strong></a>
-
-      <ul>
-        <li><a href="pydetector.html#slsdet.Detector.readoutspeed">(slsdet.Detector property)</a>
+      <li><a href="pydetector.html#slsdet.Detector.readoutspeed">readoutspeed (slsdet.Detector property)</a>
 </li>
-      </ul></li>
-      <li><a href="commandline.html#term-readoutspeedlist"><strong>readoutspeedlist</strong></a>
-
-      <ul>
-        <li><a href="pydetector.html#slsdet.Detector.readoutspeedlist">(slsdet.Detector property)</a>
+      <li><a href="pydetector.html#slsdet.Detector.readoutspeedlist">readoutspeedlist (slsdet.Detector property)</a>
 </li>
-      </ul></li>
       <li><a href="pydetector.html#slsdet.Detector.readRegister">readRegister() (slsdet.Detector method)</a>
-</li>
-      <li><a href="commandline.html#term-rebootcontroller"><strong>rebootcontroller</strong></a>
 </li>
       <li><a href="pydetector.html#slsdet.Detector.rebootController">rebootController() (slsdet.Detector method)</a>
 </li>
@@ -1455,17 +1481,11 @@
 </li>
       <li><a href="pydetector.html#slsdet.Detector.reg">reg (slsdet.Detector property)</a>
 </li>
-      <li><a href="commandline.html#term-reg-address-32-bit-value"><strong>reg [address] [32 bit value]</strong></a>
-</li>
       <li><a href="pydetector.html#slsdet.Detector.registerAcquisitionFinishedCallback">registerAcquisitionFinishedCallback() (slsdet.Detector method)</a>
 </li>
       <li><a href="pydetector.html#slsdet.Detector.registerDataCallback">registerDataCallback() (slsdet.Detector method)</a>
 </li>
-      <li><a href="commandline.html#term-resetdacs-optional-hard"><strong>resetdacs [(optional) hard]</strong></a>
-</li>
       <li><a href="pydetector.html#slsdet.Detector.resetdacs">resetdacs() (slsdet.Detector method)</a>
-</li>
-      <li><a href="commandline.html#term-resetfpga"><strong>resetfpga</strong></a>
 </li>
       <li><a href="pydetector.html#slsdet.Detector.resetFPGA">resetFPGA() (slsdet.Detector method)</a>
 </li>
@@ -1473,163 +1493,77 @@
 </li>
       <li><a href="pydetector.html#slsdet.Detector.resetToDefaultDacs">resetToDefaultDacs() (slsdet.Detector method)</a>
 </li>
-      <li><a href="commandline.html#term-roi-xmin-xmax"><strong>roi [xmin] [xmax]</strong></a>
-</li>
       <li><a href="pydetector.html#slsdet.Detector.romode">romode (slsdet.Detector property)</a>
 </li>
-      <li><a href="commandline.html#term-romode-analog-digital-analog_digital"><strong>romode [analog|digital|analog_digital]</strong></a>
+      <li><a href="pydetector.html#slsdet.Detector.row">row (slsdet.Detector property)</a>
 </li>
       <li><a href="pydetector.html#slsdet.Detector.runclk">runclk (slsdet.Detector property)</a>
-</li>
-      <li><a href="commandline.html#term-runclk-n_clk-in-MHz"><strong>runclk [n_clk in MHz]</strong></a>
 </li>
       <li><a href="pyenums.html#slsdet.runStatus">runStatus (class in slsdet)</a>
 </li>
       <li><a href="pydetector.html#slsdet.Detector.runtime">runtime (slsdet.Detector property)</a>
 </li>
-      <li><a href="commandline.html#term-runtime-optional-unit-ns-us-ms-s"><strong>runtime [(optional unit) ns|us|ms|s]</strong></a>
-</li>
       <li><a href="pydetector.html#slsdet.Detector.rx_arping">rx_arping (slsdet.Detector property)</a>
-</li>
-      <li><a href="commandline.html#term-rx_arping-0-1"><strong>rx_arping [0, 1]</strong></a>
-</li>
-      <li><a href="commandline.html#term-rx_clearroi-Resets-Region-of-interest-in-receiver.-Default-is-all-channels-pixels-enabled."><strong>rx_clearroi Resets Region of interest in receiver. Default is all channels/pixels enabled.</strong></a>
 </li>
       <li><a href="pydetector.html#slsdet.Detector.rx_dbitlist">rx_dbitlist (slsdet.Detector property)</a>
 </li>
-      <li><a href="commandline.html#term-rx_dbitlist-all-or-i0-i1-i2-..."><strong>rx_dbitlist [all] or [i0] [i1] [i2]...</strong></a>
-</li>
       <li><a href="pydetector.html#slsdet.Detector.rx_dbitoffset">rx_dbitoffset (slsdet.Detector property)</a>
-</li>
-      <li><a href="commandline.html#term-rx_dbitoffset-n_bytes"><strong>rx_dbitoffset [n_bytes]</strong></a>
 </li>
       <li><a href="pydetector.html#slsdet.Detector.rx_discardpolicy">rx_discardpolicy (slsdet.Detector property)</a>
 </li>
-      <li><a href="commandline.html#term-rx_discardpolicy-nodiscard-default-discardempty-discardpartial-fastest"><strong>rx_discardpolicy [nodiscard (default)|discardempty|discardpartial(fastest)]</strong></a>
-</li>
-      <li><a href="pydetector.html#slsdet.Detector.rx_fifodepth">rx_fifodepth (slsdet.Detector property)</a>
-</li>
-      <li><a href="commandline.html#term-rx_fifodepth-n_frames"><strong>rx_fifodepth [n_frames]</strong></a>
-</li>
-      <li><a href="commandline.html#term-rx_frameindex"><strong>rx_frameindex</strong></a>
-
-      <ul>
-        <li><a href="pydetector.html#slsdet.Detector.rx_frameindex">(slsdet.Detector property)</a>
-</li>
-      </ul></li>
-      <li><a href="commandline.html#term-rx_framescaught"><strong>rx_framescaught</strong></a>
-
-      <ul>
-        <li><a href="pydetector.html#slsdet.Detector.rx_framescaught">(slsdet.Detector property)</a>
-</li>
-      </ul></li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="pydetector.html#slsdet.Detector.rx_framesperfile">rx_framesperfile (slsdet.Detector property)</a>
+      <li><a href="pydetector.html#slsdet.Detector.rx_fifodepth">rx_fifodepth (slsdet.Detector property)</a>
 </li>
-      <li><a href="commandline.html#term-rx_framesperfile-n_frames"><strong>rx_framesperfile [n_frames]</strong></a>
+      <li><a href="pydetector.html#slsdet.Detector.rx_frameindex">rx_frameindex (slsdet.Detector property)</a>
+</li>
+      <li><a href="pydetector.html#slsdet.Detector.rx_framescaught">rx_framescaught (slsdet.Detector property)</a>
+</li>
+      <li><a href="pydetector.html#slsdet.Detector.rx_framesperfile">rx_framesperfile (slsdet.Detector property)</a>
 </li>
       <li><a href="pydetector.html#slsdet.Detector.rx_hostname">rx_hostname (slsdet.Detector property)</a>
 </li>
-      <li><a href="commandline.html#term-rx_hostname-hostname-or-ip-address"><strong>rx_hostname [hostname or ip address]</strong></a>
-</li>
       <li><a href="pydetector.html#slsdet.Detector.rx_jsonaddheader">rx_jsonaddheader (slsdet.Detector property)</a>
-</li>
-      <li><a href="commandline.html#term-rx_jsonaddheader-key1-value1-key2-value2-...-keyn-valuen"><strong>rx_jsonaddheader [key1] [value1] [key2] [value2]...[keyn] [valuen]</strong></a>
 </li>
       <li><a href="pydetector.html#slsdet.Detector.rx_jsonpara">rx_jsonpara (slsdet.Detector property)</a>
 </li>
-      <li><a href="commandline.html#term-rx_jsonpara-key1-value1"><strong>rx_jsonpara [key1] [value1]</strong></a>
+      <li><a href="pydetector.html#slsdet.Detector.rx_lastclient">rx_lastclient (slsdet.Detector property)</a>
 </li>
-      <li><a href="commandline.html#term-rx_lastclient"><strong>rx_lastclient</strong></a>
-
-      <ul>
-        <li><a href="pydetector.html#slsdet.Detector.rx_lastclient">(slsdet.Detector property)</a>
-</li>
-      </ul></li>
       <li><a href="pydetector.html#slsdet.Detector.rx_lock">rx_lock (slsdet.Detector property)</a>
 </li>
-      <li><a href="commandline.html#term-rx_lock-0-1"><strong>rx_lock [0, 1]</strong></a>
+      <li><a href="pydetector.html#slsdet.Detector.rx_missingpackets">rx_missingpackets (slsdet.Detector property)</a>
 </li>
-      <li><a href="commandline.html#term-rx_missingpackets"><strong>rx_missingpackets</strong></a>
-
-      <ul>
-        <li><a href="pydetector.html#slsdet.Detector.rx_missingpackets">(slsdet.Detector property)</a>
-</li>
-      </ul></li>
       <li><a href="pydetector.html#slsdet.Detector.rx_padding">rx_padding (slsdet.Detector property)</a>
 </li>
-      <li><a href="commandline.html#term-rx_padding-0-1"><strong>rx_padding [0, 1]</strong></a>
-</li>
-      <li><a href="commandline.html#term-rx_printconfig"><strong>rx_printconfig</strong></a>
-</li>
-      <li><a href="commandline.html#term-rx_realudpsocksize"><strong>rx_realudpsocksize</strong></a>
-
-      <ul>
-        <li><a href="pydetector.html#slsdet.Detector.rx_realudpsocksize">(slsdet.Detector property)</a>
-</li>
-      </ul></li>
-      <li><a href="commandline.html#term-rx_roi-xmin-xmax-ymin-ymax"><strong>rx_roi [xmin] [xmax] [ymin] [ymax]</strong></a>
+      <li><a href="pydetector.html#slsdet.Detector.rx_realudpsocksize">rx_realudpsocksize (slsdet.Detector property)</a>
 </li>
       <li><a href="pydetector.html#slsdet.Detector.rx_silent">rx_silent (slsdet.Detector property)</a>
-</li>
-      <li><a href="commandline.html#term-rx_silent-0-1"><strong>rx_silent [0, 1]</strong></a>
-</li>
-      <li><a href="commandline.html#term-rx_start"><strong>rx_start</strong></a>
 </li>
       <li><a href="pydetector.html#slsdet.Detector.rx_start">rx_start() (slsdet.Detector method)</a>
 </li>
       <li><a href="pydetector.html#slsdet.Detector.rx_status">rx_status (slsdet.Detector property)</a>
 </li>
-      <li><a href="commandline.html#term-rx_status-running-idle-transmitting"><strong>rx_status running, idle, transmitting]</strong></a>
-</li>
-      <li><a href="commandline.html#term-rx_stop"><strong>rx_stop</strong></a>
-</li>
       <li><a href="pydetector.html#slsdet.Detector.rx_stop">rx_stop() (slsdet.Detector method)</a>
 </li>
       <li><a href="pydetector.html#slsdet.Detector.rx_tcpport">rx_tcpport (slsdet.Detector property)</a>
 </li>
-      <li><a href="commandline.html#term-rx_tcpport-port"><strong>rx_tcpport [port]</strong></a>
+      <li><a href="pydetector.html#slsdet.Detector.rx_threads">rx_threads (slsdet.Detector property)</a>
 </li>
-      <li><a href="commandline.html#term-rx_threads"><strong>rx_threads</strong></a>
-
-      <ul>
-        <li><a href="pydetector.html#slsdet.Detector.rx_threads">(slsdet.Detector property)</a>
-</li>
-      </ul></li>
       <li><a href="pydetector.html#slsdet.Detector.rx_udpsocksize">rx_udpsocksize (slsdet.Detector property)</a>
 </li>
-      <li><a href="commandline.html#term-rx_udpsocksize-n_size"><strong>rx_udpsocksize [n_size]</strong></a>
+      <li><a href="pydetector.html#slsdet.Detector.rx_version">rx_version (slsdet.Detector property)</a>
 </li>
-      <li><a href="commandline.html#term-rx_version"><strong>rx_version</strong></a>
-
-      <ul>
-        <li><a href="pydetector.html#slsdet.Detector.rx_version">(slsdet.Detector property)</a>
-</li>
-      </ul></li>
       <li><a href="pydetector.html#slsdet.Detector.rx_zmqfreq">rx_zmqfreq (slsdet.Detector property)</a>
-</li>
-      <li><a href="commandline.html#term-rx_zmqfreq-nth-frame"><strong>rx_zmqfreq [nth frame]</strong></a>
 </li>
       <li><a href="pydetector.html#slsdet.Detector.rx_zmqhwm">rx_zmqhwm (slsdet.Detector property)</a>
 </li>
-      <li><a href="commandline.html#term-rx_zmqhwm-n_value"><strong>rx_zmqhwm [n_value]</strong></a>
-</li>
       <li><a href="pydetector.html#slsdet.Detector.rx_zmqip">rx_zmqip (slsdet.Detector property)</a>
-</li>
-      <li><a href="commandline.html#term-rx_zmqip-x.x.x.x"><strong>rx_zmqip [x.x.x.x]</strong></a>
 </li>
       <li><a href="pydetector.html#slsdet.Detector.rx_zmqport">rx_zmqport (slsdet.Detector property)</a>
 </li>
-      <li><a href="commandline.html#term-rx_zmqport-port"><strong>rx_zmqport [port]</strong></a>
-</li>
       <li><a href="pydetector.html#slsdet.Detector.rx_zmqstartfnum">rx_zmqstartfnum (slsdet.Detector property)</a>
 </li>
-      <li><a href="commandline.html#term-rx_zmqstartfnum-fnum"><strong>rx_zmqstartfnum [fnum]</strong></a>
-</li>
       <li><a href="pydetector.html#slsdet.Detector.rx_zmqstream">rx_zmqstream (slsdet.Detector property)</a>
-</li>
-      <li><a href="commandline.html#term-rx_zmqstream-0-1"><strong>rx_zmqstream [0, 1]</strong></a>
 </li>
   </ul></td>
 </tr></table>
@@ -1639,38 +1573,22 @@
   <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="pydetector.html#slsdet.Detector.samples">samples (slsdet.Detector property)</a>
 </li>
-      <li><a href="commandline.html#term-samples-n_samples"><strong>samples [n_samples]</strong></a>
-</li>
-      <li><a href="commandline.html#term-savepattern-fname"><strong>savepattern [fname]</strong></a>
-</li>
       <li><a href="pydetector.html#slsdet.Detector.savePattern">savePattern() (slsdet.Detector method)</a>
 </li>
       <li><a href="pydetector.html#slsdet.Detector.saveTrimbits">saveTrimbits() (slsdet.Detector method)</a>
 </li>
       <li><a href="pydetector.html#slsdet.Detector.scan">scan (slsdet.Detector property)</a>
 </li>
-      <li><a href="commandline.html#term-scan-dac_name-0-trimbits-start_val-stop_val-step_size-dac-settling-time-ns-us-ms-s"><strong>scan [dac_name|0|trimbits] [start_val] [stop_val] [step_size] [dac settling time ns|us|ms|s]</strong></a>
+      <li><a href="pydetector.html#slsdet.Detector.scanerrmsg">scanerrmsg (slsdet.Detector property)</a>
 </li>
-      <li><a href="commandline.html#term-scanerrmsg"><strong>scanerrmsg</strong></a>
-
-      <ul>
-        <li><a href="pydetector.html#slsdet.Detector.scanerrmsg">(slsdet.Detector property)</a>
-</li>
-      </ul></li>
       <li><a href="pydetector.html#slsdet.Detector.selectUDPInterface">selectUDPInterface() (slsdet.Detector method)</a>
 </li>
       <li><a href="pydetector.html#slsdet.Detector.selinterface">selinterface (slsdet.Detector property)</a>
 </li>
-      <li><a href="commandline.html#term-selinterface-0-1"><strong>selinterface [0, 1]</strong></a>
-</li>
       <li><a href="pydetector.html#slsdet.Detector.sendSoftwareTrigger">sendSoftwareTrigger() (slsdet.Detector method)</a>
 </li>
-      <li><a href="commandline.html#term-serialnumber"><strong>serialnumber</strong></a>
-
-      <ul>
-        <li><a href="pydetector.html#slsdet.Detector.serialnumber">(slsdet.Detector property)</a>
+      <li><a href="pydetector.html#slsdet.Detector.serialnumber">serialnumber (slsdet.Detector property)</a>
 </li>
-      </ul></li>
       <li><a href="pydetector.html#slsdet.Detector.setAcquisitionIndex">setAcquisitionIndex() (slsdet.Detector method)</a>
 </li>
       <li><a href="pydetector.html#slsdet.Detector.setActive">setActive() (slsdet.Detector method)</a>
@@ -1682,6 +1600,10 @@
       <li><a href="pydetector.html#slsdet.Detector.setADCEnableMask">setADCEnableMask() (slsdet.Detector method)</a>
 </li>
       <li><a href="pydetector.html#slsdet.Detector.setADCInvert">setADCInvert() (slsdet.Detector method)</a>
+</li>
+      <li><a href="pydetector.html#slsdet.Detector.setAdcName">setAdcName() (slsdet.Detector method)</a>
+</li>
+      <li><a href="pydetector.html#slsdet.Detector.setAdcNames">setAdcNames() (slsdet.Detector method)</a>
 </li>
       <li><a href="pydetector.html#slsdet.Detector.setADCPhase">setADCPhase() (slsdet.Detector method)</a>
 </li>
@@ -1703,8 +1625,6 @@
 </li>
       <li><a href="pydetector.html#slsdet.Detector.setBadChannels">setBadChannels() (slsdet.Detector method)</a>
 </li>
-      <li><a href="commandline.html#term-setbit-reg-address-in-hex-bit-index"><strong>setbit [reg address in hex] [bit index]</strong></a>
-</li>
       <li><a href="pydetector.html#slsdet.Detector.setBit">setBit() (slsdet.Detector method)</a>
 </li>
       <li><a href="pydetector.html#slsdet.Detector.setBurstMode">setBurstMode() (slsdet.Detector method)</a>
@@ -1725,6 +1645,8 @@
 </li>
       <li><a href="pydetector.html#slsdet.Detector.setClockPhaseinDegrees">setClockPhaseinDegrees() (slsdet.Detector method)</a>
 </li>
+      <li><a href="pydetector.html#slsdet.Detector.setColumn">setColumn() (slsdet.Detector method)</a>
+</li>
       <li><a href="pydetector.html#slsdet.Detector.setComparatorDisableTime">setComparatorDisableTime() (slsdet.Detector method)</a>
 </li>
       <li><a href="pydetector.html#slsdet.Detector.setControlPort">setControlPort() (slsdet.Detector method)</a>
@@ -1734,6 +1656,8 @@
       <li><a href="pydetector.html#slsdet.Detector.setCurrentSource">setCurrentSource() (slsdet.Detector method)</a>
 </li>
       <li><a href="pydetector.html#slsdet.Detector.setDAC">setDAC() (slsdet.Detector method)</a>
+</li>
+      <li><a href="pydetector.html#slsdet.Detector.setDacName">setDacName() (slsdet.Detector method)</a>
 </li>
       <li><a href="pydetector.html#slsdet.Detector.setDacNames">setDacNames() (slsdet.Detector method)</a>
 </li>
@@ -1847,6 +1771,8 @@
 </li>
       <li><a href="pydetector.html#slsdet.Detector.setNumberOfGates">setNumberOfGates() (slsdet.Detector method)</a>
 </li>
+      <li><a href="pydetector.html#slsdet.Detector.setNumberOfTransceiverSamples">setNumberOfTransceiverSamples() (slsdet.Detector method)</a>
+</li>
       <li><a href="pydetector.html#slsdet.Detector.setNumberOfTriggers">setNumberOfTriggers() (slsdet.Detector method)</a>
 </li>
       <li><a href="pydetector.html#slsdet.Detector.setNumberofUDPInterfaces">setNumberofUDPInterfaces() (slsdet.Detector method)</a>
@@ -1879,11 +1805,19 @@
 </li>
       <li><a href="pydetector.html#slsdet.Detector.setPatternWord">setPatternWord() (slsdet.Detector method)</a>
 </li>
+      <li><a href="pydetector.html#slsdet.Detector.setPedestalMode">setPedestalMode() (slsdet.Detector method)</a>
+</li>
       <li><a href="pydetector.html#slsdet.Detector.setPeriod">setPeriod() (slsdet.Detector method)</a>
 </li>
       <li><a href="pydetector.html#slsdet.Detector.setPolarity">setPolarity() (slsdet.Detector method)</a>
 </li>
+      <li><a href="pydetector.html#slsdet.Detector.setPower">setPower() (slsdet.Detector method)</a>
+</li>
       <li><a href="pydetector.html#slsdet.Detector.setPowerChip">setPowerChip() (slsdet.Detector method)</a>
+</li>
+      <li><a href="pydetector.html#slsdet.Detector.setPowerName">setPowerName() (slsdet.Detector method)</a>
+</li>
+      <li><a href="pydetector.html#slsdet.Detector.setPowerNames">setPowerNames() (slsdet.Detector method)</a>
 </li>
       <li><a href="pydetector.html#slsdet.Detector.setPumpProbe">setPumpProbe() (slsdet.Detector method)</a>
 </li>
@@ -1898,6 +1832,8 @@
       <li><a href="pydetector.html#slsdet.Detector.setReadoutSpeed">setReadoutSpeed() (slsdet.Detector method)</a>
 </li>
       <li><a href="pydetector.html#slsdet.Detector.setROI">setROI() (slsdet.Detector method)</a>
+</li>
+      <li><a href="pydetector.html#slsdet.Detector.setRow">setRow() (slsdet.Detector method)</a>
 </li>
       <li><a href="pydetector.html#slsdet.Detector.setRUNClock">setRUNClock() (slsdet.Detector method)</a>
 </li>
@@ -1943,6 +1879,14 @@
 </li>
       <li><a href="pydetector.html#slsdet.Detector.setSettingsPath">setSettingsPath() (slsdet.Detector method)</a>
 </li>
+      <li><a href="pydetector.html#slsdet.Detector.setSignalName">setSignalName() (slsdet.Detector method)</a>
+</li>
+      <li><a href="pydetector.html#slsdet.Detector.setSignalNames">setSignalNames() (slsdet.Detector method)</a>
+</li>
+      <li><a href="pydetector.html#slsdet.Detector.setSlowADCName">setSlowADCName() (slsdet.Detector method)</a>
+</li>
+      <li><a href="pydetector.html#slsdet.Detector.setSlowADCNames">setSlowADCNames() (slsdet.Detector method)</a>
+</li>
       <li><a href="pydetector.html#slsdet.Detector.setSourceUDPIP">setSourceUDPIP() (slsdet.Detector method)</a>
 </li>
       <li><a href="pydetector.html#slsdet.Detector.setSourceUDPIP2">setSourceUDPIP2() (slsdet.Detector method)</a>
@@ -1981,19 +1925,13 @@
 </li>
       <li><a href="pydetector.html#slsdet.Detector.settings">settings (slsdet.Detector property)</a>
 </li>
-      <li><a href="commandline.html#term-settings-standard-fast-highgain-dynamicgain-lowgain-mediumgain-veryhighgain-highgain0-fixgain1-fixgain2-forceswitchg1-forceswitchg2-verylowgain-g1_hg-g1_lg-g2_hc_hg-g2_hc_lg-g2_lc_hg-g2_lc_lg-g4_hg-g4_lg-gain0"><strong>settings [standard, fast, highgain, dynamicgain, lowgain, mediumgain, veryhighgain, highgain0, fixgain1, fixgain2, forceswitchg1, forceswitchg2, verylowgain, g1_hg, g1_lg, g2_hc_hg, g2_hc_lg, g2_lc_hg, g2_lc_lg, g4_hg, g4_lg, gain0]</strong></a>
+      <li><a href="pydetector.html#slsdet.Detector.settingslist">settingslist (slsdet.Detector property)</a>
 </li>
-      <li><a href="commandline.html#term-settingslist"><strong>settingslist</strong></a>
-
-      <ul>
-        <li><a href="pydetector.html#slsdet.Detector.settingslist">(slsdet.Detector property)</a>
-</li>
-      </ul></li>
       <li><a href="pydetector.html#slsdet.Detector.settingspath">settingspath (slsdet.Detector property)</a>
 </li>
-      <li><a href="commandline.html#term-settingspath-path"><strong>settingspath [path]</strong></a>
-</li>
       <li><a href="pydetector.html#slsdet.Detector.setTop">setTop() (slsdet.Detector method)</a>
+</li>
+      <li><a href="pydetector.html#slsdet.Detector.setTransceiverEnableMask">setTransceiverEnableMask() (slsdet.Detector method)</a>
 </li>
       <li><a href="pydetector.html#slsdet.Detector.setTransmissionDelay">setTransmissionDelay() (slsdet.Detector method)</a>
 </li>
@@ -2021,13 +1959,15 @@
 </li>
       <li><a href="pydetector.html#slsdet.Detector.setVirtualDetectorServers">setVirtualDetectorServers() (slsdet.Detector method)</a>
 </li>
-      <li><a href="pydetector.html#slsdet.Detector.setVoltage">setVoltage() (slsdet.Detector method)</a>
+      <li><a href="pydetector.html#slsdet.Detector.signallist">signallist (slsdet.Detector property)</a>
 </li>
       <li><a href="pydetector.html#slsdet.Detector.size">size() (slsdet.Detector method)</a>
 </li>
       <li><a href="pydetector.html#slsdet.Detector.slowadc">slowadc (slsdet.Detector property)</a>
 </li>
-      <li><a href="commandline.html#term-slowadc-n_channel-0-7-for-channel"><strong>slowadc [n_channel (0-7 for channel]</strong></a>
+      <li><a href="pydetector.html#slsdet.Detector.slowadclist">slowadclist (slsdet.Detector property)</a>
+</li>
+      <li><a href="pydetector.html#slsdet.Detector.slowadcvalues">slowadcvalues (slsdet.Detector property)</a>
 </li>
       <li><a href="ToString.html#_CPPv43sls">sls (C++ type)</a>, <a href="container_utils.html#_CPPv43sls">[1]</a>, <a href="result.html#_CPPv43sls">[2]</a>, <a href="type_traits.html#_CPPv43sls">[3]</a>
 </li>
@@ -2039,9 +1979,13 @@
 </li>
       <li><a href="container_utils.html#_CPPv4I0EN3sls15allEqualWithTolENSt9enable_ifINSt13is_arithmeticI1TE5valueEbE4typeERKNSt6vectorI1TEEK1T">sls::allEqualWithTol (C++ function)</a>
 </li>
+      <li><a href="type_traits.html#_CPPv4I0DpEN3sls7AllSameE">sls::AllSame (C++ type)</a>
+</li>
       <li><a href="container_utils.html#_CPPv4I0EN3sls10anyEqualToEbRKNSt6vectorI1TEEK1T">sls::anyEqualTo (C++ function)</a>
 </li>
       <li><a href="container_utils.html#_CPPv4I0EN3sls17anyEqualToWithTolEbRKNSt6vectorI1TEEK1TK1T">sls::anyEqualToWithTol (C++ function)</a>
+</li>
+      <li><a href="type_traits.html#_CPPv4I0DpEN3sls11ConjunctionE">sls::Conjunction (C++ struct)</a>, <a href="type_traits.html#_CPPv4I0EN3sls11ConjunctionE">[1]</a>, <a href="type_traits.html#_CPPv4IDpEN3sls11ConjunctionE">[2]</a>
 </li>
       <li><a href="detector.html#_CPPv4N3sls8DetectorE">sls::Detector (C++ class)</a>
 </li>
@@ -2081,7 +2025,13 @@
 </li>
       <li><a href="detector.html#_CPPv4NK3sls8Detector16getADCEnableMaskE9Positions">sls::Detector::getADCEnableMask (C++ function)</a>
 </li>
+      <li><a href="detector.html#_CPPv4NK3sls8Detector11getAdcIndexERKNSt6stringE">sls::Detector::getAdcIndex (C++ function)</a>
+</li>
       <li><a href="detector.html#_CPPv4NK3sls8Detector12getADCInvertE9Positions">sls::Detector::getADCInvert (C++ function)</a>
+</li>
+      <li><a href="detector.html#_CPPv4NK3sls8Detector10getAdcNameEKi">sls::Detector::getAdcName (C++ function)</a>
+</li>
+      <li><a href="detector.html#_CPPv4NK3sls8Detector11getAdcNamesEv">sls::Detector::getAdcNames (C++ function)</a>
 </li>
       <li><a href="detector.html#_CPPv4NK3sls8Detector11getADCPhaseE9Positions">sls::Detector::getADCPhase (C++ function)</a>
 </li>
@@ -2133,6 +2083,8 @@
 </li>
       <li><a href="detector.html#_CPPv4N3sls8Detector22getClockPhaseinDegreesEi9Positions">sls::Detector::getClockPhaseinDegrees (C++ function)</a>
 </li>
+      <li><a href="detector.html#_CPPv4NK3sls8Detector9getColumnE9Positions">sls::Detector::getColumn (C++ function)</a>
+</li>
       <li><a href="detector.html#_CPPv4NK3sls8Detector24getComparatorDisableTimeE9Positions">sls::Detector::getComparatorDisableTime (C++ function)</a>
 </li>
       <li><a href="detector.html#_CPPv4NK3sls8Detector14getControlPortE9Positions">sls::Detector::getControlPort (C++ function)</a>
@@ -2143,11 +2095,11 @@
 </li>
       <li><a href="detector.html#_CPPv4NK3sls8Detector6getDACEN4defs8dacIndexEb9Positions">sls::Detector::getDAC (C++ function)</a>
 </li>
-      <li><a href="detector.html#_CPPv4N3sls8Detector11getDacIndexERKNSt6stringE">sls::Detector::getDacIndex (C++ function)</a>
+      <li><a href="detector.html#_CPPv4NK3sls8Detector11getDacIndexERKNSt6stringE">sls::Detector::getDacIndex (C++ function)</a>
 </li>
       <li><a href="detector.html#_CPPv4NK3sls8Detector10getDacListEv">sls::Detector::getDacList (C++ function)</a>
 </li>
-      <li><a href="detector.html#_CPPv4N3sls8Detector10getDacNameEN4defs8dacIndexE">sls::Detector::getDacName (C++ function)</a>
+      <li><a href="detector.html#_CPPv4NK3sls8Detector10getDacNameEKN4defs8dacIndexE">sls::Detector::getDacName (C++ function)</a>
 </li>
       <li><a href="detector.html#_CPPv4NK3sls8Detector11getDacNamesEv">sls::Detector::getDacNames (C++ function)</a>
 </li>
@@ -2231,6 +2183,8 @@
 </li>
       <li><a href="detector.html#_CPPv4NK3sls8Detector16getFramesPerFileE9Positions">sls::Detector::getFramesPerFile (C++ function)</a>
 </li>
+      <li><a href="detector.html#_CPPv4NK3sls8Detector26getFrontEndFirmwareVersionEKN4defs12fpgaPositionE9Positions">sls::Detector::getFrontEndFirmwareVersion (C++ function)</a>
+</li>
       <li><a href="detector.html#_CPPv4N3sls8Detector11getGainCapsE9Positions">sls::Detector::getGainCaps (C++ function)</a>
 </li>
       <li><a href="detector.html#_CPPv4NK3sls8Detector11getGainModeE9Positions">sls::Detector::getGainMode (C++ function)</a>
@@ -2281,9 +2235,9 @@
 </li>
       <li><a href="detector.html#_CPPv4NK3sls8Detector17getMeasuredPeriodE9Positions">sls::Detector::getMeasuredPeriod (C++ function)</a>
 </li>
-      <li><a href="detector.html#_CPPv4NK3sls8Detector25getMeasuredSubFramePeriodE9Positions">sls::Detector::getMeasuredSubFramePeriod (C++ function)</a>
+      <li><a href="detector.html#_CPPv4NK3sls8Detector16getMeasuredPowerEN4defs8dacIndexE9Positions">sls::Detector::getMeasuredPower (C++ function)</a>
 </li>
-      <li><a href="detector.html#_CPPv4NK3sls8Detector18getMeasuredVoltageEN4defs8dacIndexE9Positions">sls::Detector::getMeasuredVoltage (C++ function)</a>
+      <li><a href="detector.html#_CPPv4NK3sls8Detector25getMeasuredSubFramePeriodE9Positions">sls::Detector::getMeasuredSubFramePeriod (C++ function)</a>
 </li>
       <li><a href="detector.html#_CPPv4NK3sls8Detector18getMeasurementTimeE9Positions">sls::Detector::getMeasurementTime (C++ function)</a>
 </li>
@@ -2315,6 +2269,8 @@
 </li>
       <li><a href="detector.html#_CPPv4NK3sls8Detector16getNumberOfGatesE9Positions">sls::Detector::getNumberOfGates (C++ function)</a>
 </li>
+      <li><a href="detector.html#_CPPv4NK3sls8Detector29getNumberOfTransceiverSamplesE9Positions">sls::Detector::getNumberOfTransceiverSamples (C++ function)</a>
+</li>
       <li><a href="detector.html#_CPPv4NK3sls8Detector19getNumberOfTriggersE9Positions">sls::Detector::getNumberOfTriggers (C++ function)</a>
 </li>
       <li><a href="detector.html#_CPPv4NK3sls8Detector23getNumberOfTriggersLeftE9Positions">sls::Detector::getNumberOfTriggersLeft (C++ function)</a>
@@ -2337,6 +2293,8 @@
 </li>
       <li><a href="detector.html#_CPPv4NK3sls8Detector15getPartialResetE9Positions">sls::Detector::getPartialReset (C++ function)</a>
 </li>
+      <li><a href="detector.html#_CPPv4NK3sls8Detector17getPatterFileNameE9Positions">sls::Detector::getPatterFileName (C++ function)</a>
+</li>
       <li><a href="detector.html#_CPPv4NK3sls8Detector17getPatternBitMaskE9Positions">sls::Detector::getPatternBitMask (C++ function)</a>
 </li>
       <li><a href="detector.html#_CPPv4NK3sls8Detector19getPatternIOControlE9Positions">sls::Detector::getPatternIOControl (C++ function)</a>
@@ -2353,24 +2311,36 @@
 </li>
       <li><a href="detector.html#_CPPv4N3sls8Detector14getPatternWordEi9Positions">sls::Detector::getPatternWord (C++ function)</a>
 </li>
+      <li><a href="detector.html#_CPPv4NK3sls8Detector15getPedestalModeE9Positions">sls::Detector::getPedestalMode (C++ function)</a>
+</li>
       <li><a href="detector.html#_CPPv4NK3sls8Detector9getPeriodE9Positions">sls::Detector::getPeriod (C++ function)</a>
 </li>
       <li><a href="detector.html#_CPPv4NK3sls8Detector13getPeriodLeftE9Positions">sls::Detector::getPeriodLeft (C++ function)</a>
 </li>
       <li><a href="detector.html#_CPPv4NK3sls8Detector11getPolarityE9Positions">sls::Detector::getPolarity (C++ function)</a>
 </li>
+      <li><a href="detector.html#_CPPv4NK3sls8Detector8getPowerEN4defs8dacIndexE9Positions">sls::Detector::getPower (C++ function)</a>
+</li>
       <li><a href="detector.html#_CPPv4NK3sls8Detector12getPowerChipE9Positions">sls::Detector::getPowerChip (C++ function)</a>
+</li>
+      <li><a href="detector.html#_CPPv4NK3sls8Detector13getPowerIndexERKNSt6stringE">sls::Detector::getPowerIndex (C++ function)</a>
+</li>
+      <li><a href="detector.html#_CPPv4NK3sls8Detector12getPowerListEv">sls::Detector::getPowerList (C++ function)</a>
+</li>
+      <li><a href="detector.html#_CPPv4NK3sls8Detector12getPowerNameEKN4defs8dacIndexE">sls::Detector::getPowerName (C++ function)</a>
+</li>
+      <li><a href="detector.html#_CPPv4NK3sls8Detector13getPowerNamesEv">sls::Detector::getPowerNames (C++ function)</a>
 </li>
       <li><a href="detector.html#_CPPv4NK3sls8Detector12getPumpProbeE9Positions">sls::Detector::getPumpProbe (C++ function)</a>
 </li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="detector.html#_CPPv4NK3sls8Detector7getQuadE9Positions">sls::Detector::getQuad (C++ function)</a>
 </li>
       <li><a href="detector.html#_CPPv4NK3sls8Detector17getRateCorrectionE9Positions">sls::Detector::getRateCorrection (C++ function)</a>
 </li>
       <li><a href="detector.html#_CPPv4NK3sls8Detector12getReadNRowsE9Positions">sls::Detector::getReadNRows (C++ function)</a>
 </li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="detector.html#_CPPv4NK3sls8Detector14getReadoutModeE9Positions">sls::Detector::getReadoutMode (C++ function)</a>
 </li>
       <li><a href="detector.html#_CPPv4NK3sls8Detector15getReadoutSpeedE9Positions">sls::Detector::getReadoutSpeed (C++ function)</a>
@@ -2382,6 +2352,8 @@
       <li><a href="detector.html#_CPPv4NK3sls8Detector18getReceiverVersionE9Positions">sls::Detector::getReceiverVersion (C++ function)</a>
 </li>
       <li><a href="detector.html#_CPPv4NK3sls8Detector6getROIE9Positions">sls::Detector::getROI (C++ function)</a>
+</li>
+      <li><a href="detector.html#_CPPv4NK3sls8Detector6getRowE9Positions">sls::Detector::getRow (C++ function)</a>
 </li>
       <li><a href="detector.html#_CPPv4NK3sls8Detector11getRUNClockE9Positions">sls::Detector::getRUNClock (C++ function)</a>
 </li>
@@ -2445,7 +2417,21 @@
 </li>
       <li><a href="detector.html#_CPPv4NK3sls8Detector8getShmIdEv">sls::Detector::getShmId (C++ function)</a>
 </li>
+      <li><a href="detector.html#_CPPv4NK3sls8Detector14getSignalIndexERKNSt6stringE">sls::Detector::getSignalIndex (C++ function)</a>
+</li>
+      <li><a href="detector.html#_CPPv4NK3sls8Detector13getSignalNameEKi">sls::Detector::getSignalName (C++ function)</a>
+</li>
+      <li><a href="detector.html#_CPPv4NK3sls8Detector14getSignalNamesEv">sls::Detector::getSignalNames (C++ function)</a>
+</li>
       <li><a href="detector.html#_CPPv4NK3sls8Detector10getSlowADCEN4defs8dacIndexE9Positions">sls::Detector::getSlowADC (C++ function)</a>
+</li>
+      <li><a href="detector.html#_CPPv4NK3sls8Detector15getSlowADCIndexERKNSt6stringE">sls::Detector::getSlowADCIndex (C++ function)</a>
+</li>
+      <li><a href="detector.html#_CPPv4NK3sls8Detector14getSlowADCListEv">sls::Detector::getSlowADCList (C++ function)</a>
+</li>
+      <li><a href="detector.html#_CPPv4NK3sls8Detector14getSlowADCNameEKN4defs8dacIndexE">sls::Detector::getSlowADCName (C++ function)</a>
+</li>
+      <li><a href="detector.html#_CPPv4NK3sls8Detector15getSlowADCNamesEv">sls::Detector::getSlowADCNames (C++ function)</a>
 </li>
       <li><a href="detector.html#_CPPv4NK3sls8Detector14getSourceUDPIPE9Positions">sls::Detector::getSourceUDPIP (C++ function)</a>
 </li>
@@ -2495,6 +2481,8 @@
 </li>
       <li><a href="detector.html#_CPPv4NK3sls8Detector6getTopE9Positions">sls::Detector::getTop (C++ function)</a>
 </li>
+      <li><a href="detector.html#_CPPv4NK3sls8Detector24getTransceiverEnableMaskE9Positions">sls::Detector::getTransceiverEnableMask (C++ function)</a>
+</li>
       <li><a href="detector.html#_CPPv4NK3sls8Detector20getTransmissionDelayEv">sls::Detector::getTransmissionDelay (C++ function)</a>
 </li>
       <li><a href="detector.html#_CPPv4NK3sls8Detector25getTransmissionDelayFrameE9Positions">sls::Detector::getTransmissionDelayFrame (C++ function)</a>
@@ -2518,8 +2506,6 @@
       <li><a href="detector.html#_CPPv4N3sls8Detector13getVetoPhotonEKiRKNSt6stringE9Positions">sls::Detector::getVetoPhoton (C++ function)</a>
 </li>
       <li><a href="detector.html#_CPPv4NK3sls8Detector13getVetoStreamE9Positions">sls::Detector::getVetoStream (C++ function)</a>
-</li>
-      <li><a href="detector.html#_CPPv4NK3sls8Detector10getVoltageEN4defs8dacIndexE9Positions">sls::Detector::getVoltage (C++ function)</a>
 </li>
       <li><a href="detector.html#_CPPv4NK3sls8Detector23isVirtualDetectorServerE9Positions">sls::Detector::isVirtualDetectorServer (C++ function)</a>
 </li>
@@ -2577,6 +2563,10 @@
 </li>
       <li><a href="detector.html#_CPPv4N3sls8Detector12setADCInvertE8uint32_t9Positions">sls::Detector::setADCInvert (C++ function)</a>
 </li>
+      <li><a href="detector.html#_CPPv4N3sls8Detector10setAdcNameEKiRKNSt6stringE">sls::Detector::setAdcName (C++ function)</a>
+</li>
+      <li><a href="detector.html#_CPPv4N3sls8Detector11setAdcNamesEKNSt6vectorINSt6stringEEE">sls::Detector::setAdcNames (C++ function)</a>
+</li>
       <li><a href="detector.html#_CPPv4N3sls8Detector11setADCPhaseEi9Positions">sls::Detector::setADCPhase (C++ function)</a>
 </li>
       <li><a href="detector.html#_CPPv4N3sls8Detector20setADCPhaseInDegreesEi9Positions">sls::Detector::setADCPhaseInDegrees (C++ function)</a>
@@ -2609,7 +2599,7 @@
 </li>
       <li><a href="detector.html#_CPPv4N3sls8Detector14setClientZmqIpEK6IpAddr9Positions">sls::Detector::setClientZmqIp (C++ function)</a>
 </li>
-      <li><a href="detector.html#_CPPv4N3sls8Detector16setClientZmqPortEii">sls::Detector::setClientZmqPort (C++ function)</a>
+      <li><a href="detector.html#_CPPv4N3sls8Detector16setClientZmqPortE8uint16_ti">sls::Detector::setClientZmqPort (C++ function)</a>
 </li>
       <li><a href="detector.html#_CPPv4N3sls8Detector15setClockDividerEii9Positions">sls::Detector::setClockDivider (C++ function)</a>
 </li>
@@ -2617,15 +2607,19 @@
 </li>
       <li><a href="detector.html#_CPPv4N3sls8Detector22setClockPhaseinDegreesEii9Positions">sls::Detector::setClockPhaseinDegrees (C++ function)</a>
 </li>
+      <li><a href="detector.html#_CPPv4N3sls8Detector9setColumnEKi9Positions">sls::Detector::setColumn (C++ function)</a>
+</li>
       <li><a href="detector.html#_CPPv4N3sls8Detector24setComparatorDisableTimeE2ns9Positions">sls::Detector::setComparatorDisableTime (C++ function)</a>
 </li>
-      <li><a href="detector.html#_CPPv4N3sls8Detector14setControlPortEi9Positions">sls::Detector::setControlPort (C++ function)</a>
+      <li><a href="detector.html#_CPPv4N3sls8Detector14setControlPortE8uint16_t9Positions">sls::Detector::setControlPort (C++ function)</a>
 </li>
       <li><a href="detector.html#_CPPv4N3sls8Detector14setCounterMaskE8uint32_t9Positions">sls::Detector::setCounterMask (C++ function)</a>
 </li>
       <li><a href="detector.html#_CPPv4N3sls8Detector16setCurrentSourceEN4defs20currentSrcParametersE9Positions">sls::Detector::setCurrentSource (C++ function)</a>
 </li>
       <li><a href="detector.html#_CPPv4N3sls8Detector6setDACEN4defs8dacIndexEib9Positions">sls::Detector::setDAC (C++ function)</a>
+</li>
+      <li><a href="detector.html#_CPPv4N3sls8Detector10setDacNameEKN4defs8dacIndexERKNSt6stringE">sls::Detector::setDacName (C++ function)</a>
 </li>
       <li><a href="detector.html#_CPPv4N3sls8Detector11setDacNamesEKNSt6vectorINSt6stringEEE">sls::Detector::setDacNames (C++ function)</a>
 </li>
@@ -2655,9 +2649,9 @@
 </li>
       <li><a href="detector.html#_CPPv4N3sls8Detector21setDestinationUDPMAC2EK7MacAddr9Positions">sls::Detector::setDestinationUDPMAC2 (C++ function)</a>
 </li>
-      <li><a href="detector.html#_CPPv4N3sls8Detector21setDestinationUDPPortEii">sls::Detector::setDestinationUDPPort (C++ function)</a>
+      <li><a href="detector.html#_CPPv4N3sls8Detector21setDestinationUDPPortE8uint16_ti">sls::Detector::setDestinationUDPPort (C++ function)</a>
 </li>
-      <li><a href="detector.html#_CPPv4N3sls8Detector22setDestinationUDPPort2Eii">sls::Detector::setDestinationUDPPort2 (C++ function)</a>
+      <li><a href="detector.html#_CPPv4N3sls8Detector22setDestinationUDPPort2E8uint16_ti">sls::Detector::setDestinationUDPPort2 (C++ function)</a>
 </li>
       <li><a href="detector.html#_CPPv4N3sls8Detector15setDetectorLockEb9Positions">sls::Detector::setDetectorLock (C++ function)</a>
 </li>
@@ -2739,6 +2733,8 @@
 </li>
       <li><a href="detector.html#_CPPv4N3sls8Detector16setNumberOfGatesEi9Positions">sls::Detector::setNumberOfGates (C++ function)</a>
 </li>
+      <li><a href="detector.html#_CPPv4N3sls8Detector29setNumberOfTransceiverSamplesEi9Positions">sls::Detector::setNumberOfTransceiverSamples (C++ function)</a>
+</li>
       <li><a href="detector.html#_CPPv4N3sls8Detector19setNumberOfTriggersE7int64_t">sls::Detector::setNumberOfTriggers (C++ function)</a>
 </li>
       <li><a href="detector.html#_CPPv4N3sls8Detector24setNumberofUDPInterfacesEi9Positions">sls::Detector::setNumberofUDPInterfaces (C++ function)</a>
@@ -2771,11 +2767,19 @@
 </li>
       <li><a href="detector.html#_CPPv4N3sls8Detector14setPatternWordEi8uint64_t9Positions">sls::Detector::setPatternWord (C++ function)</a>
 </li>
+      <li><a href="detector.html#_CPPv4N3sls8Detector15setPedestalModeEKN4defs18pedestalParametersE9Positions">sls::Detector::setPedestalMode (C++ function)</a>
+</li>
       <li><a href="detector.html#_CPPv4N3sls8Detector9setPeriodE2ns9Positions">sls::Detector::setPeriod (C++ function)</a>
 </li>
       <li><a href="detector.html#_CPPv4N3sls8Detector11setPolarityEN4defs8polarityE9Positions">sls::Detector::setPolarity (C++ function)</a>
 </li>
+      <li><a href="detector.html#_CPPv4N3sls8Detector8setPowerEN4defs8dacIndexEi9Positions">sls::Detector::setPower (C++ function)</a>
+</li>
       <li><a href="detector.html#_CPPv4N3sls8Detector12setPowerChipEb9Positions">sls::Detector::setPowerChip (C++ function)</a>
+</li>
+      <li><a href="detector.html#_CPPv4N3sls8Detector12setPowerNameEKN4defs8dacIndexERKNSt6stringE">sls::Detector::setPowerName (C++ function)</a>
+</li>
+      <li><a href="detector.html#_CPPv4N3sls8Detector13setPowerNamesEKNSt6vectorINSt6stringEEE">sls::Detector::setPowerNames (C++ function)</a>
 </li>
       <li><a href="detector.html#_CPPv4N3sls8Detector12setPumpProbeEb9Positions">sls::Detector::setPumpProbe (C++ function)</a>
 </li>
@@ -2790,6 +2794,8 @@
       <li><a href="detector.html#_CPPv4N3sls8Detector15setReadoutSpeedEN4defs10speedLevelE9Positions">sls::Detector::setReadoutSpeed (C++ function)</a>
 </li>
       <li><a href="detector.html#_CPPv4N3sls8Detector6setROIEN4defs3ROIEi">sls::Detector::setROI (C++ function)</a>
+</li>
+      <li><a href="detector.html#_CPPv4N3sls8Detector6setRowEKi9Positions">sls::Detector::setRow (C++ function)</a>
 </li>
       <li><a href="detector.html#_CPPv4N3sls8Detector11setRUNClockEi9Positions">sls::Detector::setRUNClock (C++ function)</a>
 </li>
@@ -2807,7 +2813,7 @@
 </li>
       <li><a href="detector.html#_CPPv4N3sls8Detector9setRxLockEb9Positions">sls::Detector::setRxLock (C++ function)</a>
 </li>
-      <li><a href="detector.html#_CPPv4N3sls8Detector9setRxPortEii">sls::Detector::setRxPort (C++ function)</a>
+      <li><a href="detector.html#_CPPv4N3sls8Detector9setRxPortE8uint16_ti">sls::Detector::setRxPort (C++ function)</a>
 </li>
       <li><a href="detector.html#_CPPv4N3sls8Detector8setRxROIEKN4defs3ROIE">sls::Detector::setRxROI (C++ function)</a>
 </li>
@@ -2823,7 +2829,7 @@
 </li>
       <li><a href="detector.html#_CPPv4N3sls8Detector10setRxZmqIPEK6IpAddr9Positions">sls::Detector::setRxZmqIP (C++ function)</a>
 </li>
-      <li><a href="detector.html#_CPPv4N3sls8Detector12setRxZmqPortEii">sls::Detector::setRxZmqPort (C++ function)</a>
+      <li><a href="detector.html#_CPPv4N3sls8Detector12setRxZmqPortE8uint16_ti">sls::Detector::setRxZmqPort (C++ function)</a>
 </li>
       <li><a href="detector.html#_CPPv4N3sls8Detector21setRxZmqStartingFrameEi9Positions">sls::Detector::setRxZmqStartingFrame (C++ function)</a>
 </li>
@@ -2835,6 +2841,14 @@
 </li>
       <li><a href="detector.html#_CPPv4N3sls8Detector15setSettingsPathERKNSt6stringE9Positions">sls::Detector::setSettingsPath (C++ function)</a>
 </li>
+      <li><a href="detector.html#_CPPv4N3sls8Detector13setSignalNameEKiRKNSt6stringE">sls::Detector::setSignalName (C++ function)</a>
+</li>
+      <li><a href="detector.html#_CPPv4N3sls8Detector14setSignalNamesEKNSt6vectorINSt6stringEEE">sls::Detector::setSignalNames (C++ function)</a>
+</li>
+      <li><a href="detector.html#_CPPv4N3sls8Detector14setSlowADCNameEKN4defs8dacIndexERKNSt6stringE">sls::Detector::setSlowADCName (C++ function)</a>
+</li>
+      <li><a href="detector.html#_CPPv4N3sls8Detector15setSlowADCNamesEKNSt6vectorINSt6stringEEE">sls::Detector::setSlowADCNames (C++ function)</a>
+</li>
       <li><a href="detector.html#_CPPv4N3sls8Detector14setSourceUDPIPEK6IpAddr9Positions">sls::Detector::setSourceUDPIP (C++ function)</a>
 </li>
       <li><a href="detector.html#_CPPv4N3sls8Detector15setSourceUDPIP2EK6IpAddr9Positions">sls::Detector::setSourceUDPIP2 (C++ function)</a>
@@ -2843,7 +2857,7 @@
 </li>
       <li><a href="detector.html#_CPPv4N3sls8Detector16setSourceUDPMAC2EK7MacAddr9Positions">sls::Detector::setSourceUDPMAC2 (C++ function)</a>
 </li>
-      <li><a href="detector.html#_CPPv4N3sls8Detector11setStopPortEi9Positions">sls::Detector::setStopPort (C++ function)</a>
+      <li><a href="detector.html#_CPPv4N3sls8Detector11setStopPortE8uint16_t9Positions">sls::Detector::setStopPort (C++ function)</a>
 </li>
       <li><a href="detector.html#_CPPv4N3sls8Detector19setStorageCellDelayE2ns9Positions">sls::Detector::setStorageCellDelay (C++ function)</a>
 </li>
@@ -2873,6 +2887,8 @@
 </li>
       <li><a href="detector.html#_CPPv4N3sls8Detector6setTopEb9Positions">sls::Detector::setTop (C++ function)</a>
 </li>
+      <li><a href="detector.html#_CPPv4N3sls8Detector24setTransceiverEnableMaskE8uint32_t9Positions">sls::Detector::setTransceiverEnableMask (C++ function)</a>
+</li>
       <li><a href="detector.html#_CPPv4N3sls8Detector20setTransmissionDelayEi">sls::Detector::setTransmissionDelay (C++ function)</a>
 </li>
       <li><a href="detector.html#_CPPv4N3sls8Detector25setTransmissionDelayFrameEi9Positions">sls::Detector::setTransmissionDelayFrame (C++ function)</a>
@@ -2897,9 +2913,7 @@
 </li>
       <li><a href="detector.html#_CPPv4N3sls8Detector13setVetoStreamEKN4defs18streamingInterfaceE9Positions">sls::Detector::setVetoStream (C++ function)</a>
 </li>
-      <li><a href="detector.html#_CPPv4N3sls8Detector25setVirtualDetectorServersEii">sls::Detector::setVirtualDetectorServers (C++ function)</a>
-</li>
-      <li><a href="detector.html#_CPPv4N3sls8Detector10setVoltageEN4defs8dacIndexEi9Positions">sls::Detector::setVoltage (C++ function)</a>
+      <li><a href="detector.html#_CPPv4N3sls8Detector25setVirtualDetectorServersEi8uint16_t">sls::Detector::setVirtualDetectorServers (C++ function)</a>
 </li>
       <li><a href="detector.html#_CPPv4NK3sls8Detector4sizeEv">sls::Detector::size (C++ function)</a>
 </li>
@@ -2941,6 +2955,8 @@
 </li>
       <li><a href="type_traits.html#_CPPv4IDpEN3sls14has_str_helperE">sls::has_str_helper (C++ struct)</a>
 </li>
+      <li><a href="container_utils.html#_CPPv4I0EN3sls13hasDuplicatesEb9Container">sls::hasDuplicates (C++ function)</a>
+</li>
       <li><a href="type_traits.html#_CPPv4I00EN3sls12is_containerE">sls::is_container (C++ struct)</a>
 </li>
       <li><a href="type_traits.html#_CPPv4I0EN3sls12is_containerI1TNSt11conditionalIXL0EE19is_container_helperINSt16remove_referenceI1TE4type10value_typeENSt16remove_referenceI1TE4type9size_typeENSt16remove_referenceI1TE4type8iteratorENSt16remove_referenceI1TE4type14const_iteratorEDTcldtclNSt7declvalI1TEEE4sizeEEDTcldtclNSt7declvalI1TEEE5beginEEDTcldtclNSt7declvalI1TEEE3endEEDTcldtclNSt7declvalI1TEEE6cbeginEEDTcldtclNSt7declvalI1TEEE4cendEEDTcldtclNSt7declvalI1TEEE5emptyEEEvE4typeEEE">sls::is_container&lt;T, typename std::conditional&lt;false, is_container_helper&lt;typename std::remove_reference&lt;T&gt;::type::value_type, typename std::remove_reference&lt;T&gt;::type::size_type, typename std::remove_reference&lt;T&gt;::type::iterator, typename std::remove_reference&lt;T&gt;::type::const_iterator, decltype(std::declval&lt;T&gt;().size()), decltype(std::declval&lt;T&gt;().begin()), decltype(std::declval&lt;T&gt;().end()), decltype(std::declval&lt;T&gt;().cbegin()), decltype(std::declval&lt;T&gt;().cend()), decltype(std::declval&lt;T&gt;().empty())&gt;, void&gt;::type&gt; (C++ struct)</a>
@@ -2973,7 +2989,7 @@
 </li>
       <li><a href="receiver_api.html#_CPPv4N3sls8Receiver18getReceiverVersionEv">sls::Receiver::getReceiverVersion (C++ function)</a>
 </li>
-      <li><a href="receiver_api.html#_CPPv4N3sls8Receiver8ReceiverEi">sls::Receiver::Receiver (C++ function)</a>, <a href="receiver_api.html#_CPPv4N3sls8Receiver8ReceiverEiA_Pc">[1]</a>
+      <li><a href="receiver_api.html#_CPPv4N3sls8Receiver8ReceiverE8uint16_t">sls::Receiver::Receiver (C++ function)</a>, <a href="receiver_api.html#_CPPv4N3sls8Receiver8ReceiverEiA_Pc">[1]</a>
 </li>
       <li><a href="receiver_api.html#_CPPv4N3sls8Receiver35registerCallBackAcquisitionFinishedEPFv8uint64_tPvEPv">sls::Receiver::registerCallBackAcquisitionFinished (C++ function)</a>
 </li>
@@ -2987,6 +3003,8 @@
 </li>
       <li><a href="result.html#_CPPv4I00EN3sls6ResultE">sls::Result (C++ class)</a>
 </li>
+      <li><a href="result.html#_CPPv4NK3sls6Result3anyERK1T">sls::Result::any (C++ function)</a>
+</li>
       <li><a href="result.html#_CPPv4N3sls6Result5beginEv">sls::Result::begin (C++ function)</a>, <a href="result.html#_CPPv4NK3sls6Result5beginEv">[1]</a>
 </li>
       <li><a href="result.html#_CPPv4NK3sls6Result6cbeginEv">sls::Result::cbegin (C++ function)</a>
@@ -2996,6 +3014,8 @@
       <li><a href="result.html#_CPPv4N3sls6Result14const_iteratorE">sls::Result::const_iterator (C++ type)</a>
 </li>
       <li><a href="result.html#_CPPv4N3sls6Result15const_referenceE">sls::Result::const_reference (C++ type)</a>
+</li>
+      <li><a href="result.html#_CPPv4I0Dp0ENK3sls6Result13contains_onlyENSt9enable_ifINSt7is_sameI1V1TE5valueEbE4typeERK1VDpRK4Args">sls::Result::contains_only (C++ function)</a>
 </li>
       <li><a href="result.html#_CPPv4NK3sls6Result5emptyEv">sls::Result::empty (C++ function)</a>
 </li>
@@ -3007,7 +3027,7 @@
 </li>
       <li><a href="result.html#_CPPv4N3sls6Result8iteratorE">sls::Result::iterator (C++ type)</a>
 </li>
-      <li><a href="result.html#_CPPv4N3sls6ResultcvNSt6vectorEEv">sls::Result::operator std::vector (C++ function)</a>
+      <li><a href="result.html#_CPPv4N3sls6ResultcvNSt6vectorI1TEEEv">sls::Result::operator std::vector&lt;T&gt; (C++ function)</a>
 </li>
       <li><a href="result.html#_CPPv4N3sls6ResultixE9size_type">sls::Result::operator[] (C++ function)</a>, <a href="result.html#_CPPv4NK3sls6ResultixE9size_type">[1]</a>
 </li>
@@ -3033,7 +3053,7 @@
 </li>
       <li><a href="container_utils.html#_CPPv4I0EN3sls6SquashEN9Container10value_typeERK9ContainerN9Container10value_typeE">sls::Squash (C++ function)</a>
 </li>
-      <li><a href="ToString.html#_CPPv4I0EN3sls8StringToE1TRKNSt6stringE">sls::StringTo (C++ function)</a>, <a href="ToString.html#_CPPv4I0EN3sls8StringToE1TRKNSt6stringERKNSt6stringE">[1]</a>, <a href="ToString.html#_CPPv4I0EN3sls8StringToENSt6vectorI1TEERKNSt6vectorINSt6stringEEE">[2]</a>, <a href="ToString.html#_CPPv4IEN3sls8StringToE7int64_tRKNSt6stringE">[3]</a>, <a href="ToString.html#_CPPv4IEN3sls8StringToE8uint32_tRKNSt6stringE">[4]</a>, <a href="ToString.html#_CPPv4IEN3sls8StringToE8uint64_tRKNSt6stringE">[5]</a>, <a href="ToString.html#_CPPv4IEN3sls8StringToEN4defs10fileFormatERKNSt6stringE">[6]</a>, <a href="ToString.html#_CPPv4IEN3sls8StringToEN4defs10speedLevelERKNSt6stringE">[7]</a>, <a href="ToString.html#_CPPv4IEN3sls8StringToEN4defs10timingModeERKNSt6stringE">[8]</a>, <a href="ToString.html#_CPPv4IEN3sls8StringToEN4defs11M3_GainCapsERKNSt6stringE">[9]</a>, <a href="ToString.html#_CPPv4IEN3sls8StringToEN4defs11readoutModeERKNSt6stringE">[10]</a>, <a href="ToString.html#_CPPv4IEN3sls8StringToEN4defs12detectorTypeERKNSt6stringE">[11]</a>, <a href="ToString.html#_CPPv4IEN3sls8StringToEN4defs12portPositionERKNSt6stringE">[12]</a>, <a href="ToString.html#_CPPv4IEN3sls8StringToEN4defs13vetoAlgorithmERKNSt6stringE">[13]</a>, <a href="ToString.html#_CPPv4IEN3sls8StringToEN4defs16detectorSettingsERKNSt6stringE">[14]</a>, <a href="ToString.html#_CPPv4IEN3sls8StringToEN4defs16timingSourceTypeERKNSt6stringE">[15]</a>, <a href="ToString.html#_CPPv4IEN3sls8StringToEN4defs18externalSignalFlagERKNSt6stringE">[16]</a>, <a href="ToString.html#_CPPv4IEN3sls8StringToEN4defs18frameDiscardPolicyERKNSt6stringE">[17]</a>, <a href="ToString.html#_CPPv4IEN3sls8StringToEN4defs18streamingInterfaceERKNSt6stringE">[18]</a>, <a href="ToString.html#_CPPv4IEN3sls8StringToEN4defs8dacIndexERKNSt6stringE">[19]</a>, <a href="ToString.html#_CPPv4IEN3sls8StringToEN4defs8gainModeERKNSt6stringE">[20]</a>, <a href="ToString.html#_CPPv4IEN3sls8StringToEN4defs8polarityERKNSt6stringE">[21]</a>, <a href="ToString.html#_CPPv4IEN3sls8StringToEN4defs9burstModeERKNSt6stringE">[22]</a>, <a href="ToString.html#_CPPv4IEN3sls8StringToEbRKNSt6stringE">[23]</a>, <a href="ToString.html#_CPPv4IEN3sls8StringToEiRKNSt6stringE">[24]</a>
+      <li><a href="ToString.html#_CPPv4I0EN3sls8StringToE1TRKNSt6stringE">sls::StringTo (C++ function)</a>, <a href="ToString.html#_CPPv4I0EN3sls8StringToE1TRKNSt6stringERKNSt6stringE">[1]</a>, <a href="ToString.html#_CPPv4I0EN3sls8StringToENSt6vectorI1TEERKNSt6vectorINSt6stringEEE">[2]</a>, <a href="ToString.html#_CPPv4IEN3sls8StringToE7int64_tRKNSt6stringE">[3]</a>, <a href="ToString.html#_CPPv4IEN3sls8StringToE7uint8_tRKNSt6stringE">[4]</a>, <a href="ToString.html#_CPPv4IEN3sls8StringToE8uint16_tRKNSt6stringE">[5]</a>, <a href="ToString.html#_CPPv4IEN3sls8StringToE8uint32_tRKNSt6stringE">[6]</a>, <a href="ToString.html#_CPPv4IEN3sls8StringToE8uint64_tRKNSt6stringE">[7]</a>, <a href="ToString.html#_CPPv4IEN3sls8StringToEN4defs10fileFormatERKNSt6stringE">[8]</a>, <a href="ToString.html#_CPPv4IEN3sls8StringToEN4defs10speedLevelERKNSt6stringE">[9]</a>, <a href="ToString.html#_CPPv4IEN3sls8StringToEN4defs10timingModeERKNSt6stringE">[10]</a>, <a href="ToString.html#_CPPv4IEN3sls8StringToEN4defs11M3_GainCapsERKNSt6stringE">[11]</a>, <a href="ToString.html#_CPPv4IEN3sls8StringToEN4defs11readoutModeERKNSt6stringE">[12]</a>, <a href="ToString.html#_CPPv4IEN3sls8StringToEN4defs12detectorTypeERKNSt6stringE">[13]</a>, <a href="ToString.html#_CPPv4IEN3sls8StringToEN4defs12portPositionERKNSt6stringE">[14]</a>, <a href="ToString.html#_CPPv4IEN3sls8StringToEN4defs13vetoAlgorithmERKNSt6stringE">[15]</a>, <a href="ToString.html#_CPPv4IEN3sls8StringToEN4defs16detectorSettingsERKNSt6stringE">[16]</a>, <a href="ToString.html#_CPPv4IEN3sls8StringToEN4defs16timingSourceTypeERKNSt6stringE">[17]</a>, <a href="ToString.html#_CPPv4IEN3sls8StringToEN4defs18externalSignalFlagERKNSt6stringE">[18]</a>, <a href="ToString.html#_CPPv4IEN3sls8StringToEN4defs18frameDiscardPolicyERKNSt6stringE">[19]</a>, <a href="ToString.html#_CPPv4IEN3sls8StringToEN4defs18streamingInterfaceERKNSt6stringE">[20]</a>, <a href="ToString.html#_CPPv4IEN3sls8StringToEN4defs8dacIndexERKNSt6stringE">[21]</a>, <a href="ToString.html#_CPPv4IEN3sls8StringToEN4defs8gainModeERKNSt6stringE">[22]</a>, <a href="ToString.html#_CPPv4IEN3sls8StringToEN4defs8polarityERKNSt6stringE">[23]</a>, <a href="ToString.html#_CPPv4IEN3sls8StringToEN4defs9burstModeERKNSt6stringE">[24]</a>, <a href="ToString.html#_CPPv4IEN3sls8StringToEbRKNSt6stringE">[25]</a>, <a href="ToString.html#_CPPv4IEN3sls8StringToEiRKNSt6stringE">[26]</a>
 </li>
       <li><a href="container_utils.html#_CPPv4I0EN3sls3sumENSt9enable_ifINSt13is_arithmeticI1TE5valueE1TE4typeERKNSt6vectorI1TEE">sls::sum (C++ function)</a>
 </li>
@@ -3042,8 +3062,6 @@
       <li><a href="ToString.html#_CPPv4I0EN3sls11ToStringHexENSt9enable_ifINSt11is_integralI1TE5valueENSt6stringEE4typeERK1T">sls::ToStringHex (C++ function)</a>, <a href="ToString.html#_CPPv4I0EN3sls11ToStringHexENSt9enable_ifINSt11is_integralI1TE5valueENSt6stringEE4typeERK1Ti">[1]</a>, <a href="ToString.html#_CPPv4I0EN3sls11ToStringHexENSt9enable_ifIXaaN12is_containerI1TE5valueEntNSt7is_sameIN9typenameT10value_typeENSt6stringEE5valueEENSt6stringEE4typeERK1T">[2]</a>, <a href="ToString.html#_CPPv4I0EN3sls11ToStringHexENSt9enable_ifIXaaN12is_containerI1TE5valueEntNSt7is_sameIN9typenameT10value_typeENSt6stringEE5valueEENSt6stringEE4typeERK1Ti">[3]</a>
 </li>
       <li><a href="pyenums.html#slsdet.speedLevel">speedLevel (class in slsdet)</a>
-</li>
-      <li><a href="commandline.html#term-start"><strong>start</strong></a>
 </li>
       <li><a href="pydetector.html#slsdet.Detector.start">start() (slsdet.Detector method)</a>
 </li>
@@ -3057,45 +3075,27 @@
 </li>
       <li><a href="pydetector.html#slsdet.Detector.status">status (slsdet.Detector property)</a>
 </li>
-      <li><a href="commandline.html#term-status-running-error-transmitting-finished-waiting-idle"><strong>status [running, error, transmitting, finished, waiting, idle]</strong></a>
-</li>
-      <li><a href="commandline.html#term-stop"><strong>stop</strong></a>
-</li>
       <li><a href="pydetector.html#slsdet.Detector.stop">stop() (slsdet.Detector method)</a>
 </li>
       <li><a href="pydetector.html#slsdet.Detector.stopDetector">stopDetector() (slsdet.Detector method)</a>
 </li>
       <li><a href="pydetector.html#slsdet.Detector.stopport">stopport (slsdet.Detector property)</a>
 </li>
-      <li><a href="commandline.html#term-stopport-n"><strong>stopport [n]</strong></a>
-</li>
       <li><a href="pydetector.html#slsdet.Detector.stopReceiver">stopReceiver() (slsdet.Detector method)</a>
 </li>
       <li><a href="pydetector.html#slsdet.Detector.storagecell_delay">storagecell_delay (slsdet.Detector property)</a>
 </li>
-      <li><a href="commandline.html#term-storagecell_delay-duration-0-1638375-ns-optional-unit-ns-us-ms-s"><strong>storagecell_delay [duration (0-1638375 ns)] [(optional unit) ns|us|ms|s]</strong></a>
-</li>
       <li><a href="pydetector.html#slsdet.Detector.storagecell_start">storagecell_start (slsdet.Detector property)</a>
-</li>
-      <li><a href="commandline.html#term-storagecell_start-0-max"><strong>storagecell_start [0-max]</strong></a>
 </li>
       <li><a href="pyenums.html#slsdet.streamingInterface">streamingInterface (class in slsdet)</a>
 </li>
       <li><a href="pydetector.html#slsdet.Detector.subdeadtime">subdeadtime (slsdet.Detector property)</a>
 </li>
-      <li><a href="commandline.html#term-subdeadtime-duration-optional-unit-ns-us-ms-s"><strong>subdeadtime [duration] [(optional unit) ns|us|ms|s]</strong></a>
-</li>
       <li><a href="pydetector.html#slsdet.Detector.subexptime">subexptime (slsdet.Detector property)</a>
-</li>
-      <li><a href="commandline.html#term-subexptime-duration-optional-unit-ns-us-ms-s"><strong>subexptime [duration] [(optional unit) ns|us|ms|s]</strong></a>
 </li>
       <li><a href="pydetector.html#slsdet.Detector.sync">sync (slsdet.Detector property)</a>
 </li>
-      <li><a href="commandline.html#term-sync-0-1"><strong>sync [0, 1]</strong></a>
-</li>
       <li><a href="pydetector.html#slsdet.Detector.syncclk">syncclk (slsdet.Detector property)</a>
-</li>
-      <li><a href="commandline.html#term-syncclk-n_clk-in-MHz"><strong>syncclk [n_clk in MHz]</strong></a>
 </li>
   </ul></td>
 </tr></table>
@@ -3103,59 +3103,19 @@
 <h2 id="T">T</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="commandline.html#term-temp_10ge-n_value"><strong>temp_10ge [n_value]</strong></a>
-</li>
-      <li><a href="commandline.html#term-temp_adc-n_value"><strong>temp_adc [n_value]</strong></a>
-</li>
       <li><a href="pydetector.html#slsdet.Detector.temp_control">temp_control (slsdet.Detector property)</a>
-</li>
-      <li><a href="commandline.html#term-temp_control-0-1"><strong>temp_control [0, 1]</strong></a>
-</li>
-      <li><a href="commandline.html#term-temp_dcdc-n_value"><strong>temp_dcdc [n_value]</strong></a>
 </li>
       <li><a href="pydetector.html#slsdet.Detector.temp_event">temp_event (slsdet.Detector property)</a>
 </li>
-      <li><a href="commandline.html#term-temp_event-0"><strong>temp_event [0]</strong></a>
-</li>
-      <li><a href="commandline.html#term-temp_fpga-n_value"><strong>temp_fpga [n_value]</strong></a>
-</li>
-      <li><a href="commandline.html#term-temp_fpgaext-n_value"><strong>temp_fpgaext [n_value]</strong></a>
-</li>
-      <li><a href="commandline.html#term-temp_fpgafl-n_value"><strong>temp_fpgafl [n_value]</strong></a>
-</li>
-      <li><a href="commandline.html#term-temp_fpgafr-n_value"><strong>temp_fpgafr [n_value]</strong></a>
-</li>
-      <li><a href="commandline.html#term-temp_slowadc-n_value"><strong>temp_slowadc [n_value]</strong></a>
-</li>
-      <li><a href="commandline.html#term-temp_sodl-n_value"><strong>temp_sodl [n_value]</strong></a>
-</li>
-      <li><a href="commandline.html#term-temp_sodr-n_value"><strong>temp_sodr [n_value]</strong></a>
-</li>
       <li><a href="pydetector.html#slsdet.Detector.temp_threshold">temp_threshold (slsdet.Detector property)</a>
 </li>
-      <li><a href="commandline.html#term-temp_threshold-n_temp-in-degrees"><strong>temp_threshold [n_temp (in degrees)]</strong></a>
+      <li><a href="pydetector.html#slsdet.Detector.templist">templist (slsdet.Detector property)</a>
 </li>
-      <li><a href="commandline.html#term-templist"><strong>templist</strong></a>
-
-      <ul>
-        <li><a href="pydetector.html#slsdet.Detector.templist">(slsdet.Detector property)</a>
+      <li><a href="pydetector.html#slsdet.Detector.tempvalues">tempvalues (slsdet.Detector property)</a>
 </li>
-      </ul></li>
-      <li><a href="commandline.html#term-tempvalues"><strong>tempvalues</strong></a>
-
-      <ul>
-        <li><a href="pydetector.html#slsdet.Detector.tempvalues">(slsdet.Detector property)</a>
-</li>
-      </ul></li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="pydetector.html#slsdet.Detector.tengiga">tengiga (slsdet.Detector property)</a>
 </li>
-      <li><a href="commandline.html#term-tengiga-0-1"><strong>tengiga [0, 1]</strong></a>
-</li>
       <li><a href="pydetector.html#slsdet.Detector.threshold">threshold (slsdet.Detector property)</a>
-</li>
-      <li><a href="commandline.html#term-threshold-eV-optinal-settings"><strong>threshold [eV] [(optinal settings)</strong></a>
 </li>
       <li><a href="pydetector.html#slsdet.Detector.timing">timing (slsdet.Detector property)</a>
 </li>
@@ -3169,6 +3129,10 @@
 </li>
       <li><a href="pydetector.html#slsdet.Detector.top">top (slsdet.Detector property)</a>
 </li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="pydetector.html#slsdet.Detector.transceiverenable">transceiverenable (slsdet.Detector property)</a>
+</li>
       <li><a href="pydetector.html#slsdet.Detector.trigger">trigger() (slsdet.Detector method)</a>
 </li>
       <li><a href="pydetector.html#slsdet.Detector.triggers">triggers (slsdet.Detector property)</a>
@@ -3180,6 +3144,8 @@
       <li><a href="pydetector.html#slsdet.Detector.trimen">trimen (slsdet.Detector property)</a>
 </li>
       <li><a href="pydetector.html#slsdet.Detector.trimval">trimval (slsdet.Detector property)</a>
+</li>
+      <li><a href="pydetector.html#slsdet.Detector.tsamples">tsamples (slsdet.Detector property)</a>
 </li>
       <li><a href="pydetector.html#slsdet.Detector.txdelay">txdelay (slsdet.Detector property)</a>
 </li>
