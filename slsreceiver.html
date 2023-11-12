@@ -191,7 +191,12 @@ rx_hostname<span class="w"> </span>xxx
 <span class="c1"># multi modules with custom ports</span>
 rx_hostname<span class="w"> </span>xxx:1955+xxx:1956+
 
-<span class="c1"># multi modules with custom ports on same rxr pc</span>
+
+<span class="c1"># multi modules using increasing tcp ports when using multi detector command</span>
+rx_tcpport<span class="w"> </span><span class="m">1955</span>
+rx_hostname<span class="w"> </span>xxx
+
+<span class="c1"># or specify multi modules with custom ports on same rxr pc</span>
 <span class="m">0</span>:rx_tcpport<span class="w"> </span><span class="m">1954</span>
 <span class="m">1</span>:rx_tcpport<span class="w"> </span><span class="m">1955</span>
 <span class="m">2</span>:rx_tcpport<span class="w"> </span><span class="m">1956</span>

@@ -137,7 +137,7 @@
            <div itemprop="articleBody">
              
   <section id="examples">
-<h1>Examples<a class="headerlink" href="#examples" title="Permalink to this heading"></a></h1>
+<span id="cplusplus-api-examples"></span><h1>Examples<a class="headerlink" href="#examples" title="Permalink to this heading"></a></h1>
 <section id="setup">
 <h2>Setup<a class="headerlink" href="#setup" title="Permalink to this heading"></a></h2>
 <p>The examples here assume that you have compiled and installed slsDetectorPackage
@@ -172,8 +172,8 @@ then set up the detector.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>jungfrauDetectorServer_virtual
 </pre></div>
 </div>
-<p>This launches a virtual Jungfrau detector server. As default is uses port 1952 and 1953
-for communication over TCP. Most commands go on 1952 and only stop and status on 1953.</p>
+<p>This launches a virtual Jungfrau detector server. As default it uses port 1952 and 1953
+for communication over TCP. Most commands go on 1952 and only a few such as stop and status on 1953.</p>
 <p><strong>Run example to configure</strong></p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>./e1-config<span class="w"> </span>one_det_no_receiver.config
 -<span class="w"> </span><span class="m">12</span>:01:06.371<span class="w"> </span>INFO:<span class="w"> </span>Shared<span class="w"> </span>memory<span class="w"> </span>deleted<span class="w"> </span>/slsDetectorPackage_multi_0_sls_0
@@ -201,7 +201,10 @@ std::vector.</p>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">sls</span><span class="o">::</span><span class="n">Result</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="w"> </span><span class="n">res1</span><span class="p">{</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">};</span>
 <span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;res1: &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">res1</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="sc">&#39;\n&#39;</span><span class="p">;</span>
 <span class="n">res1</span><span class="p">.</span><span class="n">squash</span><span class="p">();</span>
+<span class="cp"># return -1 if different</span>
 <span class="n">res1</span><span class="p">.</span><span class="n">squash</span><span class="p">(</span><span class="mi">-1</span><span class="p">);</span>
+<span class="cp"># throw exception with custom message if different</span>
+<span class="n">res1</span><span class="p">.</span><span class="n">tsquash</span><span class="p">(</span><span class="s">&quot;Values are different);</span>
 </pre></div>
 </div>
 </section>

@@ -148,7 +148,7 @@ CMake approaches.</p>
 in one go, we support adding slsDetectorPackage as a subfolder in your cmake project.</p>
 <p>A minimal CMakeLists.txt could look like this:</p>
 <div class="highlight-cmake notranslate"><div class="highlight"><pre><span></span><span class="nb">project</span><span class="p">(</span><span class="s">myDetectorIntegration</span><span class="p">)</span>
-<span class="nb">cmake_minimum_required</span><span class="p">(</span><span class="s">VERSION</span><span class="w"> </span><span class="s">3.12</span><span class="p">)</span>
+<span class="nb">cmake_minimum_required</span><span class="p">(</span><span class="s">VERSION</span><span class="w"> </span><span class="s">3.14</span><span class="p">)</span>
 <span class="nb">add_subdirectory</span><span class="p">(</span><span class="s">slsDetectorPackage</span><span class="p">)</span>
 
 <span class="c">#Add your executable</span>
@@ -167,7 +167,7 @@ in one go, we support adding slsDetectorPackage as a subfolder in your cmake pro
 <p>If you have compiled and installed slsDetectorPackage we also support
 find_package in CMake. If installed in a system wide location no path
 should be needed, otherwise specify cmake prefix path.</p>
-<div class="highlight-cmake notranslate"><div class="highlight"><pre><span></span><span class="nb">cmake_minimum_required</span><span class="p">(</span><span class="s">VERSION</span><span class="w"> </span><span class="s">3.12</span><span class="p">)</span>
+<div class="highlight-cmake notranslate"><div class="highlight"><pre><span></span><span class="nb">cmake_minimum_required</span><span class="p">(</span><span class="s">VERSION</span><span class="w"> </span><span class="s">3.14</span><span class="p">)</span>
 <span class="nb">project</span><span class="p">(</span><span class="s">myintegration</span><span class="p">)</span>
 
 <span class="nb">find_package</span><span class="p">(</span><span class="s">slsDetectorPackage</span><span class="w"> </span><span class="s">5.0</span><span class="w"> </span><span class="s">REQUIRED</span><span class="p">)</span>

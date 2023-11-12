@@ -250,6 +250,12 @@ ccmake<span class="w"> </span>..
 <tr class="row-even"><td><p>-DSLS_USE_GUI=ON</p></td>
 <td><p>GUI</p></td>
 </tr>
+<tr class="row-odd"><td><p>-DSLS_USE_HDF5=ON</p></td>
+<td><p>HDF5</p></td>
+</tr>
+<tr class="row-even"><td><p>-DSLS_USE_SIMULATOR=ON</p></td>
+<td><p>Simulator</p></td>
+</tr>
 </tbody>
 </table>
 <div class="admonition note">
@@ -384,7 +390,7 @@ make<span class="w"> </span>-j12
 <p>The documentation for the slsDetectorPackage is build using a combination
 of Doxygen, Sphinx and Breathe. The easiest way to install the dependencies
 is to use conda</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda<span class="w"> </span>create<span class="w"> </span>-n<span class="w"> </span>myenv<span class="w"> </span>python<span class="w"> </span>sphinx_rtd_theme<span class="w"> </span>breathe
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda<span class="w"> </span>create<span class="w"> </span>-n<span class="w"> </span>myenv<span class="w"> </span><span class="nv">python</span><span class="o">=</span><span class="m">3</span>.12<span class="w"> </span>sphinx<span class="w"> </span>sphinx_rtd_theme<span class="w"> </span>breathe<span class="w"> </span>doxygen<span class="w"> </span>numpy
 </pre></div>
 </div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># using cmake or ccmake to enable DSLS_BUILD_DOCS</span>
@@ -405,7 +411,7 @@ make<span class="w"> </span>rst<span class="w"> </span><span class="c1"># rst on
 <div class="line-block">
 <div class="line">pybind11 (v2.11.0) is built</div>
 <div class="line">* by default from tar file in repo (libs/pybind/v2.11.0.tar.gz)</div>
-<div class="line">* or use option SLS_FETCH_PYBIND11_FROM_GITHUB <a class="reference external" href="https://github.com/pybind/pybind11">[link]</a>.</div>
+<div class="line">* or use advanced option SLS_FETCH_PYBIND11_FROM_GITHUB [<a class="reference external" href="https://github.com/pybind/pybind11">link</a>].</div>
 <div class="line"><br /></div>
 </div>
 <div class="line">v7.x.x:</div>
@@ -434,7 +440,7 @@ git<span class="w"> </span>submodule<span class="w"> </span>update<span class="w
 <div class="line-block">
 <div class="line">zeromq (v4.3.4) is built</div>
 <div class="line">* by default from tar file in repo (libs/libzmq/libzmq-4.3.4.tar.gz)</div>
-<div class="line">* or use option SLS_FETCH_ZMQ_FROM_GITHUB <a class="reference external" href="https://github.com/zeromq/libzmq.git">[link]</a>.</div>
+<div class="line">* or use advanced option SLS_FETCH_ZMQ_FROM_GITHUB [<a class="reference external" href="https://github.com/zeromq/libzmq.git">link</a>].</div>
 <div class="line"><br /></div>
 </div>
 <div class="line">v7.x.x and older:</div>
@@ -442,7 +448,7 @@ git<span class="w"> </span>submodule<span class="w"> </span>update<span class="w
 <div class="line">zeromq must be installed and one can hint its location using</div>
 <div class="line">* cmake option:’-DZeroMQ_HINT=/usr/lib64’ or</div>
 <div class="line">* option ‘-q’ in cmk.sh script: : ./cmk.sh -cbj5 -q /usr/lib64</div>
-<div class="line">* ‘zeromq’ dependencies when installing using conda</div>
+<div class="line">* ‘zeromq’ dependency added when installing using conda</div>
 </div>
 </div>
 </section>

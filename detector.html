@@ -131,15 +131,16 @@
              
   <section id="detector">
 <h1>Detector<a class="headerlink" href="#detector" title="Permalink to this heading"></a></h1>
-<p>The sls::Detector is the new public API to control
+<p>The sls::Detector is the public API to control
 detectors from C++. This API is also used internally
 for the Python bindings and the command line interface.
-If a receiver has been configured this is also controlled
+If a receiver has been configured, this is also controlled
 through this class.</p>
 <p>Most, if not all, functions are called in parallel
 and the return value is a thin std::vector wrapper
-containing results from all modules. (Result&lt;T&gt;)</p>
-<dl class="cpp class">
+containing results from all modules. (<a class="reference internal" href="result.html#result-class"><span class="std std-ref">Result class</span></a>)</p>
+<p>Here are some <a class="reference internal" href="#cplusplus-api-examples"><span class="std std-ref">examples</span></a> on how to use the API.</p>
+<span class="target" id="cplusplus-api-examples"></span><dl class="cpp class">
 <dt class="sig sig-object cpp" id="_CPPv4N3sls8DetectorE">
 <span id="_CPPv3N3sls8DetectorE"></span><span id="_CPPv2N3sls8DetectorE"></span><span id="sls::Detector"></span><span class="target" id="classsls_1_1Detector"></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">Detector</span></span></span><a class="headerlink" href="#_CPPv4N3sls8DetectorE" title="Permalink to this definition"></a><br /></dt>
 <dd><div class="breathe-sectiondef docutils container">
