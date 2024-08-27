@@ -36,7 +36,7 @@
             slsDetectorPackage
           </a>
               <div class="version">
-                8.0.0
+                8.0.2
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
@@ -185,6 +185,8 @@ open an issue at our  <a class="reference external" href="https://github.com/sls
 </ul>
 </div></blockquote>
 </li>
+<li><p>For Jungfrau, check if the blue sfp light is blinking rapidly (even when it is not sending data). If so, most likely the link is down and something is wrong with the board. If it connected to a switch, then you do not see it with the ethtool command if link is down. One option is to connect it directly to a pc to see if link is down.</p></li>
+<li><p>With nc, try “nc -u -p 50001 -l” in receiving pc, and from another pc try “echo hallo | nc -u 10.1.2.172 50001” to send something to the recieving pc interface to see if the link is up and see if the other nc console receives the hallo.</p></li>
 </ul>
 </dd>
 </dl>
@@ -230,12 +232,22 @@ sls_detector_get<span class="w"> </span>framesl
 </dl>
 </li>
 <li><dl>
-<dt>Check if ‘rx_frames’ counter in ‘ifconfig’ do not increment for interface.</dt><dd><ul>
+<dt>Check if ‘rx packets’ counter in ‘ifconfig’ do not increment for interface.</dt><dd><ul>
 <li><p>If no, check switch configuration if present. Port counters of switch can also help to identify problem.</p></li>
 <li><p>If yes, but receiver software does not see it:</p>
 <blockquote>
-<div><ul class="simple">
-<li><p>Check no firewall (eg. firewalld) is present or add rules</p></li>
+<div><ul>
+<li><p>Check no firewall (eg. firewalld) is present or add rules</p>
+<blockquote>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Stop and disable firewall</span>
+service<span class="w"> </span>firewalld<span class="w"> </span>stop
+systemctl<span class="w"> </span>disable<span class="w"> </span>firewalld
+<span class="c1"># Check status</span>
+service<span class="w"> </span>firewalld<span class="w"> </span>status
+</pre></div>
+</div>
+</div></blockquote>
+</li>
 <li><p>Check that selinux is disabled ( or add rules)</p></li>
 </ul>
 </div></blockquote>
