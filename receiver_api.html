@@ -1,13 +1,15 @@
 <!DOCTYPE html>
-<html class="writer-html5" lang="en" >
+<html class="writer-html5" lang="en">
 <head>
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Receiver &mdash; slsDetectorPackage  documentation</title>
-      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
-      <link rel="stylesheet" href="_static/css/extra.css" type="text/css" />
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css" />
+      <link rel="stylesheet" type="text/css" href="_static/css/extra.css" />
+
+  
   <!--[if lt IE 9]>
     <script src="_static/js/html5shiv.min.js"></script>
   <![endif]-->
@@ -37,7 +39,7 @@
             slsDetectorPackage
           </a>
               <div class="version">
-                8.0.2
+                9.0.0
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
@@ -99,6 +101,19 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="receivers.html">Receivers</a></li>
 <li class="toctree-l1"><a class="reference internal" href="slsreceiver.html">slsReceiver/ slsMultiReceiver</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Receiver Files</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="fileformat.html">File format</a></li>
+<li class="toctree-l1"><a class="reference internal" href="slsreceiverheaderformat.html">SLS Receiver Header Format</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ctbframeformat.html">Chip Test Board Frame Format</a></li>
+<li class="toctree-l1"><a class="reference internal" href="masterfileattributes.html">Master File Attributes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryfileformat.html">Binary File Format</a></li>
+<li class="toctree-l1"><a class="reference internal" href="hdf5fileformat.html">HDF5 File Format</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Receiver ZMQ Stream</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="zmqjsonheaderformat.html">ZMQ: Json Header Format</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Troubleshooting</span></p>
 <ul>
@@ -173,44 +188,31 @@
 </dd></dl>
 
 <dl class="cpp function">
-<dt class="sig sig-object cpp" id="_CPPv4N3sls8Receiver32registerCallBackStartAcquisitionEPFiRKNSt6stringERKNSt6stringE8uint64_t6size_tPvEPv">
-<span id="_CPPv3N3sls8Receiver32registerCallBackStartAcquisitionEPFiRKNSt6stringERKNSt6stringE8uint64_t6size_tPvEPv"></span><span id="_CPPv2N3sls8Receiver32registerCallBackStartAcquisitionEPFiRKNSt6stringERKNSt6stringE8uint64_t6size_tPvEPv"></span><span class="target" id="classsls_1_1Receiver_1a88705fec394a88e4896dab5cc6f5e7e6"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">registerCallBackStartAcquisition</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="p"><span class="pre">(</span></span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">func</span></span><span class="p"><span class="pre">)</span></span><span class="p"><span class="pre">(</span></span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="p"><span class="pre">&amp;</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="p"><span class="pre">&amp;</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">uint64_t</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">size_t</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="p"><span class="pre">*</span></span><span class="p"><span class="pre">)</span></span>, <span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">arg</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3sls8Receiver32registerCallBackStartAcquisitionEPFiRKNSt6stringERKNSt6stringE8uint64_t6size_tPvEPv" title="Permalink to this definition"></a><br /></dt>
-<dd><p>Start Acquisition Call back (slsMultiReceiver writes data if file write enabled) if registerCallBackRawDataReady or registerCallBackRawDataModifyReady registered, users get data callback arguments are:<ul class="simple">
-<li><p>file path</p></li>
-<li><p>file name prefix</p></li>
-<li><p>file index</p></li>
-<li><p>image size in bytes </p></li>
+<dt class="sig sig-object cpp" id="_CPPv4N3sls8Receiver32registerCallBackStartAcquisitionEPFiK19startCallbackHeaderPvEPv">
+<span id="_CPPv3N3sls8Receiver32registerCallBackStartAcquisitionEPFiK19startCallbackHeaderPvEPv"></span><span id="_CPPv2N3sls8Receiver32registerCallBackStartAcquisitionEPFiK19startCallbackHeaderPvEPv"></span><span class="target" id="classsls_1_1Receiver_1ac85d14902b73c445934122e10f399b23"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">registerCallBackStartAcquisition</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="p"><span class="pre">(</span></span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">func</span></span><span class="p"><span class="pre">)</span></span><span class="p"><span class="pre">(</span></span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">startCallbackHeader</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="p"><span class="pre">*</span></span><span class="p"><span class="pre">)</span></span>, <span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">arg</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3sls8Receiver32registerCallBackStartAcquisitionEPFiK19startCallbackHeaderPvEPv" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Start Acquisition Call back (slsMultiReceiver writes data if file write enabled) if registerCallBackRawDataReady or registerCallBackRawDataModifyReady registered Call back arguments are:<ul class="simple">
+<li><p>startCallbackHeader metadata </p></li>
 </ul>
 </p>
 </dd></dl>
 
 <dl class="cpp function">
-<dt class="sig sig-object cpp" id="_CPPv4N3sls8Receiver35registerCallBackAcquisitionFinishedEPFv8uint64_tPvEPv">
-<span id="_CPPv3N3sls8Receiver35registerCallBackAcquisitionFinishedEPFv8uint64_tPvEPv"></span><span id="_CPPv2N3sls8Receiver35registerCallBackAcquisitionFinishedEPFv8uint64_tPvEPv"></span><span class="target" id="classsls_1_1Receiver_1a78b41481215f763138637a7acd4bf98d"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">registerCallBackAcquisitionFinished</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="p"><span class="pre">(</span></span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">func</span></span><span class="p"><span class="pre">)</span></span><span class="p"><span class="pre">(</span></span><span class="n"><span class="pre">uint64_t</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="p"><span class="pre">*</span></span><span class="p"><span class="pre">)</span></span>, <span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">arg</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3sls8Receiver35registerCallBackAcquisitionFinishedEPFv8uint64_tPvEPv" title="Permalink to this definition"></a><br /></dt>
+<dt class="sig sig-object cpp" id="_CPPv4N3sls8Receiver35registerCallBackAcquisitionFinishedEPFvK17endCallbackHeaderPvEPv">
+<span id="_CPPv3N3sls8Receiver35registerCallBackAcquisitionFinishedEPFvK17endCallbackHeaderPvEPv"></span><span id="_CPPv2N3sls8Receiver35registerCallBackAcquisitionFinishedEPFvK17endCallbackHeaderPvEPv"></span><span class="target" id="classsls_1_1Receiver_1a07cdbf0144497e8a95281c7576fdfa0e"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">registerCallBackAcquisitionFinished</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="p"><span class="pre">(</span></span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">func</span></span><span class="p"><span class="pre">)</span></span><span class="p"><span class="pre">(</span></span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">endCallbackHeader</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="p"><span class="pre">*</span></span><span class="p"><span class="pre">)</span></span>, <span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">arg</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3sls8Receiver35registerCallBackAcquisitionFinishedEPFvK17endCallbackHeaderPvEPv" title="Permalink to this definition"></a><br /></dt>
 <dd><p>Call back for acquisition finished callback argument is:<ul class="simple">
-<li><p>total frames caught </p></li>
+<li><p>startCallbackHeader metadata </p></li>
 </ul>
 </p>
 </dd></dl>
 
 <dl class="cpp function">
-<dt class="sig sig-object cpp" id="_CPPv4N3sls8Receiver28registerCallBackRawDataReadyEPFvR19sls_receiver_headerPc6size_tPvEPv">
-<span id="_CPPv3N3sls8Receiver28registerCallBackRawDataReadyEPFvR19sls_receiver_headerPc6size_tPvEPv"></span><span id="_CPPv2N3sls8Receiver28registerCallBackRawDataReadyEPFvR19sls_receiver_headerPc6size_tPvEPv"></span><span class="target" id="classsls_1_1Receiver_1ae5220b3f8e6225b8b13064d433550eb2"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">registerCallBackRawDataReady</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="p"><span class="pre">(</span></span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">func</span></span><span class="p"><span class="pre">)</span></span><span class="p"><span class="pre">(</span></span><span class="n"><span class="pre">sls_receiver_header</span></span><span class="p"><span class="pre">&amp;</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="kt"><span class="pre">char</span></span><span class="p"><span class="pre">*</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">size_t</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="p"><span class="pre">*</span></span><span class="p"><span class="pre">)</span></span>, <span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">arg</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3sls8Receiver28registerCallBackRawDataReadyEPFvR19sls_receiver_headerPc6size_tPvEPv" title="Permalink to this definition"></a><br /></dt>
+<dt class="sig sig-object cpp" id="_CPPv4N3sls8Receiver28registerCallBackRawDataReadyEPFvR19sls_receiver_headerK18dataCallbackHeaderPcR6size_tPvEPv">
+<span id="_CPPv3N3sls8Receiver28registerCallBackRawDataReadyEPFvR19sls_receiver_headerK18dataCallbackHeaderPcR6size_tPvEPv"></span><span id="_CPPv2N3sls8Receiver28registerCallBackRawDataReadyEPFvR19sls_receiver_headerK18dataCallbackHeaderPcR6size_tPvEPv"></span><span class="target" id="classsls_1_1Receiver_1a738fb0a18c470a8b3b1c180024dca004"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">registerCallBackRawDataReady</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="p"><span class="pre">(</span></span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">func</span></span><span class="p"><span class="pre">)</span></span><span class="p"><span class="pre">(</span></span><span class="n"><span class="pre">sls_receiver_header</span></span><span class="p"><span class="pre">&amp;</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">dataCallbackHeader</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="kt"><span class="pre">char</span></span><span class="p"><span class="pre">*</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">size_t</span></span><span class="p"><span class="pre">&amp;</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="p"><span class="pre">*</span></span><span class="p"><span class="pre">)</span></span>, <span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">arg</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3sls8Receiver28registerCallBackRawDataReadyEPFvR19sls_receiver_headerK18dataCallbackHeaderPcR6size_tPvEPv" title="Permalink to this definition"></a><br /></dt>
 <dd><p>Call back for raw data args to raw data ready callback are:<ul class="simple">
 <li><p>sls_receiver_header frame metadata,</p></li>
+<li><p>dataCallbackHeader metadata</p></li>
 <li><p>pointer to data</p></li>
-<li><p>image size in bytes </p></li>
-</ul>
-</p>
-</dd></dl>
-
-<dl class="cpp function">
-<dt class="sig sig-object cpp" id="_CPPv4N3sls8Receiver34registerCallBackRawDataModifyReadyEPFvR19sls_receiver_headerPcR6size_tPvEPv">
-<span id="_CPPv3N3sls8Receiver34registerCallBackRawDataModifyReadyEPFvR19sls_receiver_headerPcR6size_tPvEPv"></span><span id="_CPPv2N3sls8Receiver34registerCallBackRawDataModifyReadyEPFvR19sls_receiver_headerPcR6size_tPvEPv"></span><span class="target" id="classsls_1_1Receiver_1aa1b0e6af2fb81d6533d555cd4e8282a6"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">registerCallBackRawDataModifyReady</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="p"><span class="pre">(</span></span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">func</span></span><span class="p"><span class="pre">)</span></span><span class="p"><span class="pre">(</span></span><span class="n"><span class="pre">sls_receiver_header</span></span><span class="p"><span class="pre">&amp;</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="kt"><span class="pre">char</span></span><span class="p"><span class="pre">*</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">size_t</span></span><span class="p"><span class="pre">&amp;</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="p"><span class="pre">*</span></span><span class="p"><span class="pre">)</span></span>, <span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">arg</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3sls8Receiver34registerCallBackRawDataModifyReadyEPFvR19sls_receiver_headerPcR6size_tPvEPv" title="Permalink to this definition"></a><br /></dt>
-<dd><p>Call back for raw data (modified) args to raw data ready callback are:<ul class="simple">
-<li><p>sls_receiver_header frame metadata,</p></li>
-<li><p>pointer to data</p></li>
-<li><p>revDatasize is the reference of data size in bytes. Can be modified to the new size to be written/streamed. (only smaller value allowed). </p></li>
+<li><p>image size in bytes. Can be modified to the new size to be written/streamed. (only smaller value allowed). </p></li>
 </ul>
 </p>
 </dd></dl>

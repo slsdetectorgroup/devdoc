@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>slsReceiver/ slsMultiReceiver &mdash; slsDetectorPackage  documentation</title>
+  <title>HDF5 File Format &mdash; slsDetectorPackage  documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
       <link rel="stylesheet" type="text/css" href="_static/css/theme.css" />
       <link rel="stylesheet" type="text/css" href="_static/css/extra.css" />
@@ -23,8 +23,8 @@
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="File format" href="fileformat.html" />
-    <link rel="prev" title="Receivers" href="receivers.html" /> 
+    <link rel="next" title="ZMQ: Json Header Format" href="zmqjsonheaderformat.html" />
+    <link rel="prev" title="Binary File Format" href="binaryfileformat.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -98,23 +98,25 @@
 <li class="toctree-l1"><a class="reference internal" href="udpdetspec.html">Detector Specific Fields</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Receiver</span></p>
-<ul class="current">
+<ul>
 <li class="toctree-l1"><a class="reference internal" href="receivers.html">Receivers</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">slsReceiver/ slsMultiReceiver</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#client-commands">Client Commands</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#performance">Performance</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#using-callbacks">Using Callbacks</a></li>
-</ul>
-</li>
+<li class="toctree-l1"><a class="reference internal" href="slsreceiver.html">slsReceiver/ slsMultiReceiver</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Receiver Files</span></p>
-<ul>
+<ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="fileformat.html">File format</a></li>
 <li class="toctree-l1"><a class="reference internal" href="slsreceiverheaderformat.html">SLS Receiver Header Format</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ctbframeformat.html">Chip Test Board Frame Format</a></li>
 <li class="toctree-l1"><a class="reference internal" href="masterfileattributes.html">Master File Attributes</a></li>
 <li class="toctree-l1"><a class="reference internal" href="binaryfileformat.html">Binary File Format</a></li>
-<li class="toctree-l1"><a class="reference internal" href="hdf5fileformat.html">HDF5 File Format</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">HDF5 File Format</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#compilation">Compilation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#setup">Setup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#master-file">Master File</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#data-file">Data File</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#virtual-data-file">Virtual Data File</a></li>
+</ul>
+</li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Receiver ZMQ Stream</span></p>
 <ul>
@@ -139,9 +141,9 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
-      <li class="breadcrumb-item active">slsReceiver/ slsMultiReceiver</li>
+      <li class="breadcrumb-item active">HDF5 File Format</li>
       <li class="wy-breadcrumbs-aside">
-            <a href="_sources/slsreceiver.rst.txt" rel="nofollow"> View page source</a>
+            <a href="_sources/hdf5fileformat.rst.txt" rel="nofollow"> View page source</a>
       </li>
   </ul>
   <hr/>
@@ -149,131 +151,91 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="slsreceiver-slsmultireceiver">
-<h1>slsReceiver/ slsMultiReceiver<a class="headerlink" href="#slsreceiver-slsmultireceiver" title="Permalink to this heading"></a></h1>
-<div class="line-block">
-<div class="line">One has to start the slsReceiver before loading config file or using any receiver commands (prefix: <strong>rx_</strong> )</div>
-</div>
-<dl>
-<dt>For a Single Module</dt><dd><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># default port 1954</span>
-slsReceiver
-
-<span class="c1"># custom port 2012</span>
-slsReceiver<span class="w"> </span>-t2012
-</pre></div>
-</div>
-</dd>
-<dt>For Multiple Modules</dt><dd><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># each receiver (for each module) requires a unique tcp port (if all on same machine)</span>
-
-<span class="c1"># using slsReceiver in multiple consoles</span>
-slsReceiver
-slsReceiver<span class="w"> </span>-t1955
-
-<span class="c1"># slsMultiReceiver [starting port] [number of receivers]</span>
-slsMultiReceiver<span class="w"> </span><span class="m">2012</span><span class="w"> </span><span class="m">2</span>
-
-<span class="c1"># slsMultiReceiver [starting port] [number of receivers] [print each frame header for debugging]</span>
-slsMultiReceiver<span class="w"> </span><span class="m">2012</span><span class="w"> </span><span class="m">2</span><span class="w"> </span><span class="m">1</span>
-</pre></div>
-</div>
-</dd>
-</dl>
-<section id="client-commands">
-<h2>Client Commands<a class="headerlink" href="#client-commands" title="Permalink to this heading"></a></h2>
-<div class="line-block">
-<div class="line">One can remove <strong>udp_dstmac</strong> from the config file, as the slsReceiver fetches this from the <strong>udp_ip</strong>.</div>
-</div>
-<div class="line-block">
-<div class="line">One can use “auto” for <strong>udp_dstip</strong> if one wants to use default ip of <strong>rx_hostname</strong>.</div>
-</div>
-<div class="line-block">
-<div class="line">The first command to the receiver (<strong>rx_</strong> commands) should be <strong>rx_hostname</strong>. The following are the different ways to establish contact.</div>
-</div>
+  <section id="hdf5-file-format">
+<h1>HDF5 File Format<a class="headerlink" href="#hdf5-file-format" title="Permalink to this heading"></a></h1>
+<section id="compilation">
+<h2>Compilation<a class="headerlink" href="#compilation" title="Permalink to this heading"></a></h2>
+<ol class="arabic">
+<li><p>Compile the package with HDF5 option enabled</p>
 <blockquote>
-<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># default receiver tcp port (1954)</span>
-rx_hostname<span class="w"> </span>xxx
-
-<span class="c1"># custom receiver port</span>
-rx_hostname<span class="w"> </span>xxx:1957
-
-<span class="c1"># custom receiver port</span>
-rx_tcpport<span class="w"> </span><span class="m">1954</span>
-rx_hostname<span class="w"> </span>xxx
-
-<span class="c1"># multi modules with custom ports</span>
-rx_hostname<span class="w"> </span>xxx:1955+xxx:1956+
-
-
-<span class="c1"># multi modules using increasing tcp ports when using multi detector command</span>
-rx_tcpport<span class="w"> </span><span class="m">1955</span>
-rx_hostname<span class="w"> </span>xxx
-
-<span class="c1"># or specify multi modules with custom ports on same rxr pc</span>
-<span class="m">0</span>:rx_tcpport<span class="w"> </span><span class="m">1954</span>
-<span class="m">1</span>:rx_tcpport<span class="w"> </span><span class="m">1955</span>
-<span class="m">2</span>:rx_tcpport<span class="w"> </span><span class="m">1956</span>
-rx_hostname<span class="w"> </span>xxx
-
-<span class="c1"># multi modules with custom ports on different rxr pc</span>
-<span class="m">0</span>:rx_tcpport<span class="w"> </span><span class="m">1954</span>
-<span class="m">0</span>:rx_hostname<span class="w"> </span>xxx
-<span class="m">1</span>:rx_tcpport<span class="w"> </span><span class="m">1955</span>
-<span class="m">1</span>:rx_hostname<span class="w"> </span>yyy
-</pre></div>
-</div>
+<div><ol class="arabic simple">
+<li><p>Using cmk script: ./cmk.sh -hj9 -d [path of hdf5 dir] (-d is optional and for custom installation folder)</p></li>
+<li><p>Enable using cmake option <strong>-DSLS_USE_HDF5=ON</strong> and <strong>-DCMAKE_INSTALL_PREFIX=/path/to/custom/hdf/installation</strong> (optional).</p></li>
+</ol>
 </div></blockquote>
-<div class="line-block">
-<div class="line">Example commands:</div>
-</div>
-<blockquote>
-<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># to get a list of receiver commands (these dont include file commands)</span>
-sls_detector_get<span class="w"> </span>list<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>rx_
-
-<span class="c1"># some file commands are:</span>
-fwrite
-foverwrite
-findex
-fpath
-fname
-fmaster
-fformat
-
-<span class="c1"># to get help on a single commands</span>
-sls_detector_get<span class="w"> </span>-h<span class="w"> </span>rx_framescaught
-</pre></div>
-</div>
-</div></blockquote>
+</li>
+</ol>
 </section>
-<section id="performance">
-<h2>Performance<a class="headerlink" href="#performance" title="Permalink to this heading"></a></h2>
-<p>Please refer to Receiver PC Tuning options and slsReceiver Tuning under <a class="reference external" href="https://slsdetectorgroup.github.io/devdoc/troubleshooting.html">Troubleshooting</a>.</p>
-</section>
-<section id="using-callbacks">
-<h2>Using Callbacks<a class="headerlink" href="#using-callbacks" title="Permalink to this heading"></a></h2>
-<dl class="simple">
-<dt>One can get a callback in the receiver for each frame to:</dt><dd><ul class="simple">
-<li><p>manipulate the data that will be written to file, or</p></li>
-<li><p>disable file writing in slsReceiver and take care of the data for each call back</p></li>
-</ul>
-</dd>
-</dl>
-<p>When handling callbacks, the control should be returned as soon as possible, to prevent packet loss from fifo being full.</p>
-<dl>
-<dt><strong>Example</strong></dt><dd><ul>
-<li><p><a class="reference external" href="https://github.com/slsdetectorgroup/api-examples/blob/master/e4-receiver_callbacks.cpp">main cpp file</a></p></li>
-<li><p><a class="reference external" href="https://github.com/slsdetectorgroup/api-examples/blob/master/CMakeLists.txt">cmake file</a>.</p></li>
-<li><p>how to install the slsDetectorPackage with cmake is provided <a class="reference internal" href="installation.html#build-from-source-using-cmake"><span class="std std-ref">here</span></a>.</p></li>
-<li><p>compile the example <strong>e4-rxr</strong> by:</p>
+<section id="setup">
+<h2>Setup<a class="headerlink" href="#setup" title="Permalink to this heading"></a></h2>
+<ol class="arabic">
+<li><p>Start Receiver process</p></li>
+<li><p>Load config file</p></li>
+<li><p>Set file format using command <a class="reference external" href="commandline.html#term-fformat-binary-hdf5">fformat</a>.</p>
 <blockquote>
-<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>cmake<span class="w"> </span>../path/to/your/source<span class="w"> </span>-DCMAKE_PREFIX_PATH<span class="o">=</span>/path/to/sls/install
-make
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sls_detector_put<span class="w"> </span>fformat<span class="w"> </span>hdf5
 </pre></div>
 </div>
 </div></blockquote>
 </li>
+</ol>
+</section>
+<section id="master-file">
+<h2>Master File<a class="headerlink" href="#master-file" title="Permalink to this heading"></a></h2>
+<ul class="simple">
+<li><p>File Name: [fpath]/[fname]_master_[findex].h5 <a class="reference internal" href="fileformat.html#file-name-format"><span class="std std-ref">Details here</span></a></p></li>
+<li><p>It contains  <a class="reference internal" href="masterfileattributes.html#master-file-attributes"><span class="std std-ref">attributes</span></a> relevant to the acquisition. This can vary with detector type.</p></li>
+</ul>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>/                                               # Root level
+|---&gt; entry                                     # entry group
+|    |---&gt; data                                 # data group
+|         |---&gt; column                          # dataset of each sls_receiver_header member
+|         |---&gt; data
+|         |---&gt; detector header version
+|         |---&gt; detector specific 1
+|         |---&gt; detector specific 2
+|         |---&gt; detector specific 3
+|         |---&gt; detector specific 4
+|         |---&gt; detector type
+|         |---&gt; exp length or sub exposure time
+|         |---&gt; frame number
+|         |---&gt; mod id
+|         |---&gt; packets caught
+|         |---&gt; packets caught bit mask
+|         |---&gt; row
+|         |---&gt; timestamp
+|    |---&gt; instrument                           # instrument group
+|         |---&gt; beam                            # beam group
+|         |---&gt; detector                        # detector group
+|              |---&gt; Master File Attribute 1    # dataset of each master file attribute
+|              |---&gt; Master File Attribute 2
+|              |---&gt; Master File Attribute 3
+|              |---&gt; Master File Attribute ..
+|    |---&gt; sample                               # sample group
+</pre></div>
+</div>
+<dl class="simple">
+<dt>If more than 1 data file per frame:</dt><dd><ul class="simple">
+<li><p>The dataset of each <a class="reference internal" href="slsreceiverheaderformat.html#sls-receiver-header-format"><span class="std std-ref">**SLS Receiver Header**</span></a> member is a virtual dataset.</p></li>
+<li><p><strong>data</strong> dataset is a virtual dataset.</p></li>
 </ul>
 </dd>
 </dl>
+<p>More details regarding master file attributes can be found <a class="reference internal" href="masterfileattributes.html#master-file-attributes"><span class="std std-ref">here</span></a>.</p>
+</section>
+<section id="data-file">
+<h2>Data File<a class="headerlink" href="#data-file" title="Permalink to this heading"></a></h2>
+<ul class="simple">
+<li><p>File Name: [fpath]/[fname]_dx_fy_[findex].h5 <a class="reference internal" href="fileformat.html#file-name-format"><span class="std std-ref">Details here</span></a></p></li>
+</ul>
+</section>
+<section id="virtual-data-file">
+<h2>Virtual Data File<a class="headerlink" href="#virtual-data-file" title="Permalink to this heading"></a></h2>
+<ul class="simple">
+<li><p>File Name: [fpath]/[fname]_virtual_[findex].h5 <a class="reference internal" href="fileformat.html#file-name-format"><span class="std std-ref">Details here</span></a></p></li>
+<li><p>For multiple modules, a virtual file linking data from all the modules is created. The individual files are expected to be present.</p></li>
+<li><p>It is linked in the master file.</p></li>
+</ul>
 </section>
 </section>
 
@@ -281,8 +243,8 @@ make
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="receivers.html" class="btn btn-neutral float-left" title="Receivers" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="fileformat.html" class="btn btn-neutral float-right" title="File format" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="binaryfileformat.html" class="btn btn-neutral float-left" title="Binary File Format" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="zmqjsonheaderformat.html" class="btn btn-neutral float-right" title="ZMQ: Json Header Format" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>

@@ -1,13 +1,15 @@
 <!DOCTYPE html>
-<html class="writer-html5" lang="en" >
+<html class="writer-html5" lang="en">
 <head>
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Detector &mdash; slsDetectorPackage  documentation</title>
-      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
-      <link rel="stylesheet" href="_static/css/extra.css" type="text/css" />
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css" />
+      <link rel="stylesheet" type="text/css" href="_static/css/extra.css" />
+
+  
   <!--[if lt IE 9]>
     <script src="_static/js/html5shiv.min.js"></script>
   <![endif]-->
@@ -37,7 +39,7 @@
             slsDetectorPackage
           </a>
               <div class="version">
-                8.0.2
+                9.0.0
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
@@ -100,6 +102,19 @@
 <li class="toctree-l1"><a class="reference internal" href="receivers.html">Receivers</a></li>
 <li class="toctree-l1"><a class="reference internal" href="slsreceiver.html">slsReceiver/ slsMultiReceiver</a></li>
 </ul>
+<p class="caption" role="heading"><span class="caption-text">Receiver Files</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="fileformat.html">File format</a></li>
+<li class="toctree-l1"><a class="reference internal" href="slsreceiverheaderformat.html">SLS Receiver Header Format</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ctbframeformat.html">Chip Test Board Frame Format</a></li>
+<li class="toctree-l1"><a class="reference internal" href="masterfileattributes.html">Master File Attributes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryfileformat.html">Binary File Format</a></li>
+<li class="toctree-l1"><a class="reference internal" href="hdf5fileformat.html">HDF5 File Format</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Receiver ZMQ Stream</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="zmqjsonheaderformat.html">ZMQ: Json Header Format</a></li>
+</ul>
 <p class="caption" role="heading"><span class="caption-text">Troubleshooting</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="troubleshooting.html">Troubleshooting</a></li>
@@ -161,10 +176,24 @@ containing results from all modules. (<a class="reference internal" href="result
 <dd></dd></dl>
 
 <dl class="cpp function">
-<dt class="sig sig-object cpp" id="_CPPv4N3sls8Detector16freeSharedMemoryEv">
-<span id="_CPPv3N3sls8Detector16freeSharedMemoryEv"></span><span id="_CPPv2N3sls8Detector16freeSharedMemoryEv"></span><span id="sls::Detector::freeSharedMemory"></span><span class="target" id="classsls_1_1Detector_1a4489f3635a5722451ded5f7a2e423297"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">freeSharedMemory</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3sls8Detector16freeSharedMemoryEv" title="Permalink to this definition"></a><br /></dt>
-<dd><p>Free the shared memory of this detector and all modules belonging to it </p>
-</dd></dl>
+<dt class="sig sig-object cpp" id="_CPPv4N3sls8Detector8DetectorERK8Detector">
+<span id="_CPPv3N3sls8Detector8DetectorERK8Detector"></span><span id="_CPPv2N3sls8Detector8DetectorERK8Detector"></span><span id="sls::Detector::Detector__DetectorCR"></span><span class="target" id="classsls_1_1Detector_1ab0f1c3d7fa67117d2d8d1cf51525ece1"></span><span class="sig-name descname"><span class="n"><span class="pre">Detector</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N3sls8Detector8DetectorERK8Detector" title="sls::Detector::Detector"><span class="n"><span class="pre">Detector</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">other</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="k"><span class="pre">delete</span></span><a class="headerlink" href="#_CPPv4N3sls8Detector8DetectorERK8Detector" title="Permalink to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N3sls8DetectoraSERK8Detector">
+<span id="_CPPv3N3sls8DetectoraSERK8Detector"></span><span id="_CPPv2N3sls8DetectoraSERK8Detector"></span><span id="sls::Detector::assign-operator__DetectorCR"></span><span class="target" id="classsls_1_1Detector_1af974b81c6ae757d9e9809cd8e7756654"></span><a class="reference internal" href="#_CPPv4N3sls8DetectorE" title="sls::Detector"><span class="n"><span class="pre">Detector</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="k"><span class="pre">operator</span></span><span class="o"><span class="pre">=</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N3sls8DetectorE" title="sls::Detector"><span class="n"><span class="pre">Detector</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">other</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="k"><span class="pre">delete</span></span><a class="headerlink" href="#_CPPv4N3sls8DetectoraSERK8Detector" title="Permalink to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N3sls8Detector8DetectorERR8Detector">
+<span id="_CPPv3N3sls8Detector8DetectorERR8Detector"></span><span id="_CPPv2N3sls8Detector8DetectorERR8Detector"></span><span id="sls::Detector::Detector__DetectorRR"></span><span class="target" id="classsls_1_1Detector_1a9cddd792d2525b6fc4ae0facb604c6d2"></span><span class="sig-name descname"><span class="n"><span class="pre">Detector</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4N3sls8Detector8DetectorERR8Detector" title="sls::Detector::Detector"><span class="n"><span class="pre">Detector</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">other</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">noexcept</span></span><a class="headerlink" href="#_CPPv4N3sls8Detector8DetectorERR8Detector" title="Permalink to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N3sls8DetectoraSERR8Detector">
+<span id="_CPPv3N3sls8DetectoraSERR8Detector"></span><span id="_CPPv2N3sls8DetectoraSERR8Detector"></span><span id="sls::Detector::assign-operator__DetectorRR"></span><span class="target" id="classsls_1_1Detector_1ae56d6508217c60198aa28f4fdad03070"></span><a class="reference internal" href="#_CPPv4N3sls8DetectorE" title="sls::Detector"><span class="n"><span class="pre">Detector</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="k"><span class="pre">operator</span></span><span class="o"><span class="pre">=</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4N3sls8DetectorE" title="sls::Detector"><span class="n"><span class="pre">Detector</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">other</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">noexcept</span></span><a class="headerlink" href="#_CPPv4N3sls8DetectoraSERR8Detector" title="Permalink to this definition"></a><br /></dt>
+<dd></dd></dl>
 
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4N3sls8Detector10loadConfigERKNSt6stringE">
@@ -209,8 +238,7 @@ containing results from all modules. (<a class="reference internal" href="result
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4NK3sls8Detector17getPackageVersionEv">
 <span id="_CPPv3NK3sls8Detector17getPackageVersionEv"></span><span id="_CPPv2NK3sls8Detector17getPackageVersionEv"></span><span id="sls::Detector::getPackageVersionC"></span><span class="target" id="classsls_1_1Detector_1a02602d6a07a3425b08a0a1d4137802c6"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getPackageVersion</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK3sls8Detector17getPackageVersionEv" title="Permalink to this definition"></a><br /></dt>
-<dd><p>package git branch </p>
-</dd></dl>
+<dd></dd></dl>
 
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4NK3sls8Detector16getClientVersionEv">
@@ -262,7 +290,7 @@ containing results from all modules. (<a class="reference internal" href="result
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4NK3sls8Detector15getDetectorTypeE9Positions">
 <span id="_CPPv3NK3sls8Detector15getDetectorTypeE9Positions"></span><span id="_CPPv2NK3sls8Detector15getDetectorTypeE9Positions"></span><span id="sls::Detector::getDetectorType__PositionsC"></span><span class="target" id="classsls_1_1Detector_1a2cab258d3882548cbaf4c29135c012d1"></span><a class="reference internal" href="result.html#_CPPv4I00EN3sls6ResultE" title="sls::Result"><span class="n"><span class="pre">Result</span></span></a><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">defs</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">detectorType</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getDetectorType</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">Positions</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">pos</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="p"><span class="pre">{</span></span><span class="p"><span class="pre">}</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK3sls8Detector15getDetectorTypeE9Positions" title="Permalink to this definition"></a><br /></dt>
-<dd><p>Options: EIGER, JUNGFRAU, GOTTHARD, MOENCH, MYTHEN3, GOTTHARD2, CHIPTESTBOARD </p>
+<dd><p>Options: EIGER, JUNGFRAU, GOTTHARD, MOENCH, MYTHEN3, GOTTHARD2, CHIPTESTBOARD, XILINX_CHIPTESTBOARD </p>
 </dd></dl>
 
 <dl class="cpp function">
@@ -564,7 +592,7 @@ containing results from all modules. (<a class="reference internal" href="result
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4NK3sls8Detector10getExptimeE9Positions">
 <span id="_CPPv3NK3sls8Detector10getExptimeE9Positions"></span><span id="_CPPv2NK3sls8Detector10getExptimeE9Positions"></span><span id="sls::Detector::getExptime__PositionsC"></span><span class="target" id="classsls_1_1Detector_1aa0e7f017c3a7c7604c246499cddd7e33"></span><a class="reference internal" href="result.html#_CPPv4I00EN3sls6ResultE" title="sls::Result"><span class="n"><span class="pre">Result</span></span></a><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">ns</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getExptime</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">Positions</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">pos</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="p"><span class="pre">{</span></span><span class="p"><span class="pre">}</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK3sls8Detector10getExptimeE9Positions" title="Permalink to this definition"></a><br /></dt>
-<dd><p><p>[Gotthard][Jungfrau][Moench][Eiger][CTB][Gotthard2]</p>
+<dd><p><p>[Gotthard][Jungfrau][Moench][Eiger][CTB][Xilinx CTB][Gotthard2]</p>
 <p>[Mythen3] use function with gate index</p>
 </p>
 </dd></dl>
@@ -572,7 +600,7 @@ containing results from all modules. (<a class="reference internal" href="result
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4N3sls8Detector10setExptimeE2ns9Positions">
 <span id="_CPPv3N3sls8Detector10setExptimeE2ns9Positions"></span><span id="_CPPv2N3sls8Detector10setExptimeE2ns9Positions"></span><span id="sls::Detector::setExptime__ns.Positions"></span><span class="target" id="classsls_1_1Detector_1a9952b05b2fa13c6638162bfc3bb63f55"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setExptime</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">ns</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">t</span></span>, <span class="n"><span class="pre">Positions</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">pos</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="p"><span class="pre">{</span></span><span class="p"><span class="pre">}</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3sls8Detector10setExptimeE2ns9Positions" title="Permalink to this definition"></a><br /></dt>
-<dd><p><p>[Gotthard][Jungfrau][Moench][Eiger][CTB][Gotthard2]</p>
+<dd><p><p>[Gotthard][Jungfrau][Moench][Eiger][CTB][Xilinx CTB][Gotthard2]</p>
 <p>[Mythen3] sets exptime for all gate signals. To specify gate index, use function with gate index</p>
 </p>
 </dd></dl>
@@ -590,37 +618,37 @@ containing results from all modules. (<a class="reference internal" href="result
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4NK3sls8Detector20getDelayAfterTriggerE9Positions">
 <span id="_CPPv3NK3sls8Detector20getDelayAfterTriggerE9Positions"></span><span id="_CPPv2NK3sls8Detector20getDelayAfterTriggerE9Positions"></span><span id="sls::Detector::getDelayAfterTrigger__PositionsC"></span><span class="target" id="classsls_1_1Detector_1afaaf6bc8250bb2fbfbae21a29235fd16"></span><a class="reference internal" href="result.html#_CPPv4I00EN3sls6ResultE" title="sls::Result"><span class="n"><span class="pre">Result</span></span></a><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">ns</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getDelayAfterTrigger</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">Positions</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">pos</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="p"><span class="pre">{</span></span><span class="p"><span class="pre">}</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK3sls8Detector20getDelayAfterTriggerE9Positions" title="Permalink to this definition"></a><br /></dt>
-<dd><p>[Gotthard][Jungfrau][Moench][CTB][Mythen3][Gotthard2] </p>
+<dd><p>[Gotthard][Jungfrau][Moench][CTB][Mythen3][Gotthard2][Xilinx CTB] </p>
 </dd></dl>
 
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4N3sls8Detector20setDelayAfterTriggerE2ns9Positions">
 <span id="_CPPv3N3sls8Detector20setDelayAfterTriggerE2ns9Positions"></span><span id="_CPPv2N3sls8Detector20setDelayAfterTriggerE2ns9Positions"></span><span id="sls::Detector::setDelayAfterTrigger__ns.Positions"></span><span class="target" id="classsls_1_1Detector_1a0c9c41fbaa6d7e9e08401a18d324769d"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setDelayAfterTrigger</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">ns</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">value</span></span>, <span class="n"><span class="pre">Positions</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">pos</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="p"><span class="pre">{</span></span><span class="p"><span class="pre">}</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3sls8Detector20setDelayAfterTriggerE2ns9Positions" title="Permalink to this definition"></a><br /></dt>
-<dd><p>[Gotthard][Jungfrau][Moench][CTB][Mythen3][Gotthard2] </p>
+<dd><p>[Gotthard][Jungfrau][Moench][CTB][Mythen3][Gotthard2][Xilinx CTB] </p>
 </dd></dl>
 
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4NK3sls8Detector21getNumberOfFramesLeftE9Positions">
 <span id="_CPPv3NK3sls8Detector21getNumberOfFramesLeftE9Positions"></span><span id="_CPPv2NK3sls8Detector21getNumberOfFramesLeftE9Positions"></span><span id="sls::Detector::getNumberOfFramesLeft__PositionsC"></span><span class="target" id="classsls_1_1Detector_1aa2656e4b7de1c39070128203a0d25b6c"></span><a class="reference internal" href="result.html#_CPPv4I00EN3sls6ResultE" title="sls::Result"><span class="n"><span class="pre">Result</span></span></a><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">int64_t</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getNumberOfFramesLeft</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">Positions</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">pos</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="p"><span class="pre">{</span></span><span class="p"><span class="pre">}</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK3sls8Detector21getNumberOfFramesLeftE9Positions" title="Permalink to this definition"></a><br /></dt>
-<dd><p>[Gotthard][Jungfrau][Moench][CTB][Mythen3] [Gotthard2] only in continuous auto mode </p>
+<dd><p>[Gotthard][Jungfrau][Moench][CTB][Mythen3][Xilinx CTB] [Gotthard2] only in continuous auto mode </p>
 </dd></dl>
 
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4NK3sls8Detector23getNumberOfTriggersLeftE9Positions">
 <span id="_CPPv3NK3sls8Detector23getNumberOfTriggersLeftE9Positions"></span><span id="_CPPv2NK3sls8Detector23getNumberOfTriggersLeftE9Positions"></span><span id="sls::Detector::getNumberOfTriggersLeft__PositionsC"></span><span class="target" id="classsls_1_1Detector_1ada986689fc89d28f43badf09652af25a"></span><a class="reference internal" href="result.html#_CPPv4I00EN3sls6ResultE" title="sls::Result"><span class="n"><span class="pre">Result</span></span></a><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">int64_t</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getNumberOfTriggersLeft</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">Positions</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">pos</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="p"><span class="pre">{</span></span><span class="p"><span class="pre">}</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK3sls8Detector23getNumberOfTriggersLeftE9Positions" title="Permalink to this definition"></a><br /></dt>
-<dd><p>[Gotthard][Jungfrau][Moench][CTB][Mythen3] Only when external trigger used </p>
+<dd><p>[Gotthard][Jungfrau][Moench][CTB][Mythen3][Xilinx CTB] Only when external trigger used </p>
 </dd></dl>
 
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4NK3sls8Detector13getPeriodLeftE9Positions">
 <span id="_CPPv3NK3sls8Detector13getPeriodLeftE9Positions"></span><span id="_CPPv2NK3sls8Detector13getPeriodLeftE9Positions"></span><span id="sls::Detector::getPeriodLeft__PositionsC"></span><span class="target" id="classsls_1_1Detector_1a16d262eda93be2c1713f4e47661fc67f"></span><a class="reference internal" href="result.html#_CPPv4I00EN3sls6ResultE" title="sls::Result"><span class="n"><span class="pre">Result</span></span></a><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">ns</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getPeriodLeft</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">Positions</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">pos</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="p"><span class="pre">{</span></span><span class="p"><span class="pre">}</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK3sls8Detector13getPeriodLeftE9Positions" title="Permalink to this definition"></a><br /></dt>
-<dd><p>[Gotthard][Jungfrau][Moench][CTB][Mythen3][Gotthard2] [Gotthard2] only in continuous mode </p>
+<dd><p>[Gotthard][Jungfrau][Moench][CTB][Mythen3][Gotthard2][Xilinx CTB] [Gotthard2] only in continuous mode </p>
 </dd></dl>
 
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4NK3sls8Detector24getDelayAfterTriggerLeftE9Positions">
 <span id="_CPPv3NK3sls8Detector24getDelayAfterTriggerLeftE9Positions"></span><span id="_CPPv2NK3sls8Detector24getDelayAfterTriggerLeftE9Positions"></span><span id="sls::Detector::getDelayAfterTriggerLeft__PositionsC"></span><span class="target" id="classsls_1_1Detector_1aff53f48493e9dfebcf16fe647cbafafc"></span><a class="reference internal" href="result.html#_CPPv4I00EN3sls6ResultE" title="sls::Result"><span class="n"><span class="pre">Result</span></span></a><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">ns</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getDelayAfterTriggerLeft</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">Positions</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">pos</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="p"><span class="pre">{</span></span><span class="p"><span class="pre">}</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK3sls8Detector24getDelayAfterTriggerLeftE9Positions" title="Permalink to this definition"></a><br /></dt>
-<dd><p>[Gotthard][Jungfrau][Moench][CTB][Mythen3] [Gotthard2] only in continuous mode </p>
+<dd><p>[Gotthard][Jungfrau][Moench][CTB][Mythen3][Xilinx CTB] [Gotthard2] only in continuous mode </p>
 </dd></dl>
 
 <dl class="cpp function">
@@ -634,7 +662,7 @@ containing results from all modules. (<a class="reference internal" href="result
 <dd><p><p>[Eiger] Options: 4, 8, 12, 16, 32. If i is 32, also sets clkdivider to 2, else sets clkdivider to 1</p>
 <p>[Mythen3] Options: 8, 16, 32</p>
 
-[Jungfrau][Moench][Gotthard][Ctb][Mythen3][Gotthard2] 16 </p>
+[Jungfrau][Moench][Gotthard][CTB][Mythen3][Gotthard2][Xilinx CTB] 16 </p>
 </dd></dl>
 
 <dl class="cpp function">
@@ -651,10 +679,10 @@ containing results from all modules. (<a class="reference internal" href="result
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4N3sls8Detector13setTimingModeEN4defs10timingModeE9Positions">
 <span id="_CPPv3N3sls8Detector13setTimingModeEN4defs10timingModeE9Positions"></span><span id="_CPPv2N3sls8Detector13setTimingModeEN4defs10timingModeE9Positions"></span><span id="sls::Detector::setTimingMode__defs::timingMode.Positions"></span><span class="target" id="classsls_1_1Detector_1a9535c7962dded9c8f21ed35683876726"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setTimingMode</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">defs</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">timingMode</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">value</span></span>, <span class="n"><span class="pre">Positions</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">pos</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="p"><span class="pre">{</span></span><span class="p"><span class="pre">}</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3sls8Detector13setTimingModeEN4defs10timingModeE9Positions" title="Permalink to this definition"></a><br /></dt>
-<dd><p><p>[Gotthard][Jungfrau][Moench][Gotthard][CTB][Gotthard2] Options: AUTO_TIMING, TRIGGER_EXPOSURE</p>
+<dd><p><p>[Gotthard][Jungfrau][Moench][Gotthard][CTB][Gotthard2][Xilinx CTB] Options: AUTO_TIMING, TRIGGER_EXPOSURE</p>
 <p>[Mythen3] Options: AUTO_TIMING, TRIGGER_EXPOSURE, GATED, TRIGGER_GATED</p>
 
-[Eiger] Options: AUTO_TIMING, TRIGGER_EXPOSURE, GATED, BURST_TRIGGER </p>
+ [Eiger] Options: AUTO_TIMING, TRIGGER_EXPOSURE, GATED, BURST_TRIGGER </p>
 </dd></dl>
 
 <dl class="cpp function">
@@ -666,13 +694,13 @@ containing results from all modules. (<a class="reference internal" href="result
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4NK3sls8Detector15getReadoutSpeedE9Positions">
 <span id="_CPPv3NK3sls8Detector15getReadoutSpeedE9Positions"></span><span id="_CPPv2NK3sls8Detector15getReadoutSpeedE9Positions"></span><span id="sls::Detector::getReadoutSpeed__PositionsC"></span><span class="target" id="classsls_1_1Detector_1a5eb6017c15474c7d400453af322622f0"></span><a class="reference internal" href="result.html#_CPPv4I00EN3sls6ResultE" title="sls::Result"><span class="n"><span class="pre">Result</span></span></a><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">defs</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">speedLevel</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getReadoutSpeed</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">Positions</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">pos</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="p"><span class="pre">{</span></span><span class="p"><span class="pre">}</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK3sls8Detector15getReadoutSpeedE9Positions" title="Permalink to this definition"></a><br /></dt>
-<dd><p>[Eiger][Jungfrau][Moench][Gotthard2] </p>
+<dd><p>[Eiger][Jungfrau][Moench][Gotthard2][Mythen3] </p>
 </dd></dl>
 
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4N3sls8Detector15setReadoutSpeedEN4defs10speedLevelE9Positions">
 <span id="_CPPv3N3sls8Detector15setReadoutSpeedEN4defs10speedLevelE9Positions"></span><span id="_CPPv2N3sls8Detector15setReadoutSpeedEN4defs10speedLevelE9Positions"></span><span id="sls::Detector::setReadoutSpeed__defs::speedLevel.Positions"></span><span class="target" id="classsls_1_1Detector_1a91e6c9dd91fb1945956214a4eccd704b"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setReadoutSpeed</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">defs</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">speedLevel</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">value</span></span>, <span class="n"><span class="pre">Positions</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">pos</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="p"><span class="pre">{</span></span><span class="p"><span class="pre">}</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3sls8Detector15setReadoutSpeedEN4defs10speedLevelE9Positions" title="Permalink to this definition"></a><br /></dt>
-<dd><p><p>[Eiger][Jungfrau][Moench][Gotthard2] [Jungfrau] Options: FULL_SPEED, HALF_SPEED (Default), QUARTER_SPEED</p>
+<dd><p><p>[Eiger][Jungfrau][Moench][Gotthard2] [Jungfrau][Mythen3] Options: FULL_SPEED, HALF_SPEED (Default), QUARTER_SPEED</p>
 <p>[Moench] Options: FULL_SPEED (Default)</p>
 <p>[Eiger] Options: FULL_SPEED (Default), HALF_SPEED, QUARTER_SPEED</p>
 <p>[Gotthard2] Options: G2_108MHZ (Default), G2_144MHZ</p>
@@ -772,7 +800,9 @@ containing results from all modules. (<a class="reference internal" href="result
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4N3sls8Detector13setClockPhaseEii9Positions">
 <span id="_CPPv3N3sls8Detector13setClockPhaseEii9Positions"></span><span id="_CPPv2N3sls8Detector13setClockPhaseEii9Positions"></span><span id="sls::Detector::setClockPhase__i.i.Positions"></span><span class="target" id="classsls_1_1Detector_1a1affc99b87a777f16c8e7a062362f9c2"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setClockPhase</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">clkIndex</span></span>, <span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">value</span></span>, <span class="n"><span class="pre">Positions</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">pos</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="p"><span class="pre">{</span></span><span class="p"><span class="pre">}</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3sls8Detector13setClockPhaseEii9Positions" title="Permalink to this definition"></a><br /></dt>
-<dd><p>[Mythen3][Gotthard2] absolute phase shift </p>
+<dd><p><p>[Mythen3][Gotthard2] absolute phase shift</p>
+<p>[Gotthard2] clkIndex: 0-5, [Mythen3] clkIndex 0 only</p>
+</p>
 </dd></dl>
 
 <dl class="cpp function">
@@ -790,7 +820,9 @@ containing results from all modules. (<a class="reference internal" href="result
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4N3sls8Detector22setClockPhaseinDegreesEii9Positions">
 <span id="_CPPv3N3sls8Detector22setClockPhaseinDegreesEii9Positions"></span><span id="_CPPv2N3sls8Detector22setClockPhaseinDegreesEii9Positions"></span><span id="sls::Detector::setClockPhaseinDegrees__i.i.Positions"></span><span class="target" id="classsls_1_1Detector_1afd5e3004037a379e1e8570aa4a39cd49"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setClockPhaseinDegrees</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">clkIndex</span></span>, <span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">value</span></span>, <span class="n"><span class="pre">Positions</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">pos</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="p"><span class="pre">{</span></span><span class="p"><span class="pre">}</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3sls8Detector22setClockPhaseinDegreesEii9Positions" title="Permalink to this definition"></a><br /></dt>
-<dd><p>[Mythen3][Gotthard2] </p>
+<dd><p><p>[Mythen3][Gotthard2]</p>
+<p>[Gotthard2] clkIndex: 0-5, [Mythen3] clkIndex 0 only</p>
+</p>
 </dd></dl>
 
 <dl class="cpp function">
@@ -802,7 +834,9 @@ containing results from all modules. (<a class="reference internal" href="result
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4N3sls8Detector15setClockDividerEii9Positions">
 <span id="_CPPv3N3sls8Detector15setClockDividerEii9Positions"></span><span id="_CPPv2N3sls8Detector15setClockDividerEii9Positions"></span><span id="sls::Detector::setClockDivider__i.i.Positions"></span><span class="target" id="classsls_1_1Detector_1ac6ffe00aad492a4a8af352580b49adcd"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setClockDivider</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">clkIndex</span></span>, <span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">value</span></span>, <span class="n"><span class="pre">Positions</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">pos</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="p"><span class="pre">{</span></span><span class="p"><span class="pre">}</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3sls8Detector15setClockDividerEii9Positions" title="Permalink to this definition"></a><br /></dt>
-<dd><p>[Mythen3][Gotthard2] Must be greater than 1. </p>
+<dd><p><p>[Mythen3][Gotthard2] Must be greater than 1.</p>
+<p>[Gotthard2] clkIndex: 0-5, [Mythen3] clkIndex 0 only</p>
+</p>
 </dd></dl>
 
 <dl class="cpp function">
@@ -819,17 +853,18 @@ containing results from all modules. (<a class="reference internal" href="result
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4NK3sls8Detector12getPowerChipE9Positions">
 <span id="_CPPv3NK3sls8Detector12getPowerChipE9Positions"></span><span id="_CPPv2NK3sls8Detector12getPowerChipE9Positions"></span><span id="sls::Detector::getPowerChip__PositionsC"></span><span class="target" id="classsls_1_1Detector_1a61ac65934de90d32ce16b7b7ae250511"></span><a class="reference internal" href="result.html#_CPPv4I00EN3sls6ResultE" title="sls::Result"><span class="n"><span class="pre">Result</span></span></a><span class="p"><span class="pre">&lt;</span></span><span class="kt"><span class="pre">bool</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getPowerChip</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">Positions</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">pos</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="p"><span class="pre">{</span></span><span class="p"><span class="pre">}</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK3sls8Detector12getPowerChipE9Positions" title="Permalink to this definition"></a><br /></dt>
-<dd><p>[Jungfrau][Moench][Mythen3][Gotthard2] </p>
+<dd><p>[Jungfrau][Moench][Mythen3][Gotthard2][Xilinx Ctb] </p>
 </dd></dl>
 
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4N3sls8Detector12setPowerChipEb9Positions">
 <span id="_CPPv3N3sls8Detector12setPowerChipEb9Positions"></span><span id="_CPPv2N3sls8Detector12setPowerChipEb9Positions"></span><span id="sls::Detector::setPowerChip__b.Positions"></span><span class="target" id="classsls_1_1Detector_1a87b547e62b3681d1d114471c67e90091"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setPowerChip</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">on</span></span>, <span class="n"><span class="pre">Positions</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">pos</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="p"><span class="pre">{</span></span><span class="p"><span class="pre">}</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3sls8Detector12setPowerChipEb9Positions" title="Permalink to this definition"></a><br /></dt>
-<dd><p><p>[Jungfrau][Moench][Mythen3][Gotthard2] Power the chip.</p>
+<dd><p><p>[Jungfrau][Moench][Mythen3][Gotthard2][Xilinx Ctb] Power the chip.</p>
 <p>Default is disabled.</p>
 <p>[Jungfrau][Moench] Default is disabled. Get will return power status. Can be off if temperature event occured (temperature over temp_threshold with temp_control enabled. Will configure chip (only chip v1.1)</p>
 <p>[Mythen3][Gotthard2] Default is 1. If module not connected or wrong module, powerchip will fail.</p>
-</p>
+
+[Xilinx CTB] Default is 0. Also configures chip if powered on. </p>
 </dd></dl>
 
 <dl class="cpp function">
@@ -855,7 +890,7 @@ containing results from all modules. (<a class="reference internal" href="result
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4NK3sls8Detector14getTemperatureEN4defs8dacIndexE9Positions">
 <span id="_CPPv3NK3sls8Detector14getTemperatureEN4defs8dacIndexE9Positions"></span><span id="_CPPv2NK3sls8Detector14getTemperatureEN4defs8dacIndexE9Positions"></span><span id="sls::Detector::getTemperature__defs::dacIndex.PositionsC"></span><span class="target" id="classsls_1_1Detector_1a891e22251665841ba7fef2b8d8dc160d"></span><a class="reference internal" href="result.html#_CPPv4I00EN3sls6ResultE" title="sls::Result"><span class="n"><span class="pre">Result</span></span></a><span class="p"><span class="pre">&lt;</span></span><span class="kt"><span class="pre">int</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getTemperature</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">defs</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">dacIndex</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">index</span></span>, <span class="n"><span class="pre">Positions</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">pos</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="p"><span class="pre">{</span></span><span class="p"><span class="pre">}</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK3sls8Detector14getTemperatureEN4defs8dacIndexE9Positions" title="Permalink to this definition"></a><br /></dt>
-<dd><p><p>(Degrees) [Mythen3][Gotthard2] Options: TEMPERATURE_FPGA [Gotthard] Options: TEMPERATURE_ADC, TEMPERATURE_FPGA</p>
+<dd><p><p>(Degrees) [Mythen3][Gotthard2][Xilinx Ctb] Options: TEMPERATURE_FPGA [Gotthard] Options: TEMPERATURE_ADC, TEMPERATURE_FPGA</p>
 <p>[Jungfrau][Moench] Options: TEMPERATURE_ADC, TEMPERATURE_FPGA</p>
 <p>[Eiger] Options: TEMPERATURE_FPGA, TEMPERATURE_FPGAEXT, TEMPERATURE_10GE, TEMPERATURE_DCDC, TEMPERATURE_SODL, TEMPERATURE_SODR, TEMPERATURE_FPGA2, TEMPERATURE_FPGA3</p>
 <p>[CTB] Options: SLOW_ADC_TEMP</p>
@@ -956,7 +991,7 @@ containing results from all modules. (<a class="reference internal" href="result
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4N3sls8Detector17setFilterResistorEi9Positions">
 <span id="_CPPv3N3sls8Detector17setFilterResistorEi9Positions"></span><span id="_CPPv2N3sls8Detector17setFilterResistorEi9Positions"></span><span id="sls::Detector::setFilterResistor__i.Positions"></span><span class="target" id="classsls_1_1Detector_1aaa5f38bd0753aba45e9f70b757c381da"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setFilterResistor</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">value</span></span>, <span class="n"><span class="pre">Positions</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">pos</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="p"><span class="pre">{</span></span><span class="p"><span class="pre">}</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3sls8Detector17setFilterResistorEi9Positions" title="Permalink to this definition"></a><br /></dt>
-<dd><p><p>[Gotthard2][Jungfrau] Set filter resistor. Increasing values for increasing resistance.</p>
+<dd><p>[Gotthard2][Jungfrau] Set<p>filter resistor. Increasing values for increasing resistance.</p>
 <p>[Gotthard2] Options: [0|1|2|3]. Default is 0.</p>
 
 [Jungfrau] Options: [0|1]. Default is 1. </p>
@@ -1091,13 +1126,13 @@ containing results from all modules. (<a class="reference internal" href="result
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4NK3sls8Detector18getNextFrameNumberE9Positions">
 <span id="_CPPv3NK3sls8Detector18getNextFrameNumberE9Positions"></span><span id="_CPPv2NK3sls8Detector18getNextFrameNumberE9Positions"></span><span id="sls::Detector::getNextFrameNumber__PositionsC"></span><span class="target" id="classsls_1_1Detector_1abd1da026d781d9b8da6fd417e1ee85ba"></span><a class="reference internal" href="result.html#_CPPv4I00EN3sls6ResultE" title="sls::Result"><span class="n"><span class="pre">Result</span></span></a><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">uint64_t</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getNextFrameNumber</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">Positions</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">pos</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="p"><span class="pre">{</span></span><span class="p"><span class="pre">}</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK3sls8Detector18getNextFrameNumberE9Positions" title="Permalink to this definition"></a><br /></dt>
-<dd><p>[Eiger][Jungfrau][Moench][CTB] </p>
+<dd><p>[Eiger][Jungfrau][Moench][CTB][Xilinx CTB][Gotthard2] </p>
 </dd></dl>
 
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4N3sls8Detector18setNextFrameNumberE8uint64_t9Positions">
 <span id="_CPPv3N3sls8Detector18setNextFrameNumberE8uint64_t9Positions"></span><span id="_CPPv2N3sls8Detector18setNextFrameNumberE8uint64_t9Positions"></span><span id="sls::Detector::setNextFrameNumber__uint64_t.Positions"></span><span class="target" id="classsls_1_1Detector_1a709dd8ae2d482e9b26028a0aa9c6a5d2"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setNextFrameNumber</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">uint64_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">value</span></span>, <span class="n"><span class="pre">Positions</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">pos</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="p"><span class="pre">{</span></span><span class="p"><span class="pre">}</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3sls8Detector18setNextFrameNumberE8uint64_t9Positions" title="Permalink to this definition"></a><br /></dt>
-<dd><p>[Eiger][Jungfrau][Moench][CTB] Stopping acquisition might result in different frame numbers for different modules. </p>
+<dd><p>[Eiger][Jungfrau][Moench][CTB][Xilinx CTB][Gotthard2] Stopping acquisition might result in different frame numbers for different modules. So, after stopping, next frame number (max + 1) is set for all the modules afterwards. </p>
 </dd></dl>
 
 <dl class="cpp function">
@@ -1412,7 +1447,7 @@ containing results from all modules. (<a class="reference internal" href="result
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4N3sls8Detector20setTransmissionDelayEi">
 <span id="_CPPv3N3sls8Detector20setTransmissionDelayEi"></span><span id="_CPPv2N3sls8Detector20setTransmissionDelayEi"></span><span id="sls::Detector::setTransmissionDelay__i"></span><span class="target" id="classsls_1_1Detector_1a055b19cea6aac3257cc71f32f7e10137"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setTransmissionDelay</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">step</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3sls8Detector20setTransmissionDelayEi" title="Permalink to this definition"></a><br /></dt>
-<dd><p><p>[Eiger][Jungfrau][Moench][Mythen3] Set transmission delay for all modules in the detector using the step size provided.Sets up</p>
+<dd><p>[Eiger][Jungfrau][Moench][Mythen3] Set<p>transmission delay for all modules in the detector using the step size provided.Sets up</p>
 <p>\t\t[Eiger] txdelay_left to (2 * mod_index * n_delay),</p>
 <p>\t\t[Eiger] txdelay_right to ((2 * mod_index + 1) * n_delay) and</p>
 <p>\t\t[Eiger] txdelay_frame to (2 *num_modules * n_delay)</p>
@@ -1605,7 +1640,7 @@ containing results from all modules. (<a class="reference internal" href="result
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4N3sls8Detector11setFilePathERKNSt6stringE9Positions">
 <span id="_CPPv3N3sls8Detector11setFilePathERKNSt6stringE9Positions"></span><span id="_CPPv2N3sls8Detector11setFilePathERKNSt6stringE9Positions"></span><span id="sls::Detector::setFilePath__ssCR.Positions"></span><span class="target" id="classsls_1_1Detector_1ac13d027827e0a4110a60220c21752220"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setFilePath</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">fpath</span></span>, <span class="n"><span class="pre">Positions</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">pos</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="p"><span class="pre">{</span></span><span class="p"><span class="pre">}</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3sls8Detector11setFilePathERKNSt6stringE9Positions" title="Permalink to this definition"></a><br /></dt>
-<dd><p>Default is “/”If path does not exist, it will try to create it </p>
+<dd><p>Default is “/”. If path does not exist and fwrite enabled, it will try to create it at start of acquisition. </p>
 </dd></dl>
 
 <dl class="cpp function">
@@ -1638,7 +1673,7 @@ containing results from all modules. (<a class="reference internal" href="result
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4N3sls8Detector12setFileWriteEb9Positions">
 <span id="_CPPv3N3sls8Detector12setFileWriteEb9Positions"></span><span id="_CPPv2N3sls8Detector12setFileWriteEb9Positions"></span><span id="sls::Detector::setFileWrite__b.Positions"></span><span class="target" id="classsls_1_1Detector_1a6e681b393f686fa85d798e8d49b6563f"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setFileWrite</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">value</span></span>, <span class="n"><span class="pre">Positions</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">pos</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="p"><span class="pre">{</span></span><span class="p"><span class="pre">}</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3sls8Detector12setFileWriteEb9Positions" title="Permalink to this definition"></a><br /></dt>
-<dd><p>default enabled </p>
+<dd><p>default disabled </p>
 </dd></dl>
 
 <dl class="cpp function">
@@ -1745,21 +1780,6 @@ containing results from all modules. (<a class="reference internal" href="result
 <p>Must be different for every detector (and udp port).</p>
 <p>module_id is -1 for all detectors, ports for each module is calculated (increment by 1 if no 2nd interface).</p>
 <p>Restarts receiver zmq sockets only if it was already enabled</p>
-</p>
-</dd></dl>
-
-<dl class="cpp function">
-<dt class="sig sig-object cpp" id="_CPPv4NK3sls8Detector10getRxZmqIPE9Positions">
-<span id="_CPPv3NK3sls8Detector10getRxZmqIPE9Positions"></span><span id="_CPPv2NK3sls8Detector10getRxZmqIPE9Positions"></span><span id="sls::Detector::getRxZmqIP__PositionsC"></span><span class="target" id="classsls_1_1Detector_1a9c0c9546aaba81858890441f6e596f0a"></span><a class="reference internal" href="result.html#_CPPv4I00EN3sls6ResultE" title="sls::Result"><span class="n"><span class="pre">Result</span></span></a><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">IpAddr</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getRxZmqIP</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">Positions</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">pos</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="p"><span class="pre">{</span></span><span class="p"><span class="pre">}</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK3sls8Detector10getRxZmqIPE9Positions" title="Permalink to this definition"></a><br /></dt>
-<dd></dd></dl>
-
-<dl class="cpp function">
-<dt class="sig sig-object cpp" id="_CPPv4N3sls8Detector10setRxZmqIPEK6IpAddr9Positions">
-<span id="_CPPv3N3sls8Detector10setRxZmqIPEK6IpAddr9Positions"></span><span id="_CPPv2N3sls8Detector10setRxZmqIPEK6IpAddr9Positions"></span><span id="sls::Detector::setRxZmqIP__IpAddrC.Positions"></span><span class="target" id="classsls_1_1Detector_1a730e64840d6ece324892907e62fa5f03"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setRxZmqIP</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">IpAddr</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">ip</span></span>, <span class="n"><span class="pre">Positions</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">pos</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="p"><span class="pre">{</span></span><span class="p"><span class="pre">}</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3sls8Detector10setRxZmqIPEK6IpAddr9Positions" title="Permalink to this definition"></a><br /></dt>
-<dd><p><p>Zmq Ip Address from which data is to be streamed out of the receiver.</p>
-<p>Also restarts receiver zmq streaming if enabled.</p>
-<p>Default is from rx_hostname.</p>
-<p>Modified only when using an intermediate process between receiver.</p>
 </p>
 </dd></dl>
 
@@ -2004,7 +2024,7 @@ containing results from all modules. (<a class="reference internal" href="result
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4N3sls8Detector23setThresholdTemperatureEi9Positions">
 <span id="_CPPv3N3sls8Detector23setThresholdTemperatureEi9Positions"></span><span id="_CPPv2N3sls8Detector23setThresholdTemperatureEi9Positions"></span><span id="sls::Detector::setThresholdTemperature__i.Positions"></span><span class="target" id="classsls_1_1Detector_1abc32f5d8c08476d61e6b10606a4c2271"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setThresholdTemperature</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">temp</span></span>, <span class="n"><span class="pre">Positions</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">pos</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="p"><span class="pre">{</span></span><span class="p"><span class="pre">}</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3sls8Detector23setThresholdTemperatureEi9Positions" title="Permalink to this definition"></a><br /></dt>
-<dd><p><p>[Jungfrau][Moench]Set threshold temperature in degrees. If temperature crosses threshold temperature and temperature control is enabled (default is disabled), power to chip will be switched off and temperature event will be set.</p>
+<dd><p>[Jungfrau][Moench]Set<p>threshold temperature in degrees. If temperature crosses threshold temperature and temperature control is enabled (default is disabled), power to chip will be switched off and temperature event will be set.</p>
 <p>To power on chip again, temperature has to be less than threshold temperature and temperature event has to be cleared.</p>
 </p>
 </dd></dl>
@@ -2146,6 +2166,30 @@ The #images = #frames x #triggers x (#storagecells + 1) </p>
 <dd><p><p>[Jungfrau] In pedestal mode, the number of frames or triggers is overwritten by</p>
 <p>(#pedestal_frames x #pedestal_loops x 2). \nIn auto timing mode or in trigger mode with #frames &gt; 1, #frames is overwritten and #triggers = 1, \nelse #triggers is overwritten and #frames = 1. One cannot set #frames, #triggers or timing mode in pedestal mode (it will throw an exception). Disabling pedestal mode will set back the original values of #frames and #triggers</p>
 </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK3sls8Detector20getTimingInfoDecoderE9Positions">
+<span id="_CPPv3NK3sls8Detector20getTimingInfoDecoderE9Positions"></span><span id="_CPPv2NK3sls8Detector20getTimingInfoDecoderE9Positions"></span><span id="sls::Detector::getTimingInfoDecoder__PositionsC"></span><span class="target" id="classsls_1_1Detector_1af0706a715bc0a808f844c8efdf9530ce"></span><a class="reference internal" href="result.html#_CPPv4I00EN3sls6ResultE" title="sls::Result"><span class="n"><span class="pre">Result</span></span></a><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">defs</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">timingInfoDecoder</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getTimingInfoDecoder</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">Positions</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">pos</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="p"><span class="pre">{</span></span><span class="p"><span class="pre">}</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK3sls8Detector20getTimingInfoDecoderE9Positions" title="Permalink to this definition"></a><br /></dt>
+<dd><p>[Jungfrau] </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N3sls8Detector20setTimingInfoDecoderEN4defs17timingInfoDecoderE9Positions">
+<span id="_CPPv3N3sls8Detector20setTimingInfoDecoderEN4defs17timingInfoDecoderE9Positions"></span><span id="_CPPv2N3sls8Detector20setTimingInfoDecoderEN4defs17timingInfoDecoderE9Positions"></span><span id="sls::Detector::setTimingInfoDecoder__defs::timingInfoDecoder.Positions"></span><span class="target" id="classsls_1_1Detector_1adab515b72b6b4e900a605658844b103e"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setTimingInfoDecoder</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">defs</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">timingInfoDecoder</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">value</span></span>, <span class="n"><span class="pre">Positions</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">pos</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="p"><span class="pre">{</span></span><span class="p"><span class="pre">}</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3sls8Detector20setTimingInfoDecoderEN4defs17timingInfoDecoderE9Positions" title="Permalink to this definition"></a><br /></dt>
+<dd><p>[Jungfrau] Advanced Command! </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK3sls8Detector17getCollectionModeE9Positions">
+<span id="_CPPv3NK3sls8Detector17getCollectionModeE9Positions"></span><span id="_CPPv2NK3sls8Detector17getCollectionModeE9Positions"></span><span id="sls::Detector::getCollectionMode__PositionsC"></span><span class="target" id="classsls_1_1Detector_1a3c3c1bcf84dbce86d4dc7681b73c442c"></span><a class="reference internal" href="result.html#_CPPv4I00EN3sls6ResultE" title="sls::Result"><span class="n"><span class="pre">Result</span></span></a><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">defs</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">collectionMode</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getCollectionMode</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">Positions</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">pos</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="p"><span class="pre">{</span></span><span class="p"><span class="pre">}</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK3sls8Detector17getCollectionModeE9Positions" title="Permalink to this definition"></a><br /></dt>
+<dd><p>[Jungfrau] </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N3sls8Detector17setCollectionModeEN4defs14collectionModeE9Positions">
+<span id="_CPPv3N3sls8Detector17setCollectionModeEN4defs14collectionModeE9Positions"></span><span id="_CPPv2N3sls8Detector17setCollectionModeEN4defs14collectionModeE9Positions"></span><span id="sls::Detector::setCollectionMode__defs::collectionMode.Positions"></span><span class="target" id="classsls_1_1Detector_1aed5091ab18a89587e818d5ce6d1e4b5a"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setCollectionMode</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">defs</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">collectionMode</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">value</span></span>, <span class="n"><span class="pre">Positions</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">pos</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="p"><span class="pre">{</span></span><span class="p"><span class="pre">}</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3sls8Detector17setCollectionModeEN4defs14collectionModeE9Positions" title="Permalink to this definition"></a><br /></dt>
+<dd><p>[Jungfrau] </p>
 </dd></dl>
 
 </div>
@@ -2530,13 +2574,13 @@ ROI<p>per module</p>
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4NK3sls8Detector8getPowerEN4defs8dacIndexE9Positions">
 <span id="_CPPv3NK3sls8Detector8getPowerEN4defs8dacIndexE9Positions"></span><span id="_CPPv2NK3sls8Detector8getPowerEN4defs8dacIndexE9Positions"></span><span id="sls::Detector::getPower__defs::dacIndex.PositionsC"></span><span class="target" id="classsls_1_1Detector_1a0df1a4494809fe7ce150185a5e2eafbf"></span><a class="reference internal" href="result.html#_CPPv4I00EN3sls6ResultE" title="sls::Result"><span class="n"><span class="pre">Result</span></span></a><span class="p"><span class="pre">&lt;</span></span><span class="kt"><span class="pre">int</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getPower</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">defs</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">dacIndex</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">index</span></span>, <span class="n"><span class="pre">Positions</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">pos</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="p"><span class="pre">{</span></span><span class="p"><span class="pre">}</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK3sls8Detector8getPowerEN4defs8dacIndexE9Positions" title="Permalink to this definition"></a><br /></dt>
-<dd><p>[CTB] </p>
+<dd><p>[CTB][Xilinx CTB] </p>
 </dd></dl>
 
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4N3sls8Detector8setPowerEN4defs8dacIndexEi9Positions">
 <span id="_CPPv3N3sls8Detector8setPowerEN4defs8dacIndexEi9Positions"></span><span id="_CPPv2N3sls8Detector8setPowerEN4defs8dacIndexEi9Positions"></span><span id="sls::Detector::setPower__defs::dacIndex.i.Positions"></span><span class="target" id="classsls_1_1Detector_1ae14583e378221846268aa2622732c7da"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setPower</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">defs</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">dacIndex</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">index</span></span>, <span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">value</span></span>, <span class="n"><span class="pre">Positions</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">pos</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="p"><span class="pre">{</span></span><span class="p"><span class="pre">}</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3sls8Detector8setPowerEN4defs8dacIndexEi9Positions" title="Permalink to this definition"></a><br /></dt>
-<dd><p>[CTB] mV [Ctb] Options: V_LIMIT, V_POWER_A, V_POWER_B, V_POWER_C, V_POWER_D, V_POWER_IO, V_POWER_CHIP </p>
+<dd><p>[CTB][Xilinx CTB] mV [Ctb][Xilinx CTB] Options: V_LIMIT, V_POWER_A, V_POWER_B, V_POWER_C, V_POWER_D, V_POWER_IO, V_POWER_CHIP </p>
 </dd></dl>
 
 <dl class="cpp function">
@@ -2580,13 +2624,13 @@ ROI<p>per module</p>
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4NK3sls8Detector24getTransceiverEnableMaskE9Positions">
 <span id="_CPPv3NK3sls8Detector24getTransceiverEnableMaskE9Positions"></span><span id="_CPPv2NK3sls8Detector24getTransceiverEnableMaskE9Positions"></span><span id="sls::Detector::getTransceiverEnableMask__PositionsC"></span><span class="target" id="classsls_1_1Detector_1ab3bb144d766d62fb0df646bb0cc1cfee"></span><a class="reference internal" href="result.html#_CPPv4I00EN3sls6ResultE" title="sls::Result"><span class="n"><span class="pre">Result</span></span></a><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">uint32_t</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getTransceiverEnableMask</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">Positions</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">pos</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="p"><span class="pre">{</span></span><span class="p"><span class="pre">}</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK3sls8Detector24getTransceiverEnableMaskE9Positions" title="Permalink to this definition"></a><br /></dt>
-<dd><p>[CTB] </p>
+<dd><p>[CTB][Xilinx CTB] </p>
 </dd></dl>
 
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4N3sls8Detector24setTransceiverEnableMaskE8uint32_t9Positions">
 <span id="_CPPv3N3sls8Detector24setTransceiverEnableMaskE8uint32_t9Positions"></span><span id="_CPPv2N3sls8Detector24setTransceiverEnableMaskE8uint32_t9Positions"></span><span id="sls::Detector::setTransceiverEnableMask__uint32_t.Positions"></span><span class="target" id="classsls_1_1Detector_1a75bdeb28b39dcb4ecd6b9bd395099620"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setTransceiverEnableMask</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">uint32_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">mask</span></span>, <span class="n"><span class="pre">Positions</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">pos</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="p"><span class="pre">{</span></span><span class="p"><span class="pre">}</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3sls8Detector24setTransceiverEnableMaskE8uint32_t9Positions" title="Permalink to this definition"></a><br /></dt>
-<dd><p>[CTB] </p>
+<dd><p>[CTB][Xilinx CTB] </p>
 </dd></dl>
 
 <dl class="cpp function">
@@ -2604,25 +2648,25 @@ ROI<p>per module</p>
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4NK3sls8Detector29getNumberOfTransceiverSamplesE9Positions">
 <span id="_CPPv3NK3sls8Detector29getNumberOfTransceiverSamplesE9Positions"></span><span id="_CPPv2NK3sls8Detector29getNumberOfTransceiverSamplesE9Positions"></span><span id="sls::Detector::getNumberOfTransceiverSamples__PositionsC"></span><span class="target" id="classsls_1_1Detector_1a948c4decae6d88efc54067992dcf469f"></span><a class="reference internal" href="result.html#_CPPv4I00EN3sls6ResultE" title="sls::Result"><span class="n"><span class="pre">Result</span></span></a><span class="p"><span class="pre">&lt;</span></span><span class="kt"><span class="pre">int</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getNumberOfTransceiverSamples</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">Positions</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">pos</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="p"><span class="pre">{</span></span><span class="p"><span class="pre">}</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK3sls8Detector29getNumberOfTransceiverSamplesE9Positions" title="Permalink to this definition"></a><br /></dt>
-<dd><p>[CTB] </p>
+<dd><p>[CTB][Xilinx CTB] </p>
 </dd></dl>
 
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4N3sls8Detector29setNumberOfTransceiverSamplesEi9Positions">
 <span id="_CPPv3N3sls8Detector29setNumberOfTransceiverSamplesEi9Positions"></span><span id="_CPPv2N3sls8Detector29setNumberOfTransceiverSamplesEi9Positions"></span><span id="sls::Detector::setNumberOfTransceiverSamples__i.Positions"></span><span class="target" id="classsls_1_1Detector_1abb33e9104f37db4a632a6b39a9287749"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setNumberOfTransceiverSamples</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">value</span></span>, <span class="n"><span class="pre">Positions</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">pos</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="p"><span class="pre">{</span></span><span class="p"><span class="pre">}</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3sls8Detector29setNumberOfTransceiverSamplesEi9Positions" title="Permalink to this definition"></a><br /></dt>
-<dd><p>[CTB] </p>
+<dd><p>[CTB][Xilinx CTB] </p>
 </dd></dl>
 
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4NK3sls8Detector14getReadoutModeE9Positions">
 <span id="_CPPv3NK3sls8Detector14getReadoutModeE9Positions"></span><span id="_CPPv2NK3sls8Detector14getReadoutModeE9Positions"></span><span id="sls::Detector::getReadoutMode__PositionsC"></span><span class="target" id="classsls_1_1Detector_1a1e445cf18f13b32a26f32fcc53c96562"></span><a class="reference internal" href="result.html#_CPPv4I00EN3sls6ResultE" title="sls::Result"><span class="n"><span class="pre">Result</span></span></a><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">defs</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">readoutMode</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getReadoutMode</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">Positions</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">pos</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="p"><span class="pre">{</span></span><span class="p"><span class="pre">}</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK3sls8Detector14getReadoutModeE9Positions" title="Permalink to this definition"></a><br /></dt>
-<dd><p>[CTB] </p>
+<dd><p>[CTB][Xilinx CTB] </p>
 </dd></dl>
 
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4N3sls8Detector14setReadoutModeEN4defs11readoutModeE9Positions">
 <span id="_CPPv3N3sls8Detector14setReadoutModeEN4defs11readoutModeE9Positions"></span><span id="_CPPv2N3sls8Detector14setReadoutModeEN4defs11readoutModeE9Positions"></span><span id="sls::Detector::setReadoutMode__defs::readoutMode.Positions"></span><span class="target" id="classsls_1_1Detector_1a4b33e603deab8deda641034ede9d104c"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setReadoutMode</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">defs</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">readoutMode</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">value</span></span>, <span class="n"><span class="pre">Positions</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">pos</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="p"><span class="pre">{</span></span><span class="p"><span class="pre">}</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3sls8Detector14setReadoutModeEN4defs11readoutModeE9Positions" title="Permalink to this definition"></a><br /></dt>
-<dd><p>[CTB] Options: ANALOG_ONLY (default), DIGITAL_ONLY, ANALOG_AND_DIGITAL, TRANSCEIVER_ONLY, DIGITAL_AND_TRANSCEIVER </p>
+<dd><p>[CTB] Options: ANALOG_ONLY (default), DIGITAL_ONLY, ANALOG_AND_DIGITAL, TRANSCEIVER_ONLY, DIGITAL_AND_TRANSCEIVER [Xilinx CTB] Options: TRANSCEIVER_ONLY (default) </p>
 </dd></dl>
 
 <dl class="cpp function">
@@ -2652,7 +2696,7 @@ ROI<p>per module</p>
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4NK3sls8Detector10getSlowADCEN4defs8dacIndexE9Positions">
 <span id="_CPPv3NK3sls8Detector10getSlowADCEN4defs8dacIndexE9Positions"></span><span id="_CPPv2NK3sls8Detector10getSlowADCEN4defs8dacIndexE9Positions"></span><span id="sls::Detector::getSlowADC__defs::dacIndex.PositionsC"></span><span class="target" id="classsls_1_1Detector_1af58103acd59f1e12480476a92e24a34b"></span><a class="reference internal" href="result.html#_CPPv4I00EN3sls6ResultE" title="sls::Result"><span class="n"><span class="pre">Result</span></span></a><span class="p"><span class="pre">&lt;</span></span><span class="kt"><span class="pre">int</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getSlowADC</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">defs</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">dacIndex</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">index</span></span>, <span class="n"><span class="pre">Positions</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">pos</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="p"><span class="pre">{</span></span><span class="p"><span class="pre">}</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK3sls8Detector10getSlowADCEN4defs8dacIndexE9Positions" title="Permalink to this definition"></a><br /></dt>
-<dd><p>[CTB] Options: SLOW_ADC0 - SLOW_ADC7 in uV </p>
+<dd><p>[CTB][Xilinx CTB] Options: SLOW_ADC0 - SLOW_ADC7 in uV </p>
 </dd></dl>
 
 <dl class="cpp function">
@@ -2726,149 +2770,151 @@ ROI<p>per module</p>
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4N3sls8Detector11setDacNamesEKNSt6vectorINSt6stringEEE">
 <span id="_CPPv3N3sls8Detector11setDacNamesEKNSt6vectorINSt6stringEEE"></span><span id="_CPPv2N3sls8Detector11setDacNamesEKNSt6vectorINSt6stringEEE"></span><span id="sls::Detector::setDacNames__std::vector:ss:C"></span><span class="target" id="classsls_1_1Detector_1ab53c0e866f0cdfbd7a29854bad530f43"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setDacNames</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">names</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3sls8Detector11setDacNamesEKNSt6vectorINSt6stringEEE" title="Permalink to this definition"></a><br /></dt>
-<dd><p>[CTB] </p>
+<dd><p>[CTB][Xilinx CTB] </p>
 </dd></dl>
 
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4NK3sls8Detector11getDacNamesEv">
 <span id="_CPPv3NK3sls8Detector11getDacNamesEv"></span><span id="_CPPv2NK3sls8Detector11getDacNamesEv"></span><span id="sls::Detector::getDacNamesC"></span><span class="target" id="classsls_1_1Detector_1af4b6572f1906a2e1478ad0661a8bfe3c"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getDacNames</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK3sls8Detector11getDacNamesEv" title="Permalink to this definition"></a><br /></dt>
-<dd></dd></dl>
+<dd><p>[CTB][Xilinx CTB] </p>
+</dd></dl>
 
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4NK3sls8Detector11getDacIndexERKNSt6stringE">
 <span id="_CPPv3NK3sls8Detector11getDacIndexERKNSt6stringE"></span><span id="_CPPv2NK3sls8Detector11getDacIndexERKNSt6stringE"></span><span id="sls::Detector::getDacIndex__ssCRC"></span><span class="target" id="classsls_1_1Detector_1a7fb7b01beed0979c6d7b9e24f006866d"></span><span class="n"><span class="pre">defs</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">dacIndex</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getDacIndex</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">name</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK3sls8Detector11getDacIndexERKNSt6stringE" title="Permalink to this definition"></a><br /></dt>
-<dd></dd></dl>
+<dd><p>[CTB][Xilinx CTB] </p>
+</dd></dl>
 
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4N3sls8Detector10setDacNameEKN4defs8dacIndexERKNSt6stringE">
 <span id="_CPPv3N3sls8Detector10setDacNameEKN4defs8dacIndexERKNSt6stringE"></span><span id="_CPPv2N3sls8Detector10setDacNameEKN4defs8dacIndexERKNSt6stringE"></span><span id="sls::Detector::setDacName__defs::dacIndexC.ssCR"></span><span class="target" id="classsls_1_1Detector_1abb9d7dd6c04c120565486513a0302f4f"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setDacName</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">defs</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">dacIndex</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">i</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">name</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3sls8Detector10setDacNameEKN4defs8dacIndexERKNSt6stringE" title="Permalink to this definition"></a><br /></dt>
-<dd><p>[CTB] </p>
+<dd><p>[CTB][Xilinx CTB] </p>
 </dd></dl>
 
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4NK3sls8Detector10getDacNameEKN4defs8dacIndexE">
 <span id="_CPPv3NK3sls8Detector10getDacNameEKN4defs8dacIndexE"></span><span id="_CPPv2NK3sls8Detector10getDacNameEKN4defs8dacIndexE"></span><span id="sls::Detector::getDacName__defs::dacIndexCC"></span><span class="target" id="classsls_1_1Detector_1acb1433cbc37a0511f577afeeaa38fa8d"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getDacName</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">defs</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">dacIndex</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">i</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK3sls8Detector10getDacNameEKN4defs8dacIndexE" title="Permalink to this definition"></a><br /></dt>
-<dd><p>[CTB] </p>
+<dd><p>[CTB][Xilinx CTB] </p>
 </dd></dl>
 
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4N3sls8Detector11setAdcNamesEKNSt6vectorINSt6stringEEE">
 <span id="_CPPv3N3sls8Detector11setAdcNamesEKNSt6vectorINSt6stringEEE"></span><span id="_CPPv2N3sls8Detector11setAdcNamesEKNSt6vectorINSt6stringEEE"></span><span id="sls::Detector::setAdcNames__std::vector:ss:C"></span><span class="target" id="classsls_1_1Detector_1a0189f3c312e239ec4e1cfc84d7e0912b"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setAdcNames</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">names</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3sls8Detector11setAdcNamesEKNSt6vectorINSt6stringEEE" title="Permalink to this definition"></a><br /></dt>
-<dd><p>[CTB] </p>
+<dd><p>[CTB][Xilinx CTB] </p>
 </dd></dl>
 
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4NK3sls8Detector11getAdcNamesEv">
 <span id="_CPPv3NK3sls8Detector11getAdcNamesEv"></span><span id="_CPPv2NK3sls8Detector11getAdcNamesEv"></span><span id="sls::Detector::getAdcNamesC"></span><span class="target" id="classsls_1_1Detector_1aff12b03e75a80e548414b0cd30904f50"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getAdcNames</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK3sls8Detector11getAdcNamesEv" title="Permalink to this definition"></a><br /></dt>
-<dd><p>[CTB] </p>
+<dd><p>[CTB][Xilinx CTB] </p>
 </dd></dl>
 
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4NK3sls8Detector11getAdcIndexERKNSt6stringE">
 <span id="_CPPv3NK3sls8Detector11getAdcIndexERKNSt6stringE"></span><span id="_CPPv2NK3sls8Detector11getAdcIndexERKNSt6stringE"></span><span id="sls::Detector::getAdcIndex__ssCRC"></span><span class="target" id="classsls_1_1Detector_1a289a701960871cfb448da7718729f557"></span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getAdcIndex</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">name</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK3sls8Detector11getAdcIndexERKNSt6stringE" title="Permalink to this definition"></a><br /></dt>
-<dd><p>[CTB] </p>
+<dd><p>[CTB][Xilinx CTB] </p>
 </dd></dl>
 
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4N3sls8Detector10setAdcNameEKiRKNSt6stringE">
 <span id="_CPPv3N3sls8Detector10setAdcNameEKiRKNSt6stringE"></span><span id="_CPPv2N3sls8Detector10setAdcNameEKiRKNSt6stringE"></span><span id="sls::Detector::setAdcName__iC.ssCR"></span><span class="target" id="classsls_1_1Detector_1a6251e5965c1142e1bf72a712ca8d1385"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setAdcName</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">i</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">name</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3sls8Detector10setAdcNameEKiRKNSt6stringE" title="Permalink to this definition"></a><br /></dt>
-<dd><p>[CTB] </p>
+<dd><p>[CTB][Xilinx CTB] </p>
 </dd></dl>
 
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4NK3sls8Detector10getAdcNameEKi">
 <span id="_CPPv3NK3sls8Detector10getAdcNameEKi"></span><span id="_CPPv2NK3sls8Detector10getAdcNameEKi"></span><span id="sls::Detector::getAdcName__iCC"></span><span class="target" id="classsls_1_1Detector_1a0f5f7fbe98e9d1c04d2bf40db02724e7"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getAdcName</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">i</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK3sls8Detector10getAdcNameEKi" title="Permalink to this definition"></a><br /></dt>
-<dd><p>[CTB] </p>
+<dd><p>[CTB][Xilinx CTB] </p>
 </dd></dl>
 
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4N3sls8Detector14setSignalNamesEKNSt6vectorINSt6stringEEE">
 <span id="_CPPv3N3sls8Detector14setSignalNamesEKNSt6vectorINSt6stringEEE"></span><span id="_CPPv2N3sls8Detector14setSignalNamesEKNSt6vectorINSt6stringEEE"></span><span id="sls::Detector::setSignalNames__std::vector:ss:C"></span><span class="target" id="classsls_1_1Detector_1ab25576d8c0feab10449febdc6bc4370b"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setSignalNames</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">names</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3sls8Detector14setSignalNamesEKNSt6vectorINSt6stringEEE" title="Permalink to this definition"></a><br /></dt>
-<dd><p>[CTB] </p>
+<dd><p>[CTB][Xilinx CTB] </p>
 </dd></dl>
 
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4NK3sls8Detector14getSignalNamesEv">
 <span id="_CPPv3NK3sls8Detector14getSignalNamesEv"></span><span id="_CPPv2NK3sls8Detector14getSignalNamesEv"></span><span id="sls::Detector::getSignalNamesC"></span><span class="target" id="classsls_1_1Detector_1a73bb2b9df493d0ffe1060ab31501b58b"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getSignalNames</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK3sls8Detector14getSignalNamesEv" title="Permalink to this definition"></a><br /></dt>
-<dd><p>[CTB] </p>
+<dd><p>[CTB][Xilinx CTB] </p>
 </dd></dl>
 
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4NK3sls8Detector14getSignalIndexERKNSt6stringE">
 <span id="_CPPv3NK3sls8Detector14getSignalIndexERKNSt6stringE"></span><span id="_CPPv2NK3sls8Detector14getSignalIndexERKNSt6stringE"></span><span id="sls::Detector::getSignalIndex__ssCRC"></span><span class="target" id="classsls_1_1Detector_1a4dba2d290be674a778daf54ce8fbe689"></span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getSignalIndex</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">name</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK3sls8Detector14getSignalIndexERKNSt6stringE" title="Permalink to this definition"></a><br /></dt>
-<dd><p>[CTB] </p>
+<dd><p>[CTB][Xilinx CTB] </p>
 </dd></dl>
 
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4N3sls8Detector13setSignalNameEKiRKNSt6stringE">
 <span id="_CPPv3N3sls8Detector13setSignalNameEKiRKNSt6stringE"></span><span id="_CPPv2N3sls8Detector13setSignalNameEKiRKNSt6stringE"></span><span id="sls::Detector::setSignalName__iC.ssCR"></span><span class="target" id="classsls_1_1Detector_1aa5f627125cce621735271eeee838f286"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setSignalName</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">i</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">name</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3sls8Detector13setSignalNameEKiRKNSt6stringE" title="Permalink to this definition"></a><br /></dt>
-<dd><p>[CTB] </p>
+<dd><p>[CTB][Xilinx CTB] </p>
 </dd></dl>
 
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4NK3sls8Detector13getSignalNameEKi">
 <span id="_CPPv3NK3sls8Detector13getSignalNameEKi"></span><span id="_CPPv2NK3sls8Detector13getSignalNameEKi"></span><span id="sls::Detector::getSignalName__iCC"></span><span class="target" id="classsls_1_1Detector_1a56921fcaadd7aa74a56d1ac23a6a90e3"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getSignalName</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">i</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK3sls8Detector13getSignalNameEKi" title="Permalink to this definition"></a><br /></dt>
-<dd><p>[CTB] </p>
+<dd><p>[CTB][Xilinx CTB] </p>
 </dd></dl>
 
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4N3sls8Detector13setPowerNamesEKNSt6vectorINSt6stringEEE">
 <span id="_CPPv3N3sls8Detector13setPowerNamesEKNSt6vectorINSt6stringEEE"></span><span id="_CPPv2N3sls8Detector13setPowerNamesEKNSt6vectorINSt6stringEEE"></span><span id="sls::Detector::setPowerNames__std::vector:ss:C"></span><span class="target" id="classsls_1_1Detector_1a09729fded3fa7998e578766137a29c44"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setPowerNames</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">names</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3sls8Detector13setPowerNamesEKNSt6vectorINSt6stringEEE" title="Permalink to this definition"></a><br /></dt>
-<dd><p>[CTB] </p>
+<dd><p>[CTB][Xilinx CTB] </p>
 </dd></dl>
 
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4NK3sls8Detector13getPowerNamesEv">
 <span id="_CPPv3NK3sls8Detector13getPowerNamesEv"></span><span id="_CPPv2NK3sls8Detector13getPowerNamesEv"></span><span id="sls::Detector::getPowerNamesC"></span><span class="target" id="classsls_1_1Detector_1a043d7cf0a243f75b0c3483fb613c4ba7"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getPowerNames</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK3sls8Detector13getPowerNamesEv" title="Permalink to this definition"></a><br /></dt>
-<dd><p>[CTB] </p>
+<dd><p>[CTB][Xilinx CTB] </p>
 </dd></dl>
 
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4NK3sls8Detector13getPowerIndexERKNSt6stringE">
 <span id="_CPPv3NK3sls8Detector13getPowerIndexERKNSt6stringE"></span><span id="_CPPv2NK3sls8Detector13getPowerIndexERKNSt6stringE"></span><span id="sls::Detector::getPowerIndex__ssCRC"></span><span class="target" id="classsls_1_1Detector_1acc911476cbfbc25306f1d1801e3c69be"></span><span class="n"><span class="pre">defs</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">dacIndex</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getPowerIndex</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">name</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK3sls8Detector13getPowerIndexERKNSt6stringE" title="Permalink to this definition"></a><br /></dt>
-<dd><p>[CTB] </p>
+<dd><p>[CTB][Xilinx CTB] </p>
 </dd></dl>
 
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4N3sls8Detector12setPowerNameEKN4defs8dacIndexERKNSt6stringE">
 <span id="_CPPv3N3sls8Detector12setPowerNameEKN4defs8dacIndexERKNSt6stringE"></span><span id="_CPPv2N3sls8Detector12setPowerNameEKN4defs8dacIndexERKNSt6stringE"></span><span id="sls::Detector::setPowerName__defs::dacIndexC.ssCR"></span><span class="target" id="classsls_1_1Detector_1a94e1c4f92f9ff5acdd901dc7fd9de093"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setPowerName</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">defs</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">dacIndex</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">i</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">name</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3sls8Detector12setPowerNameEKN4defs8dacIndexERKNSt6stringE" title="Permalink to this definition"></a><br /></dt>
-<dd><p>[CTB] </p>
+<dd><p>[CTB][Xilinx CTB] </p>
 </dd></dl>
 
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4NK3sls8Detector12getPowerNameEKN4defs8dacIndexE">
 <span id="_CPPv3NK3sls8Detector12getPowerNameEKN4defs8dacIndexE"></span><span id="_CPPv2NK3sls8Detector12getPowerNameEKN4defs8dacIndexE"></span><span id="sls::Detector::getPowerName__defs::dacIndexCC"></span><span class="target" id="classsls_1_1Detector_1a5b5688d17a2eb003620a8aebce656feb"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getPowerName</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">defs</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">dacIndex</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">i</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK3sls8Detector12getPowerNameEKN4defs8dacIndexE" title="Permalink to this definition"></a><br /></dt>
-<dd><p>[CTB] </p>
+<dd><p>[CTB][Xilinx CTB] </p>
 </dd></dl>
 
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4N3sls8Detector15setSlowADCNamesEKNSt6vectorINSt6stringEEE">
 <span id="_CPPv3N3sls8Detector15setSlowADCNamesEKNSt6vectorINSt6stringEEE"></span><span id="_CPPv2N3sls8Detector15setSlowADCNamesEKNSt6vectorINSt6stringEEE"></span><span id="sls::Detector::setSlowADCNames__std::vector:ss:C"></span><span class="target" id="classsls_1_1Detector_1a0071127421f8ba005da43150a4febca2"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setSlowADCNames</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">names</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3sls8Detector15setSlowADCNamesEKNSt6vectorINSt6stringEEE" title="Permalink to this definition"></a><br /></dt>
-<dd><p>[CTB] </p>
+<dd><p>[CTB][Xilinx CTB] </p>
 </dd></dl>
 
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4NK3sls8Detector15getSlowADCNamesEv">
 <span id="_CPPv3NK3sls8Detector15getSlowADCNamesEv"></span><span id="_CPPv2NK3sls8Detector15getSlowADCNamesEv"></span><span id="sls::Detector::getSlowADCNamesC"></span><span class="target" id="classsls_1_1Detector_1ac028a7e2d9d814881dfbf50bbdad6891"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getSlowADCNames</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK3sls8Detector15getSlowADCNamesEv" title="Permalink to this definition"></a><br /></dt>
-<dd><p>[CTB] </p>
+<dd><p>[CTB][Xilinx CTB] </p>
 </dd></dl>
 
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4NK3sls8Detector15getSlowADCIndexERKNSt6stringE">
 <span id="_CPPv3NK3sls8Detector15getSlowADCIndexERKNSt6stringE"></span><span id="_CPPv2NK3sls8Detector15getSlowADCIndexERKNSt6stringE"></span><span id="sls::Detector::getSlowADCIndex__ssCRC"></span><span class="target" id="classsls_1_1Detector_1a5a26c94431bae99dcab84d1cf2970238"></span><span class="n"><span class="pre">defs</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">dacIndex</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getSlowADCIndex</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">name</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK3sls8Detector15getSlowADCIndexERKNSt6stringE" title="Permalink to this definition"></a><br /></dt>
-<dd><p>[CTB] </p>
+<dd><p>[CTB][Xilinx CTB] </p>
 </dd></dl>
 
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4N3sls8Detector14setSlowADCNameEKN4defs8dacIndexERKNSt6stringE">
 <span id="_CPPv3N3sls8Detector14setSlowADCNameEKN4defs8dacIndexERKNSt6stringE"></span><span id="_CPPv2N3sls8Detector14setSlowADCNameEKN4defs8dacIndexERKNSt6stringE"></span><span id="sls::Detector::setSlowADCName__defs::dacIndexC.ssCR"></span><span class="target" id="classsls_1_1Detector_1a7f1e9a7b82108797eb98e6411d167f2a"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setSlowADCName</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">defs</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">dacIndex</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">i</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">name</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3sls8Detector14setSlowADCNameEKN4defs8dacIndexERKNSt6stringE" title="Permalink to this definition"></a><br /></dt>
-<dd><p>[CTB] </p>
+<dd><p>[CTB][Xilinx CTB] </p>
 </dd></dl>
 
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4NK3sls8Detector14getSlowADCNameEKN4defs8dacIndexE">
 <span id="_CPPv3NK3sls8Detector14getSlowADCNameEKN4defs8dacIndexE"></span><span id="_CPPv2NK3sls8Detector14getSlowADCNameEKN4defs8dacIndexE"></span><span id="sls::Detector::getSlowADCName__defs::dacIndexCC"></span><span class="target" id="classsls_1_1Detector_1a402b4f9fe95a021e2a64c605a7af0d42"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getSlowADCName</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">defs</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">dacIndex</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">i</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK3sls8Detector14getSlowADCNameEKN4defs8dacIndexE" title="Permalink to this definition"></a><br /></dt>
-<dd><p>[CTB] </p>
+<dd><p>[CTB][Xilinx CTB] </p>
 </dd></dl>
 
 </div>
@@ -2877,7 +2923,7 @@ ROI<p>per module</p>
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4NK3sls8Detector17getPatterFileNameE9Positions">
 <span id="_CPPv3NK3sls8Detector17getPatterFileNameE9Positions"></span><span id="_CPPv2NK3sls8Detector17getPatterFileNameE9Positions"></span><span id="sls::Detector::getPatterFileName__PositionsC"></span><span class="target" id="classsls_1_1Detector_1a6e0c17635b532a3f753d146cbebbce3e"></span><a class="reference internal" href="result.html#_CPPv4I00EN3sls6ResultE" title="sls::Result"><span class="n"><span class="pre">Result</span></span></a><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getPatterFileName</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">Positions</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">pos</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="p"><span class="pre">{</span></span><span class="p"><span class="pre">}</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK3sls8Detector17getPatterFileNameE9Positions" title="Permalink to this definition"></a><br /></dt>
-<dd><p><p>[CTB][Mythen3] Gets the pattern file name including path of the last pattern uploaded.</p>
+<dd><p><p>[CTB][Mythen3][Xilinx CTB] Gets the pattern file name including path of the last pattern uploaded.</p>
 <p>Returns an empty if nothing was uploaded or via a server default file</p>
 </p>
 </dd></dl>
@@ -2885,19 +2931,19 @@ ROI<p>per module</p>
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4N3sls8Detector10setPatternERKNSt6stringE9Positions">
 <span id="_CPPv3N3sls8Detector10setPatternERKNSt6stringE9Positions"></span><span id="_CPPv2N3sls8Detector10setPatternERKNSt6stringE9Positions"></span><span id="sls::Detector::setPattern__ssCR.Positions"></span><span class="target" id="classsls_1_1Detector_1a93ef35246f2e269528572d854edbddf1"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setPattern</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">fname</span></span>, <span class="n"><span class="pre">Positions</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">pos</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="p"><span class="pre">{</span></span><span class="p"><span class="pre">}</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3sls8Detector10setPatternERKNSt6stringE9Positions" title="Permalink to this definition"></a><br /></dt>
-<dd><p>[CTB][Mythen3] Loads ASCII pattern file directly to server (instead of executing line by line) </p>
+<dd><p>[CTB][Mythen3][Xilinx CTB] Loads ASCII pattern file directly to server (instead of executing line by line) </p>
 </dd></dl>
 
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4N3sls8Detector10setPatternERK7Pattern9Positions">
 <span id="_CPPv3N3sls8Detector10setPatternERK7Pattern9Positions"></span><span id="_CPPv2N3sls8Detector10setPatternERK7Pattern9Positions"></span><span id="sls::Detector::setPattern__PatternCR.Positions"></span><span class="target" id="classsls_1_1Detector_1ab68a7a282a3f95dad1851f8e5ba90b22"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setPattern</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">Pattern</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">pat</span></span>, <span class="n"><span class="pre">Positions</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">pos</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="p"><span class="pre">{</span></span><span class="p"><span class="pre">}</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3sls8Detector10setPatternERK7Pattern9Positions" title="Permalink to this definition"></a><br /></dt>
-<dd><p>[CTB][Mythen3] Loads pattern parameters structure directly to server </p>
+<dd><p>[CTB][Mythen3][Xilinx CTB] Loads pattern parameters structure directly to server </p>
 </dd></dl>
 
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4N3sls8Detector11savePatternERKNSt6stringE">
 <span id="_CPPv3N3sls8Detector11savePatternERKNSt6stringE"></span><span id="_CPPv2N3sls8Detector11savePatternERKNSt6stringE"></span><span id="sls::Detector::savePattern__ssCR"></span><span class="target" id="classsls_1_1Detector_1a26019d11cacd7d699288f30434af80ad"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">savePattern</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">fname</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3sls8Detector11savePatternERKNSt6stringE" title="Permalink to this definition"></a><br /></dt>
-<dd><p><p>[CTB][Mythen3] [Ctb][Mythen3] Saves pattern to file (ascii).</p>
+<dd><p><p>[CTB][Mythen3][Xilinx CTB] Saves pattern to file (ascii).</p>
 <p>[Ctb] Also executes pattern.</p>
 </p>
 </dd></dl>
@@ -2923,19 +2969,19 @@ ROI<p>per module</p>
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4N3sls8Detector14getPatternWordEi9Positions">
 <span id="_CPPv3N3sls8Detector14getPatternWordEi9Positions"></span><span id="_CPPv2N3sls8Detector14getPatternWordEi9Positions"></span><span id="sls::Detector::getPatternWord__i.Positions"></span><span class="target" id="classsls_1_1Detector_1ae5f4c77587829856955f1b2415a62103"></span><a class="reference internal" href="result.html#_CPPv4I00EN3sls6ResultE" title="sls::Result"><span class="n"><span class="pre">Result</span></span></a><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">uint64_t</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getPatternWord</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">addr</span></span>, <span class="n"><span class="pre">Positions</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">pos</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="p"><span class="pre">{</span></span><span class="p"><span class="pre">}</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3sls8Detector14getPatternWordEi9Positions" title="Permalink to this definition"></a><br /></dt>
-<dd><p>[CTB][Mythen3] same as executing for ctb </p>
+<dd><p>[CTB][Mythen3][Xilinx CTB] same as executing for ctb </p>
 </dd></dl>
 
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4N3sls8Detector14setPatternWordEi8uint64_t9Positions">
 <span id="_CPPv3N3sls8Detector14setPatternWordEi8uint64_t9Positions"></span><span id="_CPPv2N3sls8Detector14setPatternWordEi8uint64_t9Positions"></span><span id="sls::Detector::setPatternWord__i.uint64_t.Positions"></span><span class="target" id="classsls_1_1Detector_1ae87472d1a8f1d1ef1a3168edb52cc280"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setPatternWord</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">addr</span></span>, <span class="n"><span class="pre">uint64_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">word</span></span>, <span class="n"><span class="pre">Positions</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">pos</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="p"><span class="pre">{</span></span><span class="p"><span class="pre">}</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3sls8Detector14setPatternWordEi8uint64_t9Positions" title="Permalink to this definition"></a><br /></dt>
-<dd><p>[CTB] Caution: If word is -1 reads the addr (same as executing the pattern) [Mythen3] </p>
+<dd><p>[CTB][Xilinx CTB] Caution: If word is -1 reads the addr (same as executing the pattern) [Mythen3] </p>
 </dd></dl>
 
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4NK3sls8Detector23getPatternLoopAddressesEi9Positions">
 <span id="_CPPv3NK3sls8Detector23getPatternLoopAddressesEi9Positions"></span><span id="_CPPv2NK3sls8Detector23getPatternLoopAddressesEi9Positions"></span><span id="sls::Detector::getPatternLoopAddresses__i.PositionsC"></span><span class="target" id="classsls_1_1Detector_1aad97de9b3ee20de74cac9a8225b726ae"></span><a class="reference internal" href="result.html#_CPPv4I00EN3sls6ResultE" title="sls::Result"><span class="n"><span class="pre">Result</span></span></a><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">array</span></span><span class="p"><span class="pre">&lt;</span></span><span class="kt"><span class="pre">int</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="m"><span class="pre">2</span></span><span class="p"><span class="pre">&gt;</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getPatternLoopAddresses</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">level</span></span>, <span class="n"><span class="pre">Positions</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">pos</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="p"><span class="pre">{</span></span><span class="p"><span class="pre">}</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK3sls8Detector23getPatternLoopAddressesEi9Positions" title="Permalink to this definition"></a><br /></dt>
-<dd><p>[CTB][Mythen3] Options: level: -1 (complete pattern) and 0-2 levels </p>
+<dd><p>[CTB][Mythen3][Xilinx CTB] Options: level: -1 (complete pattern) and 0-2 levels </p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p>array of start address and stop address </p>
@@ -2946,67 +2992,67 @@ ROI<p>per module</p>
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4N3sls8Detector23setPatternLoopAddressesEiii9Positions">
 <span id="_CPPv3N3sls8Detector23setPatternLoopAddressesEiii9Positions"></span><span id="_CPPv2N3sls8Detector23setPatternLoopAddressesEiii9Positions"></span><span id="sls::Detector::setPatternLoopAddresses__i.i.i.Positions"></span><span class="target" id="classsls_1_1Detector_1a4e68d073ceb77a7a279c299326c800d3"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setPatternLoopAddresses</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">level</span></span>, <span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">start</span></span>, <span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">stop</span></span>, <span class="n"><span class="pre">Positions</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">pos</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="p"><span class="pre">{</span></span><span class="p"><span class="pre">}</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3sls8Detector23setPatternLoopAddressesEiii9Positions" title="Permalink to this definition"></a><br /></dt>
-<dd><p>[CTB][Mythen3] Options: level: -1 (complete pattern) and 0-2 levels </p>
+<dd><p>[CTB][Mythen3][Xilinx CTB] Options: level: -1 (complete pattern) and 0-2 levels </p>
 </dd></dl>
 
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4NK3sls8Detector20getPatternLoopCyclesEi9Positions">
 <span id="_CPPv3NK3sls8Detector20getPatternLoopCyclesEi9Positions"></span><span id="_CPPv2NK3sls8Detector20getPatternLoopCyclesEi9Positions"></span><span id="sls::Detector::getPatternLoopCycles__i.PositionsC"></span><span class="target" id="classsls_1_1Detector_1ac2a55e57c8d970034df0bb145b90762d"></span><a class="reference internal" href="result.html#_CPPv4I00EN3sls6ResultE" title="sls::Result"><span class="n"><span class="pre">Result</span></span></a><span class="p"><span class="pre">&lt;</span></span><span class="kt"><span class="pre">int</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getPatternLoopCycles</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">level</span></span>, <span class="n"><span class="pre">Positions</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">pos</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="p"><span class="pre">{</span></span><span class="p"><span class="pre">}</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK3sls8Detector20getPatternLoopCyclesEi9Positions" title="Permalink to this definition"></a><br /></dt>
-<dd><p>[CTB][Mythen3] Options: level: -1 (complete pattern) and 0-2 levels </p>
+<dd><p>[CTB][Mythen3][Xilinx CTB] Options: level: -1 (complete pattern) and 0-2 levels </p>
 </dd></dl>
 
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4N3sls8Detector20setPatternLoopCyclesEii9Positions">
 <span id="_CPPv3N3sls8Detector20setPatternLoopCyclesEii9Positions"></span><span id="_CPPv2N3sls8Detector20setPatternLoopCyclesEii9Positions"></span><span id="sls::Detector::setPatternLoopCycles__i.i.Positions"></span><span class="target" id="classsls_1_1Detector_1a85d0f8cec42ab777353415e28f7a285c"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setPatternLoopCycles</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">level</span></span>, <span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">n</span></span>, <span class="n"><span class="pre">Positions</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">pos</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="p"><span class="pre">{</span></span><span class="p"><span class="pre">}</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3sls8Detector20setPatternLoopCyclesEii9Positions" title="Permalink to this definition"></a><br /></dt>
-<dd><p>[CTB][Mythen3] n: 0-2, level: -1 (complete pattern) and 0-2 levels </p>
+<dd><p>[CTB][Mythen3][Xilinx CTB] n: 0-2, level: -1 (complete pattern) and 0-2 levels </p>
 </dd></dl>
 
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4NK3sls8Detector18getPatternWaitAddrEi9Positions">
 <span id="_CPPv3NK3sls8Detector18getPatternWaitAddrEi9Positions"></span><span id="_CPPv2NK3sls8Detector18getPatternWaitAddrEi9Positions"></span><span id="sls::Detector::getPatternWaitAddr__i.PositionsC"></span><span class="target" id="classsls_1_1Detector_1a62cb2d762768e3b7c8b34e6b1c516469"></span><a class="reference internal" href="result.html#_CPPv4I00EN3sls6ResultE" title="sls::Result"><span class="n"><span class="pre">Result</span></span></a><span class="p"><span class="pre">&lt;</span></span><span class="kt"><span class="pre">int</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getPatternWaitAddr</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">level</span></span>, <span class="n"><span class="pre">Positions</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">pos</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="p"><span class="pre">{</span></span><span class="p"><span class="pre">}</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK3sls8Detector18getPatternWaitAddrEi9Positions" title="Permalink to this definition"></a><br /></dt>
-<dd><p>[CTB][Mythen3] </p>
+<dd><p>[CTB][Mythen3][Xilinx CTB] </p>
 </dd></dl>
 
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4N3sls8Detector18setPatternWaitAddrEii9Positions">
 <span id="_CPPv3N3sls8Detector18setPatternWaitAddrEii9Positions"></span><span id="_CPPv2N3sls8Detector18setPatternWaitAddrEii9Positions"></span><span id="sls::Detector::setPatternWaitAddr__i.i.Positions"></span><span class="target" id="classsls_1_1Detector_1acf8fb8a4da97e4e68a0c6123a258f7a0"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setPatternWaitAddr</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">level</span></span>, <span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">addr</span></span>, <span class="n"><span class="pre">Positions</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">pos</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="p"><span class="pre">{</span></span><span class="p"><span class="pre">}</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3sls8Detector18setPatternWaitAddrEii9Positions" title="Permalink to this definition"></a><br /></dt>
-<dd><p>[CTB][Mythen3] Options: level 0-2 </p>
+<dd><p>[CTB][Mythen3][Xilinx CTB] Options: level 0-2 </p>
 </dd></dl>
 
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4NK3sls8Detector18getPatternWaitTimeEi9Positions">
 <span id="_CPPv3NK3sls8Detector18getPatternWaitTimeEi9Positions"></span><span id="_CPPv2NK3sls8Detector18getPatternWaitTimeEi9Positions"></span><span id="sls::Detector::getPatternWaitTime__i.PositionsC"></span><span class="target" id="classsls_1_1Detector_1aa2848845f7506a45164afc65da6a6144"></span><a class="reference internal" href="result.html#_CPPv4I00EN3sls6ResultE" title="sls::Result"><span class="n"><span class="pre">Result</span></span></a><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">uint64_t</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getPatternWaitTime</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">level</span></span>, <span class="n"><span class="pre">Positions</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">pos</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="p"><span class="pre">{</span></span><span class="p"><span class="pre">}</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK3sls8Detector18getPatternWaitTimeEi9Positions" title="Permalink to this definition"></a><br /></dt>
-<dd><p>[CTB][Mythen3] </p>
+<dd><p>[CTB][Mythen3][Xilinx CTB] </p>
 </dd></dl>
 
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4N3sls8Detector18setPatternWaitTimeEi8uint64_t9Positions">
 <span id="_CPPv3N3sls8Detector18setPatternWaitTimeEi8uint64_t9Positions"></span><span id="_CPPv2N3sls8Detector18setPatternWaitTimeEi8uint64_t9Positions"></span><span id="sls::Detector::setPatternWaitTime__i.uint64_t.Positions"></span><span class="target" id="classsls_1_1Detector_1a9ca4a057c6b4c932d53f58b8e674348e"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setPatternWaitTime</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">level</span></span>, <span class="n"><span class="pre">uint64_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">t</span></span>, <span class="n"><span class="pre">Positions</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">pos</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="p"><span class="pre">{</span></span><span class="p"><span class="pre">}</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3sls8Detector18setPatternWaitTimeEi8uint64_t9Positions" title="Permalink to this definition"></a><br /></dt>
-<dd><p>[CTB][Mythen3] Options: level 0-2 </p>
+<dd><p>[CTB][Mythen3][Xilinx CTB] Options: level 0-2 </p>
 </dd></dl>
 
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4N3sls8Detector14getPatternMaskE9Positions">
 <span id="_CPPv3N3sls8Detector14getPatternMaskE9Positions"></span><span id="_CPPv2N3sls8Detector14getPatternMaskE9Positions"></span><span id="sls::Detector::getPatternMask__Positions"></span><span class="target" id="classsls_1_1Detector_1aa80995a2404ec2646bf3ead4ee9a2e1c"></span><a class="reference internal" href="result.html#_CPPv4I00EN3sls6ResultE" title="sls::Result"><span class="n"><span class="pre">Result</span></span></a><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">uint64_t</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getPatternMask</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">Positions</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">pos</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="p"><span class="pre">{</span></span><span class="p"><span class="pre">}</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3sls8Detector14getPatternMaskE9Positions" title="Permalink to this definition"></a><br /></dt>
-<dd><p>[CTB][Mythen3] </p>
+<dd><p>[CTB][Mythen3][Xilinx CTB] </p>
 </dd></dl>
 
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4N3sls8Detector14setPatternMaskE8uint64_t9Positions">
 <span id="_CPPv3N3sls8Detector14setPatternMaskE8uint64_t9Positions"></span><span id="_CPPv2N3sls8Detector14setPatternMaskE8uint64_t9Positions"></span><span id="sls::Detector::setPatternMask__uint64_t.Positions"></span><span class="target" id="classsls_1_1Detector_1a1da8f372938628e3079923a8784196eb"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setPatternMask</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">uint64_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">mask</span></span>, <span class="n"><span class="pre">Positions</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">pos</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="p"><span class="pre">{</span></span><span class="p"><span class="pre">}</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3sls8Detector14setPatternMaskE8uint64_t9Positions" title="Permalink to this definition"></a><br /></dt>
-<dd><p>[CTB][Mythen3] Selects the bits that will have a pattern mask applied to the selected patmask for every pattern. </p>
+<dd><p>[CTB][Mythen3][Xilinx CTB] Selects the bits that will have a pattern mask applied to the selected patmask for every pattern. </p>
 </dd></dl>
 
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4NK3sls8Detector17getPatternBitMaskE9Positions">
 <span id="_CPPv3NK3sls8Detector17getPatternBitMaskE9Positions"></span><span id="_CPPv2NK3sls8Detector17getPatternBitMaskE9Positions"></span><span id="sls::Detector::getPatternBitMask__PositionsC"></span><span class="target" id="classsls_1_1Detector_1a5d414da5dbd78db3623946470d04ebc8"></span><a class="reference internal" href="result.html#_CPPv4I00EN3sls6ResultE" title="sls::Result"><span class="n"><span class="pre">Result</span></span></a><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">uint64_t</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getPatternBitMask</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">Positions</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">pos</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="p"><span class="pre">{</span></span><span class="p"><span class="pre">}</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK3sls8Detector17getPatternBitMaskE9Positions" title="Permalink to this definition"></a><br /></dt>
-<dd><p>[CTB][Mythen3] </p>
+<dd><p>[CTB][Mythen3][Xilinx CTB] </p>
 </dd></dl>
 
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4N3sls8Detector17setPatternBitMaskE8uint64_t9Positions">
 <span id="_CPPv3N3sls8Detector17setPatternBitMaskE8uint64_t9Positions"></span><span id="_CPPv2N3sls8Detector17setPatternBitMaskE8uint64_t9Positions"></span><span id="sls::Detector::setPatternBitMask__uint64_t.Positions"></span><span class="target" id="classsls_1_1Detector_1a088b37a6263735c0f3d16bbc315ba008"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setPatternBitMask</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">uint64_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">mask</span></span>, <span class="n"><span class="pre">Positions</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">pos</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="p"><span class="pre">{</span></span><span class="p"><span class="pre">}</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3sls8Detector17setPatternBitMaskE8uint64_t9Positions" title="Permalink to this definition"></a><br /></dt>
-<dd><p>[CTB][Mythen3] Sets the mask applied to every pattern to the selected bits </p>
+<dd><p>[CTB][Mythen3][Xilinx CTB] Sets the mask applied to every pattern to the selected bits </p>
 </dd></dl>
 
 <dl class="cpp function">
@@ -3066,7 +3112,7 @@ ROI<p>per module</p>
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4N3sls8Detector9resetFPGAE9Positions">
 <span id="_CPPv3N3sls8Detector9resetFPGAE9Positions"></span><span id="_CPPv2N3sls8Detector9resetFPGAE9Positions"></span><span id="sls::Detector::resetFPGA__Positions"></span><span class="target" id="classsls_1_1Detector_1a199d51fc6f66ad5a48a5c109ea79b66b"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">resetFPGA</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">Positions</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">pos</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="p"><span class="pre">{</span></span><span class="p"><span class="pre">}</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3sls8Detector9resetFPGAE9Positions" title="Permalink to this definition"></a><br /></dt>
-<dd><p>[Jungfrau][Moench][CTB] Advanced user Function! </p>
+<dd><p>[Jungfrau][Moench][CTB][Xilinx CTB] Advanced user Function! </p>
 </dd></dl>
 
 <dl class="cpp function">
@@ -3088,7 +3134,7 @@ ROI<p>per module</p>
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4N3sls8Detector16rebootControllerE9Positions">
 <span id="_CPPv3N3sls8Detector16rebootControllerE9Positions"></span><span id="_CPPv2N3sls8Detector16rebootControllerE9Positions"></span><span id="sls::Detector::rebootController__Positions"></span><span class="target" id="classsls_1_1Detector_1af0c2fa8f9012cb36c230eda621e1e25e"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">rebootController</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">Positions</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">pos</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="p"><span class="pre">{</span></span><span class="p"><span class="pre">}</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3sls8Detector16rebootControllerE9Positions" title="Permalink to this definition"></a><br /></dt>
-<dd><p>[Jungfrau][Moench][Gotthard][CTB][Mythen3][Gotthard2] Advanced user Function! </p>
+<dd><p>[Jungfrau][Moench][Gotthard][CTB][Mythen3][Gotthard2][Xilinx CTB] Advanced user Function! </p>
 </dd></dl>
 
 <dl class="cpp function">
@@ -3124,8 +3170,8 @@ ROI<p>per module</p>
 </dd></dl>
 
 <dl class="cpp function">
-<dt class="sig sig-object cpp" id="_CPPv4N3sls8Detector13writeRegisterE8uint32_t8uint32_t9Positions">
-<span id="_CPPv3N3sls8Detector13writeRegisterE8uint32_t8uint32_t9Positions"></span><span id="_CPPv2N3sls8Detector13writeRegisterE8uint32_t8uint32_t9Positions"></span><span id="sls::Detector::writeRegister__uint32_t.uint32_t.Positions"></span><span class="target" id="classsls_1_1Detector_1abd40c16afc0c1977dc2273a5b39fad75"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">writeRegister</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">uint32_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">addr</span></span>, <span class="n"><span class="pre">uint32_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">val</span></span>, <span class="n"><span class="pre">Positions</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">pos</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="p"><span class="pre">{</span></span><span class="p"><span class="pre">}</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3sls8Detector13writeRegisterE8uint32_t8uint32_t9Positions" title="Permalink to this definition"></a><br /></dt>
+<dt class="sig sig-object cpp" id="_CPPv4N3sls8Detector13writeRegisterE8uint32_t8uint32_tb9Positions">
+<span id="_CPPv3N3sls8Detector13writeRegisterE8uint32_t8uint32_tb9Positions"></span><span id="_CPPv2N3sls8Detector13writeRegisterE8uint32_t8uint32_tb9Positions"></span><span id="sls::Detector::writeRegister__uint32_t.uint32_t.b.Positions"></span><span class="target" id="classsls_1_1Detector_1ae59eba21c5db6708fae4df8adbcb90c4"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">writeRegister</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">uint32_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">addr</span></span>, <span class="n"><span class="pre">uint32_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">val</span></span>, <span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">validate</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="k"><span class="pre">false</span></span>, <span class="n"><span class="pre">Positions</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">pos</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="p"><span class="pre">{</span></span><span class="p"><span class="pre">}</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3sls8Detector13writeRegisterE8uint32_t8uint32_tb9Positions" title="Permalink to this definition"></a><br /></dt>
 <dd><p><p>Advanced user Function!</p>
 <p>Goes to stop server. Hence, can be called while calling blocking</p>
 <a class="reference internal" href="#classsls_1_1Detector_1a9e5ede3d3ffef3a82f623b142df3e233"><span class="std std-ref">acquire()</span></a><p>.</p>
@@ -3134,14 +3180,14 @@ ROI<p>per module</p>
 </dd></dl>
 
 <dl class="cpp function">
-<dt class="sig sig-object cpp" id="_CPPv4N3sls8Detector6setBitE8uint32_ti9Positions">
-<span id="_CPPv3N3sls8Detector6setBitE8uint32_ti9Positions"></span><span id="_CPPv2N3sls8Detector6setBitE8uint32_ti9Positions"></span><span id="sls::Detector::setBit__uint32_t.i.Positions"></span><span class="target" id="classsls_1_1Detector_1a56a5d7994ba003d1d18fb40b5e0fedda"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setBit</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">uint32_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">addr</span></span>, <span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">bitnr</span></span>, <span class="n"><span class="pre">Positions</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">pos</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="p"><span class="pre">{</span></span><span class="p"><span class="pre">}</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3sls8Detector6setBitE8uint32_ti9Positions" title="Permalink to this definition"></a><br /></dt>
+<dt class="sig sig-object cpp" id="_CPPv4N3sls8Detector6setBitE8uint32_tib9Positions">
+<span id="_CPPv3N3sls8Detector6setBitE8uint32_tib9Positions"></span><span id="_CPPv2N3sls8Detector6setBitE8uint32_tib9Positions"></span><span id="sls::Detector::setBit__uint32_t.i.b.Positions"></span><span class="target" id="classsls_1_1Detector_1a6aa0c006382ca5359568bbb6903058c3"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setBit</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">uint32_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">addr</span></span>, <span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">bitnr</span></span>, <span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">validate</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="k"><span class="pre">false</span></span>, <span class="n"><span class="pre">Positions</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">pos</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="p"><span class="pre">{</span></span><span class="p"><span class="pre">}</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3sls8Detector6setBitE8uint32_tib9Positions" title="Permalink to this definition"></a><br /></dt>
 <dd><p>Advanced user Function! </p>
 </dd></dl>
 
 <dl class="cpp function">
-<dt class="sig sig-object cpp" id="_CPPv4N3sls8Detector8clearBitE8uint32_ti9Positions">
-<span id="_CPPv3N3sls8Detector8clearBitE8uint32_ti9Positions"></span><span id="_CPPv2N3sls8Detector8clearBitE8uint32_ti9Positions"></span><span id="sls::Detector::clearBit__uint32_t.i.Positions"></span><span class="target" id="classsls_1_1Detector_1af2019da6286bc2dd4ee6e55f54d87103"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">clearBit</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">uint32_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">addr</span></span>, <span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">bitnr</span></span>, <span class="n"><span class="pre">Positions</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">pos</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="p"><span class="pre">{</span></span><span class="p"><span class="pre">}</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3sls8Detector8clearBitE8uint32_ti9Positions" title="Permalink to this definition"></a><br /></dt>
+<dt class="sig sig-object cpp" id="_CPPv4N3sls8Detector8clearBitE8uint32_tib9Positions">
+<span id="_CPPv3N3sls8Detector8clearBitE8uint32_tib9Positions"></span><span id="_CPPv2N3sls8Detector8clearBitE8uint32_tib9Positions"></span><span id="sls::Detector::clearBit__uint32_t.i.b.Positions"></span><span class="target" id="classsls_1_1Detector_1afbb45293675c59874648f3b143e2afcb"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">clearBit</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">uint32_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">addr</span></span>, <span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">bitnr</span></span>, <span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">validate</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="k"><span class="pre">false</span></span>, <span class="n"><span class="pre">Positions</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">pos</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="p"><span class="pre">{</span></span><span class="p"><span class="pre">}</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3sls8Detector8clearBitE8uint32_tib9Positions" title="Permalink to this definition"></a><br /></dt>
 <dd><p>Advanced user Function! </p>
 </dd></dl>
 
@@ -3250,25 +3296,34 @@ ROI<p>per module</p>
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4NK3sls8Detector26getNumberOfFramesFromStartE9Positions">
 <span id="_CPPv3NK3sls8Detector26getNumberOfFramesFromStartE9Positions"></span><span id="_CPPv2NK3sls8Detector26getNumberOfFramesFromStartE9Positions"></span><span id="sls::Detector::getNumberOfFramesFromStart__PositionsC"></span><span class="target" id="classsls_1_1Detector_1a4a7fd2c4abf5f8c7e559250c29b251b1"></span><a class="reference internal" href="result.html#_CPPv4I00EN3sls6ResultE" title="sls::Result"><span class="n"><span class="pre">Result</span></span></a><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">int64_t</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getNumberOfFramesFromStart</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">Positions</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">pos</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="p"><span class="pre">{</span></span><span class="p"><span class="pre">}</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK3sls8Detector26getNumberOfFramesFromStartE9Positions" title="Permalink to this definition"></a><br /></dt>
-<dd><p>[Jungfrau][Moench][Mythen3][CTB] [Gotthard2] only in continuous mode </p>
+<dd><p>[Jungfrau][Moench][Mythen3][CTB][Xilinx CTB] [Gotthard2] only in continuous mode </p>
 </dd></dl>
 
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4NK3sls8Detector13getActualTimeE9Positions">
 <span id="_CPPv3NK3sls8Detector13getActualTimeE9Positions"></span><span id="_CPPv2NK3sls8Detector13getActualTimeE9Positions"></span><span id="sls::Detector::getActualTime__PositionsC"></span><span class="target" id="classsls_1_1Detector_1ab671aeccc48f6e7b611b0c89114e29ce"></span><a class="reference internal" href="result.html#_CPPv4I00EN3sls6ResultE" title="sls::Result"><span class="n"><span class="pre">Result</span></span></a><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">ns</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getActualTime</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">Positions</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">pos</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="p"><span class="pre">{</span></span><span class="p"><span class="pre">}</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK3sls8Detector13getActualTimeE9Positions" title="Permalink to this definition"></a><br /></dt>
-<dd><p>[Jungfrau][Moench][Mythen3][CTB] Get time from detector start [Gotthard2] not in burst and auto mode </p>
+<dd><p>[Jungfrau][Moench][Mythen3][CTB][Xilinx CTB] Get time from detector start [Gotthard2] not in burst and auto mode </p>
 </dd></dl>
 
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4NK3sls8Detector18getMeasurementTimeE9Positions">
 <span id="_CPPv3NK3sls8Detector18getMeasurementTimeE9Positions"></span><span id="_CPPv2NK3sls8Detector18getMeasurementTimeE9Positions"></span><span id="sls::Detector::getMeasurementTime__PositionsC"></span><span class="target" id="classsls_1_1Detector_1adbd2dd583384ea013552a15d0d3a7b4d"></span><a class="reference internal" href="result.html#_CPPv4I00EN3sls6ResultE" title="sls::Result"><span class="n"><span class="pre">Result</span></span></a><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">ns</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getMeasurementTime</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">Positions</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">pos</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="p"><span class="pre">{</span></span><span class="p"><span class="pre">}</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK3sls8Detector18getMeasurementTimeE9Positions" title="Permalink to this definition"></a><br /></dt>
-<dd><p>[Jungfrau][Moench][Mythen3][CTB] Get timestamp at a frame start [Gotthard2] not in burst and auto mode </p>
+<dd><p>[Jungfrau][Moench][Mythen3][CTB][Xilinx CTB] Get timestamp at a frame start [Gotthard2] not in burst and auto mode </p>
 </dd></dl>
 
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4NK3sls8Detector14getUserDetailsEv">
 <span id="_CPPv3NK3sls8Detector14getUserDetailsEv"></span><span id="_CPPv2NK3sls8Detector14getUserDetailsEv"></span><span id="sls::Detector::getUserDetailsC"></span><span class="target" id="classsls_1_1Detector_1aa73ef9d015465b19a07f8a4f8995dae4"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getUserDetails</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK3sls8Detector14getUserDetailsEv" title="Permalink to this definition"></a><br /></dt>
 <dd><p>get user details from shared memory (hostname, type, PID, User, Date) </p>
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-functions">Public Functions</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N3sls8Detector20configureTransceiverE9Positions">
+<span id="_CPPv3N3sls8Detector20configureTransceiverE9Positions"></span><span id="_CPPv2N3sls8Detector20configureTransceiverE9Positions"></span><span id="sls::Detector::configureTransceiver__Positions"></span><span class="target" id="classsls_1_1Detector_1ad2768212e0d34873e312a35695875056"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">configureTransceiver</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">Positions</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">pos</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="p"><span class="pre">{</span></span><span class="p"><span class="pre">}</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3sls8Detector20configureTransceiverE9Positions" title="Permalink to this definition"></a><br /></dt>
+<dd><p>[Xilinx Ctb] </p>
 </dd></dl>
 
 </div>

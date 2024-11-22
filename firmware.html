@@ -1,13 +1,15 @@
 <!DOCTYPE html>
-<html class="writer-html5" lang="en" >
+<html class="writer-html5" lang="en">
 <head>
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Firmware Upgrade &mdash; slsDetectorPackage  documentation</title>
-      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
-      <link rel="stylesheet" href="_static/css/extra.css" type="text/css" />
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css" />
+      <link rel="stylesheet" type="text/css" href="_static/css/extra.css" />
+
+  
   <!--[if lt IE 9]>
     <script src="_static/js/html5shiv.min.js"></script>
   <![endif]-->
@@ -37,7 +39,7 @@
             slsDetectorPackage
           </a>
               <div class="version">
-                8.0.2
+                9.0.0
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
@@ -112,8 +114,8 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#ctb">Ctb</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#id11">Download</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id12">Upgrade</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id12">Download</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id13">Upgrade</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#firmware-troubleshooting-with-blackfin">Firmware Troubleshooting with blackfin</a><ul>
@@ -141,6 +143,19 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="receivers.html">Receivers</a></li>
 <li class="toctree-l1"><a class="reference internal" href="slsreceiver.html">slsReceiver/ slsMultiReceiver</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Receiver Files</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="fileformat.html">File format</a></li>
+<li class="toctree-l1"><a class="reference internal" href="slsreceiverheaderformat.html">SLS Receiver Header Format</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ctbframeformat.html">Chip Test Board Frame Format</a></li>
+<li class="toctree-l1"><a class="reference internal" href="masterfileattributes.html">Master File Attributes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryfileformat.html">Binary File Format</a></li>
+<li class="toctree-l1"><a class="reference internal" href="hdf5fileformat.html">HDF5 File Format</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Receiver ZMQ Stream</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="zmqjsonheaderformat.html">ZMQ: Json Header Format</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Troubleshooting</span></p>
 <ul>
@@ -280,7 +295,7 @@ reconfig<span class="w"> </span>fw0
 <p>In case you have had issues in the past with programming via software:</p>
 <ul class="simple">
 <li><p>6.1.2 server has a fix for seamless fpga programming</p></li>
-<li><p>We recommend first updating the on-board detector server to 6.1.2 (with client 6.1.x) using command ‘updatedetectorserver’ or ‘copydetectorserver’.</p></li>
+<li><p>We recommend first updating the on-board detector server to 6.1.2 (with client 6.1.x) using command <a class="reference external" href="commandline.html#term-updatedetectorserver-server_name-with-full-path">updatedetectorserver</a>.</p></li>
 <li><p>Then use command ‘programfpga’ to only update firmware or use command ‘update’ to update firmware and server to the latest release.</p></li>
 </ul>
 </div>
@@ -426,7 +441,7 @@ sls_detector_put<span class="w"> </span>programfpga<span class="w"> </span>xxx.r
 <p>In case you have had issues in the past with programming via software:</p>
 <ul class="simple">
 <li><p>6.1.2 server has a fix for seamless fpga programming</p></li>
-<li><p>We recommend first updating the on-board detector server to 6.1.2 (with client 6.1.x) using command ‘updatedetectorserver’ or ‘copydetectorserver’.</p></li>
+<li><p>We recommend first updating the on-board detector server to 6.1.2 (with client 6.1.x) using command <a class="reference external" href="commandline.html#term-updatedetectorserver-server_name-with-full-path">updatedetectorserver</a>.</p></li>
 <li><p>Then use command ‘programfpga’ to only update firmware or use command ‘update’ to update firmware and server to the latest release.</p></li>
 </ul>
 </div>
@@ -454,15 +469,15 @@ sls_detector_put<span class="w"> </span>programfpga<span class="w"> </span>xxx.p
 </section>
 <section id="ctb">
 <h2>Ctb<a class="headerlink" href="#ctb" title="Permalink to this heading"></a></h2>
-<section id="id11">
-<h3>Download<a class="headerlink" href="#id11" title="Permalink to this heading"></a></h3>
+<section id="id12">
+<h3>Download<a class="headerlink" href="#id12" title="Permalink to this heading"></a></h3>
 <ul class="simple">
 <li><p>detector server corresponding to package in slsDetectorPackage/serverBin</p></li>
 <li><p><a class="reference external" href="https://github.com/slsdetectorgroup/slsDetectorFirmware">pof files</a></p></li>
 </ul>
 </section>
-<section id="id12">
-<h3>Upgrade<a class="headerlink" href="#id12" title="Permalink to this heading"></a></h3>
+<section id="id13">
+<h3>Upgrade<a class="headerlink" href="#id13" title="Permalink to this heading"></a></h3>
 <p>Check <a class="reference internal" href="#blackfin-firmware-troubleshooting"><span class="std std-ref">firmware troubleshooting</span></a> if you run into issues while programming firmware.</p>
 <dl>
 <dt>Program from console</dt><dd><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Always ensure that the client and server software are of the same release.</span>

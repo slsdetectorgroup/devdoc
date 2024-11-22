@@ -1,13 +1,15 @@
 <!DOCTYPE html>
-<html class="writer-html5" lang="en" >
+<html class="writer-html5" lang="en">
 <head>
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Format &mdash; slsDetectorPackage  documentation</title>
-      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
-      <link rel="stylesheet" href="_static/css/extra.css" type="text/css" />
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css" />
+      <link rel="stylesheet" type="text/css" href="_static/css/extra.css" />
+
+  
   <!--[if lt IE 9]>
     <script src="_static/js/html5shiv.min.js"></script>
   <![endif]-->
@@ -37,7 +39,7 @@
             slsDetectorPackage
           </a>
               <div class="version">
-                8.0.2
+                9.0.0
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
@@ -106,6 +108,19 @@
 <li class="toctree-l1"><a class="reference internal" href="receivers.html">Receivers</a></li>
 <li class="toctree-l1"><a class="reference internal" href="slsreceiver.html">slsReceiver/ slsMultiReceiver</a></li>
 </ul>
+<p class="caption" role="heading"><span class="caption-text">Receiver Files</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="fileformat.html">File format</a></li>
+<li class="toctree-l1"><a class="reference internal" href="slsreceiverheaderformat.html">SLS Receiver Header Format</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ctbframeformat.html">Chip Test Board Frame Format</a></li>
+<li class="toctree-l1"><a class="reference internal" href="masterfileattributes.html">Master File Attributes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryfileformat.html">Binary File Format</a></li>
+<li class="toctree-l1"><a class="reference internal" href="hdf5fileformat.html">HDF5 File Format</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Receiver ZMQ Stream</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="zmqjsonheaderformat.html">ZMQ: Json Header Format</a></li>
+</ul>
 <p class="caption" role="heading"><span class="caption-text">Troubleshooting</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="troubleshooting.html">Troubleshooting</a></li>
@@ -137,12 +152,29 @@
              
   <section id="format">
 <span id="detector-udp-header"></span><h1>Format<a class="headerlink" href="#format" title="Permalink to this heading"></a></h1>
-<p>The UDP data format for the packets consist of a common header for all detectors, followed by the data for that one packet.</p>
+<p>The UDP data format for the packets consist of a common header of 48 bytes for all detectors, followed by the data for that one packet.</p>
 <section id="current-version">
 <h2>Current Version<a class="headerlink" href="#current-version" title="Permalink to this heading"></a></h2>
 <p><strong>v2.0 (slsDetectorPackage v7.0.0+)</strong></p>
-<table class="colwidths-given docutils align-center" id="id1">
-<caption><span class="caption-text">&lt;—————————————————- 8 bytes per row ———————————————&gt;</span><a class="headerlink" href="#id1" title="Permalink to this table"></a></caption>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">typedef</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kt">uint64_t</span><span class="w"> </span><span class="n">frameNumber</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">uint32_t</span><span class="w"> </span><span class="n">expLength</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">uint32_t</span><span class="w"> </span><span class="n">packetNumber</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">uint64_t</span><span class="w"> </span><span class="n">detSpec1</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">uint64_t</span><span class="w"> </span><span class="n">timestamp</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">uint16_t</span><span class="w"> </span><span class="n">modId</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">uint16_t</span><span class="w"> </span><span class="n">row</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">uint16_t</span><span class="w"> </span><span class="n">column</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">uint16_t</span><span class="w"> </span><span class="n">detSpec2</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">uint32_t</span><span class="w"> </span><span class="n">detSpec3</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">uint16_t</span><span class="w"> </span><span class="n">detSpec4</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">uint8_t</span><span class="w"> </span><span class="n">detType</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">uint8_t</span><span class="w"> </span><span class="n">version</span><span class="p">;</span>
+<span class="p">}</span><span class="w"> </span><span class="n">sls_detector_header</span><span class="p">;</span>
+</pre></div>
+</div>
+<table class="colwidths-given docutils align-center" id="id2">
+<caption><span class="caption-text">&lt;—————————————————- 8 bytes per row ———————————————&gt;</span><a class="headerlink" href="#id2" title="Permalink to this table"></a></caption>
 <colgroup>
 <col style="width: 25%" />
 <col style="width: 25%" />
@@ -195,7 +227,7 @@ from the previous version (v2.0), the version number stays the same.</p>
 </ul>
 </section>
 <section id="detector-enum">
-<h2>Detector Enum<a class="headerlink" href="#detector-enum" title="Permalink to this heading"></a></h2>
+<span id="id1"></span><h2>Detector Enum<a class="headerlink" href="#detector-enum" title="Permalink to this heading"></a></h2>
 <blockquote>
 <div><table class="docutils align-default">
 <colgroup>
@@ -239,8 +271,8 @@ from the previous version (v2.0), the version number stays the same.</p>
 <section id="previous-versions">
 <h2>Previous Versions<a class="headerlink" href="#previous-versions" title="Permalink to this heading"></a></h2>
 <p><strong>v2.0 (Package v4.0.0 -  6.x.x)</strong></p>
-<table class="colwidths-given docutils align-center" id="id2">
-<caption><span class="caption-text">&lt;—————————————————- 8 bytes —————————————————-&gt;</span><a class="headerlink" href="#id2" title="Permalink to this table"></a></caption>
+<table class="colwidths-given docutils align-center" id="id3">
+<caption><span class="caption-text">&lt;—————————————————- 8 bytes —————————————————-&gt;</span><a class="headerlink" href="#id3" title="Permalink to this table"></a></caption>
 <colgroup>
 <col style="width: 25%" />
 <col style="width: 25%" />
@@ -271,8 +303,8 @@ from the previous version (v2.0), the version number stays the same.</p>
 </tbody>
 </table>
 <p><strong>v1.0 (Package v3.0.0 -  3.1.5)</strong></p>
-<table class="colwidths-given docutils align-center" id="id3">
-<caption><span class="caption-text">&lt;—————————————————- 8 bytes —————————————————-&gt;</span><a class="headerlink" href="#id3" title="Permalink to this table"></a></caption>
+<table class="colwidths-given docutils align-center" id="id4">
+<caption><span class="caption-text">&lt;—————————————————- 8 bytes —————————————————-&gt;</span><a class="headerlink" href="#id4" title="Permalink to this table"></a></caption>
 <colgroup>
 <col style="width: 25%" />
 <col style="width: 25%" />

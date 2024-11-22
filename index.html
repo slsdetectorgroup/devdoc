@@ -1,13 +1,15 @@
 <!DOCTYPE html>
-<html class="writer-html5" lang="en" >
+<html class="writer-html5" lang="en">
 <head>
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Welcome to slsDetectorPackage’s documentation! &mdash; slsDetectorPackage  documentation</title>
-      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
-      <link rel="stylesheet" href="_static/css/extra.css" type="text/css" />
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css" />
+      <link rel="stylesheet" type="text/css" href="_static/css/extra.css" />
+
+  
   <!--[if lt IE 9]>
     <script src="_static/js/html5shiv.min.js"></script>
   <![endif]-->
@@ -36,7 +38,7 @@
             slsDetectorPackage
           </a>
               <div class="version">
-                8.0.2
+                9.0.0
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
@@ -98,6 +100,19 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="receivers.html">Receivers</a></li>
 <li class="toctree-l1"><a class="reference internal" href="slsreceiver.html">slsReceiver/ slsMultiReceiver</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Receiver Files</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="fileformat.html">File format</a></li>
+<li class="toctree-l1"><a class="reference internal" href="slsreceiverheaderformat.html">SLS Receiver Header Format</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ctbframeformat.html">Chip Test Board Frame Format</a></li>
+<li class="toctree-l1"><a class="reference internal" href="masterfileattributes.html">Master File Attributes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binaryfileformat.html">Binary File Format</a></li>
+<li class="toctree-l1"><a class="reference internal" href="hdf5fileformat.html">HDF5 File Format</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Receiver ZMQ Stream</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="zmqjsonheaderformat.html">ZMQ: Json Header Format</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Troubleshooting</span></p>
 <ul>
@@ -218,7 +233,7 @@ For further documentation, visit the official page: <a class="reference external
 <li class="toctree-l2"><a class="reference internal" href="commandline.html#usage">Usage</a></li>
 <li class="toctree-l2"><a class="reference internal" href="commandline.html#help">Help</a></li>
 <li class="toctree-l2"><a class="reference internal" href="commandline.html#commands">Commands</a></li>
-<li class="toctree-l2"><a class="reference internal" href="commandline.html#depreciated-commands">Depreciated commands</a></li>
+<li class="toctree-l2"><a class="reference internal" href="commandline.html#deprecated-commands">Deprecated commands</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="quick_start_guide.html">Quick Start Guide</a><ul>
@@ -327,13 +342,67 @@ For further documentation, visit the official page: <a class="reference external
 </li>
 <li class="toctree-l1"><a class="reference internal" href="slsreceiver.html">slsReceiver/ slsMultiReceiver</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="slsreceiver.html#client-commands">Client Commands</a></li>
-<li class="toctree-l2"><a class="reference internal" href="slsreceiver.html#zmq-json-header-format">ZMQ: Json Header Format</a></li>
-<li class="toctree-l2"><a class="reference internal" href="slsreceiver.html#sls-receiver-header-format">SLS Receiver Header Format</a></li>
-<li class="toctree-l2"><a class="reference internal" href="slsreceiver.html#file-format">File format</a></li>
 <li class="toctree-l2"><a class="reference internal" href="slsreceiver.html#performance">Performance</a></li>
 <li class="toctree-l2"><a class="reference internal" href="slsreceiver.html#using-callbacks">Using Callbacks</a></li>
 </ul>
 </li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<p class="caption" role="heading"><span class="caption-text">Receiver Files</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="fileformat.html">File format</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="fileformat.html#number-of-files">Number of Files</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fileformat.html#naming">Naming</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fileformat.html#formats">Formats</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="slsreceiverheaderformat.html">SLS Receiver Header Format</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ctbframeformat.html">Chip Test Board Frame Format</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="ctbframeformat.html#contents-of-a-frame">Contents of a frame</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ctbframeformat.html#digital-data">Digital data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ctbframeformat.html#parameters-of-readout-modes">Parameters of readout modes</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="masterfileattributes.html">Master File Attributes</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="masterfileattributes.html#eiger">Eiger</a></li>
+<li class="toctree-l2"><a class="reference internal" href="masterfileattributes.html#jungfrau">Jungfrau</a></li>
+<li class="toctree-l2"><a class="reference internal" href="masterfileattributes.html#gotthard-ii">Gotthard II</a></li>
+<li class="toctree-l2"><a class="reference internal" href="masterfileattributes.html#mythen3">Mythen3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="masterfileattributes.html#moench">Moench</a></li>
+<li class="toctree-l2"><a class="reference internal" href="masterfileattributes.html#gotthard-i">Gotthard I</a></li>
+<li class="toctree-l2"><a class="reference internal" href="masterfileattributes.html#chip-test-board">Chip Test Board</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="binaryfileformat.html">Binary File Format</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="binaryfileformat.html#master-file">Master File</a></li>
+<li class="toctree-l2"><a class="reference internal" href="binaryfileformat.html#data-file">Data File</a></li>
+<li class="toctree-l2"><a class="reference internal" href="binaryfileformat.html#json-master-file-examples">JSON Master File Examples</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="binaryfileformat.html#eiger">Eiger</a></li>
+<li class="toctree-l3"><a class="reference internal" href="binaryfileformat.html#jungfrau">Jungfrau</a></li>
+<li class="toctree-l3"><a class="reference internal" href="binaryfileformat.html#gotthard2">Gotthard2</a></li>
+<li class="toctree-l3"><a class="reference internal" href="binaryfileformat.html#mythen3">Mythen3</a></li>
+<li class="toctree-l3"><a class="reference internal" href="binaryfileformat.html#moench">Moench</a></li>
+<li class="toctree-l3"><a class="reference internal" href="binaryfileformat.html#gotthard-i">Gotthard I</a></li>
+<li class="toctree-l3"><a class="reference internal" href="binaryfileformat.html#chip-test-board">Chip Test Board</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="hdf5fileformat.html">HDF5 File Format</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="hdf5fileformat.html#compilation">Compilation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hdf5fileformat.html#setup">Setup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hdf5fileformat.html#master-file">Master File</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hdf5fileformat.html#data-file">Data File</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hdf5fileformat.html#virtual-data-file">Virtual Data File</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<p class="caption" role="heading"><span class="caption-text">Receiver ZMQ Stream</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="zmqjsonheaderformat.html">ZMQ: Json Header Format</a></li>
 </ul>
 </div>
 <div class="toctree-wrapper compound">
@@ -359,6 +428,10 @@ For further documentation, visit the official page: <a class="reference external
 </li>
 <li class="toctree-l2"><a class="reference internal" href="troubleshooting.html#gotthard">Gotthard</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="troubleshooting.html#missing-first-frame-or-next-frame-after-a-delay">Missing first frame or next frame after a delay</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="troubleshooting.html#mythen3">Mythen3</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="troubleshooting.html#detector-status-is-waiting-even-in-auto-timing-mode">Detector status is waiting even in auto timing mode</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="troubleshooting.html#jungfrau">Jungfrau</a><ul>

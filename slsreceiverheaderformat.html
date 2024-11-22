@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>slsReceiver/ slsMultiReceiver &mdash; slsDetectorPackage  documentation</title>
+  <title>SLS Receiver Header Format &mdash; slsDetectorPackage  documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
       <link rel="stylesheet" type="text/css" href="_static/css/theme.css" />
       <link rel="stylesheet" type="text/css" href="_static/css/extra.css" />
@@ -23,8 +23,8 @@
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="File format" href="fileformat.html" />
-    <link rel="prev" title="Receivers" href="receivers.html" /> 
+    <link rel="next" title="Chip Test Board Frame Format" href="ctbframeformat.html" />
+    <link rel="prev" title="File format" href="fileformat.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -98,19 +98,14 @@
 <li class="toctree-l1"><a class="reference internal" href="udpdetspec.html">Detector Specific Fields</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Receiver</span></p>
-<ul class="current">
+<ul>
 <li class="toctree-l1"><a class="reference internal" href="receivers.html">Receivers</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">slsReceiver/ slsMultiReceiver</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#client-commands">Client Commands</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#performance">Performance</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#using-callbacks">Using Callbacks</a></li>
-</ul>
-</li>
+<li class="toctree-l1"><a class="reference internal" href="slsreceiver.html">slsReceiver/ slsMultiReceiver</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Receiver Files</span></p>
-<ul>
+<ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="fileformat.html">File format</a></li>
-<li class="toctree-l1"><a class="reference internal" href="slsreceiverheaderformat.html">SLS Receiver Header Format</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">SLS Receiver Header Format</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ctbframeformat.html">Chip Test Board Frame Format</a></li>
 <li class="toctree-l1"><a class="reference internal" href="masterfileattributes.html">Master File Attributes</a></li>
 <li class="toctree-l1"><a class="reference internal" href="binaryfileformat.html">Binary File Format</a></li>
@@ -139,9 +134,9 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
-      <li class="breadcrumb-item active">slsReceiver/ slsMultiReceiver</li>
+      <li class="breadcrumb-item active">SLS Receiver Header Format</li>
       <li class="wy-breadcrumbs-aside">
-            <a href="_sources/slsreceiver.rst.txt" rel="nofollow"> View page source</a>
+            <a href="_sources/slsreceiverheaderformat.rst.txt" rel="nofollow"> View page source</a>
       </li>
   </ul>
   <hr/>
@@ -149,140 +144,54 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="slsreceiver-slsmultireceiver">
-<h1>slsReceiver/ slsMultiReceiver<a class="headerlink" href="#slsreceiver-slsmultireceiver" title="Permalink to this heading"></a></h1>
-<div class="line-block">
-<div class="line">One has to start the slsReceiver before loading config file or using any receiver commands (prefix: <strong>rx_</strong> )</div>
-</div>
-<dl>
-<dt>For a Single Module</dt><dd><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># default port 1954</span>
-slsReceiver
-
-<span class="c1"># custom port 2012</span>
-slsReceiver<span class="w"> </span>-t2012
-</pre></div>
-</div>
-</dd>
-<dt>For Multiple Modules</dt><dd><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># each receiver (for each module) requires a unique tcp port (if all on same machine)</span>
-
-<span class="c1"># using slsReceiver in multiple consoles</span>
-slsReceiver
-slsReceiver<span class="w"> </span>-t1955
-
-<span class="c1"># slsMultiReceiver [starting port] [number of receivers]</span>
-slsMultiReceiver<span class="w"> </span><span class="m">2012</span><span class="w"> </span><span class="m">2</span>
-
-<span class="c1"># slsMultiReceiver [starting port] [number of receivers] [print each frame header for debugging]</span>
-slsMultiReceiver<span class="w"> </span><span class="m">2012</span><span class="w"> </span><span class="m">2</span><span class="w"> </span><span class="m">1</span>
-</pre></div>
-</div>
-</dd>
-</dl>
-<section id="client-commands">
-<h2>Client Commands<a class="headerlink" href="#client-commands" title="Permalink to this heading"></a></h2>
-<div class="line-block">
-<div class="line">One can remove <strong>udp_dstmac</strong> from the config file, as the slsReceiver fetches this from the <strong>udp_ip</strong>.</div>
-</div>
-<div class="line-block">
-<div class="line">One can use “auto” for <strong>udp_dstip</strong> if one wants to use default ip of <strong>rx_hostname</strong>.</div>
-</div>
-<div class="line-block">
-<div class="line">The first command to the receiver (<strong>rx_</strong> commands) should be <strong>rx_hostname</strong>. The following are the different ways to establish contact.</div>
-</div>
-<blockquote>
-<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># default receiver tcp port (1954)</span>
-rx_hostname<span class="w"> </span>xxx
-
-<span class="c1"># custom receiver port</span>
-rx_hostname<span class="w"> </span>xxx:1957
-
-<span class="c1"># custom receiver port</span>
-rx_tcpport<span class="w"> </span><span class="m">1954</span>
-rx_hostname<span class="w"> </span>xxx
-
-<span class="c1"># multi modules with custom ports</span>
-rx_hostname<span class="w"> </span>xxx:1955+xxx:1956+
-
-
-<span class="c1"># multi modules using increasing tcp ports when using multi detector command</span>
-rx_tcpport<span class="w"> </span><span class="m">1955</span>
-rx_hostname<span class="w"> </span>xxx
-
-<span class="c1"># or specify multi modules with custom ports on same rxr pc</span>
-<span class="m">0</span>:rx_tcpport<span class="w"> </span><span class="m">1954</span>
-<span class="m">1</span>:rx_tcpport<span class="w"> </span><span class="m">1955</span>
-<span class="m">2</span>:rx_tcpport<span class="w"> </span><span class="m">1956</span>
-rx_hostname<span class="w"> </span>xxx
-
-<span class="c1"># multi modules with custom ports on different rxr pc</span>
-<span class="m">0</span>:rx_tcpport<span class="w"> </span><span class="m">1954</span>
-<span class="m">0</span>:rx_hostname<span class="w"> </span>xxx
-<span class="m">1</span>:rx_tcpport<span class="w"> </span><span class="m">1955</span>
-<span class="m">1</span>:rx_hostname<span class="w"> </span>yyy
-</pre></div>
-</div>
-</div></blockquote>
-<div class="line-block">
-<div class="line">Example commands:</div>
-</div>
-<blockquote>
-<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># to get a list of receiver commands (these dont include file commands)</span>
-sls_detector_get<span class="w"> </span>list<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>rx_
-
-<span class="c1"># some file commands are:</span>
-fwrite
-foverwrite
-findex
-fpath
-fname
-fmaster
-fformat
-
-<span class="c1"># to get help on a single commands</span>
-sls_detector_get<span class="w"> </span>-h<span class="w"> </span>rx_framescaught
-</pre></div>
-</div>
-</div></blockquote>
-</section>
-<section id="performance">
-<h2>Performance<a class="headerlink" href="#performance" title="Permalink to this heading"></a></h2>
-<p>Please refer to Receiver PC Tuning options and slsReceiver Tuning under <a class="reference external" href="https://slsdetectorgroup.github.io/devdoc/troubleshooting.html">Troubleshooting</a>.</p>
-</section>
-<section id="using-callbacks">
-<h2>Using Callbacks<a class="headerlink" href="#using-callbacks" title="Permalink to this heading"></a></h2>
+  <section id="sls-receiver-header-format">
+<span id="id1"></span><h1>SLS Receiver Header Format<a class="headerlink" href="#sls-receiver-header-format" title="Permalink to this heading"></a></h1>
 <dl class="simple">
-<dt>One can get a callback in the receiver for each frame to:</dt><dd><ul class="simple">
-<li><p>manipulate the data that will be written to file, or</p></li>
-<li><p>disable file writing in slsReceiver and take care of the data for each call back</p></li>
+<dt>It is 112 bytes and consists of:</dt><dd><ul class="simple">
+<li><p>48 bytes of the SLS Detector Header</p></li>
+<li><p>64 bytes of packet mask</p></li>
 </ul>
 </dd>
 </dl>
-<p>When handling callbacks, the control should be returned as soon as possible, to prevent packet loss from fifo being full.</p>
-<dl>
-<dt><strong>Example</strong></dt><dd><ul>
-<li><p><a class="reference external" href="https://github.com/slsdetectorgroup/api-examples/blob/master/e4-receiver_callbacks.cpp">main cpp file</a></p></li>
-<li><p><a class="reference external" href="https://github.com/slsdetectorgroup/api-examples/blob/master/CMakeLists.txt">cmake file</a>.</p></li>
-<li><p>how to install the slsDetectorPackage with cmake is provided <a class="reference internal" href="installation.html#build-from-source-using-cmake"><span class="std std-ref">here</span></a>.</p></li>
-<li><p>compile the example <strong>e4-rxr</strong> by:</p>
-<blockquote>
-<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>cmake<span class="w"> </span>../path/to/your/source<span class="w"> </span>-DCMAKE_PREFIX_PATH<span class="o">=</span>/path/to/sls/install
-make
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">typedef</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kt">uint64_t</span><span class="w"> </span><span class="n">frameNumber</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">uint32_t</span><span class="w"> </span><span class="n">expLength</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">uint32_t</span><span class="w"> </span><span class="n">packetNumber</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">uint64_t</span><span class="w"> </span><span class="n">detSpec1</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">uint64_t</span><span class="w"> </span><span class="n">timestamp</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">uint16_t</span><span class="w"> </span><span class="n">modId</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">uint16_t</span><span class="w"> </span><span class="n">row</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">uint16_t</span><span class="w"> </span><span class="n">column</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">uint16_t</span><span class="w"> </span><span class="n">detSpec2</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">uint32_t</span><span class="w"> </span><span class="n">detSpec3</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">uint16_t</span><span class="w"> </span><span class="n">detSpec4</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">uint8_t</span><span class="w"> </span><span class="n">detType</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">uint8_t</span><span class="w"> </span><span class="n">version</span><span class="p">;</span>
+<span class="p">}</span><span class="w"> </span><span class="n">sls_detector_header</span><span class="p">;</span>
+
+<span class="k">struct</span><span class="w"> </span><span class="nc">sls_receiver_header</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">sls_detector_header</span><span class="w"> </span><span class="n">detHeader</span><span class="p">;</span><span class="w"> </span><span class="cm">/**&lt; is the detector header */</span>
+<span class="w">    </span><span class="n">sls_bitset</span><span class="w"> </span><span class="n">packetsMask</span><span class="p">;</span><span class="w">        </span><span class="cm">/**&lt; is the packets caught bit mask */</span>
+<span class="p">};</span>
 </pre></div>
 </div>
-</div></blockquote>
-</li>
-</ul>
-</dd>
-</dl>
-</section>
+<div class="line-block">
+<div class="line"><strong>sls_detector_header</strong> (described in <a class="reference internal" href="udpheader.html#detector-udp-header"><span class="std std-ref">the current detector header</span></a>)</div>
+</div>
+<div class="line-block">
+<div class="line">The <strong>packetNumber</strong> from detector UDP header is modified in <strong>sls_receiver_header</strong> to number of packets caught by receiver for that frame and the bit mask for each packet caught is the <strong>packetsMask</strong>. The packetsMask is a total of 512 bits due to the largest number of packets per frame among our detectors.</div>
+</div>
+<div class="line-block">
+<div class="line">For eg. Jungfrau has 128 packets per frame. If <strong>packetNumeber</strong> is 128, then this frame is complete. If it is 127 or less, it is a partial frame due to missing packets. If one would still like to use it, the <strong>packetsMask</strong> will specify which packet has been received or is missing.</div>
+</div>
 </section>
 
 
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="receivers.html" class="btn btn-neutral float-left" title="Receivers" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="fileformat.html" class="btn btn-neutral float-right" title="File format" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="fileformat.html" class="btn btn-neutral float-left" title="File format" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="ctbframeformat.html" class="btn btn-neutral float-right" title="Chip Test Board Frame Format" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
