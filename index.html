@@ -105,7 +105,6 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="fileformat.html">File format</a></li>
 <li class="toctree-l1"><a class="reference internal" href="slsreceiverheaderformat.html">SLS Receiver Header Format</a></li>
-<li class="toctree-l1"><a class="reference internal" href="ctbframeformat.html">Chip Test Board Frame Format</a></li>
 <li class="toctree-l1"><a class="reference internal" href="masterfileattributes.html">Master File Attributes</a></li>
 <li class="toctree-l1"><a class="reference internal" href="binaryfileformat.html">Binary File Format</a></li>
 <li class="toctree-l1"><a class="reference internal" href="hdf5fileformat.html">HDF5 File Format</a></li>
@@ -153,9 +152,38 @@ For further documentation, visit the official page: <a class="reference external
 <div class="toctree-wrapper compound">
 <p class="caption" role="heading"><span class="caption-text">Installation:</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="dependencies.html">Dependencies</a></li>
-<li class="toctree-l1"><a class="reference internal" href="consuming.html">Consuming slsDetectorPackage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="installation.html#install-binaries-using-conda">Install binaries using conda</a></li>
+<li class="toctree-l2"><a class="reference internal" href="installation.html#build-from-source">Build from source</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="installation.html#download-source-code-from-github">1. Download Source Code from github</a></li>
+<li class="toctree-l3"><a class="reference internal" href="installation.html#build-from-source-using-cmake">2. Build from Source</a></li>
+<li class="toctree-l3"><a class="reference internal" href="installation.html#build-using-cmake">Build using CMake</a></li>
+<li class="toctree-l3"><a class="reference internal" href="installation.html#build-using-in-built-cmk-sh-script">Build using in-built cmk.sh script</a></li>
+<li class="toctree-l3"><a class="reference internal" href="installation.html#build-on-old-distributions">Build on old distributions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="installation.html#build-slsdetectorgui-qt5">Build slsDetectorGui (Qt5)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="installation.html#build-this-documentation">Build this documentation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="installation.html#pybind-and-zeromq">Pybind and Zeromq</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="dependencies.html">Dependencies</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="dependencies.html#core">Core</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dependencies.html#python-bindings">Python bindings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dependencies.html#zeromq">ZeroMQ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dependencies.html#gui">GUI</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dependencies.html#moench-executables">Moench executables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dependencies.html#documentation">Documentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dependencies.html#packaged-in-libs">Packaged in libs/</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="consuming.html">Consuming slsDetectorPackage</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="consuming.html#cmake-slsdetectorpackage-as-submodule-in-your-project">CMake: slsDetectorPackage as submodule in your project</a></li>
+<li class="toctree-l2"><a class="reference internal" href="consuming.html#cmake-find-package-slsdetectorpackage">CMake: find_package(slsDetectorPackage)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="consuming.html#cmake-find-package-and-conda">CMake: find_package and conda</a></li>
+<li class="toctree-l2"><a class="reference internal" href="consuming.html#no-tools-minimal-approach">No tools minimal approach</a></li>
+</ul>
+</li>
 </ul>
 </div>
 <div class="toctree-wrapper compound">
@@ -358,12 +386,6 @@ For further documentation, visit the official page: <a class="reference external
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="slsreceiverheaderformat.html">SLS Receiver Header Format</a></li>
-<li class="toctree-l1"><a class="reference internal" href="ctbframeformat.html">Chip Test Board Frame Format</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="ctbframeformat.html#contents-of-a-frame">Contents of a frame</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ctbframeformat.html#digital-data">Digital data</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ctbframeformat.html#parameters-of-readout-modes">Parameters of readout modes</a></li>
-</ul>
-</li>
 <li class="toctree-l1"><a class="reference internal" href="masterfileattributes.html">Master File Attributes</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="masterfileattributes.html#eiger">Eiger</a></li>
 <li class="toctree-l2"><a class="reference internal" href="masterfileattributes.html#jungfrau">Jungfrau</a></li>

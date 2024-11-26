@@ -120,7 +120,6 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="fileformat.html">File format</a></li>
 <li class="toctree-l1"><a class="reference internal" href="slsreceiverheaderformat.html">SLS Receiver Header Format</a></li>
-<li class="toctree-l1"><a class="reference internal" href="ctbframeformat.html">Chip Test Board Frame Format</a></li>
 <li class="toctree-l1"><a class="reference internal" href="masterfileattributes.html">Master File Attributes</a></li>
 <li class="toctree-l1"><a class="reference internal" href="binaryfileformat.html">Binary File Format</a></li>
 <li class="toctree-l1"><a class="reference internal" href="hdf5fileformat.html">HDF5 File Format</a></li>
@@ -158,14 +157,15 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <div class="admonition warning">
+  <section id="installation">
+<span id="id1"></span><h1>Installation<a class="headerlink" href="#installation" title="Permalink to this heading"></a></h1>
+<p>One can either install pre-built binaries using conda or build from source.</p>
+<div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>Before building from source make sure that you have the
 <a class="reference internal" href="dependencies.html"><span class="doc">dependencies</span></a> installed. If installing using conda, conda will
 manage the dependencies. Avoid also installing packages with pip.</p>
 </div>
-<section id="installation">
-<span id="id1"></span><h1>Installation<a class="headerlink" href="#installation" title="Permalink to this heading"></a></h1>
 <section id="install-binaries-using-conda">
 <h2>Install binaries using conda<a class="headerlink" href="#install-binaries-using-conda" title="Permalink to this heading"></a></h2>
 <p>Conda is not only useful to manage python environments but can also
@@ -218,6 +218,7 @@ conda<span class="w"> </span>search<span class="w"> </span>slsdetgui
 </section>
 <section id="build-from-source-using-cmake">
 <span id="id2"></span><h3>2. Build from Source<a class="headerlink" href="#build-from-source-using-cmake" title="Permalink to this heading"></a></h3>
+<p>One can either build using cmake or use the in-built cmk.sh script.</p>
 </section>
 <section id="build-using-cmake">
 <h3>Build using CMake<a class="headerlink" href="#build-using-cmake" title="Permalink to this heading"></a></h3>
@@ -241,7 +242,7 @@ make<span class="w"> </span>install
 ccmake<span class="w"> </span>..
 
 <span class="c1"># choose the options</span>
-<span class="c1"># first press [c] - configure (maybe multiple times till you see [g])</span>
+<span class="c1"># first press [c] - configure (until you see [g])</span>
 <span class="c1"># then press [g] - generate</span>
 </pre></div>
 </div>
@@ -437,7 +438,7 @@ make<span class="w"> </span>rst<span class="w"> </span><span class="c1"># rst on
 <div class="line">* by default from tar file in repo (libs/pybind/v2.1x.0.tar.gz)</div>
 <div class="line">* or use advanced option SLS_FETCH_PYBIND11_FROM_GITHUB [<a class="reference external" href="https://github.com/pybind/pybind11">link</a>].</div>
 <div class="line-block">
-<div class="line">* v9.0.0+: pybind11 (v2.13.0)</div>
+<div class="line">* v9.0.0+: pybind11 (v2.13.6)</div>
 <div class="line">* v8.x.x : pybind11 (v2.11.0)</div>
 <div class="line"><br /></div>
 </div>
