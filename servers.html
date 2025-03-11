@@ -1,15 +1,13 @@
 <!DOCTYPE html>
-<html class="writer-html5" lang="en">
+<html class="writer-html5" lang="en" >
 <head>
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Getting Started &mdash; slsDetectorPackage  documentation</title>
-      <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-      <link rel="stylesheet" type="text/css" href="_static/css/theme.css" />
-      <link rel="stylesheet" type="text/css" href="_static/css/extra.css" />
-
-  
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/extra.css" type="text/css" />
   <!--[if lt IE 9]>
     <script src="_static/js/html5shiv.min.js"></script>
   <![endif]-->
@@ -39,7 +37,7 @@
             slsDetectorPackage
           </a>
               <div class="version">
-                0.0.0
+                9.1.0
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
@@ -198,16 +196,15 @@
 </div></blockquote>
 </section>
 <section id="automatic-start">
-<h2>Automatic start<a class="headerlink" href="#automatic-start" title="Permalink to this heading"></a></h2>
+<span id="automatic-start-servers"></span><h2>Automatic start<a class="headerlink" href="#automatic-start" title="Permalink to this heading"></a></h2>
 <p>One can start the on-board detector server automatically upon powering on the board.</p>
 <ol class="arabic">
-<li><p>Create a soft link to the binary on board
-:</p>
-<blockquote>
-<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ln<span class="w"> </span>-sf<span class="w"> </span>someDetectorServervx.x.x<span class="w"> </span>someDetectorServer
+<li><dl>
+<dt>Create a soft link to the binary on board:</dt><dd><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ln<span class="w"> </span>-sf<span class="w"> </span>someDetectorServervx.x.x<span class="w"> </span>someDetectorServer
 </pre></div>
 </div>
-</div></blockquote>
+</dd>
+</dl>
 </li>
 <li><p>Do the following depending on the detector type :</p>
 <dl>
@@ -241,10 +238,8 @@ vi<span class="w"> </span>/etc/init.d/S99detServer.sh
 </dd>
 </dl>
 </li>
-<li><p>Sync, reboot and verify
-:</p>
-<blockquote>
-<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sync
+<li><dl>
+<dt>Sync, reboot and verify:</dt><dd><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sync
 
 <span class="c1"># physically reboot for Gotthard II or Mythen III</span>
 reboot
@@ -253,7 +248,8 @@ reboot
 ps<span class="w"> </span>-ef<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>xxxDetectorServer
 </pre></div>
 </div>
-</div></blockquote>
+</dd>
+</dl>
 </li>
 </ol>
 </section>

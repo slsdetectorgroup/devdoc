@@ -1,15 +1,13 @@
 <!DOCTYPE html>
-<html class="writer-html5" lang="en">
+<html class="writer-html5" lang="en" >
 <head>
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Command line interface &mdash; slsDetectorPackage  documentation</title>
-      <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-      <link rel="stylesheet" type="text/css" href="_static/css/theme.css" />
-      <link rel="stylesheet" type="text/css" href="_static/css/extra.css" />
-
-  
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/extra.css" type="text/css" />
   <!--[if lt IE 9]>
     <script src="_static/js/html5shiv.min.js"></script>
   <![endif]-->
@@ -39,7 +37,7 @@
             slsDetectorPackage
           </a>
               <div class="version">
-                0.0.0
+                9.1.0
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
@@ -72,8 +70,14 @@
 <p class="caption" role="heading"><span class="caption-text">Command line</span></p>
 <ul class="current">
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Command line interface</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#usage">Usage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#usage">Usage</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#module-index">Module index</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#detector-index">Detector index</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#command-execution">Command Execution</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="#help">Help</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#autocompletion">Autocompletion</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#commands">Commands</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#deprecated-commands">Deprecated commands</a></li>
 </ul>
@@ -153,10 +157,53 @@
 <h1>Command line interface<a class="headerlink" href="#command-line-interface" title="Permalink to this heading"></a></h1>
 <section id="usage">
 <h2>Usage<a class="headerlink" href="#usage" title="Permalink to this heading"></a></h2>
-<p>Commands can be used either with sls_detector_get or sls_detector_put</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sls_detector_get</span> <span class="n">exptime</span>
+<p>The syntax is <em>‘[detector index]-[module index]:[command]’</em>, where the indices are by default ‘0’, when not specified.</p>
+<section id="module-index">
+<h3>Module index<a class="headerlink" href="#module-index" title="Permalink to this heading"></a></h3>
+<p>Modules are indexed based on their order in the hostname command. They are used to configure a specific module within a detector and are followed by a ‘:’ in syntax.</p>
+<blockquote>
+<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Applies to all modules of detector 0</span>
+<span class="n">sls_detector_put</span> <span class="n">exptime</span> <span class="mi">5</span><span class="n">s</span>
+
+<span class="c1"># Applies to only the 4th module</span>
+<span class="n">sls_detector_put</span> <span class="mi">3</span><span class="p">:</span><span class="n">exptime</span> <span class="mi">5</span><span class="n">s</span>
 </pre></div>
 </div>
+</div></blockquote>
+</section>
+<section id="detector-index">
+<h3>Detector index<a class="headerlink" href="#detector-index" title="Permalink to this heading"></a></h3>
+<p>This index is useful when configuring multiple detectors from a single host. Each detector uses a unique shared memory identified by a detector index, derived again from the hostname command. It is followed by a ‘-‘.</p>
+<blockquote>
+<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># For detector with index 2 in shared memory</span>
+<span class="n">sls_detector_put</span> <span class="mi">2</span><span class="o">-</span><span class="n">hostname</span> <span class="n">bchip133</span><span class="o">+</span><span class="n">bchip123</span><span class="o">+</span><span class="n">bchip456</span>
+
+<span class="c1"># Without &#39;-&#39;, the detector index defaults to 0</span>
+<span class="n">sls_detector_put</span> <span class="n">hostname</span> <span class="n">bchip133</span><span class="o">+</span><span class="n">bchip123</span><span class="o">+</span><span class="n">bchip456</span>
+
+<span class="c1"># Accessing all modules with detector index 2</span>
+<span class="n">sls_detector_put</span> <span class="mi">2</span><span class="o">-</span><span class="n">exptime</span>
+
+<span class="c1"># Starting acquisition only for detector with index 2</span>
+<span class="n">sls_detector_put</span> <span class="mi">2</span><span class="o">-</span><span class="n">start</span>
+
+<span class="c1"># Applies only to the 2nd detector, 4th module</span>
+<span class="n">sls_detector_put</span> <span class="mi">1</span><span class="o">-</span><span class="mi">3</span><span class="p">:</span><span class="n">exptime</span> <span class="mi">5</span><span class="n">s</span>
+</pre></div>
+</div>
+</div></blockquote>
+</section>
+<section id="command-execution">
+<h3>Command Execution<a class="headerlink" href="#command-execution" title="Permalink to this heading"></a></h3>
+<p>Commands can be executed using:</p>
+<ul class="simple">
+<li><p><strong>sls_detector_put</strong>: setting values</p></li>
+<li><p><strong>sls_detector_get</strong>: getting values</p></li>
+<li><p><strong>sls_detector</strong>: automatically infers based on the number of arguments.</p></li>
+<li><p><strong>sls_detector_help</strong>: gets help on the specific command</p></li>
+<li><p><strong>sls_detector_acquire</strong>: initiates acquisition with the detector. This command blocks until the entire acquisition process is completed.</p></li>
+</ul>
+</section>
 </section>
 <section id="help">
 <h2>Help<a class="headerlink" href="#help" title="Permalink to this heading"></a></h2>
@@ -172,12 +219,13 @@
 
 <span class="c1"># list of deprecated commands</span>
 <span class="nb">list</span> <span class="n">deprecated</span>
-
-<span class="c1"># autocompletion</span>
-<span class="c1"># bash_autocomplete.sh or zsh_autocomplete.sh must be sourced from the</span>
-<span class="c1"># main package folder to enable auto completion of commands and arguments</span>
-<span class="c1"># for the command line on that shell.</span>
-<span class="n">source</span> <span class="n">bash_autocomplete</span><span class="o">.</span><span class="n">sh</span>
+</pre></div>
+</div>
+</section>
+<section id="autocompletion">
+<h2>Autocompletion<a class="headerlink" href="#autocompletion" title="Permalink to this heading"></a></h2>
+<p>bash_autocomplete.sh or zsh_autocomplete.sh must be sourced from the main package folder to enable auto completion of commands and arguments for the command line on that shell.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">source</span> <span class="n">bash_autocomplete</span><span class="o">.</span><span class="n">sh</span>
 </pre></div>
 </div>
 </section>
@@ -261,7 +309,7 @@
 </div>
 </dd>
 <dt id="term-autocompdisable-0-1">autocompdisable [0, 1]<a class="headerlink" href="#term-autocompdisable-0-1" title="Permalink to this term"></a></dt><dd><div class="line-block">
-<div class="line">[Jungfrau] Auto comparator disable mode. By default, the on-chip gain switching is active during the entire exposure.This mode disables the on - chip gain switching comparator automatically after 93.75% (only for chipv1.0) of exposure time (only for longer than 100us). It is possible to set the duration for chipv1.1 using compdisabletime command.</div>
+<div class="line">[Jungfrau] Auto comparator disable mode. By default, the on-chip gain switching is active during the entire exposure.This mode disables the on - chip gain switching comparator automatically and the duration is set using compdisabletime command.</div>
 <div class="line">Default is 0 or this mode disabled(comparator enabled throughout). 1 enables mode. 0 disables mode.</div>
 </div>
 </dd>
@@ -347,7 +395,7 @@
 </div>
 </dd>
 <dt id="term-compdisabletime-duration-optional-unit-ns-us-ms-s">compdisabletime [duration] [(optional unit) ns|us|ms|s]<a class="headerlink" href="#term-compdisabletime-duration-optional-unit-ns-us-ms-s" title="Permalink to this term"></a></dt><dd><div class="line-block">
-<div class="line">[Jungfrau] Time before end of exposure when comparator is disabled. It is only possible for chipv1.1.</div>
+<div class="line">[Jungfrau] Time before end of exposure when comparator is disabled.</div>
 </div>
 </dd>
 <dt id="term-confadc-chip-index-0-9-1-for-all-adc-index-0-31-1-for-all-7-bit-configuration-value-in-hex">confadc [chip index 0-9, -1 for all] [adc index 0-31, -1 for all] [7 bit configuration value in hex]<a class="headerlink" href="#term-confadc-chip-index-0-9-1-for-all-adc-index-0-31-1-for-all-7-bit-configuration-value-in-hex" title="Permalink to this term"></a></dt><dd><div class="line-block">
@@ -647,7 +695,7 @@
 <dt id="term-hostname">hostname<a class="headerlink" href="#term-hostname" title="Permalink to this term"></a></dt><dd><div class="line-block">
 <div class="line">Frees shared memory and sets hostname (or IP address) of all modules concatenated by +.</div>
 <div class="line-block">
-<div class="line">Virtual servers can already use the port in hostname separated by ‘:’ and ports incremented by 2 to accomodate the stop server as well.</div>
+<div class="line">Virtual servers can already use the port in hostname separated by ‘:’ and ports incremented by 2 to accomodate the stop server as well. The row and column values in the udp/zmq header are affected by the order in this command and the detsize command. The modules are stacked row by row until they reach the y-axis limit set by detsize (if specified). Then, stacking continues in the next column and so on. This only affects row and column in udp/zmq header.</div>
 </div>
 </div>
 </dd>
@@ -1058,8 +1106,8 @@
 <div class="line">Resets Region of interest in receiver. Default is all channels/pixels enabled.</div>
 </div>
 </dd>
-<dt id="term-rx_dbitlist-all-or-i0-i1-i2-...">rx_dbitlist [all] or [i0] [i1] [i2]…<a class="headerlink" href="#term-rx_dbitlist-all-or-i0-i1-i2-..." title="Permalink to this term"></a></dt><dd><div class="line-block">
-<div class="line">[Ctb] List of digital signal bits read out. If all is used instead of a list, all digital bits (64) enabled. Each element in list can be 0 - 63 and must be non repetitive.</div>
+<dt id="term-rx_dbitlist-all-or-none-or-i0-i1-i2-...">rx_dbitlist [all] or [none] or [i0] [i1] [i2]…<a class="headerlink" href="#term-rx_dbitlist-all-or-none-or-i0-i1-i2-..." title="Permalink to this term"></a></dt><dd><div class="line-block">
+<div class="line">[Ctb] List of digital signal bits enabled and rearranged according to the signals (all samples of each signal is put together). If ‘all’ is used instead of a list, all digital bits (64) enabled. Each element in list can be 0 - 63 and must be non repetitive. The option ‘none’ will still spit out all data as is from the detector, but without rearranging it. Please note that when using the receiver list, the data size will be bigger if the number of samples is not divisible by 8 as every signal bit is padded to the next byte when combining all the samples in the receiver.</div>
 </div>
 </dd>
 <dt id="term-rx_dbitoffset-n_bytes">rx_dbitoffset [n_bytes]<a class="headerlink" href="#term-rx_dbitoffset-n_bytes" title="Permalink to this term"></a></dt><dd><div class="line-block">
@@ -1408,7 +1456,7 @@
 </div>
 </dd>
 <dt id="term-timing_info_decoder-swissfel-shine">timing_info_decoder [swissfel|shine]<a class="headerlink" href="#term-timing_info_decoder-swissfel-shine" title="Permalink to this term"></a></dt><dd><div class="line-block">
-<div class="line">[Jungfrau] Advanced Command and only for Swissfel and Shine. Sets the bunch id or timing info decoder. Default is swissfel.</div>
+<div class="line">[Jungfrau] Advanced Command and only for Swissfel and Shine. Sets the bunch id or timing info decoder. Default is swissfel. Only allowed for pcbv2.0.</div>
 </div>
 </dd>
 <dt id="term-timinglist">timinglist<a class="headerlink" href="#term-timinglist" title="Permalink to this term"></a></dt><dd><div class="line-block">
@@ -1459,7 +1507,7 @@
 <div class="line">[Eiger][Jungfrau][Moench][Mythen3] Set transmission delay for all modules in the detector using the step size provided.Sets up</div>
 <div class="line">[Eiger] txdelay_left to (2 * mod_index * n_delay),</div>
 <div class="line">[Eiger] txdelay_right to ((2 * mod_index + 1) * n_delay) and</div>
-<div class="line">[Eiger] txdelay_frame to (2 <a href="#id1"><span class="problematic" id="id2">*</span></a>num_modules * n_delay)</div>
+<div class="line">[Eiger] txdelay_frame to (2 * num_modules * n_delay)</div>
 <div class="line">[Jungfrau][Moench][Mythen3] txdelay_frame to (num_modules * n_delay) for every module.</div>
 </div>
 </dd>
@@ -1736,8 +1784,8 @@
 <p class="admonition-title">Note</p>
 <p>All the dac commands are preceded with the <strong>dac</strong> command. Use command <strong>daclist</strong> to get correct list of dac command arguments for current detector.</p>
 </div>
-<table class="colwidths-given docutils align-default" id="id3">
-<caption><span class="caption-text">Deprecated commands</span><a class="headerlink" href="#id3" title="Permalink to this table"></a></caption>
+<table class="colwidths-given docutils align-default" id="id1">
+<caption><span class="caption-text">Deprecated commands</span><a class="headerlink" href="#id1" title="Permalink to this table"></a></caption>
 <colgroup>
 <col style="width: 50%" />
 <col style="width: 50%" />

@@ -1,15 +1,13 @@
 <!DOCTYPE html>
-<html class="writer-html5" lang="en">
+<html class="writer-html5" lang="en" >
 <head>
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Detector &mdash; slsDetectorPackage  documentation</title>
-      <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-      <link rel="stylesheet" type="text/css" href="_static/css/theme.css" />
-      <link rel="stylesheet" type="text/css" href="_static/css/extra.css" />
-
-  
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/extra.css" type="text/css" />
   <!--[if lt IE 9]>
     <script src="_static/js/html5shiv.min.js"></script>
   <![endif]-->
@@ -39,7 +37,7 @@
             slsDetectorPackage
           </a>
               <div class="version">
-                0.0.0
+                9.1.0
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
@@ -1006,7 +1004,7 @@ C++ API directly and the simplified exptime property.</p>
 <dd><p>[Jungfrau] Enable or disable auto comparator disable mode.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>By default, the on-chip gain switching is active during the entire exposure. This mode disables the on-chip gain switching comparator automatically after 93.75% of exposure time (only for longer than 100us). The % is only for chipv1.0, the duration can be set for chipv1.1.</p>
+<p>By default, the on-chip gain switching is active during the entire exposure. This mode disables the on-chip gain switching comparator automatically and the duration is set using compdisabletime.</p>
 <p>Default is 0 or this mode disabled (comparator enabled throughout). 1 enables mode. 0 disables mode.</p>
 </div>
 </dd></dl>
@@ -1231,15 +1229,11 @@ Enum: collectionMode</p>
 <dt class="sig sig-object py" id="slsdet.Detector.compdisabletime">
 <em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">compdisabletime</span></span><a class="headerlink" href="#slsdet.Detector.compdisabletime" title="Permalink to this definition"></a></dt>
 <dd><p>[Jungfrau] Time before end of exposure when comparator is disabled.</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>It is only possible for chipv1.1.</p>
 <dl class="field-list simple">
-<dt class="field-odd">getter</dt>
+<dt class="field-odd">Getter</dt>
 <dd class="field-odd"><p>always returns in seconds. To get in DurationWrapper, use getComparatorDisableTime</p>
 </dd>
 </dl>
-</div>
 <p class="rubric">Example</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="c1"># setting directly in seconds</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">d</span><span class="o">.</span><span class="n">compdisabletime</span> <span class="o">=</span> <span class="mf">1.05</span>
@@ -3142,6 +3136,10 @@ Enum: gainMode</p>
 <em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">hostname</span></span><a class="headerlink" href="#slsdet.Detector.hostname" title="Permalink to this definition"></a></dt>
 <dd><p>Frees shared memory and sets hostname (or IP address) of all modules concatenated by +
 Virtual servers can already use the port in hostname separated by ‘:’ and ports incremented by 2 to accomodate the stop server as well.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The row and column values in the udp/zmq header are affected by the order in this command and the detsize command. The modules are stacked row by row until they reach the y-axis limit set by detsize (if specified). Then, stacking continues in the next column and so on. This only affects row and column in udp/zmq header.</p>
+</div>
 <p class="rubric">Example</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">d</span><span class="o">.</span><span class="n">hostname</span> <span class="o">=</span> <span class="s1">&#39;beb031+beb032+&#39;</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">d</span><span class="o">.</span><span class="n">hostname</span> <span class="o">=</span> <span class="s1">&#39;localhost:1912+localhost:1914+&#39;</span>
@@ -5744,7 +5742,7 @@ Enum: timingMode</p>
 <dl class="py property">
 <dt class="sig sig-object py" id="slsdet.Detector.timing_info_decoder">
 <em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">timing_info_decoder</span></span><a class="headerlink" href="#slsdet.Detector.timing_info_decoder" title="Permalink to this definition"></a></dt>
-<dd><p>[Jungfrau] [Jungfrau] Advanced Command and only for SWISSFEL and SHINE. Sets the bunch id or timing info decoder. Default is SWISSFEL.
+<dd><p>[Jungfrau] [Jungfrau] Advanced Command and only for SWISSFEL and SHINE. Sets the bunch id or timing info decoder. Default is SWISSFEL. Only allowed for pcbv2.0.
 Enum: timingInfoDecoder</p>
 </dd></dl>
 

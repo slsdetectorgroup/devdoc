@@ -1,15 +1,13 @@
 <!DOCTYPE html>
-<html class="writer-html5" lang="en">
+<html class="writer-html5" lang="en" >
 <head>
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Detector &mdash; slsDetectorPackage  documentation</title>
-      <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-      <link rel="stylesheet" type="text/css" href="_static/css/theme.css" />
-      <link rel="stylesheet" type="text/css" href="_static/css/extra.css" />
-
-  
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/extra.css" type="text/css" />
   <!--[if lt IE 9]>
     <script src="_static/js/html5shiv.min.js"></script>
   <![endif]-->
@@ -39,7 +37,7 @@
             slsDetectorPackage
           </a>
               <div class="version">
-                0.0.0
+                9.1.0
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
@@ -153,8 +151,8 @@ through this class.</p>
 <p>Most, if not all, functions are called in parallel
 and the return value is a thin std::vector wrapper
 containing results from all modules. (<a class="reference internal" href="result.html#result-class"><span class="std std-ref">Result class</span></a>)</p>
-<p>Here are some <a class="reference internal" href="#cplusplus-api-examples"><span class="std std-ref">examples</span></a> on how to use the API.</p>
-<span class="target" id="cplusplus-api-examples"></span><dl class="cpp class">
+<p>Here are some <a class="reference internal" href="examples.html#cplusplus-api-examples"><span class="std std-ref">examples</span></a> on how to use the API.</p>
+<dl class="cpp class">
 <dt class="sig sig-object cpp" id="_CPPv4N3sls8DetectorE">
 <span id="_CPPv3N3sls8DetectorE"></span><span id="_CPPv2N3sls8DetectorE"></span><span id="sls::Detector"></span><span class="target" id="classsls_1_1Detector"></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">Detector</span></span></span><a class="headerlink" href="#_CPPv4N3sls8DetectorE" title="Permalink to this definition"></a><br /></dt>
 <dd><div class="breathe-sectiondef docutils container">
@@ -219,7 +217,7 @@ containing results from all modules. (<a class="reference internal" href="result
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4N3sls8Detector11setHostnameERKNSt6vectorINSt6stringEEE">
 <span id="_CPPv3N3sls8Detector11setHostnameERKNSt6vectorINSt6stringEEE"></span><span id="_CPPv2N3sls8Detector11setHostnameERKNSt6vectorINSt6stringEEE"></span><span id="sls::Detector::setHostname__std::vector:ss:CR"></span><span class="target" id="classsls_1_1Detector_1a1cffb82ed6e0af5055b20e3765e8beb9"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setHostname</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">hostname</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3sls8Detector11setHostnameERKNSt6vectorINSt6stringEEE" title="Permalink to this definition"></a><br /></dt>
-<dd><p>Frees shared memory, adds detectors to the list. </p>
+<dd><p>Frees shared memory, adds detectors to the list. The row and column values in the udp/zmq header are affected by the order in this command and the setDetectorSize function. The modules are stacked row by row until they reach the y-axis limit set by detsize (if specified). Then, stacking continues in the next column and so on. This only affects row and column in udp/zmq header. </p>
 </dd></dl>
 
 <dl class="cpp function">
@@ -2061,7 +2059,7 @@ containing results from all modules. (<a class="reference internal" href="result
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4N3sls8Detector24setAutoComparatorDisableEb9Positions">
 <span id="_CPPv3N3sls8Detector24setAutoComparatorDisableEb9Positions"></span><span id="_CPPv2N3sls8Detector24setAutoComparatorDisableEb9Positions"></span><span id="sls::Detector::setAutoComparatorDisable__b.Positions"></span><span class="target" id="classsls_1_1Detector_1aab0e197016f9e1f8317016ba3b0cff16"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setAutoComparatorDisable</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">value</span></span>, <span class="n"><span class="pre">Positions</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">pos</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="p"><span class="pre">{</span></span><span class="p"><span class="pre">}</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3sls8Detector24setAutoComparatorDisableEb9Positions" title="Permalink to this definition"></a><br /></dt>
-<dd><p><p>[Jungfrau] Advanced //TODO naming By default, the on-chip gain switching is active during the entire exposure. This mode disables the on-chip gain switching comparator automatically after 93.75% of exposure time (only for longer than 100us). The % is for chipv1.0. One can set the duration for chipv1.1 using setComparatorDisableTime</p>
+<dd><p><p>[Jungfrau] Advanced //TODO naming By default, the on-chip gain switching is active during the entire exposure. This mode disables the on-chip gain switching comparator automatically and the duration is set using setComparatorDisableTime</p>
 <p>Default is false or this mode disabled(comparator enabled throughout). true enables mode. 0 disables mode.</p>
 </p>
 </dd></dl>
@@ -2075,7 +2073,7 @@ containing results from all modules. (<a class="reference internal" href="result
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4N3sls8Detector24setComparatorDisableTimeE2ns9Positions">
 <span id="_CPPv3N3sls8Detector24setComparatorDisableTimeE2ns9Positions"></span><span id="_CPPv2N3sls8Detector24setComparatorDisableTimeE2ns9Positions"></span><span id="sls::Detector::setComparatorDisableTime__ns.Positions"></span><span class="target" id="classsls_1_1Detector_1a88691bd06562f81b3e3d3bce65966ff1"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setComparatorDisableTime</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">ns</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">t</span></span>, <span class="n"><span class="pre">Positions</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">pos</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="p"><span class="pre">{</span></span><span class="p"><span class="pre">}</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3sls8Detector24setComparatorDisableTimeE2ns9Positions" title="Permalink to this definition"></a><br /></dt>
-<dd><p>[Jungfrau] Time before end of exposure when comparator is disabled. It is only possible for chipv1.1. </p>
+<dd><p>[Jungfrau] Time before end of exposure when comparator is disabled. </p>
 </dd></dl>
 
 <dl class="cpp function">
@@ -2090,7 +2088,7 @@ containing results from all modules. (<a class="reference internal" href="result
 <dd><p><p>[Jungfrau] Advanced</p>
 <p>Only for chipv1.0. Options: 0 - 15. Default: 0.</p>
 
-The images = #frames x #triggers x (storagecells + 1) </p>
+The #images = #frames x #triggers x (#storagecells + 1) </p>
 </dd></dl>
 
 <dl class="cpp function">
@@ -2163,8 +2161,8 @@ The images = #frames x #triggers x (storagecells + 1) </p>
 <dt class="sig sig-object cpp" id="_CPPv4N3sls8Detector15setPedestalModeEKN4defs18pedestalParametersE9Positions">
 <span id="_CPPv3N3sls8Detector15setPedestalModeEKN4defs18pedestalParametersE9Positions"></span><span id="_CPPv2N3sls8Detector15setPedestalModeEKN4defs18pedestalParametersE9Positions"></span><span id="sls::Detector::setPedestalMode__defs::pedestalParametersC.Positions"></span><span class="target" id="classsls_1_1Detector_1a8c26563e5ca9ccf8e5a8e4ab2691059b"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setPedestalMode</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">defs</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">pedestalParameters</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">par</span></span>, <span class="n"><span class="pre">Positions</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">pos</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="p"><span class="pre">{</span></span><span class="p"><span class="pre">}</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3sls8Detector15setPedestalModeEKN4defs18pedestalParametersE9Positions" title="Permalink to this definition"></a><br /></dt>
 <dd><p><p>[Jungfrau] In pedestal mode, the number of frames or triggers is overwritten by</p>
-<p>(</p>
-pedestal_frames x pedestal_loops x 2). \nIn auto timing mode or in trigger mode with #frames &gt; 1, #frames is overwritten and #triggers = 1, \nelse #triggers is overwritten and #frames = 1. One cannot set #frames, #triggers or timing mode in pedestal mode (it will throw an exception). Disabling pedestal mode will set back the original values of #frames and #triggers </p>
+<p>(#pedestal_frames x #pedestal_loops x 2). \nIn auto timing mode or in trigger mode with #frames &gt; 1, #frames is overwritten and #triggers = 1, \nelse #triggers is overwritten and #frames = 1. One cannot set #frames, #triggers or timing mode in pedestal mode (it will throw an exception). Disabling pedestal mode will set back the original values of #frames and #triggers</p>
+</p>
 </dd></dl>
 
 <dl class="cpp function">
@@ -2176,7 +2174,7 @@ pedestal_frames x pedestal_loops x 2). \nIn auto timing mode or in trigger mode 
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4N3sls8Detector20setTimingInfoDecoderEN4defs17timingInfoDecoderE9Positions">
 <span id="_CPPv3N3sls8Detector20setTimingInfoDecoderEN4defs17timingInfoDecoderE9Positions"></span><span id="_CPPv2N3sls8Detector20setTimingInfoDecoderEN4defs17timingInfoDecoderE9Positions"></span><span id="sls::Detector::setTimingInfoDecoder__defs::timingInfoDecoder.Positions"></span><span class="target" id="classsls_1_1Detector_1adab515b72b6b4e900a605658844b103e"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setTimingInfoDecoder</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">defs</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">timingInfoDecoder</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">value</span></span>, <span class="n"><span class="pre">Positions</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">pos</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="p"><span class="pre">{</span></span><span class="p"><span class="pre">}</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3sls8Detector20setTimingInfoDecoderEN4defs17timingInfoDecoderE9Positions" title="Permalink to this definition"></a><br /></dt>
-<dd><p>[Jungfrau] Advanced Command! </p>
+<dd><p>[Jungfrau] Advanced Command! Only for pcb v2.0 </p>
 </dd></dl>
 
 <dl class="cpp function">
@@ -2733,7 +2731,7 @@ ROI<p>per module</p>
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4N3sls8Detector13setRxDbitListERKNSt6vectorIiEE9Positions">
 <span id="_CPPv3N3sls8Detector13setRxDbitListERKNSt6vectorIiEE9Positions"></span><span id="_CPPv2N3sls8Detector13setRxDbitListERKNSt6vectorIiEE9Positions"></span><span id="sls::Detector::setRxDbitList__std::vector:i:CR.Positions"></span><span class="target" id="classsls_1_1Detector_1a46ea8816cf6331b84d1d5a0b2a9e8a8d"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setRxDbitList</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="kt"><span class="pre">int</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">list</span></span>, <span class="n"><span class="pre">Positions</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">pos</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="p"><span class="pre">{</span></span><span class="p"><span class="pre">}</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3sls8Detector13setRxDbitListERKNSt6vectorIiEE9Positions" title="Permalink to this definition"></a><br /></dt>
-<dd><p>[CTB] list contains the set of digital signal bits (0-63) to save, must be non repetitive </p>
+<dd><p>[CTB] list contains the set of digital signal bits (0-63) to save, must be non repetitive. Note: data will be rearranged according to signal bits </p>
 </dd></dl>
 
 <dl class="cpp function">

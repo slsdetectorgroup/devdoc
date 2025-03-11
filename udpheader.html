@@ -1,15 +1,13 @@
 <!DOCTYPE html>
-<html class="writer-html5" lang="en">
+<html class="writer-html5" lang="en" >
 <head>
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Format &mdash; slsDetectorPackage  documentation</title>
-      <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-      <link rel="stylesheet" type="text/css" href="_static/css/theme.css" />
-      <link rel="stylesheet" type="text/css" href="_static/css/extra.css" />
-
-  
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/extra.css" type="text/css" />
   <!--[if lt IE 9]>
     <script src="_static/js/html5shiv.min.js"></script>
   <![endif]-->
@@ -39,7 +37,7 @@
             slsDetectorPackage
           </a>
               <div class="version">
-                0.0.0
+                9.1.0
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
@@ -219,8 +217,8 @@ from the previous version (v2.0), the version number stays the same.</p>
 <li><p><strong>packetNumber</strong>: packet number of the frame to which the current data belongs to.</p></li>
 <li><p><strong>timestamp</strong>: time measured at the start of frame exposure since the start of the current measurement. It is expressed in tenths of microsecond.</p></li>
 <li><p><strong>modId</strong>: module ID picked up from det_id_[detector type].txt on the detector cpu.</p></li>
-<li><p><strong>row</strong>: row position of the module in the detector system. It is calculated by the order of the module in hostname command, as well as the detsize command.</p></li>
-<li><p><strong>column</strong>: column position of the module in the detector system.  It is calculated by the order of the module in hostname command, as well as the detsize command.</p></li>
+<li><p><strong>row</strong>: row position of the module in the detector system. It is calculated by the order of the module in hostname command, as well as the detsize command. The modules are stacked row by row until they reach the y-axis limit set by detsize (if specified). Then, stacking continues in the next column and so on.</p></li>
+<li><p><strong>column</strong>: column position of the module in the detector system.  It is calculated by the order of the module in hostname command, as well as the detsize command. The modules are stacked row by row until they reach the y-axis limit set by detsize (if specified). Then, stacking continues in the next column and so on.</p></li>
 <li><p><strong>detType</strong>: detector type from enum of detectorType in the package.</p></li>
 <li><p><strong>version</strong>: current version of the detector header (0x2).</p></li>
 </ul>
