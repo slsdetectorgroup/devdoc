@@ -1,23 +1,22 @@
+
+
 <!DOCTYPE html>
-<html class="writer-html5" lang="en" >
+<html class="writer-html5" lang="en" data-content_root="./">
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Quick Start Guide &mdash; slsDetectorPackage  documentation</title>
-      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
-      <link rel="stylesheet" href="_static/css/extra.css" type="text/css" />
-  <!--[if lt IE 9]>
-    <script src="_static/js/html5shiv.min.js"></script>
-  <![endif]-->
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="_static/css/extra.css?v=2be88464" />
+
   
-        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
-        <script src="_static/jquery.js"></script>
-        <script src="_static/underscore.js"></script>
-        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
-        <script src="_static/doctools.js"></script>
-        <script src="_static/sphinx_highlight.js"></script>
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="_static/documentation_options.js?v=5929fcd5"></script>
+      <script src="_static/doctools.js?v=9bcbadda"></script>
+      <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -36,9 +35,6 @@
           <a href="index.html" class="icon icon-home">
             slsDetectorPackage
           </a>
-              <div class="version">
-                9.1.0
-              </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
@@ -106,8 +102,8 @@
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Receiver</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="receivers.html">Receivers</a></li>
-<li class="toctree-l1"><a class="reference internal" href="slsreceiver.html">slsReceiver/ slsMultiReceiver</a></li>
+<li class="toctree-l1"><a class="reference internal" href="slsreceiver.html">In-built Receiver</a></li>
+<li class="toctree-l1"><a class="reference internal" href="receivers.html">Custom Receiver</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Receiver Files</span></p>
 <ul>
@@ -151,14 +147,14 @@
            <div itemprop="articleBody">
              
   <section id="quick-start-guide">
-<h1>Quick Start Guide<a class="headerlink" href="#quick-start-guide" title="Permalink to this heading"></a></h1>
+<h1>Quick Start Guide<a class="headerlink" href="#quick-start-guide" title="Link to this heading"></a></h1>
 <section id="detector">
-<h2>Detector<a class="headerlink" href="#detector" title="Permalink to this heading"></a></h2>
+<h2>Detector<a class="headerlink" href="#detector" title="Link to this heading"></a></h2>
 <p>Start up detector (with cooling if required). Ensure both control server and stop server is running on-board.</p>
 <p>Or use a detector simulator to test. Click <a class="reference internal" href="virtualserver.html#virtual-detector-servers"><span class="std std-ref">here</span></a> for further instructions.</p>
 </section>
 <section id="receiver">
-<h2>Receiver<a class="headerlink" href="#receiver" title="Permalink to this heading"></a></h2>
+<h2>Receiver<a class="headerlink" href="#receiver" title="Link to this heading"></a></h2>
 <div class="line-block">
 <div class="line">One has to start the slsReceiver before loading config file or using any receiver commands (prefix: <strong>rx_</strong> )</div>
 </div>
@@ -179,7 +175,7 @@ slsMultiReceiver<span class="w"> </span><span class="m">2012</span><span class="
 </dl>
 </section>
 <section id="client">
-<h2>Client<a class="headerlink" href="#client" title="Permalink to this heading"></a></h2>
+<h2>Client<a class="headerlink" href="#client" title="Link to this heading"></a></h2>
 <p>Refer <a class="reference internal" href="#sample-config-file"><span class="std std-ref">Sample Config file</span></a> to create config file.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># load config file</span>
 sls_detector_put<span class="w"> </span>config<span class="w"> </span>/path/sample.config
@@ -192,7 +188,7 @@ sls_detector_acquire
 </pre></div>
 </div>
 <section id="sample-config-file">
-<span id="id1"></span><h3>Sample Config file<a class="headerlink" href="#sample-config-file" title="Permalink to this heading"></a></h3>
+<span id="id1"></span><h3>Sample Config file<a class="headerlink" href="#sample-config-file" title="Link to this heading"></a></h3>
 <p>There are sample config files for each detector in slsDetectorPackage/examples folder.</p>
 <dl>
 <dt>For a Single Module</dt><dd><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># connects to module</span>
@@ -276,7 +272,7 @@ fpath<span class="w"> </span>/tmp
 </section>
 </section>
 <section id="gui">
-<h2>Gui<a class="headerlink" href="#gui" title="Permalink to this heading"></a></h2>
+<h2>Gui<a class="headerlink" href="#gui" title="Link to this heading"></a></h2>
 <p>Compile with SLS_USE_GUI=ON in cmake or -g option in cmk.sh script. One can also just use the conda binary. Refer <a class="reference internal" href="installation.html#installation"><span class="std std-ref">installation instructions</span></a>.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>slsDetectorGui
 </pre></div>

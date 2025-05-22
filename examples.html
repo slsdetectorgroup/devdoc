@@ -1,23 +1,22 @@
+
+
 <!DOCTYPE html>
-<html class="writer-html5" lang="en" >
+<html class="writer-html5" lang="en" data-content_root="./">
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Examples &mdash; slsDetectorPackage  documentation</title>
-      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
-      <link rel="stylesheet" href="_static/css/extra.css" type="text/css" />
-  <!--[if lt IE 9]>
-    <script src="_static/js/html5shiv.min.js"></script>
-  <![endif]-->
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="_static/css/extra.css?v=2be88464" />
+
   
-        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
-        <script src="_static/jquery.js"></script>
-        <script src="_static/underscore.js"></script>
-        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
-        <script src="_static/doctools.js"></script>
-        <script src="_static/sphinx_highlight.js"></script>
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="_static/documentation_options.js?v=5929fcd5"></script>
+      <script src="_static/doctools.js?v=9bcbadda"></script>
+      <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -36,9 +35,6 @@
           <a href="index.html" class="icon icon-home">
             slsDetectorPackage
           </a>
-              <div class="version">
-                9.1.0
-              </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
@@ -104,8 +100,8 @@
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Receiver</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="receivers.html">Receivers</a></li>
-<li class="toctree-l1"><a class="reference internal" href="slsreceiver.html">slsReceiver/ slsMultiReceiver</a></li>
+<li class="toctree-l1"><a class="reference internal" href="slsreceiver.html">In-built Receiver</a></li>
+<li class="toctree-l1"><a class="reference internal" href="receivers.html">Custom Receiver</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Receiver Files</span></p>
 <ul>
@@ -149,16 +145,16 @@
            <div itemprop="articleBody">
              
   <section id="examples">
-<span id="cplusplus-api-examples"></span><h1>Examples<a class="headerlink" href="#examples" title="Permalink to this heading"></a></h1>
+<span id="cplusplus-api-examples"></span><h1>Examples<a class="headerlink" href="#examples" title="Link to this heading"></a></h1>
 <section id="setup">
-<h2>Setup<a class="headerlink" href="#setup" title="Permalink to this heading"></a></h2>
+<h2>Setup<a class="headerlink" href="#setup" title="Link to this heading"></a></h2>
 <p>The examples here assume that you have compiled and installed slsDetectorPackage
 to ~/sls/install and that the option for SLS_USE_SIMULATOR was enabled. This also builds
 the virtual detector servers that we will be using for testing.</p>
 <p>We also add ~/sls/detector/install/bin to the path for convenience.</p>
 </section>
 <section id="compile-examples">
-<h2>Compile examples<a class="headerlink" href="#compile-examples" title="Permalink to this heading"></a></h2>
+<h2>Compile examples<a class="headerlink" href="#compile-examples" title="Link to this heading"></a></h2>
 <p>The source code of the examples is available at:
 <a class="reference external" href="https://github.com/slsdetectorgroup/api-examples">https://github.com/slsdetectorgroup/api-examples</a></p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/slsdetectorgroup/api-examples.git
@@ -170,7 +166,7 @@ make
 <p>Below follows a short description of what is included in the examples.</p>
 </section>
 <section id="running-a-config-file-e1">
-<h2>Running a config file [e1]<a class="headerlink" href="#running-a-config-file-e1" title="Permalink to this heading"></a></h2>
+<h2>Running a config file [e1]<a class="headerlink" href="#running-a-config-file-e1" title="Link to this heading"></a></h2>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;sls/Detector.h&quot;</span>
 <span class="p">...</span>
 <span class="n">sls</span><span class="o">::</span><span class="n">Detector</span><span class="w"> </span><span class="n">det</span><span class="p">;</span>
@@ -204,7 +200,7 @@ Jungfrau<span class="w"> </span>detector<span class="w"> </span>with<span class=
 </div>
 </section>
 <section id="using-the-return-type-sls-result-e2">
-<h2>Using the return type sls::Result [e2]<a class="headerlink" href="#using-the-return-type-sls-result-e2" title="Permalink to this heading"></a></h2>
+<h2>Using the return type sls::Result [e2]<a class="headerlink" href="#using-the-return-type-sls-result-e2" title="Link to this heading"></a></h2>
 <p>Since many our detectors have multiple modules we cannot return
 a single value when reading from the Detector. Hostname, Ip and also
 for example exposure time can differ between modules.</p>
@@ -221,7 +217,7 @@ std::vector.</p>
 </div>
 </section>
 <section id="setting-exposure-time-e3">
-<h2>Setting exposure time [e3]<a class="headerlink" href="#setting-exposure-time-e3" title="Permalink to this heading"></a></h2>
+<h2>Setting exposure time [e3]<a class="headerlink" href="#setting-exposure-time-e3" title="Link to this heading"></a></h2>
 <p>For setting times, like exposure time, period, delay etc.
 we use std::chrono::duration.</p>
 <p>Example 3 shows how to set and read exposure time as well

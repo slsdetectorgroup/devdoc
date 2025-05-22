@@ -1,23 +1,22 @@
+
+
 <!DOCTYPE html>
-<html class="writer-html5" lang="en" >
+<html class="writer-html5" lang="en" data-content_root="./">
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Binary File Format &mdash; slsDetectorPackage  documentation</title>
-      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
-      <link rel="stylesheet" href="_static/css/extra.css" type="text/css" />
-  <!--[if lt IE 9]>
-    <script src="_static/js/html5shiv.min.js"></script>
-  <![endif]-->
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="_static/css/extra.css?v=2be88464" />
+
   
-        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
-        <script src="_static/jquery.js"></script>
-        <script src="_static/underscore.js"></script>
-        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
-        <script src="_static/doctools.js"></script>
-        <script src="_static/sphinx_highlight.js"></script>
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="_static/documentation_options.js?v=5929fcd5"></script>
+      <script src="_static/doctools.js?v=9bcbadda"></script>
+      <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -36,9 +35,6 @@
           <a href="index.html" class="icon icon-home">
             slsDetectorPackage
           </a>
-              <div class="version">
-                9.1.0
-              </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
@@ -97,8 +93,8 @@
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Receiver</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="receivers.html">Receivers</a></li>
-<li class="toctree-l1"><a class="reference internal" href="slsreceiver.html">slsReceiver/ slsMultiReceiver</a></li>
+<li class="toctree-l1"><a class="reference internal" href="slsreceiver.html">In-built Receiver</a></li>
+<li class="toctree-l1"><a class="reference internal" href="receivers.html">Custom Receiver</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Receiver Files</span></p>
 <ul class="current">
@@ -156,7 +152,7 @@
            <div itemprop="articleBody">
              
   <section id="binary-file-format">
-<h1>Binary File Format<a class="headerlink" href="#binary-file-format" title="Permalink to this heading"></a></h1>
+<h1>Binary File Format<a class="headerlink" href="#binary-file-format" title="Link to this heading"></a></h1>
 <p>This is the default file format that can be configured using command <a class="reference external" href="commandline.html#term-fformat-binary-hdf5">fformat</a>.</p>
 <blockquote>
 <div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sls_detector_put<span class="w"> </span>fformat<span class="w"> </span>binary
@@ -164,7 +160,7 @@
 </div>
 </div></blockquote>
 <section id="master-file">
-<h2>Master File<a class="headerlink" href="#master-file" title="Permalink to this heading"></a></h2>
+<h2>Master File<a class="headerlink" href="#master-file" title="Link to this heading"></a></h2>
 <ul class="simple">
 <li><p>File Name: [fpath]/[fname]_master_[findex].json <a class="reference internal" href="fileformat.html#file-name-format"><span class="std std-ref">Details here</span></a></p></li>
 <li><p>It is in json format and created for every acquisition.</p></li>
@@ -174,7 +170,7 @@
 </ul>
 </section>
 <section id="data-file">
-<h2>Data File<a class="headerlink" href="#data-file" title="Permalink to this heading"></a></h2>
+<h2>Data File<a class="headerlink" href="#data-file" title="Link to this heading"></a></h2>
 <ul class="simple">
 <li><p>File Name: [fpath]/[fname]_dx_fy_[findex].raw <a class="reference internal" href="fileformat.html#file-name-format"><span class="std std-ref">Details here</span></a></p></li>
 <li><p>It store multiple frames sequentially, with total number of frames determined by <a class="reference external" href="commandline.html#term-rx_framesperfile-n_frames">rx_framesperfile</a> parameter.</p></li>
@@ -182,9 +178,9 @@
 </ul>
 </section>
 <section id="json-master-file-examples">
-<span id="id1"></span><h2>JSON Master File Examples<a class="headerlink" href="#json-master-file-examples" title="Permalink to this heading"></a></h2>
+<span id="id1"></span><h2>JSON Master File Examples<a class="headerlink" href="#json-master-file-examples" title="Link to this heading"></a></h2>
 <section id="eiger">
-<h3>Eiger<a class="headerlink" href="#eiger" title="Permalink to this heading"></a></h3>
+<h3>Eiger<a class="headerlink" href="#eiger" title="Link to this heading"></a></h3>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>{
     &quot;Version&quot;: 7.2,
     &quot;Timestamp&quot;: &quot;Wed Nov 13 15:46:30 2024&quot;,
@@ -242,7 +238,7 @@
 </div>
 </section>
 <section id="jungfrau">
-<h3>Jungfrau<a class="headerlink" href="#jungfrau" title="Permalink to this heading"></a></h3>
+<h3>Jungfrau<a class="headerlink" href="#jungfrau" title="Link to this heading"></a></h3>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>{
     &quot;Version&quot;: 7.2,
     &quot;Timestamp&quot;: &quot;Wed Nov 13 13:03:53 2024&quot;,
@@ -294,7 +290,7 @@
 </div>
 </section>
 <section id="gotthard2">
-<h3>Gotthard2<a class="headerlink" href="#gotthard2" title="Permalink to this heading"></a></h3>
+<h3>Gotthard2<a class="headerlink" href="#gotthard2" title="Link to this heading"></a></h3>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>{
     &quot;Version&quot;: 7.2,
     &quot;Timestamp&quot;: &quot;Wed Nov 13 14:18:17 2024&quot;,
@@ -345,7 +341,7 @@
 </div>
 </section>
 <section id="mythen3">
-<h3>Mythen3<a class="headerlink" href="#mythen3" title="Permalink to this heading"></a></h3>
+<h3>Mythen3<a class="headerlink" href="#mythen3" title="Link to this heading"></a></h3>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>{
     &quot;Version&quot;: 7.2,
     &quot;Timestamp&quot;: &quot;Wed Nov 13 14:39:14 2024&quot;,
@@ -405,7 +401,7 @@
 </div>
 </section>
 <section id="moench">
-<h3>Moench<a class="headerlink" href="#moench" title="Permalink to this heading"></a></h3>
+<h3>Moench<a class="headerlink" href="#moench" title="Link to this heading"></a></h3>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>{
     &quot;Version&quot;: 7.2,
     &quot;Timestamp&quot;: &quot;Wed Nov 13 14:41:32 2024&quot;,
@@ -457,7 +453,7 @@
 </div>
 </section>
 <section id="gotthard-i">
-<h3>Gotthard I<a class="headerlink" href="#gotthard-i" title="Permalink to this heading"></a></h3>
+<h3>Gotthard I<a class="headerlink" href="#gotthard-i" title="Link to this heading"></a></h3>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>{
     &quot;Version&quot;: 7.2,
     &quot;Timestamp&quot;: &quot;Wed Nov 13 15:16:19 2024&quot;,
@@ -511,7 +507,7 @@
 </div>
 </section>
 <section id="chip-test-board">
-<h3>Chip Test Board<a class="headerlink" href="#chip-test-board" title="Permalink to this heading"></a></h3>
+<h3>Chip Test Board<a class="headerlink" href="#chip-test-board" title="Link to this heading"></a></h3>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>{
     &quot;Version&quot;: 7.2,
     &quot;Timestamp&quot;: &quot;Wed Nov 13 15:32:59 2024&quot;,

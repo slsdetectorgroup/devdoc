@@ -1,23 +1,22 @@
+
+
 <!DOCTYPE html>
-<html class="writer-html5" lang="en" >
+<html class="writer-html5" lang="en" data-content_root="./">
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Receiver &mdash; slsDetectorPackage  documentation</title>
-      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
-      <link rel="stylesheet" href="_static/css/extra.css" type="text/css" />
-  <!--[if lt IE 9]>
-    <script src="_static/js/html5shiv.min.js"></script>
-  <![endif]-->
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="_static/css/extra.css?v=2be88464" />
+
   
-        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
-        <script src="_static/jquery.js"></script>
-        <script src="_static/underscore.js"></script>
-        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
-        <script src="_static/doctools.js"></script>
-        <script src="_static/sphinx_highlight.js"></script>
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="_static/documentation_options.js?v=5929fcd5"></script>
+      <script src="_static/doctools.js?v=9bcbadda"></script>
+      <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -36,9 +35,6 @@
           <a href="index.html" class="icon icon-home">
             slsDetectorPackage
           </a>
-              <div class="version">
-                9.1.0
-              </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
@@ -57,7 +53,18 @@
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="detector.html">Detector</a></li>
 <li class="toctree-l1"><a class="reference internal" href="result.html">Result</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Receiver</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Receiver</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#_CPPv4N3sls8ReceiverE"><code class="docutils literal notranslate"><span class="pre">sls::Receiver</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#_CPPv4N3sls8Receiver8ReceiverEiA_Pc"><code class="docutils literal notranslate"><span class="pre">Receiver()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#_CPPv4N3sls8Receiver8ReceiverE8uint16_t"><code class="docutils literal notranslate"><span class="pre">Receiver()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#_CPPv4N3sls8Receiver18getReceiverVersionEv"><code class="docutils literal notranslate"><span class="pre">getReceiverVersion()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#_CPPv4N3sls8Receiver32registerCallBackStartAcquisitionEPFiK19startCallbackHeaderPvEPv"><code class="docutils literal notranslate"><span class="pre">registerCallBackStartAcquisition()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#_CPPv4N3sls8Receiver35registerCallBackAcquisitionFinishedEPFvK17endCallbackHeaderPvEPv"><code class="docutils literal notranslate"><span class="pre">registerCallBackAcquisitionFinished()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#_CPPv4N3sls8Receiver28registerCallBackRawDataReadyEPFvR19sls_receiver_headerK18dataCallbackHeaderPcR6size_tPvEPv"><code class="docutils literal notranslate"><span class="pre">registerCallBackRawDataReady()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="examples.html">Examples</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Python API</span></p>
@@ -97,8 +104,8 @@
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Receiver</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="receivers.html">Receivers</a></li>
-<li class="toctree-l1"><a class="reference internal" href="slsreceiver.html">slsReceiver/ slsMultiReceiver</a></li>
+<li class="toctree-l1"><a class="reference internal" href="slsreceiver.html">In-built Receiver</a></li>
+<li class="toctree-l1"><a class="reference internal" href="receivers.html">Custom Receiver</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Receiver Files</span></p>
 <ul>
@@ -142,18 +149,18 @@
            <div itemprop="articleBody">
              
   <section id="receiver">
-<h1>Receiver<a class="headerlink" href="#receiver" title="Permalink to this heading"></a></h1>
+<h1>Receiver<a class="headerlink" href="#receiver" title="Link to this heading"></a></h1>
 <dl class="cpp class">
 <dt class="sig sig-object cpp" id="_CPPv4N3sls8ReceiverE">
-<span id="_CPPv3N3sls8ReceiverE"></span><span id="_CPPv2N3sls8ReceiverE"></span><span id="sls::Receiver"></span><span class="target" id="classsls_1_1Receiver"></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">Receiver</span></span></span><span class="w"> </span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="k"><span class="pre">private</span></span><span class="w"> </span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="n"><span class="pre">slsDetectorDefs</span></span><a class="headerlink" href="#_CPPv4N3sls8ReceiverE" title="Permalink to this definition"></a><br /></dt>
+<span id="_CPPv3N3sls8ReceiverE"></span><span id="_CPPv2N3sls8ReceiverE"></span><span id="sls::Receiver"></span><span class="target" id="classsls_1_1Receiver"></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">Receiver</span></span></span><span class="w"> </span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="k"><span class="pre">private</span></span><span class="w"> </span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="n"><span class="pre">slsDetectorDefs</span></span><a class="headerlink" href="#_CPPv4N3sls8ReceiverE" title="Link to this definition"></a><br /></dt>
 <dd><div class="breathe-sectiondef docutils container">
 <p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-functions">Public Functions</p>
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4N3sls8Receiver8ReceiverEiA_Pc">
-<span id="_CPPv3N3sls8Receiver8ReceiverEiA_Pc"></span><span id="_CPPv2N3sls8Receiver8ReceiverEiA_Pc"></span><span id="sls::Receiver::Receiver__i.cPA"></span><span class="target" id="classsls_1_1Receiver_1ac6f6ce4e02e44c94bc223d4312a63472"></span><span class="sig-name descname"><span class="n"><span class="pre">Receiver</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">argc</span></span>, <span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">argv</span></span><span class="p"><span class="pre">[</span></span><span class="p"><span class="pre">]</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3sls8Receiver8ReceiverEiA_Pc" title="Permalink to this definition"></a><br /></dt>
+<span id="_CPPv3N3sls8Receiver8ReceiverEiA_Pc"></span><span id="_CPPv2N3sls8Receiver8ReceiverEiA_Pc"></span><span id="sls::Receiver::Receiver__i.cPA"></span><span class="target" id="classsls_1_1Receiver_1ac6f6ce4e02e44c94bc223d4312a63472"></span><span class="sig-name descname"><span class="n"><span class="pre">Receiver</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">argc</span></span>, <span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">argv</span></span><span class="p"><span class="pre">[</span></span><span class="p"><span class="pre">]</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3sls8Receiver8ReceiverEiA_Pc" title="Link to this definition"></a><br /></dt>
 <dd><p>Constructor Starts up a <a class="reference internal" href="#classsls_1_1Receiver"><span class="std std-ref">Receiver</span></a> server. Reads configuration file, options, and assembles a <a class="reference internal" href="#classsls_1_1Receiver"><span class="std std-ref">Receiver</span></a> using TCP and UDP detector interfaces throws an exception in case of failure </p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>argc</strong> – from command line </p></li>
 <li><p><strong>argv</strong> – from command line </p></li>
@@ -164,10 +171,10 @@
 
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4N3sls8Receiver8ReceiverE8uint16_t">
-<span id="_CPPv3N3sls8Receiver8ReceiverE8uint16_t"></span><span id="_CPPv2N3sls8Receiver8ReceiverE8uint16_t"></span><span id="sls::Receiver::Receiver__uint16_t"></span><span class="target" id="classsls_1_1Receiver_1a26d8cce09be53dde88d6e562fbd4cca6"></span><span class="sig-name descname"><span class="n"><span class="pre">Receiver</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">uint16_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">tcpip_port_no</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">1954</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3sls8Receiver8ReceiverE8uint16_t" title="Permalink to this definition"></a><br /></dt>
+<span id="_CPPv3N3sls8Receiver8ReceiverE8uint16_t"></span><span id="_CPPv2N3sls8Receiver8ReceiverE8uint16_t"></span><span id="sls::Receiver::Receiver__uint16_t"></span><span class="target" id="classsls_1_1Receiver_1a26d8cce09be53dde88d6e562fbd4cca6"></span><span class="sig-name descname"><span class="n"><span class="pre">Receiver</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">uint16_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">tcpip_port_no</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">1954</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3sls8Receiver8ReceiverE8uint16_t" title="Link to this definition"></a><br /></dt>
 <dd><p>Constructor Starts up a <a class="reference internal" href="#classsls_1_1Receiver"><span class="std std-ref">Receiver</span></a> server. Reads configuration file, options, and assembles a <a class="reference internal" href="#classsls_1_1Receiver"><span class="std std-ref">Receiver</span></a> using TCP and UDP detector interfaces throws an exception in case of failure </p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>tcpip_port_no</strong> – TCP/IP port number </p>
 </dd>
 </dl>
@@ -175,10 +182,10 @@
 
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4N3sls8Receiver18getReceiverVersionEv">
-<span id="_CPPv3N3sls8Receiver18getReceiverVersionEv"></span><span id="_CPPv2N3sls8Receiver18getReceiverVersionEv"></span><span id="sls::Receiver::getReceiverVersion"></span><span class="target" id="classsls_1_1Receiver_1a3b04df66e8b44192a381bc2413a6949f"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getReceiverVersion</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3sls8Receiver18getReceiverVersionEv" title="Permalink to this definition"></a><br /></dt>
+<span id="_CPPv3N3sls8Receiver18getReceiverVersionEv"></span><span id="_CPPv2N3sls8Receiver18getReceiverVersionEv"></span><span id="sls::Receiver::getReceiverVersion"></span><span class="target" id="classsls_1_1Receiver_1a3b04df66e8b44192a381bc2413a6949f"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getReceiverVersion</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3sls8Receiver18getReceiverVersionEv" title="Link to this definition"></a><br /></dt>
 <dd><p>get get <a class="reference internal" href="#classsls_1_1Receiver"><span class="std std-ref">Receiver</span></a> Version </p>
 <dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p>id </p>
 </dd>
 </dl>
@@ -186,7 +193,7 @@
 
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4N3sls8Receiver32registerCallBackStartAcquisitionEPFiK19startCallbackHeaderPvEPv">
-<span id="_CPPv3N3sls8Receiver32registerCallBackStartAcquisitionEPFiK19startCallbackHeaderPvEPv"></span><span id="_CPPv2N3sls8Receiver32registerCallBackStartAcquisitionEPFiK19startCallbackHeaderPvEPv"></span><span class="target" id="classsls_1_1Receiver_1ac85d14902b73c445934122e10f399b23"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">registerCallBackStartAcquisition</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="p"><span class="pre">(</span></span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">func</span></span><span class="p"><span class="pre">)</span></span><span class="p"><span class="pre">(</span></span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">startCallbackHeader</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="p"><span class="pre">*</span></span><span class="p"><span class="pre">)</span></span>, <span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">arg</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3sls8Receiver32registerCallBackStartAcquisitionEPFiK19startCallbackHeaderPvEPv" title="Permalink to this definition"></a><br /></dt>
+<span id="_CPPv3N3sls8Receiver32registerCallBackStartAcquisitionEPFiK19startCallbackHeaderPvEPv"></span><span id="_CPPv2N3sls8Receiver32registerCallBackStartAcquisitionEPFiK19startCallbackHeaderPvEPv"></span><span class="target" id="classsls_1_1Receiver_1ac85d14902b73c445934122e10f399b23"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">registerCallBackStartAcquisition</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="p"><span class="pre">(</span></span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">func</span></span><span class="p"><span class="pre">)</span></span><span class="p"><span class="pre">(</span></span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">startCallbackHeader</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="p"><span class="pre">*</span></span><span class="p"><span class="pre">)</span></span>, <span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">arg</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3sls8Receiver32registerCallBackStartAcquisitionEPFiK19startCallbackHeaderPvEPv" title="Link to this definition"></a><br /></dt>
 <dd><p>Start Acquisition Call back (slsMultiReceiver writes data if file write enabled) if registerCallBackRawDataReady or registerCallBackRawDataModifyReady registered Call back arguments are:<ul class="simple">
 <li><p>startCallbackHeader metadata </p></li>
 </ul>
@@ -195,7 +202,7 @@
 
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4N3sls8Receiver35registerCallBackAcquisitionFinishedEPFvK17endCallbackHeaderPvEPv">
-<span id="_CPPv3N3sls8Receiver35registerCallBackAcquisitionFinishedEPFvK17endCallbackHeaderPvEPv"></span><span id="_CPPv2N3sls8Receiver35registerCallBackAcquisitionFinishedEPFvK17endCallbackHeaderPvEPv"></span><span class="target" id="classsls_1_1Receiver_1a07cdbf0144497e8a95281c7576fdfa0e"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">registerCallBackAcquisitionFinished</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="p"><span class="pre">(</span></span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">func</span></span><span class="p"><span class="pre">)</span></span><span class="p"><span class="pre">(</span></span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">endCallbackHeader</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="p"><span class="pre">*</span></span><span class="p"><span class="pre">)</span></span>, <span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">arg</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3sls8Receiver35registerCallBackAcquisitionFinishedEPFvK17endCallbackHeaderPvEPv" title="Permalink to this definition"></a><br /></dt>
+<span id="_CPPv3N3sls8Receiver35registerCallBackAcquisitionFinishedEPFvK17endCallbackHeaderPvEPv"></span><span id="_CPPv2N3sls8Receiver35registerCallBackAcquisitionFinishedEPFvK17endCallbackHeaderPvEPv"></span><span class="target" id="classsls_1_1Receiver_1a07cdbf0144497e8a95281c7576fdfa0e"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">registerCallBackAcquisitionFinished</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="p"><span class="pre">(</span></span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">func</span></span><span class="p"><span class="pre">)</span></span><span class="p"><span class="pre">(</span></span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">endCallbackHeader</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="p"><span class="pre">*</span></span><span class="p"><span class="pre">)</span></span>, <span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">arg</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3sls8Receiver35registerCallBackAcquisitionFinishedEPFvK17endCallbackHeaderPvEPv" title="Link to this definition"></a><br /></dt>
 <dd><p>Call back for acquisition finished callback argument is:<ul class="simple">
 <li><p>startCallbackHeader metadata </p></li>
 </ul>
@@ -204,7 +211,7 @@
 
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4N3sls8Receiver28registerCallBackRawDataReadyEPFvR19sls_receiver_headerK18dataCallbackHeaderPcR6size_tPvEPv">
-<span id="_CPPv3N3sls8Receiver28registerCallBackRawDataReadyEPFvR19sls_receiver_headerK18dataCallbackHeaderPcR6size_tPvEPv"></span><span id="_CPPv2N3sls8Receiver28registerCallBackRawDataReadyEPFvR19sls_receiver_headerK18dataCallbackHeaderPcR6size_tPvEPv"></span><span class="target" id="classsls_1_1Receiver_1a738fb0a18c470a8b3b1c180024dca004"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">registerCallBackRawDataReady</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="p"><span class="pre">(</span></span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">func</span></span><span class="p"><span class="pre">)</span></span><span class="p"><span class="pre">(</span></span><span class="n"><span class="pre">sls_receiver_header</span></span><span class="p"><span class="pre">&amp;</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">dataCallbackHeader</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="kt"><span class="pre">char</span></span><span class="p"><span class="pre">*</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">size_t</span></span><span class="p"><span class="pre">&amp;</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="p"><span class="pre">*</span></span><span class="p"><span class="pre">)</span></span>, <span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">arg</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3sls8Receiver28registerCallBackRawDataReadyEPFvR19sls_receiver_headerK18dataCallbackHeaderPcR6size_tPvEPv" title="Permalink to this definition"></a><br /></dt>
+<span id="_CPPv3N3sls8Receiver28registerCallBackRawDataReadyEPFvR19sls_receiver_headerK18dataCallbackHeaderPcR6size_tPvEPv"></span><span id="_CPPv2N3sls8Receiver28registerCallBackRawDataReadyEPFvR19sls_receiver_headerK18dataCallbackHeaderPcR6size_tPvEPv"></span><span class="target" id="classsls_1_1Receiver_1a738fb0a18c470a8b3b1c180024dca004"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">registerCallBackRawDataReady</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="p"><span class="pre">(</span></span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">func</span></span><span class="p"><span class="pre">)</span></span><span class="p"><span class="pre">(</span></span><span class="n"><span class="pre">sls_receiver_header</span></span><span class="p"><span class="pre">&amp;</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">dataCallbackHeader</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="kt"><span class="pre">char</span></span><span class="p"><span class="pre">*</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">size_t</span></span><span class="p"><span class="pre">&amp;</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="p"><span class="pre">*</span></span><span class="p"><span class="pre">)</span></span>, <span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">arg</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3sls8Receiver28registerCallBackRawDataReadyEPFvR19sls_receiver_headerK18dataCallbackHeaderPcR6size_tPvEPv" title="Link to this definition"></a><br /></dt>
 <dd><p>Call back for raw data args to raw data ready callback are:<ul class="simple">
 <li><p>sls_receiver_header frame metadata,</p></li>
 <li><p>dataCallbackHeader metadata</p></li>

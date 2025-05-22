@@ -1,23 +1,22 @@
+
+
 <!DOCTYPE html>
-<html class="writer-html5" lang="en" >
+<html class="writer-html5" lang="en" data-content_root="./">
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>HDF5 File Format &mdash; slsDetectorPackage  documentation</title>
-      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
-      <link rel="stylesheet" href="_static/css/extra.css" type="text/css" />
-  <!--[if lt IE 9]>
-    <script src="_static/js/html5shiv.min.js"></script>
-  <![endif]-->
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="_static/css/extra.css?v=2be88464" />
+
   
-        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
-        <script src="_static/jquery.js"></script>
-        <script src="_static/underscore.js"></script>
-        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
-        <script src="_static/doctools.js"></script>
-        <script src="_static/sphinx_highlight.js"></script>
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="_static/documentation_options.js?v=5929fcd5"></script>
+      <script src="_static/doctools.js?v=9bcbadda"></script>
+      <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -36,9 +35,6 @@
           <a href="index.html" class="icon icon-home">
             slsDetectorPackage
           </a>
-              <div class="version">
-                9.1.0
-              </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
@@ -97,8 +93,8 @@
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Receiver</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="receivers.html">Receivers</a></li>
-<li class="toctree-l1"><a class="reference internal" href="slsreceiver.html">slsReceiver/ slsMultiReceiver</a></li>
+<li class="toctree-l1"><a class="reference internal" href="slsreceiver.html">In-built Receiver</a></li>
+<li class="toctree-l1"><a class="reference internal" href="receivers.html">Custom Receiver</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Receiver Files</span></p>
 <ul class="current">
@@ -149,9 +145,9 @@
            <div itemprop="articleBody">
              
   <section id="hdf5-file-format">
-<h1>HDF5 File Format<a class="headerlink" href="#hdf5-file-format" title="Permalink to this heading"></a></h1>
+<h1>HDF5 File Format<a class="headerlink" href="#hdf5-file-format" title="Link to this heading"></a></h1>
 <section id="compilation">
-<h2>Compilation<a class="headerlink" href="#compilation" title="Permalink to this heading"></a></h2>
+<h2>Compilation<a class="headerlink" href="#compilation" title="Link to this heading"></a></h2>
 <ol class="arabic">
 <li><p>Compile the package with HDF5 option enabled</p>
 <blockquote>
@@ -164,7 +160,7 @@
 </ol>
 </section>
 <section id="setup">
-<h2>Setup<a class="headerlink" href="#setup" title="Permalink to this heading"></a></h2>
+<h2>Setup<a class="headerlink" href="#setup" title="Link to this heading"></a></h2>
 <ol class="arabic">
 <li><p>Start Receiver process</p></li>
 <li><p>Load config file</p></li>
@@ -178,7 +174,7 @@
 </ol>
 </section>
 <section id="master-file">
-<h2>Master File<a class="headerlink" href="#master-file" title="Permalink to this heading"></a></h2>
+<h2>Master File<a class="headerlink" href="#master-file" title="Link to this heading"></a></h2>
 <ul class="simple">
 <li><p>File Name: [fpath]/[fname]_master_[findex].h5 <a class="reference internal" href="fileformat.html#file-name-format"><span class="std std-ref">Details here</span></a></p></li>
 <li><p>It contains  <a class="reference internal" href="masterfileattributes.html#master-file-attributes"><span class="std std-ref">attributes</span></a> relevant to the acquisition. This can vary with detector type.</p></li>
@@ -221,13 +217,13 @@
 <p>More details regarding master file attributes can be found <a class="reference internal" href="masterfileattributes.html#master-file-attributes"><span class="std std-ref">here</span></a>.</p>
 </section>
 <section id="data-file">
-<h2>Data File<a class="headerlink" href="#data-file" title="Permalink to this heading"></a></h2>
+<h2>Data File<a class="headerlink" href="#data-file" title="Link to this heading"></a></h2>
 <ul class="simple">
 <li><p>File Name: [fpath]/[fname]_dx_fy_[findex].h5 <a class="reference internal" href="fileformat.html#file-name-format"><span class="std std-ref">Details here</span></a></p></li>
 </ul>
 </section>
 <section id="virtual-data-file">
-<h2>Virtual Data File<a class="headerlink" href="#virtual-data-file" title="Permalink to this heading"></a></h2>
+<h2>Virtual Data File<a class="headerlink" href="#virtual-data-file" title="Link to this heading"></a></h2>
 <ul class="simple">
 <li><p>File Name: [fpath]/[fname]_virtual_[findex].h5 <a class="reference internal" href="fileformat.html#file-name-format"><span class="std std-ref">Details here</span></a></p></li>
 <li><p>For multiple modules, a virtual file linking data from all the modules is created. The individual files are expected to be present.</p></li>

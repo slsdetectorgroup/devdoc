@@ -1,23 +1,22 @@
+
+
 <!DOCTYPE html>
-<html class="writer-html5" lang="en" >
+<html class="writer-html5" lang="en" data-content_root="./">
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Enums &mdash; slsDetectorPackage  documentation</title>
-      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
-      <link rel="stylesheet" href="_static/css/extra.css" type="text/css" />
-  <!--[if lt IE 9]>
-    <script src="_static/js/html5shiv.min.js"></script>
-  <![endif]-->
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="_static/css/extra.css?v=2be88464" />
+
   
-        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
-        <script src="_static/jquery.js"></script>
-        <script src="_static/underscore.js"></script>
-        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
-        <script src="_static/doctools.js"></script>
-        <script src="_static/sphinx_highlight.js"></script>
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="_static/documentation_options.js?v=5929fcd5"></script>
+      <script src="_static/doctools.js?v=9bcbadda"></script>
+      <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -36,9 +35,6 @@
           <a href="index.html" class="icon icon-home">
             slsDetectorPackage
           </a>
-              <div class="version">
-                9.1.0
-              </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
@@ -118,8 +114,8 @@
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Receiver</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="receivers.html">Receivers</a></li>
-<li class="toctree-l1"><a class="reference internal" href="slsreceiver.html">slsReceiver/ slsMultiReceiver</a></li>
+<li class="toctree-l1"><a class="reference internal" href="slsreceiver.html">In-built Receiver</a></li>
+<li class="toctree-l1"><a class="reference internal" href="receivers.html">Custom Receiver</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Receiver Files</span></p>
 <ul>
@@ -163,25 +159,25 @@
            <div itemprop="articleBody">
              
   <section id="enums">
-<h1>Enums<a class="headerlink" href="#enums" title="Permalink to this heading"></a></h1>
+<h1>Enums<a class="headerlink" href="#enums" title="Link to this heading"></a></h1>
 <p>These enums are defined in slsDetectorDefs in the C++ package and
 exposed to Python through pybind11.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Most settings are represented as enums that can be</span>
 <span class="c1"># explicitly imported</span>
 
-<span class="kn">from</span> <span class="nn">slsdet</span> <span class="kn">import</span> <span class="n">Detector</span><span class="p">,</span> <span class="n">fileFormat</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">slsdet</span><span class="w"> </span><span class="kn">import</span> <span class="n">Detector</span><span class="p">,</span> <span class="n">fileFormat</span>
 <span class="n">d</span> <span class="o">=</span> <span class="n">Detector</span><span class="p">()</span>
 <span class="n">d</span><span class="o">.</span><span class="n">fformat</span> <span class="o">=</span> <span class="n">fileFormat</span><span class="o">.</span><span class="n">BINARY</span>
 
 <span class="c1"># Altough not recommended for convenience all enums</span>
 <span class="c1"># and some other things can be impored using *</span>
 
-<span class="kn">from</span> <span class="nn">slsdet</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">slsdet</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
 <span class="n">d</span><span class="o">.</span><span class="n">speed</span> <span class="o">=</span> <span class="n">speedLevel</span><span class="o">.</span><span class="n">FULL_SPEED</span>
 
 <span class="c1"># To list the available enums, use dir()</span>
 
-<span class="kn">import</span> <span class="nn">slsdet.enums</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">slsdet.enums</span>
 <span class="k">for</span> <span class="n">enum</span> <span class="ow">in</span> <span class="nb">dir</span><span class="p">(</span><span class="n">slsdet</span><span class="o">.</span><span class="n">enums</span><span class="p">):</span>
     <span class="c1"># filter out special memebers</span>
     <span class="k">if</span> <span class="ow">not</span> <span class="n">enum</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">&#39;_&#39;</span><span class="p">):</span>
@@ -190,7 +186,7 @@ exposed to Python through pybind11.</p>
 </div>
 <dl class="py class">
 <dt class="sig sig-object py" id="slsdet.runStatus">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">slsdet.</span></span><span class="sig-name descname"><span class="pre">runStatus</span></span><a class="headerlink" href="#slsdet.runStatus" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">slsdet.</span></span><span class="sig-name descname"><span class="pre">runStatus</span></span><a class="headerlink" href="#slsdet.runStatus" title="Link to this definition"></a></dt>
 <dd><p>Members:</p>
 <p>IDLE</p>
 <p>ERROR</p>
@@ -203,7 +199,7 @@ exposed to Python through pybind11.</p>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="slsdet.detectorType">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">slsdet.</span></span><span class="sig-name descname"><span class="pre">detectorType</span></span><a class="headerlink" href="#slsdet.detectorType" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">slsdet.</span></span><span class="sig-name descname"><span class="pre">detectorType</span></span><a class="headerlink" href="#slsdet.detectorType" title="Link to this definition"></a></dt>
 <dd><p>Members:</p>
 <p>GENERIC</p>
 <p>EIGER</p>
@@ -218,7 +214,7 @@ exposed to Python through pybind11.</p>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="slsdet.frameDiscardPolicy">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">slsdet.</span></span><span class="sig-name descname"><span class="pre">frameDiscardPolicy</span></span><a class="headerlink" href="#slsdet.frameDiscardPolicy" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">slsdet.</span></span><span class="sig-name descname"><span class="pre">frameDiscardPolicy</span></span><a class="headerlink" href="#slsdet.frameDiscardPolicy" title="Link to this definition"></a></dt>
 <dd><p>Members:</p>
 <p>NO_DISCARD</p>
 <p>DISCARD_EMPTY_FRAMES</p>
@@ -228,7 +224,7 @@ exposed to Python through pybind11.</p>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="slsdet.fileFormat">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">slsdet.</span></span><span class="sig-name descname"><span class="pre">fileFormat</span></span><a class="headerlink" href="#slsdet.fileFormat" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">slsdet.</span></span><span class="sig-name descname"><span class="pre">fileFormat</span></span><a class="headerlink" href="#slsdet.fileFormat" title="Link to this definition"></a></dt>
 <dd><p>Members:</p>
 <p>BINARY</p>
 <p>HDF5</p>
@@ -237,7 +233,7 @@ exposed to Python through pybind11.</p>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="slsdet.dimension">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">slsdet.</span></span><span class="sig-name descname"><span class="pre">dimension</span></span><a class="headerlink" href="#slsdet.dimension" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">slsdet.</span></span><span class="sig-name descname"><span class="pre">dimension</span></span><a class="headerlink" href="#slsdet.dimension" title="Link to this definition"></a></dt>
 <dd><p>Members:</p>
 <p>X</p>
 <p>Y</p>
@@ -245,7 +241,7 @@ exposed to Python through pybind11.</p>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="slsdet.externalSignalFlag">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">slsdet.</span></span><span class="sig-name descname"><span class="pre">externalSignalFlag</span></span><a class="headerlink" href="#slsdet.externalSignalFlag" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">slsdet.</span></span><span class="sig-name descname"><span class="pre">externalSignalFlag</span></span><a class="headerlink" href="#slsdet.externalSignalFlag" title="Link to this definition"></a></dt>
 <dd><p>Members:</p>
 <p>TRIGGER_IN_RISING_EDGE</p>
 <p>TRIGGER_IN_FALLING_EDGE</p>
@@ -255,7 +251,7 @@ exposed to Python through pybind11.</p>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="slsdet.timingMode">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">slsdet.</span></span><span class="sig-name descname"><span class="pre">timingMode</span></span><a class="headerlink" href="#slsdet.timingMode" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">slsdet.</span></span><span class="sig-name descname"><span class="pre">timingMode</span></span><a class="headerlink" href="#slsdet.timingMode" title="Link to this definition"></a></dt>
 <dd><p>Members:</p>
 <p>AUTO_TIMING</p>
 <p>TRIGGER_EXPOSURE</p>
@@ -267,7 +263,7 @@ exposed to Python through pybind11.</p>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="slsdet.dacIndex">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">slsdet.</span></span><span class="sig-name descname"><span class="pre">dacIndex</span></span><a class="headerlink" href="#slsdet.dacIndex" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">slsdet.</span></span><span class="sig-name descname"><span class="pre">dacIndex</span></span><a class="headerlink" href="#slsdet.dacIndex" title="Link to this definition"></a></dt>
 <dd><p>Members:</p>
 <p>DAC_0</p>
 <p>DAC_1</p>
@@ -386,7 +382,7 @@ exposed to Python through pybind11.</p>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="slsdet.detectorSettings">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">slsdet.</span></span><span class="sig-name descname"><span class="pre">detectorSettings</span></span><a class="headerlink" href="#slsdet.detectorSettings" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">slsdet.</span></span><span class="sig-name descname"><span class="pre">detectorSettings</span></span><a class="headerlink" href="#slsdet.detectorSettings" title="Link to this definition"></a></dt>
 <dd><p>Members:</p>
 <p>STANDARD</p>
 <p>FAST</p>
@@ -414,7 +410,7 @@ exposed to Python through pybind11.</p>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="slsdet.clockIndex">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">slsdet.</span></span><span class="sig-name descname"><span class="pre">clockIndex</span></span><a class="headerlink" href="#slsdet.clockIndex" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">slsdet.</span></span><span class="sig-name descname"><span class="pre">clockIndex</span></span><a class="headerlink" href="#slsdet.clockIndex" title="Link to this definition"></a></dt>
 <dd><p>Members:</p>
 <p>ADC_CLOCK</p>
 <p>DBIT_CLOCK</p>
@@ -424,7 +420,7 @@ exposed to Python through pybind11.</p>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="slsdet.speedLevel">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">slsdet.</span></span><span class="sig-name descname"><span class="pre">speedLevel</span></span><a class="headerlink" href="#slsdet.speedLevel" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">slsdet.</span></span><span class="sig-name descname"><span class="pre">speedLevel</span></span><a class="headerlink" href="#slsdet.speedLevel" title="Link to this definition"></a></dt>
 <dd><p>Members:</p>
 <p>FULL_SPEED</p>
 <p>HALF_SPEED</p>
@@ -435,7 +431,7 @@ exposed to Python through pybind11.</p>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="slsdet.readoutMode">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">slsdet.</span></span><span class="sig-name descname"><span class="pre">readoutMode</span></span><a class="headerlink" href="#slsdet.readoutMode" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">slsdet.</span></span><span class="sig-name descname"><span class="pre">readoutMode</span></span><a class="headerlink" href="#slsdet.readoutMode" title="Link to this definition"></a></dt>
 <dd><p>Members:</p>
 <p>ANALOG_ONLY</p>
 <p>DIGITAL_ONLY</p>
@@ -446,7 +442,7 @@ exposed to Python through pybind11.</p>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="slsdet.burstMode">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">slsdet.</span></span><span class="sig-name descname"><span class="pre">burstMode</span></span><a class="headerlink" href="#slsdet.burstMode" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">slsdet.</span></span><span class="sig-name descname"><span class="pre">burstMode</span></span><a class="headerlink" href="#slsdet.burstMode" title="Link to this definition"></a></dt>
 <dd><p>Members:</p>
 <p>BURST_INTERNAL</p>
 <p>BURST_EXTERNAL</p>
@@ -457,7 +453,7 @@ exposed to Python through pybind11.</p>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="slsdet.timingSourceType">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">slsdet.</span></span><span class="sig-name descname"><span class="pre">timingSourceType</span></span><a class="headerlink" href="#slsdet.timingSourceType" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">slsdet.</span></span><span class="sig-name descname"><span class="pre">timingSourceType</span></span><a class="headerlink" href="#slsdet.timingSourceType" title="Link to this definition"></a></dt>
 <dd><p>Members:</p>
 <p>TIMING_INTERNAL</p>
 <p>TIMING_EXTERNAL</p>
@@ -465,7 +461,7 @@ exposed to Python through pybind11.</p>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="slsdet.M3_GainCaps">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">slsdet.</span></span><span class="sig-name descname"><span class="pre">M3_GainCaps</span></span><a class="headerlink" href="#slsdet.M3_GainCaps" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">slsdet.</span></span><span class="sig-name descname"><span class="pre">M3_GainCaps</span></span><a class="headerlink" href="#slsdet.M3_GainCaps" title="Link to this definition"></a></dt>
 <dd><p>Members:</p>
 <p>M3_C10pre</p>
 <p>M3_C15sh</p>
@@ -477,7 +473,7 @@ exposed to Python through pybind11.</p>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="slsdet.portPosition">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">slsdet.</span></span><span class="sig-name descname"><span class="pre">portPosition</span></span><a class="headerlink" href="#slsdet.portPosition" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">slsdet.</span></span><span class="sig-name descname"><span class="pre">portPosition</span></span><a class="headerlink" href="#slsdet.portPosition" title="Link to this definition"></a></dt>
 <dd><p>Members:</p>
 <p>LEFT</p>
 <p>RIGHT</p>
@@ -487,7 +483,7 @@ exposed to Python through pybind11.</p>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="slsdet.streamingInterface">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">slsdet.</span></span><span class="sig-name descname"><span class="pre">streamingInterface</span></span><a class="headerlink" href="#slsdet.streamingInterface" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">slsdet.</span></span><span class="sig-name descname"><span class="pre">streamingInterface</span></span><a class="headerlink" href="#slsdet.streamingInterface" title="Link to this definition"></a></dt>
 <dd><p>Members:</p>
 <p>NONE</p>
 <p>LOW_LATENCY_LINK</p>
@@ -497,7 +493,7 @@ exposed to Python through pybind11.</p>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="slsdet.vetoAlgorithm">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">slsdet.</span></span><span class="sig-name descname"><span class="pre">vetoAlgorithm</span></span><a class="headerlink" href="#slsdet.vetoAlgorithm" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">slsdet.</span></span><span class="sig-name descname"><span class="pre">vetoAlgorithm</span></span><a class="headerlink" href="#slsdet.vetoAlgorithm" title="Link to this definition"></a></dt>
 <dd><p>Members:</p>
 <p>ALG_HITS</p>
 <p>ALG_RAW</p>
@@ -505,7 +501,7 @@ exposed to Python through pybind11.</p>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="slsdet.gainMode">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">slsdet.</span></span><span class="sig-name descname"><span class="pre">gainMode</span></span><a class="headerlink" href="#slsdet.gainMode" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">slsdet.</span></span><span class="sig-name descname"><span class="pre">gainMode</span></span><a class="headerlink" href="#slsdet.gainMode" title="Link to this definition"></a></dt>
 <dd><p>Members:</p>
 <p>DYNAMIC</p>
 <p>FORCE_SWITCH_G1</p>

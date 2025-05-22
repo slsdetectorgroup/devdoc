@@ -1,23 +1,22 @@
+
+
 <!DOCTYPE html>
-<html class="writer-html5" lang="en" >
+<html class="writer-html5" lang="en" data-content_root="./">
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Installation &mdash; slsDetectorPackage  documentation</title>
-      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
-      <link rel="stylesheet" href="_static/css/extra.css" type="text/css" />
-  <!--[if lt IE 9]>
-    <script src="_static/js/html5shiv.min.js"></script>
-  <![endif]-->
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="_static/css/extra.css?v=2be88464" />
+
   
-        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
-        <script src="_static/jquery.js"></script>
-        <script src="_static/underscore.js"></script>
-        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
-        <script src="_static/doctools.js"></script>
-        <script src="_static/sphinx_highlight.js"></script>
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="_static/documentation_options.js?v=5929fcd5"></script>
+      <script src="_static/doctools.js?v=9bcbadda"></script>
+      <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -36,9 +35,6 @@
           <a href="index.html" class="icon icon-home">
             slsDetectorPackage
           </a>
-              <div class="version">
-                9.1.0
-              </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
@@ -111,8 +107,8 @@
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Receiver</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="receivers.html">Receivers</a></li>
-<li class="toctree-l1"><a class="reference internal" href="slsreceiver.html">slsReceiver/ slsMultiReceiver</a></li>
+<li class="toctree-l1"><a class="reference internal" href="slsreceiver.html">In-built Receiver</a></li>
+<li class="toctree-l1"><a class="reference internal" href="receivers.html">Custom Receiver</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Receiver Files</span></p>
 <ul>
@@ -156,7 +152,7 @@
            <div itemprop="articleBody">
              
   <section id="installation">
-<span id="id1"></span><h1>Installation<a class="headerlink" href="#installation" title="Permalink to this heading"></a></h1>
+<span id="id1"></span><h1>Installation<a class="headerlink" href="#installation" title="Link to this heading"></a></h1>
 <p>One can either install pre-built binaries using conda or build from source.</p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
@@ -165,16 +161,12 @@
 manage the dependencies. Avoid also installing packages with pip.</p>
 </div>
 <section id="install-binaries-using-conda">
-<h2>Install binaries using conda<a class="headerlink" href="#install-binaries-using-conda" title="Permalink to this heading"></a></h2>
+<h2>Install binaries using conda<a class="headerlink" href="#install-binaries-using-conda" title="Link to this heading"></a></h2>
 <p>Conda is not only useful to manage python environments but can also
 be used as a user space package manager. Dates in the tag (for eg. 2020.07.23.dev0)
 are from the developer branch. Please use released tags for stability.</p>
 <dl>
 <dt>We have four different packages available:</dt><dd><table class="docutils align-default">
-<colgroup>
-<col style="width: 24%" />
-<col style="width: 76%" />
-</colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>Package</p></th>
 <th class="head"><p>Description</p></th>
@@ -225,9 +217,9 @@ conda<span class="w"> </span>search<span class="w"> </span>moenchzmq
 </div>
 </section>
 <section id="build-from-source">
-<h2>Build from source<a class="headerlink" href="#build-from-source" title="Permalink to this heading"></a></h2>
+<h2>Build from source<a class="headerlink" href="#build-from-source" title="Link to this heading"></a></h2>
 <section id="download-source-code-from-github">
-<h3>1. Download Source Code from github<a class="headerlink" href="#download-source-code-from-github" title="Permalink to this heading"></a></h3>
+<h3>1. Download Source Code from github<a class="headerlink" href="#download-source-code-from-github" title="Link to this heading"></a></h3>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/slsdetectorgroup/slsDetectorPackage.git<span class="w"> </span>--branch<span class="w"> </span><span class="m">6</span>.1.1
 </pre></div>
 </div>
@@ -237,11 +229,11 @@ conda<span class="w"> </span>search<span class="w"> </span>moenchzmq
 </div>
 </section>
 <section id="build-from-source-using-cmake">
-<span id="id2"></span><h3>2. Build from Source<a class="headerlink" href="#build-from-source-using-cmake" title="Permalink to this heading"></a></h3>
+<span id="id2"></span><h3>2. Build from Source<a class="headerlink" href="#build-from-source-using-cmake" title="Link to this heading"></a></h3>
 <p>One can either build using cmake or use the in-built cmk.sh script.</p>
 </section>
 <section id="build-using-cmake">
-<h3>Build using CMake<a class="headerlink" href="#build-using-cmake" title="Permalink to this heading"></a></h3>
+<h3>Build using CMake<a class="headerlink" href="#build-using-cmake" title="Link to this heading"></a></h3>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># outside slsDetecorPackage folder</span>
 mkdir<span class="w"> </span>build<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="nb">cd</span><span class="w"> </span>build
 
@@ -267,10 +259,6 @@ ccmake<span class="w"> </span>..
 </pre></div>
 </div>
 <table class="docutils align-default">
-<colgroup>
-<col style="width: 50%" />
-<col style="width: 50%" />
-</colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>Example cmake options</p></th>
 <th class="head"><p>Comment</p></th>
@@ -300,7 +288,7 @@ ccmake<span class="w"> </span>..
 </div>
 </section>
 <section id="build-using-in-built-cmk-sh-script">
-<h3>Build using in-built cmk.sh script<a class="headerlink" href="#build-using-in-built-cmk-sh-script" title="Permalink to this heading"></a></h3>
+<h3>Build using in-built cmk.sh script<a class="headerlink" href="#build-using-in-built-cmk-sh-script" title="Link to this heading"></a></h3>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>The<span class="w"> </span>binaries<span class="w"> </span>are<span class="w"> </span>generated<span class="w"> </span><span class="k">in</span><span class="w"> </span>slsDetectorPackage/build/bin<span class="w"> </span>directory.
 
 Usage:<span class="w"> </span><span class="nv">$0</span><span class="w"> </span><span class="o">[</span>-b<span class="o">]</span><span class="w"> </span><span class="o">[</span>-c<span class="o">]</span><span class="w"> </span><span class="o">[</span>-d<span class="w"> </span>&lt;HDF5<span class="w"> </span>directory&gt;<span class="o">]</span><span class="w"> </span><span class="o">[</span>-e<span class="o">]</span><span class="w"> </span><span class="o">[</span>-g<span class="o">]</span><span class="w"> </span><span class="o">[</span>-h<span class="o">]</span><span class="w"> </span><span class="o">[</span>-i<span class="o">]</span>
@@ -347,7 +335,7 @@ Usage:<span class="w"> </span><span class="nv">$0</span><span class="w"> </span>
 </div>
 </section>
 <section id="build-on-old-distributions">
-<h3>Build on old distributions<a class="headerlink" href="#build-on-old-distributions" title="Permalink to this heading"></a></h3>
+<h3>Build on old distributions<a class="headerlink" href="#build-on-old-distributions" title="Link to this heading"></a></h3>
 <p>If your linux distribution doesn’t come with a C++11 compiler (gcc&gt;4.8) then
 it’s possible to install a newer gcc using conda and build the slsDetectorPackage
 using this compiler</p>
@@ -367,7 +355,7 @@ make<span class="w"> </span>-j12
 </div>
 </section>
 <section id="build-slsdetectorgui-qt5">
-<h3>Build slsDetectorGui (Qt5)<a class="headerlink" href="#build-slsdetectorgui-qt5" title="Permalink to this heading"></a></h3>
+<h3>Build slsDetectorGui (Qt5)<a class="headerlink" href="#build-slsdetectorgui-qt5" title="Link to this heading"></a></h3>
 <ol class="arabic">
 <li><p>Using pre-built binary on conda</p>
 <blockquote>
@@ -431,7 +419,7 @@ make<span class="w"> </span>-j12
 </div>
 </section>
 <section id="build-this-documentation">
-<h3>Build this documentation<a class="headerlink" href="#build-this-documentation" title="Permalink to this heading"></a></h3>
+<h3>Build this documentation<a class="headerlink" href="#build-this-documentation" title="Link to this heading"></a></h3>
 <p>The documentation for the slsDetectorPackage is build using a combination
 of Doxygen, Sphinx and Breathe. The easiest way to install the dependencies
 is to use conda</p>
@@ -449,7 +437,7 @@ make<span class="w"> </span>rst<span class="w"> </span><span class="c1"># rst on
 </div>
 </section>
 <section id="pybind-and-zeromq">
-<h3>Pybind and Zeromq<a class="headerlink" href="#pybind-and-zeromq" title="Permalink to this heading"></a></h3>
+<h3>Pybind and Zeromq<a class="headerlink" href="#pybind-and-zeromq" title="Link to this heading"></a></h3>
 <div class="line-block" id="pybind-for-different-slsdetectorpackage-versions">
 <div class="line"><strong>Pybind11 for Python</strong></div>
 <div class="line">v8.0.0+:</div>

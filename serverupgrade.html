@@ -1,23 +1,22 @@
+
+
 <!DOCTYPE html>
-<html class="writer-html5" lang="en" >
+<html class="writer-html5" lang="en" data-content_root="./">
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Upgrade &mdash; slsDetectorPackage  documentation</title>
-      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
-      <link rel="stylesheet" href="_static/css/extra.css" type="text/css" />
-  <!--[if lt IE 9]>
-    <script src="_static/js/html5shiv.min.js"></script>
-  <![endif]-->
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="_static/css/extra.css?v=2be88464" />
+
   
-        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
-        <script src="_static/jquery.js"></script>
-        <script src="_static/underscore.js"></script>
-        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
-        <script src="_static/doctools.js"></script>
-        <script src="_static/sphinx_highlight.js"></script>
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="_static/documentation_options.js?v=5929fcd5"></script>
+      <script src="_static/doctools.js?v=9bcbadda"></script>
+      <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -36,9 +35,6 @@
           <a href="index.html" class="icon icon-home">
             slsDetectorPackage
           </a>
-              <div class="version">
-                9.1.0
-              </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
@@ -105,8 +101,8 @@
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Receiver</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="receivers.html">Receivers</a></li>
-<li class="toctree-l1"><a class="reference internal" href="slsreceiver.html">slsReceiver/ slsMultiReceiver</a></li>
+<li class="toctree-l1"><a class="reference internal" href="slsreceiver.html">In-built Receiver</a></li>
+<li class="toctree-l1"><a class="reference internal" href="receivers.html">Custom Receiver</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Receiver Files</span></p>
 <ul>
@@ -150,7 +146,7 @@
            <div itemprop="articleBody">
              
   <section id="upgrade">
-<h1>Upgrade<a class="headerlink" href="#upgrade" title="Permalink to this heading"></a></h1>
+<span id="detector-server-upgrade"></span><h1>Upgrade<a class="headerlink" href="#upgrade" title="Link to this heading"></a></h1>
 <p><strong>Location:</strong> slsDetectorPackage/serverBin/ folder for every release.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -163,7 +159,7 @@
 </div>
 </div>
 <section id="no-tftp-required">
-<h2>6.1.1+ (no tftp required)<a class="headerlink" href="#no-tftp-required" title="Permalink to this heading"></a></h2>
+<h2>6.1.1+ (no tftp required)<a class="headerlink" href="#no-tftp-required" title="Link to this heading"></a></h2>
 <ol class="arabic">
 <li><p>Program from console</p>
 <blockquote>
@@ -183,7 +179,7 @@ sls_detector_put<span class="w"> </span>updatedetectorserver<span class="w"> </s
 </ol>
 </section>
 <section id="id1">
-<h2>5.0.0 - 6.1.1<a class="headerlink" href="#id1" title="Permalink to this heading"></a></h2>
+<h2>5.0.0 - 6.1.1<a class="headerlink" href="#id1" title="Link to this heading"></a></h2>
 <ol class="arabic">
 <li><p>Install tftp and copy detector server binary to tftp folder</p></li>
 <li><p>Program from console</p>
@@ -203,7 +199,7 @@ sls_detector_put<span class="w"> </span>copydetectorserver<span class="w"> </spa
 </li>
 </ol>
 <section id="troubleshooting-with-tftp">
-<h3>Troubleshooting with tftp<a class="headerlink" href="#troubleshooting-with-tftp" title="Permalink to this heading"></a></h3>
+<h3>Troubleshooting with tftp<a class="headerlink" href="#troubleshooting-with-tftp" title="Link to this heading"></a></h3>
 <ol class="arabic simple">
 <li><p>tftp write error: There is no space left. Please delete some old binaries and try again.</p></li>
 <li><p>text file busy: You are trying to copy the same server.</p></li>
@@ -211,7 +207,7 @@ sls_detector_put<span class="w"> </span>copydetectorserver<span class="w"> </spa
 </section>
 </section>
 <section id="id2">
-<h2>&lt; 5.0.0<a class="headerlink" href="#id2" title="Permalink to this heading"></a></h2>
+<h2>&lt; 5.0.0<a class="headerlink" href="#id2" title="Link to this heading"></a></h2>
 <p>Please contact us.</p>
 </section>
 </section>

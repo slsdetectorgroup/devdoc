@@ -1,23 +1,22 @@
+
+
 <!DOCTYPE html>
-<html class="writer-html5" lang="en" >
+<html class="writer-html5" lang="en" data-content_root="./">
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Config file &mdash; slsDetectorPackage  documentation</title>
-      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
-      <link rel="stylesheet" href="_static/css/extra.css" type="text/css" />
-  <!--[if lt IE 9]>
-    <script src="_static/js/html5shiv.min.js"></script>
-  <![endif]-->
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="_static/css/extra.css?v=2be88464" />
+
   
-        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
-        <script src="_static/jquery.js"></script>
-        <script src="_static/underscore.js"></script>
-        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
-        <script src="_static/doctools.js"></script>
-        <script src="_static/sphinx_highlight.js"></script>
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="_static/documentation_options.js?v=5929fcd5"></script>
+      <script src="_static/doctools.js?v=9bcbadda"></script>
+      <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -36,9 +35,6 @@
           <a href="index.html" class="icon icon-home">
             slsDetectorPackage
           </a>
-              <div class="version">
-                9.1.0
-              </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
@@ -105,8 +101,8 @@
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Receiver</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="receivers.html">Receivers</a></li>
-<li class="toctree-l1"><a class="reference internal" href="slsreceiver.html">slsReceiver/ slsMultiReceiver</a></li>
+<li class="toctree-l1"><a class="reference internal" href="slsreceiver.html">In-built Receiver</a></li>
+<li class="toctree-l1"><a class="reference internal" href="receivers.html">Custom Receiver</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Receiver Files</span></p>
 <ul>
@@ -150,44 +146,44 @@
            <div itemprop="articleBody">
              
   <section id="config-file">
-<span id="detector-udp-header"></span><h1>Config file<a class="headerlink" href="#config-file" title="Permalink to this heading"></a></h1>
+<span id="detector-udp-header-config"></span><h1>Config file<a class="headerlink" href="#config-file" title="Link to this heading"></a></h1>
 <p>Commands to configure the UDP in the config file:</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>These command are recommended to be placed before “rx_hostname” if it is used.</p>
 </div>
 <section id="source-port">
-<h2>Source Port<a class="headerlink" href="#source-port" title="Permalink to this heading"></a></h2>
+<h2>Source Port<a class="headerlink" href="#source-port" title="Link to this heading"></a></h2>
 <blockquote>
 <div><p>Hardcoded in detector server, starting at 32410.</p>
 </div></blockquote>
 </section>
 <section id="udp-srcip-source-ip">
-<h2>udp_srcip - Source IP<a class="headerlink" href="#udp-srcip-source-ip" title="Permalink to this heading"></a></h2>
+<h2>udp_srcip - Source IP<a class="headerlink" href="#udp-srcip-source-ip" title="Link to this heading"></a></h2>
 <blockquote>
 <div><p>IP address of detector UDP interface to send packets from. Do not use for Eiger 1Gb interface (uses its hardware IP). For others, must be in the same subnet as <strong>udp_dstip</strong>.</p>
 </div></blockquote>
 </section>
 <section id="udp-srcmac-source-mac">
-<h2>udp_srcmac - Source MAC<a class="headerlink" href="#udp-srcmac-source-mac" title="Permalink to this heading"></a></h2>
+<h2>udp_srcmac - Source MAC<a class="headerlink" href="#udp-srcmac-source-mac" title="Link to this heading"></a></h2>
 <blockquote>
 <div><p>MAC address of detector UDP interface to send packets from. Do not use for Eiger (uses hardware mac). For others, it is not necessary, but can help for switch and debugging to put unique values for each module.</p>
 </div></blockquote>
 </section>
 <section id="udp-dstport-desintation-port">
-<h2>udp_dstport - Desintation Port<a class="headerlink" href="#udp-dstport-desintation-port" title="Permalink to this heading"></a></h2>
+<h2>udp_dstport - Desintation Port<a class="headerlink" href="#udp-dstport-desintation-port" title="Link to this heading"></a></h2>
 <blockquote>
 <div><p>Port in receiver pc to listen to packets from the detector.</p>
 </div></blockquote>
 </section>
 <section id="udp-dstip-destination-ip">
-<h2>udp_dstip - Destination IP<a class="headerlink" href="#udp-dstip-destination-ip" title="Permalink to this heading"></a></h2>
+<h2>udp_dstip - Destination IP<a class="headerlink" href="#udp-dstip-destination-ip" title="Link to this heading"></a></h2>
 <blockquote>
 <div><p>IP address of interface in receiver pc to listen to packets from detector. If <strong>auto</strong> is used (only when using slsReceiver/ slsMultiReceiver), the IP of <strong>rx_hostname</strong> is picked up.</p>
 </div></blockquote>
 </section>
 <section id="udp-dstmac-destination-mac">
-<h2>udp_dstmac - Destination MAC<a class="headerlink" href="#udp-dstmac-destination-mac" title="Permalink to this heading"></a></h2>
+<h2>udp_dstmac - Destination MAC<a class="headerlink" href="#udp-dstmac-destination-mac" title="Link to this heading"></a></h2>
 <blockquote>
 <div><p>MAC address of interface in receiver pc to list to packets from detector. Only required when using custom receiver, else slsReceiver/slsMultiReceiver picks it up from <strong>udp_dstip</strong>.</p>
 </div></blockquote>

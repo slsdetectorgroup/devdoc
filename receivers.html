@@ -1,28 +1,27 @@
+
+
 <!DOCTYPE html>
-<html class="writer-html5" lang="en" >
+<html class="writer-html5" lang="en" data-content_root="./">
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Receivers &mdash; slsDetectorPackage  documentation</title>
-      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
-      <link rel="stylesheet" href="_static/css/extra.css" type="text/css" />
-  <!--[if lt IE 9]>
-    <script src="_static/js/html5shiv.min.js"></script>
-  <![endif]-->
+  <title>Custom Receiver &mdash; slsDetectorPackage  documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="_static/css/extra.css?v=2be88464" />
+
   
-        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
-        <script src="_static/jquery.js"></script>
-        <script src="_static/underscore.js"></script>
-        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
-        <script src="_static/doctools.js"></script>
-        <script src="_static/sphinx_highlight.js"></script>
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="_static/documentation_options.js?v=5929fcd5"></script>
+      <script src="_static/doctools.js?v=9bcbadda"></script>
+      <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="slsReceiver/ slsMultiReceiver" href="slsreceiver.html" />
-    <link rel="prev" title="Detector Specific Fields" href="udpdetspec.html" /> 
+    <link rel="next" title="File format" href="fileformat.html" />
+    <link rel="prev" title="In-built Receiver" href="slsreceiver.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -36,9 +35,6 @@
           <a href="index.html" class="icon icon-home">
             slsDetectorPackage
           </a>
-              <div class="version">
-                9.1.0
-              </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
@@ -97,11 +93,8 @@
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Receiver</span></p>
 <ul class="current">
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Receivers</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#custom-receiver">Custom Receiver</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="slsreceiver.html">slsReceiver/ slsMultiReceiver</a></li>
+<li class="toctree-l1"><a class="reference internal" href="slsreceiver.html">In-built Receiver</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Custom Receiver</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Receiver Files</span></p>
 <ul>
@@ -134,7 +127,7 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
-      <li class="breadcrumb-item active">Receivers</li>
+      <li class="breadcrumb-item active">Custom Receiver</li>
       <li class="wy-breadcrumbs-aside">
             <a href="_sources/receivers.rst.txt" rel="nofollow"> View page source</a>
       </li>
@@ -144,26 +137,20 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="receivers">
-<h1>Receivers<a class="headerlink" href="#receivers" title="Permalink to this heading"></a></h1>
-<p>Receiver processes can be run on same or different machines as the client, receives the data from the detector (via UDP packets).
-When using the slsReceiver/ slsMultiReceiver, they can be further configured by the client control software (via TCP/IP) to set file name, file path, progress of acquisition etc.</p>
-<p>To know more about detector receiver configuration, please check out <a class="reference internal" href="udpheader.html#detector-udp-header"><span class="std std-ref">detector udp header and udp commands in the config file</span></a></p>
-<section id="custom-receiver">
-<h2>Custom Receiver<a class="headerlink" href="#custom-receiver" title="Permalink to this heading"></a></h2>
+  <section id="custom-receiver">
+<h1>Custom Receiver<a class="headerlink" href="#custom-receiver" title="Link to this heading"></a></h1>
+<p>The receiver essentially listens to UDP data packets sent out by the detector.</p>
+<p>To know more about detector receiver setup in the config file, please check out <a class="reference internal" href="udpconfig.html#detector-udp-header-config"><span class="std std-ref">the detector-receiver UDP configuration in the config file</span></a> and the <a class="reference internal" href="udpheader.html#detector-udp-header"><span class="std std-ref">detector udp format</span></a>.</p>
 <div class="line-block">
-<div class="line">When using  custom receiver with our package, ensure that <strong>udp_dstmac</strong> is also configured in the config file. This parameter is not required when using slsReceiver.</div>
+<div class="line">Please note the following when using a custom receiver:</div>
 </div>
-<div class="line-block">
-<div class="line">Cannot use “auto” for <strong>udp_dstip</strong>.</div>
-</div>
-<div class="line-block">
-<div class="line">Also ensure that there are no <strong>rx_</strong> commands in the config file. These commands are for configuring the slsReceiver.</div>
-</div>
-<p>Example of a custom receiver config file</p>
 <ul class="simple">
-<li><p>The main difference is the lack of <strong>rx_</strong> commands or file commands (eg. fwrite, fpath) and the udp_dstmac is required in config file.</p></li>
+<li><p><strong>udp_dstmac</strong> must be configured in the config file. This parameter is not required when using an in-built receiver.</p></li>
+<li><p>Cannot use “auto” for <strong>udp_dstip</strong>.</p></li>
+<li><p>No <strong>rx_</strong> commands in the config file. These commands are for configuring the slsReceiver.</p></li>
 </ul>
+<p>The main difference is the lack of <strong>rx_</strong> commands or file commands (eg. <strong>f**write, **f**path) and the **udp_dstmac</strong> is required in config file.</p>
+<p>Example of a custom receiver config file</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># detector hostname</span>
 hostname<span class="w"> </span>bchip052
 
@@ -181,14 +168,13 @@ udp_dstmac<span class="w"> </span><span class="m">22</span>:47:d5:48:ad:ef
 </pre></div>
 </div>
 </section>
-</section>
 
 
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="udpdetspec.html" class="btn btn-neutral float-left" title="Detector Specific Fields" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="slsreceiver.html" class="btn btn-neutral float-right" title="slsReceiver/ slsMultiReceiver" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="slsreceiver.html" class="btn btn-neutral float-left" title="In-built Receiver" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="fileformat.html" class="btn btn-neutral float-right" title="File format" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>

@@ -1,28 +1,27 @@
+
+
 <!DOCTYPE html>
-<html class="writer-html5" lang="en" >
+<html class="writer-html5" lang="en" data-content_root="./">
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>File format &mdash; slsDetectorPackage  documentation</title>
-      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
-      <link rel="stylesheet" href="_static/css/extra.css" type="text/css" />
-  <!--[if lt IE 9]>
-    <script src="_static/js/html5shiv.min.js"></script>
-  <![endif]-->
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="_static/css/extra.css?v=2be88464" />
+
   
-        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
-        <script src="_static/jquery.js"></script>
-        <script src="_static/underscore.js"></script>
-        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
-        <script src="_static/doctools.js"></script>
-        <script src="_static/sphinx_highlight.js"></script>
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="_static/documentation_options.js?v=5929fcd5"></script>
+      <script src="_static/doctools.js?v=9bcbadda"></script>
+      <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="SLS Receiver Header Format" href="slsreceiverheaderformat.html" />
-    <link rel="prev" title="slsReceiver/ slsMultiReceiver" href="slsreceiver.html" /> 
+    <link rel="prev" title="Custom Receiver" href="receivers.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -36,9 +35,6 @@
           <a href="index.html" class="icon icon-home">
             slsDetectorPackage
           </a>
-              <div class="version">
-                9.1.0
-              </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
@@ -97,8 +93,8 @@
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Receiver</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="receivers.html">Receivers</a></li>
-<li class="toctree-l1"><a class="reference internal" href="slsreceiver.html">slsReceiver/ slsMultiReceiver</a></li>
+<li class="toctree-l1"><a class="reference internal" href="slsreceiver.html">In-built Receiver</a></li>
+<li class="toctree-l1"><a class="reference internal" href="receivers.html">Custom Receiver</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Receiver Files</span></p>
 <ul class="current">
@@ -147,10 +143,10 @@
            <div itemprop="articleBody">
              
   <section id="file-format">
-<h1>File format<a class="headerlink" href="#file-format" title="Permalink to this heading"></a></h1>
+<h1>File format<a class="headerlink" href="#file-format" title="Link to this heading"></a></h1>
 <p>If <a class="reference external" href="commandline.html#term-fwrite-0-1">fwrite</a> is enabled, the receiver will write data to files.</p>
 <section id="number-of-files">
-<h2>Number of Files<a class="headerlink" href="#number-of-files" title="Permalink to this heading"></a></h2>
+<h2>Number of Files<a class="headerlink" href="#number-of-files" title="Link to this heading"></a></h2>
 <p>Every acquisition will create a master file and data files.</p>
 <p>An acquisition can have multiple data files for a single frame. The number of files is determined by the number of UDP ports per module and the number of modules.</p>
 <blockquote>
@@ -163,7 +159,7 @@
 <p>A new file containing <strong>‘_f[file_index]’</strong> in file name is also created when reaching the maximum frames per file. Configured using <a class="reference external" href="commandline.html#term-rx_framesperfile-n_frames">rx_framesperfile</a>.</p>
 </section>
 <section id="naming">
-<span id="file-name-format"></span><h2>Naming<a class="headerlink" href="#naming" title="Permalink to this heading"></a></h2>
+<span id="file-name-format"></span><h2>Naming<a class="headerlink" href="#naming" title="Link to this heading"></a></h2>
 <div class="line-block">
 <div class="line">Master File Name: [fpath]/[fname]_master_[findex].[ext]</div>
 </div>
@@ -198,7 +194,7 @@ path-to-file/run_d0_f0_1.raw
 </div></blockquote>
 </section>
 <section id="formats">
-<h2>Formats<a class="headerlink" href="#formats" title="Permalink to this heading"></a></h2>
+<h2>Formats<a class="headerlink" href="#formats" title="Link to this heading"></a></h2>
 <p>There are 2 file formats supported by the receiver:</p>
 <blockquote>
 <div><ul class="simple">
@@ -214,7 +210,7 @@ path-to-file/run_d0_f0_1.raw
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="slsreceiver.html" class="btn btn-neutral float-left" title="slsReceiver/ slsMultiReceiver" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="receivers.html" class="btn btn-neutral float-left" title="Custom Receiver" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
         <a href="slsreceiverheaderformat.html" class="btn btn-neutral float-right" title="SLS Receiver Header Format" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 

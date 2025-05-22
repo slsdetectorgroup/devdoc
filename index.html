@@ -1,23 +1,22 @@
+
+
 <!DOCTYPE html>
-<html class="writer-html5" lang="en" >
+<html class="writer-html5" lang="en" data-content_root="./">
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Welcome to slsDetectorPackage’s documentation! &mdash; slsDetectorPackage  documentation</title>
-      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
-      <link rel="stylesheet" href="_static/css/extra.css" type="text/css" />
-  <!--[if lt IE 9]>
-    <script src="_static/js/html5shiv.min.js"></script>
-  <![endif]-->
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="_static/css/extra.css?v=2be88464" />
+
   
-        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
-        <script src="_static/jquery.js"></script>
-        <script src="_static/underscore.js"></script>
-        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
-        <script src="_static/doctools.js"></script>
-        <script src="_static/sphinx_highlight.js"></script>
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="_static/documentation_options.js?v=5929fcd5"></script>
+      <script src="_static/doctools.js?v=9bcbadda"></script>
+      <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -35,9 +34,6 @@
           <a href="#" class="icon icon-home">
             slsDetectorPackage
           </a>
-              <div class="version">
-                9.1.0
-              </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
@@ -96,8 +92,8 @@
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Receiver</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="receivers.html">Receivers</a></li>
-<li class="toctree-l1"><a class="reference internal" href="slsreceiver.html">slsReceiver/ slsMultiReceiver</a></li>
+<li class="toctree-l1"><a class="reference internal" href="slsreceiver.html">In-built Receiver</a></li>
+<li class="toctree-l1"><a class="reference internal" href="receivers.html">Custom Receiver</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Receiver Files</span></p>
 <ul>
@@ -141,7 +137,7 @@
            <div itemprop="articleBody">
              
   <section id="welcome-to-slsdetectorpackage-s-documentation">
-<h1>Welcome to slsDetectorPackage’s documentation!<a class="headerlink" href="#welcome-to-slsdetectorpackage-s-documentation" title="Permalink to this heading"></a></h1>
+<h1>Welcome to slsDetectorPackage’s documentation!<a class="headerlink" href="#welcome-to-slsdetectorpackage-s-documentation" title="Link to this heading"></a></h1>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>This is the documentation for the latest development version of slsDetectorPackage.
@@ -187,9 +183,18 @@ For further documentation, visit the official page: <a class="reference external
 <div class="toctree-wrapper compound">
 <p class="caption" role="heading"><span class="caption-text">C++ API</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="detector.html">Detector</a></li>
-<li class="toctree-l1"><a class="reference internal" href="result.html">Result</a></li>
-<li class="toctree-l1"><a class="reference internal" href="receiver_api.html">Receiver</a></li>
+<li class="toctree-l1"><a class="reference internal" href="detector.html">Detector</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="detector.html#_CPPv4N3sls8DetectorE"><code class="docutils literal notranslate"><span class="pre">sls::Detector</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="result.html">Result</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="result.html#_CPPv43sls"><code class="docutils literal notranslate"><span class="pre">sls</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="receiver_api.html">Receiver</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="receiver_api.html#_CPPv4N3sls8ReceiverE"><code class="docutils literal notranslate"><span class="pre">sls::Receiver</span></code></a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="examples.html">Examples</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="examples.html#setup">Setup</a></li>
 <li class="toctree-l2"><a class="reference internal" href="examples.html#compile-examples">Compile examples</a></li>
@@ -262,9 +267,104 @@ For further documentation, visit the official page: <a class="reference external
 <div class="toctree-wrapper compound">
 <p class="caption" role="heading"><span class="caption-text">Developer</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="container_utils.html">ContainerUtils</a></li>
-<li class="toctree-l1"><a class="reference internal" href="type_traits.html">TypeTraits</a></li>
-<li class="toctree-l1"><a class="reference internal" href="ToString.html">ToString</a></li>
+<li class="toctree-l1"><a class="reference internal" href="container_utils.html">ContainerUtils</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="container_utils.html#_CPPv43sls"><code class="docutils literal notranslate"><span class="pre">sls</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="container_utils.html#_CPPv4I0DpEN3sls11make_uniqueENSt9enable_ifIXntNSt8is_arrayI1TE5valueEENSt10unique_ptrI1TEEE4typeEDpRR4Args"><code class="docutils literal notranslate"><span class="pre">make_unique()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="container_utils.html#_CPPv4I0EN3sls11make_uniqueENSt9enable_ifINSt8is_arrayI1TE5valueENSt10unique_ptrI1TEEE4typeENSt6size_tE"><code class="docutils literal notranslate"><span class="pre">make_unique()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="container_utils.html#_CPPv4I0EN3sls8allEqualEbRK9Container"><code class="docutils literal notranslate"><span class="pre">allEqual()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="container_utils.html#_CPPv4I0EN3sls15allEqualWithTolENSt9enable_ifINSt13is_arithmeticI1TE5valueEbE4typeERKNSt6vectorI1TEEK1T"><code class="docutils literal notranslate"><span class="pre">allEqualWithTol()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="container_utils.html#_CPPv4I0EN3sls10allEqualToEbRKNSt6vectorI1TEEK1T"><code class="docutils literal notranslate"><span class="pre">allEqualTo()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="container_utils.html#_CPPv4I0EN3sls17allEqualToWithTolEbRKNSt6vectorI1TEEK1TK1T"><code class="docutils literal notranslate"><span class="pre">allEqualToWithTol()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="container_utils.html#_CPPv4I0EN3sls10anyEqualToEbRKNSt6vectorI1TEEK1T"><code class="docutils literal notranslate"><span class="pre">anyEqualTo()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="container_utils.html#_CPPv4I0EN3sls17anyEqualToWithTolEbRKNSt6vectorI1TEEK1TK1T"><code class="docutils literal notranslate"><span class="pre">anyEqualToWithTol()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="container_utils.html#_CPPv4I0EN3sls3sumENSt9enable_ifINSt13is_arithmeticI1TE5valueE1TE4typeERKNSt6vectorI1TEE"><code class="docutils literal notranslate"><span class="pre">sum()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="container_utils.html#_CPPv4I0EN3sls19minusOneIfDifferentE1TRKNSt6vectorI1TEE"><code class="docutils literal notranslate"><span class="pre">minusOneIfDifferent()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="container_utils.html#_CPPv4N3sls19minusOneIfDifferentERKNSt6vectorIbEE"><code class="docutils literal notranslate"><span class="pre">minusOneIfDifferent()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="container_utils.html#_CPPv4I0EN3sls19minusOneIfDifferentENSt6vectorI1TEERKNSt6vectorINSt6vectorI1TEEEE"><code class="docutils literal notranslate"><span class="pre">minusOneIfDifferent()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="container_utils.html#_CPPv4I0_6size_tEN3sls19minusOneIfDifferentENSt5arrayI1T4sizeEERKNSt6vectorINSt5arrayI1T4sizeEEEE"><code class="docutils literal notranslate"><span class="pre">minusOneIfDifferent()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="container_utils.html#_CPPv4I0EN3sls6SquashEN9Container10value_typeERK9ContainerN9Container10value_typeE"><code class="docutils literal notranslate"><span class="pre">Squash()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="container_utils.html#_CPPv4I0EN3sls13hasDuplicatesEb9Container"><code class="docutils literal notranslate"><span class="pre">hasDuplicates()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="container_utils.html#_CPPv4I0EN3sls16removeDuplicatesENSt9enable_ifIN12is_containerI1TE5valueEbE4typeER1T"><code class="docutils literal notranslate"><span class="pre">removeDuplicates()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="type_traits.html">TypeTraits</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="type_traits.html#_CPPv43sls"><code class="docutils literal notranslate"><span class="pre">sls</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="type_traits.html#_CPPv4I0DpEN3sls7AllSameE"><code class="docutils literal notranslate"><span class="pre">AllSame</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="type_traits.html#_CPPv4IDpEN3sls11ConjunctionE"><code class="docutils literal notranslate"><span class="pre">sls::Conjunction</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="type_traits.html#_CPPv4I0EN3sls11ConjunctionE"><code class="docutils literal notranslate"><span class="pre">sls::Conjunction&lt;</span> <span class="pre">B1</span> <span class="pre">&gt;</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="type_traits.html#_CPPv4I0DpEN3sls11ConjunctionE"><code class="docutils literal notranslate"><span class="pre">sls::Conjunction&lt;</span> <span class="pre">B1,</span> <span class="pre">Bn...</span> <span class="pre">&gt;</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="type_traits.html#_CPPv4I00EN3sls16has_emplace_backE"><code class="docutils literal notranslate"><span class="pre">sls::has_emplace_back</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="type_traits.html#_CPPv4I0EN3sls16has_emplace_backI1TNSt11conditionalIXL0EE23has_emplace_back_helperIDTcldtclNSt7declvalI1TEEE12emplace_backEEEvE4typeEEE"><code class="docutils literal notranslate"><span class="pre">sls::has_emplace_back&lt;</span> <span class="pre">T,</span> <span class="pre">typename</span> <span class="pre">std::conditional&lt;</span> <span class="pre">false,</span> <span class="pre">has_emplace_back_helper&lt;</span> <span class="pre">decltype(std::declval&lt;</span> <span class="pre">T</span> <span class="pre">&gt;().emplace_back())&gt;,</span> <span class="pre">void</span> <span class="pre">&gt;::type</span> <span class="pre">&gt;</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="type_traits.html#_CPPv4IDpEN3sls23has_emplace_back_helperE"><code class="docutils literal notranslate"><span class="pre">sls::has_emplace_back_helper</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="type_traits.html#_CPPv4I00EN3sls7has_strE"><code class="docutils literal notranslate"><span class="pre">sls::has_str</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="type_traits.html#_CPPv4I0EN3sls7has_strI1TNSt11conditionalIXL0EE14has_str_helperIDTcldtclNSt7declvalI1TEEE3strEEEvE4typeEEE"><code class="docutils literal notranslate"><span class="pre">sls::has_str&lt;</span> <span class="pre">T,</span> <span class="pre">typename</span> <span class="pre">std::conditional&lt;</span> <span class="pre">false,</span> <span class="pre">has_str_helper&lt;</span> <span class="pre">decltype(std::declval&lt;</span> <span class="pre">T</span> <span class="pre">&gt;().str())&gt;,</span> <span class="pre">void</span> <span class="pre">&gt;::type</span> <span class="pre">&gt;</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="type_traits.html#_CPPv4IDpEN3sls14has_str_helperE"><code class="docutils literal notranslate"><span class="pre">sls::has_str_helper</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="type_traits.html#_CPPv4I00EN3sls12is_containerE"><code class="docutils literal notranslate"><span class="pre">sls::is_container</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="type_traits.html#_CPPv4I0EN3sls12is_containerI1TNSt11conditionalIXL0EE19is_container_helperINSt16remove_referenceI1TE4type10value_typeENSt16remove_referenceI1TE4type9size_typeENSt16remove_referenceI1TE4type8iteratorENSt16remove_referenceI1TE4type14const_iteratorEDTcldtclNSt7declvalI1TEEE4sizeEEDTcldtclNSt7declvalI1TEEE5beginEEDTcldtclNSt7declvalI1TEEE3endEEDTcldtclNSt7declvalI1TEEE6cbeginEEDTcldtclNSt7declvalI1TEEE4cendEEDTcldtclNSt7declvalI1TEEE5emptyEEEvE4typeEEE"><code class="docutils literal notranslate"><span class="pre">sls::is_container&lt;</span> <span class="pre">T,</span> <span class="pre">typename</span> <span class="pre">std::conditional&lt;</span> <span class="pre">false,</span> <span class="pre">is_container_helper&lt;</span> <span class="pre">typename</span> <span class="pre">std::remove_reference&lt;</span> <span class="pre">T</span> <span class="pre">&gt;::type::value_type,</span> <span class="pre">typename</span> <span class="pre">std::remove_reference&lt;</span> <span class="pre">T</span> <span class="pre">&gt;::type::size_type,</span> <span class="pre">typename</span> <span class="pre">std::remove_reference&lt;</span> <span class="pre">T</span> <span class="pre">&gt;::type::iterator,</span> <span class="pre">typename</span> <span class="pre">std::remove_reference&lt;</span> <span class="pre">T</span> <span class="pre">&gt;::type::const_iterator,</span> <span class="pre">decltype(std::declval&lt;</span> <span class="pre">T</span> <span class="pre">&gt;().size()),</span> <span class="pre">decltype(std::declval&lt;</span> <span class="pre">T</span> <span class="pre">&gt;().begin()),</span> <span class="pre">decltype(std::declval&lt;</span> <span class="pre">T</span> <span class="pre">&gt;().end()),</span> <span class="pre">decltype(std::declval&lt;</span> <span class="pre">T</span> <span class="pre">&gt;().cbegin()),</span> <span class="pre">decltype(std::declval&lt;</span> <span class="pre">T</span> <span class="pre">&gt;().cend()),</span> <span class="pre">decltype(std::declval&lt;</span> <span class="pre">T</span> <span class="pre">&gt;().empty())&gt;,</span> <span class="pre">void</span> <span class="pre">&gt;::type</span> <span class="pre">&gt;</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="type_traits.html#_CPPv4IDpEN3sls19is_container_helperE"><code class="docutils literal notranslate"><span class="pre">sls::is_container_helper</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="type_traits.html#_CPPv4I00EN3sls11is_durationE"><code class="docutils literal notranslate"><span class="pre">sls::is_duration</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="type_traits.html#_CPPv4I0EN3sls11is_durationI1TNSt11conditionalIXL0EE18is_duration_helperIN1T3repEN1T6periodEDTcldtclNSt7declvalI1TEEE3minEEDTcldtclNSt7declvalI1TEEE3maxEEDTcldtclNSt7declvalI1TEEE4zeroEEEvE4typeEEE"><code class="docutils literal notranslate"><span class="pre">sls::is_duration&lt;</span> <span class="pre">T,</span> <span class="pre">typename</span> <span class="pre">std::conditional&lt;</span> <span class="pre">false,</span> <span class="pre">is_duration_helper&lt;</span> <span class="pre">typename</span> <span class="pre">T::rep,</span> <span class="pre">typename</span> <span class="pre">T::period,</span> <span class="pre">decltype(std::declval&lt;</span> <span class="pre">T</span> <span class="pre">&gt;().min()),</span> <span class="pre">decltype(std::declval&lt;</span> <span class="pre">T</span> <span class="pre">&gt;().max()),</span> <span class="pre">decltype(std::declval&lt;</span> <span class="pre">T</span> <span class="pre">&gt;().zero())&gt;,</span> <span class="pre">void</span> <span class="pre">&gt;::type</span> <span class="pre">&gt;</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="type_traits.html#_CPPv4IDpEN3sls18is_duration_helperE"><code class="docutils literal notranslate"><span class="pre">sls::is_duration_helper</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="type_traits.html#_CPPv4I00EN3sls18is_light_containerE"><code class="docutils literal notranslate"><span class="pre">sls::is_light_container</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="type_traits.html#_CPPv4I0EN3sls18is_light_containerI1TNSt11conditionalIXL0EE19is_container_helperIN1T10value_typeEN1T9size_typeEN1T8iteratorEN1T14const_iteratorEDTcldtclNSt7declvalI1TEEE4sizeEEDTcldtclNSt7declvalI1TEEE5beginEEDTcldtclNSt7declvalI1TEEE3endEEEvE4typeEEE"><code class="docutils literal notranslate"><span class="pre">sls::is_light_container&lt;</span> <span class="pre">T,</span> <span class="pre">typename</span> <span class="pre">std::conditional&lt;</span> <span class="pre">false,</span> <span class="pre">is_container_helper&lt;</span> <span class="pre">typename</span> <span class="pre">T::value_type,</span> <span class="pre">typename</span> <span class="pre">T::size_type,</span> <span class="pre">typename</span> <span class="pre">T::iterator,</span> <span class="pre">typename</span> <span class="pre">T::const_iterator,</span> <span class="pre">decltype(std::declval&lt;</span> <span class="pre">T</span> <span class="pre">&gt;().size()),</span> <span class="pre">decltype(std::declval&lt;</span> <span class="pre">T</span> <span class="pre">&gt;().begin()),</span> <span class="pre">decltype(std::declval&lt;</span> <span class="pre">T</span> <span class="pre">&gt;().end())&gt;,</span> <span class="pre">void</span> <span class="pre">&gt;::type</span> <span class="pre">&gt;</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="type_traits.html#_CPPv4IDpEN3sls25is_light_container_helperE"><code class="docutils literal notranslate"><span class="pre">sls::is_light_container_helper</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="type_traits.html#_CPPv4I0EN3sls9is_vectorE"><code class="docutils literal notranslate"><span class="pre">sls::is_vector</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="type_traits.html#_CPPv4I0EN3sls9is_vectorINSt6vectorI1TEEEE"><code class="docutils literal notranslate"><span class="pre">sls::is_vector&lt;</span> <span class="pre">std::vector&lt;</span> <span class="pre">T</span> <span class="pre">&gt;</span> <span class="pre">&gt;</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="ToString.html">ToString</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="ToString.html#_CPPv43sls"><code class="docutils literal notranslate"><span class="pre">sls</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="ToString.html#_CPPv4I00EN3sls8ToStringENSt9enable_ifIN11is_durationI1TE5valueENSt6stringEE4typeE1TRKNSt6stringE"><code class="docutils literal notranslate"><span class="pre">ToString()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="ToString.html#_CPPv4I0EN3sls8ToStringENSt9enable_ifIN11is_durationI4FromE5valueENSt6stringEE4typeE4From"><code class="docutils literal notranslate"><span class="pre">ToString()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="ToString.html#_CPPv4I0EN3sls8ToStringENSt9enable_ifINSt17is_floating_pointI1TE5valueENSt6stringEE4typeERK1T"><code class="docutils literal notranslate"><span class="pre">ToString()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="ToString.html#_CPPv4I0EN3sls8ToStringENSt9enable_ifINSt11is_integralI1TE5valueENSt6stringEE4typeERK1T"><code class="docutils literal notranslate"><span class="pre">ToString()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="ToString.html#_CPPv4I0EN3sls11ToStringHexENSt9enable_ifINSt11is_integralI1TE5valueENSt6stringEE4typeERK1T"><code class="docutils literal notranslate"><span class="pre">ToStringHex()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="ToString.html#_CPPv4I0EN3sls11ToStringHexENSt9enable_ifINSt11is_integralI1TE5valueENSt6stringEE4typeERK1Ti"><code class="docutils literal notranslate"><span class="pre">ToStringHex()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="ToString.html#_CPPv4I0EN3sls11ToStringHexENSt9enable_ifIXaaN12is_containerI1TE5valueEntNSt7is_sameIN9typenameT10value_typeENSt6stringEE5valueEENSt6stringEE4typeERK1T"><code class="docutils literal notranslate"><span class="pre">ToStringHex()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="ToString.html#_CPPv4I0EN3sls11ToStringHexENSt9enable_ifIXaaN12is_containerI1TE5valueEntNSt7is_sameIN9typenameT10value_typeENSt6stringEE5valueEENSt6stringEE4typeERK1Ti"><code class="docutils literal notranslate"><span class="pre">ToStringHex()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="ToString.html#_CPPv4I00EN3sls8ToStringENSt6stringERKNSt3mapI7KeyType9ValueTypeEE"><code class="docutils literal notranslate"><span class="pre">ToString()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="ToString.html#_CPPv4I0_6size_tEN3sls8ToStringENSt6stringERA4size_K1T"><code class="docutils literal notranslate"><span class="pre">ToString()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="ToString.html#_CPPv4I0EN3sls8ToStringENSt9enable_ifIXaaN12is_containerI1TE5valueEntNSt7is_sameIN9typenameT10value_typeENSt6stringEE5valueEENSt6stringEE4typeERK1T"><code class="docutils literal notranslate"><span class="pre">ToString()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="ToString.html#_CPPv4I0EN3sls8ToStringENSt9enable_ifIXaaN12is_containerI1TE5valueENSt7is_sameIN9typenameT10value_typeENSt6stringEE5valueEENSt6stringEE4typeERK1T"><code class="docutils literal notranslate"><span class="pre">ToString()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="ToString.html#_CPPv4I0EN3sls8ToStringENSt9enable_ifIN12is_containerI1TE5valueENSt6stringEE4typeERK1TRKNSt6stringE"><code class="docutils literal notranslate"><span class="pre">ToString()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="ToString.html#_CPPv4I0EN3sls8StringToE1TRKNSt6stringERKNSt6stringE"><code class="docutils literal notranslate"><span class="pre">StringTo()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="ToString.html#_CPPv4I0EN3sls8StringToE1TRKNSt6stringE"><code class="docutils literal notranslate"><span class="pre">StringTo()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="ToString.html#_CPPv4IEN3sls8StringToEN4defs12detectorTypeERKNSt6stringE"><code class="docutils literal notranslate"><span class="pre">StringTo()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="ToString.html#_CPPv4IEN3sls8StringToEN4defs16detectorSettingsERKNSt6stringE"><code class="docutils literal notranslate"><span class="pre">StringTo()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="ToString.html#_CPPv4IEN3sls8StringToEN4defs10speedLevelERKNSt6stringE"><code class="docutils literal notranslate"><span class="pre">StringTo()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="ToString.html#_CPPv4IEN3sls8StringToEN4defs10timingModeERKNSt6stringE"><code class="docutils literal notranslate"><span class="pre">StringTo()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="ToString.html#_CPPv4IEN3sls8StringToEN4defs18frameDiscardPolicyERKNSt6stringE"><code class="docutils literal notranslate"><span class="pre">StringTo()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="ToString.html#_CPPv4IEN3sls8StringToEN4defs10fileFormatERKNSt6stringE"><code class="docutils literal notranslate"><span class="pre">StringTo()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="ToString.html#_CPPv4IEN3sls8StringToEN4defs18externalSignalFlagERKNSt6stringE"><code class="docutils literal notranslate"><span class="pre">StringTo()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="ToString.html#_CPPv4IEN3sls8StringToEN4defs11readoutModeERKNSt6stringE"><code class="docutils literal notranslate"><span class="pre">StringTo()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="ToString.html#_CPPv4IEN3sls8StringToEN4defs8dacIndexERKNSt6stringE"><code class="docutils literal notranslate"><span class="pre">StringTo()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="ToString.html#_CPPv4IEN3sls8StringToEN4defs9burstModeERKNSt6stringE"><code class="docutils literal notranslate"><span class="pre">StringTo()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="ToString.html#_CPPv4IEN3sls8StringToEN4defs16timingSourceTypeERKNSt6stringE"><code class="docutils literal notranslate"><span class="pre">StringTo()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="ToString.html#_CPPv4IEN3sls8StringToEN4defs11M3_GainCapsERKNSt6stringE"><code class="docutils literal notranslate"><span class="pre">StringTo()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="ToString.html#_CPPv4IEN3sls8StringToEN4defs12portPositionERKNSt6stringE"><code class="docutils literal notranslate"><span class="pre">StringTo()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="ToString.html#_CPPv4IEN3sls8StringToEN4defs18streamingInterfaceERKNSt6stringE"><code class="docutils literal notranslate"><span class="pre">StringTo()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="ToString.html#_CPPv4IEN3sls8StringToEN4defs13vetoAlgorithmERKNSt6stringE"><code class="docutils literal notranslate"><span class="pre">StringTo()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="ToString.html#_CPPv4IEN3sls8StringToEN4defs8gainModeERKNSt6stringE"><code class="docutils literal notranslate"><span class="pre">StringTo()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="ToString.html#_CPPv4IEN3sls8StringToEN4defs8polarityERKNSt6stringE"><code class="docutils literal notranslate"><span class="pre">StringTo()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="ToString.html#_CPPv4IEN3sls8StringToEN4defs17timingInfoDecoderERKNSt6stringE"><code class="docutils literal notranslate"><span class="pre">StringTo()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="ToString.html#_CPPv4IEN3sls8StringToEN4defs14collectionModeERKNSt6stringE"><code class="docutils literal notranslate"><span class="pre">StringTo()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="ToString.html#_CPPv4IEN3sls8StringToE7uint8_tRKNSt6stringE"><code class="docutils literal notranslate"><span class="pre">StringTo()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="ToString.html#_CPPv4IEN3sls8StringToE8uint16_tRKNSt6stringE"><code class="docutils literal notranslate"><span class="pre">StringTo()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="ToString.html#_CPPv4IEN3sls8StringToE8uint32_tRKNSt6stringE"><code class="docutils literal notranslate"><span class="pre">StringTo()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="ToString.html#_CPPv4IEN3sls8StringToE8uint64_tRKNSt6stringE"><code class="docutils literal notranslate"><span class="pre">StringTo()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="ToString.html#_CPPv4IEN3sls8StringToEiRKNSt6stringE"><code class="docutils literal notranslate"><span class="pre">StringTo()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="ToString.html#_CPPv4IEN3sls8StringToEbRKNSt6stringE"><code class="docutils literal notranslate"><span class="pre">StringTo()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="ToString.html#_CPPv4IEN3sls8StringToE7int64_tRKNSt6stringE"><code class="docutils literal notranslate"><span class="pre">StringTo()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="ToString.html#_CPPv4I0EN3sls8ToStringENSt9enable_ifIN7has_strI1TE5valueENSt6stringEE4typeERK1T"><code class="docutils literal notranslate"><span class="pre">ToString()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="ToString.html#_CPPv4I0EN3sls8StringToENSt6vectorI1TEERKNSt6vectorINSt6stringEEE"><code class="docutils literal notranslate"><span class="pre">StringTo()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 </div>
 <div class="toctree-wrapper compound">
@@ -350,16 +450,15 @@ For further documentation, visit the official page: <a class="reference external
 <div class="toctree-wrapper compound">
 <p class="caption" role="heading"><span class="caption-text">Receiver</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="receivers.html">Receivers</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="receivers.html#custom-receiver">Custom Receiver</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="slsreceiver.html">slsReceiver/ slsMultiReceiver</a><ul>
+<li class="toctree-l1"><a class="reference internal" href="slsreceiver.html">In-built Receiver</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="slsreceiver.html#receiver-variants">Receiver Variants</a></li>
+<li class="toctree-l2"><a class="reference internal" href="slsreceiver.html#starting-up-the-receiver">Starting up the Receiver</a></li>
 <li class="toctree-l2"><a class="reference internal" href="slsreceiver.html#client-commands">Client Commands</a></li>
 <li class="toctree-l2"><a class="reference internal" href="slsreceiver.html#performance">Performance</a></li>
 <li class="toctree-l2"><a class="reference internal" href="slsreceiver.html#using-callbacks">Using Callbacks</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="receivers.html">Custom Receiver</a></li>
 </ul>
 </div>
 <div class="toctree-wrapper compound">

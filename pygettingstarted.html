@@ -1,23 +1,22 @@
+
+
 <!DOCTYPE html>
-<html class="writer-html5" lang="en" >
+<html class="writer-html5" lang="en" data-content_root="./">
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Getting Started &mdash; slsDetectorPackage  documentation</title>
-      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
-      <link rel="stylesheet" href="_static/css/extra.css" type="text/css" />
-  <!--[if lt IE 9]>
-    <script src="_static/js/html5shiv.min.js"></script>
-  <![endif]-->
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="_static/css/extra.css?v=2be88464" />
+
   
-        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
-        <script src="_static/jquery.js"></script>
-        <script src="_static/underscore.js"></script>
-        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
-        <script src="_static/doctools.js"></script>
-        <script src="_static/sphinx_highlight.js"></script>
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="_static/documentation_options.js?v=5929fcd5"></script>
+      <script src="_static/doctools.js?v=9bcbadda"></script>
+      <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -36,9 +35,6 @@
           <a href="index.html" class="icon icon-home">
             slsDetectorPackage
           </a>
-              <div class="version">
-                9.1.0
-              </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
@@ -107,8 +103,8 @@
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Receiver</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="receivers.html">Receivers</a></li>
-<li class="toctree-l1"><a class="reference internal" href="slsreceiver.html">slsReceiver/ slsMultiReceiver</a></li>
+<li class="toctree-l1"><a class="reference internal" href="slsreceiver.html">In-built Receiver</a></li>
+<li class="toctree-l1"><a class="reference internal" href="receivers.html">Custom Receiver</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Receiver Files</span></p>
 <ul>
@@ -152,9 +148,9 @@
            <div itemprop="articleBody">
              
   <section id="getting-started">
-<h1>Getting Started<a class="headerlink" href="#getting-started" title="Permalink to this heading"></a></h1>
+<h1>Getting Started<a class="headerlink" href="#getting-started" title="Link to this heading"></a></h1>
 <section id="which-python">
-<h2>Which Python?<a class="headerlink" href="#which-python" title="Permalink to this heading"></a></h2>
+<h2>Which Python?<a class="headerlink" href="#which-python" title="Link to this heading"></a></h2>
 <p>We require at least Python 3.8 and strongly recommended that you don’t use the system
 Python installation. The examples in this documentation uses <a class="reference external" href="https://docs.conda.io/en/latest/miniconda.html">conda</a> since it provides good support
 also for non Python packages but there are also other alternatives like, pyenv.</p>
@@ -162,7 +158,7 @@ also for non Python packages but there are also other alternatives like, pyenv.<
 environments.</p>
 </section>
 <section id="building-from-source">
-<h2>Building from Source<a class="headerlink" href="#building-from-source" title="Permalink to this heading"></a></h2>
+<h2>Building from Source<a class="headerlink" href="#building-from-source" title="Link to this heading"></a></h2>
 <p>If you are not installing slsdet binaries from conda, but instead building from
 source, please refer to  <a class="reference internal" href="installation.html#installation"><span class="std std-ref">the installation section</span></a> for details.</p>
 <p>Don’t forget to compile with the option SLS_USE_PYTHON=ON to enable the Python
@@ -174,7 +170,7 @@ For example, build/bin/_slsdet.cpython-39-x86_64-linux-gnu.so for Python v3.9.x<
 </div>
 </section>
 <section id="pythonpath">
-<h2>PYTHONPATH<a class="headerlink" href="#pythonpath" title="Permalink to this heading"></a></h2>
+<h2>PYTHONPATH<a class="headerlink" href="#pythonpath" title="Link to this heading"></a></h2>
 <p>If you install slsdet binaries using conda everything is set up and you can
 directly start using the Python bindings. However, if you build
 from source you need to tell Python where to find slsdet to use it. This
@@ -184,12 +180,12 @@ can be done by adding your build/bin directory to PYTHONPATH.</p>
 </div>
 </section>
 <section id="which-detector-class-should-i-use">
-<h2>Which detector class should I use?<a class="headerlink" href="#which-detector-class-should-i-use" title="Permalink to this heading"></a></h2>
+<h2>Which detector class should I use?<a class="headerlink" href="#which-detector-class-should-i-use" title="Link to this heading"></a></h2>
 <p>We provide a generic class called Detector and detector specific
 versions like, Eiger, Jungfrau etc. The most or all functionality
 is there in the base class except the convenient access to dacs
 and temperatures.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">slsdet</span> <span class="kn">import</span> <span class="n">Detector</span><span class="p">,</span> <span class="n">Eiger</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">slsdet</span><span class="w"> </span><span class="kn">import</span> <span class="n">Detector</span><span class="p">,</span> <span class="n">Eiger</span>
 
 <span class="n">d</span> <span class="o">=</span> <span class="n">Detector</span><span class="p">()</span>
 <span class="n">e</span> <span class="o">=</span> <span class="n">Eiger</span><span class="p">()</span>
@@ -227,7 +223,7 @@ functionality to the specialized classes.</p>
 </div>
 </section>
 <section id="hey-there-seems-to-be-two-apis">
-<h2>Hey, there seems to be two APIs?<a class="headerlink" href="#hey-there-seems-to-be-two-apis" title="Permalink to this heading"></a></h2>
+<h2>Hey, there seems to be two APIs?<a class="headerlink" href="#hey-there-seems-to-be-two-apis" title="Link to this heading"></a></h2>
 <p>To make the Python API approachable, both if you come from the command line
 or are using the C++ API, we provide two interfaces to the detector.
 One is property based and tries to stay as close to the command line syntax
@@ -253,10 +249,10 @@ in a large detector.</p>
 </div>
 </section>
 <section id="finding-functions">
-<h2>Finding functions<a class="headerlink" href="#finding-functions" title="Permalink to this heading"></a></h2>
+<h2>Finding functions<a class="headerlink" href="#finding-functions" title="Link to this heading"></a></h2>
 <p>To find out which properties and methods that a Python object have you
 can use dir()</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">slsdet</span> <span class="kn">import</span> <span class="n">Detector</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span><span class="w"> </span><span class="nn">slsdet</span><span class="w"> </span><span class="kn">import</span> <span class="n">Detector</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">d</span> <span class="o">=</span> <span class="n">Detector</span><span class="p">()</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">dir</span><span class="p">(</span><span class="n">d</span><span class="p">)</span>
 <span class="go">[&#39;__class__&#39;, &#39;__delattr__&#39;, &#39;__dict__&#39;, &#39;__dir__&#39;, &#39;__doc__&#39;,</span>
@@ -284,7 +280,7 @@ their name.</p>
 <p>The above method works on any Python object but for convenience we also
 included two functions to find names. View prints the names one per line
 while find returns a list of names.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">slsdet.lookup</span> <span class="kn">import</span> <span class="n">view</span><span class="p">,</span> <span class="n">find</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">slsdet.lookup</span><span class="w"> </span><span class="kn">import</span> <span class="n">view</span><span class="p">,</span> <span class="n">find</span>
 
 <span class="o">&gt;&gt;&gt;</span> <span class="n">view</span><span class="p">(</span><span class="s1">&#39;exptime&#39;</span><span class="p">)</span>
 <span class="n">exptime</span>
@@ -305,7 +301,7 @@ while find returns a list of names.</p>
 </div>
 </section>
 <section id="finding-out-what-the-function-does">
-<h2>Finding out what the function does<a class="headerlink" href="#finding-out-what-the-function-does" title="Permalink to this heading"></a></h2>
+<h2>Finding out what the function does<a class="headerlink" href="#finding-out-what-the-function-does" title="Link to this heading"></a></h2>
 <p>To access the documentation of a function directly from the Python prompt use help().</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">help</span><span class="p">(</span><span class="n">Detector</span><span class="o">.</span><span class="n">period</span><span class="p">)</span>
 <span class="go">Help on property:</span>
@@ -347,14 +343,14 @@ while find returns a list of names.</p>
 </div>
 </section>
 <section id="where-are-the-enums">
-<h2>Where are the ENUMs?<a class="headerlink" href="#where-are-the-enums" title="Permalink to this heading"></a></h2>
+<h2>Where are the ENUMs?<a class="headerlink" href="#where-are-the-enums" title="Link to this heading"></a></h2>
 <p>To set some of the detector settings like file format you have
 to pass in an enum.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">d</span><span class="o">.</span><span class="n">setFileFormat</span><span class="p">(</span><span class="n">fileFormat</span><span class="o">.</span><span class="n">BINARY</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>The enums can be found in slsdet.enums</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">slsdet</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">slsdet</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="p">[</span><span class="n">e</span> <span class="k">for</span> <span class="n">e</span> <span class="ow">in</span> <span class="nb">dir</span><span class="p">(</span><span class="n">slsdet</span><span class="o">.</span><span class="n">enums</span><span class="p">)</span> <span class="k">if</span> <span class="ow">not</span> <span class="n">e</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">&#39;_&#39;</span><span class="p">)]</span>
 <span class="p">[</span><span class="s1">&#39;M3_GainCaps&#39;</span><span class="p">,</span> <span class="s1">&#39;burstMode&#39;</span><span class="p">,</span> <span class="s1">&#39;clockIndex&#39;</span><span class="p">,</span> <span class="s1">&#39;cls&#39;</span><span class="p">,</span> <span class="s1">&#39;dacIndex&#39;</span><span class="p">,</span> <span class="s1">&#39;detectorSettings&#39;</span><span class="p">,</span>
 <span class="s1">&#39;detectorType&#39;</span><span class="p">,</span> <span class="s1">&#39;dimension&#39;</span><span class="p">,</span> <span class="s1">&#39;externalSignalFlag&#39;</span><span class="p">,</span> <span class="s1">&#39;fileFormat&#39;</span><span class="p">,</span>
@@ -365,7 +361,7 @@ to pass in an enum.</p>
 
 <span class="c1"># Even though importing using * is not recommended one could</span>
 <span class="c1"># get all the enums like this:</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="kn">from</span> <span class="nn">slsdet.enums</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="kn">from</span><span class="w"> </span><span class="nn">slsdet.enums</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
 </pre></div>
 </div>
 </section>
