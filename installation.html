@@ -46,18 +46,20 @@
               <p class="caption" role="heading"><span class="caption-text">Installation:</span></p>
 <ul class="current">
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Installation</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#install-binaries-using-conda">Install binaries using conda</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#build-from-source">Build from source</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#download-source-code-from-github">1. Download Source Code from github</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#build-from-source-using-cmake">2. Build from Source</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#build-using-cmake">Build using CMake</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#build-using-in-built-cmk-sh-script">Build using in-built cmk.sh script</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#build-on-old-distributions">Build on old distributions</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#build-slsdetectorgui-qt5">Build slsDetectorGui (Qt5)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#build-this-documentation">Build this documentation</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#pybind-and-zeromq">Pybind and Zeromq</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#overview">Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#install-pre-built-binaries-using-conda-recommended">1. Install pre-built binaries using conda (Recommended)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#pip">2. Pip</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#build-from-source">3. Build from source</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#download-source-code-from-github">3.1. Download Source Code from github</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#build-from-source-using-cmake">3.2. Build from Source</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#build-using-cmake">3.2.1. Build using CMake</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#build-using-in-built-cmk-sh-script">3.2.2. Build using in-built cmk.sh script</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#build-on-old-distributions-using-conda">3.3. Build on old distributions using conda</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#build-slsdetectorgui-qt5">3.4. Build slsDetectorGui (Qt5)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#build-this-documentation">3.5. Build this documentation</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="#pybind-and-zeromq">4. Pybind and Zeromq</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="dependencies.html">Dependencies</a></li>
@@ -153,15 +155,37 @@
              
   <section id="installation">
 <span id="id1"></span><h1>Installation<a class="headerlink" href="#installation" title="Link to this heading"></a></h1>
-<p>One can either install pre-built binaries using conda or build from source.</p>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>Before building from source make sure that you have the
-<a class="reference internal" href="dependencies.html"><span class="doc">dependencies</span></a> installed. If installing using conda, conda will
-manage the dependencies. Avoid also installing packages with pip.</p>
-</div>
-<section id="install-binaries-using-conda">
-<h2>Install binaries using conda<a class="headerlink" href="#install-binaries-using-conda" title="Link to this heading"></a></h2>
+<nav class="contents local" id="contents">
+<ul class="simple">
+<li><p><a class="reference internal" href="#overview" id="id5">Overview</a></p></li>
+<li><p><a class="reference internal" href="#install-pre-built-binaries-using-conda-recommended" id="id6">1. Install pre-built binaries using conda (Recommended)</a></p></li>
+<li><p><a class="reference internal" href="#pip" id="id7">2. Pip</a></p></li>
+<li><p><a class="reference internal" href="#build-from-source" id="id8">3. Build from source</a></p>
+<ul>
+<li><p><a class="reference internal" href="#download-source-code-from-github" id="id9">3.1. Download Source Code from github</a></p></li>
+<li><p><a class="reference internal" href="#build-from-source-using-cmake" id="id10">3.2. Build from Source</a></p></li>
+<li><p><a class="reference internal" href="#build-using-cmake" id="id11">3.2.1. Build using CMake</a></p></li>
+<li><p><a class="reference internal" href="#build-using-in-built-cmk-sh-script" id="id12">3.2.2. Build using in-built cmk.sh script</a></p></li>
+<li><p><a class="reference internal" href="#build-on-old-distributions-using-conda" id="id13">3.3. Build on old distributions using conda</a></p></li>
+<li><p><a class="reference internal" href="#build-slsdetectorgui-qt5" id="id14">3.4. Build slsDetectorGui (Qt5)</a></p></li>
+<li><p><a class="reference internal" href="#build-this-documentation" id="id15">3.5. Build this documentation</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#pybind-and-zeromq" id="id16">4. Pybind and Zeromq</a></p></li>
+</ul>
+</nav>
+<section id="overview">
+<h2><a class="toc-backref" href="#contents" role="doc-backlink">Overview</a><a class="headerlink" href="#overview" title="Link to this heading"></a></h2>
+<p>The <code class="docutils literal notranslate"><span class="pre">slsDetectorPackage</span></code> provides core detector software implemented in C++, along with Python bindings packaged as the <code class="docutils literal notranslate"><span class="pre">slsdet</span></code> Python extension module. Choose the option that best fits your environment and use case.</p>
+<p><a class="reference internal" href="#conda-pre-built-binaries"><span class="std std-ref">1. Install pre-built binaries using conda (Recommended)</span></a>:
+Install pre-built binaries for the C++ client, receiver, GUI and the Python API (<code class="docutils literal notranslate"><span class="pre">slsdet</span></code>), simplifying setup across platforms.</p>
+<p><a class="reference internal" href="#pip"><span class="std std-ref">2. Pip</span></a>:
+Install only the Python extension module, either by downloading the pre-built library from PyPI or by building the extension locally from source. Available only from v9.2.0 onwards.</p>
+<p><a class="reference internal" href="#build-from-source"><span class="std std-ref">3. Build from source</span></a>:
+Compile the entire package yourself, including both the C++ core and the Python bindings, for maximum control and customization. However, make sure that you have the <a class="reference internal" href="dependencies.html"><span class="doc">dependencies</span></a> installed. If installing using conda, conda will manage the dependencies. Avoid installing packages with pip and conda simultaneously.</p>
+</section>
+<section id="install-pre-built-binaries-using-conda-recommended">
+<span id="conda-pre-built-binaries"></span><h2><a class="toc-backref" href="#contents" role="doc-backlink">1. Install pre-built binaries using conda (Recommended)</a><a class="headerlink" href="#install-pre-built-binaries-using-conda-recommended" title="Link to this heading"></a></h2>
 <p>Conda is not only useful to manage python environments but can also
 be used as a user space package manager. Dates in the tag (for eg. 2020.07.23.dev0)
 are from the developer branch. Please use released tags for stability.</p>
@@ -216,10 +240,23 @@ conda<span class="w"> </span>search<span class="w"> </span>moenchzmq
 </pre></div>
 </div>
 </section>
+<section id="pip">
+<span id="id2"></span><h2><a class="toc-backref" href="#contents" role="doc-backlink">2. Pip</a><a class="headerlink" href="#pip" title="Link to this heading"></a></h2>
+<p>The Python extension module <code class="docutils literal notranslate"><span class="pre">slsdet</span></code> can be installed using pip. This is available from v9.2.0 onwards.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1">#Install the Python extension module from PyPI</span>
+pip<span class="w"> </span>install<span class="w"> </span>slsdet
+
+<span class="c1"># or install the python extension locally from source</span>
+git<span class="w"> </span>clone<span class="w"> </span>https://github.com/slsdetectorgroup/slsDetectorPackage.git<span class="w"> </span>--branch<span class="w"> </span><span class="m">9</span>.2.0
+<span class="nb">cd</span><span class="w"> </span>slsDetectorPackage
+pip<span class="w"> </span>install<span class="w"> </span>.
+</pre></div>
+</div>
+</section>
 <section id="build-from-source">
-<h2>Build from source<a class="headerlink" href="#build-from-source" title="Link to this heading"></a></h2>
+<span id="id3"></span><h2><a class="toc-backref" href="#contents" role="doc-backlink">3. Build from source</a><a class="headerlink" href="#build-from-source" title="Link to this heading"></a></h2>
 <section id="download-source-code-from-github">
-<h3>1. Download Source Code from github<a class="headerlink" href="#download-source-code-from-github" title="Link to this heading"></a></h3>
+<h3><a class="toc-backref" href="#contents" role="doc-backlink">3.1. Download Source Code from github</a><a class="headerlink" href="#download-source-code-from-github" title="Link to this heading"></a></h3>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/slsdetectorgroup/slsDetectorPackage.git<span class="w"> </span>--branch<span class="w"> </span><span class="m">6</span>.1.1
 </pre></div>
 </div>
@@ -229,11 +266,11 @@ conda<span class="w"> </span>search<span class="w"> </span>moenchzmq
 </div>
 </section>
 <section id="build-from-source-using-cmake">
-<span id="id2"></span><h3>2. Build from Source<a class="headerlink" href="#build-from-source-using-cmake" title="Link to this heading"></a></h3>
+<span id="id4"></span><h3><a class="toc-backref" href="#contents" role="doc-backlink">3.2. Build from Source</a><a class="headerlink" href="#build-from-source-using-cmake" title="Link to this heading"></a></h3>
 <p>One can either build using cmake or use the in-built cmk.sh script.</p>
 </section>
 <section id="build-using-cmake">
-<h3>Build using CMake<a class="headerlink" href="#build-using-cmake" title="Link to this heading"></a></h3>
+<h3><a class="toc-backref" href="#contents" role="doc-backlink">3.2.1. Build using CMake</a><a class="headerlink" href="#build-using-cmake" title="Link to this heading"></a></h3>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># outside slsDetecorPackage folder</span>
 mkdir<span class="w"> </span>build<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="nb">cd</span><span class="w"> </span>build
 
@@ -288,7 +325,7 @@ ccmake<span class="w"> </span>..
 </div>
 </section>
 <section id="build-using-in-built-cmk-sh-script">
-<h3>Build using in-built cmk.sh script<a class="headerlink" href="#build-using-in-built-cmk-sh-script" title="Link to this heading"></a></h3>
+<h3><a class="toc-backref" href="#contents" role="doc-backlink">3.2.2. Build using in-built cmk.sh script</a><a class="headerlink" href="#build-using-in-built-cmk-sh-script" title="Link to this heading"></a></h3>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>The<span class="w"> </span>binaries<span class="w"> </span>are<span class="w"> </span>generated<span class="w"> </span><span class="k">in</span><span class="w"> </span>slsDetectorPackage/build/bin<span class="w"> </span>directory.
 
 Usage:<span class="w"> </span><span class="nv">$0</span><span class="w"> </span><span class="o">[</span>-b<span class="o">]</span><span class="w"> </span><span class="o">[</span>-c<span class="o">]</span><span class="w"> </span><span class="o">[</span>-d<span class="w"> </span>&lt;HDF5<span class="w"> </span>directory&gt;<span class="o">]</span><span class="w"> </span><span class="o">[</span>-e<span class="o">]</span><span class="w"> </span><span class="o">[</span>-g<span class="o">]</span><span class="w"> </span><span class="o">[</span>-h<span class="o">]</span><span class="w"> </span><span class="o">[</span>-i<span class="o">]</span>
@@ -334,8 +371,8 @@ Usage:<span class="w"> </span><span class="nv">$0</span><span class="w"> </span>
 <p>For v7.x.x of slsDetectorPackage and older, refer <a class="reference internal" href="#zeromq-for-different-slsdetectorpackage-versions"><span class="std std-ref">zeromq notes for cmk script option to hint library location.</span></a></p>
 </div>
 </section>
-<section id="build-on-old-distributions">
-<h3>Build on old distributions<a class="headerlink" href="#build-on-old-distributions" title="Link to this heading"></a></h3>
+<section id="build-on-old-distributions-using-conda">
+<h3><a class="toc-backref" href="#contents" role="doc-backlink">3.3. Build on old distributions using conda</a><a class="headerlink" href="#build-on-old-distributions-using-conda" title="Link to this heading"></a></h3>
 <p>If your linux distribution doesn’t come with a C++11 compiler (gcc&gt;4.8) then
 it’s possible to install a newer gcc using conda and build the slsDetectorPackage
 using this compiler</p>
@@ -355,7 +392,7 @@ make<span class="w"> </span>-j12
 </div>
 </section>
 <section id="build-slsdetectorgui-qt5">
-<h3>Build slsDetectorGui (Qt5)<a class="headerlink" href="#build-slsdetectorgui-qt5" title="Link to this heading"></a></h3>
+<h3><a class="toc-backref" href="#contents" role="doc-backlink">3.4. Build slsDetectorGui (Qt5)</a><a class="headerlink" href="#build-slsdetectorgui-qt5" title="Link to this heading"></a></h3>
 <ol class="arabic">
 <li><p>Using pre-built binary on conda</p>
 <blockquote>
@@ -419,7 +456,7 @@ make<span class="w"> </span>-j12
 </div>
 </section>
 <section id="build-this-documentation">
-<h3>Build this documentation<a class="headerlink" href="#build-this-documentation" title="Link to this heading"></a></h3>
+<h3><a class="toc-backref" href="#contents" role="doc-backlink">3.5. Build this documentation</a><a class="headerlink" href="#build-this-documentation" title="Link to this heading"></a></h3>
 <p>The documentation for the slsDetectorPackage is build using a combination
 of Doxygen, Sphinx and Breathe. The easiest way to install the dependencies
 is to use conda</p>
@@ -436,8 +473,9 @@ make<span class="w"> </span>rst<span class="w"> </span><span class="c1"># rst on
 </pre></div>
 </div>
 </section>
+</section>
 <section id="pybind-and-zeromq">
-<h3>Pybind and Zeromq<a class="headerlink" href="#pybind-and-zeromq" title="Link to this heading"></a></h3>
+<h2><a class="toc-backref" href="#contents" role="doc-backlink">4. Pybind and Zeromq</a><a class="headerlink" href="#pybind-and-zeromq" title="Link to this heading"></a></h2>
 <div class="line-block" id="pybind-for-different-slsdetectorpackage-versions">
 <div class="line"><strong>Pybind11 for Python</strong></div>
 <div class="line">v8.0.0+:</div>
@@ -488,7 +526,6 @@ git<span class="w"> </span>submodule<span class="w"> </span>update<span class="w
 <div class="line">* ‘zeromq’ dependency added when installing using conda</div>
 </div>
 </div>
-</section>
 </section>
 </section>
 
