@@ -49,6 +49,14 @@
 <li class="toctree-l1"><a class="reference internal" href="dependencies.html">Dependencies</a></li>
 <li class="toctree-l1"><a class="reference internal" href="consuming.html">Consuming slsDetectorPackage</a></li>
 </ul>
+<p class="caption" role="heading"><span class="caption-text">how to</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="softwarearchitecture.html">Software Architecture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="configcommands.html">Setup Commands</a></li>
+<li class="toctree-l1"><a class="reference internal" href="quick_start_guide.html">Quick Start Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dataformat.html">Detector Image Size and Format</a></li>
+<li class="toctree-l1"><a class="reference internal" href="multidet.html">Using multiple detectors</a></li>
+</ul>
 <p class="caption" role="heading"><span class="caption-text">C++ API</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="detector.html">Detector</a></li>
@@ -62,11 +70,12 @@
 <li class="toctree-l1"><a class="reference internal" href="pydetector.html">Detector</a></li>
 <li class="toctree-l1"><a class="reference internal" href="pyenums.html">Enums</a></li>
 <li class="toctree-l1"><a class="reference internal" href="pyexamples.html">Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pyPatternGenerator.html">PatternGenerator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pattern.html">Pattern</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Command line</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="commandline.html">Command line interface</a></li>
-<li class="toctree-l1"><a class="reference internal" href="quick_start_guide.html">Quick Start Guide</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Developer</span></p>
 <ul>
@@ -102,9 +111,11 @@
 <li class="toctree-l2"><a class="reference internal" href="#number-of-files">Number of Files</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#naming">Naming</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#formats">Formats</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#content">Content</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="slsreceiverheaderformat.html">SLS Receiver Header Format</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dataformat.html">Detector Image Size and Format</a></li>
 <li class="toctree-l1"><a class="reference internal" href="masterfileattributes.html">Master File Attributes</a></li>
 <li class="toctree-l1"><a class="reference internal" href="binaryfileformat.html">Binary File Format</a></li>
 <li class="toctree-l1"><a class="reference internal" href="hdf5fileformat.html">HDF5 File Format</a></li>
@@ -143,7 +154,7 @@
            <div itemprop="articleBody">
              
   <section id="file-format">
-<h1>File format<a class="headerlink" href="#file-format" title="Link to this heading"></a></h1>
+<span id="id1"></span><h1>File format<a class="headerlink" href="#file-format" title="Link to this heading"></a></h1>
 <p>If <a class="reference external" href="commandline.html#term-fwrite-0-1">fwrite</a> is enabled, the receiver will write data to files.</p>
 <section id="number-of-files">
 <h2>Number of Files<a class="headerlink" href="#number-of-files" title="Link to this heading"></a></h2>
@@ -203,6 +214,18 @@ path-to-file/run_d0_f0_1.raw
 </ul>
 </div></blockquote>
 <p>The default is binary. HDF5 can be enabled by compiling the package with HDF5 option enabled. The file format is set using the command <a class="reference external" href="commandline.html#term-fformat-binary-hdf5">fformat</a>.</p>
+</section>
+<section id="content">
+<h2>Content<a class="headerlink" href="#content" title="Link to this heading"></a></h2>
+<div class="line-block">
+<div class="line"><cite>Master File</cite>: Contains the metadata of the acquisition. The content is described in <a class="reference internal" href="masterfileattributes.html#master-file-attributes"><span class="std std-ref">master file attributes</span></a>.</div>
+</div>
+<div class="line-block">
+<div class="line"><cite>Data File</cite>: Contains the metadata for each image (<a class="reference internal" href="slsreceiverheaderformat.html#sls-receiver-header-format"><span class="std std-ref">slsReceiverHeader</span></a>) and the <cite>data of the image</cite> transmitted over that port. The image data is described in <a class="reference internal" href="dataformat.html#data-format"><span class="std std-ref">Detector Image Size and Format</span></a> section.</div>
+</div>
+<div class="line-block">
+<div class="line">More content and examples are found in the <a class="reference internal" href="hdf5fileformat.html#hdf5-file-format"><span class="std std-ref">HDF5 file format</span></a> and <a class="reference internal" href="binaryfileformat.html#binary-file-format"><span class="std std-ref">Binary file format</span></a> sections.</div>
+</div>
 </section>
 </section>
 

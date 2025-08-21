@@ -49,6 +49,14 @@
 <li class="toctree-l1"><a class="reference internal" href="dependencies.html">Dependencies</a></li>
 <li class="toctree-l1"><a class="reference internal" href="consuming.html">Consuming slsDetectorPackage</a></li>
 </ul>
+<p class="caption" role="heading"><span class="caption-text">how to</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="softwarearchitecture.html">Software Architecture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="configcommands.html">Setup Commands</a></li>
+<li class="toctree-l1"><a class="reference internal" href="quick_start_guide.html">Quick Start Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dataformat.html">Detector Image Size and Format</a></li>
+<li class="toctree-l1"><a class="reference internal" href="multidet.html">Using multiple detectors</a></li>
+</ul>
 <p class="caption" role="heading"><span class="caption-text">C++ API</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="detector.html">Detector</a></li>
@@ -62,11 +70,12 @@
 <li class="toctree-l1"><a class="reference internal" href="pydetector.html">Detector</a></li>
 <li class="toctree-l1"><a class="reference internal" href="pyenums.html">Enums</a></li>
 <li class="toctree-l1"><a class="reference internal" href="pyexamples.html">Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pyPatternGenerator.html">PatternGenerator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pattern.html">Pattern</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Command line</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="commandline.html">Command line interface</a></li>
-<li class="toctree-l1"><a class="reference internal" href="quick_start_guide.html">Quick Start Guide</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Developer</span></p>
 <ul>
@@ -107,6 +116,7 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="fileformat.html">File format</a></li>
 <li class="toctree-l1"><a class="reference internal" href="slsreceiverheaderformat.html">SLS Receiver Header Format</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dataformat.html">Detector Image Size and Format</a></li>
 <li class="toctree-l1"><a class="reference internal" href="masterfileattributes.html">Master File Attributes</a></li>
 <li class="toctree-l1"><a class="reference internal" href="binaryfileformat.html">Binary File Format</a></li>
 <li class="toctree-l1"><a class="reference internal" href="hdf5fileformat.html">HDF5 File Format</a></li>
@@ -203,10 +213,30 @@
 </section>
 <section id="starting-up-the-receiver">
 <span id="id1"></span><h2>Starting up the Receiver<a class="headerlink" href="#starting-up-the-receiver" title="Link to this heading"></a></h2>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>Usage:<span class="w"> </span>slsReceiver<span class="w"> </span>Options:
+<span class="w">    </span>-v,<span class="w"> </span>--version<span class="w">       </span>:<span class="w"> </span>Version.
+<span class="w">    </span>-p,<span class="w"> </span>--port<span class="w">          </span>:<span class="w"> </span>TCP<span class="w"> </span>port<span class="w"> </span>to<span class="w"> </span>communicate<span class="w"> </span>with<span class="w"> </span>client<span class="w"> </span><span class="k">for</span><span class="w"> </span>configuration.<span class="w"> </span>Non-zero<span class="w"> </span>and<span class="w"> </span><span class="m">16</span><span class="w"> </span>bit.
+<span class="w">    </span>-u,<span class="w"> </span>--uid<span class="w">           </span>:<span class="w"> </span>Set<span class="w"> </span>effective<span class="w"> </span>user<span class="w"> </span>id<span class="w"> </span><span class="k">if</span><span class="w"> </span>receiver<span class="w"> </span>started<span class="w"> </span>with<span class="w"> </span>privileges.
+
+Usage:<span class="w"> </span>slsMultiReceiver<span class="w"> </span>Options:
+<span class="w">    </span>-v,<span class="w"> </span>--version<span class="w">       </span>:<span class="w"> </span>Version.
+<span class="w">    </span>-n,<span class="w"> </span>--num-receivers<span class="w"> </span>:<span class="w"> </span>Number<span class="w"> </span>of<span class="w"> </span>receivers.
+<span class="w">    </span>-p,<span class="w"> </span>--port<span class="w">          </span>:<span class="w"> </span>TCP<span class="w"> </span>port<span class="w"> </span>to<span class="w"> </span>communicate<span class="w"> </span>with<span class="w"> </span>client<span class="w"> </span><span class="k">for</span><span class="w"> </span>configuration.<span class="w"> </span>Non-zero<span class="w"> </span>and<span class="w"> </span><span class="m">16</span><span class="w"> </span>bit.
+<span class="w">    </span>-c,<span class="w"> </span>--callback<span class="w">      </span>:<span class="w"> </span>Enable<span class="w"> </span>dummy<span class="w"> </span>callbacks<span class="w"> </span><span class="k">for</span><span class="w"> </span>debugging.<span class="w"> </span>Disabled<span class="w"> </span>by<span class="w"> </span>default.
+<span class="w">    </span>-u,<span class="w"> </span>--uid<span class="w">           </span>:<span class="w"> </span>Set<span class="w"> </span>effective<span class="w"> </span>user<span class="w"> </span>id<span class="w"> </span><span class="k">if</span><span class="w"> </span>receiver<span class="w"> </span>started<span class="w"> </span>with<span class="w"> </span>privileges.
+
+Usage:<span class="w"> </span>slsFrameSynchronizer<span class="w"> </span>Options:
+<span class="w">    </span>-v,<span class="w"> </span>--version<span class="w">       </span>:<span class="w"> </span>Version.
+<span class="w">    </span>-n,<span class="w"> </span>--num-receivers<span class="w"> </span>:<span class="w"> </span>Number<span class="w"> </span>of<span class="w"> </span>receivers.
+<span class="w">    </span>-p,<span class="w"> </span>--port<span class="w">          </span>:<span class="w"> </span>TCP<span class="w"> </span>port<span class="w"> </span>to<span class="w"> </span>communicate<span class="w"> </span>with<span class="w"> </span>client<span class="w"> </span><span class="k">for</span><span class="w"> </span>configuration.<span class="w"> </span>Non-zero<span class="w"> </span>and<span class="w"> </span><span class="m">16</span><span class="w"> </span>bit.
+<span class="w">    </span>-c,<span class="w"> </span>--print-headers<span class="w"> </span>:<span class="w"> </span>Print<span class="w"> </span>callback<span class="w"> </span>headers<span class="w"> </span><span class="k">for</span><span class="w"> </span>debugging.<span class="w"> </span>Disabled<span class="w"> </span>by<span class="w"> </span>default.
+<span class="w">    </span>-u,<span class="w"> </span>--uid<span class="w">           </span>:<span class="w"> </span>Set<span class="w"> </span>effective<span class="w"> </span>user<span class="w"> </span>id<span class="w"> </span><span class="k">if</span><span class="w"> </span>receiver<span class="w"> </span>started<span class="w"> </span>with<span class="w"> </span>privileges.
+</pre></div>
+</div>
 <dl>
 <dt>For a Single Module</dt><dd><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>slsReceiver<span class="w"> </span><span class="c1"># default port 1954</span>
 
-slsReceiver<span class="w"> </span>-t2012<span class="w"> </span><span class="c1"># custom port 2012</span>
+slsReceiver<span class="w"> </span>-p<span class="w"> </span><span class="m">2012</span><span class="w"> </span><span class="c1"># custom port 2012</span>
 </pre></div>
 </div>
 </dd>
@@ -214,13 +244,13 @@ slsReceiver<span class="w"> </span>-t2012<span class="w"> </span><span class="c1
 
 <span class="c1"># option 1 (one for each module)</span>
 slsReceiver
-slsReceiver<span class="w"> </span>-t1955
+slsReceiver<span class="w"> </span>-p<span class="w"> </span><span class="m">1955</span>
 
 <span class="c1"># option 2</span>
-slsMultiReceiver<span class="w"> </span><span class="m">2012</span><span class="w"> </span><span class="m">2</span>
+slsMultiReceiver<span class="w"> </span>-p<span class="w"> </span><span class="m">2012</span><span class="w"> </span>-n<span class="w"> </span><span class="m">2</span>
 
 <span class="c1"># option 3</span>
-slsFrameSynchronizer<span class="w"> </span><span class="m">2012</span><span class="w"> </span><span class="m">2</span>
+slsFrameSynchronizer<span class="w"> </span>-p<span class="w"> </span><span class="m">2012</span><span class="w"> </span>-n<span class="w"> </span><span class="m">2</span>
 </pre></div>
 </div>
 </dd>

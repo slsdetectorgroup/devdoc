@@ -48,6 +48,14 @@
 <li class="toctree-l1"><a class="reference internal" href="dependencies.html">Dependencies</a></li>
 <li class="toctree-l1"><a class="reference internal" href="consuming.html">Consuming slsDetectorPackage</a></li>
 </ul>
+<p class="caption" role="heading"><span class="caption-text">how to</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="softwarearchitecture.html">Software Architecture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="configcommands.html">Setup Commands</a></li>
+<li class="toctree-l1"><a class="reference internal" href="quick_start_guide.html">Quick Start Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dataformat.html">Detector Image Size and Format</a></li>
+<li class="toctree-l1"><a class="reference internal" href="multidet.html">Using multiple detectors</a></li>
+</ul>
 <p class="caption" role="heading"><span class="caption-text">C++ API</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="detector.html">Detector</a></li>
@@ -61,11 +69,12 @@
 <li class="toctree-l1"><a class="reference internal" href="pydetector.html">Detector</a></li>
 <li class="toctree-l1"><a class="reference internal" href="pyenums.html">Enums</a></li>
 <li class="toctree-l1"><a class="reference internal" href="pyexamples.html">Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pyPatternGenerator.html">PatternGenerator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pattern.html">Pattern</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Command line</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="commandline.html">Command line interface</a></li>
-<li class="toctree-l1"><a class="reference internal" href="quick_start_guide.html">Quick Start Guide</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Developer</span></p>
 <ul>
@@ -99,6 +108,7 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="fileformat.html">File format</a></li>
 <li class="toctree-l1"><a class="reference internal" href="slsreceiverheaderformat.html">SLS Receiver Header Format</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dataformat.html">Detector Image Size and Format</a></li>
 <li class="toctree-l1"><a class="reference internal" href="masterfileattributes.html">Master File Attributes</a></li>
 <li class="toctree-l1"><a class="reference internal" href="binaryfileformat.html">Binary File Format</a></li>
 <li class="toctree-l1"><a class="reference internal" href="hdf5fileformat.html">HDF5 File Format</a></li>
@@ -125,10 +135,6 @@
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#gotthard2">Gotthard2</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#cannot-get-data-without-a-module-attached">Cannot get data without a module attached</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="#gotthard">Gotthard</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#missing-first-frame-or-next-frame-after-a-delay">Missing first frame or next frame after a delay</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#mythen3">Mythen3</a><ul>
@@ -455,6 +461,56 @@ ethtool<span class="w"> </span>-K<span class="w"> </span>xth1<span class="w"> </
 </dd>
 </dl>
 </li>
+<li><p><strong>permanent ethtool settings</strong></p>
+<blockquote>
+<div><p>There are two main methods.</p>
+<ol class="arabic">
+<li><p><code class="docutils literal notranslate"><span class="pre">systemd</span> <span class="pre">service</span></code> (recommended for Fedora and modern RHEL)</p>
+<blockquote>
+<div><p>This is the preferred method on systems using systemd and NetworkManager, such as Fedora and RHEL 8+.</p>
+<dl>
+<dt>Create a systemd service template:</dt><dd><div class="highlight-ini notranslate"><div class="highlight"><pre><span></span><span class="c1"># /etc/systemd/system/ethtool@.service</span>
+
+<span class="k">[Unit]</span>
+<span class="na">Description</span><span class="o">=</span><span class="s">Set RX buffer size with ethtool</span>
+<span class="na">After</span><span class="o">=</span><span class="s">network-online.target</span>
+<span class="na">Wants</span><span class="o">=</span><span class="s">network-online.target</span>
+
+<span class="k">[Service]</span>
+<span class="na">ExecStart</span><span class="o">=</span><span class="s">/usr/sbin/ethtool -G %i rx 8192</span>
+<span class="na">Type</span><span class="o">=</span><span class="s">oneshot</span>
+
+<span class="k">[Install]</span>
+<span class="na">WantedBy</span><span class="o">=</span><span class="s">multi-user.target</span>
+</pre></div>
+</div>
+</dd>
+<dt>Enable the service for a specific interface:</dt><dd><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>systemctl<span class="w"> </span><span class="nb">enable</span><span class="w"> </span>ethtool@xth1.service
+</pre></div>
+</div>
+</dd>
+</dl>
+<p>This ensures the setting is applied at every boot once the network is online.</p>
+</div></blockquote>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ETHTOOL_OPTS</span> <span class="pre">in</span> <span class="pre">ifcfg</span> <span class="pre">scripts</span></code> (legacy method for RHEL 7 and earlier)</p>
+<blockquote>
+<div><p>This method applies only to systems using the legacy network-scripts backend, typically RHEL 7 and earlier.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># edit the corresponding ``ifcfg-*`` file</span>
+<span class="c1"># file: /etc/sysconfig/network-scripts/ifcfg-eth0</span>
+
+<span class="c1"># add or modify the following line:</span>
+<span class="nv">ETHTOOL_OPTS</span><span class="o">=</span><span class="s2">&quot;-K  gro on; -G  rx 4096; -L  combined 4; -C  rx-usecs 100; -C  adaptive-rx on&quot;</span>
+
+<span class="c1"># restart the interface</span>
+ifdown<span class="w"> </span>eth0<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>ifup<span class="w"> </span>eth0
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+</ol>
+</div></blockquote>
+</li>
 </ul>
 </dd>
 </dl>
@@ -698,13 +754,6 @@ rx_hostname<span class="w"> </span>pcxxxx:1980
 <section id="cannot-get-data-without-a-module-attached">
 <h3>Cannot get data without a module attached<a class="headerlink" href="#cannot-get-data-without-a-module-attached" title="Link to this heading"></a></h3>
 <p>You cannot get data without a module attached as a specific pin is floating. Attach module to get data.</p>
-</section>
-</section>
-<section id="gotthard">
-<h2>Gotthard<a class="headerlink" href="#gotthard" title="Link to this heading"></a></h2>
-<section id="missing-first-frame-or-next-frame-after-a-delay">
-<h3>Missing first frame or next frame after a delay<a class="headerlink" href="#missing-first-frame-or-next-frame-after-a-delay" title="Link to this heading"></a></h3>
-<p>Connect the data link from the Module directly to receiver pc or to a private network.</p>
 </section>
 </section>
 <section id="mythen3">

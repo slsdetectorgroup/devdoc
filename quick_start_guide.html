@@ -20,8 +20,8 @@
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="ContainerUtils" href="container_utils.html" />
-    <link rel="prev" title="Command line interface" href="commandline.html" /> 
+    <link rel="next" title="Detector Image Size and Format" href="dataformat.html" />
+    <link rel="prev" title="Setup Commands" href="configcommands.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -49,6 +49,25 @@
 <li class="toctree-l1"><a class="reference internal" href="dependencies.html">Dependencies</a></li>
 <li class="toctree-l1"><a class="reference internal" href="consuming.html">Consuming slsDetectorPackage</a></li>
 </ul>
+<p class="caption" role="heading"><span class="caption-text">how to</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="softwarearchitecture.html">Software Architecture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="configcommands.html">Setup Commands</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Quick Start Guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#detector">Detector</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#receiver">Receiver</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#client">Client</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#sample-config-file">Sample Config file</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#data">Data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id2">Receiver</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#gui">Gui</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="dataformat.html">Detector Image Size and Format</a></li>
+<li class="toctree-l1"><a class="reference internal" href="multidet.html">Using multiple detectors</a></li>
+</ul>
 <p class="caption" role="heading"><span class="caption-text">C++ API</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="detector.html">Detector</a></li>
@@ -62,20 +81,12 @@
 <li class="toctree-l1"><a class="reference internal" href="pydetector.html">Detector</a></li>
 <li class="toctree-l1"><a class="reference internal" href="pyenums.html">Enums</a></li>
 <li class="toctree-l1"><a class="reference internal" href="pyexamples.html">Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pyPatternGenerator.html">PatternGenerator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pattern.html">Pattern</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Command line</span></p>
-<ul class="current">
+<ul>
 <li class="toctree-l1"><a class="reference internal" href="commandline.html">Command line interface</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Quick Start Guide</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#detector">Detector</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#receiver">Receiver</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#client">Client</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#sample-config-file">Sample Config file</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="#gui">Gui</a></li>
-</ul>
-</li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Developer</span></p>
 <ul>
@@ -109,6 +120,7 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="fileformat.html">File format</a></li>
 <li class="toctree-l1"><a class="reference internal" href="slsreceiverheaderformat.html">SLS Receiver Header Format</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dataformat.html">Detector Image Size and Format</a></li>
 <li class="toctree-l1"><a class="reference internal" href="masterfileattributes.html">Master File Attributes</a></li>
 <li class="toctree-l1"><a class="reference internal" href="binaryfileformat.html">Binary File Format</a></li>
 <li class="toctree-l1"><a class="reference internal" href="hdf5fileformat.html">HDF5 File Format</a></li>
@@ -163,12 +175,12 @@
 slsReceiver
 
 <span class="c1"># custom port 2012</span>
-slsReceiver<span class="w"> </span>-t2012
+slsReceiver<span class="w"> </span>-p<span class="w"> </span><span class="m">2012</span>
 </pre></div>
 </div>
 </dd>
-<dt>For Multiple Modules</dt><dd><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># slsMultiReceiver [starting port] [number of receivers] [print each frame header for debugging]</span>
-slsMultiReceiver<span class="w"> </span><span class="m">2012</span><span class="w"> </span><span class="m">2</span><span class="w"> </span><span class="m">0</span>
+<dt>For Multiple Modules</dt><dd><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># slsMultiReceiver [-p: starting port, -n: number of receivers]</span>
+slsMultiReceiver<span class="w"> </span>-p<span class="w"> </span><span class="m">2012</span><span class="w"> </span>-n<span class="w"> </span><span class="m">2</span>
 </pre></div>
 </div>
 </dd>
@@ -271,6 +283,22 @@ fpath<span class="w"> </span>/tmp
 </div>
 </section>
 </section>
+<section id="data">
+<h2>Data<a class="headerlink" href="#data" title="Link to this heading"></a></h2>
+<p>Check out the <a class="reference internal" href="udpheader.html#detector-udp-header"><span class="std std-ref">UDP header section</span></a> for details on output UDP header data format.`</p>
+<p>Check out the <a class="reference internal" href="dataformat.html#data-format"><span class="std std-ref">Detector image size and format section</span></a>  for details on output data format.</p>
+</section>
+<section id="id2">
+<h2>Receiver<a class="headerlink" href="#id2" title="Link to this heading"></a></h2>
+<p>When using <cite>slsReceiver</cite>, <cite>slsMultiReceiver</cite> or <cite>slsFrameSynchronizer</cite>, check out the following sections:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><a class="reference internal" href="fileformat.html#file-format"><span class="std std-ref">File format</span></a></p></li>
+<li><p><a class="reference internal" href="slsreceiverheaderformat.html#sls-receiver-header-format"><span class="std std-ref">slsReceiver header format</span></a></p></li>
+<li><p><a class="reference internal" href="masterfileattributes.html#master-file-attributes"><span class="std std-ref">Master file attributes</span></a></p></li>
+</ul>
+</div></blockquote>
+</section>
 <section id="gui">
 <h2>Gui<a class="headerlink" href="#gui" title="Link to this heading"></a></h2>
 <p>Compile with SLS_USE_GUI=ON in cmake or -g option in cmk.sh script. One can also just use the conda binary. Refer <a class="reference internal" href="installation.html#installation"><span class="std std-ref">installation instructions</span></a>.</p>
@@ -294,8 +322,8 @@ fpath<span class="w"> </span>/tmp
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="commandline.html" class="btn btn-neutral float-left" title="Command line interface" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="container_utils.html" class="btn btn-neutral float-right" title="ContainerUtils" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="configcommands.html" class="btn btn-neutral float-left" title="Setup Commands" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="dataformat.html" class="btn btn-neutral float-right" title="Detector Image Size and Format" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>

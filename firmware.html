@@ -49,6 +49,14 @@
 <li class="toctree-l1"><a class="reference internal" href="dependencies.html">Dependencies</a></li>
 <li class="toctree-l1"><a class="reference internal" href="consuming.html">Consuming slsDetectorPackage</a></li>
 </ul>
+<p class="caption" role="heading"><span class="caption-text">how to</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="softwarearchitecture.html">Software Architecture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="configcommands.html">Setup Commands</a></li>
+<li class="toctree-l1"><a class="reference internal" href="quick_start_guide.html">Quick Start Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dataformat.html">Detector Image Size and Format</a></li>
+<li class="toctree-l1"><a class="reference internal" href="multidet.html">Using multiple detectors</a></li>
+</ul>
 <p class="caption" role="heading"><span class="caption-text">C++ API</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="detector.html">Detector</a></li>
@@ -62,11 +70,12 @@
 <li class="toctree-l1"><a class="reference internal" href="pydetector.html">Detector</a></li>
 <li class="toctree-l1"><a class="reference internal" href="pyenums.html">Enums</a></li>
 <li class="toctree-l1"><a class="reference internal" href="pyexamples.html">Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pyPatternGenerator.html">PatternGenerator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pattern.html">Pattern</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Command line</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="commandline.html">Command line interface</a></li>
-<li class="toctree-l1"><a class="reference internal" href="quick_start_guide.html">Quick Start Guide</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Developer</span></p>
 <ul>
@@ -83,38 +92,32 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#jungfrau">Jungfrau</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#id1">Download</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id2">Upgrade</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="#gotthard-i">Gotthard I</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#id3">Download</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#firmware-upgrade-using-blaster-for-blackfin">Upgrade</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id2">Download</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id3">Upgrade</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#mythen-iii">Mythen III</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#id5">Download</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id6">Upgrade</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id4">Download</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id5">Upgrade</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#gotthard-ii">Gotthard II</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#id7">Download</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id8">Upgrade</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id6">Download</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id7">Upgrade</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#moench">Moench</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#id9">Download</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id10">Upgrade</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id8">Download</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id9">Upgrade</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#ctb">Ctb</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#id12">Download</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id13">Upgrade</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id11">Download</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id12">Upgrade</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#firmware-troubleshooting-with-blackfin">Firmware Troubleshooting with blackfin</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#how-to-get-back-mtd3-drive-remotely-udpating-kernel">How to get back mtd3 drive remotely (udpating kernel)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#last-resort-using-usb-blaster">Last Resort using USB Blaster</a></li>
 </ul>
 </li>
 </ul>
@@ -142,6 +145,7 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="fileformat.html">File format</a></li>
 <li class="toctree-l1"><a class="reference internal" href="slsreceiverheaderformat.html">SLS Receiver Header Format</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dataformat.html">Detector Image Size and Format</a></li>
 <li class="toctree-l1"><a class="reference internal" href="masterfileattributes.html">Master File Attributes</a></li>
 <li class="toctree-l1"><a class="reference internal" href="binaryfileformat.html">Binary File Format</a></li>
 <li class="toctree-l1"><a class="reference internal" href="hdf5fileformat.html">HDF5 File Format</a></li>
@@ -180,7 +184,7 @@
            <div itemprop="articleBody">
              
   <section id="firmware-upgrade">
-<h1>Firmware Upgrade<a class="headerlink" href="#firmware-upgrade" title="Link to this heading"></a></h1>
+<span id="id1"></span><h1>Firmware Upgrade<a class="headerlink" href="#firmware-upgrade" title="Link to this heading"></a></h1>
 <section id="eiger">
 <h2>Eiger<a class="headerlink" href="#eiger" title="Link to this heading"></a></h2>
 <section id="download">
@@ -274,15 +278,15 @@ reconfig<span class="w"> </span>fw0
 </section>
 <section id="jungfrau">
 <h2>Jungfrau<a class="headerlink" href="#jungfrau" title="Link to this heading"></a></h2>
-<section id="id1">
-<h3>Download<a class="headerlink" href="#id1" title="Link to this heading"></a></h3>
+<section id="id2">
+<h3>Download<a class="headerlink" href="#id2" title="Link to this heading"></a></h3>
 <ul class="simple">
 <li><p>detector server corresponding to package in slsDetectorPackage/serverBin</p></li>
 <li><p><a class="reference external" href="https://github.com/slsdetectorgroup/slsDetectorFirmware">pof files</a></p></li>
 </ul>
 </section>
-<section id="id2">
-<h3>Upgrade<a class="headerlink" href="#id2" title="Link to this heading"></a></h3>
+<section id="id3">
+<h3>Upgrade<a class="headerlink" href="#id3" title="Link to this heading"></a></h3>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>In case you have had issues in the past with programming via software:</p>
@@ -316,47 +320,17 @@ sls_detector_put<span class="w"> </span>programfpga<span class="w"> </span>xxx.p
 </dl>
 </section>
 </section>
-<section id="gotthard-i">
-<h2>Gotthard I<a class="headerlink" href="#gotthard-i" title="Link to this heading"></a></h2>
-<section id="id3">
-<h3>Download<a class="headerlink" href="#id3" title="Link to this heading"></a></h3>
-<ul class="simple">
-<li><p>detector server corresponding to package in slsDetectorPackage/serverBin</p></li>
-<li><p><a class="reference external" href="https://github.com/slsdetectorgroup/slsDetectorFirmware">pof files</a></p></li>
-</ul>
-</section>
-<section id="firmware-upgrade-using-blaster-for-blackfin">
-<span id="id4"></span><h3>Upgrade<a class="headerlink" href="#firmware-upgrade-using-blaster-for-blackfin" title="Link to this heading"></a></h3>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<div class="line-block">
-<div class="line">Gotthard firmware cannot be upgraded remotely and requires the use of USB-Blaster.</div>
-<div class="line">It is generally updated by us.</div>
-</div>
-</div>
-<ol class="arabic simple">
-<li><p>Download <a class="reference external" href="https://fpgasoftware.intel.com/20.1/?edition=standard&amp;platform=linux&amp;product=qprogrammer#tabs-4">Altera Quartus software or Quartus programmer</a>.</p></li>
-<li><p>Start Quartus programmer, click on Hardware Setup. In the “Currently selected hardware” window, select USB-Blaster.</p></li>
-<li><p>In the Mode combo box, select “Active Serial Programming”.</p></li>
-<li><p>Plug the end of your USB-Blaster with the adaptor provided to the connector ‘AS config’ on the Gotthard board.</p></li>
-<li><p>Click on ‘Add file’. Select programming (pof) file provided by us.</p></li>
-<li><p>Check “Program/Configure” and “Verify”. Push the start button. Wait until the programming process is finished.</p></li>
-<li><p>In case of error messages, check the polarity of cable (that pin1 corresponds) and that the correct programming connector is selected.</p></li>
-<li><p>Reboot the detector.</p></li>
-</ol>
-</section>
-</section>
 <section id="mythen-iii">
 <h2>Mythen III<a class="headerlink" href="#mythen-iii" title="Link to this heading"></a></h2>
-<section id="id5">
-<h3>Download<a class="headerlink" href="#id5" title="Link to this heading"></a></h3>
+<section id="id4">
+<h3>Download<a class="headerlink" href="#id4" title="Link to this heading"></a></h3>
 <ul class="simple">
 <li><p>detector server corresponding to package in slsDetectorPackage/serverBin</p></li>
 <li><p><a class="reference external" href="https://github.com/slsdetectorgroup/slsDetectorFirmware">rbf files</a></p></li>
 </ul>
 </section>
-<section id="id6">
-<h3>Upgrade<a class="headerlink" href="#id6" title="Link to this heading"></a></h3>
+<section id="id5">
+<h3>Upgrade<a class="headerlink" href="#id5" title="Link to this heading"></a></h3>
 <dl>
 <dt>Program from console</dt><dd><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Always ensure that the client and server software are of the same release.</span>
 
@@ -384,15 +358,15 @@ sls_detector_put<span class="w"> </span>programfpga<span class="w"> </span>xxx.r
 </section>
 <section id="gotthard-ii">
 <h2>Gotthard II<a class="headerlink" href="#gotthard-ii" title="Link to this heading"></a></h2>
-<section id="id7">
-<h3>Download<a class="headerlink" href="#id7" title="Link to this heading"></a></h3>
+<section id="id6">
+<h3>Download<a class="headerlink" href="#id6" title="Link to this heading"></a></h3>
 <ul class="simple">
 <li><p>detector server corresponding to package in slsDetectorPackage/serverBin</p></li>
 <li><p><a class="reference external" href="https://github.com/slsdetectorgroup/slsDetectorFirmware">rbf files</a></p></li>
 </ul>
 </section>
-<section id="id8">
-<h3>Upgrade<a class="headerlink" href="#id8" title="Link to this heading"></a></h3>
+<section id="id7">
+<h3>Upgrade<a class="headerlink" href="#id7" title="Link to this heading"></a></h3>
 <dl>
 <dt>Program from console</dt><dd><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Always ensure that the client and server software are of the same release.</span>
 
@@ -420,15 +394,15 @@ sls_detector_put<span class="w"> </span>programfpga<span class="w"> </span>xxx.r
 </section>
 <section id="moench">
 <h2>Moench<a class="headerlink" href="#moench" title="Link to this heading"></a></h2>
-<section id="id9">
-<h3>Download<a class="headerlink" href="#id9" title="Link to this heading"></a></h3>
+<section id="id8">
+<h3>Download<a class="headerlink" href="#id8" title="Link to this heading"></a></h3>
 <ul class="simple">
 <li><p>detector server corresponding to package in slsDetectorPackage/serverBin</p></li>
 <li><p><a class="reference external" href="https://github.com/slsdetectorgroup/slsDetectorFirmware">pof files</a></p></li>
 </ul>
 </section>
-<section id="id10">
-<h3>Upgrade<a class="headerlink" href="#id10" title="Link to this heading"></a></h3>
+<section id="id9">
+<h3>Upgrade<a class="headerlink" href="#id9" title="Link to this heading"></a></h3>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>In case you have had issues in the past with programming via software:</p>
@@ -462,15 +436,15 @@ sls_detector_put<span class="w"> </span>programfpga<span class="w"> </span>xxx.p
 </section>
 <section id="ctb">
 <h2>Ctb<a class="headerlink" href="#ctb" title="Link to this heading"></a></h2>
-<section id="id12">
-<h3>Download<a class="headerlink" href="#id12" title="Link to this heading"></a></h3>
+<section id="id11">
+<h3>Download<a class="headerlink" href="#id11" title="Link to this heading"></a></h3>
 <ul class="simple">
 <li><p>detector server corresponding to package in slsDetectorPackage/serverBin</p></li>
 <li><p><a class="reference external" href="https://github.com/slsdetectorgroup/slsDetectorFirmware">pof files</a></p></li>
 </ul>
 </section>
-<section id="id13">
-<h3>Upgrade<a class="headerlink" href="#id13" title="Link to this heading"></a></h3>
+<section id="id12">
+<h3>Upgrade<a class="headerlink" href="#id12" title="Link to this heading"></a></h3>
 <p>Check <a class="reference internal" href="#blackfin-firmware-troubleshooting"><span class="std std-ref">firmware troubleshooting</span></a> if you run into issues while programming firmware.</p>
 <dl>
 <dt>Program from console</dt><dd><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Always ensure that the client and server software are of the same release.</span>
@@ -569,10 +543,6 @@ more<span class="w"> </span>/proc/mtd<span class="w"> </span><span class="c1"># 
 </li>
 </ol>
 </div></blockquote>
-</section>
-<section id="last-resort-using-usb-blaster">
-<h3>Last Resort using USB Blaster<a class="headerlink" href="#last-resort-using-usb-blaster" title="Link to this heading"></a></h3>
-<p>If none of these steps work, the last resort might be physically upgrading the firmware using a USB blaster, which also requires opening up the detector. Instructions for all the blackfin detectors are the same as the one for <a class="reference internal" href="#firmware-upgrade-using-blaster-for-blackfin"><span class="std std-ref">gotthard firmware upgrade</span></a>.</p>
 </section>
 </section>
 </section>

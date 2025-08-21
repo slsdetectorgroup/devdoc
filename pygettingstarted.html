@@ -49,6 +49,14 @@
 <li class="toctree-l1"><a class="reference internal" href="dependencies.html">Dependencies</a></li>
 <li class="toctree-l1"><a class="reference internal" href="consuming.html">Consuming slsDetectorPackage</a></li>
 </ul>
+<p class="caption" role="heading"><span class="caption-text">how to</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="softwarearchitecture.html">Software Architecture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="configcommands.html">Setup Commands</a></li>
+<li class="toctree-l1"><a class="reference internal" href="quick_start_guide.html">Quick Start Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dataformat.html">Detector Image Size and Format</a></li>
+<li class="toctree-l1"><a class="reference internal" href="multidet.html">Using multiple detectors</a></li>
+</ul>
 <p class="caption" role="heading"><span class="caption-text">C++ API</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="detector.html">Detector</a></li>
@@ -64,6 +72,7 @@
 <li class="toctree-l2"><a class="reference internal" href="#pythonpath">PYTHONPATH</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#which-detector-class-should-i-use">Which detector class should I use?</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#hey-there-seems-to-be-two-apis">Hey, there seems to be two APIs?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#accessing-individual-modules">Accessing individual modules</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#finding-functions">Finding functions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#finding-out-what-the-function-does">Finding out what the function does</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#where-are-the-enums">Where are the ENUMs?</a></li>
@@ -72,11 +81,12 @@
 <li class="toctree-l1"><a class="reference internal" href="pydetector.html">Detector</a></li>
 <li class="toctree-l1"><a class="reference internal" href="pyenums.html">Enums</a></li>
 <li class="toctree-l1"><a class="reference internal" href="pyexamples.html">Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pyPatternGenerator.html">PatternGenerator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pattern.html">Pattern</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Command line</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="commandline.html">Command line interface</a></li>
-<li class="toctree-l1"><a class="reference internal" href="quick_start_guide.html">Quick Start Guide</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Developer</span></p>
 <ul>
@@ -110,6 +120,7 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="fileformat.html">File format</a></li>
 <li class="toctree-l1"><a class="reference internal" href="slsreceiverheaderformat.html">SLS Receiver Header Format</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dataformat.html">Detector Image Size and Format</a></li>
 <li class="toctree-l1"><a class="reference internal" href="masterfileattributes.html">Master File Attributes</a></li>
 <li class="toctree-l1"><a class="reference internal" href="binaryfileformat.html">Binary File Format</a></li>
 <li class="toctree-l1"><a class="reference internal" href="hdf5fileformat.html">HDF5 File Format</a></li>
@@ -245,6 +256,37 @@ you have to reach for the C++ like interface.</p>
 in a large detector.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Set exposure time for module 1, 5 and 7</span>
 <span class="n">d</span><span class="o">.</span><span class="n">setExptime</span><span class="p">(</span><span class="mf">0.1</span><span class="p">,</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">7</span><span class="p">])</span>
+</pre></div>
+</div>
+</section>
+<section id="accessing-individual-modules">
+<span id="py-module-index-label"></span><h2>Accessing individual modules<a class="headerlink" href="#accessing-individual-modules" title="Link to this heading"></a></h2>
+<p>Using the C++ like API you can access individual modules in a large detector
+by passing in the module index as an argument to the function.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Read the UDP destination port for all modules</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">d</span><span class="o">.</span><span class="n">getDestinationUDPPort</span><span class="p">()</span>
+<span class="p">[</span><span class="mi">50001</span><span class="p">,</span> <span class="mi">50002</span><span class="p">,</span> <span class="mi">50003</span><span class="p">]</span>
+
+
+<span class="c1"># Read it for module 0 and 1</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">d</span><span class="o">.</span><span class="n">getDestinationUDPPort</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>
+<span class="p">[</span><span class="mi">50001</span><span class="p">,</span> <span class="mi">50002</span><span class="p">]</span>
+
+<span class="o">&gt;&gt;&gt;</span> <span class="n">d</span><span class="o">.</span><span class="n">setDestinationUDPPort</span><span class="p">(</span><span class="mi">50010</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">d</span><span class="o">.</span><span class="n">getDestinationUDPPort</span><span class="p">()</span>
+<span class="p">[</span><span class="mi">50001</span><span class="p">,</span> <span class="mi">50010</span><span class="p">,</span> <span class="mi">50003</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>From the more pythonic API there is no way to read from only one module but you can read
+and then use list slicing to get the values for the modules you are interested in.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">d</span><span class="o">.</span><span class="n">udp_dstport</span>
+<span class="go">[50001, 50010, 50003]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">d</span><span class="o">.</span><span class="n">udp_dstport</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="go">50001</span>
+
+<span class="go">#For some but not all properties you can also pass in a dictionary with module index as key</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ip</span> <span class="o">=</span> <span class="n">IpAddr</span><span class="p">(</span><span class="s1">&#39;127.0.0.1&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">d</span><span class="o">.</span><span class="n">udp_dstip</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1</span><span class="p">:</span><span class="n">ip</span><span class="p">}</span>
 </pre></div>
 </div>
 </section>

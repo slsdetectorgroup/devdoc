@@ -46,6 +46,14 @@
 <li class="toctree-l1"><a class="reference internal" href="dependencies.html">Dependencies</a></li>
 <li class="toctree-l1"><a class="reference internal" href="consuming.html">Consuming slsDetectorPackage</a></li>
 </ul>
+<p class="caption" role="heading"><span class="caption-text">how to</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="softwarearchitecture.html">Software Architecture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="configcommands.html">Setup Commands</a></li>
+<li class="toctree-l1"><a class="reference internal" href="quick_start_guide.html">Quick Start Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dataformat.html">Detector Image Size and Format</a></li>
+<li class="toctree-l1"><a class="reference internal" href="multidet.html">Using multiple detectors</a></li>
+</ul>
 <p class="caption" role="heading"><span class="caption-text">C++ API</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="detector.html">Detector</a></li>
@@ -59,11 +67,12 @@
 <li class="toctree-l1"><a class="reference internal" href="pydetector.html">Detector</a></li>
 <li class="toctree-l1"><a class="reference internal" href="pyenums.html">Enums</a></li>
 <li class="toctree-l1"><a class="reference internal" href="pyexamples.html">Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pyPatternGenerator.html">PatternGenerator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pattern.html">Pattern</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Command line</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="commandline.html">Command line interface</a></li>
-<li class="toctree-l1"><a class="reference internal" href="quick_start_guide.html">Quick Start Guide</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Developer</span></p>
 <ul>
@@ -97,6 +106,7 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="fileformat.html">File format</a></li>
 <li class="toctree-l1"><a class="reference internal" href="slsreceiverheaderformat.html">SLS Receiver Header Format</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dataformat.html">Detector Image Size and Format</a></li>
 <li class="toctree-l1"><a class="reference internal" href="masterfileattributes.html">Master File Attributes</a></li>
 <li class="toctree-l1"><a class="reference internal" href="binaryfileformat.html">Binary File Format</a></li>
 <li class="toctree-l1"><a class="reference internal" href="hdf5fileformat.html">HDF5 File Format</a></li>
@@ -269,6 +279,8 @@
 <h2 id="C">C</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="pyPatternGenerator.html#slsdet.PatternGenerator.CB">CB() (slsdet.PatternGenerator method)</a>
+</li>
       <li><a href="pydetector.html#slsdet.Detector.cdsgain">cdsgain (slsdet.Detector property)</a>
 </li>
       <li><a href="commandline.html#term-cdsgain-0-1"><strong>cdsgain [0, 1]</strong></a>
@@ -289,10 +301,6 @@
 </li>
       <li><a href="pydetector.html#slsdet.Detector.clearbusy">clearbusy() (slsdet.Detector method)</a>
 </li>
-      <li><a href="commandline.html#term-clearroi"><strong>clearroi</strong></a>
-</li>
-      <li><a href="pydetector.html#slsdet.Detector.clearROI">clearROI() (slsdet.Detector method)</a>
-</li>
       <li><a href="pydetector.html#slsdet.Detector.clearRxROI">clearRxROI() (slsdet.Detector method)</a>
 </li>
       <li><a href="pydetector.html#slsdet.Detector.clearUDPDestinations">clearUDPDestinations() (slsdet.Detector method)</a>
@@ -311,13 +319,17 @@
 </li>
       <li><a href="commandline.html#term-clkfreq-n_clock-freq_in_Hz"><strong>clkfreq [n_clock] [freq_in_Hz]</strong></a>
 </li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="pydetector.html#slsdet.Detector.clkphase">clkphase (slsdet.Detector property)</a>
 </li>
       <li><a href="commandline.html#term-clkphase-n_clock-phase-deg-optional"><strong>clkphase [n_clock] [phase] [deg (optional)]</strong></a>
 </li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="pyPatternGenerator.html#slsdet.PatternGenerator.CLOCK">CLOCK() (slsdet.PatternGenerator method)</a>
+</li>
       <li><a href="pyenums.html#slsdet.clockIndex">clockIndex (class in slsdet)</a>
+</li>
+      <li><a href="pyPatternGenerator.html#slsdet.PatternGenerator.CLOCKS">CLOCKS() (slsdet.PatternGenerator method)</a>
 </li>
       <li><a href="pydetector.html#slsdet.Detector.collectionmode">collectionmode (slsdet.Detector property)</a>
 </li>
@@ -348,6 +360,8 @@
       <li><a href="pydetector.html#slsdet.Detector.counters">counters (slsdet.Detector property)</a>
 </li>
       <li><a href="commandline.html#term-counters-i0-i1-i2-..."><strong>counters [i0] [i1] [i2]...</strong></a>
+</li>
+      <li><a href="pydetector.html#slsdet.Detector.create_patwaittime_property">create_patwaittime_property() (slsdet.Detector method)</a>
 </li>
       <li><a href="commandline.html#term-currentsource"><strong>currentsource</strong></a>
 
@@ -469,15 +483,11 @@
 </li>
       <li><a href="commandline.html#term-exptime1-n_value"><strong>exptime1 [n_value]</strong></a>
 </li>
-      <li><a href="commandline.html#term-exptime2-n_value"><strong>exptime2 [n_value]</strong></a>
-</li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="commandline.html#term-exptime2-n_value"><strong>exptime2 [n_value]</strong></a>
+</li>
       <li><a href="commandline.html#term-exptime3-n_value"><strong>exptime3 [n_value]</strong></a>
-</li>
-      <li><a href="pydetector.html#slsdet.Detector.exptimel">exptimel (slsdet.Detector property)</a>
-</li>
-      <li><a href="commandline.html#term-exptimel-optional-unit-ns-us-ms-s"><strong>exptimel [(optional unit) ns|us|ms|s]</strong></a>
 </li>
       <li><a href="pyenums.html#slsdet.externalSignalFlag">externalSignalFlag (class in slsdet)</a>
 </li>
@@ -759,8 +769,6 @@
 </li>
       <li><a href="pydetector.html#slsdet.Detector.getExptimeForAllGates">getExptimeForAllGates() (slsdet.Detector method)</a>
 </li>
-      <li><a href="pydetector.html#slsdet.Detector.getExptimeLeft">getExptimeLeft() (slsdet.Detector method)</a>
-</li>
       <li><a href="pydetector.html#slsdet.Detector.getExternalSampling">getExternalSampling() (slsdet.Detector method)</a>
 </li>
       <li><a href="pydetector.html#slsdet.Detector.getExternalSamplingSource">getExternalSamplingSource() (slsdet.Detector method)</a>
@@ -811,8 +819,6 @@
 </li>
       <li><a href="pydetector.html#slsdet.Detector.getImageTestMode">getImageTestMode() (slsdet.Detector method)</a>
 </li>
-      <li><a href="pydetector.html#slsdet.Detector.getIndividualRxROIs">getIndividualRxROIs() (slsdet.Detector method)</a>
-</li>
       <li><a href="pydetector.html#slsdet.Detector.getInitialChecks">getInitialChecks() (slsdet.Detector method)</a>
 </li>
       <li><a href="pydetector.html#slsdet.Detector.getInjectChannel">getInjectChannel() (slsdet.Detector method)</a>
@@ -847,14 +853,14 @@
 </li>
       <li><a href="pydetector.html#slsdet.Detector.getMeasurementTime">getMeasurementTime() (slsdet.Detector method)</a>
 </li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="pydetector.html#slsdet.Detector.getModuleGeometry">getModuleGeometry() (slsdet.Detector method)</a>
 </li>
       <li><a href="pydetector.html#slsdet.Detector.getModuleId">getModuleId() (slsdet.Detector method)</a>
 </li>
       <li><a href="pydetector.html#slsdet.Detector.getModuleSize">getModuleSize() (slsdet.Detector method)</a>
 </li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="pydetector.html#slsdet.Detector.getNextFrameNumber">getNextFrameNumber() (slsdet.Detector method)</a>
 </li>
       <li><a href="pydetector.html#slsdet.Detector.getNumberOfAdditionalStorageCells">getNumberOfAdditionalStorageCells() (slsdet.Detector method)</a>
@@ -915,7 +921,9 @@
 </li>
       <li><a href="pydetector.html#slsdet.Detector.getPatternWaitAddr">getPatternWaitAddr() (slsdet.Detector method)</a>
 </li>
-      <li><a href="pydetector.html#slsdet.Detector.getPatternWaitTime">getPatternWaitTime() (slsdet.Detector method)</a>
+      <li><a href="pydetector.html#slsdet.Detector.getPatternWaitClocks">getPatternWaitClocks() (slsdet.Detector method)</a>
+</li>
+      <li><a href="pydetector.html#slsdet.Detector.getPatternWaitInterval">getPatternWaitInterval() (slsdet.Detector method)</a>
 </li>
       <li><a href="pydetector.html#slsdet.Detector.getPatternWord">getPatternWord() (slsdet.Detector method)</a>
 </li>
@@ -926,6 +934,10 @@
       <li><a href="pydetector.html#slsdet.Detector.getPeriodLeft">getPeriodLeft() (slsdet.Detector method)</a>
 </li>
       <li><a href="pydetector.html#slsdet.Detector.getPolarity">getPolarity() (slsdet.Detector method)</a>
+</li>
+      <li><a href="pydetector.html#slsdet.Detector.getPortPerModuleGeometry">getPortPerModuleGeometry() (slsdet.Detector method)</a>
+</li>
+      <li><a href="pydetector.html#slsdet.Detector.getPortSize">getPortSize() (slsdet.Detector method)</a>
 </li>
       <li><a href="pydetector.html#slsdet.Detector.getPower">getPower() (slsdet.Detector method)</a>
 </li>
@@ -957,8 +969,6 @@
 </li>
       <li><a href="pydetector.html#slsdet.Detector.getReceiverVersion">getReceiverVersion() (slsdet.Detector method)</a>
 </li>
-      <li><a href="pydetector.html#slsdet.Detector.getROI">getROI() (slsdet.Detector method)</a>
-</li>
       <li><a href="pydetector.html#slsdet.Detector.getRow">getRow() (slsdet.Detector method)</a>
 </li>
       <li><a href="pydetector.html#slsdet.Detector.getRUNClock">getRUNClock() (slsdet.Detector method)</a>
@@ -970,6 +980,8 @@
       <li><a href="pydetector.html#slsdet.Detector.getRxDbitList">getRxDbitList() (slsdet.Detector method)</a>
 </li>
       <li><a href="pydetector.html#slsdet.Detector.getRxDbitOffset">getRxDbitOffset() (slsdet.Detector method)</a>
+</li>
+      <li><a href="pydetector.html#slsdet.Detector.getRxDbitReorder">getRxDbitReorder() (slsdet.Detector method)</a>
 </li>
       <li><a href="pydetector.html#slsdet.Detector.getRxFifoDepth">getRxFifoDepth() (slsdet.Detector method)</a>
 </li>
@@ -1223,6 +1235,8 @@
 </li>
       <li><a href="commandline.html#term-list-deprecated-optional"><strong>list [deprecated(optional)]</strong></a>
 </li>
+      <li><a href="pyPatternGenerator.html#slsdet.PatternGenerator.load">load() (slsdet.PatternGenerator method)</a>
+</li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="pydetector.html#slsdet.Detector.loadConfig">loadConfig() (slsdet.Detector method)</a>
@@ -1409,9 +1423,11 @@
 </li>
       <li><a href="pydetector.html#slsdet.Detector.pattern">pattern (slsdet.Detector property)</a>
 </li>
-      <li><a href="commandline.html#term-patternstart"><strong>patternstart</strong></a>
+      <li><a href="commandline.html#term-pattern-fname"><strong>pattern [fname]</strong></a>
 </li>
-      <li><a href="commandline.html#term-patternX-fname"><strong>patternX [fname]</strong></a>
+      <li><a href="pyPatternGenerator.html#slsdet.PatternGenerator">PatternGenerator (class in slsdet)</a>
+</li>
+      <li><a href="commandline.html#term-patternstart"><strong>patternstart</strong></a>
 </li>
       <li><a href="pydetector.html#slsdet.Detector.patwait">patwait (slsdet.Detector property)</a>
 </li>
@@ -1441,24 +1457,18 @@
 </li>
       <li><a href="commandline.html#term-patwaittime-0-6-n_clk"><strong>patwaittime [0-6] [n_clk]</strong></a>
 </li>
-      <li><a href="commandline.html#term-patwaittime0"><strong>patwaittime0</strong></a>
-
-      <ul>
-        <li><a href="pydetector.html#slsdet.Detector.patwaittime0">(slsdet.Detector property)</a>
+      <li><a href="pydetector.html#slsdet.Detector.patwaittime0">patwaittime0 (slsdet.Detector property)</a>
 </li>
-      </ul></li>
-      <li><a href="commandline.html#term-patwaittime1"><strong>patwaittime1</strong></a>
-
-      <ul>
-        <li><a href="pydetector.html#slsdet.Detector.patwaittime1">(slsdet.Detector property)</a>
+      <li><a href="commandline.html#term-patwaittime0-0-6-n_clk"><strong>patwaittime0 [0-6] [n_clk]</strong></a>
 </li>
-      </ul></li>
-      <li><a href="commandline.html#term-patwaittime2"><strong>patwaittime2</strong></a>
-
-      <ul>
-        <li><a href="pydetector.html#slsdet.Detector.patwaittime2">(slsdet.Detector property)</a>
+      <li><a href="pydetector.html#slsdet.Detector.patwaittime1">patwaittime1 (slsdet.Detector property)</a>
 </li>
-      </ul></li>
+      <li><a href="commandline.html#term-patwaittime1-0-6-n_clk"><strong>patwaittime1 [0-6] [n_clk]</strong></a>
+</li>
+      <li><a href="pydetector.html#slsdet.Detector.patwaittime2">patwaittime2 (slsdet.Detector property)</a>
+</li>
+      <li><a href="commandline.html#term-patwaittime2-0-6-n_clk"><strong>patwaittime2 [0-6] [n_clk]</strong></a>
+</li>
       <li><a href="commandline.html#term-patword-step-or-address-64-bit-mask"><strong>patword [step or address] [64 bit mask]</strong></a>
 </li>
       <li><a href="commandline.html#term-pedestalmode-frames-uint8_t-loops-uint16_t"><strong>pedestalmode  [frames&lt;uint8_t&gt;] [loops&lt;uint16_t&gt;]</strong></a>
@@ -1501,6 +1511,8 @@
 </li>
       <li><a href="commandline.html#term-powervalues-name"><strong>powervalues [name]</strong></a>
 </li>
+      <li><a href="pyPatternGenerator.html#slsdet.PatternGenerator.print">print() (slsdet.PatternGenerator method)</a>
+</li>
       <li><a href="pydetector.html#slsdet.Detector.printRxConfiguration">printRxConfiguration() (slsdet.Detector method)</a>
 </li>
       <li><a href="commandline.html#term-programfpga-fname.pof-fname.rbf-full-path-opitonal-force-delete-normal-file"><strong>programfpga [fname.pof | fname.rbf (full path)][(opitonal)--force-delete-normal-file]</strong></a>
@@ -1522,6 +1534,8 @@
       <li><a href="pydetector.html#slsdet.Detector.pumpprobe">pumpprobe (slsdet.Detector property)</a>
 </li>
       <li><a href="commandline.html#term-pumpprobe-0-1"><strong>pumpprobe [0, 1]</strong></a>
+</li>
+      <li><a href="pyPatternGenerator.html#slsdet.PatternGenerator.PW">PW() (slsdet.PatternGenerator method)</a>
 </li>
   </ul></td>
 </tr></table>
@@ -1597,8 +1611,6 @@
 </li>
       <li><a href="pydetector.html#slsdet.Detector.resetToDefaultDacs">resetToDefaultDacs() (slsdet.Detector method)</a>
 </li>
-      <li><a href="commandline.html#term-roi-xmin-xmax"><strong>roi [xmin] [xmax]</strong></a>
-</li>
       <li><a href="pydetector.html#slsdet.Detector.romode">romode (slsdet.Detector property)</a>
 </li>
       <li><a href="commandline.html#term-romode-analog-digital-analog_digital-transceiver-digital_transceiver"><strong>romode [analog|digital|analog_digital|transceiver|digital_transceiver]</strong></a>
@@ -1630,6 +1642,10 @@
       <li><a href="pydetector.html#slsdet.Detector.rx_dbitoffset">rx_dbitoffset (slsdet.Detector property)</a>
 </li>
       <li><a href="commandline.html#term-rx_dbitoffset-n_bytes"><strong>rx_dbitoffset [n_bytes]</strong></a>
+</li>
+      <li><a href="pydetector.html#slsdet.Detector.rx_dbitreorder">rx_dbitreorder (slsdet.Detector property)</a>
+</li>
+      <li><a href="commandline.html#term-rx_dbitreorder-0-1"><strong>rx_dbitreorder [0, 1]</strong></a>
 </li>
       <li><a href="pydetector.html#slsdet.Detector.rx_discardpolicy">rx_discardpolicy (slsdet.Detector property)</a>
 </li>
@@ -1767,11 +1783,15 @@
 </li>
       <li><a href="commandline.html#term-samples-n_samples"><strong>samples [n_samples]</strong></a>
 </li>
+      <li><a href="pyPatternGenerator.html#slsdet.PatternGenerator.save">save() (slsdet.PatternGenerator method)</a>
+</li>
       <li><a href="commandline.html#term-savepattern"><strong>savepattern</strong></a>
 </li>
       <li><a href="pydetector.html#slsdet.Detector.savePattern">savePattern() (slsdet.Detector method)</a>
 </li>
       <li><a href="pydetector.html#slsdet.Detector.saveTrimbits">saveTrimbits() (slsdet.Detector method)</a>
+</li>
+      <li><a href="pyPatternGenerator.html#slsdet.PatternGenerator.SB">SB() (slsdet.PatternGenerator method)</a>
 </li>
       <li><a href="pydetector.html#slsdet.Detector.scan">scan (slsdet.Detector property)</a>
 </li>
@@ -1789,7 +1809,11 @@
 </li>
       <li><a href="commandline.html#term-selinterface-0-1"><strong>selinterface [0, 1]</strong></a>
 </li>
+      <li><a href="pyPatternGenerator.html#slsdet.PatternGenerator.send_to_detector">send_to_detector() (slsdet.PatternGenerator method)</a>
+</li>
       <li><a href="pydetector.html#slsdet.Detector.sendSoftwareTrigger">sendSoftwareTrigger() (slsdet.Detector method)</a>
+</li>
+      <li><a href="pyPatternGenerator.html#slsdet.PatternGenerator.serializer">serializer() (slsdet.PatternGenerator method)</a>
 </li>
       <li><a href="commandline.html#term-serialnumber"><strong>serialnumber</strong></a>
 
@@ -1957,6 +1981,10 @@
 </li>
       <li><a href="pydetector.html#slsdet.Detector.setInjectChannel">setInjectChannel() (slsdet.Detector method)</a>
 </li>
+      <li><a href="pyPatternGenerator.html#slsdet.PatternGenerator.setinput">setinput() (slsdet.PatternGenerator method)</a>
+</li>
+      <li><a href="pyPatternGenerator.html#slsdet.PatternGenerator.setinputs">setinputs() (slsdet.PatternGenerator method)</a>
+</li>
       <li><a href="pydetector.html#slsdet.Detector.setInterpolation">setInterpolation() (slsdet.Detector method)</a>
 </li>
       <li><a href="pydetector.html#slsdet.Detector.setInterruptSubframe">setInterruptSubframe() (slsdet.Detector method)</a>
@@ -1968,6 +1996,8 @@
       <li><a href="pydetector.html#slsdet.Detector.setMasterFileWrite">setMasterFileWrite() (slsdet.Detector method)</a>
 </li>
       <li><a href="pydetector.html#slsdet.Detector.setNextFrameNumber">setNextFrameNumber() (slsdet.Detector method)</a>
+</li>
+      <li><a href="pyPatternGenerator.html#slsdet.PatternGenerator.setnloop">setnloop() (slsdet.PatternGenerator method)</a>
 </li>
       <li><a href="pydetector.html#slsdet.Detector.setNumberOfAdditionalStorageCells">setNumberOfAdditionalStorageCells() (slsdet.Detector method)</a>
 </li>
@@ -1991,6 +2021,10 @@
 </li>
       <li><a href="pydetector.html#slsdet.Detector.setOnChipDAC">setOnChipDAC() (slsdet.Detector method)</a>
 </li>
+      <li><a href="pyPatternGenerator.html#slsdet.PatternGenerator.setoutput">setoutput() (slsdet.PatternGenerator method)</a>
+</li>
+      <li><a href="pyPatternGenerator.html#slsdet.PatternGenerator.setoutputs">setoutputs() (slsdet.PatternGenerator method)</a>
+</li>
       <li><a href="pydetector.html#slsdet.Detector.setOverFlowMode">setOverFlowMode() (slsdet.Detector method)</a>
 </li>
       <li><a href="pydetector.html#slsdet.Detector.setParallelMode">setParallelMode() (slsdet.Detector method)</a>
@@ -2013,7 +2047,9 @@
 </li>
       <li><a href="pydetector.html#slsdet.Detector.setPatternWaitAddr">setPatternWaitAddr() (slsdet.Detector method)</a>
 </li>
-      <li><a href="pydetector.html#slsdet.Detector.setPatternWaitTime">setPatternWaitTime() (slsdet.Detector method)</a>
+      <li><a href="pydetector.html#slsdet.Detector.setPatternWaitClocks">setPatternWaitClocks() (slsdet.Detector method)</a>
+</li>
+      <li><a href="pydetector.html#slsdet.Detector.setPatternWaitInterval">setPatternWaitInterval() (slsdet.Detector method)</a>
 </li>
       <li><a href="pydetector.html#slsdet.Detector.setPatternWord">setPatternWord() (slsdet.Detector method)</a>
 </li>
@@ -2043,8 +2079,6 @@
 </li>
       <li><a href="pydetector.html#slsdet.Detector.setReadoutSpeed">setReadoutSpeed() (slsdet.Detector method)</a>
 </li>
-      <li><a href="pydetector.html#slsdet.Detector.setROI">setROI() (slsdet.Detector method)</a>
-</li>
       <li><a href="pydetector.html#slsdet.Detector.setRow">setRow() (slsdet.Detector method)</a>
 </li>
       <li><a href="pydetector.html#slsdet.Detector.setRUNClock">setRUNClock() (slsdet.Detector method)</a>
@@ -2054,6 +2088,8 @@
       <li><a href="pydetector.html#slsdet.Detector.setRxDbitList">setRxDbitList() (slsdet.Detector method)</a>
 </li>
       <li><a href="pydetector.html#slsdet.Detector.setRxDbitOffset">setRxDbitOffset() (slsdet.Detector method)</a>
+</li>
+      <li><a href="pydetector.html#slsdet.Detector.setRxDbitReorder">setRxDbitReorder() (slsdet.Detector method)</a>
 </li>
       <li><a href="pydetector.html#slsdet.Detector.setRxFifoDepth">setRxFifoDepth() (slsdet.Detector method)</a>
 </li>
@@ -2104,6 +2140,14 @@
       <li><a href="pydetector.html#slsdet.Detector.setSourceUDPMAC">setSourceUDPMAC() (slsdet.Detector method)</a>
 </li>
       <li><a href="pydetector.html#slsdet.Detector.setSourceUDPMAC2">setSourceUDPMAC2() (slsdet.Detector method)</a>
+</li>
+      <li><a href="pyPatternGenerator.html#slsdet.PatternGenerator.setstart">setstart() (slsdet.PatternGenerator method)</a>
+</li>
+      <li><a href="pyPatternGenerator.html#slsdet.PatternGenerator.setstartloop">setstartloop() (slsdet.PatternGenerator method)</a>
+</li>
+      <li><a href="pyPatternGenerator.html#slsdet.PatternGenerator.setstop">setstop() (slsdet.PatternGenerator method)</a>
+</li>
+      <li><a href="pyPatternGenerator.html#slsdet.PatternGenerator.setstoploop">setstoploop() (slsdet.PatternGenerator method)</a>
 </li>
       <li><a href="pydetector.html#slsdet.Detector.setStopPort">setStopPort() (slsdet.Detector method)</a>
 </li>
@@ -2179,6 +2223,12 @@
 </li>
       <li><a href="pydetector.html#slsdet.Detector.setVirtualDetectorServers">setVirtualDetectorServers() (slsdet.Detector method)</a>
 </li>
+      <li><a href="pyPatternGenerator.html#slsdet.PatternGenerator.setwait">setwait() (slsdet.PatternGenerator method)</a>
+</li>
+      <li><a href="pyPatternGenerator.html#slsdet.PatternGenerator.setwaitpoint">setwaitpoint() (slsdet.PatternGenerator method)</a>
+</li>
+      <li><a href="pyPatternGenerator.html#slsdet.PatternGenerator.setwaittime">setwaittime() (slsdet.PatternGenerator method)</a>
+</li>
       <li><a href="commandline.html#term-signalindex-name"><strong>signalindex [name]</strong></a>
 </li>
       <li><a href="pydetector.html#slsdet.Detector.signallist">signallist (slsdet.Detector property)</a>
@@ -2232,8 +2282,6 @@
       <li><a href="detector.html#_CPPv4N3sls8Detector18clearAcquiringFlagEv">sls::Detector::clearAcquiringFlag (C++ function)</a>
 </li>
       <li><a href="detector.html#_CPPv4N3sls8Detector8clearBitE8uint32_tib9Positions">sls::Detector::clearBit (C++ function)</a>
-</li>
-      <li><a href="detector.html#_CPPv4N3sls8Detector8clearROIE9Positions">sls::Detector::clearROI (C++ function)</a>
 </li>
       <li><a href="detector.html#_CPPv4N3sls8Detector10clearRxROIEv">sls::Detector::clearRxROI (C++ function)</a>
 </li>
@@ -2295,7 +2343,7 @@
 </li>
       <li><a href="detector.html#_CPPv4N3sls8Detector6getBitE8uint32_ti9Positions">sls::Detector::getBit (C++ function)</a>
 </li>
-      <li><a href="detector.html#_CPPv4N3sls8Detector12getBurstModeE9Positions">sls::Detector::getBurstMode (C++ function)</a>
+      <li><a href="detector.html#_CPPv4NK3sls8Detector12getBurstModeE9Positions">sls::Detector::getBurstMode (C++ function)</a>
 </li>
       <li><a href="detector.html#_CPPv4NK3sls8Detector14getBurstPeriodE9Positions">sls::Detector::getBurstPeriod (C++ function)</a>
 </li>
@@ -2393,8 +2441,6 @@
 </li>
       <li><a href="detector.html#_CPPv4NK3sls8Detector21getExptimeForAllGatesE9Positions">sls::Detector::getExptimeForAllGates (C++ function)</a>
 </li>
-      <li><a href="detector.html#_CPPv4NK3sls8Detector14getExptimeLeftE9Positions">sls::Detector::getExptimeLeft (C++ function)</a>
-</li>
       <li><a href="detector.html#_CPPv4NK3sls8Detector19getExternalSamplingE9Positions">sls::Detector::getExternalSampling (C++ function)</a>
 </li>
       <li><a href="detector.html#_CPPv4NK3sls8Detector25getExternalSamplingSourceE9Positions">sls::Detector::getExternalSamplingSource (C++ function)</a>
@@ -2444,8 +2490,6 @@
       <li><a href="detector.html#_CPPv4NK3sls8Detector11getHostnameE9Positions">sls::Detector::getHostname (C++ function)</a>
 </li>
       <li><a href="detector.html#_CPPv4N3sls8Detector16getImageTestModeE9Positions">sls::Detector::getImageTestMode (C++ function)</a>
-</li>
-      <li><a href="detector.html#_CPPv4NK3sls8Detector19getIndividualRxROIsE9Positions">sls::Detector::getIndividualRxROIs (C++ function)</a>
 </li>
       <li><a href="detector.html#_CPPv4NK3sls8Detector16getInitialChecksEv">sls::Detector::getInitialChecks (C++ function)</a>
 </li>
@@ -2547,24 +2591,30 @@
 </li>
       <li><a href="detector.html#_CPPv4NK3sls8Detector18getPatternWaitAddrEi9Positions">sls::Detector::getPatternWaitAddr (C++ function)</a>
 </li>
-      <li><a href="detector.html#_CPPv4NK3sls8Detector18getPatternWaitTimeEi9Positions">sls::Detector::getPatternWaitTime (C++ function)</a>
+      <li><a href="detector.html#_CPPv4NK3sls8Detector20getPatternWaitClocksEi9Positions">sls::Detector::getPatternWaitClocks (C++ function)</a>
+</li>
+      <li><a href="detector.html#_CPPv4NK3sls8Detector22getPatternWaitIntervalEi9Positions">sls::Detector::getPatternWaitInterval (C++ function)</a>
 </li>
       <li><a href="detector.html#_CPPv4N3sls8Detector14getPatternWordEi9Positions">sls::Detector::getPatternWord (C++ function)</a>
 </li>
       <li><a href="detector.html#_CPPv4NK3sls8Detector15getPedestalModeE9Positions">sls::Detector::getPedestalMode (C++ function)</a>
 </li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="detector.html#_CPPv4NK3sls8Detector9getPeriodE9Positions">sls::Detector::getPeriod (C++ function)</a>
 </li>
       <li><a href="detector.html#_CPPv4NK3sls8Detector13getPeriodLeftE9Positions">sls::Detector::getPeriodLeft (C++ function)</a>
 </li>
       <li><a href="detector.html#_CPPv4NK3sls8Detector11getPolarityE9Positions">sls::Detector::getPolarity (C++ function)</a>
 </li>
+      <li><a href="detector.html#_CPPv4NK3sls8Detector24getPortPerModuleGeometryEv">sls::Detector::getPortPerModuleGeometry (C++ function)</a>
+</li>
+      <li><a href="detector.html#_CPPv4NK3sls8Detector11getPortSizeE9Positions">sls::Detector::getPortSize (C++ function)</a>
+</li>
       <li><a href="detector.html#_CPPv4NK3sls8Detector8getPowerEN4defs8dacIndexE9Positions">sls::Detector::getPower (C++ function)</a>
 </li>
       <li><a href="detector.html#_CPPv4NK3sls8Detector12getPowerChipE9Positions">sls::Detector::getPowerChip (C++ function)</a>
 </li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="detector.html#_CPPv4NK3sls8Detector13getPowerIndexERKNSt6stringE">sls::Detector::getPowerIndex (C++ function)</a>
 </li>
       <li><a href="detector.html#_CPPv4NK3sls8Detector12getPowerListEv">sls::Detector::getPowerList (C++ function)</a>
@@ -2591,8 +2641,6 @@
 </li>
       <li><a href="detector.html#_CPPv4NK3sls8Detector18getReceiverVersionE9Positions">sls::Detector::getReceiverVersion (C++ function)</a>
 </li>
-      <li><a href="detector.html#_CPPv4NK3sls8Detector6getROIE9Positions">sls::Detector::getROI (C++ function)</a>
-</li>
       <li><a href="detector.html#_CPPv4NK3sls8Detector6getRowE9Positions">sls::Detector::getRow (C++ function)</a>
 </li>
       <li><a href="detector.html#_CPPv4NK3sls8Detector11getRUNClockE9Positions">sls::Detector::getRUNClock (C++ function)</a>
@@ -2604,6 +2652,8 @@
       <li><a href="detector.html#_CPPv4NK3sls8Detector13getRxDbitListE9Positions">sls::Detector::getRxDbitList (C++ function)</a>
 </li>
       <li><a href="detector.html#_CPPv4NK3sls8Detector15getRxDbitOffsetE9Positions">sls::Detector::getRxDbitOffset (C++ function)</a>
+</li>
+      <li><a href="detector.html#_CPPv4NK3sls8Detector16getRxDbitReorderE9Positions">sls::Detector::getRxDbitReorder (C++ function)</a>
 </li>
       <li><a href="detector.html#_CPPv4NK3sls8Detector14getRxFifoDepthE9Positions">sls::Detector::getRxFifoDepth (C++ function)</a>
 </li>
@@ -2619,7 +2669,7 @@
 </li>
       <li><a href="detector.html#_CPPv4NK3sls8Detector28getRxRealUDPSocketBufferSizeE9Positions">sls::Detector::getRxRealUDPSocketBufferSize (C++ function)</a>
 </li>
-      <li><a href="detector.html#_CPPv4NK3sls8Detector8getRxROIEv">sls::Detector::getRxROI (C++ function)</a>
+      <li><a href="detector.html#_CPPv4NK3sls8Detector8getRxROIEi">sls::Detector::getRxROI (C++ function)</a>
 </li>
       <li><a href="detector.html#_CPPv4NK3sls8Detector15getRxSilentModeE9Positions">sls::Detector::getRxSilentMode (C++ function)</a>
 </li>
@@ -3007,7 +3057,9 @@
 </li>
       <li><a href="detector.html#_CPPv4N3sls8Detector18setPatternWaitAddrEii9Positions">sls::Detector::setPatternWaitAddr (C++ function)</a>
 </li>
-      <li><a href="detector.html#_CPPv4N3sls8Detector18setPatternWaitTimeEi8uint64_t9Positions">sls::Detector::setPatternWaitTime (C++ function)</a>
+      <li><a href="detector.html#_CPPv4N3sls8Detector20setPatternWaitClocksEi8uint64_t9Positions">sls::Detector::setPatternWaitClocks (C++ function)</a>
+</li>
+      <li><a href="detector.html#_CPPv4N3sls8Detector22setPatternWaitIntervalEi2ns9Positions">sls::Detector::setPatternWaitInterval (C++ function)</a>
 </li>
       <li><a href="detector.html#_CPPv4N3sls8Detector14setPatternWordEi8uint64_t9Positions">sls::Detector::setPatternWord (C++ function)</a>
 </li>
@@ -3037,8 +3089,6 @@
 </li>
       <li><a href="detector.html#_CPPv4N3sls8Detector15setReadoutSpeedEN4defs10speedLevelE9Positions">sls::Detector::setReadoutSpeed (C++ function)</a>
 </li>
-      <li><a href="detector.html#_CPPv4N3sls8Detector6setROIEN4defs3ROIEi">sls::Detector::setROI (C++ function)</a>
-</li>
       <li><a href="detector.html#_CPPv4N3sls8Detector6setRowEKi9Positions">sls::Detector::setRow (C++ function)</a>
 </li>
       <li><a href="detector.html#_CPPv4N3sls8Detector11setRUNClockEi9Positions">sls::Detector::setRUNClock (C++ function)</a>
@@ -3048,6 +3098,8 @@
       <li><a href="detector.html#_CPPv4N3sls8Detector13setRxDbitListERKNSt6vectorIiEE9Positions">sls::Detector::setRxDbitList (C++ function)</a>
 </li>
       <li><a href="detector.html#_CPPv4N3sls8Detector15setRxDbitOffsetEi9Positions">sls::Detector::setRxDbitOffset (C++ function)</a>
+</li>
+      <li><a href="detector.html#_CPPv4N3sls8Detector16setRxDbitReorderEb9Positions">sls::Detector::setRxDbitReorder (C++ function)</a>
 </li>
       <li><a href="detector.html#_CPPv4N3sls8Detector14setRxFifoDepthEi9Positions">sls::Detector::setRxFifoDepth (C++ function)</a>
 </li>
@@ -3059,7 +3111,7 @@
 </li>
       <li><a href="detector.html#_CPPv4N3sls8Detector9setRxPortE8uint16_ti">sls::Detector::setRxPort (C++ function)</a>
 </li>
-      <li><a href="detector.html#_CPPv4N3sls8Detector8setRxROIEKN4defs3ROIE">sls::Detector::setRxROI (C++ function)</a>
+      <li><a href="detector.html#_CPPv4N3sls8Detector8setRxROIERKNSt6vectorIN4defs3ROIEEE">sls::Detector::setRxROI (C++ function)</a>
 </li>
       <li><a href="detector.html#_CPPv4N3sls8Detector15setRxSilentModeEb9Positions">sls::Detector::setRxSilentMode (C++ function)</a>
 </li>
@@ -3187,6 +3239,10 @@
 </li>
       <li><a href="detector.html#_CPPv4N3sls8DetectorD0Ev">sls::Detector::~Detector (C++ function)</a>
 </li>
+      <li><a href="type_traits.html#_CPPv4I00EN3sls16has_bool_isValidE">sls::has_bool_isValid (C++ struct)</a>
+</li>
+      <li><a href="type_traits.html#_CPPv4I0EN3sls16has_bool_isValidI1TNSt6void_tIDTdtclNSt7declvalI1TEEE7isValidEEEEE">sls::has_bool_isValid&lt;T, std::void_t&lt;decltype(std::declval&lt;T&gt;().isValid)&gt;&gt; (C++ struct)</a>
+</li>
       <li><a href="type_traits.html#_CPPv4I00EN3sls16has_emplace_backE">sls::has_emplace_back (C++ struct)</a>
 </li>
       <li><a href="type_traits.html#_CPPv4I0EN3sls16has_emplace_backI1TNSt11conditionalIXL0EE23has_emplace_back_helperIDTcldtclNSt7declvalI1TEEE12emplace_backEEEvE4typeEEE">sls::has_emplace_back&lt;T, typename std::conditional&lt;false, has_emplace_back_helper&lt;decltype(std::declval&lt;T&gt;().emplace_back())&gt;, void&gt;::type&gt; (C++ struct)</a>
@@ -3233,13 +3289,13 @@
 </li>
       <li><a href="receiver_api.html#_CPPv4N3sls8Receiver18getReceiverVersionEv">sls::Receiver::getReceiverVersion (C++ function)</a>
 </li>
-      <li><a href="receiver_api.html#_CPPv4N3sls8Receiver8ReceiverE8uint16_t">sls::Receiver::Receiver (C++ function)</a>, <a href="receiver_api.html#_CPPv4N3sls8Receiver8ReceiverEiA_Pc">[1]</a>
+      <li><a href="receiver_api.html#_CPPv4N3sls8Receiver8ReceiverE8uint16_t">sls::Receiver::Receiver (C++ function)</a>
 </li>
       <li><a href="receiver_api.html#_CPPv4N3sls8Receiver35registerCallBackAcquisitionFinishedEPFvK17endCallbackHeaderPvEPv">sls::Receiver::registerCallBackAcquisitionFinished (C++ function)</a>
 </li>
       <li><a href="receiver_api.html#_CPPv4N3sls8Receiver28registerCallBackRawDataReadyEPFvR19sls_receiver_headerK18dataCallbackHeaderPcR6size_tPvEPv">sls::Receiver::registerCallBackRawDataReady (C++ function)</a>
 </li>
-      <li><a href="receiver_api.html#_CPPv4N3sls8Receiver32registerCallBackStartAcquisitionEPFiK19startCallbackHeaderPvEPv">sls::Receiver::registerCallBackStartAcquisition (C++ function)</a>
+      <li><a href="receiver_api.html#_CPPv4N3sls8Receiver32registerCallBackStartAcquisitionEPFvK19startCallbackHeaderPvEPv">sls::Receiver::registerCallBackStartAcquisition (C++ function)</a>
 </li>
       <li><a href="container_utils.html#_CPPv4I0EN3sls16removeDuplicatesENSt9enable_ifIN12is_containerI1TE5valueEbE4typeER1T">sls::removeDuplicates (C++ function)</a>
 </li>

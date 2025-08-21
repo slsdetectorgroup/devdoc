@@ -49,6 +49,14 @@
 <li class="toctree-l1"><a class="reference internal" href="dependencies.html">Dependencies</a></li>
 <li class="toctree-l1"><a class="reference internal" href="consuming.html">Consuming slsDetectorPackage</a></li>
 </ul>
+<p class="caption" role="heading"><span class="caption-text">how to</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="softwarearchitecture.html">Software Architecture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="configcommands.html">Setup Commands</a></li>
+<li class="toctree-l1"><a class="reference internal" href="quick_start_guide.html">Quick Start Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dataformat.html">Detector Image Size and Format</a></li>
+<li class="toctree-l1"><a class="reference internal" href="multidet.html">Using multiple detectors</a></li>
+</ul>
 <p class="caption" role="heading"><span class="caption-text">C++ API</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="detector.html">Detector</a></li>
@@ -84,7 +92,6 @@
 <li class="toctree-l3"><a class="reference internal" href="#slsdet.Detector.chipversion"><code class="docutils literal notranslate"><span class="pre">Detector.chipversion</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#slsdet.Detector.clearAcquiringFlag"><code class="docutils literal notranslate"><span class="pre">Detector.clearAcquiringFlag()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#slsdet.Detector.clearBit"><code class="docutils literal notranslate"><span class="pre">Detector.clearBit()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#slsdet.Detector.clearROI"><code class="docutils literal notranslate"><span class="pre">Detector.clearROI()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#slsdet.Detector.clearRxROI"><code class="docutils literal notranslate"><span class="pre">Detector.clearRxROI()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#slsdet.Detector.clearUDPDestinations"><code class="docutils literal notranslate"><span class="pre">Detector.clearUDPDestinations()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#slsdet.Detector.clearbusy"><code class="docutils literal notranslate"><span class="pre">Detector.clearbusy()</span></code></a></li>
@@ -99,6 +106,7 @@
 <li class="toctree-l3"><a class="reference internal" href="#slsdet.Detector.configtransceiver"><code class="docutils literal notranslate"><span class="pre">Detector.configtransceiver()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#slsdet.Detector.configureTransceiver"><code class="docutils literal notranslate"><span class="pre">Detector.configureTransceiver()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#slsdet.Detector.counters"><code class="docutils literal notranslate"><span class="pre">Detector.counters</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#slsdet.Detector.create_patwaittime_property"><code class="docutils literal notranslate"><span class="pre">Detector.create_patwaittime_property()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#slsdet.Detector.currentsource"><code class="docutils literal notranslate"><span class="pre">Detector.currentsource</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#slsdet.Detector.daclist"><code class="docutils literal notranslate"><span class="pre">Detector.daclist</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#slsdet.Detector.dacvalues"><code class="docutils literal notranslate"><span class="pre">Detector.dacvalues</span></code></a></li>
@@ -119,7 +127,6 @@
 <li class="toctree-l3"><a class="reference internal" href="#slsdet.Detector.executeCommand"><code class="docutils literal notranslate"><span class="pre">Detector.executeCommand()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#slsdet.Detector.executeFirmwareTest"><code class="docutils literal notranslate"><span class="pre">Detector.executeFirmwareTest()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#slsdet.Detector.exptime"><code class="docutils literal notranslate"><span class="pre">Detector.exptime</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#slsdet.Detector.exptimel"><code class="docutils literal notranslate"><span class="pre">Detector.exptimel</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#slsdet.Detector.extrastoragecells"><code class="docutils literal notranslate"><span class="pre">Detector.extrastoragecells</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#slsdet.Detector.fformat"><code class="docutils literal notranslate"><span class="pre">Detector.fformat</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#slsdet.Detector.filtercells"><code class="docutils literal notranslate"><span class="pre">Detector.filtercells</span></code></a></li>
@@ -215,7 +222,6 @@
 <li class="toctree-l3"><a class="reference internal" href="#slsdet.Detector.getDynamicRangeList"><code class="docutils literal notranslate"><span class="pre">Detector.getDynamicRangeList()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#slsdet.Detector.getExptime"><code class="docutils literal notranslate"><span class="pre">Detector.getExptime()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#slsdet.Detector.getExptimeForAllGates"><code class="docutils literal notranslate"><span class="pre">Detector.getExptimeForAllGates()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#slsdet.Detector.getExptimeLeft"><code class="docutils literal notranslate"><span class="pre">Detector.getExptimeLeft()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#slsdet.Detector.getExternalSampling"><code class="docutils literal notranslate"><span class="pre">Detector.getExternalSampling()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#slsdet.Detector.getExternalSamplingSource"><code class="docutils literal notranslate"><span class="pre">Detector.getExternalSamplingSource()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#slsdet.Detector.getExternalSignalFlags"><code class="docutils literal notranslate"><span class="pre">Detector.getExternalSignalFlags()</span></code></a></li>
@@ -241,7 +247,6 @@
 <li class="toctree-l3"><a class="reference internal" href="#slsdet.Detector.getHighVoltage"><code class="docutils literal notranslate"><span class="pre">Detector.getHighVoltage()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#slsdet.Detector.getHostname"><code class="docutils literal notranslate"><span class="pre">Detector.getHostname()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#slsdet.Detector.getImageTestMode"><code class="docutils literal notranslate"><span class="pre">Detector.getImageTestMode()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#slsdet.Detector.getIndividualRxROIs"><code class="docutils literal notranslate"><span class="pre">Detector.getIndividualRxROIs()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#slsdet.Detector.getInitialChecks"><code class="docutils literal notranslate"><span class="pre">Detector.getInitialChecks()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#slsdet.Detector.getInjectChannel"><code class="docutils literal notranslate"><span class="pre">Detector.getInjectChannel()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#slsdet.Detector.getInterpolation"><code class="docutils literal notranslate"><span class="pre">Detector.getInterpolation()</span></code></a></li>
@@ -292,12 +297,15 @@
 <li class="toctree-l3"><a class="reference internal" href="#slsdet.Detector.getPatternLoopCycles"><code class="docutils literal notranslate"><span class="pre">Detector.getPatternLoopCycles()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#slsdet.Detector.getPatternMask"><code class="docutils literal notranslate"><span class="pre">Detector.getPatternMask()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#slsdet.Detector.getPatternWaitAddr"><code class="docutils literal notranslate"><span class="pre">Detector.getPatternWaitAddr()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#slsdet.Detector.getPatternWaitTime"><code class="docutils literal notranslate"><span class="pre">Detector.getPatternWaitTime()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#slsdet.Detector.getPatternWaitClocks"><code class="docutils literal notranslate"><span class="pre">Detector.getPatternWaitClocks()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#slsdet.Detector.getPatternWaitInterval"><code class="docutils literal notranslate"><span class="pre">Detector.getPatternWaitInterval()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#slsdet.Detector.getPatternWord"><code class="docutils literal notranslate"><span class="pre">Detector.getPatternWord()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#slsdet.Detector.getPedestalMode"><code class="docutils literal notranslate"><span class="pre">Detector.getPedestalMode()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#slsdet.Detector.getPeriod"><code class="docutils literal notranslate"><span class="pre">Detector.getPeriod()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#slsdet.Detector.getPeriodLeft"><code class="docutils literal notranslate"><span class="pre">Detector.getPeriodLeft()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#slsdet.Detector.getPolarity"><code class="docutils literal notranslate"><span class="pre">Detector.getPolarity()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#slsdet.Detector.getPortPerModuleGeometry"><code class="docutils literal notranslate"><span class="pre">Detector.getPortPerModuleGeometry()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#slsdet.Detector.getPortSize"><code class="docutils literal notranslate"><span class="pre">Detector.getPortSize()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#slsdet.Detector.getPower"><code class="docutils literal notranslate"><span class="pre">Detector.getPower()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#slsdet.Detector.getPowerChip"><code class="docutils literal notranslate"><span class="pre">Detector.getPowerChip()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#slsdet.Detector.getPowerIndex"><code class="docutils literal notranslate"><span class="pre">Detector.getPowerIndex()</span></code></a></li>
@@ -306,7 +314,6 @@
 <li class="toctree-l3"><a class="reference internal" href="#slsdet.Detector.getPowerNames"><code class="docutils literal notranslate"><span class="pre">Detector.getPowerNames()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#slsdet.Detector.getPumpProbe"><code class="docutils literal notranslate"><span class="pre">Detector.getPumpProbe()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#slsdet.Detector.getQuad"><code class="docutils literal notranslate"><span class="pre">Detector.getQuad()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#slsdet.Detector.getROI"><code class="docutils literal notranslate"><span class="pre">Detector.getROI()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#slsdet.Detector.getRUNClock"><code class="docutils literal notranslate"><span class="pre">Detector.getRUNClock()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#slsdet.Detector.getRateCorrection"><code class="docutils literal notranslate"><span class="pre">Detector.getRateCorrection()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#slsdet.Detector.getReadNRows"><code class="docutils literal notranslate"><span class="pre">Detector.getReadNRows()</span></code></a></li>
@@ -320,6 +327,7 @@
 <li class="toctree-l3"><a class="reference internal" href="#slsdet.Detector.getRxCurrentFrameIndex"><code class="docutils literal notranslate"><span class="pre">Detector.getRxCurrentFrameIndex()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#slsdet.Detector.getRxDbitList"><code class="docutils literal notranslate"><span class="pre">Detector.getRxDbitList()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#slsdet.Detector.getRxDbitOffset"><code class="docutils literal notranslate"><span class="pre">Detector.getRxDbitOffset()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#slsdet.Detector.getRxDbitReorder"><code class="docutils literal notranslate"><span class="pre">Detector.getRxDbitReorder()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#slsdet.Detector.getRxFifoDepth"><code class="docutils literal notranslate"><span class="pre">Detector.getRxFifoDepth()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#slsdet.Detector.getRxFrameDiscardPolicy"><code class="docutils literal notranslate"><span class="pre">Detector.getRxFrameDiscardPolicy()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#slsdet.Detector.getRxHostname"><code class="docutils literal notranslate"><span class="pre">Detector.getRxHostname()</span></code></a></li>
@@ -486,6 +494,7 @@
 <li class="toctree-l3"><a class="reference internal" href="#slsdet.Detector.rx_arping"><code class="docutils literal notranslate"><span class="pre">Detector.rx_arping</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#slsdet.Detector.rx_dbitlist"><code class="docutils literal notranslate"><span class="pre">Detector.rx_dbitlist</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#slsdet.Detector.rx_dbitoffset"><code class="docutils literal notranslate"><span class="pre">Detector.rx_dbitoffset</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#slsdet.Detector.rx_dbitreorder"><code class="docutils literal notranslate"><span class="pre">Detector.rx_dbitreorder</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#slsdet.Detector.rx_discardpolicy"><code class="docutils literal notranslate"><span class="pre">Detector.rx_discardpolicy</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#slsdet.Detector.rx_fifodepth"><code class="docutils literal notranslate"><span class="pre">Detector.rx_fifodepth</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#slsdet.Detector.rx_frameindex"><code class="docutils literal notranslate"><span class="pre">Detector.rx_frameindex</span></code></a></li>
@@ -628,7 +637,8 @@
 <li class="toctree-l3"><a class="reference internal" href="#slsdet.Detector.setPatternLoopCycles"><code class="docutils literal notranslate"><span class="pre">Detector.setPatternLoopCycles()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#slsdet.Detector.setPatternMask"><code class="docutils literal notranslate"><span class="pre">Detector.setPatternMask()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#slsdet.Detector.setPatternWaitAddr"><code class="docutils literal notranslate"><span class="pre">Detector.setPatternWaitAddr()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#slsdet.Detector.setPatternWaitTime"><code class="docutils literal notranslate"><span class="pre">Detector.setPatternWaitTime()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#slsdet.Detector.setPatternWaitClocks"><code class="docutils literal notranslate"><span class="pre">Detector.setPatternWaitClocks()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#slsdet.Detector.setPatternWaitInterval"><code class="docutils literal notranslate"><span class="pre">Detector.setPatternWaitInterval()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#slsdet.Detector.setPatternWord"><code class="docutils literal notranslate"><span class="pre">Detector.setPatternWord()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#slsdet.Detector.setPedestalMode"><code class="docutils literal notranslate"><span class="pre">Detector.setPedestalMode()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#slsdet.Detector.setPeriod"><code class="docutils literal notranslate"><span class="pre">Detector.setPeriod()</span></code></a></li>
@@ -639,7 +649,6 @@
 <li class="toctree-l3"><a class="reference internal" href="#slsdet.Detector.setPowerNames"><code class="docutils literal notranslate"><span class="pre">Detector.setPowerNames()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#slsdet.Detector.setPumpProbe"><code class="docutils literal notranslate"><span class="pre">Detector.setPumpProbe()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#slsdet.Detector.setQuad"><code class="docutils literal notranslate"><span class="pre">Detector.setQuad()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#slsdet.Detector.setROI"><code class="docutils literal notranslate"><span class="pre">Detector.setROI()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#slsdet.Detector.setRUNClock"><code class="docutils literal notranslate"><span class="pre">Detector.setRUNClock()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#slsdet.Detector.setRateCorrection"><code class="docutils literal notranslate"><span class="pre">Detector.setRateCorrection()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#slsdet.Detector.setReadNRows"><code class="docutils literal notranslate"><span class="pre">Detector.setReadNRows()</span></code></a></li>
@@ -649,6 +658,7 @@
 <li class="toctree-l3"><a class="reference internal" href="#slsdet.Detector.setRxArping"><code class="docutils literal notranslate"><span class="pre">Detector.setRxArping()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#slsdet.Detector.setRxDbitList"><code class="docutils literal notranslate"><span class="pre">Detector.setRxDbitList()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#slsdet.Detector.setRxDbitOffset"><code class="docutils literal notranslate"><span class="pre">Detector.setRxDbitOffset()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#slsdet.Detector.setRxDbitReorder"><code class="docutils literal notranslate"><span class="pre">Detector.setRxDbitReorder()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#slsdet.Detector.setRxFifoDepth"><code class="docutils literal notranslate"><span class="pre">Detector.setRxFifoDepth()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#slsdet.Detector.setRxFrameDiscardPolicy"><code class="docutils literal notranslate"><span class="pre">Detector.setRxFrameDiscardPolicy()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#slsdet.Detector.setRxHostname"><code class="docutils literal notranslate"><span class="pre">Detector.setRxHostname()</span></code></a></li>
@@ -795,11 +805,12 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="pyenums.html">Enums</a></li>
 <li class="toctree-l1"><a class="reference internal" href="pyexamples.html">Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pyPatternGenerator.html">PatternGenerator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pattern.html">Pattern</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Command line</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="commandline.html">Command line interface</a></li>
-<li class="toctree-l1"><a class="reference internal" href="quick_start_guide.html">Quick Start Guide</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Developer</span></p>
 <ul>
@@ -833,6 +844,7 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="fileformat.html">File format</a></li>
 <li class="toctree-l1"><a class="reference internal" href="slsreceiverheaderformat.html">SLS Receiver Header Format</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dataformat.html">Detector Image Size and Format</a></li>
 <li class="toctree-l1"><a class="reference internal" href="masterfileattributes.html">Master File Attributes</a></li>
 <li class="toctree-l1"><a class="reference internal" href="binaryfileformat.html">Binary File Format</a></li>
 <li class="toctree-l1"><a class="reference internal" href="hdf5fileformat.html">HDF5 File Format</a></li>
@@ -940,17 +952,11 @@ C++ API directly and the simplified exptime property.</p>
 <dl class="py property">
 <dt class="sig sig-object py" id="slsdet.Detector.adcphase">
 <em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">adcphase</span></span><a class="headerlink" href="#slsdet.Detector.adcphase" title="Link to this definition"></a></dt>
-<dd><p>[Gotthard][Jungfrau][Moench][CTB] Sets phase shift of ADC clock.</p>
+<dd><p>[Jungfrau][Moench][CTB] Sets phase shift of ADC clock.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>[Jungfrau][Moench] Absolute phase shift. Changing Speed also resets adcphase to recommended defaults.</p>
 <p>[Ctb] Absolute phase shift. Changing adcclk also resets adcphase and sets it to previous values.</p>
-<p>[Gotthard] Relative phase shift.</p>
-<dl class="field-list simple">
-<dt class="field-odd">getter<span class="colon">:</span></dt>
-<dd class="field-odd"><p>Not implemented for Gotthard</p>
-</dd>
-</dl>
 </div>
 </dd></dl>
 
@@ -963,7 +969,7 @@ C++ API directly and the simplified exptime property.</p>
 <dl class="py property">
 <dt class="sig sig-object py" id="slsdet.Detector.adcreg">
 <em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">adcreg</span></span><a class="headerlink" href="#slsdet.Detector.adcreg" title="Link to this definition"></a></dt>
-<dd><p>[Jungfrau][Moench][Ctb][Gotthard] Writes to an adc register</p>
+<dd><p>[Jungfrau][Moench][Ctb] Writes to an adc register</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Advanced user Function!</p>
@@ -1118,11 +1124,6 @@ Also changes clkdiv 2, 3, 4</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="slsdet.Detector.clearBit">
 <span class="sig-name descname"><span class="pre">clearBit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">slsdet._slsdet.CppDetectorApi</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg0</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg1</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg2</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg3</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">[]</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#slsdet.Detector.clearBit" title="Link to this definition"></a></dt>
-<dd></dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="slsdet.Detector.clearROI">
-<span class="sig-name descname"><span class="pre">clearROI</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">slsdet._slsdet.CppDetectorApi</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg0</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">[]</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#slsdet.Detector.clearROI" title="Link to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
@@ -1313,6 +1314,11 @@ Enabling counters sets vth dacs to remembered values and disabling sets them to 
 </div>
 </dd></dl>
 
+<dl class="py method">
+<dt class="sig sig-object py" id="slsdet.Detector.create_patwaittime_property">
+<span class="sig-name descname"><span class="pre">create_patwaittime_property</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#slsdet.Detector.create_patwaittime_property" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
 <dl class="py property">
 <dt class="sig sig-object py" id="slsdet.Detector.currentsource">
 <em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">currentsource</span></span><a class="headerlink" href="#slsdet.Detector.currentsource" title="Link to this definition"></a></dt>
@@ -1373,7 +1379,7 @@ see python/examples/use_currentsource.py</p>
 <dl class="py property">
 <dt class="sig sig-object py" id="slsdet.Detector.delay">
 <em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">delay</span></span><a class="headerlink" href="#slsdet.Detector.delay" title="Link to this definition"></a></dt>
-<dd><p>[Gotthard][Jungfrau][Moench][CTB][Mythen3][Gotthard2][Xilinx Ctb] Delay after trigger, accepts either a value in seconds, DurationWrapper or datetime.timedelta</p>
+<dd><p>[Jungfrau][Moench][CTB][Mythen3][Gotthard2][Xilinx Ctb] Delay after trigger, accepts either a value in seconds, DurationWrapper or datetime.timedelta</p>
 <dl class="field-list simple">
 <dt class="field-odd">Getter<span class="colon">:</span></dt>
 <dd class="field-odd"><p>always returns in seconds. To get in DurationWrapper, use getDelayAfterTrigger</p>
@@ -1412,7 +1418,7 @@ see python/examples/use_currentsource.py</p>
 <dl class="py property">
 <dt class="sig sig-object py" id="slsdet.Detector.delayl">
 <em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">delayl</span></span><a class="headerlink" href="#slsdet.Detector.delayl" title="Link to this definition"></a></dt>
-<dd><p>[Gotthard][Jungfrau][Moench][CTB][Mythen3][Gotthard2][Xilinx Ctb] Delay left after trigger during acquisition, accepts either a value in seconds, datetime.timedelta or DurationWrapper</p>
+<dd><p>[Jungfrau][Moench][CTB][Mythen3][Gotthard2][Xilinx Ctb] Delay left after trigger during acquisition, accepts either a value in seconds, datetime.timedelta or DurationWrapper</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>[Gotthard2] only in continuous mdoe.</p>
@@ -1477,7 +1483,7 @@ see python/examples/use_currentsource.py</p>
 <p class="admonition-title">Note</p>
 <p>[Eiger] Options: 4, 8, 12, 16, 32. If set to 32, also sets clkdivider to 2 (quarter speed), else to 0 (full speed)</p>
 <p>[Mythen3] Options: 8, 16, 32</p>
-<p>[Jungfrau][Moench][Gotthard][Ctb][Mythen3][Gotthard2][Xilinx Ctb] 16</p>
+<p>[Jungfrau][Moench][Ctb][Mythen3][Gotthard2][Xilinx Ctb] 16</p>
 </div>
 </dd></dl>
 
@@ -1552,27 +1558,6 @@ see python/examples/use_currentsource.py</p>
 <span class="gp">&gt;&gt;&gt;</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">d</span><span class="o">.</span><span class="n">getExptime</span><span class="p">()</span>
 <span class="go">[sls::DurationWrapper(total_seconds: 1e-08 count: 10)]</span>
-</pre></div>
-</div>
-</dd></dl>
-
-<dl class="py property">
-<dt class="sig sig-object py" id="slsdet.Detector.exptimel">
-<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">exptimel</span></span><a class="headerlink" href="#slsdet.Detector.exptimel" title="Link to this definition"></a></dt>
-<dd><p>[Gotthard] Exposure time left for current frame.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Getter<span class="colon">:</span></dt>
-<dd class="field-odd"><p>always returns in seconds. To get in DurationWrapper, use getExptimeLeft</p>
-</dd>
-<dt class="field-even">Setter<span class="colon">:</span></dt>
-<dd class="field-even"><p>Not Implemented</p>
-</dd>
-</dl>
-<p class="rubric">Example</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">d</span><span class="o">.</span><span class="n">exptimel</span>
-<span class="go">181.23</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">d</span><span class="o">.</span><span class="n">getExptimeLeft</span><span class="p">()</span>
-<span class="go">[sls::DurationWrapper(total_seconds: 181.23 count: 181230000000)]</span>
 </pre></div>
 </div>
 </dd></dl>
@@ -1728,7 +1713,7 @@ eg. file name: run_d0_f0_5.raw</p>
 <dl class="py property">
 <dt class="sig sig-object py" id="slsdet.Detector.framesl">
 <em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">framesl</span></span><a class="headerlink" href="#slsdet.Detector.framesl" title="Link to this definition"></a></dt>
-<dd><p>[Gotthard][Jungfrau][Moench][Mythen3][Gotthard2][CTB][Xilinx CTB] Number of frames left in acquisition.</p>
+<dd><p>[Jungfrau][Moench][Mythen3][Gotthard2][CTB][Xilinx CTB] Number of frames left in acquisition.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>[Gotthard2] only in continuous auto mode.</p>
@@ -2228,11 +2213,6 @@ Enum: gainMode</p>
 <dd></dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="slsdet.Detector.getExptimeLeft">
-<span class="sig-name descname"><span class="pre">getExptimeLeft</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">slsdet._slsdet.CppDetectorApi</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg0</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">[]</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">DurationWrapper</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#slsdet.Detector.getExptimeLeft" title="Link to this definition"></a></dt>
-<dd></dd></dl>
-
-<dl class="py method">
 <dt class="sig sig-object py" id="slsdet.Detector.getExternalSampling">
 <span class="sig-name descname"><span class="pre">getExternalSampling</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">slsdet._slsdet.CppDetectorApi</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg0</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">[]</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">bool</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#slsdet.Detector.getExternalSampling" title="Link to this definition"></a></dt>
 <dd></dd></dl>
@@ -2355,11 +2335,6 @@ Enum: gainMode</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="slsdet.Detector.getImageTestMode">
 <span class="sig-name descname"><span class="pre">getImageTestMode</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">slsdet._slsdet.CppDetectorApi</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg0</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">[]</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#slsdet.Detector.getImageTestMode" title="Link to this definition"></a></dt>
-<dd></dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="slsdet.Detector.getIndividualRxROIs">
-<span class="sig-name descname"><span class="pre">getIndividualRxROIs</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">slsdet._slsdet.CppDetectorApi</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg0</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list[slsDetectorDefs::ROI]</span></span></span><a class="headerlink" href="#slsdet.Detector.getIndividualRxROIs" title="Link to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
@@ -2613,8 +2588,13 @@ Enum: gainMode</p>
 <dd></dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="slsdet.Detector.getPatternWaitTime">
-<span class="sig-name descname"><span class="pre">getPatternWaitTime</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">slsdet._slsdet.CppDetectorApi</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg0</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg1</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">[]</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#slsdet.Detector.getPatternWaitTime" title="Link to this definition"></a></dt>
+<dt class="sig sig-object py" id="slsdet.Detector.getPatternWaitClocks">
+<span class="sig-name descname"><span class="pre">getPatternWaitClocks</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">slsdet._slsdet.CppDetectorApi</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg0</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg1</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">[]</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#slsdet.Detector.getPatternWaitClocks" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="slsdet.Detector.getPatternWaitInterval">
+<span class="sig-name descname"><span class="pre">getPatternWaitInterval</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">slsdet._slsdet.CppDetectorApi</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg0</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg1</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">[]</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">DurationWrapper</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#slsdet.Detector.getPatternWaitInterval" title="Link to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
@@ -2640,6 +2620,16 @@ Enum: gainMode</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="slsdet.Detector.getPolarity">
 <span class="sig-name descname"><span class="pre">getPolarity</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">slsdet._slsdet.CppDetectorApi</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg0</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">[]</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">slsdet._slsdet.slsDetectorDefs.polarity</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#slsdet.Detector.getPolarity" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="slsdet.Detector.getPortPerModuleGeometry">
+<span class="sig-name descname"><span class="pre">getPortPerModuleGeometry</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">slsdet._slsdet.CppDetectorApi</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">slsdet._slsdet.xy</span></span></span><a class="headerlink" href="#slsdet.Detector.getPortPerModuleGeometry" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="slsdet.Detector.getPortSize">
+<span class="sig-name descname"><span class="pre">getPortSize</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">slsdet._slsdet.CppDetectorApi</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg0</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">[]</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">slsdet._slsdet.xy</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#slsdet.Detector.getPortSize" title="Link to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
@@ -2680,11 +2670,6 @@ Enum: gainMode</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="slsdet.Detector.getQuad">
 <span class="sig-name descname"><span class="pre">getQuad</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">slsdet._slsdet.CppDetectorApi</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg0</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">[]</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">bool</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#slsdet.Detector.getQuad" title="Link to this definition"></a></dt>
-<dd></dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="slsdet.Detector.getROI">
-<span class="sig-name descname"><span class="pre">getROI</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">slsdet._slsdet.CppDetectorApi</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg0</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">[]</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list[slsDetectorDefs::ROI]</span></span></span><a class="headerlink" href="#slsdet.Detector.getROI" title="Link to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
@@ -2753,6 +2738,11 @@ Enum: gainMode</p>
 <dd></dd></dl>
 
 <dl class="py method">
+<dt class="sig sig-object py" id="slsdet.Detector.getRxDbitReorder">
+<span class="sig-name descname"><span class="pre">getRxDbitReorder</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">slsdet._slsdet.CppDetectorApi</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg0</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">[]</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">bool</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#slsdet.Detector.getRxDbitReorder" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
 <dt class="sig sig-object py" id="slsdet.Detector.getRxFifoDepth">
 <span class="sig-name descname"><span class="pre">getRxFifoDepth</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">slsdet._slsdet.CppDetectorApi</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg0</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">[]</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#slsdet.Detector.getRxFifoDepth" title="Link to this definition"></a></dt>
 <dd></dd></dl>
@@ -2784,7 +2774,7 @@ Enum: gainMode</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="slsdet.Detector.getRxROI">
-<span class="sig-name descname"><span class="pre">getRxROI</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">slsdet._slsdet.CppDetectorApi</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">slsDetectorDefs::ROI</span></span></span><a class="headerlink" href="#slsdet.Detector.getRxROI" title="Link to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">getRxROI</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">slsdet._slsdet.CppDetectorApi</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg0</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">-1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list[slsDetectorDefs::ROI]</span></span></span><a class="headerlink" href="#slsdet.Detector.getRxROI" title="Link to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
@@ -3120,7 +3110,6 @@ Enum: gainMode</p>
 <dd><p>High voltage to the sensor in Voltage.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>[Gotthard] 0, 90, 110, 120, 150, 180, 200</p>
 <p>[Eiger][Mythen3][Gotthard2] 0 - 200</p>
 <p>[Jungfrau][Moench][Ctb] 0, 60 - 200</p>
 </div>
@@ -3286,7 +3275,7 @@ Virtual servers can already use the port in hostname separated by ‘:’ and po
 <dt class="sig sig-object py" id="slsdet.Detector.master">
 <em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">master</span></span><a class="headerlink" href="#slsdet.Detector.master" title="Link to this definition"></a></dt>
 <dd><p>[Eiger][Gotthard2][Jungfrau][Moench] Sets (half) module to master and other(s) to slaves.</p>
-<p>[Gotthard][Gotthard2][Mythen3][Eiger][Jungfrau][Moench] Gets if the current (half) module is master.</p>
+<p>[Gotthard2][Mythen3][Eiger][Jungfrau][Moench] Gets if the current (half) module is master.</p>
 </dd></dl>
 
 <dl class="py property">
@@ -3676,6 +3665,16 @@ file</p>
 <dt class="sig sig-object py" id="slsdet.Detector.patwaittime">
 <em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">patwaittime</span></span><a class="headerlink" href="#slsdet.Detector.patwaittime" title="Link to this definition"></a></dt>
 <dd><p>[Ctb][Mythen3][Xilinx Ctb] Wait time in clock cycles of loop level provided.</p>
+<section id="info">
+<h2>Info<a class="headerlink" href="#info" title="Link to this heading"></a></h2>
+<dl class="field-list simple">
+<dt class="field-odd">getter<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Always return in clock cycles. To get in DurationWrapper, use getPatternWaitInterval</p>
+</dd>
+<dt class="field-even">setter<span class="colon">:</span></dt>
+<dd class="field-even"><p>Accepts either a value in clock cycles or a time unit (timedelta, DurationWrapper)</p>
+</dd>
+</dl>
 <p class="rubric">Example</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">d</span><span class="o">.</span><span class="n">patwaittime</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mi">5</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">d</span><span class="o">.</span><span class="n">patwaittime</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
@@ -3684,26 +3683,157 @@ file</p>
 <span class="go">0: 5</span>
 <span class="go">1: 20</span>
 <span class="go">2: 30</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># using timedelta (up to microseconds precision)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span><span class="w"> </span><span class="nn">datetime</span><span class="w"> </span><span class="kn">import</span> <span class="n">timedelta</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">d</span><span class="o">.</span><span class="n">patwaittime</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">timedelta</span><span class="p">(</span><span class="n">seconds</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">microseconds</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># using DurationWrapper to set in seconds</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span><span class="w"> </span><span class="nn">slsdet</span><span class="w"> </span><span class="kn">import</span> <span class="n">DurationWrapper</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">d</span><span class="o">.</span><span class="n">patwaittime</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">DurationWrapper</span><span class="p">(</span><span class="mf">1.2</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># using DurationWrapper to set in ns</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span> <span class="o">=</span> <span class="n">DurationWrapper</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span><span class="o">.</span><span class="n">set_count</span><span class="p">(</span><span class="mi">500</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">d</span><span class="o">.</span><span class="n">patwaittime</span> <span class="o">=</span> <span class="n">t</span>
+<span class="gp">&gt;&gt;&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># to get in clock cycles</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">d</span><span class="o">.</span><span class="n">patwaittime</span>
+<span class="go">1000</span>
+<span class="gp">&gt;&gt;&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">d</span><span class="o">.</span><span class="n">getPatternWaitInterval</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="go">sls::DurationWrapper(total_seconds: 1.23 count: 1230000000)</span>
 </pre></div>
 </div>
+</section>
 </dd></dl>
 
 <dl class="py property">
 <dt class="sig sig-object py" id="slsdet.Detector.patwaittime0">
 <em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">patwaittime0</span></span><a class="headerlink" href="#slsdet.Detector.patwaittime0" title="Link to this definition"></a></dt>
-<dd><p>[Ctb][Mythen3][Xilinx Ctb] Wait 0 time in clock cycles.</p>
+<dd><p>Deprecated command. Use patwaittime instead.
+[Ctb][Mythen3][Xilinx Ctb] Wait time in clock cycles of loop level 0 provided.</p>
+<section id="id1">
+<h2>Info<a class="headerlink" href="#id1" title="Link to this heading"></a></h2>
+<dl class="field-list simple">
+<dt class="field-odd">getter<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Always return in clock cycles. To get in DurationWrapper, use getPatternWaitInterval</p>
+</dd>
+<dt class="field-even">setter<span class="colon">:</span></dt>
+<dd class="field-even"><p>Accepts either a value in clock cycles or a time unit (timedelta, DurationWrapper)</p>
+</dd>
+</dl>
+<p class="rubric">Example</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">d</span><span class="o">.</span><span class="n">patwaittime0</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">d</span><span class="o">.</span><span class="n">patwaittime0</span>
+<span class="go">5</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># using timedelta (up to microseconds precision)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span><span class="w"> </span><span class="nn">datetime</span><span class="w"> </span><span class="kn">import</span> <span class="n">timedelta</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">d</span><span class="o">.</span><span class="n">patwaittime0</span> <span class="o">=</span> <span class="n">timedelta</span><span class="p">(</span><span class="n">seconds</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">microseconds</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># using DurationWrapper to set in seconds</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span><span class="w"> </span><span class="nn">slsdet</span><span class="w"> </span><span class="kn">import</span> <span class="n">DurationWrapper</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">d</span><span class="o">.</span><span class="n">patwaittime0</span> <span class="o">=</span> <span class="n">DurationWrapper</span><span class="p">(</span><span class="mf">1.2</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># using DurationWrapper to set in ns</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span> <span class="o">=</span> <span class="n">DurationWrapper</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span><span class="o">.</span><span class="n">set_count</span><span class="p">(</span><span class="mi">500</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">d</span><span class="o">.</span><span class="n">patwaittime0</span> <span class="o">=</span> <span class="n">t</span>
+<span class="gp">&gt;&gt;&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># to get in clock cycles</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">d</span><span class="o">.</span><span class="n">patwaittime0</span>
+<span class="go">1000</span>
+<span class="gp">&gt;&gt;&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">d</span><span class="o">.</span><span class="n">getPatternWaitInterval</span><span class="p">(</span><span class="n">level</span><span class="p">)</span>
+<span class="go">sls::DurationWrapper(total_seconds: 1.23 count: 1230000000)</span>
+</pre></div>
+</div>
+</section>
 </dd></dl>
 
 <dl class="py property">
 <dt class="sig sig-object py" id="slsdet.Detector.patwaittime1">
 <em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">patwaittime1</span></span><a class="headerlink" href="#slsdet.Detector.patwaittime1" title="Link to this definition"></a></dt>
-<dd><p>[Ctb][Mythen3][Xilinx Ctb] Wait 1 time in clock cycles.</p>
+<dd><p>Deprecated command. Use patwaittime instead.
+[Ctb][Mythen3][Xilinx Ctb] Wait time in clock cycles of loop level 1 provided.</p>
+<section id="id2">
+<h2>Info<a class="headerlink" href="#id2" title="Link to this heading"></a></h2>
+<dl class="field-list simple">
+<dt class="field-odd">getter<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Always return in clock cycles. To get in DurationWrapper, use getPatternWaitInterval</p>
+</dd>
+<dt class="field-even">setter<span class="colon">:</span></dt>
+<dd class="field-even"><p>Accepts either a value in clock cycles or a time unit (timedelta, DurationWrapper)</p>
+</dd>
+</dl>
+<p class="rubric">Example</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">d</span><span class="o">.</span><span class="n">patwaittime1</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">d</span><span class="o">.</span><span class="n">patwaittime1</span>
+<span class="go">5</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># using timedelta (up to microseconds precision)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span><span class="w"> </span><span class="nn">datetime</span><span class="w"> </span><span class="kn">import</span> <span class="n">timedelta</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">d</span><span class="o">.</span><span class="n">patwaittime1</span> <span class="o">=</span> <span class="n">timedelta</span><span class="p">(</span><span class="n">seconds</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">microseconds</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># using DurationWrapper to set in seconds</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span><span class="w"> </span><span class="nn">slsdet</span><span class="w"> </span><span class="kn">import</span> <span class="n">DurationWrapper</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">d</span><span class="o">.</span><span class="n">patwaittime1</span> <span class="o">=</span> <span class="n">DurationWrapper</span><span class="p">(</span><span class="mf">1.2</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># using DurationWrapper to set in ns</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span> <span class="o">=</span> <span class="n">DurationWrapper</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span><span class="o">.</span><span class="n">set_count</span><span class="p">(</span><span class="mi">500</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">d</span><span class="o">.</span><span class="n">patwaittime1</span> <span class="o">=</span> <span class="n">t</span>
+<span class="gp">&gt;&gt;&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># to get in clock cycles</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">d</span><span class="o">.</span><span class="n">patwaittime1</span>
+<span class="go">1000</span>
+<span class="gp">&gt;&gt;&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">d</span><span class="o">.</span><span class="n">getPatternWaitInterval</span><span class="p">(</span><span class="n">level</span><span class="p">)</span>
+<span class="go">sls::DurationWrapper(total_seconds: 1.23 count: 1230000000)</span>
+</pre></div>
+</div>
+</section>
 </dd></dl>
 
 <dl class="py property">
 <dt class="sig sig-object py" id="slsdet.Detector.patwaittime2">
 <em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">patwaittime2</span></span><a class="headerlink" href="#slsdet.Detector.patwaittime2" title="Link to this definition"></a></dt>
-<dd><p>[Ctb][Mythen3][Xilinx Ctb] Wait 2 time in clock cycles.</p>
+<dd><p>Deprecated command. Use patwaittime instead.
+[Ctb][Mythen3][Xilinx Ctb] Wait time in clock cycles of loop level 2 provided.</p>
+<section id="id3">
+<h2>Info<a class="headerlink" href="#id3" title="Link to this heading"></a></h2>
+<dl class="field-list simple">
+<dt class="field-odd">getter<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Always return in clock cycles. To get in DurationWrapper, use getPatternWaitInterval</p>
+</dd>
+<dt class="field-even">setter<span class="colon">:</span></dt>
+<dd class="field-even"><p>Accepts either a value in clock cycles or a time unit (timedelta, DurationWrapper)</p>
+</dd>
+</dl>
+<p class="rubric">Example</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">d</span><span class="o">.</span><span class="n">patwaittime2</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">d</span><span class="o">.</span><span class="n">patwaittime2</span>
+<span class="go">5</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># using timedelta (up to microseconds precision)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span><span class="w"> </span><span class="nn">datetime</span><span class="w"> </span><span class="kn">import</span> <span class="n">timedelta</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">d</span><span class="o">.</span><span class="n">patwaittime2</span> <span class="o">=</span> <span class="n">timedelta</span><span class="p">(</span><span class="n">seconds</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">microseconds</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># using DurationWrapper to set in seconds</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span><span class="w"> </span><span class="nn">slsdet</span><span class="w"> </span><span class="kn">import</span> <span class="n">DurationWrapper</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">d</span><span class="o">.</span><span class="n">patwaittime2</span> <span class="o">=</span> <span class="n">DurationWrapper</span><span class="p">(</span><span class="mf">1.2</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># using DurationWrapper to set in ns</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span> <span class="o">=</span> <span class="n">DurationWrapper</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span><span class="o">.</span><span class="n">set_count</span><span class="p">(</span><span class="mi">500</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">d</span><span class="o">.</span><span class="n">patwaittime2</span> <span class="o">=</span> <span class="n">t</span>
+<span class="gp">&gt;&gt;&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># to get in clock cycles</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">d</span><span class="o">.</span><span class="n">patwaittime2</span>
+<span class="go">1000</span>
+<span class="gp">&gt;&gt;&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">d</span><span class="o">.</span><span class="n">getPatternWaitInterval</span><span class="p">(</span><span class="n">level</span><span class="p">)</span>
+<span class="go">sls::DurationWrapper(total_seconds: 1.23 count: 1230000000)</span>
+</pre></div>
+</div>
+</section>
 </dd></dl>
 
 <dl class="py property">
@@ -3762,7 +3892,7 @@ see python/examples/use_pedestalmode.py</p>
 <dl class="py property">
 <dt class="sig sig-object py" id="slsdet.Detector.periodl">
 <em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">periodl</span></span><a class="headerlink" href="#slsdet.Detector.periodl" title="Link to this definition"></a></dt>
-<dd><p>[Gotthard][Jungfrau][Moench][CTB][Mythen3][Gotthard2][Xilinx Ctb] Period left for current frame.</p>
+<dd><p>[Jungfrau][Moench][CTB][Mythen3][Gotthard2][Xilinx Ctb] Period left for current frame.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>[Gotthard2] only in continuous mode.</p>
@@ -4058,6 +4188,12 @@ Enum: readoutMode</p>
 <dt class="sig sig-object py" id="slsdet.Detector.rx_dbitoffset">
 <em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">rx_dbitoffset</span></span><a class="headerlink" href="#slsdet.Detector.rx_dbitoffset" title="Link to this definition"></a></dt>
 <dd><p>[Ctb] Offset in bytes in digital data to skip in receiver.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="slsdet.Detector.rx_dbitreorder">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">rx_dbitreorder</span></span><a class="headerlink" href="#slsdet.Detector.rx_dbitreorder" title="Link to this definition"></a></dt>
+<dd><p>[Ctb] Reorder digital data to group together all samples per signal. Default is 1. Setting to 0 means ‘do not reorder’ and to keep what the board spits out, which is that all signals in a sample are grouped together.</p>
 </dd></dl>
 
 <dl class="py property">
@@ -4400,7 +4536,7 @@ see python/examples/use_scan.py</p>
 <dl class="py property">
 <dt class="sig sig-object py" id="slsdet.Detector.serialnumber">
 <em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">serialnumber</span></span><a class="headerlink" href="#slsdet.Detector.serialnumber" title="Link to this definition"></a></dt>
-<dd><p>Jungfrau][Gotthard][Mythen3][Gotthard2][CTB][Moench] Serial number of detector</p>
+<dd><p>Jungfrau][Mythen3][Gotthard2][CTB][Moench] Serial number of detector</p>
 </dd></dl>
 
 <dl class="py method">
@@ -4960,8 +5096,13 @@ see python/examples/use_scan.py</p>
 <dd></dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="slsdet.Detector.setPatternWaitTime">
-<span class="sig-name descname"><span class="pre">setPatternWaitTime</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">slsdet._slsdet.CppDetectorApi</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg0</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg1</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg2</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">[]</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#slsdet.Detector.setPatternWaitTime" title="Link to this definition"></a></dt>
+<dt class="sig sig-object py" id="slsdet.Detector.setPatternWaitClocks">
+<span class="sig-name descname"><span class="pre">setPatternWaitClocks</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">slsdet._slsdet.CppDetectorApi</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg0</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg1</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg2</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">[]</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#slsdet.Detector.setPatternWaitClocks" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="slsdet.Detector.setPatternWaitInterval">
+<span class="sig-name descname"><span class="pre">setPatternWaitInterval</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">slsdet._slsdet.CppDetectorApi</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg0</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg1</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">DurationWrapper</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg2</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">[]</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#slsdet.Detector.setPatternWaitInterval" title="Link to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
@@ -5015,11 +5156,6 @@ see python/examples/use_scan.py</p>
 <dd></dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="slsdet.Detector.setROI">
-<span class="sig-name descname"><span class="pre">setROI</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self:</span> <span class="pre">slsdet._slsdet.CppDetectorApi</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg0:</span> <span class="pre">slsDetectorDefs::ROI</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg1:</span> <span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#slsdet.Detector.setROI" title="Link to this definition"></a></dt>
-<dd></dd></dl>
-
-<dl class="py method">
 <dt class="sig sig-object py" id="slsdet.Detector.setRUNClock">
 <span class="sig-name descname"><span class="pre">setRUNClock</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">slsdet._slsdet.CppDetectorApi</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg0</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg1</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">[]</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#slsdet.Detector.setRUNClock" title="Link to this definition"></a></dt>
 <dd></dd></dl>
@@ -5065,6 +5201,11 @@ see python/examples/use_scan.py</p>
 <dd></dd></dl>
 
 <dl class="py method">
+<dt class="sig sig-object py" id="slsdet.Detector.setRxDbitReorder">
+<span class="sig-name descname"><span class="pre">setRxDbitReorder</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">slsdet._slsdet.CppDetectorApi</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg0</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg1</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">[]</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#slsdet.Detector.setRxDbitReorder" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
 <dt class="sig sig-object py" id="slsdet.Detector.setRxFifoDepth">
 <span class="sig-name descname"><span class="pre">setRxFifoDepth</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">slsdet._slsdet.CppDetectorApi</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg0</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg1</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">[]</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#slsdet.Detector.setRxFifoDepth" title="Link to this definition"></a></dt>
 <dd></dd></dl>
@@ -5096,7 +5237,7 @@ see python/examples/use_scan.py</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="slsdet.Detector.setRxROI">
-<span class="sig-name descname"><span class="pre">setRxROI</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self:</span> <span class="pre">slsdet._slsdet.CppDetectorApi</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg0:</span> <span class="pre">slsDetectorDefs::ROI</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#slsdet.Detector.setRxROI" title="Link to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">setRxROI</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">slsdet._slsdet.CppDetectorApi</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg0</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list[slsDetectorDefs::ROI]</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#slsdet.Detector.setRxROI" title="Link to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
@@ -5358,7 +5499,6 @@ Enum: detectorSettings</p>
 <p class="admonition-title">Note</p>
 <p>[Eiger] Use threshold command to load settings
 [Jungfrau] GAIN0, HIGHGAIN0</p>
-<p>[Gotthard] DYNAMICGAIN, HIGHGAIN, LOWGAIN, MEDIUMGAIN, VERYHIGHGAIN</p>
 <p>[Gotthard2] DYNAMICGAIN, FIXGAIN1, FIXGAIN2</p>
 <p>[Eiger] settings loaded from file found in settingspath
 [Moench] G1_HIGHGAIN, G1_LOWGAIN, G2_HIGHCAP_HIGHGAIN, G2_HIGHCAP_LOWGAIN, G2_LOWCAP_HIGHGAIN, G2_LOWCAP_LOWGAIN, G4_HIGHGAIN, G4_LOWGAIN</p>
@@ -5728,7 +5868,7 @@ Enum: timingMode</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Default: AUTO_TIMING</p>
-<p>[Jungfrau][Moench][Gotthard][Ctb][Gotthard2][Xilinx Ctb] AUTO_TIMING, TRIGGER_EXPOSURE</p>
+<p>[Jungfrau][Moench][Ctb][Gotthard2][Xilinx Ctb] AUTO_TIMING, TRIGGER_EXPOSURE</p>
 <p>[Mythen3] AUTO_TIMING, TRIGGER_EXPOSURE, GATED, TRIGGER_GATED</p>
 <p>[Eiger] AUTO_TIMING, TRIGGER_EXPOSURE, GATED, BURST_TRIGGER</p>
 </div>
@@ -5789,7 +5929,7 @@ Enum: timingSourceType</p>
 <dl class="py property">
 <dt class="sig sig-object py" id="slsdet.Detector.triggersl">
 <em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">triggersl</span></span><a class="headerlink" href="#slsdet.Detector.triggersl" title="Link to this definition"></a></dt>
-<dd><p>[Gotthard][Jungfrau][Moench][Mythen3][Gotthard2][CTB][Xilinx CTB] Number of triggers left in acquisition.</p>
+<dd><p>[Jungfrau][Moench][Mythen3][Gotthard2][CTB][Xilinx CTB] Number of triggers left in acquisition.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Only when external trigger used.</p>
@@ -5860,7 +6000,7 @@ Enum: timingSourceType</p>
 <blockquote>
 <div><p>[Eiger] txdelay_left to (2 * mod_index * n_delay),</p>
 <p>[Eiger] txdelay_right to ((2 * mod_index + 1) * n_delay) and</p>
-<p>[Eiger] txdelay_frame to (2 <a href="#id1"><span class="problematic" id="id2">*</span></a>num_modules * n_delay)</p>
+<p>[Eiger] txdelay_frame to (2 <a href="#id4"><span class="problematic" id="id5">*</span></a>num_modules * n_delay)</p>
 <p>[Jungfrau][Moench][Mythen3] txdelay_frame to (num_modules * n_delay)</p>
 </div></blockquote>
 </div>
@@ -5904,7 +6044,7 @@ Enum: timingSourceType</p>
 <em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">type</span></span><a class="headerlink" href="#slsdet.Detector.type" title="Link to this definition"></a></dt>
 <dd><p>Returns detector type.
 Enum: detectorType
-[EIGER, JUNGFRAU, GOTTHARD, MOENCH, MYTHEN3, GOTTHARD2, CHIPTESTBOARD]</p>
+[EIGER, JUNGFRAU, MOENCH, MYTHEN3, GOTTHARD2, CHIPTESTBOARD]</p>
 <dl class="field-list simple">
 <dt class="field-odd">Setter<span class="colon">:</span></dt>
 <dd class="field-odd"><p>Not implemented</p>

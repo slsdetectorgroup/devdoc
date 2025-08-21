@@ -49,6 +49,14 @@
 <li class="toctree-l1"><a class="reference internal" href="dependencies.html">Dependencies</a></li>
 <li class="toctree-l1"><a class="reference internal" href="consuming.html">Consuming slsDetectorPackage</a></li>
 </ul>
+<p class="caption" role="heading"><span class="caption-text">how to</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="softwarearchitecture.html">Software Architecture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="configcommands.html">Setup Commands</a></li>
+<li class="toctree-l1"><a class="reference internal" href="quick_start_guide.html">Quick Start Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dataformat.html">Detector Image Size and Format</a></li>
+<li class="toctree-l1"><a class="reference internal" href="multidet.html">Using multiple detectors</a></li>
+</ul>
 <p class="caption" role="heading"><span class="caption-text">C++ API</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="detector.html">Detector</a></li>
@@ -62,11 +70,12 @@
 <li class="toctree-l1"><a class="reference internal" href="pydetector.html">Detector</a></li>
 <li class="toctree-l1"><a class="reference internal" href="pyenums.html">Enums</a></li>
 <li class="toctree-l1"><a class="reference internal" href="pyexamples.html">Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pyPatternGenerator.html">PatternGenerator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pattern.html">Pattern</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Command line</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="commandline.html">Command line interface</a></li>
-<li class="toctree-l1"><a class="reference internal" href="quick_start_guide.html">Quick Start Guide</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Developer</span></p>
 <ul>
@@ -100,6 +109,7 @@
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="fileformat.html">File format</a></li>
 <li class="toctree-l1"><a class="reference internal" href="slsreceiverheaderformat.html">SLS Receiver Header Format</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dataformat.html">Detector Image Size and Format</a></li>
 <li class="toctree-l1"><a class="reference internal" href="masterfileattributes.html">Master File Attributes</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Binary File Format</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#master-file">Master File</a></li>
@@ -110,7 +120,6 @@
 <li class="toctree-l3"><a class="reference internal" href="#gotthard2">Gotthard2</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#mythen3">Mythen3</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#moench">Moench</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#gotthard-i">Gotthard I</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#chip-test-board">Chip Test Board</a></li>
 </ul>
 </li>
@@ -152,7 +161,7 @@
            <div itemprop="articleBody">
              
   <section id="binary-file-format">
-<h1>Binary File Format<a class="headerlink" href="#binary-file-format" title="Link to this heading"></a></h1>
+<span id="id1"></span><h1>Binary File Format<a class="headerlink" href="#binary-file-format" title="Link to this heading"></a></h1>
 <p>This is the default file format that can be configured using command <a class="reference external" href="commandline.html#term-fformat-binary-hdf5">fformat</a>.</p>
 <blockquote>
 <div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sls_detector_put<span class="w"> </span>fformat<span class="w"> </span>binary
@@ -175,10 +184,11 @@
 <li><p>File Name: [fpath]/[fname]_dx_fy_[findex].raw <a class="reference internal" href="fileformat.html#file-name-format"><span class="std std-ref">Details here</span></a></p></li>
 <li><p>It store multiple frames sequentially, with total number of frames determined by <a class="reference external" href="commandline.html#term-rx_framesperfile-n_frames">rx_framesperfile</a> parameter.</p></li>
 <li><p>Each frame includes a <a class="reference internal" href="slsreceiverheaderformat.html#sls-receiver-header-format"><span class="std std-ref">**sls_receiver_header**</span></a> structure, followed by the actual frame data.</p></li>
+<li><p>More details on <a class="reference internal" href="slsreceiverheaderformat.html#sls-receiver-header-format"><span class="std std-ref">slsReceiverHeader</span></a> and the actual image data is described in the <a class="reference internal" href="dataformat.html#data-format"><span class="std std-ref">Detector Image Size and Format</span></a> section.</p></li>
 </ul>
 </section>
 <section id="json-master-file-examples">
-<span id="id1"></span><h2>JSON Master File Examples<a class="headerlink" href="#json-master-file-examples" title="Link to this heading"></a></h2>
+<span id="id2"></span><h2>JSON Master File Examples<a class="headerlink" href="#json-master-file-examples" title="Link to this heading"></a></h2>
 <section id="eiger">
 <h3>Eiger<a class="headerlink" href="#eiger" title="Link to this heading"></a></h3>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>{
@@ -452,60 +462,6 @@
 </pre></div>
 </div>
 </section>
-<section id="gotthard-i">
-<h3>Gotthard I<a class="headerlink" href="#gotthard-i" title="Link to this heading"></a></h3>
-<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>{
-    &quot;Version&quot;: 7.2,
-    &quot;Timestamp&quot;: &quot;Wed Nov 13 15:16:19 2024&quot;,
-    &quot;Detector Type&quot;: &quot;Gotthard&quot;,
-    &quot;Timing Mode&quot;: &quot;auto&quot;,
-    &quot;Geometry&quot;: {
-        &quot;x&quot;: 1,
-        &quot;y&quot;: 1
-    },
-    &quot;Image Size in bytes&quot;: 2560,
-    &quot;Pixels&quot;: {
-        &quot;x&quot;: 1280,
-        &quot;y&quot;: 1
-    },
-    &quot;Max Frames Per File&quot;: 20000,
-    &quot;Frame Discard Policy&quot;: &quot;nodiscard&quot;,
-    &quot;Frame Padding&quot;: 1,
-    &quot;Scan Parameters&quot;: &quot;[disabled]&quot;,
-    &quot;Total Frames&quot;: 1,
-    &quot;Receiver Roi&quot;: {
-        &quot;xmin&quot;: 4294967295,
-        &quot;xmax&quot;: 4294967295,
-        &quot;ymin&quot;: 4294967295,
-        &quot;ymax&quot;: 4294967295
-    },
-    &quot;Exptime&quot;: &quot;1.00001ms&quot;,
-    &quot;Period&quot;: &quot;1s&quot;,
-    &quot;Detector Roi&quot;: {
-        &quot;xmin&quot;: 4294967295,
-        &quot;xmax&quot;: 4294967295
-    },
-    &quot;Frames in File&quot;: 1,
-    &quot;Frame Header Format&quot;: {
-        &quot;Frame Number&quot;: &quot;8 bytes&quot;,
-        &quot;SubFrame Number/ExpLength&quot;: &quot;4 bytes&quot;,
-        &quot;Packet Number&quot;: &quot;4 bytes&quot;,
-        &quot;Bunch ID&quot;: &quot;8 bytes&quot;,
-        &quot;Timestamp&quot;: &quot;8 bytes&quot;,
-        &quot;Module Id&quot;: &quot;2 bytes&quot;,
-        &quot;Row&quot;: &quot;2 bytes&quot;,
-        &quot;Column&quot;: &quot;2 bytes&quot;,
-        &quot;Reserved&quot;: &quot;2 bytes&quot;,
-        &quot;Debug&quot;: &quot;4 bytes&quot;,
-        &quot;Round Robin Number&quot;: &quot;2 bytes&quot;,
-        &quot;Detector Type&quot;: &quot;1 byte&quot;,
-        &quot;Header Version&quot;: &quot;1 byte&quot;,
-        &quot;Packets Caught Mask&quot;: &quot;64 bytes&quot;
-    }
-}
-</pre></div>
-</div>
-</section>
 <section id="chip-test-board">
 <h3>Chip Test Board<a class="headerlink" href="#chip-test-board" title="Link to this heading"></a></h3>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>{
@@ -542,6 +498,7 @@
     &quot;Digital Flag&quot;: 0,
     &quot;Digital Samples&quot;: 1000,
     &quot;Dbit Offset&quot;: 0,
+    &quot;Dbit Reorder&quot;: 1,
     &quot;Dbit Bitset&quot;: 0,
     &quot;Transceiver Mask&quot;: &quot;0x3&quot;,
     &quot;Transceiver Flag&quot;: 0,
