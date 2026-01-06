@@ -117,6 +117,8 @@
 <li class="toctree-l3"><a class="reference internal" href="#_CPPv4IEN3sls8StringToEN4defs8polarityERKNSt6stringE"><code class="docutils literal notranslate"><span class="pre">StringTo()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#_CPPv4IEN3sls8StringToEN4defs17timingInfoDecoderERKNSt6stringE"><code class="docutils literal notranslate"><span class="pre">StringTo()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#_CPPv4IEN3sls8StringToEN4defs14collectionModeERKNSt6stringE"><code class="docutils literal notranslate"><span class="pre">StringTo()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#_CPPv4IEN3sls8StringToE15RegisterAddressRKNSt6stringE"><code class="docutils literal notranslate"><span class="pre">StringTo()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#_CPPv4IEN3sls8StringToE13RegisterValueRKNSt6stringE"><code class="docutils literal notranslate"><span class="pre">StringTo()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#_CPPv4IEN3sls8StringToE7uint8_tRKNSt6stringE"><code class="docutils literal notranslate"><span class="pre">StringTo()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#_CPPv4IEN3sls8StringToE8uint16_tRKNSt6stringE"><code class="docutils literal notranslate"><span class="pre">StringTo()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#_CPPv4IEN3sls8StringToE8uint32_tRKNSt6stringE"><code class="docutils literal notranslate"><span class="pre">StringTo()</span></code></a></li>
@@ -202,14 +204,13 @@
 <dl class="cpp type">
 <dt class="sig sig-object cpp" id="_CPPv43sls">
 <span id="_CPPv33sls"></span><span id="_CPPv23sls"></span><span id="sls"></span><span class="target" id="namespacesls"></span><span class="k"><span class="pre">namespace</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">sls</span></span></span><a class="headerlink" href="#_CPPv43sls" title="Link to this definition"></a><br /></dt>
-<dd><p>functions basic implemenation of shared memory </p>
+<dd><p>creates/destroys an ARPing child process to arping the interfaces slsReceiver is listening to. </p>
 <p>creates/destroys a thread</p>
 <p>creates &amp; manages a listener thread each</p>
 <p>abstract for setting/getting properties of detector data</p>
 <p>constructs the fifo structure</p>
 <p>creates &amp; manages a data streamer thread each</p>
-<p>creates &amp; manages a data processor thread each</p>
-<p>creates/destroys an ARPing child process to arping the interfaces slsReceiver is listening to. </p>
+<p>creates &amp; manages a data processor thread each </p>
 <div class="breathe-sectiondef docutils container">
 <p class="breathe-sectiondef-title rubric" id="breathe-section-title-functions">Functions</p>
 <dl class="cpp function">
@@ -391,6 +392,16 @@
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4IEN3sls8StringToEN4defs14collectionModeERKNSt6stringE">
 <span class="k"><span class="pre">template</span></span><span class="p"><span class="pre">&lt;</span></span><span class="p"><span class="pre">&gt;</span></span><br /><span class="target" id="namespacesls_1a02d2b9341f15f7225c1a609db1693e36"></span><span class="n"><span class="pre">defs</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">collectionMode</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">StringTo</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">s</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4IEN3sls8StringToEN4defs14collectionModeERKNSt6stringE" title="Link to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4IEN3sls8StringToE15RegisterAddressRKNSt6stringE">
+<span class="k"><span class="pre">template</span></span><span class="p"><span class="pre">&lt;</span></span><span class="p"><span class="pre">&gt;</span></span><br /><span class="target" id="namespacesls_1ad38985326aacb86f4592b3d337d3b4ce"></span><span class="n"><span class="pre">RegisterAddress</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">StringTo</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">s</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4IEN3sls8StringToE15RegisterAddressRKNSt6stringE" title="Link to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4IEN3sls8StringToE13RegisterValueRKNSt6stringE">
+<span class="k"><span class="pre">template</span></span><span class="p"><span class="pre">&lt;</span></span><span class="p"><span class="pre">&gt;</span></span><br /><span class="target" id="namespacesls_1abc6f66643e7b6a76dda95889cec350ae"></span><span class="n"><span class="pre">RegisterValue</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">StringTo</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">s</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4IEN3sls8StringToE13RegisterValueRKNSt6stringE" title="Link to this definition"></a><br /></dt>
 <dd></dd></dl>
 
 <dl class="cpp function">

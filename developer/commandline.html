@@ -361,6 +361,19 @@
 <div class="line">Clears bit in address.</div>
 <div class="line">Use –validate to force validation.</div>
 </div>
+<div class="line-block">
+<div class="line">[Ctb][Xilinx_Ctb] Address or bit position can also be a user-defined name that was set previously using the define command. When using bit names, avoid register name/ address as the bit name is tied to a specific register already.</div>
+</div>
+<div class="line-block">
+<div class="line">eg.</div>
+<div class="line">sls_detector_get getbit 0x200 2</div>
+<div class="line">sls_detector_get getbit test_reg 2</div>
+<div class="line">sls_detector_get getbit test_bit</div>
+<div class="line">sls_detector_put setbit 0x200 2</div>
+<div class="line">sls_detector_put setbit test_reg 2</div>
+<div class="line">sls_detector_put setbit test_bit</div>
+<div class="line">sls_detector_put clearbit test_bit</div>
+</div>
 </dd>
 <dt id="term-clearbusy">clearbusy<a class="headerlink" href="#term-clearbusy" title="Link to this term"></a></dt><dd><div class="line-block">
 <div class="line">If acquisition aborted during acquire command, use this to clear acquiring flag in shared memory before starting next acquisition</div>
@@ -477,7 +490,54 @@
 <div class="line">[Mythen3] Loads and runs default pattern in pattern generator. It is to go back to initial settings.</div>
 </div>
 </dd>
-<dt id="term-delay-duration-optional-unit-ns-us-ms-s">delay [duration] [(optional unit) ns|us|ms|s]<a class="headerlink" href="#term-delay-duration-optional-unit-ns-us-ms-s" title="Link to this term"></a></dt><dd><div class="line-block">
+<dt id="term-define_bit-Ctb-Xilinx-Ctb">define_bit [Ctb][Xilinx Ctb]<a class="headerlink" href="#term-define_bit-Ctb-Xilinx-Ctb" title="Link to this term"></a></dt><dd><div class="line-block">
+<div class="line">[bit name] [regiser name/address] [bit position]</div>
+</div>
+<div class="line-block">
+<div class="line">Sets a user defined bit name in shared memory representing the register address and the bit position. The address can be named prior using define_reg command. The name can be upto 32 characters long.</div>
+<div class="line">eg.</div>
+<div class="line">sls_detector_put define_bit test_bit test_reg 2</div>
+<div class="line">sls_detector_put define_bit test_bit 0x200 2</div>
+</div>
+<div class="line-block">
+<div class="line">One can retrieve the bit address using the name and vice versa using both register name or address and bit position.</div>
+<div class="line">eg.</div>
+<div class="line">sls_detector_get define_bit test_bit</div>
+<div class="line">sls_detector_get define_bit test_reg 2</div>
+<div class="line">sls_detector_get define_bit 0x200 2</div>
+</div>
+<div class="line-block">
+<div class="line">One can then use this user-defined name in other commands such as for setbit, clearbit and getbit commands. When using bit names, please dont use register name or address as bit name is already tied to a specific register.</div>
+<div class="line">eg.</div>
+<div class="line">sls_detector_put setbit test_bit</div>
+<div class="line">sls_detector_put clearbit test_bit</div>
+<div class="line">sls_detector_get getbit test_bit</div>
+</div>
+</dd>
+<dt id="term-define_reg-Ctb-Xilinx-Ctb">define_reg [Ctb][Xilinx Ctb]<a class="headerlink" href="#term-define_reg-Ctb-Xilinx-Ctb" title="Link to this term"></a></dt><dd><div class="line-block">
+<div class="line">[reg name] [reg address]</div>
+</div>
+<div class="line-block">
+<div class="line">Sets a user defined register in shared memory. The name can be upto 32 characters long.</div>
+<div class="line">eg.</div>
+<div class="line">sls_detector_put define_reg test_reg 0x200</div>
+</div>
+<div class="line-block">
+<div class="line">One can retrieve the address using the name and vice versa.</div>
+<div class="line">eg.</div>
+<div class="line">sls_detector_get define_reg test_reg</div>
+<div class="line">sls_detector_get define_reg 0x200</div>
+</div>
+<div class="line-block">
+<div class="line">One can then use this user-defined name in other commands instead of hard coding the address such as for reg, setbit, clearbit and getbit commands.</div>
+<div class="line">eg.</div>
+<div class="line">sls_detector_put reg test_reg 0x1</div>
+<div class="line">sls_detector_put setbit test_reg 2</div>
+<div class="line">sls_detector_put clearbit test_reg 2</div>
+<div class="line">sls_detector_get getbit test_reg 2</div>
+</div>
+</dd>
+<dt id="term-definelist_bit-List-of-user-defined-bit-definitions-in-shared-memory.">definelist_bit List of user-defined bit definitions in shared memory.<a class="headerlink" href="#term-definelist_bit-List-of-user-defined-bit-definitions-in-shared-memory." title="Link to this term"></a></dt><dt id="term-definelist_reg-List-of-user-defined-register-definitions-in-shared-memory.">definelist_reg List of user-defined register definitions in shared memory.<a class="headerlink" href="#term-definelist_reg-List-of-user-defined-register-definitions-in-shared-memory." title="Link to this term"></a></dt><dt id="term-delay-duration-optional-unit-ns-us-ms-s">delay [duration] [(optional unit) ns|us|ms|s]<a class="headerlink" href="#term-delay-duration-optional-unit-ns-us-ms-s" title="Link to this term"></a></dt><dd><div class="line-block">
 <div class="line">[Jungfrau][Moench][Mythen3][Gotthard2][Ctb][Moench][Xilinx Ctb] Delay after trigger</div>
 </div>
 </dd>
@@ -676,6 +736,19 @@
 </dd>
 <dt id="term-getbit-reg-address-in-hex-bit-index">getbit [reg address in hex] [bit index]<a class="headerlink" href="#term-getbit-reg-address-in-hex-bit-index" title="Link to this term"></a></dt><dd><div class="line-block">
 <div class="line">Gets bit in address.</div>
+</div>
+<div class="line-block">
+<div class="line">[Ctb][Xilinx_Ctb] Address or bit position can also be a user-defined name that was set previously using the define command. When using bit names, avoid register name/ address as the bit name is tied to a specific register already.</div>
+</div>
+<div class="line-block">
+<div class="line">eg.</div>
+<div class="line">sls_detector_get getbit 0x200 2</div>
+<div class="line">sls_detector_get getbit test_reg 2</div>
+<div class="line">sls_detector_get getbit test_bit</div>
+<div class="line">sls_detector_put setbit 0x200 2</div>
+<div class="line">sls_detector_put setbit test_reg 2</div>
+<div class="line">sls_detector_put setbit test_bit</div>
+<div class="line">sls_detector_put clearbit test_bit</div>
 </div>
 </dd>
 <dt id="term-hardwareversion">hardwareversion<a class="headerlink" href="#term-hardwareversion" title="Link to this term"></a></dt><dd><div class="line-block">
@@ -884,7 +957,7 @@
 </div>
 </dd>
 <dt id="term-patternstart">patternstart<a class="headerlink" href="#term-patternstart" title="Link to this term"></a></dt><dd><div class="line-block">
-<div class="line">[Mythen3][Xilinx Ctb] Starts Pattern</div>
+<div class="line">[Mythen3][Ctb][Xilinx Ctb] Starts Pattern</div>
 </div>
 </dd>
 <dt id="term-patwait-0-6-addr">patwait [0-6] [addr]<a class="headerlink" href="#term-patwait-0-6-addr" title="Link to this term"></a></dt><dd><div class="line-block">
@@ -1057,12 +1130,20 @@
 </div>
 </dd>
 <dt id="term-reg-address-32-bit-value-optional-validate">reg [address] [32 bit value][(optional)–validate]<a class="headerlink" href="#term-reg-address-32-bit-value-optional-validate" title="Link to this term"></a></dt><dd><div class="line-block">
-<div class="line">[Mythen3][Gotthard2] Reads/writes to a 32 bit register in hex. Advanced Function!</div>
+<div class="line">Reads/writes to a 32 bit register in hex.</div>
+<div class="line">Advanced Function!</div>
 <div class="line">Goes to stop server. Hence, can be called while calling blocking acquire().</div>
 <div class="line-block">
-<div class="line">Use –validate to force validation when writing to it.</div>
+<div class="line">Use –validate to enforce validation when writing to register.</div>
 </div>
 <div class="line">[Eiger] +0x100 for only left, +0x200 for only right.</div>
+<div class="line">[Ctb][Xilinx_Ctb] Address can also be a user-defined name that was set previously using the define command.</div>
+<div class="line-block">
+<div class="line">eg.</div>
+<div class="line">sls_detector_put reg 0x200 0xFFF –validate</div>
+<div class="line">sls_detector_get reg test_reg</div>
+<div class="line">sls_detector_put reg test_reg 0xFF</div>
+</div>
 </div>
 </dd>
 <dt id="term-resetdacs-optional-hard">resetdacs [(optional) hard]<a class="headerlink" href="#term-resetdacs-optional-hard" title="Link to this term"></a></dt><dd><div class="line-block">
@@ -1294,6 +1375,19 @@
 <dt id="term-setbit-reg-address-in-hex-bit-index">setbit [reg address in hex] [bit index]<a class="headerlink" href="#term-setbit-reg-address-in-hex-bit-index" title="Link to this term"></a></dt><dd><div class="line-block">
 <div class="line">Sets bit in address.</div>
 <div class="line">Use –validate to force validation.</div>
+</div>
+<div class="line-block">
+<div class="line">[Ctb][Xilinx_Ctb] Address or bit position can also be a user-defined name that was set previously using the define command. When using bit names, avoid register name/ address as the bit name is tied to a specific register already.</div>
+</div>
+<div class="line-block">
+<div class="line">eg.</div>
+<div class="line">sls_detector_get getbit 0x200 2</div>
+<div class="line">sls_detector_get getbit test_reg 2</div>
+<div class="line">sls_detector_get getbit test_bit</div>
+<div class="line">sls_detector_put setbit 0x200 2</div>
+<div class="line">sls_detector_put setbit test_reg 2</div>
+<div class="line">sls_detector_put setbit test_bit</div>
+<div class="line">sls_detector_put clearbit test_bit</div>
 </div>
 </dd>
 <dt id="term-settings-standard-fast-highgain-dynamicgain-lowgain-mediumgain-veryhighgain-highgain0-fixgain1-fixgain2-forceswitchg1-forceswitchg2-verylowgain-g1_hg-g1_lg-g2_hc_hg-g2_hc_lg-g2_lc_hg-g2_lc_lg-g4_hg-g4_lg-gain0">settings [standard, fast, highgain, dynamicgain, lowgain, mediumgain, veryhighgain, highgain0, fixgain1, fixgain2, forceswitchg1, forceswitchg2, verylowgain, g1_hg, g1_lg, g2_hc_hg, g2_hc_lg, g2_lc_hg, g2_lc_lg, g4_hg, g4_lg, gain0]<a class="headerlink" href="#term-settings-standard-fast-highgain-dynamicgain-lowgain-mediumgain-veryhighgain-highgain0-fixgain1-fixgain2-forceswitchg1-forceswitchg2-verylowgain-g1_hg-g1_lg-g2_hc_hg-g2_hc_lg-g2_lc_hg-g2_lc_lg-g4_hg-g4_lg-gain0" title="Link to this term"></a></dt><dd><div class="line-block">
